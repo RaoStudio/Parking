@@ -34,6 +34,7 @@ class MainViewController: UIViewController {
         let modes:[SideMenuManager.MenuPresentMode] = [.menuSlideIn, .viewSlideOut, .viewSlideInOut, .menuDissolveIn]
         SideMenuManager.default.menuPresentMode = modes[0]
         SideMenuManager.default.menuAnimationFadeStrength = 0.5
+        SideMenuManager.default.menuFadeStatusBar = false
     }
 
     /*
