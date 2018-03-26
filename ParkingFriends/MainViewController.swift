@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        setupSideMenu()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,8 +28,12 @@ class MainViewController: UIViewController {
     fileprivate func setupSideMenu() {
         SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController;
         
-        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+//        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view);
+     
+        let modes:[SideMenuManager.MenuPresentMode] = [.menuSlideIn, .viewSlideOut, .viewSlideInOut, .menuDissolveIn]
+        SideMenuManager.default.menuPresentMode = modes[0]
+        SideMenuManager.default.menuAnimationFadeStrength = 0.5
     }
 
     /*
