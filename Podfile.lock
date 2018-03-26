@@ -1,12 +1,15 @@
 PODS:
   - Alamofire (4.6.0)
+  - SideMenu (3.1.5)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - SideMenu
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
 
-PODFILE CHECKSUM: 6d6e19ffe045591f3b2b6a14cad6cd02299ca043
+PODFILE CHECKSUM: fe97eeafc4ce4b7af3cbff5c183627327e9c5ba7
 
 COCOAPODS: 1.4.0

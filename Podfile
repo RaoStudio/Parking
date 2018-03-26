@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'ParkingFriends' do
     pod 'Alamofire', '~> 4.5'
+    pod 'SideMenu'
 end
