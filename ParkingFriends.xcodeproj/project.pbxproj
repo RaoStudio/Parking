@@ -14,6 +14,7 @@
 		29559EFE204CE28E000EB12B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29559EFD204CE28E000EB12B /* Assets.xcassets */; };
 		29559F01204CE28E000EB12B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29559EFF204CE28E000EB12B /* LaunchScreen.storyboard */; };
 		295FF12220688AA2000CBF15 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FF12120688AA2000CBF15 /* MainViewController.swift */; };
+		29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0FFDB207B429200B13638 /* UrlStrings.swift */; };
 		5AE7C80E869B4337F04B6493 /* Pods_ParkingFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA1467F876F3F1665825730 /* Pods_ParkingFriends.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		29559F00204CE28E000EB12B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29559F02204CE28E000EB12B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		295FF12120688AA2000CBF15 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		29A0FFDB207B429200B13638 /* UrlStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlStrings.swift; sourceTree = "<group>"; };
 		5692CC7AA31AE36E141C127A /* Pods-ParkingFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingFriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingFriends/Pods-ParkingFriends.release.xcconfig"; sourceTree = "<group>"; };
 		BBA1467F876F3F1665825730 /* Pods_ParkingFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BC42507866129D0B36DF16 /* Pods-ParkingFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingFriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingFriends/Pods-ParkingFriends.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		29559EF2204CE28E000EB12B /* ParkingFriends */ = {
 			isa = PBXGroup;
 			children = (
+				29A0FFDA207B423A00B13638 /* Util */,
 				29559EF3204CE28E000EB12B /* AppDelegate.swift */,
 				29559EF5204CE28E000EB12B /* ViewController.swift */,
 				29559EF7204CE28E000EB12B /* Main.storyboard */,
@@ -75,6 +78,14 @@
 				295FF12120688AA2000CBF15 /* MainViewController.swift */,
 			);
 			path = ParkingFriends;
+			sourceTree = "<group>";
+		};
+		29A0FFDA207B423A00B13638 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				29A0FFDB207B429200B13638 /* UrlStrings.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		4C7DE14E79F712DCC2BE1421 /* Frameworks */ = {
@@ -230,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */,
 				29559EF6204CE28E000EB12B /* ViewController.swift in Sources */,
 				29559EF4204CE28E000EB12B /* AppDelegate.swift in Sources */,
 				29559EFC204CE28E000EB12B /* ParkingFriends.xcdatamodeld in Sources */,
