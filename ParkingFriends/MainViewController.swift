@@ -14,8 +14,14 @@ import GoogleMaps
 class MainViewController: UIViewController {
     
     @IBOutlet var mapView: GMSMapView!
+    @IBOutlet var addressLabel: UILabel!
     
     private let locationManager = CLLocationManager()
+    
+    private let dataProvider = GoogleDataProvider()
+    private let searchRadius: Double = 1000
+    
+    var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +32,8 @@ class MainViewController: UIViewController {
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        
+        mapView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,9 +82,94 @@ class MainViewController: UIViewController {
     }
     */
 
+    
+    private func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D) {
+        let geocoder = GMSGeocoder()
+        
+        geocoder.reverseGeocodeCoordinate(coordinate) { (response, error) in
+            
+            self.addressLabel.unlock()
+            
+            guard let address = response?.firstResult(), let lines = address.lines else {
+                return
+            }
+            
+            self.addressLabel.text = lines.joined(separator: "\n")
+            
+            
+            let labelHeight = self.addressLabel.intrinsicContentSize.height
+            self.mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: labelHeight, right: 0)
+            
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                //        self.pinImageVerticalConstraint.constant = labelHeight * 0.5
+                self.view.layoutIfNeeded()
+            })
+            
+        }
+    }
+    
+    private func fetchNearbyPlace(coordinate: CLLocationCoordinate2D) {
+        mapView.clear()
+        
+        dataProvider.fetchPlacesNearCoordinate(coordinate, radius: searchRadius, types: searchedTypes) { places in
+            places.forEach({ place in
+                let marker = PlaceMarker(place: place)
+                marker.map = self.mapView
+            })
+        }
+    }
 }
 
 
+// MARK: - GMSMapViewDelegate
+extension MainViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        reverseGeocodeCoordinate(position.target)
+    }
+    
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        addressLabel.lock()
+        
+        if (gesture) {
+//            mapCenterPinImage.fadeIn(0.25)
+            mapView.selectedMarker = nil
+        }
+    }
+    
+    func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
+        guard let placeMarker = marker as? PlaceMarker else {
+            return nil
+        }
+        
+        guard let infoView = UIView.viewFromNibName("MarkerInfoView") as? MarkerInfoView else {
+            return nil
+        }
+        
+        infoView.nameLabel.text = placeMarker.place.name
+        
+        if let photo = placeMarker.place.photo {
+            infoView.placePhoto.image = photo
+        } else {
+            infoView.placePhoto.image = UIImage(named: "generic")
+        }
+        
+        return infoView
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+//        mapCenterPinImage.fadeOut(0.25)
+        return false
+    }
+    
+    func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
+//        mapCenterPinImage.fadeIn(0.25)
+        mapView.selectedMarker = nil
+        return false
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
 extension MainViewController: CLLocationManagerDelegate {
     
     /*
@@ -114,6 +207,8 @@ extension MainViewController: CLLocationManagerDelegate {
         
         mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
         locationManager.stopUpdatingLocation()
+        
+        fetchNearbyPlace(coordinate: location.coordinate)
     }
     
 }
