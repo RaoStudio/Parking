@@ -10,6 +10,7 @@ import UIKit
 import SideMenu
 
 import GoogleMaps
+import Alamofire
 
 class MainViewController: UIViewController {
     
@@ -119,6 +120,28 @@ class MainViewController: UIViewController {
             })
         }
     }
+    
+    func RefreshParkingLot(_ coordinate: CLLocationCoordinate2D, bMarkerRemake: Bool = true) {
+        
+        let param = ["latitude" : coordinate.latitude,
+            "longitude" : coordinate.longitude,
+            "radius" : "500",
+            "type" : "15"] as [String : Any]
+
+        
+//        let paramData = try! JSONSerialization.data(withJSONObject: param, options: [])
+        
+//        let url = URL(string: UrlStrings.URL_API_PARKINGLOT_FETCH)
+        
+        Alamofire.request(UrlStrings.URL_API_PARKINGLOT_FETCH, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+            
+            
+            if let value = response.result.value {
+                print("RefreshParkingLot JSON = \(value)")
+            }
+        }
+        
+    }
 }
 
 
@@ -126,6 +149,8 @@ class MainViewController: UIViewController {
 extension MainViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         reverseGeocodeCoordinate(position.target)
+        
+        RefreshParkingLot(position.target)
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
