@@ -121,7 +121,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    func RefreshParkingLot(_ coordinate: CLLocationCoordinate2D, bMarkerRemake: Bool = true) {
+    func RefreshParkingLot(_ coordinate: CLLocationCoordinate2D, url: String, bMarkerRemake: Bool = true) {
         
         let param = ["latitude" : coordinate.latitude,
             "longitude" : coordinate.longitude,
@@ -133,8 +133,13 @@ class MainViewController: UIViewController {
         
 //        let url = URL(string: UrlStrings.URL_API_PARKINGLOT_FETCH)
         
-        Alamofire.request(UrlStrings.URL_API_PARKINGLOT_FETCH, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+        Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
             
+            guard response.result.isSuccess else {
+                print("\(url) : \(String(describing: response.result.error))")
+                
+                return
+            }
             
             if let value = response.result.value {
                 print("RefreshParkingLot JSON = \(value)")
@@ -150,7 +155,7 @@ extension MainViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         reverseGeocodeCoordinate(position.target)
         
-        RefreshParkingLot(position.target)
+        RefreshParkingLot(position.target, url: UrlStrings.URL_API_PARKINGLOT_FETCH)
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
