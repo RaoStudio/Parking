@@ -130,7 +130,6 @@ class MainViewController: UIViewController {
 
         
 //        let paramData = try! JSONSerialization.data(withJSONObject: param, options: [])
-        
 //        let url = URL(string: UrlStrings.URL_API_PARKINGLOT_FETCH)
         
         Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
@@ -143,6 +142,39 @@ class MainViewController: UIViewController {
             
             if let value = response.result.value {
                 print("RefreshParkingLot JSON = \(value)")
+                
+                if let arrResponse = response.result.value as? Array<Any> {
+                    arrResponse.forEach({ place in
+//                        let marker = PlaceMarker(place: place as! GooglePlace)
+//                        marker.map = self.mapView
+                        
+                        if let dicPlace = place as? Dictionary<String, Any> {
+                        
+                            let lat: NSString = dicPlace["latitude"] as! NSString
+                            let long: NSString = dicPlace["longitude"] as! NSString
+                            
+                            /*
+                            let position = CLLocationCoordinate2D(latitude: 37, longitude: 127)
+                            let marker = GMSMarker(position: position)
+                            */
+                            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat.doubleValue), longitude: CLLocationDegrees(long.doubleValue)))
+                            marker.icon = UIImage(named: "driving_pin")
+                            
+                            
+                            
+                            marker.groundAnchor = CGPoint(x: 0.5, y: 1)
+                            marker.appearAnimation = GMSMarkerAnimation.pop
+                            marker.isTappable = true
+                            
+                            marker.map = self.mapView
+                        }
+                        
+                        }
+                    )
+                }
+
+
+                
             }
         }
         

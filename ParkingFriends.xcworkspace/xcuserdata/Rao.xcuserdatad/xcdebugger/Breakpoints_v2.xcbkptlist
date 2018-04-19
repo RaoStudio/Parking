@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "545807564.014703"
+            timestampString = "545814061.567241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -26,59 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "545807564.0150779"
+            timestampString = "545814061.5676481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "fetchNearbyPlace(coordinate:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ParkingFriends.MainViewController.(fetchNearbyPlace in _F5E3F2D20DBDECB97164966C4639ED0C)(coordinate: __C.CLLocationCoordinate2D) -&gt; ()"
-                  moduleName = "ParkingFriends"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/MainViewController.swift"
-                  timestampString = "545806719.201205"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "188">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;ParkingFriends.GooglePlace&gt;) -&gt; () in ParkingFriends.MainViewController.(fetchNearbyPlace in _F5E3F2D20DBDECB97164966C4639ED0C)(coordinate: __C.CLLocationCoordinate2D) -&gt; ()"
-                  moduleName = "ParkingFriends"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/MainViewController.swift"
-                  timestampString = "545806719.203542"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "117"
-                  endingLineNumber = "117"
-                  offsetFromSymbolStart = "25">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "545807564.01534"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "mapView(_:idleAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "545807564.015592"
+            timestampString = "545814061.5679491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "RefreshParkingLot(_:url:bMarkerRemake:)"
             landmarkType = "7">
             <Locations>
@@ -102,31 +54,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ParkingFriends.MainViewController.RefreshParkingLot(__C.CLLocationCoordinate2D, bMarkerRemake: Swift.Bool) -&gt; ()"
+                  symbolName = "ParkingFriends.MainViewController.RefreshParkingLot(__C.CLLocationCoordinate2D, url: Swift.String, bMarkerRemake: Swift.Bool) -&gt; ()"
                   moduleName = "ParkingFriends"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/MainViewController.swift"
-                  timestampString = "545806719.211735"
+                  timestampString = "545811195.598075"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136"
-                  offsetFromSymbolStart = "555">
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "488">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in ParkingFriends.MainViewController.RefreshParkingLot(__C.CLLocationCoordinate2D, bMarkerRemake: Swift.Bool) -&gt; ()"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in ParkingFriends.MainViewController.RefreshParkingLot(__C.CLLocationCoordinate2D, url: Swift.String, bMarkerRemake: Swift.Bool) -&gt; ()"
                   moduleName = "ParkingFriends"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/MainViewController.swift"
-                  timestampString = "545806719.213938"
+                  timestampString = "545811195.6001101"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "139"
-                  endingLineNumber = "139"
-                  offsetFromSymbolStart = "17">
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "44">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -138,11 +90,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "545807564.01583"
+            timestampString = "545814061.568238"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "RefreshParkingLot(_:url:bMarkerRemake:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ParkingFriends/MainViewController.swift"
+            timestampString = "545814061.5685199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "RefreshParkingLot(_:url:bMarkerRemake:)"
             landmarkType = "7">
          </BreakpointContent>
