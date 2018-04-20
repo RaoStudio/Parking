@@ -125,7 +125,7 @@ class MainViewController: UIViewController {
         
         let param = ["latitude" : coordinate.latitude,
             "longitude" : coordinate.longitude,
-            "radius" : "500",
+            "radius" : "1000",
             "type" : "15"] as [String : Any]
 
         
@@ -140,6 +140,8 @@ class MainViewController: UIViewController {
                 return
             }
             
+            self.mapView.clear()
+            
             if let value = response.result.value {
                 print("RefreshParkingLot JSON = \(value)")
                 
@@ -152,13 +154,26 @@ class MainViewController: UIViewController {
                         
                             let lat: NSString = dicPlace["latitude"] as! NSString
                             let long: NSString = dicPlace["longitude"] as! NSString
+                            let partner : NSString = dicPlace["partner"] as! NSString
+                            let cctv : NSString = dicPlace["cctv"] as! NSString
                             
                             /*
                             let position = CLLocationCoordinate2D(latitude: 37, longitude: 127)
                             let marker = GMSMarker(position: position)
                             */
+                            
+                            
                             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat.doubleValue), longitude: CLLocationDegrees(long.doubleValue)))
-                            marker.icon = UIImage(named: "driving_pin")
+                            
+                            if partner.isEqual(to: "1") {
+                                if cctv.isEqual(to: "1") {
+                                    marker.icon = UIImage(named: "lot_test_cctv")
+                                } else {
+                                    marker.icon = UIImage(named: "lot_test")
+                                }
+                            } else {
+                                marker.icon = UIImage(named: "public_lot")
+                            }
                             
                             
                             
