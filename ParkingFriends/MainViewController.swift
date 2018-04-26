@@ -180,6 +180,8 @@ class MainViewController: UIViewController {
                             marker.groundAnchor = CGPoint(x: 0.5, y: 1)
                             marker.appearAnimation = GMSMarkerAnimation.pop
                             marker.isTappable = true
+                            marker.userData = dicPlace
+                            
                             
                             marker.map = self.mapView
                         }
@@ -236,6 +238,15 @@ extension MainViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
 //        mapCenterPinImage.fadeOut(0.25)
+        
+        let detailNavi = self.storyboard?.instantiateViewController(withIdentifier: "DetailNavi") as? UINavigationController;
+        
+        let detailVC = detailNavi?.topViewController as? DetailVC
+        
+        detailVC?.dicPlace = marker.userData as? Dictionary<String, Any>
+        
+        self.present(detailNavi!, animated: true, completion: nil)
+        
         return false
     }
     
