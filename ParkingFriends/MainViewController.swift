@@ -17,6 +17,8 @@ class MainViewController: UIViewController {
     @IBOutlet var mapView: GMSMapView!
     @IBOutlet var addressLabel: UILabel!
     
+    var circle: GMSCircle!
+    
     private let locationManager = CLLocationManager()
     
     private let dataProvider = GoogleDataProvider()
@@ -35,6 +37,11 @@ class MainViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         
         mapView.delegate = self
+        
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -141,26 +148,30 @@ class MainViewController: UIViewController {
             }
             
             self.mapView.clear()
-            
+            //*
+            if self.circle != nil {
+                self.circle.position = coordinate
+            }
+            //*/
             if let value = response.result.value {
                 print("RefreshParkingLot JSON = \(value)")
                 
                 if let arrResponse = response.result.value as? Array<Any> {
                     arrResponse.forEach({ place in
-//                        let marker = PlaceMarker(place: place as! GooglePlace)
-//                        marker.map = self.mapView
+                        //                        let marker = PlaceMarker(place: place as! GooglePlace)
+                        //                        marker.map = self.mapView
                         
                         if let dicPlace = place as? Dictionary<String, Any> {
-                        
+                            
                             let lat: NSString = dicPlace["latitude"] as! NSString
                             let long: NSString = dicPlace["longitude"] as! NSString
                             let partner : NSString = dicPlace["partner"] as! NSString
                             let cctv : NSString = dicPlace["cctv"] as! NSString
                             
                             /*
-                            let position = CLLocationCoordinate2D(latitude: 37, longitude: 127)
-                            let marker = GMSMarker(position: position)
-                            */
+                             let position = CLLocationCoordinate2D(latitude: 37, longitude: 127)
+                             let marker = GMSMarker(position: position)
+                             */
                             
                             
                             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat.doubleValue), longitude: CLLocationDegrees(long.doubleValue)))
@@ -184,6 +195,7 @@ class MainViewController: UIViewController {
                             
                             
                             marker.map = self.mapView
+                            self.circle.map = self.mapView
                         }
                         
                         }
@@ -193,6 +205,8 @@ class MainViewController: UIViewController {
 
                 
             }
+            
+            
         }
         
     }
@@ -205,6 +219,18 @@ extension MainViewController: GMSMapViewDelegate {
         reverseGeocodeCoordinate(position.target)
         
         RefreshParkingLot(position.target, url: UrlStrings.URL_API_PARKINGLOT_FETCH)
+        
+        //*
+        if circle == nil {
+            circle = GMSCircle(position: self.mapView.camera.target, radius: 1000)
+            //        circle.fillColor = UIColor.redColor().colorWithAlphaComponent(0.5)
+            circle.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.05)
+            circle.map = self.mapView
+            circle.position = position.target
+        } else {
+            circle.position = position.target
+        }
+        //*/
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
@@ -239,6 +265,7 @@ extension MainViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
 //        mapCenterPinImage.fadeOut(0.25)
         
+        //*
         let detailNavi = self.storyboard?.instantiateViewController(withIdentifier: "DetailNavi") as? UINavigationController;
         
         let detailVC = detailNavi?.topViewController as? DetailVC
@@ -246,6 +273,7 @@ extension MainViewController: GMSMapViewDelegate {
         detailVC?.dicPlace = marker.userData as? Dictionary<String, Any>
         
         self.present(detailNavi!, animated: true, completion: nil)
+         //*/
         
         return false
     }
@@ -296,7 +324,14 @@ extension MainViewController: CLLocationManagerDelegate {
         mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
         locationManager.stopUpdatingLocation()
         
-        fetchNearbyPlace(coordinate: location.coordinate)
+//        fetchNearbyPlace(coordinate: location.coordinate)
+        
+        /*
+        circle = GMSCircle(position: self.mapView.camera.target, radius: 1000)
+        //        circle.fillColor = UIColor.redColor().colorWithAlphaComponent(0.5)
+        circle.fillColor = UIColor.red
+        circle.map = self.mapView
+ */
     }
     
 }
