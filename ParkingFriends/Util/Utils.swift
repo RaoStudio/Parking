@@ -10,6 +10,17 @@ import Foundation
 import Security
 import Alamofire
 
+struct Platform {
+    static let isSimulator: Bool = {
+        var isSim = false
+        #if arch(i386) || arch(x86_64)
+            isSim = true
+        #endif
+        return isSim
+    }()
+}
+
+
 extension UIViewController {
     var tutorialSB : UIStoryboard {
         return UIStoryboard(name: "Tutorial", bundle: Bundle.main)

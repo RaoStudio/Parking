@@ -321,12 +321,13 @@ extension MainViewController: CLLocationManagerDelegate {
             return
         }
         
-        // Test
-        let testLocation = CLLocationCoordinate2D(latitude: 37.4823511, longitude: 127.0036083)
-        mapView.camera = GMSCameraPosition(target: testLocation, zoom: 15, bearing: 0, viewingAngle: 0)
-        // Test
+        if Platform.isSimulator {
+            let testLocation = CLLocationCoordinate2D(latitude: 37.4823511, longitude: 127.0036083)
+            mapView.camera = GMSCameraPosition(target: testLocation, zoom: 15, bearing: 0, viewingAngle: 0)
+        } else {
+            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        }
         
-//        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
         locationManager.stopUpdatingLocation()
         
 //        fetchNearbyPlace(coordinate: location.coordinate)
