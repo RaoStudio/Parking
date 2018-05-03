@@ -321,7 +321,12 @@ extension MainViewController: CLLocationManagerDelegate {
             return
         }
         
-        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        // Test
+        let testLocation = CLLocationCoordinate2D(latitude: 37.4823511, longitude: 127.0036083)
+        mapView.camera = GMSCameraPosition(target: testLocation, zoom: 15, bearing: 0, viewingAngle: 0)
+        // Test
+        
+//        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
         locationManager.stopUpdatingLocation()
         
 //        fetchNearbyPlace(coordinate: location.coordinate)

@@ -15,6 +15,7 @@
 		29559F01204CE28E000EB12B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29559EFF204CE28E000EB12B /* LaunchScreen.storyboard */; };
 		295FF12220688AA2000CBF15 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FF12120688AA2000CBF15 /* MainViewController.swift */; };
 		296023802091A65600481134 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960237F2091A65600481134 /* DetailVC.swift */; };
+		2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971A3EE209ADD8200C1AD84 /* Utils.swift */; };
 		29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0FFDB207B429200B13638 /* UrlStrings.swift */; };
 		29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA125B207D9FF400F4648C /* MarkerInfoView.swift */; };
 		29AA1260207D9FF400F4648C /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29AA125C207D9FF400F4648C /* MarkerInfoView.xib */; };
@@ -36,6 +37,7 @@
 		29559F02204CE28E000EB12B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		295FF12120688AA2000CBF15 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2960237F2091A65600481134 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		2971A3EE209ADD8200C1AD84 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		29A0FFDB207B429200B13638 /* UrlStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlStrings.swift; sourceTree = "<group>"; };
 		29AA125B207D9FF400F4648C /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
 		29AA125C207D9FF400F4648C /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				29A0FFDB207B429200B13638 /* UrlStrings.swift */,
+				2971A3EE209ADD8200C1AD84 /* Utils.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */,
 				29AA1262207D9FF400F4648C /* UIViewExtension.swift in Sources */,
 				295FF12220688AA2000CBF15 /* MainViewController.swift in Sources */,
+				2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
