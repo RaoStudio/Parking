@@ -8,11 +8,16 @@
 
 import UIKit
 
-class DetailVC: UIViewController {
+class DetailVC: UIViewController, UIPageViewControllerDataSource {
 
     @IBOutlet var lbl_Test: UILabel!
+    @IBOutlet var btnExit: UIButton!
     
     var pageVC: UIPageViewController!
+    
+    var contentTitles = ["STEP 1", "STEP 2","STEP 3","STEP 4"]
+    var contentImages = ["Page0", "Page1", "Page2", "Page3"]
+    var arrContentImages: Array<String> = Array()
     
     var dicPlace: Dictionary<String, Any>?
     
@@ -21,6 +26,48 @@ class DetailVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        self.pageVC = self.instanceTutorialVC(name: "PageVC") as? UIPageViewController
+        self.pageVC?.dataSource = self
+        
+        let startContentVC = self.getContentVC(atIndex: 0)
+        self.pageVC?.setViewControllers([startContentVC!], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+        
+        self.pageVC?.view.frame.origin = CGPoint(x: 0, y: 0)
+        self.pageVC?.view.frame.size.width = self.view.frame.width
+        self.pageVC?.view.frame.size.height = 150
+        
+        self.addChildViewController(self.pageVC)
+        self.view.addSubview(self.pageVC.view)
+        self.pageVC.didMove(toParentViewController: self)
+        
+        
+        let pageControl = UIPageControl.appearance()
+        pageControl.pageIndicatorTintColor = UIColor.lightGray
+        pageControl.currentPageIndicatorTintColor = UIColor.black
+        pageControl.backgroundColor = UIColor.white
+        
+        
+        
+        if let dataPlace = self.dicPlace {
+//            let cctv : NSString = dataPlace["cctv"] as! NSString
+            
+            for i in 1...5
+            {
+                let str = "img"+String(i)
+                if let img: String = dataPlace[str] as? String, false == img.isEmpty {
+                    arrContentImages.append(UrlStrings.URL_API_PARKINGLOT_IMG + (img as String))
+                }
+            }
+            
+        }
+        
+        /*
+        if let path = user["profile_path"] as? String {
+            if let imageData = try? Data(contentsOf: URL(string: path)!) {
+                self.profile = UIImage(data: imageData)
+            }
+        }
+         */
         
     }
 
@@ -31,12 +78,73 @@ class DetailVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         lbl_Test.text = dicPlace?.description
+        self.view.bringSubview(toFront: self.btnExit)
     }
 
     @IBAction func onExit(_ sender: Any) {
 //        self.dismiss(animated: true, completion: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
+    func getContentVC(atIndex idx: Int) -> UIViewController? {
+        guard self.contentTitles.count >= idx && self.contentTitles.count > 0 else {
+            return nil
+        }
+        
+        guard let cvc = self.instanceTutorialVC(name: "ContentsVC") as? TutorialContentsVC else {
+            return nil
+        }
+        
+//        cvc.titleText = self.contentTitles[idx]
+        cvc.titleText = ""
+        cvc.imageFile = self.contentImages[idx]
+        cvc.pageIndex = idx
+        return cvc
+    }
+    
+    // MARK: - UIPageViewControllerDataSource
+    
+    @available(iOS 5.0, *)
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard var index = (viewController as! TutorialContentsVC).pageIndex else {
+            return nil
+        }
+        
+        guard index > 0 else {
+            return nil
+        }
+        
+        index -= 1
+        return self.getContentVC(atIndex: index)
+    }
+    
+    @available(iOS 5.0, *)
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard var index = (viewController as! TutorialContentsVC).pageIndex else {
+            return nil
+        }
+        
+        index += 1
+        
+        guard index < self.contentTitles.count else {
+            return nil
+        }
+        
+        return self.getContentVC(atIndex: index)
+    }
+    
+    @available(iOS 6.0, *)
+    func presentationCount(for pageViewController: UIPageViewController) -> Int // The number of items reflected in the page indicator.
+    {
+        return self.contentTitles.count
+    }
+    
+    @available(iOS 6.0, *)
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int // The selected item reflected in the page indicator.
+    {
+        return 0
+    }
+    
     /*
     // MARK: - Navigation
 
