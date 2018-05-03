@@ -16,6 +16,9 @@
 		295FF12220688AA2000CBF15 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FF12120688AA2000CBF15 /* MainViewController.swift */; };
 		296023802091A65600481134 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960237F2091A65600481134 /* DetailVC.swift */; };
 		2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971A3EE209ADD8200C1AD84 /* Utils.swift */; };
+		2971A3F1209AECC400C1AD84 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2971A3F0209AECC400C1AD84 /* Tutorial.storyboard */; };
+		2971A3F5209AED1300C1AD84 /* TutorialContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971A3F3209AED1200C1AD84 /* TutorialContentsVC.swift */; };
+		2971A3F6209AED1300C1AD84 /* TutorialMasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971A3F4209AED1300C1AD84 /* TutorialMasterVC.swift */; };
 		29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0FFDB207B429200B13638 /* UrlStrings.swift */; };
 		29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA125B207D9FF400F4648C /* MarkerInfoView.swift */; };
 		29AA1260207D9FF400F4648C /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29AA125C207D9FF400F4648C /* MarkerInfoView.xib */; };
@@ -38,6 +41,9 @@
 		295FF12120688AA2000CBF15 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2960237F2091A65600481134 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		2971A3EE209ADD8200C1AD84 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		2971A3F0209AECC400C1AD84 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		2971A3F3209AED1200C1AD84 /* TutorialContentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContentsVC.swift; sourceTree = "<group>"; };
+		2971A3F4209AED1300C1AD84 /* TutorialMasterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialMasterVC.swift; sourceTree = "<group>"; };
 		29A0FFDB207B429200B13638 /* UrlStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlStrings.swift; sourceTree = "<group>"; };
 		29AA125B207D9FF400F4648C /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
 		29AA125C207D9FF400F4648C /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
@@ -83,12 +89,14 @@
 		29559EF2204CE28E000EB12B /* ParkingFriends */ = {
 			isa = PBXGroup;
 			children = (
+				2971A3F2209AECF100C1AD84 /* Tutorial */,
 				29AA1263207DA06A00F4648C /* Model */,
 				29AA125A207D9FF400F4648C /* Views */,
 				29A0FFDA207B423A00B13638 /* Util */,
 				29559EF3204CE28E000EB12B /* AppDelegate.swift */,
 				29559EF5204CE28E000EB12B /* ViewController.swift */,
 				29559EF7204CE28E000EB12B /* Main.storyboard */,
+				2971A3F0209AECC400C1AD84 /* Tutorial.storyboard */,
 				29559EFD204CE28E000EB12B /* Assets.xcassets */,
 				29559EFF204CE28E000EB12B /* LaunchScreen.storyboard */,
 				29559F02204CE28E000EB12B /* Info.plist */,
@@ -97,6 +105,15 @@
 				2960237F2091A65600481134 /* DetailVC.swift */,
 			);
 			path = ParkingFriends;
+			sourceTree = "<group>";
+		};
+		2971A3F2209AECF100C1AD84 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				2971A3F3209AED1200C1AD84 /* TutorialContentsVC.swift */,
+				2971A3F4209AED1300C1AD84 /* TutorialMasterVC.swift */,
+			);
+			path = Tutorial;
 			sourceTree = "<group>";
 		};
 		29A0FFDA207B423A00B13638 /* Util */ = {
@@ -207,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2971A3F1209AECC400C1AD84 /* Tutorial.storyboard in Resources */,
 				29AA1260207D9FF400F4648C /* MarkerInfoView.xib in Resources */,
 				29559F01204CE28E000EB12B /* LaunchScreen.storyboard in Resources */,
 				29559EFE204CE28E000EB12B /* Assets.xcassets in Resources */,
@@ -290,9 +308,11 @@
 				29AA1267207DA06A00F4648C /* GooglePlace.swift in Sources */,
 				29AA1261207D9FF400F4648C /* PlaceMarker.swift in Sources */,
 				29559EF6204CE28E000EB12B /* ViewController.swift in Sources */,
+				2971A3F5209AED1300C1AD84 /* TutorialContentsVC.swift in Sources */,
 				29559EF4204CE28E000EB12B /* AppDelegate.swift in Sources */,
 				29559EFC204CE28E000EB12B /* ParkingFriends.xcdatamodeld in Sources */,
 				29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */,
+				2971A3F6209AED1300C1AD84 /* TutorialMasterVC.swift in Sources */,
 				29AA1262207D9FF400F4648C /* UIViewExtension.swift in Sources */,
 				295FF12220688AA2000CBF15 /* MainViewController.swift in Sources */,
 				2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */,
