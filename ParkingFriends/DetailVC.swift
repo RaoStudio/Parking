@@ -16,8 +16,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     var pageVC: UIPageViewController!
     
     var contentTitles = ["STEP 1", "STEP 2","STEP 3","STEP 4"]
-    var contentImages = ["Page0", "Page1", "Page2", "Page3"]
-    var arrContentImages: Array<String> = Array()
+//    var contentImages = ["Page0", "Page1", "Page2", "Page3"]
+    var contentImages: Array<String> = Array()
     
     var dicPlace: Dictionary<String, Any>?
     
@@ -25,6 +25,24 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if let dataPlace = self.dicPlace {
+            //            let cctv : NSString = dataPlace["cctv"] as! NSString
+            
+            for i in 1...5
+            {
+                let str = "img"+String(i)
+                if let img: String = dataPlace[str] as? String, false == img.isEmpty {
+                    contentImages.append(UrlStrings.URL_API_PARKINGLOT_IMG + (img as String))
+                }
+            }
+            
+            if contentImages.isEmpty {
+                contentImages.append("Detail_NoImage")
+            }
+            
+        }
+        
         
         self.pageVC = self.instanceTutorialVC(name: "PageVC") as? UIPageViewController
         self.pageVC?.dataSource = self
@@ -48,18 +66,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         
         
-        if let dataPlace = self.dicPlace {
-//            let cctv : NSString = dataPlace["cctv"] as! NSString
-            
-            for i in 1...5
-            {
-                let str = "img"+String(i)
-                if let img: String = dataPlace[str] as? String, false == img.isEmpty {
-                    arrContentImages.append(UrlStrings.URL_API_PARKINGLOT_IMG + (img as String))
-                }
-            }
-            
-        }
+        
         
         /*
         if let path = user["profile_path"] as? String {
@@ -87,7 +94,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     }
     
     func getContentVC(atIndex idx: Int) -> UIViewController? {
-        guard self.contentTitles.count >= idx && self.contentTitles.count > 0 else {
+        guard self.contentImages.count >= idx && self.contentImages.count > 0 else {
             return nil
         }
         
@@ -98,6 +105,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
 //        cvc.titleText = self.contentTitles[idx]
         cvc.titleText = ""
         cvc.imageFile = self.contentImages[idx]
+//        cvc.imageFile = self.arrContentImages[idx]
         cvc.pageIndex = idx
         return cvc
     }
@@ -126,7 +134,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         index += 1
         
-        guard index < self.contentTitles.count else {
+        guard index < self.contentImages.count else {
             return nil
         }
         
@@ -136,7 +144,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @available(iOS 6.0, *)
     func presentationCount(for pageViewController: UIPageViewController) -> Int // The number of items reflected in the page indicator.
     {
-        return self.contentTitles.count
+        return self.contentImages.count
     }
     
     @available(iOS 6.0, *)

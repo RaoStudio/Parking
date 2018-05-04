@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class TutorialContentsVC: UIViewController {
 
@@ -25,7 +26,11 @@ class TutorialContentsVC: UIViewController {
         self.titleLabel.text = self.titleText
         self.titleLabel.sizeToFit()
         
-        self.bgImageView.image = UIImage(named: self.imageFile)
+        if imageFile.contains(UrlStrings.URL_API_PARKINGLOT_IMG) {
+            self.bgImageView.sd_setImage(with: URL(string: self.imageFile), placeholderImage: UIImage(named: "Detail_NoImage"))
+        } else {
+            self.bgImageView.image = UIImage(named: self.imageFile)
+        }
     }
 
     override func didReceiveMemoryWarning() {

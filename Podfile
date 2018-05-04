@@ -8,4 +8,5 @@ target 'ParkingFriends' do
     pod 'GoogleMaps'
     pod 'GooglePlaces'
     pod 'SwiftyJSON'
+    pod 'SDWebImage', '~> 4.0'
 end
