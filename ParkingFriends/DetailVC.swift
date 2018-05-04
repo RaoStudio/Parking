@@ -52,18 +52,18 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         self.pageVC?.view.frame.origin = CGPoint(x: 0, y: 0)
         self.pageVC?.view.frame.size.width = self.view.frame.width
-        self.pageVC?.view.frame.size.height = 150
+        self.pageVC?.view.frame.size.height = 230
         
         self.addChildViewController(self.pageVC)
         self.view.addSubview(self.pageVC.view)
         self.pageVC.didMove(toParentViewController: self)
         
         
+        
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.currentPageIndicatorTintColor = UIColor.black
         pageControl.backgroundColor = UIColor.white
-        
         
         
         
@@ -87,6 +87,17 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         lbl_Test.text = dicPlace?.description
         self.view.bringSubview(toFront: self.btnExit)
     }
+    
+    /*
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        for subView in view.subviews {
+            if  subView is  UIPageControl {
+                subView.frame.origin.y = self.view.frame.size.height - 164
+            }
+        }
+    }
+     */
 
     @IBAction func onExit(_ sender: Any) {
 //        self.dismiss(animated: true, completion: nil)
