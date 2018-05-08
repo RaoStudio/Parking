@@ -13,7 +13,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var lbl_Test: UILabel!
     @IBOutlet var btnExit: UIButton!
     
-    var pageVC: UIPageViewController!
+//    var pageVC: UIPageViewController!
+    var pageVC: RaoPageVC!
     
     var contentTitles = ["STEP 1", "STEP 2","STEP 3","STEP 4"]
 //    var contentImages = ["Page0", "Page1", "Page2", "Page3"]
@@ -44,7 +45,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         }
         
         
-        self.pageVC = self.instanceTutorialVC(name: "PageVC") as? UIPageViewController
+//        self.pageVC = self.instanceTutorialVC(name: "PageVC") as? UIPageViewController
+        self.pageVC = self.instanceTutorialVC(name: "PageVC") as? RaoPageVC
         self.pageVC?.dataSource = self
         
         let startContentVC = self.getContentVC(atIndex: 0)
@@ -52,19 +54,19 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         self.pageVC?.view.frame.origin = CGPoint(x: 0, y: 0)
         self.pageVC?.view.frame.size.width = self.view.frame.width
-        self.pageVC?.view.frame.size.height = 230
+        self.pageVC?.view.frame.size.height = 200
         
         self.addChildViewController(self.pageVC)
         self.view.addSubview(self.pageVC.view)
         self.pageVC.didMove(toParentViewController: self)
         
         
-        
+        /*
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.currentPageIndicatorTintColor = UIColor.black
         pageControl.backgroundColor = UIColor.white
-        
+        */
         
         
         
@@ -98,6 +100,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         }
     }
      */
+    
 
     @IBAction func onExit(_ sender: Any) {
 //        self.dismiss(animated: true, completion: nil)

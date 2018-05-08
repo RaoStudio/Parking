@@ -13,7 +13,7 @@
         <!--Master Controller-->
         <scene sceneID="r8M-ww-fpL">
             <objects>
-                <viewController storyboardIdentifier="MasterVC" title="Master Controller" id="5ZA-SY-TXd" customClass="TutorialMasterVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MasterVC" title="Master Controller" id="5ZA-SY-TXd" customClass="TutorialMasterVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GNN-fq-d35">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="-1444" y="-141"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Rao PageVC-->
         <scene sceneID="W2b-RS-ODa">
             <objects>
-                <pageViewController storyboardIdentifier="PageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="B2D-ai-WJU" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="B2D-ai-WJU" customClass="RaoPageVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t5b-bt-cCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-647" y="-74"/>
@@ -53,7 +53,7 @@
         <!--Contents Controller-->
         <scene sceneID="Wtc-de-nWA">
             <objects>
-                <viewController storyboardIdentifier="ContentsVC" title="Contents Controller" id="Rhb-0P-52b" customClass="TutorialContentsVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentsVC" title="Contents Controller" id="Rhb-0P-52b" customClass="TutorialContentsVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vQQ-UL-34W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
