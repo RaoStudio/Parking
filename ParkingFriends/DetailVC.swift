@@ -54,7 +54,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         self.pageVC?.view.frame.origin = CGPoint(x: 0, y: 0)
         self.pageVC?.view.frame.size.width = self.view.frame.width
-        self.pageVC?.view.frame.size.height = 200
+        self.pageVC?.view.frame.size.height = 180
         
         self.addChildViewController(self.pageVC)
         self.view.addSubview(self.pageVC.view)
