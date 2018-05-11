@@ -44,6 +44,32 @@ extension UIViewController {
     }
 }
 
+extension UIView {
+    
+    func dictionaryOfNames(arr:UIView...) -> Dictionary<String,UIView> {
+        var d = Dictionary<String,UIView>()
+        for (ix,v) in arr.enumerated(){
+            d["v\(ix+1)"] = v
+        }
+        return d
+    }
+    
+    func addConstraintForFullsizeWithSubView(subview: UIView) {
+        /* Obj-C
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[subview]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(subview)]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[subview]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(subview)]];
+        */
+        
+        
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v1]|", options: [], metrics: nil, views: dictionaryOfNames(arr: subview)))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v1]|", options: [], metrics: nil, views: dictionaryOfNames(arr: subview)))
+//        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[subview]|", options: [], metrics: nil, views: ["subview": subview as UIView]))
+//        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[subview]|", options: [], metrics: nil, views: ["subview": subview as UIView]))
+        
+        
+    }
+}
+
 class TokenUtils {
     
     var AuthorizationHeader : HTTPHeaders? {

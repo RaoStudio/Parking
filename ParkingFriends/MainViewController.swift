@@ -141,18 +141,29 @@ class MainViewController: UIViewController {
         
         Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
             
+            
+            
             guard response.result.isSuccess else {
                 print("\(url) : \(String(describing: response.result.error))")
+                
+                self.mapView.clear()
+                
+                if self.circle != nil {
+                    self.circle.position = coordinate
+                    self.circle.map = self.mapView
+                }
                 
                 return
             }
             
-            self.mapView.clear()
             //*
+            self.mapView.clear()
+            
             if self.circle != nil {
                 self.circle.position = coordinate
             }
             //*/
+            
             if let value = response.result.value {
                 print("RefreshParkingLot JSON = \(value)")
                 

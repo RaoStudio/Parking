@@ -109,6 +109,13 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 self.btnCCTV.isHidden = true
             }
         }
+        
+        /*
+        let testView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        testView.backgroundColor = UIColor.red
+        self.view.addSubview(testView)
+        self.view.addConstraintForFullsizeWithSubView(subview: testView)
+         */
     }
     
     /*
