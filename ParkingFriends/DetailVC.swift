@@ -13,6 +13,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var lbl_Test: UILabel!
     @IBOutlet var btnExit: UIButton!
     
+    @IBOutlet var btnSensor: RoundButton!
+    @IBOutlet var btnCCTV: RoundButton!
+    
+    
 //    var pageVC: UIPageViewController!
     var pageVC: RaoPageVC!
     
@@ -88,6 +92,16 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     override func viewWillAppear(_ animated: Bool) {
         lbl_Test.text = dicPlace?.description
         self.view.bringSubview(toFront: self.btnExit)
+        
+        if let dataPlace = self.dicPlace {
+            if let partner : NSString = dataPlace["partner"] as? NSString, partner.isEqual(to: "1") {
+                self.view.bringSubview(toFront: self.btnSensor)
+               
+                if let cctv: NSString = dataPlace["cctv"] as? NSString, cctv.isEqual(to: "1") {
+                    self.view.bringSubview(toFront: self.btnCCTV)
+                }
+            }
+        }
     }
     
     /*

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		294E5F9C20A53CEE00CF9D03 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E5F9B20A53CEE00CF9D03 /* RoundButton.swift */; };
 		29559EF4204CE28E000EB12B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29559EF3204CE28E000EB12B /* AppDelegate.swift */; };
 		29559EF6204CE28E000EB12B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29559EF5204CE28E000EB12B /* ViewController.swift */; };
 		29559EF9204CE28E000EB12B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29559EF7204CE28E000EB12B /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		294E5F9B20A53CEE00CF9D03 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		29559EF0204CE28E000EB12B /* ParkingFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29559EF3204CE28E000EB12B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29559EF5204CE28E000EB12B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				29A0FFDB207B429200B13638 /* UrlStrings.swift */,
 				2971A3EE209ADD8200C1AD84 /* Utils.swift */,
+				294E5F9B20A53CEE00CF9D03 /* RoundButton.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				294E5F9C20A53CEE00CF9D03 /* RoundButton.swift in Sources */,
 				29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */,
 				2983BD9A20A16BA60033035D /* RaoPageVC.swift in Sources */,
 				29AA1266207DA06A00F4648C /* GoogleDataProvider.swift in Sources */,

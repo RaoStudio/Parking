@@ -86,13 +86,53 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHX-4N-vxn" customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
+                                <rect key="frame" x="305" y="35" width="50" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="9qP-qc-brk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="센서">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNu-9k-91x" customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
+                                <rect key="frame" x="245" y="35" width="50" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Us5-bB-oQD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="CCTV">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fHX-4N-vxn" firstAttribute="leading" secondItem="mNu-9k-91x" secondAttribute="trailing" constant="10" id="3uK-BI-X2o"/>
+                            <constraint firstItem="mNu-9k-91x" firstAttribute="top" secondItem="fHX-4N-vxn" secondAttribute="top" id="K7t-fC-QZp"/>
+                            <constraint firstItem="fHX-4N-vxn" firstAttribute="top" secondItem="BHG-6p-Eta" secondAttribute="top" constant="15" id="WPt-kB-tW3"/>
+                            <constraint firstItem="BHG-6p-Eta" firstAttribute="trailing" secondItem="fHX-4N-vxn" secondAttribute="trailing" constant="20" id="qUN-0G-EzM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BHG-6p-Eta"/>
                     </view>
                     <navigationItem key="navigationItem" id="zo9-bo-QJk"/>
                     <connections>
+                        <outlet property="btnCCTV" destination="mNu-9k-91x" id="naX-kp-RAg"/>
                         <outlet property="btnExit" destination="n2y-kF-x21" id="F0h-QG-Ijd"/>
+                        <outlet property="btnSensor" destination="fHX-4N-vxn" id="Oca-Xw-cUT"/>
                         <outlet property="lbl_Test" destination="sKG-gy-u1l" id="Upc-4I-4KA"/>
                     </connections>
                 </viewController>
