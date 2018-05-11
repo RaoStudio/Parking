@@ -95,11 +95,18 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         if let dataPlace = self.dicPlace {
             if let partner : NSString = dataPlace["partner"] as? NSString, partner.isEqual(to: "1") {
+                self.btnSensor.isHidden = false
                 self.view.bringSubview(toFront: self.btnSensor)
                
                 if let cctv: NSString = dataPlace["cctv"] as? NSString, cctv.isEqual(to: "1") {
+                    self.btnCCTV.isHidden = false
                     self.view.bringSubview(toFront: self.btnCCTV)
+                } else {
+                    self.btnCCTV.isHidden = true
                 }
+            } else {
+                self.btnSensor.isHidden = true
+                self.btnCCTV.isHidden = true
             }
         }
     }
