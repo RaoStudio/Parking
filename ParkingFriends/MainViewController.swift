@@ -316,37 +316,9 @@ class MainViewController: UIViewController {
         }
         
     }
-}
-
-
-// MARK: - GMSMapViewDelegate
-extension MainViewController: GMSMapViewDelegate {
-    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-        reverseGeocodeCoordinate(position.target)
-        
-        
-        self.mapView.clear()
-        
-        RefreshParkingLot(position.target, url: UrlStrings.URL_API_PARKINGLOT_FETCH)
-        
-        //*
-        if circle == nil {
-            circle = GMSCircle(position: self.mapView.camera.target, radius: Double(getIntFromRadius()))
-            //        circle.fillColor = UIColor.redColor().colorWithAlphaComponent(0.5)
-            circle.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.05)
-            circle.map = self.mapView
-            circle.position = position.target
-        } else {
-            circle.position = position.target
-            circle.radius = Double(getIntFromRadius())
-        }
-        //*/
-    }
     
-    func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
+    func mapViewPositon(coordinate: CLLocationCoordinate2D) {
         reverseGeocodeCoordinate(coordinate)
-        
-        self.mapView.clear()
         
         RefreshParkingLot(coordinate, url: UrlStrings.URL_API_PARKINGLOT_FETCH)
         
@@ -363,6 +335,60 @@ extension MainViewController: GMSMapViewDelegate {
             circle.radius = Double(getIntFromRadius())
         }
     }
+}
+
+
+// MARK: - GMSMapViewDelegate
+extension MainViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        
+        self.mapViewPositon(coordinate: position.target)
+        /*
+        reverseGeocodeCoordinate(position.target)
+        
+//        self.mapView.clear()
+        
+        RefreshParkingLot(position.target, url: UrlStrings.URL_API_PARKINGLOT_FETCH)
+        
+        if circle == nil {
+            circle = GMSCircle(position: self.mapView.camera.target, radius: Double(getIntFromRadius()))
+            //        circle.fillColor = UIColor.redColor().colorWithAlphaComponent(0.5)
+            circle.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.05)
+            circle.map = self.mapView
+            circle.position = position.target
+        } else {
+            circle.position = position.target
+            circle.radius = Double(getIntFromRadius())
+        }
+        */
+    }
+    
+    func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
+        
+        self.mapViewPositon(coordinate: coordinate)
+        /*
+        reverseGeocodeCoordinate(coordinate)
+        
+//        self.mapView.clear()
+        
+        RefreshParkingLot(coordinate, url: UrlStrings.URL_API_PARKINGLOT_FETCH)
+        
+        mapView.camera = GMSCameraPosition(target: coordinate, zoom: self.mapView.camera.zoom , bearing: 0, viewingAngle: 0)
+        
+        if circle == nil {
+            circle = GMSCircle(position: self.mapView.camera.target, radius: Double(getIntFromRadius()))
+            //        circle.fillColor = UIColor.redColor().colorWithAlphaComponent(0.5)
+            circle.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.05)
+            circle.map = self.mapView
+            circle.position = coordinate
+        } else {
+            circle.position = coordinate
+            circle.radius = Double(getIntFromRadius())
+        }
+         */
+    }
+    
+    
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         addressLabel.lock()
