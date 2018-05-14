@@ -21,6 +21,15 @@ enum RadiusType: String {
     static let allValues = [fiveH, oneT, fiveT, tenT]
 }
 
+enum RadiusValue: Int {
+    case fiveH = 500
+    case oneT = 1000
+    case fiveT = 5000
+    case tenT = 10000
+    
+    static let allValues = [fiveH, oneT, fiveT, tenT]
+}
+
 class MainViewController: UIViewController {
     
     @IBOutlet var mapView: GMSMapView!
@@ -130,6 +139,22 @@ class MainViewController: UIViewController {
     
     func radiusPicker(strRadius: String) {
         uinfo.radius = strRadius
+        
+        RefreshParkingLot(self.mapView.camera.target, url: UrlStrings.URL_API_PARKINGLOT_FETCH)
+    }
+    
+    func getIntFromRadius() -> Int {
+        let strRadius = uinfo.radius ?? RadiusType.fiveH.rawValue
+        
+        var nRadius = RadiusValue.fiveH.rawValue
+        
+        for (ix,v) in RadiusType.allValues.enumerated(){
+            if strRadius == v.rawValue {
+                nRadius = RadiusValue.allValues[ix].rawValue
+            }
+        }
+        
+        return nRadius
     }
     
     
@@ -196,9 +221,11 @@ class MainViewController: UIViewController {
     
     func RefreshParkingLot(_ coordinate: CLLocationCoordinate2D, url: String, bMarkerRemake: Bool = true) {
         
+        let strRadius = String(describing: getIntFromRadius())
+        
         let param = ["latitude" : coordinate.latitude,
             "longitude" : coordinate.longitude,
-            "radius" : "1000",
+            "radius" : strRadius,
             "type" : "15"] as [String : Any]
 
         
@@ -216,6 +243,7 @@ class MainViewController: UIViewController {
                 
                 if self.circle != nil {
                     self.circle.position = coordinate
+                    self.circle.radius = Double(self.getIntFromRadius())
                     self.circle.map = self.mapView
                 }
                 
@@ -227,6 +255,7 @@ class MainViewController: UIViewController {
             
             if self.circle != nil {
                 self.circle.position = coordinate
+                self.circle.radius = Double(self.getIntFromRadius())
             }
             //*/
             
@@ -302,13 +331,14 @@ extension MainViewController: GMSMapViewDelegate {
         
         //*
         if circle == nil {
-            circle = GMSCircle(position: self.mapView.camera.target, radius: 1000)
+            circle = GMSCircle(position: self.mapView.camera.target, radius: Double(getIntFromRadius()))
             //        circle.fillColor = UIColor.redColor().colorWithAlphaComponent(0.5)
             circle.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.05)
             circle.map = self.mapView
             circle.position = position.target
         } else {
             circle.position = position.target
+            circle.radius = Double(getIntFromRadius())
         }
         //*/
     }
@@ -323,13 +353,14 @@ extension MainViewController: GMSMapViewDelegate {
         mapView.camera = GMSCameraPosition(target: coordinate, zoom: self.mapView.camera.zoom , bearing: 0, viewingAngle: 0)
         
         if circle == nil {
-            circle = GMSCircle(position: self.mapView.camera.target, radius: 1000)
+            circle = GMSCircle(position: self.mapView.camera.target, radius: Double(getIntFromRadius()))
             //        circle.fillColor = UIColor.redColor().colorWithAlphaComponent(0.5)
             circle.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.05)
             circle.map = self.mapView
             circle.position = coordinate
         } else {
             circle.position = coordinate
+            circle.radius = Double(getIntFromRadius())
         }
     }
     
