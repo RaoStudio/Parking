@@ -28,6 +28,7 @@
 		29AA1262207D9FF400F4648C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA125E207D9FF400F4648C /* UIViewExtension.swift */; };
 		29AA1266207DA06A00F4648C /* GoogleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA1264207DA06A00F4648C /* GoogleDataProvider.swift */; };
 		29AA1267207DA06A00F4648C /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA1265207DA06A00F4648C /* GooglePlace.swift */; };
+		29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */; };
 		5AE7C80E869B4337F04B6493 /* Pods_ParkingFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA1467F876F3F1665825730 /* Pods_ParkingFriends.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		29AA125E207D9FF400F4648C /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		29AA1264207DA06A00F4648C /* GoogleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleDataProvider.swift; sourceTree = "<group>"; };
 		29AA1265207DA06A00F4648C /* GooglePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
+		29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 		5692CC7AA31AE36E141C127A /* Pods-ParkingFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingFriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingFriends/Pods-ParkingFriends.release.xcconfig"; sourceTree = "<group>"; };
 		BBA1467F876F3F1665825730 /* Pods_ParkingFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BC42507866129D0B36DF16 /* Pods-ParkingFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingFriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingFriends/Pods-ParkingFriends.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		29559EF2204CE28E000EB12B /* ParkingFriends */ = {
 			isa = PBXGroup;
 			children = (
+				29E8F25A20A95EDA004CE3F2 /* Manager */,
 				2971A3F2209AECF100C1AD84 /* Tutorial */,
 				29AA1263207DA06A00F4648C /* Model */,
 				29AA125A207D9FF400F4648C /* Views */,
@@ -149,6 +152,14 @@
 				29AA1265207DA06A00F4648C /* GooglePlace.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		29E8F25A20A95EDA004CE3F2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		4C7DE14E79F712DCC2BE1421 /* Frameworks */ = {
@@ -320,6 +331,7 @@
 				29559EF6204CE28E000EB12B /* ViewController.swift in Sources */,
 				2971A3F5209AED1300C1AD84 /* TutorialContentsVC.swift in Sources */,
 				29559EF4204CE28E000EB12B /* AppDelegate.swift in Sources */,
+				29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */,
 				29559EFC204CE28E000EB12B /* ParkingFriends.xcdatamodeld in Sources */,
 				29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */,
 				2971A3F6209AED1300C1AD84 /* TutorialMasterVC.swift in Sources */,

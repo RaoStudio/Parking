@@ -12,6 +12,15 @@ import SideMenu
 import GoogleMaps
 import Alamofire
 
+enum RadiusType: String {
+    case fiveH = "500m"
+    case oneT = "1Km"
+    case fiveT = "5Km"
+    case tenT = "10km"
+    
+    static let allValues = [fiveH, oneT, fiveT, tenT]
+}
+
 class MainViewController: UIViewController {
     
     @IBOutlet var mapView: GMSMapView!
@@ -25,6 +34,9 @@ class MainViewController: UIViewController {
     private let searchRadius: Double = 1000
     
     var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
+    
+    
+    let uinfo = UserInfoManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +81,10 @@ class MainViewController: UIViewController {
     
     
     // MARK: - Action
-    @IBAction func onBtnDistance(_ sender: UIButton) {
+    @IBAction func onBtnRadius(_ sender: UIButton) {
+        
+        let strRadius = uinfo.radius ?? RadiusType.fiveH.rawValue
+        
         let select = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
         
         /*
@@ -82,27 +97,39 @@ class MainViewController: UIViewController {
          */
         
         //*
-        select.addAction(UIAlertAction(title: "500m", style: UIAlertActionStyle.default, handler: { (_) in
-            
+        select.addAction(UIAlertAction(title: RadiusType.fiveH.rawValue, style: UIAlertActionStyle.default, handler: { (_) in
+            self.radiusPicker(strRadius: RadiusType.fiveH.rawValue)
         }))
         //*/
         
-        select.addAction(UIAlertAction(title: "1Km", style: UIAlertActionStyle.default, handler: { (_) in
-            
+        select.addAction(UIAlertAction(title: RadiusType.oneT.rawValue, style: UIAlertActionStyle.default, handler: { (_) in
+            self.radiusPicker(strRadius: RadiusType.oneT.rawValue)
         }))
-        select.addAction(UIAlertAction(title: "5Km", style: UIAlertActionStyle.default, handler: { (_) in
-            
+        select.addAction(UIAlertAction(title: RadiusType.fiveT.rawValue, style: UIAlertActionStyle.default, handler: { (_) in
+            self.radiusPicker(strRadius: RadiusType.fiveT.rawValue)
         }))
-        select.addAction(UIAlertAction(title: "10Km", style: UIAlertActionStyle.default, handler: { (_) in
-            
+        select.addAction(UIAlertAction(title: RadiusType.tenT.rawValue, style: UIAlertActionStyle.default, handler: { (_) in
+            self.radiusPicker(strRadius: RadiusType.tenT.rawValue)
         }))
         
         select.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (_) in
             self.dismiss(animated: true, completion: nil)
         }))
         
+        
+        for (ix,v) in RadiusType.allValues.enumerated(){
+            if strRadius == v.rawValue {
+                select.actions[ix].setTextColor(UIColor.red)
+            }
+        }
+        
+        
         self.present(select, animated: true, completion: nil)
         
+    }
+    
+    func radiusPicker(strRadius: String) {
+        uinfo.radius = strRadius
     }
     
     
