@@ -20,6 +20,12 @@ struct Platform {
     }()
 }
 
+extension UIAlertAction {
+    func setTextColor(_ color: UIColor) {
+        self.setValue(color, forKey: "titleTextColor")
+    }
+}
+
 
 extension UIViewController {
     var tutorialSB : UIStoryboard {

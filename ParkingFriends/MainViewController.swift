@@ -67,6 +67,45 @@ class MainViewController: UIViewController {
     }
     
     
+    
+    // MARK: - Action
+    @IBAction func onBtnDistance(_ sender: UIButton) {
+        let select = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        
+        /*
+        let act = UIAlertAction(title: "500m", style: UIAlertActionStyle.default) { (_) in
+            
+        }
+        act.setTextColor(UIColor.red)
+        
+        select.addAction(act)
+         */
+        
+        //*
+        select.addAction(UIAlertAction(title: "500m", style: UIAlertActionStyle.default, handler: { (_) in
+            
+        }))
+        //*/
+        
+        select.addAction(UIAlertAction(title: "1Km", style: UIAlertActionStyle.default, handler: { (_) in
+            
+        }))
+        select.addAction(UIAlertAction(title: "5Km", style: UIAlertActionStyle.default, handler: { (_) in
+            
+        }))
+        select.addAction(UIAlertAction(title: "10Km", style: UIAlertActionStyle.default, handler: { (_) in
+            
+        }))
+        
+        select.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(select, animated: true, completion: nil)
+        
+    }
+    
+    
     // MARK: - Side
     fileprivate func setupSideMenu() {
         SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController;
