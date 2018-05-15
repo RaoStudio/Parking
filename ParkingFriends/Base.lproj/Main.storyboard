@@ -65,6 +65,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="ayX-mu-jII" id="4Dv-4r-dkH"/>
+                        <outlet property="btnRadius" destination="4OL-ZZ-hAG" id="Ycq-CC-2yO"/>
                         <outlet property="mapView" destination="CWw-to-GRS" id="TMI-NV-ivN"/>
                     </connections>
                 </viewController>

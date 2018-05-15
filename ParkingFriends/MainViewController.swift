@@ -34,6 +34,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet var mapView: GMSMapView!
     @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var btnRadius: RoundButton!
     
     var circle: GMSCircle!
     
@@ -60,7 +61,7 @@ class MainViewController: UIViewController {
         mapView.delegate = self
         
         
-        
+        btnRadius.setTitle(uinfo.radius ?? RadiusType.fiveH.rawValue, for: UIControlState.normal)
         
         
     }
@@ -107,18 +108,18 @@ class MainViewController: UIViewController {
         
         //*
         select.addAction(UIAlertAction(title: RadiusType.fiveH.rawValue, style: UIAlertActionStyle.default, handler: { (_) in
-            self.radiusPicker(strRadius: RadiusType.fiveH.rawValue)
+            self.radiusPicker(strRadius: RadiusType.fiveH.rawValue, sender: sender)
         }))
         //*/
         
         select.addAction(UIAlertAction(title: RadiusType.oneT.rawValue, style: UIAlertActionStyle.default, handler: { (_) in
-            self.radiusPicker(strRadius: RadiusType.oneT.rawValue)
+            self.radiusPicker(strRadius: RadiusType.oneT.rawValue, sender: sender)
         }))
         select.addAction(UIAlertAction(title: RadiusType.fiveT.rawValue, style: UIAlertActionStyle.default, handler: { (_) in
-            self.radiusPicker(strRadius: RadiusType.fiveT.rawValue)
+            self.radiusPicker(strRadius: RadiusType.fiveT.rawValue, sender: sender)
         }))
         select.addAction(UIAlertAction(title: RadiusType.tenT.rawValue, style: UIAlertActionStyle.default, handler: { (_) in
-            self.radiusPicker(strRadius: RadiusType.tenT.rawValue)
+            self.radiusPicker(strRadius: RadiusType.tenT.rawValue, sender: sender)
         }))
         
         select.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (_) in
@@ -137,8 +138,11 @@ class MainViewController: UIViewController {
         
     }
     
-    func radiusPicker(strRadius: String) {
+    func radiusPicker(strRadius: String, sender: UIButton? = nil) {
+//    func radiusPicker(strRadius: String) {
         uinfo.radius = strRadius
+        
+        sender?.setTitle(strRadius, for: UIControlState.normal)
         
         RefreshParkingLot(self.mapView.camera.target, url: UrlStrings.URL_API_PARKINGLOT_FETCH)
     }
