@@ -91,6 +91,16 @@ class MainViewController: UIViewController {
     
     
     // MARK: - Action
+    
+    @IBAction func onBtnTimePicker(_ sender: Any) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "TimePickerVC") as? TimePickerVC else {
+            return
+        }
+        
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func onBtnRadius(_ sender: UIButton) {
         
         let strRadius = uinfo.radius ?? RadiusType.fiveH.rawValue

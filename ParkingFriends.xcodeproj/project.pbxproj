@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */; };
 		294E5F9C20A53CEE00CF9D03 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E5F9B20A53CEE00CF9D03 /* RoundButton.swift */; };
 		29559EF4204CE28E000EB12B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29559EF3204CE28E000EB12B /* AppDelegate.swift */; };
 		29559EF6204CE28E000EB12B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29559EF5204CE28E000EB12B /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerVC.swift; sourceTree = "<group>"; };
 		294E5F9B20A53CEE00CF9D03 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		29559EF0204CE28E000EB12B /* ParkingFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29559EF3204CE28E000EB12B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				295FF12120688AA2000CBF15 /* MainViewController.swift */,
 				2960237F2091A65600481134 /* DetailVC.swift */,
 				2983BD9920A16BA60033035D /* RaoPageVC.swift */,
+				291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */,
 			);
 			path = ParkingFriends;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				296023802091A65600481134 /* DetailVC.swift in Sources */,
 				29AA1267207DA06A00F4648C /* GooglePlace.swift in Sources */,
 				29AA1261207D9FF400F4648C /* PlaceMarker.swift in Sources */,
+				291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */,
 				29559EF6204CE28E000EB12B /* ViewController.swift in Sources */,
 				2971A3F5209AED1300C1AD84 /* TutorialContentsVC.swift in Sources */,
 				29559EF4204CE28E000EB12B /* AppDelegate.swift in Sources */,
