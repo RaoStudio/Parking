@@ -105,7 +105,6 @@
 				29559EF3204CE28E000EB12B /* AppDelegate.swift */,
 				29559EF5204CE28E000EB12B /* ViewController.swift */,
 				29559EF7204CE28E000EB12B /* Main.storyboard */,
-				2971A3F0209AECC400C1AD84 /* Tutorial.storyboard */,
 				29559EFD204CE28E000EB12B /* Assets.xcassets */,
 				29559EFF204CE28E000EB12B /* LaunchScreen.storyboard */,
 				29559F02204CE28E000EB12B /* Info.plist */,
@@ -123,6 +122,7 @@
 			children = (
 				2971A3F3209AED1200C1AD84 /* TutorialContentsVC.swift */,
 				2971A3F4209AED1300C1AD84 /* TutorialMasterVC.swift */,
+				2971A3F0209AECC400C1AD84 /* Tutorial.storyboard */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
