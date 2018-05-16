@@ -103,6 +103,17 @@ class MainViewController: UIViewController {
     
     
     // MARK: - Action
+     
+    @IBAction func onBtnParkingLot(_ sender: Any) {
+        let sb = UIStoryboard(name: "ParkingLot", bundle: Bundle.main)
+        guard let vc = sb.instantiateViewController(withIdentifier: "MasterVC") as? ParkingLotVC else {
+            return
+        }
+        
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     @IBAction func onBtnTimePicker(_ sender: Any) {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "TimePickerVC") as? TimePickerVC else {

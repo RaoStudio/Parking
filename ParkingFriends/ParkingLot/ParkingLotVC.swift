@@ -14,6 +14,8 @@ class ParkingLotVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.navigationItem.title = "주차장목록"
     }
 
     override func didReceiveMemoryWarning() {
