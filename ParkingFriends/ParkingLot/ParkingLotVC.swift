@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TabPageViewController
 
 class ParkingLotVC: UIViewController {
 
@@ -16,6 +17,25 @@ class ParkingLotVC: UIViewController {
         // Do any additional setup after loading the view.
         
         self.navigationItem.title = "주차장목록"
+        
+        
+        let tabPageVC = TabPageViewController.create()
+        let vc1 = UIViewController()
+        vc1.view.backgroundColor = UIColor.white
+        let vc2 = UIViewController()
+        vc2.view.backgroundColor = UIColor.blue
+        
+        tabPageVC.tabItems = [(vc1, "거리순"), (vc2, "요금순")]
+        tabPageVC.option.tabWidth = view.frame.width / CGFloat(tabPageVC.tabItems.count)
+//        tabPageVC.option.hidesTopViewOnSwipeType = .all
+        
+//        self.navigationController?.pushViewController(tabPageVC, animated: true)
+        
+        
+        self.addChildViewController(tabPageVC)
+        self.view.addSubview(tabPageVC.view)
+        tabPageVC.didMove(toParentViewController: self)
+        
     }
 
     override func didReceiveMemoryWarning() {

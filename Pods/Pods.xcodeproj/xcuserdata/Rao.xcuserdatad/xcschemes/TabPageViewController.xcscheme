@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B10F0FB55B8D86DC151B403F81F2F3DE'
-               BlueprintName = 'SDWebImage'
+               BlueprintIdentifier = 'BDAE817806BB05BF954038B92173E9AC'
+               BlueprintName = 'TabPageViewController'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SDWebImage.framework'>
+               BuildableName = 'TabPageViewController.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

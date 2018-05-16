@@ -12,6 +12,7 @@ PODS:
   - SDWebImage/Core (4.2.3)
   - SideMenu (3.1.5)
   - SwiftyJSON (4.0.0)
+  - TabPageViewController (0.2.7)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - SDWebImage (~> 4.0)
   - SideMenu
   - SwiftyJSON
+  - TabPageViewController
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -28,7 +30,8 @@ SPEC CHECKSUMS:
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  TabPageViewController: c37a1257a50c2b50712dde61bf499768eee95b67
 
-PODFILE CHECKSUM: 7fe52d64742bf7594068164ee0a09b47d14f4ec3
+PODFILE CHECKSUM: 656b853cf16f0735d56027c211461278c025dcbe
 
 COCOAPODS: 1.4.0

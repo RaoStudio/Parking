@@ -9,4 +9,5 @@ target 'ParkingFriends' do
     pod 'GooglePlaces'
     pod 'SwiftyJSON'
     pod 'SDWebImage', '~> 4.0'
+    pod 'TabPageViewController'
 end
