@@ -48,6 +48,8 @@ class MainViewController: UIViewController {
     
     let uinfo = UserInfoManager()
     
+    var bStart : Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -64,6 +66,17 @@ class MainViewController: UIViewController {
         btnRadius.setTitle(uinfo.radius ?? RadiusType.fiveH.rawValue, for: UIControlState.normal)
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let ud = UserDefaults.standard
+        if ud.bool(forKey: UserInfoKey.tutorial) == false && bStart {
+            let vc = self.instanceTutorialVC(name: "MasterVC")
+            self.present(vc!, animated: false, completion: nil)
+            bStart = false
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,7 +100,6 @@ class MainViewController: UIViewController {
         marker.snippet = "Australia"
         marker.map = mapView
     }
-    
     
     
     // MARK: - Action

@@ -22,6 +22,7 @@
 		2971A3F5209AED1300C1AD84 /* TutorialContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971A3F3209AED1200C1AD84 /* TutorialContentsVC.swift */; };
 		2971A3F6209AED1300C1AD84 /* TutorialMasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971A3F4209AED1300C1AD84 /* TutorialMasterVC.swift */; };
 		2983BD9A20A16BA60033035D /* RaoPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983BD9920A16BA60033035D /* RaoPageVC.swift */; };
+		29875E5320ABC81F0029E4BD /* ParkingLotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29875E5220ABC81F0029E4BD /* ParkingLotVC.swift */; };
 		29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0FFDB207B429200B13638 /* UrlStrings.swift */; };
 		29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA125B207D9FF400F4648C /* MarkerInfoView.swift */; };
 		29AA1260207D9FF400F4648C /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29AA125C207D9FF400F4648C /* MarkerInfoView.xib */; };
@@ -51,6 +52,7 @@
 		2971A3F3209AED1200C1AD84 /* TutorialContentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContentsVC.swift; sourceTree = "<group>"; };
 		2971A3F4209AED1300C1AD84 /* TutorialMasterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialMasterVC.swift; sourceTree = "<group>"; };
 		2983BD9920A16BA60033035D /* RaoPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaoPageVC.swift; sourceTree = "<group>"; };
+		29875E5220ABC81F0029E4BD /* ParkingLotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotVC.swift; sourceTree = "<group>"; };
 		29A0FFDB207B429200B13638 /* UrlStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlStrings.swift; sourceTree = "<group>"; };
 		29AA125B207D9FF400F4648C /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
 		29AA125C207D9FF400F4648C /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		29559EF2204CE28E000EB12B /* ParkingFriends */ = {
 			isa = PBXGroup;
 			children = (
+				29875E5120ABC7D50029E4BD /* ParkingLot */,
 				29E8F25A20A95EDA004CE3F2 /* Manager */,
 				2971A3F2209AECF100C1AD84 /* Tutorial */,
 				29AA1263207DA06A00F4648C /* Model */,
@@ -125,6 +128,14 @@
 				2971A3F0209AECC400C1AD84 /* Tutorial.storyboard */,
 			);
 			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		29875E5120ABC7D50029E4BD /* ParkingLot */ = {
+			isa = PBXGroup;
+			children = (
+				29875E5220ABC81F0029E4BD /* ParkingLotVC.swift */,
+			);
+			path = ParkingLot;
 			sourceTree = "<group>";
 		};
 		29A0FFDA207B423A00B13638 /* Util */ = {
@@ -341,6 +352,7 @@
 				2971A3F6209AED1300C1AD84 /* TutorialMasterVC.swift in Sources */,
 				29AA1262207D9FF400F4648C /* UIViewExtension.swift in Sources */,
 				295FF12220688AA2000CBF15 /* MainViewController.swift in Sources */,
+				29875E5320ABC81F0029E4BD /* ParkingLotVC.swift in Sources */,
 				2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

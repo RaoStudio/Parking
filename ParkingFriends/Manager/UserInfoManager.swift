@@ -9,6 +9,7 @@
 import Foundation
 
 struct UserInfoKey {
+    static let tutorial = "TUTORIAL"
     static let radius = "RADIUS"
 }
 
