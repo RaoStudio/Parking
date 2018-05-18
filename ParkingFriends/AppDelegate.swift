@@ -12,7 +12,7 @@ import GoogleMaps
 import GooglePlaces
 
 let googleApiKey = "AIzaSyBwqFR308aG7E02HTXsopaJmGTUbmPFMI8"
-//let googleApiKey = "AIzaSyAfl-hkcs8jDek8A86sGNuhShfeGXWfZvU"
+//let googleApiKey = "AIzaSyDU39SZ_T7pc_0nkKdvfvHO1LS7hxiXZQE"
 
 
 @UIApplicationMain

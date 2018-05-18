@@ -31,6 +31,9 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
 
         // Do any additional setup after loading the view.
         
+        
+        self.navigationItem.title = "주차장 예약"
+        
         if let dataPlace = self.dicPlace {
             //            let cctv : NSString = dataPlace["cctv"] as! NSString
             
@@ -59,6 +62,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         self.pageVC?.view.frame.origin = CGPoint(x: 0, y: 0)
         self.pageVC?.view.frame.size.width = self.view.frame.width
         self.pageVC?.view.frame.size.height = 180
+        
+        if let naviBar = self.navigationController?.navigationBar {
+            self.pageVC?.view.frame.size.height += 44
+        }
         
         self.addChildViewController(self.pageVC)
         self.view.addSubview(self.pageVC.view)

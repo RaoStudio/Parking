@@ -36,6 +36,15 @@
                                     <action selector="onBtnRadius:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kbZ-iJ-9qW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pm-aN-3qW" customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
+                                <rect key="frame" x="307" y="319" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="L"/>
+                                <connections>
+                                    <action selector="onBtnLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jxo-1f-IaS"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-D3-20G" customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
                                 <rect key="frame" x="307" y="400" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -112,7 +121,7 @@
             </objects>
             <point key="canvasLocation" x="456.80000000000001" y="117.39130434782609"/>
         </scene>
-        <!--DetailVC-->
+        <!--Title-->
         <scene sceneID="dXh-MS-Zks">
             <objects>
                 <viewController storyboardIdentifier="DetailVC" id="S92-rk-C8t" customClass="DetailVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,13 +129,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzl-8F-18c">
-                                <rect key="frame" x="23" y="20" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Exit"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2y-kF-x21">
-                                <rect key="frame" x="23" y="20" width="46" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2y-kF-x21">
+                                <rect key="frame" x="23" y="57" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Exit"/>
                                 <connections>
@@ -141,7 +145,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHX-4N-vxn" customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
-                                <rect key="frame" x="305" y="35" width="50" height="28"/>
+                                <rect key="frame" x="305" y="79" width="50" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="9qP-qc-brk"/>
@@ -157,7 +161,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNu-9k-91x" customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
-                                <rect key="frame" x="245" y="35" width="50" height="28"/>
+                                <rect key="frame" x="245" y="79" width="50" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Us5-bB-oQD"/>
@@ -182,7 +186,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BHG-6p-Eta"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zo9-bo-QJk"/>
+                    <navigationItem key="navigationItem" title="Title" id="mJp-Dh-tWP">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="rhK-cm-eml">
+                            <connections>
+                                <action selector="onExit:" destination="S92-rk-C8t" id="SY7-tr-4e9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="btnCCTV" destination="mNu-9k-91x" id="naX-kp-RAg"/>
                         <outlet property="btnExit" destination="n2y-kF-x21" id="F0h-QG-Ijd"/>
@@ -192,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhu-ej-MYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1920.8" y="449.32533733133437"/>
+            <point key="canvasLocation" x="2260" y="449.32533733133437"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="FsK-Oh-jHo">
@@ -249,9 +259,10 @@
         <!--Navigation Controller-->
         <scene sceneID="Lzn-rC-gKC">
             <objects>
-                <navigationController storyboardIdentifier="DetailNavi" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Sc1-rq-x10" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="DetailNavi" automaticallyAdjustsScrollViewInsets="NO" id="Sc1-rq-x10" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SUt-fU-bhm">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -261,9 +272,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4B-Gq-jjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1206" y="449"/>
+            <point key="canvasLocation" x="1544.8" y="448.42578710644682"/>
         </scene>
-        <!--Time PickerVC-->
+        <!--Title-->
         <scene sceneID="iQ2-Hx-TRO">
             <objects>
                 <viewController storyboardIdentifier="TimePickerVC" id="DuC-R0-Kk9" customClass="TimePickerVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
@@ -290,8 +301,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="오늘"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUK-PX-chA">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUK-PX-chA">
+                                <rect key="frame" x="16" y="68" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Exit"/>
                                 <connections>
@@ -302,10 +313,35 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="UhA-p3-ioG"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="ev6-Jo-mqL">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="46V-N1-NM6">
+                            <connections>
+                                <action selector="onBtnExit:" destination="DuC-R0-Kk9" id="dSi-c9-zqB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kl1-1x-WIW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="823"/>
+            <point key="canvasLocation" x="776.79999999999995" y="822.63868065967017"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZiC-J1-d9D">
+            <objects>
+                <navigationController storyboardIdentifier="TimePickerNavi" automaticallyAdjustsScrollViewInsets="NO" id="mhb-Vt-wk5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0tj-a8-k5f">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DuC-R0-Kk9" kind="relationship" relationship="rootViewController" id="n4A-ur-ECw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kxb-L2-Ruf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10" y="839"/>
         </scene>
     </scenes>
     <resources>

@@ -7,6 +7,7 @@ target 'ParkingFriends' do
     pod 'SideMenu'
     pod 'GoogleMaps'
     pod 'GooglePlaces'
+    pod 'GooglePlacePicker'
     pod 'SwiftyJSON'
     pod 'SDWebImage', '~> 4.0'
     pod 'TabPageViewController'

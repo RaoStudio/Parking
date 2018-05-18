@@ -14,6 +14,14 @@ class TimePickerVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.navigationItem.title = "주차시간 선택"
+        
+        /*
+        if let nItem = self.navigationController?.navigationItem {
+            nItem.title = "주차시간 선택"
+        }
+         */
     }
 
     override func didReceiveMemoryWarning() {

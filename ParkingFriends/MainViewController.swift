@@ -130,6 +130,16 @@ class MainViewController: UIViewController {
     
     // MARK: - Action
      
+    @IBAction func onBtnLocation(_ sender: UIButton) {
+        guard let lat = self.mapView.myLocation?.coordinate.latitude,
+            let lng = self.mapView.myLocation?.coordinate.longitude else { return }
+        
+        let camera = GMSCameraPosition.camera(withLatitude: lat ,longitude: lng , zoom: self.mapView.camera.zoom)
+        
+        self.mapView.animate(to: camera)
+    }
+    
+    
     @IBAction func onBtnParkingLot(_ sender: Any) {
         let sb = UIStoryboard(name: "ParkingLot", bundle: Bundle.main)
         guard let vc = sb.instantiateViewController(withIdentifier: "MasterVC") as? ParkingLotVC else {
@@ -142,11 +152,23 @@ class MainViewController: UIViewController {
     
     
     @IBAction func onBtnTimePicker(_ sender: Any) {
+        
+        guard let timePickerNavi = self.storyboard?.instantiateViewController(withIdentifier: "TimePickerNavi") as? UINavigationController else {
+            return
+        }
+        
+//        let timePickerVC = timePickerNavi.topViewController as? TimePickerVC
+        self.present(timePickerNavi, animated: true, completion: nil)
+        
+        
+        
+        /*
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "TimePickerVC") as? TimePickerVC else {
             return
         }
         
         self.present(vc, animated: true, completion: nil)
+         */
     }
     
     
@@ -522,7 +544,7 @@ extension MainViewController: CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         
         mapView.isMyLocationEnabled = true
-        mapView.settings.myLocationButton = true
+//        mapView.settings.myLocationButton = true      // Default Button
     }
     
     /*
