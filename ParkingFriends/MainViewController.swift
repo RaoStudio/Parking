@@ -85,6 +85,13 @@ class MainViewController: UIViewController {
         searchController?.searchBar.sizeToFit()
         navigationItem.titleView = searchController?.searchBar
         
+        /*
+        let defaultTextAttribs = [NSAttributedStringKey.font.rawValue: UIFont.boldSystemFont(ofSize: 15.0), NSAttributedStringKey.foregroundColor.rawValue:UIColor.red]
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = defaultTextAttribs
+        */
+        
+        searchController?.searchBar.placeholder = "어느 지역의 주차장을 찾고 계신가요?"
+        
         // When UISearchController presents the results view, present it in
         // this view controller, not one further up the chain.
         definesPresentationContext = true
@@ -341,6 +348,7 @@ class MainViewController: UIViewController {
             if self.circle != nil {
                 self.circle.position = coordinate
                 self.circle.radius = Double(self.getIntFromRadius())
+                self.circle.map = self.mapView
             }
             //*/
             
@@ -404,6 +412,8 @@ class MainViewController: UIViewController {
     
     func mapViewPositon(coordinate: CLLocationCoordinate2D) {
         reverseGeocodeCoordinate(coordinate)
+        
+        self.mapView.clear()
         
         RefreshParkingLot(coordinate, url: UrlStrings.URL_API_PARKINGLOT_FETCH)
         
