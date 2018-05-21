@@ -48,14 +48,13 @@
                                     <action selector="onBtnLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jxo-1f-IaS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-D3-20G" customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-D3-20G" customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
                                 <rect key="frame" x="318" y="593.5" width="38" height="37"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="Ufq-d0-1JR"/>
                                     <constraint firstAttribute="width" constant="38" id="y78-6h-XVG"/>
                                 </constraints>
-                                <state key="normal" title="P"/>
+                                <state key="normal" image="Parking_Lot_Btn"/>
                                 <connections>
                                     <action selector="onBtnParkingLot:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lEh-t0-sfO"/>
                                 </connections>
@@ -357,6 +356,7 @@
     <resources>
         <image name="MyLocation" width="38" height="37"/>
         <image name="MyLocation_Sel" width="38" height="37"/>
+        <image name="Parking_Lot_Btn" width="38" height="37"/>
         <image name="SideMenuBtn" width="30" height="30"/>
     </resources>
 </document>

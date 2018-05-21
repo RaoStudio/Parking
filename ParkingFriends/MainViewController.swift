@@ -79,6 +79,9 @@ class MainViewController: UIViewController {
         // Google Sample
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
+        resultsViewController?.primaryTextHighlightColor = UIColor.green
+        
+        
         
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController
@@ -92,7 +95,27 @@ class MainViewController: UIViewController {
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = defaultTextAttribs
         */
         
-        searchController?.searchBar.placeholder = "어느 지역의 주차장을 찾고 계신가요?"
+        searchController?.searchBar.placeholder = "어느 지역의 주차장을 찾고 계신가요 ?"
+        
+        
+
+        /*
+        let myAttribute = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13)]
+        let attrString = NSAttributedString(string: "어느 지역의 주차장을 찾고 계신가요?", attributes: myAttribute)
+//        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = attrString
+        let txtF = UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+        txtF.attributedPlaceholder = attrString
+        */
+        
+        
+        /*
+        let searchBarTextAttributes: [String : AnyObject] = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.red, NSAttributedStringKey.font.rawValue: UIFont.systemFont(ofSize: UIFont.systemFontSize)]
+        UITextField.appearance(whenContainedInInstancesOf:[UISearchBar.self]).defaultTextAttributes = searchBarTextAttributes
+         */
+        
+        
+//        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).placeholder = "Test"
+        
         
         // When UISearchController presents the results view, present it in
         // this view controller, not one further up the chain.
@@ -364,7 +387,7 @@ class MainViewController: UIViewController {
             //*/
             
             
-            //*
+            /*
             if bDest {
                 let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude))
                 marker.icon = UIImage(named: "destination")
@@ -373,9 +396,16 @@ class MainViewController: UIViewController {
                 marker.isTappable = true
                 marker.map = self.mapView
             }
-            //*/
+            */
             
             
+            if let destCoord = self.destCoordinate {
+                let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: destCoord.latitude, longitude: destCoord.longitude))
+                marker.icon = UIImage(named: "destination")
+                marker.groundAnchor = CGPoint(x: 0.5, y: 1)
+//                marker.isTappable = true
+                marker.map = self.mapView
+            }
             
             
             if let value = response.result.value {
@@ -565,6 +595,10 @@ extension MainViewController: GMSMapViewDelegate {
     func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
 //        mapCenterPinImage.fadeIn(0.25)
         mapView.selectedMarker = nil
+        
+        
+        self.destCoordinate = nil
+        
         return false
     }
 }
@@ -639,7 +673,7 @@ extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
         
         print("Place Coordinate: \(place.coordinate)")
         
-        
+        self.destCoordinate = place.coordinate
         self.mapViewPositon(coordinate: place.coordinate)   // 2018.05.21
     }
     
