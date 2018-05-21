@@ -79,7 +79,8 @@ class MainViewController: UIViewController {
         // Google Sample
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
-        resultsViewController?.primaryTextHighlightColor = UIColor.green
+//        resultsViewController?.primaryTextHighlightColor = UIColor.green
+        resultsViewController?.primaryTextHighlightColor = hexStringToUIColor(hex: "#00ff00")
         
         
         
