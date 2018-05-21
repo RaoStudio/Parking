@@ -36,19 +36,25 @@
                                     <action selector="onBtnRadius:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kbZ-iJ-9qW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pm-aN-3qW" customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
-                                <rect key="frame" x="307" y="319" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="L"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pm-aN-3qW" userLabel="My Locaiton " customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
+                                <rect key="frame" x="318" y="540.5" width="38" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="GVb-bj-Ovj"/>
+                                    <constraint firstAttribute="height" constant="37" id="Kds-mh-fzf"/>
+                                </constraints>
+                                <state key="normal" image="MyLocation"/>
+                                <state key="selected" image="MyLocation_Sel"/>
                                 <connections>
                                     <action selector="onBtnLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jxo-1f-IaS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-D3-20G" customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
-                                <rect key="frame" x="307" y="400" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-D3-20G" customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
+                                <rect key="frame" x="318" y="593.5" width="38" height="37"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="Ufq-d0-1JR"/>
+                                    <constraint firstAttribute="width" constant="38" id="y78-6h-XVG"/>
+                                </constraints>
                                 <state key="normal" title="P"/>
                                 <connections>
                                     <action selector="onBtnParkingLot:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lEh-t0-sfO"/>
@@ -91,11 +97,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ayX-mu-jII" firstAttribute="top" secondItem="aOd-D3-20G" secondAttribute="bottom" constant="16" id="0g1-yE-v8Y"/>
                             <constraint firstItem="CWw-to-GRS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1M8-ik-pGj"/>
                             <constraint firstItem="ayX-mu-jII" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8LY-XQ-CUg"/>
                             <constraint firstItem="Rhm-eP-8Wj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="AqQ-uZ-Dde"/>
                             <constraint firstItem="CWw-to-GRS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G4l-BF-fKa"/>
+                            <constraint firstItem="aOd-D3-20G" firstAttribute="top" secondItem="6pm-aN-3qW" secondAttribute="bottom" constant="16" id="HFL-wa-7cI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6pm-aN-3qW" secondAttribute="trailing" constant="19" id="JIE-kg-ZDV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ayX-mu-jII" secondAttribute="bottom" id="Q5S-5N-GvT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aOd-D3-20G" secondAttribute="trailing" constant="19" id="UUD-QP-WvG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CWw-to-GRS" secondAttribute="trailing" id="dgM-Hy-45Z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CWw-to-GRS" secondAttribute="bottom" id="fx1-a5-8R4"/>
                             <constraint firstItem="Rhm-eP-8Wj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sWj-Vl-cxy"/>
@@ -345,6 +355,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="MyLocation" width="38" height="37"/>
+        <image name="MyLocation_Sel" width="38" height="37"/>
         <image name="SideMenuBtn" width="30" height="30"/>
     </resources>
 </document>

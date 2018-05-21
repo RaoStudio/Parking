@@ -49,7 +49,9 @@ class MainViewController: UIViewController {
     
     let uinfo = UserInfoManager()
     
-    var bStart : Bool = true
+    var bStart: Bool = true
+    var bDestination: Bool = false
+    var destCoordinate: CLLocationCoordinate2D?
     
     // Google Sample
     var resultsViewController: GMSAutocompleteResultsViewController?
@@ -99,6 +101,13 @@ class MainViewController: UIViewController {
         // Prevent the navigation bar from being hidden when searching.
         searchController?.hidesNavigationBarDuringPresentation = false
         // Google Sample
+        
+        
+        // Objective - C
+        /*
+        [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil]
+            setDefaultTextAttributes:@{NSForegroundColorAttributeName:[UIColor greenColor]}];
+         */
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -140,6 +149,8 @@ class MainViewController: UIViewController {
     @IBAction func onBtnLocation(_ sender: UIButton) {
         guard let lat = self.mapView.myLocation?.coordinate.latitude,
             let lng = self.mapView.myLocation?.coordinate.longitude else { return }
+        
+        destCoordinate = nil
         
         let camera = GMSCameraPosition.camera(withLatitude: lat ,longitude: lng , zoom: self.mapView.camera.zoom)
         
@@ -311,7 +322,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    func RefreshParkingLot(_ coordinate: CLLocationCoordinate2D, url: String, bMarkerRemake: Bool = true) {
+    func RefreshParkingLot(_ coordinate: CLLocationCoordinate2D, url: String, bDest: Bool = false, bMarkerRemake: Bool = true) {
         
         let strRadius = String(describing: getIntFromRadius())
         
@@ -351,6 +362,21 @@ class MainViewController: UIViewController {
                 self.circle.map = self.mapView
             }
             //*/
+            
+            
+            //*
+            if bDest {
+                let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude))
+                marker.icon = UIImage(named: "destination")
+                marker.groundAnchor = CGPoint(x: 0.5, y: 1)
+                marker.appearAnimation = GMSMarkerAnimation.pop
+                marker.isTappable = true
+                marker.map = self.mapView
+            }
+            //*/
+            
+            
+            
             
             if let value = response.result.value {
                 print("RefreshParkingLot JSON = \(value)")
@@ -395,6 +421,9 @@ class MainViewController: UIViewController {
                             
                             marker.map = self.mapView
                             self.circle.map = self.mapView
+                            
+                            
+                            
                         }
                         
                         }
@@ -410,12 +439,12 @@ class MainViewController: UIViewController {
         
     }
     
-    func mapViewPositon(coordinate: CLLocationCoordinate2D) {
+    func mapViewPositon(coordinate: CLLocationCoordinate2D, bDest: Bool = false) {
         reverseGeocodeCoordinate(coordinate)
         
-        self.mapView.clear()
+//        self.mapView.clear()
         
-        RefreshParkingLot(coordinate, url: UrlStrings.URL_API_PARKINGLOT_FETCH)
+        RefreshParkingLot(coordinate, url: UrlStrings.URL_API_PARKINGLOT_FETCH, bDest: bDest)
         
         mapView.camera = GMSCameraPosition(target: coordinate, zoom: self.mapView.camera.zoom , bearing: 0, viewingAngle: 0)
         
@@ -438,6 +467,9 @@ extension MainViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         
         self.mapViewPositon(coordinate: position.target)
+        
+        
+        
         /*
         reverseGeocodeCoordinate(position.target)
         
@@ -459,7 +491,7 @@ extension MainViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
-        
+        destCoordinate = coordinate
         self.mapViewPositon(coordinate: coordinate)
         /*
         reverseGeocodeCoordinate(coordinate)
@@ -604,6 +636,11 @@ extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
         print("Place name: \(place.name)")
         print("Place address: \(place.formattedAddress)")
         print("Place attributions: \(place.attributions)")
+        
+        print("Place Coordinate: \(place.coordinate)")
+        
+        
+        self.mapViewPositon(coordinate: place.coordinate)   // 2018.05.21
     }
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
