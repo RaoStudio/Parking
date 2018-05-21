@@ -22,16 +22,19 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OL-ZZ-hAG" customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
-                                <rect key="frame" x="16" y="561" width="101" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Overlay Test"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OL-ZZ-hAG" customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
+                                <rect key="frame" x="19" y="604.5" width="68" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="485-Vx-vdF"/>
+                                    <constraint firstAttribute="height" constant="26" id="a1M-ja-LPK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="3" minY="-4" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="500m" image="distance_icon" backgroundImage="round_btn">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="onBtnRadius:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kbZ-iJ-9qW"/>
                                 </connections>
@@ -98,6 +101,7 @@
                         <constraints>
                             <constraint firstItem="ayX-mu-jII" firstAttribute="top" secondItem="aOd-D3-20G" secondAttribute="bottom" constant="16" id="0g1-yE-v8Y"/>
                             <constraint firstItem="CWw-to-GRS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1M8-ik-pGj"/>
+                            <constraint firstItem="4OL-ZZ-hAG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="19" id="4i7-lq-VDW"/>
                             <constraint firstItem="ayX-mu-jII" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8LY-XQ-CUg"/>
                             <constraint firstItem="Rhm-eP-8Wj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="AqQ-uZ-Dde"/>
                             <constraint firstItem="CWw-to-GRS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G4l-BF-fKa"/>
@@ -106,6 +110,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ayX-mu-jII" secondAttribute="bottom" id="Q5S-5N-GvT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aOd-D3-20G" secondAttribute="trailing" constant="19" id="UUD-QP-WvG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CWw-to-GRS" secondAttribute="trailing" id="dgM-Hy-45Z"/>
+                            <constraint firstItem="ayX-mu-jII" firstAttribute="top" secondItem="4OL-ZZ-hAG" secondAttribute="bottom" constant="16" id="eLa-JF-P0H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CWw-to-GRS" secondAttribute="bottom" id="fx1-a5-8R4"/>
                             <constraint firstItem="Rhm-eP-8Wj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sWj-Vl-cxy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ayX-mu-jII" secondAttribute="trailing" id="u34-Cr-iv8"/>
@@ -358,5 +363,7 @@
         <image name="MyLocation_Sel" width="38" height="37"/>
         <image name="Parking_Lot_Btn" width="38" height="37"/>
         <image name="SideMenuBtn" width="30" height="30"/>
+        <image name="distance_icon" width="12" height="12"/>
+        <image name="round_btn" width="27" height="26"/>
     </resources>
 </document>

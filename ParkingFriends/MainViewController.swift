@@ -674,6 +674,7 @@ extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
         print("Place Coordinate: \(place.coordinate)")
         
         self.destCoordinate = place.coordinate
+        searchController?.searchBar.text = place.name
         self.mapViewPositon(coordinate: place.coordinate)   // 2018.05.21
     }
     
