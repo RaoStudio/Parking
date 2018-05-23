@@ -10,6 +10,7 @@ PODS:
     - GooglePlaces (= 2.5.0)
   - GooglePlaces (2.5.0):
     - GoogleMaps/Base (= 2.5.0)
+  - PureLayout (3.0.2)
   - SDWebImage (4.2.3):
     - SDWebImage/Core (= 4.2.3)
   - SDWebImage/Core (4.2.3)
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - PureLayout
   - SDWebImage (~> 4.0)
   - SideMenu
   - SwiftyJSON
@@ -32,11 +34,12 @@ SPEC CHECKSUMS:
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   GooglePlacePicker: 1573e644ab54564d95c2643edc0f29091609e966
   GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TabPageViewController: c37a1257a50c2b50712dde61bf499768eee95b67
 
-PODFILE CHECKSUM: 06a6cfc9e5d61ee2be0b0a3ae63faa3eff1ee9eb
+PODFILE CHECKSUM: 584124f267cc308c5e090acc063ae47bf173b57c
 
 COCOAPODS: 1.4.0

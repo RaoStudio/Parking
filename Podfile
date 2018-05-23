@@ -11,4 +11,5 @@ target 'ParkingFriends' do
     pod 'SwiftyJSON'
     pod 'SDWebImage', '~> 4.0'
     pod 'TabPageViewController'
+    pod 'PureLayout'
 end

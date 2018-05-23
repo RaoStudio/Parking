@@ -12,6 +12,7 @@ import SideMenu
 import GoogleMaps
 import GooglePlaces
 import Alamofire
+import PureLayout
 
 enum RadiusType: String {
     case fiveH = "500m"
@@ -218,6 +219,30 @@ class MainViewController: UIViewController {
         
         
 //        self.view.addSubviewWithConstraints(RaoBaseView(), offset: false)
+//        let view = RaoBaseView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        
+ 
+        /*
+        let top = UIApplication.shared.keyWindow
+        let view = RaoBaseView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        top?.addSubview(view)
+        view.autoPinEdgesToSuperviewEdges()
+ */
+        
+        /*
+        let nibs = Bundle.main.loadNibNamed("TestView", owner: self, options: nil)
+        if let view = nibs?.first as? UIView {
+            //            view.backgroundColor = UIColor.red
+            view.translatesAutoresizingMaskIntoConstraints = false
+            let top = UIApplication.shared.keyWindow
+            top?.addSubview(view)
+            
+            view.autoPinEdgesToSuperviewEdges()
+        }
+        */
+        
+        
+        
     }
     
     

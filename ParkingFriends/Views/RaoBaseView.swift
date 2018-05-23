@@ -31,6 +31,7 @@ class RaoBaseView: UIView {
         if let view = nibs?.first as? UIView {
 //            view.backgroundColor = UIColor.red
             view.translatesAutoresizingMaskIntoConstraints = false
+            
             addSubviewWithConstraints(view)
         }
     }
@@ -42,8 +43,8 @@ extension UIView {
         let views = ["subview" : subview]
         addSubview(subview)
         
-        var constraints = NSLayoutConstraint.constraints(withVisualFormat: offset ? "H:|-[subview]-|" : "H:|-0-[subview]-0-|", options: [.alignAllLeading, .alignAllTrailing], metrics: nil, views: views)
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: offset ? "V:|-[subview]-|" : "V:|-0-[subview]-0-|", options: [.alignAllTop, .alignAllBottom], metrics: nil, views: views))
+        var constraints = NSLayoutConstraint.constraints(withVisualFormat: offset ? "H:|-[subview]-|" : "H:|[subview]|", options: [.alignAllLeading, .alignAllTrailing], metrics: nil, views: views)
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: offset ? "V:|-[subview]-|" : "V:|[subview]|", options: [.alignAllTop, .alignAllBottom], metrics: nil, views: views))
         NSLayoutConstraint.activate(constraints)
     }
     
