@@ -422,7 +422,9 @@ class MainViewController: UIViewController {
                             let lat: NSString = dicPlace["latitude"] as! NSString
                             let long: NSString = dicPlace["longitude"] as! NSString
                             let partner : NSString = dicPlace["partner"] as! NSString
-                            let cctv : NSString = dicPlace["cctv"] as! NSString
+                            let cctv: NSString = dicPlace["cctv"] as! NSString
+                            let available: NSString = dicPlace["available"] as! NSString
+                            
                             
                             /*
                              let position = CLLocationCoordinate2D(latitude: 37, longitude: 127)
@@ -434,9 +436,17 @@ class MainViewController: UIViewController {
                             
                             if partner.isEqual(to: "1") {
                                 if cctv.isEqual(to: "1") {
-                                    marker.icon = UIImage(named: "lot_test_cctv")
+                                    if available.isEqual(to: "0") {
+                                        marker.icon = UIImage(named: "partner_lot_cctv_full")
+                                    } else {
+                                        marker.icon = UIImage(named: "partner_lot_cctv")
+                                    }
                                 } else {
-                                    marker.icon = UIImage(named: "lot_test")
+                                    if available.isEqual(to: "0") {
+                                        marker.icon = UIImage(named: "partner_lot_full")
+                                    } else {
+                                        marker.icon = UIImage(named: "partner_lot")
+                                    }
                                 }
                             } else {
                                 marker.icon = UIImage(named: "public_lot")
