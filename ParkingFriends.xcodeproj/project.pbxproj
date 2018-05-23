@@ -23,6 +23,8 @@
 		2971A3F6209AED1300C1AD84 /* TutorialMasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971A3F4209AED1300C1AD84 /* TutorialMasterVC.swift */; };
 		2983BD9A20A16BA60033035D /* RaoPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983BD9920A16BA60033035D /* RaoPageVC.swift */; };
 		2983D63320B52F01003CAB1C /* RaoBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983D63220B52F01003CAB1C /* RaoBaseView.swift */; };
+		2983D63620B5356B003CAB1C /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983D63520B5356B003CAB1C /* TestView.swift */; };
+		2983D63820B535A7003CAB1C /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2983D63720B535A7003CAB1C /* TestView.xib */; };
 		29875E5320ABC81F0029E4BD /* ParkingLotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29875E5220ABC81F0029E4BD /* ParkingLotVC.swift */; };
 		29875E5520ABD1000029E4BD /* ParkingLot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29875E5420ABD1000029E4BD /* ParkingLot.storyboard */; };
 		29875E5720ABF7C60029E4BD /* ParkingLotTabPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29875E5620ABF7C60029E4BD /* ParkingLotTabPageVC.swift */; };
@@ -56,6 +58,8 @@
 		2971A3F4209AED1300C1AD84 /* TutorialMasterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialMasterVC.swift; sourceTree = "<group>"; };
 		2983BD9920A16BA60033035D /* RaoPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaoPageVC.swift; sourceTree = "<group>"; };
 		2983D63220B52F01003CAB1C /* RaoBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaoBaseView.swift; sourceTree = "<group>"; };
+		2983D63520B5356B003CAB1C /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		2983D63720B535A7003CAB1C /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
 		29875E5220ABC81F0029E4BD /* ParkingLotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotVC.swift; sourceTree = "<group>"; };
 		29875E5420ABD1000029E4BD /* ParkingLot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParkingLot.storyboard; sourceTree = "<group>"; };
 		29875E5620ABF7C60029E4BD /* ParkingLotTabPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotTabPageVC.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				2971A3F2209AECF100C1AD84 /* Tutorial */,
 				29AA1263207DA06A00F4648C /* Model */,
 				29AA125A207D9FF400F4648C /* TestViews */,
+				2983D63420B534F0003CAB1C /* Views */,
 				29A0FFDA207B423A00B13638 /* Util */,
 				29559EF3204CE28E000EB12B /* AppDelegate.swift */,
 				29559EF5204CE28E000EB12B /* ViewController.swift */,
@@ -136,6 +141,16 @@
 			path = Tutorial;
 			sourceTree = "<group>";
 		};
+		2983D63420B534F0003CAB1C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2983D63220B52F01003CAB1C /* RaoBaseView.swift */,
+				2983D63520B5356B003CAB1C /* TestView.swift */,
+				2983D63720B535A7003CAB1C /* TestView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		29875E5120ABC7D50029E4BD /* ParkingLot */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +167,6 @@
 				29A0FFDB207B429200B13638 /* UrlStrings.swift */,
 				2971A3EE209ADD8200C1AD84 /* Utils.swift */,
 				294E5F9B20A53CEE00CF9D03 /* RoundButton.swift */,
-				2983D63220B52F01003CAB1C /* RaoBaseView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -269,6 +283,7 @@
 				29AA1260207D9FF400F4648C /* MarkerInfoView.xib in Resources */,
 				29559F01204CE28E000EB12B /* LaunchScreen.storyboard in Resources */,
 				29559EFE204CE28E000EB12B /* Assets.xcassets in Resources */,
+				2983D63820B535A7003CAB1C /* TestView.xib in Resources */,
 				29559EF9204CE28E000EB12B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +366,7 @@
 			files = (
 				29875E5720ABF7C60029E4BD /* ParkingLotTabPageVC.swift in Sources */,
 				294E5F9C20A53CEE00CF9D03 /* RoundButton.swift in Sources */,
+				2983D63620B5356B003CAB1C /* TestView.swift in Sources */,
 				29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */,
 				2983BD9A20A16BA60033035D /* RaoPageVC.swift in Sources */,
 				29AA1266207DA06A00F4648C /* GoogleDataProvider.swift in Sources */,

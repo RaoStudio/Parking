@@ -77,6 +77,9 @@
                                         <rect key="frame" x="297" y="8" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="onBtnSubViewTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tkL-xD-rBg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfK-4w-uRb">
                                         <rect key="frame" x="148" y="36" width="46" height="30"/>
