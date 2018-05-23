@@ -406,6 +406,8 @@ class MainViewController: UIViewController {
                 marker.groundAnchor = CGPoint(x: 0.5, y: 1)
 //                marker.isTappable = true
                 marker.map = self.mapView
+                
+//                self.mapView.selectedMarker = marker
             }
             
             
@@ -589,6 +591,10 @@ extension MainViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
 //        mapCenterPinImage.fadeOut(0.25)
+        
+        if nil == marker.userData {
+            return false
+        }
         
         //*
         let detailNavi = self.storyboard?.instantiateViewController(withIdentifier: "DetailNavi") as? UINavigationController;

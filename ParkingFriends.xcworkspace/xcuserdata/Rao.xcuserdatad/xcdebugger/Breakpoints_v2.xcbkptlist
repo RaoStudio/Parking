@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.56284"
+            timestampString = "548735679.2810659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "157"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.563372"
+            timestampString = "548735679.281476"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "413"
-            endingLineNumber = "413"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
             landmarkName = "RefreshParkingLot(_:url:bDest:bMarkerRemake:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.563844"
+            timestampString = "548735679.281816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "609"
-            endingLineNumber = "609"
+            startingLineNumber = "615"
+            endingLineNumber = "615"
             landmarkName = "didTapMyLocationButton(for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.5642461"
+            timestampString = "548735679.2821079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "600"
-            endingLineNumber = "600"
+            startingLineNumber = "606"
+            endingLineNumber = "606"
             landmarkName = "mapView(_:didTap:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.564644"
+            timestampString = "548735679.282384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "669"
-            endingLineNumber = "669"
+            startingLineNumber = "675"
+            endingLineNumber = "675"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.565039"
+            timestampString = "548735679.282661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "655"
-            endingLineNumber = "655"
+            startingLineNumber = "661"
+            endingLineNumber = "661"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/DetailVC.swift"
-            timestampString = "548326355.476558"
+            timestampString = "548735533.136273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.565477"
+            timestampString = "548735679.283015"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "367"
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/Util/Utils.swift"
-            timestampString = "548734044.5658669"
+            timestampString = "548735679.2832969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.566224"
+            timestampString = "548735679.283565"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "708"
-            endingLineNumber = "708">
+            startingLineNumber = "714"
+            endingLineNumber = "714">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -216,11 +216,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.566566"
+            timestampString = "548735679.283814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "702"
-            endingLineNumber = "702"
+            startingLineNumber = "708"
+            endingLineNumber = "708"
             landmarkName = "MainViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -232,11 +232,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.5669399"
+            timestampString = "548735679.2840919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "707"
-            endingLineNumber = "707"
+            startingLineNumber = "713"
+            endingLineNumber = "713"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -248,11 +248,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.567312"
+            timestampString = "548735679.2843651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "708"
-            endingLineNumber = "708">
+            startingLineNumber = "714"
+            endingLineNumber = "714">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -262,7 +262,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/DetailVC.swift"
-            timestampString = "548326355.482211"
+            timestampString = "548735533.137987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -278,7 +278,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.567675"
+            timestampString = "548735679.284645"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "368"
@@ -294,11 +294,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.568068"
+            timestampString = "548735679.28492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "466"
-            endingLineNumber = "466"
+            startingLineNumber = "468"
+            endingLineNumber = "468"
             landmarkName = "RefreshParkingLot(_:url:bDest:bMarkerRemake:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -310,7 +310,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.568457"
+            timestampString = "548735679.285194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "394"
@@ -326,11 +326,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.568844"
+            timestampString = "548735679.285468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "512"
-            endingLineNumber = "512"
+            startingLineNumber = "514"
+            endingLineNumber = "514"
             landmarkName = "mapView(_:idleAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -342,11 +342,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.569217"
+            timestampString = "548735679.2857341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "540"
-            endingLineNumber = "540"
+            startingLineNumber = "542"
+            endingLineNumber = "542"
             landmarkName = "mapView(_:didLongPressAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -358,11 +358,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.56959"
+            timestampString = "548735679.286002"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "681"
-            endingLineNumber = "681"
+            startingLineNumber = "687"
+            endingLineNumber = "687"
             landmarkName = "resultsController(_:didAutocompleteWith:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -374,12 +374,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/MainViewController.swift"
-            timestampString = "548734044.5699559"
+            timestampString = "548735679.28628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
             endingLineNumber = "104"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ParkingFriends/MainViewController.swift"
+            timestampString = "548735679.2865469"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "600"
+            endingLineNumber = "600"
+            landmarkName = "mapView(_:didTap:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
