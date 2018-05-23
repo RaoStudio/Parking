@@ -407,7 +407,11 @@ class MainViewController: UIViewController {
 //                marker.isTappable = true
                 marker.map = self.mapView
                 
-//                self.mapView.selectedMarker = marker
+                /*
+                marker.title = "목적지"
+                marker.snippet = "Snip Test"
+                self.mapView.selectedMarker = marker
+                 */
             }
             
             
