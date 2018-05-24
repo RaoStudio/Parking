@@ -141,6 +141,7 @@ class MainViewController: UIViewController {
         let ud = UserDefaults.standard
         if ud.bool(forKey: UserInfoKey.tutorial) == false && bStart {
             let vc = self.instanceTutorialVC(name: "MasterVC")
+            vc?.modalPresentationStyle = .overFullScreen
             self.present(vc!, animated: false, completion: nil)
             bStart = false
         }
@@ -190,16 +191,19 @@ class MainViewController: UIViewController {
             return
         }
         */
+        
+        //*
         guard let vc = sb.instantiateViewController(withIdentifier: "ParkingLotTabBar") as? UITabBarController else {
             return
         }
-        
-//        self.present(vc, animated: true, completion: nil)
+ 
         
         if let tbItems = vc.tabBar.items {
             tbItems[1].title = "요금순"
         }
-        
+        //*/
+
+        //        self.present(vc, animated: true, completion: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -230,10 +234,16 @@ class MainViewController: UIViewController {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "PresentTestVC") else {
             return
         }
+        /*
         let top = UIApplication.shared.keyWindow
         top?.rootViewController?.addChildViewController(vc)
         top?.addSubview(vc.view)
         vc.didMove(toParentViewController: top?.rootViewController)
+ */
+        let top = UIApplication.shared.keyWindow
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false, completion: nil)
+//        top?.rootViewController?.present(vc, animated: false, completion: nil)
         
         
 //        self.present(vc, animated: false, completion: nil)

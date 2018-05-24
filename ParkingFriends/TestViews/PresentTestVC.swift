@@ -21,12 +21,13 @@ class PresentTestVC: UIViewController {
         let tapG = UITapGestureRecognizer(target: self, action: #selector(tapMainView(_:)))
         self.view.addGestureRecognizer(tapG)
         
-        
+        /*
         UIView.animate(withDuration: 0.3, animations: {
             self.view.alpha = 1
         }) { (_) in
             self.view.alpha = 1
         }
+ */
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,13 +54,21 @@ class PresentTestVC: UIViewController {
         
 //        self.presentingViewController?.dismiss(animated: false, completion: nil)
     
-        
+        /*
         self.removeFromParentViewController()
         UIView.animate(withDuration: 0.3, animations: {
             self.view.alpha = 0;
         }) { (_) in
             self.view.removeFromSuperview()
         }
+ */
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.alpha = 0;
+        }) { (_) in
+            self.presentingViewController?.dismiss(animated: false, completion: nil)
+        }
+        
         
     }
     

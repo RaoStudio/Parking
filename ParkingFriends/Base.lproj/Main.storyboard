@@ -346,7 +346,7 @@
         <scene sceneID="YZ3-Rh-4vk">
             <objects>
                 <viewController storyboardIdentifier="PresentTestVC" id="Wyq-Lg-lLB" customClass="PresentTestVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="T7J-Mh-Xnd">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="T7J-Mh-Xnd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
