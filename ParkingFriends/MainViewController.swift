@@ -185,11 +185,21 @@ class MainViewController: UIViewController {
     
     @IBAction func onBtnParkingLot(_ sender: Any) {
         let sb = UIStoryboard(name: "ParkingLot", bundle: Bundle.main)
+        /*
         guard let vc = sb.instantiateViewController(withIdentifier: "MasterVC") as? ParkingLotVC else {
+            return
+        }
+        */
+        guard let vc = sb.instantiateViewController(withIdentifier: "ParkingLotTabBar") as? UITabBarController else {
             return
         }
         
 //        self.present(vc, animated: true, completion: nil)
+        
+        if let tbItems = vc.tabBar.items {
+            tbItems[1].title = "요금순"
+        }
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -217,6 +227,17 @@ class MainViewController: UIViewController {
     
     @IBAction func onBtnSubViewTest(_ sender: UIButton) {
         
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "PresentTestVC") else {
+            return
+        }
+        let top = UIApplication.shared.keyWindow
+        top?.rootViewController?.addChildViewController(vc)
+        top?.addSubview(vc.view)
+        vc.didMove(toParentViewController: top?.rootViewController)
+        
+        
+//        self.present(vc, animated: false, completion: nil)
+        
         
 //        self.view.addSubviewWithConstraints(RaoBaseView(), offset: false)
 //        let view = RaoBaseView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
@@ -227,7 +248,7 @@ class MainViewController: UIViewController {
         let view = RaoBaseView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         top?.addSubview(view)
         view.autoPinEdgesToSuperviewEdges()
- */
+         */
         
         /*
         let nibs = Bundle.main.loadNibNamed("TestView", owner: self, options: nil)
@@ -240,6 +261,12 @@ class MainViewController: UIViewController {
             view.autoPinEdgesToSuperviewEdges()
         }
         */
+        
+        /*
+        let top = UIApplication.shared.keyWindow
+        let view = CustomView(frame: (top?.bounds)!)
+        top?.addSubview(view)
+         */
         
         
         

@@ -17,8 +17,9 @@ class ParkingLotVC: UIViewController {
         // Do any additional setup after loading the view.
         
         self.navigationItem.title = "주차장목록"
+        self.tabBarItem.title = "거리순"
         
-        
+        /*
         let tabPageVC = TabPageViewController.create()
         let vc1 = UIViewController()
         vc1.view.backgroundColor = UIColor.white
@@ -30,12 +31,14 @@ class ParkingLotVC: UIViewController {
 //        tabPageVC.option.hidesTopViewOnSwipeType = .all
         
 //        self.navigationController?.pushViewController(tabPageVC, animated: true)
+ 
+        
         
         
         self.addChildViewController(tabPageVC)
         self.view.addSubview(tabPageVC.view)
         tabPageVC.didMove(toParentViewController: self)
-        
+        */
     }
 
     override func didReceiveMemoryWarning() {

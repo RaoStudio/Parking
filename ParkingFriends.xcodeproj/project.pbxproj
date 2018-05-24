@@ -28,6 +28,11 @@
 		29875E5320ABC81F0029E4BD /* ParkingLotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29875E5220ABC81F0029E4BD /* ParkingLotVC.swift */; };
 		29875E5520ABD1000029E4BD /* ParkingLot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29875E5420ABD1000029E4BD /* ParkingLot.storyboard */; };
 		29875E5720ABF7C60029E4BD /* ParkingLotTabPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29875E5620ABF7C60029E4BD /* ParkingLotTabPageVC.swift */; };
+		2999636520B644F300AC180C /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636420B644F300AC180C /* CustomView.swift */; };
+		2999636720B6451400AC180C /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2999636620B6451400AC180C /* CustomView.xib */; };
+		2999636920B6544600AC180C /* LotDistanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636820B6544600AC180C /* LotDistanceVC.swift */; };
+		2999636B20B6546600AC180C /* LotPayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636A20B6546600AC180C /* LotPayVC.swift */; };
+		2999636D20B65F4200AC180C /* PresentTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636C20B65F4200AC180C /* PresentTestVC.swift */; };
 		29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0FFDB207B429200B13638 /* UrlStrings.swift */; };
 		29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA125B207D9FF400F4648C /* MarkerInfoView.swift */; };
 		29AA1260207D9FF400F4648C /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29AA125C207D9FF400F4648C /* MarkerInfoView.xib */; };
@@ -63,6 +68,11 @@
 		29875E5220ABC81F0029E4BD /* ParkingLotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotVC.swift; sourceTree = "<group>"; };
 		29875E5420ABD1000029E4BD /* ParkingLot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParkingLot.storyboard; sourceTree = "<group>"; };
 		29875E5620ABF7C60029E4BD /* ParkingLotTabPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotTabPageVC.swift; sourceTree = "<group>"; };
+		2999636420B644F300AC180C /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		2999636620B6451400AC180C /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
+		2999636820B6544600AC180C /* LotDistanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotDistanceVC.swift; sourceTree = "<group>"; };
+		2999636A20B6546600AC180C /* LotPayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotPayVC.swift; sourceTree = "<group>"; };
+		2999636C20B65F4200AC180C /* PresentTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentTestVC.swift; sourceTree = "<group>"; };
 		29A0FFDB207B429200B13638 /* UrlStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlStrings.swift; sourceTree = "<group>"; };
 		29AA125B207D9FF400F4648C /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
 		29AA125C207D9FF400F4648C /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
@@ -147,6 +157,8 @@
 				2983D63220B52F01003CAB1C /* RaoBaseView.swift */,
 				2983D63520B5356B003CAB1C /* TestView.swift */,
 				2983D63720B535A7003CAB1C /* TestView.xib */,
+				2999636420B644F300AC180C /* CustomView.swift */,
+				2999636620B6451400AC180C /* CustomView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,6 +169,8 @@
 				29875E5220ABC81F0029E4BD /* ParkingLotVC.swift */,
 				29875E5420ABD1000029E4BD /* ParkingLot.storyboard */,
 				29875E5620ABF7C60029E4BD /* ParkingLotTabPageVC.swift */,
+				2999636820B6544600AC180C /* LotDistanceVC.swift */,
+				2999636A20B6546600AC180C /* LotPayVC.swift */,
 			);
 			path = ParkingLot;
 			sourceTree = "<group>";
@@ -178,6 +192,7 @@
 				29AA125C207D9FF400F4648C /* MarkerInfoView.xib */,
 				29AA125D207D9FF400F4648C /* PlaceMarker.swift */,
 				29AA125E207D9FF400F4648C /* UIViewExtension.swift */,
+				2999636C20B65F4200AC180C /* PresentTestVC.swift */,
 			);
 			path = TestViews;
 			sourceTree = "<group>";
@@ -283,6 +298,7 @@
 				29AA1260207D9FF400F4648C /* MarkerInfoView.xib in Resources */,
 				29559F01204CE28E000EB12B /* LaunchScreen.storyboard in Resources */,
 				29559EFE204CE28E000EB12B /* Assets.xcassets in Resources */,
+				2999636720B6451400AC180C /* CustomView.xib in Resources */,
 				2983D63820B535A7003CAB1C /* TestView.xib in Resources */,
 				29559EF9204CE28E000EB12B /* Main.storyboard in Resources */,
 			);
@@ -374,19 +390,23 @@
 				29AA1266207DA06A00F4648C /* GoogleDataProvider.swift in Sources */,
 				296023802091A65600481134 /* DetailVC.swift in Sources */,
 				29AA1267207DA06A00F4648C /* GooglePlace.swift in Sources */,
+				2999636520B644F300AC180C /* CustomView.swift in Sources */,
 				29AA1261207D9FF400F4648C /* PlaceMarker.swift in Sources */,
 				291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */,
 				29559EF6204CE28E000EB12B /* ViewController.swift in Sources */,
 				2971A3F5209AED1300C1AD84 /* TutorialContentsVC.swift in Sources */,
 				29559EF4204CE28E000EB12B /* AppDelegate.swift in Sources */,
+				2999636D20B65F4200AC180C /* PresentTestVC.swift in Sources */,
 				29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */,
 				29559EFC204CE28E000EB12B /* ParkingFriends.xcdatamodeld in Sources */,
 				29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */,
+				2999636920B6544600AC180C /* LotDistanceVC.swift in Sources */,
 				2971A3F6209AED1300C1AD84 /* TutorialMasterVC.swift in Sources */,
 				29AA1262207D9FF400F4648C /* UIViewExtension.swift in Sources */,
 				295FF12220688AA2000CBF15 /* MainViewController.swift in Sources */,
 				29875E5320ABC81F0029E4BD /* ParkingLotVC.swift in Sources */,
 				2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */,
+				2999636B20B6546600AC180C /* LotPayVC.swift in Sources */,
 				2983D63320B52F01003CAB1C /* RaoBaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
