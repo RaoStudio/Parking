@@ -15,6 +15,8 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
     var contentTitles = ["STEP 1", "STEP 2","STEP 3","STEP 4"]
     var contentImages = ["Page0", "Page1", "Page2", "Page3"]
     
+    @IBOutlet var btnStart: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +41,8 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.currentPageIndicatorTintColor = UIColor.black
         pageControl.backgroundColor = UIColor.white
+        
+        self.view.bringSubview(toFront: btnStart)
     }
 
     override func didReceiveMemoryWarning() {

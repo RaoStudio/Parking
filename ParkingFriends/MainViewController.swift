@@ -38,6 +38,9 @@ class MainViewController: UIViewController {
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var btnRadius: RoundButton!
     
+    
+    @IBOutlet var btnStart: UIButton!
+    
     var circle: GMSCircle!
     
     private let locationManager = CLLocationManager()

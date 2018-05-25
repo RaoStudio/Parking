@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dp0-sW-JLk">
-                                <rect key="frame" x="170" y="617" width="34" height="30"/>
+                                <rect key="frame" x="170" y="437" width="34" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="AJv-0z-Svx"/>
                                     <constraint firstAttribute="width" constant="34" id="hHq-bC-1A5"/>
@@ -33,14 +33,17 @@
                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Dp0-sW-JLk" firstAttribute="centerX" secondItem="GNN-fq-d35" secondAttribute="centerX" id="8n1-C5-dQd"/>
-                            <constraint firstItem="DmY-PM-g36" firstAttribute="bottom" secondItem="Dp0-sW-JLk" secondAttribute="bottom" constant="20" id="uQW-WR-U8p"/>
+                            <constraint firstItem="DmY-PM-g36" firstAttribute="bottom" secondItem="Dp0-sW-JLk" secondAttribute="bottom" constant="200" id="uQW-WR-U8p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DmY-PM-g36"/>
                     </view>
+                    <connections>
+                        <outlet property="btnStart" destination="Dp0-sW-JLk" id="kob-9D-mlp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mtm-Nk-N7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1444" y="-141"/>
+            <point key="canvasLocation" x="-1444" y="-141.67916041979012"/>
         </scene>
         <!--Rao PageVC-->
         <scene sceneID="W2b-RS-ODa">

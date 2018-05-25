@@ -75,14 +75,6 @@
                                             <constraint firstAttribute="height" constant="15" id="MfO-Hx-7Ei"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykB-Fv-la3">
-                                        <rect key="frame" x="8" y="5" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="onBtnTimePicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ut0-HN-ch8"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQ0-Ts-KHh">
                                         <rect key="frame" x="286" y="2" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -95,6 +87,14 @@
                                         <rect key="frame" x="153" y="32" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykB-Fv-la3">
+                                        <rect key="frame" x="8" y="2" width="140" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="onBtnTimePicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ut0-HN-ch8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -147,6 +147,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="ayX-mu-jII" id="4Dv-4r-dkH"/>
                         <outlet property="btnRadius" destination="4OL-ZZ-hAG" id="Ycq-CC-2yO"/>
+                        <outlet property="btnStart" destination="ykB-Fv-la3" id="ttp-qf-LkT"/>
                         <outlet property="mapView" destination="CWw-to-GRS" id="TMI-NV-ivN"/>
                     </connections>
                 </viewController>
