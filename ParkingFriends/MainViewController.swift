@@ -475,7 +475,8 @@ class MainViewController: UIViewController {
                 marker.groundAnchor = CGPoint(x: 0.5, y: 1)
 //                marker.isTappable = true
                 marker.map = self.mapView
-                
+                marker.title = "목적지"
+                self.mapView.selectedMarker = marker
                 /*
                 marker.title = "목적지"
                 marker.snippet = "Snip Test"
@@ -690,6 +691,23 @@ extension MainViewController: GMSMapViewDelegate {
         self.destCoordinate = nil
         
         return false
+    }
+    
+    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        
+        if marker.userData == nil {
+//            return UIImageView(image: UIImage(named: "Map_InfoWindow"))
+            
+            let button = UIButton(frame: CGRect(x: 0, y: 0, width: 62, height: 27))
+            button.setBackgroundImage(UIImage(named: "Map_InfoWindow"), for: UIControlState.normal)
+            button.setTitle(marker.title, for: UIControlState.normal)
+            button.setTitleColor(UIColor.gray, for: UIControlState.normal)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+            button.contentEdgeInsets = UIEdgeInsetsMake(-5, 0, 0, 0)
+            return button
+        }
+        
+        return nil
     }
 }
 
