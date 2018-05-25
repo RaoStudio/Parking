@@ -639,7 +639,7 @@ extension MainViewController: GMSMapViewDelegate {
         
         if (gesture) {
 //            mapCenterPinImage.fadeIn(0.25)
-            mapView.selectedMarker = nil
+//            mapView.selectedMarker = nil
         }
     }
     
