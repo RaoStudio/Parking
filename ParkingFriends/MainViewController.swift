@@ -58,6 +58,7 @@ class MainViewController: UIViewController {
     var bStart: Bool = true
     var bDestination: Bool = false
     var destCoordinate: CLLocationCoordinate2D?
+    var myCoordinate: CLLocationCoordinate2D?
     
     // Google Sample
     var resultsViewController: GMSAutocompleteResultsViewController?
@@ -607,6 +608,21 @@ class MainViewController: UIViewController {
         
 //        self.mapView.clear()
         
+        /*
+        var coordi: CLLocationCoordinate2D
+        
+        if destCoordinate != nil {
+            coordi = destCoordinate!
+        } else {
+            coordi = myCoordinate!
+        }
+        
+        var coordinate = coordi
+        */
+        
+        
+        
+//        RefreshParkingLot(coordinate, url: UrlStrings.URL_API_PARKINGLOT_FETCH_RATIO, bDest: bDest)
         RefreshParkingLot(coordinate, url: UrlStrings.URL_API_PARKINGLOT_FETCH, bDest: bDest)
         
         mapView.camera = GMSCameraPosition(target: coordinate, zoom: self.mapView.camera.zoom , bearing: 0, viewingAngle: 0)
@@ -793,6 +809,8 @@ extension MainViewController: CLLocationManagerDelegate {
             return
         }
         
+        self.myCoordinate = location.coordinate
+        
         if Platform.isSimulator {
             let testLocation = CLLocationCoordinate2D(latitude: 37.4823511, longitude: 127.0036083)
             mapView.camera = GMSCameraPosition(target: testLocation, zoom: 15, bearing: 0, viewingAngle: 0)
@@ -816,6 +834,7 @@ extension MainViewController: CLLocationManagerDelegate {
 
 // Google Sample
 // Handle the user's selection.
+// MARK: - GMSAutocompleteResultsViewControllerDelegate
 extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
                            didAutocompleteWith place: GMSPlace) {
