@@ -14,6 +14,8 @@ import GooglePlaces
 import Alamofire
 import PureLayout
 
+import DropDown
+
 enum RadiusType: String {
     case fiveH = "500m"
     case oneT = "1Km"
@@ -63,6 +65,11 @@ class MainViewController: UIViewController {
     var resultView: UITextView?
     // Google Sample
     
+    
+    
+    let chooseDropDown = DropDown()
+    
+    let bUseDropDown = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,6 +143,10 @@ class MainViewController: UIViewController {
         [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil]
             setDefaultTextAttributes:@{NSForegroundColorAttributeName:[UIColor greenColor]}];
          */
+        
+        if bUseDropDown {
+            setupChooseDropDown()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -170,6 +181,31 @@ class MainViewController: UIViewController {
         marker.title = "Sydney"
         marker.snippet = "Australia"
         marker.map = mapView
+    }
+    
+    func setupChooseDropDown() {
+        chooseDropDown.anchorView = self.btnRadius
+        
+        // By default, the dropdown will have its origin on the top left corner of its anchor view
+        // So it will come over the anchor view and hide it completely
+        // If you want to have the dropdown underneath your anchor view, you can do this:
+        chooseDropDown.topOffset = CGPoint(x: 0, y: -self.btnRadius.bounds.height)
+        
+        
+        // You can also use localizationKeysDataSource instead. Check the docs.
+        chooseDropDown.dataSource = [
+            RadiusType.fiveH.rawValue,
+            RadiusType.oneT.rawValue,
+            RadiusType.fiveT.rawValue,
+            RadiusType.tenT.rawValue
+        ]
+        
+        chooseDropDown.direction = .top
+        // Action triggered on selection
+        chooseDropDown.selectionAction = { [weak self] (index, item) in
+            self?.btnRadius.setTitle(item, for: .normal)
+            self?.radiusPicker(strRadius: item)
+        }
     }
     
     
@@ -287,6 +323,13 @@ class MainViewController: UIViewController {
     
     
     @IBAction func onBtnRadius(_ sender: UIButton) {
+        
+        if bUseDropDown {
+            chooseDropDown.show()
+            return;
+        }
+        
+        
         
         let strRadius = uinfo.radius ?? RadiusType.fiveH.rawValue
         

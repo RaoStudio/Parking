@@ -12,4 +12,5 @@ target 'ParkingFriends' do
     pod 'SDWebImage', '~> 4.0'
     pod 'TabPageViewController'
     pod 'PureLayout'
+    pod 'DropDown'
 end

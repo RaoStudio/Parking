@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.6.0)
+  - DropDown (2.0.2)
   - GoogleMaps (2.5.0):
     - GoogleMaps/Maps (= 2.5.0)
   - GoogleMaps/Base (2.5.0)
@@ -20,6 +21,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - DropDown
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
@@ -31,6 +33,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  DropDown: 75562633a203f57a917021b4edb96c76f293b0ec
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   GooglePlacePicker: 1573e644ab54564d95c2643edc0f29091609e966
   GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
@@ -40,6 +43,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TabPageViewController: c37a1257a50c2b50712dde61bf499768eee95b67
 
-PODFILE CHECKSUM: 584124f267cc308c5e090acc063ae47bf173b57c
+PODFILE CHECKSUM: e11ff565d28daa5b16a109087d78e4f8d42a2f18
 
 COCOAPODS: 1.4.0
