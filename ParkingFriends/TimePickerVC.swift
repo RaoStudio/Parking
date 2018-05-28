@@ -32,7 +32,7 @@ class TimePickerVC: UIViewController {
 
     // MARK: - Action
     @IBAction func onBtnExit(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     
