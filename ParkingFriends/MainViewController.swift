@@ -739,6 +739,24 @@ extension MainViewController: GMSMapViewDelegate {
         
         detailVC?.dicPlace = marker.userData as? Dictionary<String, Any>
         
+        if let dicPlace = marker.userData as? Dictionary<String, Any> {
+            if let latitude = dicPlace["latitude"] as? NSString {
+                if let longitude = dicPlace["longitude"] as? NSString {
+                    
+                    let markerLocation = CLLocation.init(latitude: latitude.doubleValue, longitude: longitude.doubleValue)
+                    var originLocation: CLLocation?
+                    if destCoordinate != nil {
+                        originLocation = CLLocation(latitude: (destCoordinate?.latitude)!, longitude: (destCoordinate?.longitude)!)
+                    } else {
+                        originLocation = CLLocation(latitude: (myCoordinate?.latitude)!, longitude: (myCoordinate?.longitude)!)
+                    }
+                    detailVC?.distance = markerLocation.distance(from: originLocation!)
+                    
+                }
+            }
+        }
+        
+        
         self.present(detailNavi!, animated: true, completion: nil)
          //*/
         

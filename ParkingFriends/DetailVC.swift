@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class DetailVC: UIViewController, UIPageViewControllerDataSource {
 
@@ -16,6 +17,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var btnSensor: RoundButton!
     @IBOutlet var btnCCTV: RoundButton!
     
+    
+    var distance: CLLocationDistance = 0
     
 //    var pageVC: UIPageViewController!
     var pageVC: RaoPageVC!
