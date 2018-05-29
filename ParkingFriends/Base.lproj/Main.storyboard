@@ -171,13 +171,6 @@
                                     <action selector="onExit:" destination="S92-rk-C8t" eventType="touchUpInside" id="X3X-5r-Kyp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKG-gy-u1l">
-                                <rect key="frame" x="23" y="200" width="328" height="456"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHX-4N-vxn" customClass="RoundButton" customModule="ParkingFriends" customModuleProvider="target">
                                 <rect key="frame" x="305" y="79" width="50" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -210,12 +203,44 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbL-W2-Eai">
+                                <rect key="frame" x="0.0" y="129" width="375" height="538"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKG-gy-u1l">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="488"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnW-e0-PQk">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="bu7-dr-KGM"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="sKG-gy-u1l" secondAttribute="bottom" id="0IG-t7-3CW"/>
+                                    <constraint firstItem="sKG-gy-u1l" firstAttribute="top" secondItem="zbL-W2-Eai" secondAttribute="top" constant="50" id="0eN-3h-kIc"/>
+                                    <constraint firstItem="sKG-gy-u1l" firstAttribute="top" secondItem="UnW-e0-PQk" secondAttribute="bottom" id="6Rx-YR-gO1"/>
+                                    <constraint firstItem="UnW-e0-PQk" firstAttribute="leading" secondItem="zbL-W2-Eai" secondAttribute="leading" id="GVp-Ci-on0"/>
+                                    <constraint firstItem="sKG-gy-u1l" firstAttribute="leading" secondItem="zbL-W2-Eai" secondAttribute="leading" id="Qh0-fY-t3O"/>
+                                    <constraint firstItem="UnW-e0-PQk" firstAttribute="top" secondItem="zbL-W2-Eai" secondAttribute="top" id="ZeK-QR-6jN"/>
+                                    <constraint firstAttribute="trailing" secondItem="sKG-gy-u1l" secondAttribute="trailing" id="lLJ-ud-tGb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zbL-W2-Eai" firstAttribute="bottom" secondItem="BHG-6p-Eta" secondAttribute="bottom" id="1nE-p7-fEM"/>
                             <constraint firstItem="fHX-4N-vxn" firstAttribute="leading" secondItem="mNu-9k-91x" secondAttribute="trailing" constant="10" id="3uK-BI-X2o"/>
+                            <constraint firstItem="zbL-W2-Eai" firstAttribute="leading" secondItem="BHG-6p-Eta" secondAttribute="leading" id="I9d-Rb-DD9"/>
                             <constraint firstItem="mNu-9k-91x" firstAttribute="top" secondItem="fHX-4N-vxn" secondAttribute="top" id="K7t-fC-QZp"/>
                             <constraint firstItem="fHX-4N-vxn" firstAttribute="top" secondItem="BHG-6p-Eta" secondAttribute="top" constant="15" id="WPt-kB-tW3"/>
+                            <constraint firstItem="zbL-W2-Eai" firstAttribute="trailing" secondItem="BHG-6p-Eta" secondAttribute="trailing" id="a8f-HY-9A9"/>
+                            <constraint firstItem="zbL-W2-Eai" firstAttribute="top" secondItem="BHG-6p-Eta" secondAttribute="top" priority="750" constant="65" id="eiP-xV-nII"/>
                             <constraint firstItem="BHG-6p-Eta" firstAttribute="trailing" secondItem="fHX-4N-vxn" secondAttribute="trailing" constant="20" id="qUN-0G-EzM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BHG-6p-Eta"/>
@@ -228,6 +253,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ContentsView" destination="zbL-W2-Eai" id="Dym-Qg-YDY"/>
                         <outlet property="btnCCTV" destination="mNu-9k-91x" id="naX-kp-RAg"/>
                         <outlet property="btnExit" destination="n2y-kF-x21" id="F0h-QG-Ijd"/>
                         <outlet property="btnSensor" destination="fHX-4N-vxn" id="Oca-Xw-cUT"/>

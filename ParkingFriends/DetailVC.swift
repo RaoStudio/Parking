@@ -11,6 +11,7 @@ import CoreLocation
 
 class DetailVC: UIViewController, UIPageViewControllerDataSource {
 
+    @IBOutlet var ContentsView: UIView!
     @IBOutlet var lbl_Test: UILabel!
     @IBOutlet var btnExit: UIButton!
     
@@ -67,7 +68,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         self.pageVC?.view.frame.size.height = 180
         
         if let naviBar = self.navigationController?.navigationBar {
-            self.pageVC?.view.frame.size.height += 44
+            self.pageVC?.view.frame.size.height += 37
         }
         
         self.addChildViewController(self.pageVC)
@@ -92,6 +93,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         }
          */
         
+        
+        ContentsView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
     }
 
     override func didReceiveMemoryWarning() {
