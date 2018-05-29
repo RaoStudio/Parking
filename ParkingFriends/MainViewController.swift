@@ -216,7 +216,10 @@ class MainViewController: UIViewController {
         guard let lat = self.mapView.myLocation?.coordinate.latitude,
             let lng = self.mapView.myLocation?.coordinate.longitude else { return }
         
+        mapView.selectedMarker = nil
         destCoordinate = nil
+        
+        searchController?.searchBar.text = ""
         
         let camera = GMSCameraPosition.camera(withLatitude: lat ,longitude: lng , zoom: self.mapView.camera.zoom)
         
@@ -769,6 +772,8 @@ extension MainViewController: GMSMapViewDelegate {
         
         
         self.destCoordinate = nil
+        
+        searchController?.searchBar.text = ""
         
         return false
     }
