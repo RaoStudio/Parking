@@ -95,7 +95,14 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         }
          */
         
-        let strDistance = String(format: "%.2f", distance)
+        let strDistance: String
+        if distance > 1000 {
+            strDistance = String(format: "%.2fkm", distance/1000)
+        } else {
+            strDistance = String(format: "%.0fm", distance)
+        }
+        
+//        let strDistance = String(format: "%.2f", distance)
         
         btnDistance.setTitle(strDistance, for: UIControlState.normal)
         
