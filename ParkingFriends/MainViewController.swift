@@ -634,6 +634,8 @@ class MainViewController: UIViewController {
             circle = GMSCircle(position: self.mapView.camera.target, radius: Double(getIntFromRadius()))
             //        circle.fillColor = UIColor.redColor().colorWithAlphaComponent(0.5)
             circle.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.05)
+            circle.strokeColor = UIColor.green
+            circle.strokeWidth = 0.8
             circle.map = self.mapView
             circle.position = coordinate
         } else {

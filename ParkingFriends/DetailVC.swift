@@ -20,8 +20,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     
     var distance: CLLocationDistance = 0
+    @IBOutlet var btnDistance: UIButton!
     
-//    var pageVC: UIPageViewController!
+    @IBOutlet var viewPay: UIView!
+    //    var pageVC: UIPageViewController!
     var pageVC: RaoPageVC!
     
     var contentTitles = ["STEP 1", "STEP 2","STEP 3","STEP 4"]
@@ -93,6 +95,9 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         }
          */
         
+        let strDistance = String(format: "%.2f", distance)
+        
+        btnDistance.setTitle(strDistance, for: UIControlState.normal)
         
         ContentsView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
     }
@@ -120,6 +125,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             } else {
                 self.btnSensor.isHidden = true
                 self.btnCCTV.isHidden = true
+                
+                self.viewPay.isHidden = true
             }
         }
         
@@ -142,10 +149,21 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     }
      */
     
-
+    // MARK: - Button Action
     @IBAction func onExit(_ sender: Any) {
 //        self.dismiss(animated: true, completion: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    @IBAction func onBtnNavi(_ sender: UIButton) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "PresentTestVC") else {
+            return
+        }
+        
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false, completion: nil)
     }
     
     func getContentVC(atIndex idx: Int) -> UIViewController? {

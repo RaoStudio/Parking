@@ -12,12 +12,12 @@
           "width" : 1
         },
         "cap-insets" : {
-          "right" : 27,
-          "left" : 27
+          "right" : 34,
+          "left" : 34
         }
       },
       "idiom" : "universal",
-      "filename" : "main_map_distance_btn@2x.png",
+      "filename" : "bottom_btn@2x.png",
       "scale" : "2x"
     },
     {
