@@ -20,6 +20,37 @@ struct Platform {
     }()
 }
 
+@available(iOS 11.0, *)
+struct RaoIPhoneX {
+    static let isIPhoneX: Bool = {
+        
+            var isX = false
+            if ((UIApplication.shared.keyWindow?.safeAreaInsets.top)! > CGFloat(0.0)) {
+                isX = true
+            }
+            return isX
+        }()
+}
+
+/*
+- (BOOL)isIphoneX {
+    if (@available(iOS 11.0, *)) {
+        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        CGFloat topPadding = window.safeAreaInsets.top;
+        if(topPadding>0) {
+            return YES;
+        }
+        else {
+            return NO;
+        }
+    }
+    else {
+        return NO;
+    }
+}
+*/
+
+
 func hexStringToUIColor (hex:String) -> UIColor {
     var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
     

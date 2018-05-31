@@ -209,7 +209,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4Vm-SJ-O8J">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnW-e0-PQk">
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnW-e0-PQk">
                                                 <rect key="frame" x="0.0" y="0.0" width="187.5" height="35"/>
                                                 <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -341,8 +341,19 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ges-tU-4yL" userLabel="PayInfo View">
                                                         <rect key="frame" x="12" y="228" width="351" height="75"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_detail_table" translatesAutoresizingMaskIntoConstraints="NO" id="fg8-ca-6WN">
+                                                                <rect key="frame" x="0.0" y="1" width="351" height="73"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="73" id="M20-z9-LXw"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
                                                         <color key="backgroundColor" red="0.1333333333" green="0.81960784310000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="fg8-ca-6WN" secondAttribute="trailing" id="Job-k5-hf2"/>
+                                                            <constraint firstItem="fg8-ca-6WN" firstAttribute="leading" secondItem="ges-tU-4yL" secondAttribute="leading" id="Lb9-wV-hrs"/>
+                                                            <constraint firstItem="fg8-ca-6WN" firstAttribute="centerY" secondItem="ges-tU-4yL" secondAttribute="centerY" id="SON-TA-hJs"/>
                                                             <constraint firstAttribute="height" constant="75" id="Zl9-6U-P8N"/>
                                                         </constraints>
                                                     </view>
@@ -626,5 +637,6 @@
         <image name="distance_icon" width="12" height="12"/>
         <image name="icon_distance" width="11" height="13"/>
         <image name="icon_navi" width="13" height="13"/>
+        <image name="img_detail_table" width="12" height="72"/>
     </resources>
 </document>

@@ -90,10 +90,18 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         self.pageVC?.view.frame.origin = CGPoint(x: 0, y: 0)
         self.pageVC?.view.frame.size.width = self.view.frame.width
-        self.pageVC?.view.frame.size.height = 180
+//        self.pageVC?.view.frame.size.height = 180
+        self.pageVC?.view.frame.size.height = self.view.frame.width * (180/375)
         
         if let naviBar = self.navigationController?.navigationBar {
             self.pageVC?.view.frame.size.height += 37
+            
+            if #available(iOS 11.0, *) {
+            if RaoIPhoneX.isIPhoneX {
+                self.pageVC?.view.frame.size.height += 24
+            }
+            }
+            
         }
         
         self.addChildViewController(self.pageVC)
