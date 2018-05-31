@@ -22,7 +22,6 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     var distance: CLLocationDistance = 0
     @IBOutlet var btnDistance: UIButton!
     
-    @IBOutlet var viewPay: UIView!
     //    var pageVC: UIPageViewController!
     var pageVC: RaoPageVC!
     
@@ -31,6 +30,16 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     var contentImages: Array<String> = Array()
     
     var dicPlace: Dictionary<String, Any>?
+    
+    
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var graphView: UIView!
+    @IBOutlet var conHeightGraphView: NSLayoutConstraint!
+    
+    @IBOutlet var payInfoView: UIView!
+    
+    
+    @IBOutlet var viewPay: UIView!
     
     
     @IBOutlet var lblCompany: UILabel!
@@ -60,6 +69,14 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             if contentImages.isEmpty {
                 contentImages.append("Detail_NoImage")
             }
+         
+            
+            
+            if let partner : NSString = dataPlace["partner"] as? NSString, partner.isEqual(to: "0") {
+                self.graphView.isHidden = true
+                conHeightGraphView.constant = 0
+            }
+            
             
         }
         
@@ -125,7 +142,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        lbl_Test.text = dicPlace?.description
+//        lbl_Test.text = dicPlace?.description     // Test
         self.view.bringSubview(toFront: self.btnExit)
         
         if let dataPlace = self.dicPlace {

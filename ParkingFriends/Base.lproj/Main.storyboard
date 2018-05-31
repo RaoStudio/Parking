@@ -271,9 +271,9 @@
                                         <rect key="frame" x="0.0" y="35" width="375" height="420"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lH3-WP-2db">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQm-o8-Y4O">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQm-o8-Y4O" userLabel="Address View">
                                                         <rect key="frame" x="12" y="0.0" width="351" height="78"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VeX-Zc-bwL">
@@ -332,20 +332,34 @@
                                                             <constraint firstItem="VeX-Zc-bwL" firstAttribute="leading" secondItem="EQm-o8-Y4O" secondAttribute="leading" id="zNt-WN-Xnq"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKG-gy-u1l">
-                                                        <rect key="frame" x="31" y="90" width="312" height="290"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGU-Lx-znv" userLabel="Graph &amp; Time View">
+                                                        <rect key="frame" x="12" y="78" width="351" height="150"/>
+                                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="150" id="OXv-s0-c1M"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ges-tU-4yL" userLabel="PayInfo View">
+                                                        <rect key="frame" x="12" y="228" width="351" height="75"/>
+                                                        <color key="backgroundColor" red="0.1333333333" green="0.81960784310000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="75" id="Zl9-6U-P8N"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="EQm-o8-Y4O" firstAttribute="leading" secondItem="lH3-WP-2db" secondAttribute="leading" constant="12" id="69J-bG-9aa"/>
+                                                    <constraint firstItem="QGU-Lx-znv" firstAttribute="leading" secondItem="lH3-WP-2db" secondAttribute="leading" constant="12" id="Aeg-L8-HR2"/>
+                                                    <constraint firstItem="QGU-Lx-znv" firstAttribute="top" secondItem="EQm-o8-Y4O" secondAttribute="bottom" id="HKZ-0n-N7L"/>
                                                     <constraint firstItem="EQm-o8-Y4O" firstAttribute="top" secondItem="lH3-WP-2db" secondAttribute="top" id="PAl-D4-8Y1"/>
                                                     <constraint firstAttribute="height" priority="250" constant="500" id="Qrc-7Q-fab"/>
+                                                    <constraint firstItem="ges-tU-4yL" firstAttribute="top" secondItem="QGU-Lx-znv" secondAttribute="bottom" id="RPl-aF-oKl"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ges-tU-4yL" secondAttribute="bottom" id="YYd-22-WMd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="QGU-Lx-znv" secondAttribute="trailing" constant="12" id="a7x-zp-xmO"/>
                                                     <constraint firstAttribute="trailing" secondItem="EQm-o8-Y4O" secondAttribute="trailing" constant="12" id="tmh-SH-sss"/>
+                                                    <constraint firstItem="ges-tU-4yL" firstAttribute="leading" secondItem="lH3-WP-2db" secondAttribute="leading" constant="12" id="wsO-wU-E5d"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ges-tU-4yL" secondAttribute="trailing" constant="12" id="yxE-rs-5cM"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -399,10 +413,13 @@
                         <outlet property="btnDistance" destination="UnW-e0-PQk" id="wuM-ZK-KpC"/>
                         <outlet property="btnExit" destination="n2y-kF-x21" id="F0h-QG-Ijd"/>
                         <outlet property="btnSensor" destination="fHX-4N-vxn" id="Oca-Xw-cUT"/>
+                        <outlet property="conHeightGraphView" destination="OXv-s0-c1M" id="BsC-lC-Q0w"/>
+                        <outlet property="graphView" destination="QGU-Lx-znv" id="Xc8-ND-gCm"/>
                         <outlet property="lblAddress" destination="2wW-kZ-qHV" id="bk5-dj-LuF"/>
                         <outlet property="lblAvailable" destination="kqa-uK-BR6" id="5eN-rz-fns"/>
                         <outlet property="lblCompany" destination="Ul5-0E-php" id="TB7-wb-eM5"/>
-                        <outlet property="lbl_Test" destination="sKG-gy-u1l" id="Upc-4I-4KA"/>
+                        <outlet property="payInfoView" destination="ges-tU-4yL" id="N63-Bh-oSB"/>
+                        <outlet property="scrollView" destination="QCj-GD-uUd" id="69A-p4-yp9"/>
                         <outlet property="viewPay" destination="kQ0-5O-2ia" id="XGx-Nt-58W"/>
                     </connections>
                 </viewController>
