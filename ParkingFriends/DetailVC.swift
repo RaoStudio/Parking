@@ -32,6 +32,12 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     var dicPlace: Dictionary<String, Any>?
     
+    
+    @IBOutlet var lblCompany: UILabel!
+    @IBOutlet var lblAddress: UILabel!
+    @IBOutlet var lblAvailable: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -102,6 +108,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             strDistance = String(format: "%.0fm", distance)
         }
         
+        
+        
+        
+        
 //        let strDistance = String(format: "%.2f", distance)
         
         btnDistance.setTitle(strDistance, for: UIControlState.normal)
@@ -134,6 +144,18 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 self.btnCCTV.isHidden = true
                 
                 self.viewPay.isHidden = true
+            }
+            
+            if let available : NSString = dataPlace["available"] as? NSString {
+                lblAvailable.text = String(format: "%@대", available)
+            }
+            
+            if let company: NSString = dataPlace["company"] as? NSString {
+                lblCompany.text = String(format: "%@", company)
+            }
+            
+            if let address: NSString = dataPlace["address"] as? NSString {
+                lblAddress.text = String(format: "%@", address)
             }
         }
         
