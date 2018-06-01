@@ -247,6 +247,19 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
      */
     
     // MARK: - Button Action
+    
+    @IBAction func onBtnTimePicker(_ sender: UIButton) {
+        
+        guard let timePickerNavi = self.storyboard?.instantiateViewController(withIdentifier: "TimePickerNavi") as? UINavigationController else {
+            return
+        }
+        
+        //        let timePickerVC = timePickerNavi.topViewController as? TimePickerVC
+        self.present(timePickerNavi, animated: true, completion: nil)
+        
+    }
+    
+    
     @IBAction func onExit(_ sender: Any) {
 //        self.dismiss(animated: true, completion: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
