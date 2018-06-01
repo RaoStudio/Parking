@@ -43,6 +43,19 @@ class MainViewController: UIViewController {
     
     @IBOutlet var btnStart: UIButton!
     
+    @IBOutlet var btnLocation: RoundButton!
+    
+    
+    
+    @IBOutlet var constLotWidth: NSLayoutConstraint!
+    @IBOutlet var constLotHeight: NSLayoutConstraint!
+    @IBOutlet var constLocationWidth: NSLayoutConstraint!
+    @IBOutlet var constLocationHeight: NSLayoutConstraint!
+    @IBOutlet var constRadiusWidth: NSLayoutConstraint!
+    @IBOutlet var constRadiusHeight: NSLayoutConstraint!
+    
+    
+    
     var circle: GMSCircle!
     
     private let locationManager = CLLocationManager()
@@ -147,6 +160,21 @@ class MainViewController: UIViewController {
         
         if bUseDropDown {
             setupChooseDropDown()
+        }
+        
+        
+        let height = UIScreen.main.nativeBounds.height
+        
+        if height >= 1920 {
+            
+            constLotWidth.constant = 45
+            constLotHeight.constant = 45
+            
+            constLocationWidth.constant = 45
+            constLocationHeight.constant = 45
+            
+            constRadiusWidth.constant = 70
+            constRadiusHeight.constant = 32
         }
     }
     

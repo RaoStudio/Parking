@@ -43,6 +43,13 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var conHeightPublicPayInfoView: NSLayoutConstraint!
     
     @IBOutlet var viewPay: UIView!
+    
+    
+    
+    @IBOutlet var btnStartTime: UIButton!
+    @IBOutlet var btnEndTime: UIButton!
+    
+    
 
     
     @IBOutlet var lblCompany: UILabel!
@@ -58,6 +65,11 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
 //    @IBOutlet var lbl_daily_fees: UILabel!
     
     @IBOutlet var lbl_additinal: UILabel!
+    
+    
+    @IBOutlet var lbl_TotalTime: UILabel!
+    @IBOutlet var lbl_TotalPay: UILabel!
+    
     
     
     override func viewDidLoad() {
