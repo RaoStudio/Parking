@@ -36,15 +36,23 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var graphView: UIView!
     @IBOutlet var conHeightGraphView: NSLayoutConstraint!
     
-    @IBOutlet var payInfoView: UIView!
     
+    @IBOutlet var payInfoView: UIView!
+    @IBOutlet var conHeightPayInfoView: NSLayoutConstraint!
+    @IBOutlet var publicPayInfoView: UIView!
     
     @IBOutlet var viewPay: UIView!
-    
+
     
     @IBOutlet var lblCompany: UILabel!
     @IBOutlet var lblAddress: UILabel!
     @IBOutlet var lblAvailable: UILabel!
+    
+    
+    @IBOutlet var lbl_default_minute: UILabel!
+    @IBOutlet var lbl_default_fees: UILabel!
+    @IBOutlet var lbl_daily_fees: UILabel!
+    
     
     
     override func viewDidLoad() {
@@ -77,7 +85,17 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 conHeightGraphView.constant = 0
             }
             
+            if let strMin = dataPlace["default_minute"] as? String {
+                lbl_default_minute.text = "\(strMin)분"
+            }
             
+            if let strFee = dataPlace["default_fees"] as? String {
+                lbl_default_fees.text = "\(strFee)원"
+            }
+            
+            if let strDailyFee = dataPlace["daily_fees"] as? String {
+                lbl_daily_fees.text = "\(strDailyFee)원"
+            }
         }
         
         
