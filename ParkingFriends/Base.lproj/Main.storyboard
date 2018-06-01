@@ -577,7 +577,7 @@
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data ~~ @_@ " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2CK-od-6ZH">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2CK-od-6ZH">
                                                                                 <rect key="frame" x="-0.5" y="25" width="117.5" height="50"/>
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                                 <nil key="textColor"/>
@@ -717,17 +717,22 @@
                         <outlet property="btnSensor" destination="fHX-4N-vxn" id="Oca-Xw-cUT"/>
                         <outlet property="conHeightGraphView" destination="OXv-s0-c1M" id="BsC-lC-Q0w"/>
                         <outlet property="conHeightPayInfoView" destination="Zl9-6U-P8N" id="92x-yr-0h6"/>
+                        <outlet property="conHeightPublicPayInfoView" destination="Dgr-yJ-jvm" id="HDu-1l-HMg"/>
                         <outlet property="graphView" destination="QGU-Lx-znv" id="Xc8-ND-gCm"/>
                         <outlet property="lblAddress" destination="2wW-kZ-qHV" id="bk5-dj-LuF"/>
                         <outlet property="lblAvailable" destination="kqa-uK-BR6" id="5eN-rz-fns"/>
                         <outlet property="lblCompany" destination="Ul5-0E-php" id="TB7-wb-eM5"/>
-                        <outlet property="lbl_daily_fees" destination="gyo-QG-ffY" id="S2n-j3-irI"/>
-                        <outlet property="lbl_default_fees" destination="dz9-tT-vAh" id="QVs-lb-bzw"/>
-                        <outlet property="lbl_default_minute" destination="5q3-hA-Q3P" id="Yws-we-e70"/>
+                        <outlet property="lbl_additinal" destination="miV-vv-JSp" id="7Ci-m9-tlU"/>
                         <outlet property="payInfoView" destination="ges-tU-4yL" id="N63-Bh-oSB"/>
                         <outlet property="publicPayInfoView" destination="hjc-Bg-dux" id="Xe5-e0-JIv"/>
                         <outlet property="scrollView" destination="QCj-GD-uUd" id="69A-p4-yp9"/>
                         <outlet property="viewPay" destination="kQ0-5O-2ia" id="XGx-Nt-58W"/>
+                        <outletCollection property="lbl_default_minute" destination="5q3-hA-Q3P" collectionClass="NSMutableArray" id="PZ3-fV-AvU"/>
+                        <outletCollection property="lbl_default_minute" destination="5Og-WK-QNK" collectionClass="NSMutableArray" id="DGs-bs-lPP"/>
+                        <outletCollection property="lbl_default_fees" destination="dz9-tT-vAh" collectionClass="NSMutableArray" id="ReJ-oN-Yit"/>
+                        <outletCollection property="lbl_daily_fees" destination="gyo-QG-ffY" collectionClass="NSMutableArray" id="3fx-Xg-cvD"/>
+                        <outletCollection property="lbl_default_fees" destination="hez-aK-Q50" collectionClass="NSMutableArray" id="Zvf-wE-ANE"/>
+                        <outletCollection property="lbl_daily_fees" destination="2CK-od-6ZH" collectionClass="NSMutableArray" id="6iH-rT-n0C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhu-ej-MYe" userLabel="First Responder" sceneMemberID="firstResponder"/>

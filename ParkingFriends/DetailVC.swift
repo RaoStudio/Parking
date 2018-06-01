@@ -40,6 +40,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var payInfoView: UIView!
     @IBOutlet var conHeightPayInfoView: NSLayoutConstraint!
     @IBOutlet var publicPayInfoView: UIView!
+    @IBOutlet var conHeightPublicPayInfoView: NSLayoutConstraint!
     
     @IBOutlet var viewPay: UIView!
 
@@ -49,10 +50,14 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var lblAvailable: UILabel!
     
     
-    @IBOutlet var lbl_default_minute: UILabel!
-    @IBOutlet var lbl_default_fees: UILabel!
-    @IBOutlet var lbl_daily_fees: UILabel!
+    @IBOutlet var lbl_default_minute: [UILabel]!
+//    @IBOutlet var lbl_default_minute: UILabel!
+    @IBOutlet var lbl_default_fees: [UILabel]!
+//    @IBOutlet var lbl_default_fees: UILabel!
+    @IBOutlet var lbl_daily_fees: [UILabel]!
+//    @IBOutlet var lbl_daily_fees: UILabel!
     
+    @IBOutlet var lbl_additinal: UILabel!
     
     
     override func viewDidLoad() {
@@ -82,19 +87,39 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             
             if let partner : NSString = dataPlace["partner"] as? NSString, partner.isEqual(to: "0") {
                 self.graphView.isHidden = true
-                conHeightGraphView.constant = 0
+                self.conHeightGraphView.constant = 0
+                
+                self.payInfoView.isHidden = true
+                self.conHeightPayInfoView.constant = 0
+            } else {
+                self.publicPayInfoView.isHidden = true
+                self.conHeightPublicPayInfoView.constant = 0
             }
             
             if let strMin = dataPlace["default_minute"] as? String {
-                lbl_default_minute.text = "\(strMin)분"
+//                self.lbl_default_minute.text = "\(strMin)분"
+                for label in lbl_default_minute {
+                    label.text = "\(strMin)분"
+                }
+                
             }
             
             if let strFee = dataPlace["default_fees"] as? String {
-                lbl_default_fees.text = "\(strFee)원"
+//                self.lbl_default_fees.text = "\(strFee)원"
+                for label in lbl_default_fees {
+                    label.text = "\(strFee)원"
+                }
             }
             
             if let strDailyFee = dataPlace["daily_fees"] as? String {
-                lbl_daily_fees.text = "\(strDailyFee)원"
+//                self.lbl_daily_fees.text = "\(strDailyFee)원"
+                for label in lbl_daily_fees {
+                    label.text = "\(strDailyFee)원"
+                }
+            }
+            
+            if let strAddMin = dataPlace["additional_minute"] as? String, let strAddFee = dataPlace["additional_fees"] as? String {
+                self.lbl_additinal.text = "\(strAddMin)분 \(strAddFee)원"
             }
         }
         
