@@ -1254,9 +1254,9 @@
                                         <rect key="frame" x="0.0" y="595" width="375" height="72"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gK-z3-PgF">
-                                                <rect key="frame" x="78.5" y="14" width="217" height="34"/>
+                                                <rect key="frame" x="128.5" y="14" width="117" height="34"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="217" id="26U-3r-M7m"/>
+                                                    <constraint firstAttribute="width" constant="117" id="26U-3r-M7m"/>
                                                     <constraint firstAttribute="height" constant="34" id="sxa-lN-uMA"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
