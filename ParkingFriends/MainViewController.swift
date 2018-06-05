@@ -183,7 +183,12 @@ class MainViewController: UIViewController {
         
         // Time Set
         let nowDate = Date()
-        let nowDatePlus10 = nowDate + 10.minute
+        var nowDatePlus10 = nowDate + 10.minute
+        
+        let min10 = (nowDatePlus10.minute / 10) * 10
+        
+        nowDatePlus10 = nowDatePlus10 - nowDatePlus10.minute.minute + min10.minute
+        
         let dateAfterNow = Date(timeInterval: 60*60, since: nowDatePlus10)
         let strNowDate = uinfo.dateToString(nowDatePlus10)
         let strDateAfterNow = uinfo.dateToString(dateAfterNow)
