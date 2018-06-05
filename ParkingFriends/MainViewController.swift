@@ -182,6 +182,7 @@ class MainViewController: UIViewController {
         
         
         // Time Set
+        /*
         let nowDate = Date()
         var nowDatePlus10 = nowDate + 10.minute
         
@@ -195,9 +196,12 @@ class MainViewController: UIViewController {
         
         uinfo.startTime = strNowDate
         uinfo.endTime = strDateAfterNow
+         */
         
-        btnStart.setTitle(strNowDate, for: UIControlState.normal)
-        btnEnd.setTitle(strDateAfterNow, for: UIControlState.normal)
+        
+        uinfo.initTime()
+        btnStart.setTitle(uinfo.startTime, for: UIControlState.normal)
+        btnEnd.setTitle(uinfo.endTime, for: UIControlState.normal)
         
         /*
         let calendar = Calendar(identifier: .gregorian)
@@ -205,7 +209,7 @@ class MainViewController: UIViewController {
         let wd = calendar.dateComponents([.weekday], from: date)
          */
         
-        let strDay = uinfo.dayFromDate(strNowDate)
+//        let strDay = uinfo.dayFromDate(strNowDate)
         
     }
     

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftDate
 
 struct UserInfoKey {
     static let tutorial = "TUTORIAL"
@@ -58,6 +59,24 @@ class UserInfoManager {
 }
 
 extension UserInfoManager {
+
+    func initTime() {
+        
+        // Time Set
+        let nowDate = Date()
+        var nowDatePlus10 = nowDate + 10.minute
+        
+        let min10 = (nowDatePlus10.minute / 10) * 10
+        
+        nowDatePlus10 = nowDatePlus10 - nowDatePlus10.minute.minute + min10.minute
+        
+        let dateAfterNow = Date(timeInterval: 60*60, since: nowDatePlus10)
+        let strNowDate = dateToString(nowDatePlus10)
+        let strDateAfterNow = dateToString(dateAfterNow)
+        
+        startTime = strNowDate
+        endTime = strDateAfterNow
+    }
     
     func stringToDate(_ value: String) -> Date {
         let df = DateFormatter()
