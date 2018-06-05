@@ -42,6 +42,7 @@ class MainViewController: UIViewController {
     
     
     @IBOutlet var btnStart: UIButton!
+    @IBOutlet var btnEnd: UIButton!
     
     @IBOutlet var btnLocation: RoundButton!
     
@@ -176,6 +177,29 @@ class MainViewController: UIViewController {
             constRadiusWidth.constant = 70
             constRadiusHeight.constant = 32
         }
+        
+        
+        
+        // Time Set
+        let nowDate = Date()
+        let dateAfterNow = Date(timeInterval: 60*60, since: nowDate)
+        let strNowDate = uinfo.dateToString(nowDate)
+        let strDateAfterNow = uinfo.dateToString(dateAfterNow)
+        
+        uinfo.startTime = strNowDate
+        uinfo.endTime = strDateAfterNow
+        
+        btnStart.setTitle(strNowDate, for: UIControlState.normal)
+        btnEnd.setTitle(strDateAfterNow, for: UIControlState.normal)
+        
+        /*
+        let calendar = Calendar(identifier: .gregorian)
+        let date = uinfo.stringToDate(strNowDate)
+        let wd = calendar.dateComponents([.weekday], from: date)
+         */
+        
+        let strDay = uinfo.dayFromDate(strNowDate)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

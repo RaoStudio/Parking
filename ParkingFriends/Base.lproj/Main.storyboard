@@ -75,37 +75,61 @@
                                             <constraint firstAttribute="height" constant="15" id="MfO-Hx-7Ei"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQ0-Ts-KHh">
-                                        <rect key="frame" x="286" y="2" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="onBtnSubViewTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tkL-xD-rBg"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfK-4w-uRb">
-                                        <rect key="frame" x="153" y="32" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykB-Fv-la3">
-                                        <rect key="frame" x="8" y="2" width="140" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykB-Fv-la3">
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="mu0-Vq-XS6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="onBtnTimePicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ut0-HN-ch8"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQ0-Ts-KHh">
+                                        <rect key="frame" x="189" y="0.0" width="162" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="f7X-ky-RdX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onBtnTimePicker:" destination="dkx-z0-nzr" eventType="touchUpInside" id="g2s-z3-k31"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfK-4w-uRb">
+                                        <rect key="frame" x="0.0" y="33" width="351" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="IiT-kR-mch"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                        <state key="normal" title="주차시간으로 검색하기">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="aQT-sq-8R1" firstAttribute="top" secondItem="Rhm-eP-8Wj" secondAttribute="top" id="3NX-df-InA"/>
+                                    <constraint firstAttribute="trailing" secondItem="VQ0-Ts-KHh" secondAttribute="trailing" id="CuY-FR-FdV"/>
                                     <constraint firstItem="YXN-yv-N05" firstAttribute="top" secondItem="Rhm-eP-8Wj" secondAttribute="top" constant="9" id="FsK-ta-msA"/>
+                                    <constraint firstAttribute="trailing" secondItem="pfK-4w-uRb" secondAttribute="trailing" id="Imq-aU-dQ1"/>
+                                    <constraint firstItem="YXN-yv-N05" firstAttribute="leading" secondItem="ykB-Fv-la3" secondAttribute="trailing" id="Owr-ad-VNo"/>
                                     <constraint firstAttribute="bottom" secondItem="aQT-sq-8R1" secondAttribute="bottom" id="P7E-ac-XvM"/>
                                     <constraint firstAttribute="height" constant="60" id="Q91-xk-jis"/>
+                                    <constraint firstItem="VQ0-Ts-KHh" firstAttribute="leading" secondItem="YXN-yv-N05" secondAttribute="trailing" id="R6Z-rd-Pr5"/>
+                                    <constraint firstItem="ykB-Fv-la3" firstAttribute="top" secondItem="Rhm-eP-8Wj" secondAttribute="top" id="RXs-2l-7cS"/>
+                                    <constraint firstItem="VQ0-Ts-KHh" firstAttribute="top" secondItem="Rhm-eP-8Wj" secondAttribute="top" id="Y2Z-8W-JVE"/>
                                     <constraint firstItem="aQT-sq-8R1" firstAttribute="leading" secondItem="Rhm-eP-8Wj" secondAttribute="leading" id="aej-2H-pOW"/>
+                                    <constraint firstAttribute="bottom" secondItem="pfK-4w-uRb" secondAttribute="bottom" id="bPb-of-UY5"/>
                                     <constraint firstItem="YXN-yv-N05" firstAttribute="centerX" secondItem="Rhm-eP-8Wj" secondAttribute="centerX" id="ddZ-FW-YLj"/>
                                     <constraint firstAttribute="trailing" secondItem="aQT-sq-8R1" secondAttribute="trailing" id="gbx-zZ-ZSK"/>
+                                    <constraint firstItem="pfK-4w-uRb" firstAttribute="leading" secondItem="Rhm-eP-8Wj" secondAttribute="leading" id="hCK-Sk-4gn"/>
+                                    <constraint firstItem="ykB-Fv-la3" firstAttribute="leading" secondItem="Rhm-eP-8Wj" secondAttribute="leading" id="mvv-HD-kPk"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayX-mu-jII">
@@ -146,6 +170,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="ayX-mu-jII" id="4Dv-4r-dkH"/>
+                        <outlet property="btnEnd" destination="VQ0-Ts-KHh" id="duD-v9-HW2"/>
                         <outlet property="btnLocation" destination="6pm-aN-3qW" id="VWY-uE-pg3"/>
                         <outlet property="btnRadius" destination="4OL-ZZ-hAG" id="Ycq-CC-2yO"/>
                         <outlet property="btnStart" destination="ykB-Fv-la3" id="ttp-qf-LkT"/>
@@ -1378,7 +1403,7 @@
     </scenes>
     <resources>
         <image name="Main_TP_Arrow" width="26" height="15"/>
-        <image name="Main_TP_BackGround" width="296" height="59"/>
+        <image name="Main_TP_BackGround" width="296" height="60"/>
         <image name="MyLocation" width="33" height="33"/>
         <image name="MyLocation_Sel" width="38" height="37"/>
         <image name="SideMenuBtn" width="30" height="30"/>
