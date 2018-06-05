@@ -13,4 +13,5 @@ target 'ParkingFriends' do
     pod 'TabPageViewController'
     pod 'PureLayout'
     pod 'DropDown'
+    pod 'SwiftDate'
 end

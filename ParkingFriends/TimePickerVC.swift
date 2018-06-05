@@ -13,6 +13,9 @@ class TimePickerVC: UIViewController {
     @IBOutlet var startPicker: UIDatePicker!
     @IBOutlet var endPicker: UIDatePicker!
     
+    
+    let uinfo = UserInfoManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,12 +30,22 @@ class TimePickerVC: UIViewController {
          */
         
         
-        //*
-        setUpTimePicker()
-        
+        /*
         startPicker.minimumDate = Date()
         startPicker.maximumDate = Date(timeInterval: 60*60*24*2, since: Date())
-         //*/
+         */
+        
+        let startDate = uinfo.stringToDate(uinfo.startTime!)
+        startPicker.minimumDate = startDate
+        startPicker.date = startDate
+        
+        let endDate = uinfo.stringToDate(uinfo.endTime!)
+        endPicker.minimumDate = endDate
+        endPicker.date = endDate
+        
+        let sD = startPicker.date
+        let eD = endPicker.date
+        
         
 //        self.startPicker.setLimit(forCalendarComponent: .day, minimumUnit: 0, maximumUnit: 2)
     }

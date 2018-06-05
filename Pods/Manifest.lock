@@ -16,6 +16,7 @@ PODS:
     - SDWebImage/Core (= 4.2.3)
   - SDWebImage/Core (4.2.3)
   - SideMenu (3.1.5)
+  - SwiftDate (4.5.1)
   - SwiftyJSON (4.0.0)
   - TabPageViewController (0.2.7)
 
@@ -28,8 +29,23 @@ DEPENDENCIES:
   - PureLayout
   - SDWebImage (~> 4.0)
   - SideMenu
+  - SwiftDate
   - SwiftyJSON
   - TabPageViewController
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - DropDown
+    - GoogleMaps
+    - GooglePlacePicker
+    - GooglePlaces
+    - PureLayout
+    - SDWebImage
+    - SideMenu
+    - SwiftDate
+    - SwiftyJSON
+    - TabPageViewController
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -40,9 +56,10 @@ SPEC CHECKSUMS:
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
+  SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TabPageViewController: c37a1257a50c2b50712dde61bf499768eee95b67
 
-PODFILE CHECKSUM: e11ff565d28daa5b16a109087d78e4f8d42a2f18
+PODFILE CHECKSUM: 9f6bdde971555ce741e37dc031f8d0282848fb45
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

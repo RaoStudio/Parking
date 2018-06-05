@@ -61,14 +61,18 @@ extension UserInfoManager {
     
     func stringToDate(_ value: String) -> Date {
         let df = DateFormatter()
-        df.locale = Locale(identifier: "ko_KR")
+//        df.locale = Locale(identifier: "ko_KR")
+        df.locale = Locale.current
+        df.timeZone = TimeZone.current
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return df.date(from: value)!
     }
     
     func dateToString(_ value: Date) -> String {
         let df = DateFormatter()
-        df.locale = Locale(identifier: "ko_KR")
+//        df.locale = Locale(identifier: "ko_KR")
+        df.locale = Locale.current
+        df.timeZone = TimeZone.current
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return df.string(from: value as Date)
     }
