@@ -15,6 +15,7 @@ import Alamofire
 import PureLayout
 
 import DropDown
+import SwiftDate
 
 enum RadiusType: String {
     case fiveH = "500m"
@@ -182,8 +183,9 @@ class MainViewController: UIViewController {
         
         // Time Set
         let nowDate = Date()
-        let dateAfterNow = Date(timeInterval: 60*60, since: nowDate)
-        let strNowDate = uinfo.dateToString(nowDate)
+        let nowDatePlus10 = nowDate + 10.minute
+        let dateAfterNow = Date(timeInterval: 60*60, since: nowDatePlus10)
+        let strNowDate = uinfo.dateToString(nowDatePlus10)
         let strDateAfterNow = uinfo.dateToString(dateAfterNow)
         
         uinfo.startTime = strNowDate

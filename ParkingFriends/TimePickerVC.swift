@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import DropDown
+import SwiftDate
 
 class TimePickerVC: UIViewController {
 
     @IBOutlet var startPicker: UIDatePicker!
     @IBOutlet var endPicker: UIDatePicker!
     
+    @IBOutlet var btnStart: UIButton!
+    @IBOutlet var btnEnd: UIButton!
+    
+    
+    let startDropDown = DropDown()
+    let endDropDown = DropDown()
     
     let uinfo = UserInfoManager()
+    
+    
+    var strNow: String = ""
+    var strOne: String = ""
+    var strTwo: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +56,27 @@ class TimePickerVC: UIViewController {
         endPicker.minimumDate = endDate
         endPicker.date = endDate
         
-        let sD = startPicker.date
-        let eD = endPicker.date
+        /*
+        strNow = uinfo.startTime!
+        strOne = uinfo.dateToString(startDate+1.day)
+        strTwo = uinfo.dateToString(startDate+2.day)
+        */
         
+        
+//        strDistance = String(format: "%.0fm", distance)
+        strNow = String(format: "%d년%02d월%02d일(%@)", startDate.year, startDate.month, startDate.day, startDate.weekdayName)
+        
+        
+        strOne = uinfo.dateToString(startDate+1.day)
+        strTwo = uinfo.dateToString(startDate+2.day)
+        
+        
+        btnStart.setTitle(strNow, for: UIControlState.normal)
+        btnEnd.setTitle(strNow, for: UIControlState.normal)
+        
+        
+        setupStartDropDown()
+        setupEndDropDown()
         
 //        self.startPicker.setLimit(forCalendarComponent: .day, minimumUnit: 0, maximumUnit: 2)
     }
@@ -54,6 +85,50 @@ class TimePickerVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    // MARK: - SetUpDropDown
+    
+    func setupStartDropDown() {
+        
+        startDropDown.textFont = UIFont.systemFont(ofSize: 13)
+        startDropDown.anchorView = self.btnStart
+        startDropDown.bottomOffset = CGPoint(x: 0, y: self.btnStart.bounds.height)
+        
+        startDropDown.dataSource = [
+            strNow,
+            strOne,
+            strTwo
+        ]
+        
+        startDropDown.direction = .bottom
+    }
+    
+    func setupEndDropDown() {
+        endDropDown.textFont = UIFont.systemFont(ofSize: 13)
+        endDropDown.anchorView = self.btnEnd
+        endDropDown.bottomOffset = CGPoint(x: 0, y: self.btnEnd.bounds.height)
+        
+        endDropDown.dataSource = [
+            strNow,
+            strOne,
+            strTwo
+        ]
+        
+        endDropDown.direction = .bottom
+    }
+    
+    
+    // MARK: - Action
+    @IBAction func onBtnStart(_ sender: UIButton) {
+        startDropDown.show()
+    }
+    
+    
+    @IBAction func onBtnEnd(_ sender: UIButton) {
+        endDropDown.show()
+    }
+    
     
     
     func setUpTimePicker() {

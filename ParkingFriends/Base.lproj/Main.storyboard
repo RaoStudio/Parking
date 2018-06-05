@@ -1170,6 +1170,9 @@
                                                         <state key="normal" title="오늘" backgroundImage="timepick_dropdown_bg">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onBtnStart:" destination="DuC-R0-Kk9" eventType="touchUpInside" id="7ge-uV-oa4"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1247,6 +1250,9 @@
                                                         <state key="normal" title="오늘" backgroundImage="timepick_dropdown_bg">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onBtnEnd:" destination="DuC-R0-Kk9" eventType="touchUpInside" id="DQv-Tj-YQD"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1327,6 +1333,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnEnd" destination="H0s-T7-ZJz" id="yJC-id-Igo"/>
+                        <outlet property="btnStart" destination="4QA-jf-3a2" id="mCu-hq-sZG"/>
                         <outlet property="endPicker" destination="uWL-0C-kIe" id="UE4-dX-bcM"/>
                         <outlet property="startPicker" destination="9HB-6m-aR0" id="cTA-xv-EVe"/>
                     </connections>
