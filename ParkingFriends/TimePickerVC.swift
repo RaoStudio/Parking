@@ -35,6 +35,8 @@ class TimePickerVC: UIViewController {
     
     var arrDay: [Date] = []
     
+    var arrImpossibleTime: [String]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,9 +77,13 @@ class TimePickerVC: UIViewController {
         let twoDate = startDate + 2.day
         
         
+        /*
         arrDay.append(startDate)
         arrDay.append(oneDate)
         arrDay.append(twoDate)
+ */
+        
+        arrDay = [startDate, oneDate, twoDate]
         
 //        strOne = uinfo.dateToString(startDate+1.day)
 //        strTwo = uinfo.dateToString(startDate+2.day)
@@ -94,6 +100,10 @@ class TimePickerVC: UIViewController {
 
         setupStartDropDown()
         setupEndDropDown()
+        
+        
+        // Test
+        arrImpossibleTime = ["1111","2222","3333"]
         
 //        self.startPicker.setLimit(forCalendarComponent: .day, minimumUnit: 0, maximumUnit: 2)
     }
@@ -197,6 +207,9 @@ class TimePickerVC: UIViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func onBtnOk(_ sender: UIButton) {
+//        self.alert("Test\nTest\nTest\n")
+    }
     
     /*
     // MARK: - Navigation
