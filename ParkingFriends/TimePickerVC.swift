@@ -25,9 +25,15 @@ class TimePickerVC: UIViewController {
     let uinfo = UserInfoManager()
     
     
+    
     var strNow: String = ""
     var strOne: String = ""
     var strTwo: String = ""
+    
+    
+    var tempDay: Date = Date()
+    
+    var arrDay: [Date] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +74,10 @@ class TimePickerVC: UIViewController {
         let oneDate = startDate + 1.day
         let twoDate = startDate + 2.day
         
+        
+        arrDay.append(startDate)
+        arrDay.append(oneDate)
+        arrDay.append(twoDate)
         
 //        strOne = uinfo.dateToString(startDate+1.day)
 //        strTwo = uinfo.dateToString(startDate+2.day)
@@ -110,6 +120,16 @@ class TimePickerVC: UIViewController {
         
         startDropDown.direction = .bottom
         startDropDown.selectRow(0)
+        
+        startDropDown.selectionAction = { [weak self] (index, item) in
+            
+            if self?.btnStart.title(for: UIControlState.normal) == item {
+                return
+            }
+            
+            self?.btnStart.setTitle(item, for: UIControlState.normal)
+            self?.startPicker.date = (self?.arrDay[index])!
+        }
     }
     
     func setupEndDropDown() {
@@ -125,6 +145,16 @@ class TimePickerVC: UIViewController {
         
         endDropDown.direction = .bottom
         endDropDown.selectRow(0)
+        
+        endDropDown.selectionAction = { [weak self] (index, item) in
+            
+            if self?.btnEnd.title(for: UIControlState.normal) == item {
+                return
+            }
+            
+            self?.btnEnd.setTitle(item, for: UIControlState.normal)
+            self?.endPicker.date = (self?.arrDay[index])!
+        }
     }
     
     

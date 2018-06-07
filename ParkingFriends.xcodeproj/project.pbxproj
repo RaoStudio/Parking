@@ -106,7 +106,6 @@
 				29559EF2204CE28E000EB12B /* ParkingFriends */,
 				29559EF1204CE28E000EB12B /* Products */,
 				C6F7D8E69B90799457B62D6E /* Pods */,
-				4C7DE14E79F712DCC2BE1421 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +229,7 @@
 			children = (
 				E9BC42507866129D0B36DF16 /* Pods-ParkingFriends.debug.xcconfig */,
 				5692CC7AA31AE36E141C127A /* Pods-ParkingFriends.release.xcconfig */,
+				4C7DE14E79F712DCC2BE1421 /* Frameworks */,
 			);
 			name = Pods;
 			sourceTree = "<group>";

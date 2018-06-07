@@ -216,6 +216,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        /*
         let ud = UserDefaults.standard
         if ud.bool(forKey: UserInfoKey.tutorial) == false && bStart {
             let vc = self.instanceTutorialVC(name: "MasterVC")
@@ -223,6 +224,7 @@ class MainViewController: UIViewController {
             self.present(vc!, animated: false, completion: nil)
             bStart = false
         }
+         */
     }
 
     override func didReceiveMemoryWarning() {
