@@ -217,14 +217,16 @@ class TimePickerVC: UIViewController {
         
         let nTime = endDay - startDay
         
-        
         guard let strTime = try? nTime.string() else {
             return
         }
         
         
-        
-        self.navigationItem.title = "주차시간 (\(strTime))"
+        if nTime < 3600 {
+            self.navigationItem.title = "주차시간 ( 주차불가 )"
+        } else {
+            self.navigationItem.title = "주차시간 ( \(strTime) )"
+        }
     }
     
     
@@ -257,6 +259,23 @@ class TimePickerVC: UIViewController {
     
     @IBAction func onBtnOk(_ sender: UIButton) {
 //        self.alert("Test\nTest\nTest\n")
+        
+        let startDay = self.startPicker.date
+        let endDay = self.endPicker.date
+        
+        let nTime = endDay - startDay
+        
+        if nTime < 0 {
+            self.alert("출차시간이 입차시간보다 작습니다.")
+            return
+        }
+        else if nTime >= 0 && nTime < 3600 {
+            self.alert("예약은 1시간 이상 설정해야 합니다.")
+            return
+        }
+        
+        
+        
     }
     
     /*
