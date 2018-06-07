@@ -64,17 +64,24 @@ class TimePickerVC: UIViewController {
         
         
 //        strDistance = String(format: "%.0fm", distance)
+        
+        let oneDate = startDate + 1.day
+        let twoDate = startDate + 2.day
+        
+        
+//        strOne = uinfo.dateToString(startDate+1.day)
+//        strTwo = uinfo.dateToString(startDate+2.day)
+        
         strNow = String(format: "%d년%02d월%02d일(%@)", startDate.year, startDate.month, startDate.day, startDate.weekdayName)
+        strOne = String(format: "%d년%02d월%02d일(%@)", oneDate.year, oneDate.month, oneDate.day, oneDate.weekdayName)
+        strTwo = String(format: "%d년%02d월%02d일(%@)", twoDate.year, twoDate.month, twoDate.day, twoDate.weekdayName)
         
-        
-        strOne = uinfo.dateToString(startDate+1.day)
-        strTwo = uinfo.dateToString(startDate+2.day)
         
         
         btnStart.setTitle(strNow, for: UIControlState.normal)
         btnEnd.setTitle(strNow, for: UIControlState.normal)
         
-        
+
         setupStartDropDown()
         setupEndDropDown()
         
@@ -102,6 +109,7 @@ class TimePickerVC: UIViewController {
         ]
         
         startDropDown.direction = .bottom
+        startDropDown.selectRow(0)
     }
     
     func setupEndDropDown() {
@@ -116,6 +124,7 @@ class TimePickerVC: UIViewController {
         ]
         
         endDropDown.direction = .bottom
+        endDropDown.selectRow(0)
     }
     
     
