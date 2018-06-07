@@ -152,6 +152,8 @@ class TimePickerVC: UIViewController {
             let nHourGap = (nowDate?.hour)! - (selDate?.hour)!
             
             self?.startPicker.date = (self?.arrDay[index])! + nHourGap.hour
+            
+            self?.valueChanged((self?.startPicker)!)
         }
     }
     
@@ -184,6 +186,8 @@ class TimePickerVC: UIViewController {
             let nHourGap = (nowDate?.hour)! - (selDate?.hour)!
             
             self?.endPicker.date = (self?.arrDay[index])! + nHourGap.hour
+            
+            self?.valueChanged((self?.endPicker)!)
         }
     }
     
@@ -200,11 +204,27 @@ class TimePickerVC: UIViewController {
     
     
     @objc func valueChanged(_ sender: UIDatePicker) {
+        /*
         let dateformatter = DateFormatter()
         dateformatter.dateStyle = .medium
         dateformatter.timeStyle = .medium
         let date = dateformatter.string(from: sender.date)
         self.navigationItem.title = date
+         */
+       
+        let startDay = self.startPicker.date
+        let endDay = self.endPicker.date
+        
+        let nTime = endDay - startDay
+        
+        
+        guard let strTime = try? nTime.string() else {
+            return
+        }
+        
+        
+        
+        self.navigationItem.title = "주차시간 (\(strTime))"
     }
     
     
