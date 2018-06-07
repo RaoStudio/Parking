@@ -102,8 +102,12 @@ class TimePickerVC: UIViewController {
         setupEndDropDown()
         
         
+        startPicker.addTarget(self, action: #selector(valueChanged(_:)), for: UIControlEvents.valueChanged)
+        endPicker.addTarget(self, action: #selector(valueChanged(_:)), for: UIControlEvents.valueChanged)
+        
+        
         // Test
-        arrImpossibleTime = ["1111","2222","3333"]
+//        arrImpossibleTime = ["1111","2222","3333"]
         
 //        self.startPicker.setLimit(forCalendarComponent: .day, minimumUnit: 0, maximumUnit: 2)
     }
@@ -138,7 +142,16 @@ class TimePickerVC: UIViewController {
             }
             
             self?.btnStart.setTitle(item, for: UIControlState.normal)
-            self?.startPicker.date = (self?.arrDay[index])!
+            
+            let nowDate = self?.startPicker.date
+            let selDate = self?.arrDay[index]
+            
+            
+//            self?.startPicker.date = (self?.arrDay[index])!
+            
+            let nHourGap = (nowDate?.hour)! - (selDate?.hour)!
+            
+            self?.startPicker.date = (self?.arrDay[index])! + nHourGap.hour
         }
     }
     
@@ -163,7 +176,14 @@ class TimePickerVC: UIViewController {
             }
             
             self?.btnEnd.setTitle(item, for: UIControlState.normal)
-            self?.endPicker.date = (self?.arrDay[index])!
+            
+            let nowDate = self?.endPicker.date
+            let selDate = self?.arrDay[index]
+            
+            
+            let nHourGap = (nowDate?.hour)! - (selDate?.hour)!
+            
+            self?.endPicker.date = (self?.arrDay[index])! + nHourGap.hour
         }
     }
     
@@ -178,6 +198,14 @@ class TimePickerVC: UIViewController {
         endDropDown.show()
     }
     
+    
+    @objc func valueChanged(_ sender: UIDatePicker) {
+        let dateformatter = DateFormatter()
+        dateformatter.dateStyle = .medium
+        dateformatter.timeStyle = .medium
+        let date = dateformatter.string(from: sender.date)
+        self.navigationItem.title = date
+    }
     
     
     func setUpTimePicker() {
