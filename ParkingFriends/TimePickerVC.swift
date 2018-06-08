@@ -305,6 +305,13 @@ class TimePickerVC: UIViewController {
     @IBAction func onBtnOk(_ sender: UIButton) {
 //        self.alert("Test\nTest\nTest\n")
         
+        if arrImpossibleTime != nil {
+            
+        }
+        
+        
+        
+        
         let startDay = self.startPicker.date
         let endDay = self.endPicker.date
         
@@ -339,6 +346,7 @@ class TimePickerVC: UIViewController {
 
 extension UIDatePicker {
     
+    /*
     func setLimit(forCalendarComponent component:Calendar.Component, minimumUnit min: Int, maximumUnit max: Int) {
         
         let currentDate: Date = Date()
@@ -360,5 +368,5 @@ extension UIDatePicker {
             self.minimumDate = minDate
         }
     }
-    
+    */
 }

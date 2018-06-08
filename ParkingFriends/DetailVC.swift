@@ -277,8 +277,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 return
             }
             
-            if let value = response.result.value {
-                
+            if let value = response.result.value as? String {
+                self.arrImpossible = value.components(separatedBy: "/")
             }
         }
     }
@@ -294,6 +294,11 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         }
         
         //        let timePickerVC = timePickerNavi.topViewController as? TimePickerVC
+        
+        if let vc = timePickerNavi.topViewController as? TimePickerVC {
+            vc.arrImpossibleTime = self.arrImpossible
+        }
+        
         self.present(timePickerNavi, animated: true, completion: nil)
         
     }
