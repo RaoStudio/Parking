@@ -19,6 +19,8 @@ class TimePickerVC: UIViewController {
     @IBOutlet var btnEnd: UIButton!
     
     
+    var subTitle: UILabel!
+    
     let startDropDown = DropDown()
     let endDropDown = DropDown()
     
@@ -106,20 +108,54 @@ class TimePickerVC: UIViewController {
         endPicker.addTarget(self, action: #selector(valueChanged(_:)), for: UIControlEvents.valueChanged)
         
         
+        self.initTitleTwoLine()
+        
         // Test
 //        arrImpossibleTime = ["1111","2222","3333"]
         
 //        self.startPicker.setLimit(forCalendarComponent: .day, minimumUnit: 0, maximumUnit: 2)
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Custom ( Navigation Title )
+    func initTitleTwoLine() {
+        let containerView = UIView(frame:CGRect(x: 0, y: 0, width: 200, height: 36))
+        
+        let topTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 18))
+        topTitle.numberOfLines = 1
+        topTitle.textAlignment = .center
+        topTitle.font = UIFont.systemFont(ofSize: 15)
+        topTitle.textColor = UIColor.black
+        topTitle.text = "주차시간 선택"
+        
+        
+        subTitle = UILabel(frame: CGRect(x: 0, y: 18, width: 200, height: 18))
+        subTitle.numberOfLines = 1
+        subTitle.textAlignment = .center
+        subTitle.font = UIFont.systemFont(ofSize: 15)
+        subTitle.textColor = hexStringToUIColor(hex: "#22d158")
+        subTitle.text = ""
+        
+        
+        containerView.addSubview(topTitle)
+        containerView.addSubview(subTitle)
+        
+        
+        self.navigationItem.titleView = containerView
+        
+        
+//        let color = UIColor(red:0.02, green:0.22, blue:0.49, alpha:1.0)
+//        self.navigationController?.navigationBar.barTintColor = color
+    }
+    
     
     // MARK: - SetUpDropDown
-    
     func setupStartDropDown() {
         
         startDropDown.textFont = UIFont.systemFont(ofSize: 13)
@@ -221,11 +257,20 @@ class TimePickerVC: UIViewController {
             return
         }
         
-        
+        /*
         if nTime < 3600 {
             self.navigationItem.title = "주차시간 ( 주차불가 )"
         } else {
             self.navigationItem.title = "주차시간 ( \(strTime) )"
+        }
+         */
+        
+        if nTime < 3600 {
+            self.subTitle.textColor = hexStringToUIColor(hex: "#ff3c4a")
+            self.subTitle.text = "예약불가"
+        } else {
+            self.subTitle.textColor = hexStringToUIColor(hex: "#22d158")
+            self.subTitle.text = strTime
         }
     }
     
