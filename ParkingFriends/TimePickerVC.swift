@@ -305,13 +305,23 @@ class TimePickerVC: UIViewController {
     @IBAction func onBtnOk(_ sender: UIButton) {
 //        self.alert("Test\nTest\nTest\n")
         
-        if arrImpossibleTime != nil {
+        var strImpossible: String = ""
+        if let arrImpossible = arrImpossibleTime {
             
+            for (ix,v) in arrImpossible.enumerated(){
+                strImpossible.append(v)
+            }
+            
+            self.alert(strImpossible) {
+                self.onBtnOkCompletion(sender)
+            }
+        } else {
+            onBtnOkCompletion(sender)
         }
         
-        
-        
-        
+    }
+    
+    func onBtnOkCompletion(_ sender: UIButton) {
         let startDay = self.startPicker.date
         let endDay = self.endPicker.date
         
@@ -325,10 +335,8 @@ class TimePickerVC: UIViewController {
             self.alert("예약은 1시간 이상 설정해야 합니다.")
             return
         }
-        
-        
-        
     }
+    
     
     /*
     // MARK: - Navigation
