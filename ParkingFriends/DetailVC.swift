@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
 
 class DetailVC: UIViewController, UIPageViewControllerDataSource {
 
@@ -70,6 +71,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var lbl_TotalTime: UILabel!
     @IBOutlet var lbl_TotalPay: UILabel!
     
+    
+    var arrImpossible: [String] = []   // For Store ( URL_API_RESERVATION_IMPOSSIBLE )
     
     
     override func viewDidLoad() {
@@ -197,6 +200,9 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         btnDistance.setTitle(strDistance, for: UIControlState.normal)
         
         ContentsView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
+        
+        
+        requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
     }
 
     override func didReceiveMemoryWarning() {
@@ -257,6 +263,27 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         }
     }
      */
+    
+    // MARK: - API ( URL_API_RESERVATION_IMPOSSIBLE )
+    func requestReservationImpossible(parkinglot_sid: String, start_time: String) {
+        let param = ["parkinglot_sid" : parkinglot_sid,
+            "start_time" : "2018-05-14 10:50:00",
+            "offset" : "600"] as [String: Any]
+        
+        Alamofire.request(UrlStrings.URL_API_RESERVATION_IMPOSSIBLE, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
+            
+            guard response.result.isSuccess else {
+                print("\(UrlStrings.URL_API_RESERVATION_IMPOSSIBLE) : \(String(describing: response.result.error))")
+                return
+            }
+            
+            if let value = response.result.value {
+                
+            }
+        }
+    }
+    
+    
     
     // MARK: - Button Action
     
