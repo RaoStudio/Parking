@@ -336,6 +336,24 @@ class TimePickerVC: UIViewController {
             return
         }
         
+        
+        let startDate = startPicker.date
+        let endDate = endPicker.date
+        
+        let strStart = uinfo.dateToString(startDate)
+        let strEnd = uinfo.dateToString(endDate)
+        
+        uinfo.startTime = strStart
+        uinfo.endTime = strEnd
+        
+        
+        if let nc = self.navigationController {
+            if let vc = nc.presentingViewController as? MainViewController {
+                let bTest = vc.bDestination
+                print("MainViewController")
+            }
+        }
+        
         // Commit Test // Commit Test
     }
     

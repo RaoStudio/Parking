@@ -225,6 +225,10 @@ class MainViewController: UIViewController {
             bStart = false
         }
          */
+        
+        
+        btnStart.setTitle(uinfo.startTime, for: UIControlState.normal)
+        btnEnd.setTitle(uinfo.endTime, for: UIControlState.normal)
     }
 
     override func didReceiveMemoryWarning() {
