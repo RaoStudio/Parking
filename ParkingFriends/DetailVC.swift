@@ -72,6 +72,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var lbl_TotalPay: UILabel!
     
     
+    let uinfo = UserInfoManager()
+    
     var arrImpossible: [String] = []   // For Store ( URL_API_RESERVATION_IMPOSSIBLE )
     
     
@@ -244,6 +246,17 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 lblAddress.text = String(format: "%@", address)
             }
         }
+        
+        
+        let startDate = uinfo.stringToDate(uinfo.startTime!)
+        let endDate = uinfo.stringToDate(uinfo.endTime!)
+        
+        let strStart = String(format: "입차시간    %d.%02d.%02d %@ %d:%d", startDate.year, startDate.month, startDate.day, startDate.weekdayName, startDate.hour, startDate.minute)
+        let strEnd = String(format: "출차시간    %d.%02d.%02d %@ %d:%d", endDate.year, endDate.month, endDate.day, endDate.weekdayName, endDate.hour, endDate.minute)
+        
+        
+        btnStartTime.setTitle(strStart, for: UIControlState.normal)
+        btnEndTime.setTitle(strEnd, for: UIControlState.normal)
         
         /*
         let testView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))

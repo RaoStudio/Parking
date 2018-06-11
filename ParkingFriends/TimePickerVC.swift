@@ -354,6 +354,9 @@ class TimePickerVC: UIViewController {
             }
         }
         
+        
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        
         // Commit Test // Commit Test
     }
     
