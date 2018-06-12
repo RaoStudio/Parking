@@ -265,7 +265,10 @@ class TimePickerVC: UIViewController {
         }
          */
         
-        if nTime < 3600 {
+        
+        
+        
+        if nTime < 3600 || startDay < uinfo.stringToDate(uinfo.startTime!) {
             self.subTitle.textColor = hexStringToUIColor(hex: "#ff3c4a")
             self.subTitle.text = "예약불가"
         } else {
@@ -333,6 +336,9 @@ class TimePickerVC: UIViewController {
         }
         else if nTime >= 0 && nTime < 3600 {
             self.alert("예약은 1시간 이상 설정해야 합니다.")
+            return
+        } else if startDay < uinfo.stringToDate(uinfo.startTime!) {
+            self.alert("지나간 시간입니다.")
             return
         }
         
