@@ -350,6 +350,13 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         return cvc
     }
     
+    @IBAction func onBtnPay(_ sender: UIButton) {
+        if let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
+            self.navigationController?.pushViewController(loginVC, animated: true)
+        }
+    }
+    
+    
     // MARK: - UIPageViewControllerDataSource
     
     @available(iOS 5.0, *)

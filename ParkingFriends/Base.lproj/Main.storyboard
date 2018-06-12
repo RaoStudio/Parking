@@ -924,6 +924,9 @@
                                                 <state key="normal" title="바로 결제하기" backgroundImage="btn_green_round">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onBtnPay:" destination="S92-rk-C8t" eventType="touchUpInside" id="JUZ-5D-6wQ"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr1-2K-pcd">
                                                 <rect key="frame" x="12" y="14" width="183" height="16"/>
@@ -1058,6 +1061,102 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXp-zw-Kwc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2034" y="-331"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="fBC-Ii-VKp">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="88g-JK-Fkw" customClass="LoginVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N7F-8f-nVB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFl-tN-dW5">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="JGo-1w-4Sk">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login_ff_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Oc4-5K-aZV">
+                                        <rect key="frame" x="110" y="100" width="155" height="126"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="155" id="rt9-dr-TG5"/>
+                                            <constraint firstAttribute="height" constant="126" id="zIW-l6-3Ex"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4S-Hz-fAy">
+                                        <rect key="frame" x="70" y="400" width="235" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="K4h-Fu-VO8"/>
+                                            <constraint firstAttribute="width" constant="235" id="lHt-B1-vIf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="-56" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="카카오계정으로 로그인" image="Login_kakao_icon" backgroundImage="Login_kakao_btn">
+                                            <color key="titleColor" red="0.23529411764705882" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4K-pA-q91">
+                                        <rect key="frame" x="70" y="447" width="235" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="Yid-Jh-6gt"/>
+                                            <constraint firstAttribute="width" constant="235" id="u4z-Wo-lEH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="-71" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="구글계정으로 로그인" image="Login_google_icon" backgroundImage="Login_google_btn">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kao-d7-mYQ">
+                                        <rect key="frame" x="70" y="494" width="235" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="HWP-TT-wuk"/>
+                                            <constraint firstAttribute="width" constant="235" id="R5p-4e-kfA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="-47" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="페이스북계정으로 로그인" image="Login_facebook_icon" backgroundImage="Login_facebook_btn"/>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login_misco_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ahg-ma-0Sd">
+                                        <rect key="frame" x="160.5" y="603" width="53" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="53" id="4iC-3j-Sfl"/>
+                                            <constraint firstAttribute="height" constant="20" id="Q6z-Io-EGa"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="JGo-1w-4Sk" firstAttribute="top" secondItem="EFl-tN-dW5" secondAttribute="top" id="1Eq-rG-6jm"/>
+                                    <constraint firstItem="Oc4-5K-aZV" firstAttribute="centerX" secondItem="EFl-tN-dW5" secondAttribute="centerX" id="8is-au-Osg"/>
+                                    <constraint firstItem="E4K-pA-q91" firstAttribute="top" secondItem="H4S-Hz-fAy" secondAttribute="bottom" constant="13" id="9Q8-oZ-Clw"/>
+                                    <constraint firstItem="ahg-ma-0Sd" firstAttribute="top" secondItem="Kao-d7-mYQ" secondAttribute="bottom" constant="75" id="BKg-7a-sfx"/>
+                                    <constraint firstItem="H4S-Hz-fAy" firstAttribute="centerX" secondItem="EFl-tN-dW5" secondAttribute="centerX" id="Eyj-oT-rZG"/>
+                                    <constraint firstItem="Oc4-5K-aZV" firstAttribute="top" secondItem="EFl-tN-dW5" secondAttribute="top" constant="100" id="Jry-Au-xTH"/>
+                                    <constraint firstAttribute="bottom" secondItem="ahg-ma-0Sd" secondAttribute="bottom" constant="24" id="MHw-Sy-1un"/>
+                                    <constraint firstItem="Kao-d7-mYQ" firstAttribute="centerX" secondItem="EFl-tN-dW5" secondAttribute="centerX" id="ReJ-Q1-0zO"/>
+                                    <constraint firstAttribute="bottom" secondItem="JGo-1w-4Sk" secondAttribute="bottom" id="ekM-gc-3ro"/>
+                                    <constraint firstItem="ahg-ma-0Sd" firstAttribute="centerX" secondItem="EFl-tN-dW5" secondAttribute="centerX" id="gfg-c0-OsE"/>
+                                    <constraint firstAttribute="trailing" secondItem="JGo-1w-4Sk" secondAttribute="trailing" id="jlv-Nb-0xt"/>
+                                    <constraint firstItem="JGo-1w-4Sk" firstAttribute="leading" secondItem="EFl-tN-dW5" secondAttribute="leading" id="m9i-CM-ZFI"/>
+                                    <constraint firstItem="E4K-pA-q91" firstAttribute="centerX" secondItem="EFl-tN-dW5" secondAttribute="centerX" id="zIX-Tb-JjN"/>
+                                    <constraint firstItem="Kao-d7-mYQ" firstAttribute="top" secondItem="E4K-pA-q91" secondAttribute="bottom" constant="13" id="zMl-Pa-xTx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GiR-zw-dMc" firstAttribute="bottom" secondItem="EFl-tN-dW5" secondAttribute="bottom" id="0Cs-Mh-VzC"/>
+                            <constraint firstItem="EFl-tN-dW5" firstAttribute="leading" secondItem="GiR-zw-dMc" secondAttribute="leading" id="Ikl-2M-JOX"/>
+                            <constraint firstItem="GiR-zw-dMc" firstAttribute="trailing" secondItem="EFl-tN-dW5" secondAttribute="trailing" id="OUT-UF-jTM"/>
+                            <constraint firstItem="EFl-tN-dW5" firstAttribute="top" secondItem="GiR-zw-dMc" secondAttribute="top" id="jQm-6W-MQW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GiR-zw-dMc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ez-mK-aYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3023" y="-60"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LsN-S6-NMC">
@@ -1420,6 +1519,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Login_bg" width="320" height="568"/>
+        <image name="Login_facebook_btn" width="34" height="34"/>
+        <image name="Login_facebook_icon" width="17" height="18"/>
+        <image name="Login_ff_logo" width="155" height="126"/>
+        <image name="Login_google_btn" width="34" height="34"/>
+        <image name="Login_google_icon" width="17" height="18"/>
+        <image name="Login_kakao_btn" width="34" height="34"/>
+        <image name="Login_kakao_icon" width="17" height="18"/>
+        <image name="Login_misco_logo" width="53" height="20"/>
         <image name="Main_TP_Arrow" width="26" height="15"/>
         <image name="Main_TP_BackGround" width="296" height="60"/>
         <image name="MyLocation" width="33" height="33"/>
