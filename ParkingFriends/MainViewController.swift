@@ -227,8 +227,7 @@ class MainViewController: UIViewController {
          */
         
         
-        btnStart.setTitle(uinfo.startTime, for: UIControlState.normal)
-        btnEnd.setTitle(uinfo.endTime, for: UIControlState.normal)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -473,6 +472,14 @@ class MainViewController: UIViewController {
     }
     
     
+    func reserveFromTimePick() {
+
+        btnStart.setTitle(uinfo.startTime, for: UIControlState.normal)
+        btnEnd.setTitle(uinfo.endTime, for: UIControlState.normal)
+        
+        RefreshParkingLot(self.mapView.camera.target, url: UrlStrings.URL_API_PARKINGLOT_FETCH_RATIO, bTime: true)
+    }
+    
     // MARK: - Side
     fileprivate func setupSideMenu() {
         SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController;
@@ -534,14 +541,26 @@ class MainViewController: UIViewController {
         }
     }
     
-    func RefreshParkingLot(_ coordinate: CLLocationCoordinate2D, url: String, bDest: Bool = false, bMarkerRemake: Bool = true) {
+    func RefreshParkingLot(_ coordinate: CLLocationCoordinate2D, url: String, bDest: Bool = false, bMarkerRemake: Bool = true, bTime: Bool = false) {
         
         let strRadius = String(describing: getIntFromRadius())
         
-        let param = ["latitude" : coordinate.latitude,
-            "longitude" : coordinate.longitude,
-            "radius" : strRadius,
-            "type" : "15"] as [String : Any]
+        let param: Parameters
+        
+        if bTime {
+            param = ["latitude" : coordinate.latitude,
+                     "longitude" : coordinate.longitude,
+                     "radius" : strRadius,
+                     "begin" : uinfo.startTime!,
+                     "end" : uinfo.endTime!] as [String : Any]
+            
+        } else {
+            
+            param = ["latitude" : coordinate.latitude,
+                     "longitude" : coordinate.longitude,
+                     "radius" : strRadius,
+                     "type" : "15"] as [String : Any]
+        }
 
         
 //        let paramData = try! JSONSerialization.data(withJSONObject: param, options: [])

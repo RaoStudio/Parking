@@ -347,10 +347,13 @@ class TimePickerVC: UIViewController {
         uinfo.endTime = strEnd
         
         
-        if let nc = self.navigationController {
-            if let vc = nc.presentingViewController as? MainViewController {
-                let bTest = vc.bDestination
-                print("MainViewController")
+        if let myNC = self.navigationController {
+            if let nc = myNC.presentingViewController as? UINavigationController {
+                
+                if let vc = nc.topViewController as? MainViewController {
+                
+                    vc.reserveFromTimePick()
+                }
             }
         }
         
