@@ -70,6 +70,8 @@ class MainViewController: UIViewController {
     
     let uinfo = UserInfoManager()
     
+    
+    var bTime: Bool = false
     var bStart: Bool = true
     var bDestination: Bool = false
     var destCoordinate: CLLocationCoordinate2D?
@@ -86,6 +88,7 @@ class MainViewController: UIViewController {
     let chooseDropDown = DropDown()
     
     let bUseDropDown = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -454,7 +457,7 @@ class MainViewController: UIViewController {
         
         sender?.setTitle(strRadius, for: UIControlState.normal)
         
-        RefreshParkingLot(self.mapView.camera.target, url: UrlStrings.URL_API_PARKINGLOT_FETCH)
+        RefreshParkingLot(self.mapView.camera.target, url: UrlStrings.URL_API_PARKINGLOT_FETCH, bTime: self.bTime)
     }
     
     func getIntFromRadius() -> Int {
@@ -474,10 +477,11 @@ class MainViewController: UIViewController {
     
     func reserveFromTimePick() {
 
+        self.bTime = true
         btnStart.setTitle(uinfo.startTime, for: UIControlState.normal)
         btnEnd.setTitle(uinfo.endTime, for: UIControlState.normal)
         
-        RefreshParkingLot(self.mapView.camera.target, url: UrlStrings.URL_API_PARKINGLOT_FETCH_RATIO, bTime: true)
+        RefreshParkingLot(self.mapView.camera.target, url: UrlStrings.URL_API_PARKINGLOT_FETCH_RATIO, bTime: self.bTime)
     }
     
     // MARK: - Side
@@ -547,7 +551,10 @@ class MainViewController: UIViewController {
         
         let param: Parameters
         
+        var url: String
+        
         if bTime {
+            url = UrlStrings.URL_API_PARKINGLOT_FETCH_RATIO
             param = ["latitude" : coordinate.latitude,
                      "longitude" : coordinate.longitude,
                      "radius" : strRadius,
@@ -555,7 +562,7 @@ class MainViewController: UIViewController {
                      "end" : uinfo.endTime!] as [String : Any]
             
         } else {
-            
+            url = UrlStrings.URL_API_PARKINGLOT_FETCH
             param = ["latitude" : coordinate.latitude,
                      "longitude" : coordinate.longitude,
                      "radius" : strRadius,
@@ -714,7 +721,7 @@ class MainViewController: UIViewController {
         
         
 //        RefreshParkingLot(coordinate, url: UrlStrings.URL_API_PARKINGLOT_FETCH_RATIO, bDest: bDest)
-        RefreshParkingLot(coordinate, url: UrlStrings.URL_API_PARKINGLOT_FETCH, bDest: bDest)
+        RefreshParkingLot(coordinate, url: UrlStrings.URL_API_PARKINGLOT_FETCH, bDest: bDest, bTime: self.bTime)
         
         mapView.camera = GMSCameraPosition(target: coordinate, zoom: self.mapView.camera.zoom , bearing: 0, viewingAngle: 0)
         
