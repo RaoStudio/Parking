@@ -29,6 +29,8 @@
 		29875E5320ABC81F0029E4BD /* ParkingLotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29875E5220ABC81F0029E4BD /* ParkingLotVC.swift */; };
 		29875E5520ABD1000029E4BD /* ParkingLot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29875E5420ABD1000029E4BD /* ParkingLot.storyboard */; };
 		29875E5720ABF7C60029E4BD /* ParkingLotTabPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29875E5620ABF7C60029E4BD /* ParkingLotTabPageVC.swift */; };
+		298DF7ED20D24D1100F0B653 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298DF7EC20D24D1100F0B653 /* KakaoOpenSDK.framework */; };
+		298DF7F420D2526900F0B653 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298DF7F320D2526900F0B653 /* Util.m */; };
 		2999636520B644F300AC180C /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636420B644F300AC180C /* CustomView.swift */; };
 		2999636720B6451400AC180C /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2999636620B6451400AC180C /* CustomView.xib */; };
 		2999636920B6544600AC180C /* LotDistanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636820B6544600AC180C /* LotDistanceVC.swift */; };
@@ -71,6 +73,10 @@
 		29875E5220ABC81F0029E4BD /* ParkingLotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotVC.swift; sourceTree = "<group>"; };
 		29875E5420ABD1000029E4BD /* ParkingLot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParkingLot.storyboard; sourceTree = "<group>"; };
 		29875E5620ABF7C60029E4BD /* ParkingLotTabPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotTabPageVC.swift; sourceTree = "<group>"; };
+		298DF7EC20D24D1100F0B653 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		298DF7F120D2526800F0B653 /* ParkingFriends-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParkingFriends-Bridging-Header.h"; sourceTree = "<group>"; };
+		298DF7F220D2526900F0B653 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		298DF7F320D2526900F0B653 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		2999636420B644F300AC180C /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		2999636620B6451400AC180C /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		2999636820B6544600AC180C /* LotDistanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotDistanceVC.swift; sourceTree = "<group>"; };
@@ -96,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AE7C80E869B4337F04B6493 /* Pods_ParkingFriends.framework in Frameworks */,
+				298DF7ED20D24D1100F0B653 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +112,7 @@
 		29559EE7204CE28D000EB12B = {
 			isa = PBXGroup;
 			children = (
+				298DF7EB20D24CD900F0B653 /* Frameworks */,
 				29559EF2204CE28E000EB12B /* ParkingFriends */,
 				29559EF1204CE28E000EB12B /* Products */,
 				C6F7D8E69B90799457B62D6E /* Pods */,
@@ -122,6 +130,7 @@
 		29559EF2204CE28E000EB12B /* ParkingFriends */ = {
 			isa = PBXGroup;
 			children = (
+				298DF7EE20D2510F00F0B653 /* Header */,
 				29875E5120ABC7D50029E4BD /* ParkingLot */,
 				29E8F25A20A95EDA004CE3F2 /* Manager */,
 				2971A3F2209AECF100C1AD84 /* Tutorial */,
@@ -177,6 +186,24 @@
 				2999636A20B6546600AC180C /* LotPayVC.swift */,
 			);
 			path = ParkingLot;
+			sourceTree = "<group>";
+		};
+		298DF7EB20D24CD900F0B653 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				298DF7EC20D24D1100F0B653 /* KakaoOpenSDK.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		298DF7EE20D2510F00F0B653 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				298DF7F220D2526900F0B653 /* Util.h */,
+				298DF7F320D2526900F0B653 /* Util.m */,
+				298DF7F120D2526800F0B653 /* ParkingFriends-Bridging-Header.h */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		29A0FFDA207B423A00B13638 /* Util */ = {
@@ -272,6 +299,7 @@
 				TargetAttributes = {
 					29559EEF204CE28E000EB12B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -411,6 +439,7 @@
 				29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */,
 				29559EFC204CE28E000EB12B /* ParkingFriends.xcdatamodeld in Sources */,
 				29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */,
+				298DF7F420D2526900F0B653 /* Util.m in Sources */,
 				2999636920B6544600AC180C /* LotDistanceVC.swift in Sources */,
 				2971A3F6209AED1300C1AD84 /* TutorialMasterVC.swift in Sources */,
 				29AA1262207D9FF400F4648C /* UIViewExtension.swift in Sources */,
@@ -557,15 +586,79 @@
 			baseConfigurationReference = E9BC42507866129D0B36DF16 /* Pods-ParkingFriends.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = SH74B6BLCA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = ParkingFriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"DropDown\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"GoogleMaps\"",
+					"-framework",
+					"\"GoogleMapsBase\"",
+					"-framework",
+					"\"GoogleMapsCore\"",
+					"-framework",
+					"\"GooglePlacePicker\"",
+					"-framework",
+					"\"GooglePlaces\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"PureLayout\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SideMenu\"",
+					"-framework",
+					"\"SwiftDate\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TabPageViewController\"",
+					"-framework",
+					"\"UIKit\"",
+					"\"-all_load\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.misconct.ParkingFriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "66f2eb16-6dbd-4e92-8f7b-2693c96dc3cb";
 				PROVISIONING_PROFILE_SPECIFIER = Wild_Test;
+				SWIFT_OBJC_BRIDGING_HEADER = "ParkingFriends/Header/ParkingFriends-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -576,14 +669,77 @@
 			baseConfigurationReference = 5692CC7AA31AE36E141C127A /* Pods-ParkingFriends.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = ParkingFriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"DropDown\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"GoogleMaps\"",
+					"-framework",
+					"\"GoogleMapsBase\"",
+					"-framework",
+					"\"GoogleMapsCore\"",
+					"-framework",
+					"\"GooglePlacePicker\"",
+					"-framework",
+					"\"GooglePlaces\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"PureLayout\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SideMenu\"",
+					"-framework",
+					"\"SwiftDate\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TabPageViewController\"",
+					"-framework",
+					"\"UIKit\"",
+					"\"-all_load\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.misconct.ParkingFriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ParkingFriends/Header/ParkingFriends-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

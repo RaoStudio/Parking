@@ -1098,6 +1098,9 @@
                                         <state key="normal" title="카카오계정으로 로그인" image="Login_kakao_icon" backgroundImage="Login_kakao_btn">
                                             <color key="titleColor" red="0.23529411764705882" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onBtnKakao:" destination="88g-JK-Fkw" eventType="touchUpInside" id="Nyv-eY-qUh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4K-pA-q91">
                                         <rect key="frame" x="70" y="447" width="235" height="34"/>
