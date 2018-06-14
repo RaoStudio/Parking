@@ -110,6 +110,9 @@
                                         <state key="normal" title="주차시간으로 검색하기">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onBtnTimeInit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EhN-ho-KXX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -174,6 +177,7 @@
                         <outlet property="btnLocation" destination="6pm-aN-3qW" id="VWY-uE-pg3"/>
                         <outlet property="btnRadius" destination="4OL-ZZ-hAG" id="Ycq-CC-2yO"/>
                         <outlet property="btnStart" destination="ykB-Fv-la3" id="ttp-qf-LkT"/>
+                        <outlet property="btnTimeInit" destination="pfK-4w-uRb" id="okX-m9-0vn"/>
                         <outlet property="constLocationHeight" destination="Kds-mh-fzf" id="Eaq-KQ-LKz"/>
                         <outlet property="constLocationWidth" destination="GVb-bj-Ovj" id="fXx-24-RgM"/>
                         <outlet property="constLotHeight" destination="Ufq-d0-1JR" id="aJf-qv-W2d"/>

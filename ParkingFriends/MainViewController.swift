@@ -44,6 +44,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet var btnStart: UIButton!
     @IBOutlet var btnEnd: UIButton!
+    @IBOutlet weak var btnTimeInit: UIButton!
+    
     
     @IBOutlet var btnLocation: RoundButton!
     
@@ -203,8 +205,11 @@ class MainViewController: UIViewController {
         
         
         uinfo.initTime()
-        btnStart.setTitle(uinfo.startTime, for: UIControlState.normal)
-        btnEnd.setTitle(uinfo.endTime, for: UIControlState.normal)
+        displayTimeToButton()
+//        btnStart.setTitle(uinfo.startTime, for: UIControlState.normal)
+//        btnEnd.setTitle(uinfo.endTime, for: UIControlState.normal)
+        
+        
         
         /*
         let calendar = Calendar(identifier: .gregorian)
@@ -478,11 +483,45 @@ class MainViewController: UIViewController {
     func reserveFromTimePick() {
 
         self.bTime = true
-        btnStart.setTitle(uinfo.startTime, for: UIControlState.normal)
-        btnEnd.setTitle(uinfo.endTime, for: UIControlState.normal)
+        
+//        btnStart.setTitle(uinfo.startTime, for: UIControlState.normal)
+//        btnEnd.setTitle(uinfo.endTime, for: UIControlState.normal)
+        
+        displayTimeToButton()
+        
+        btnTimeInit.setTitle("처음으로 되돌리기", for: UIControlState.normal)
         
         RefreshParkingLot(self.mapView.camera.target, url: UrlStrings.URL_API_PARKINGLOT_FETCH_RATIO, bTime: self.bTime)
     }
+    
+    
+    @IBAction func onBtnTimeInit(_ sender: UIButton) {
+        if self.bTime {
+            uinfo.initTime()
+            self.bTime = false
+            
+//            btnStart.setTitle(uinfo.startTime, for: UIControlState.normal)
+//            btnEnd.setTitle(uinfo.endTime, for: UIControlState.normal)
+            displayTimeToButton()
+            
+            btnTimeInit.setTitle("주차시간으로 검색하기", for: UIControlState.normal)
+            RefreshParkingLot(self.mapView.camera.target, url: UrlStrings.URL_API_PARKINGLOT_FETCH_RATIO, bTime: self.bTime)
+        }
+    }
+    
+    
+    func displayTimeToButton() {
+        let startDate = uinfo.stringToDate(uinfo.startTime!)
+        let endDate = uinfo.stringToDate(uinfo.endTime!)
+        
+        let strNow = String(format: "%02d/%02d일 %@ %d:%d", startDate.month, startDate.day, startDate.weekdayName, startDate.hour, startDate.minute)
+        let strEnd = String(format: "%02d/%02d일 %@ %d:%d", endDate.month, endDate.day, endDate.weekdayName, endDate.hour, endDate.minute)
+        
+        
+        btnStart.setTitle(strNow, for: UIControlState.normal)
+        btnEnd.setTitle(strEnd, for: UIControlState.normal)
+    }
+    
     
     // MARK: - Side
     fileprivate func setupSideMenu() {
