@@ -514,8 +514,8 @@ class MainViewController: UIViewController {
         let startDate = uinfo.stringToDate(uinfo.startTime!)
         let endDate = uinfo.stringToDate(uinfo.endTime!)
         
-        let strNow = String(format: "%02d/%02d일 %@ %d:%d", startDate.month, startDate.day, startDate.weekdayName, startDate.hour, startDate.minute)
-        let strEnd = String(format: "%02d/%02d일 %@ %d:%d", endDate.month, endDate.day, endDate.weekdayName, endDate.hour, endDate.minute)
+        let strNow = String(format: "%02d/%02d일 %@ %02d:%02d", startDate.month, startDate.day, startDate.weekdayName, startDate.hour, startDate.minute)
+        let strEnd = String(format: "%02d/%02d일 %@ %02d:%02d", endDate.month, endDate.day, endDate.weekdayName, endDate.hour, endDate.minute)
         
         
         btnStart.setTitle(strNow, for: UIControlState.normal)
