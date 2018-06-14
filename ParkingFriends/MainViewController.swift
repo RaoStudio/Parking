@@ -169,7 +169,7 @@ class MainViewController: UIViewController {
             setupChooseDropDown()
         }
         
-        
+        /*
         let height = UIScreen.main.nativeBounds.height
         
         if height >= 1920 {
@@ -183,7 +183,7 @@ class MainViewController: UIViewController {
             constRadiusWidth.constant = 70
             constRadiusHeight.constant = 32
         }
-        
+        */
         
         
         // Time Set
