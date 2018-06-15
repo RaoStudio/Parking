@@ -34,11 +34,11 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaoffd0911b43f73e0798069464b53ffcb9</string>
-		<string>kakaokompassauth</string>
+		<!--<string>kakaokompassauth</string>
 		<string>storykompassauth</string>
 		<string>kakaolink</string>
 		<string>kakaotalk-4.5.0</string>
-		<string>kakaostory-2.9.0</string>
+		<string>kakaostory-2.9.0</string>-->
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
