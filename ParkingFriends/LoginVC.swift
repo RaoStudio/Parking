@@ -19,13 +19,20 @@ class LoginVC: UIViewController {
         
         self.navigationItem.title = "Login"
         
+        
+ /*
         self.navigationController?.navigationBar.isHidden = true
         
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapMyView(_:)))
         self.view.addGestureRecognizer(tap)
         self.navigationController?.navigationBar.isTranslucent = true
+ */
         
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
