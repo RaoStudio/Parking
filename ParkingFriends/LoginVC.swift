@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 
 class LoginVC: UIViewController {
 
@@ -53,16 +55,27 @@ class LoginVC: UIViewController {
         }
         
         session.presentingViewController = self
+        
         session.open(completionHandler: {(error) -> Void in
             
             // 카카오 로그인 화면에서 벋어날 시 호출됨. (취소일 때도 표시됨)
-            if error != nil {
+            if error != nil
+            {
                 print(error?.localizedDescription ?? "")
-            }else if session.isOpen() {
+            } else if session.isOpen() {
                 KOSessionTask.meTask(completionHandler: {(profile, error) -> Void in
                     
                     if profile != nil {
                         DispatchQueue.main.async(execute: { () -> Void in
+                            
+                            
+                            let kakao : KOUser = profile as! KOUser
+                            
+                            if let value = kakao.properties?["nickname"] as? String{
+                             
+                                self.alert(value)
+                            }
+                            
 //                            let kakao : KOUser = profile as! KOUser
                             //String(kakao.ID)
                             
