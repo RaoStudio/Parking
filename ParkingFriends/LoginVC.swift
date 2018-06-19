@@ -11,11 +11,14 @@ import CoreData
 
 import Firebase
 import GoogleSignIn
+import FBSDKLoginKit
 
 
-class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
-
+class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLoginButtonDelegate {
+    
+    
     @IBOutlet weak var btnGoogleLogin: GIDSignInButton!
+    @IBOutlet weak var btnFacebookLogin: FBSDKLoginButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,10 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         self.view.addGestureRecognizer(tap)
         self.navigationController?.navigationBar.isTranslucent = true
  */
+        
+        
+//        self.btnFacebookLogin.delegate = self
+        
         
     }
     
@@ -155,6 +162,9 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
     
     
+    @IBAction func onBtnFacebook(_ sender: UIButton) {
+        self.facebookLogin()
+    }
     
     // MARK: - GIDSignInDelegate
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
@@ -192,6 +202,43 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     }
     
     
+    // MARK: - Facebook Login
+    /*
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError?) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        // ...
+    }
+ */
+    
+    func facebookLogin() {
+        let fbLoginManager: FBSDKLoginManager = FBSDKLoginManager()
+        fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            if error != nil {
+                NSLog("Process Error")
+            } else if result?.isCancelled == true {
+                NSLog("Cancelled")
+            } else {
+                NSLog("Logged in")
+                
+            }
+        }
+    }
+    
+    
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
     /*
     // MARK: - Navigation
 

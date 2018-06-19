@@ -1126,6 +1126,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="-47" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="페이스북계정으로 로그인" image="Login_facebook_icon" backgroundImage="Login_facebook_btn"/>
+                                        <connections>
+                                            <action selector="onBtnFacebook:" destination="88g-JK-Fkw" eventType="touchUpInside" id="7ay-CL-FBr"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login_misco_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ahg-ma-0Sd">
                                         <rect key="frame" x="160.5" y="603" width="53" height="20"/>
@@ -1164,6 +1167,7 @@
                         <viewLayoutGuide key="safeArea" id="GiR-zw-dMc"/>
                     </view>
                     <connections>
+                        <outlet property="btnFacebookLogin" destination="Kao-d7-mYQ" id="bL1-3g-ZrD"/>
                         <outlet property="btnGoogleLogin" destination="E4K-pA-q91" id="CfS-Ml-RnZ"/>
                     </connections>
                 </viewController>

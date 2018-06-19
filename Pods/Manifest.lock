@@ -1,6 +1,16 @@
 PODS:
   - Alamofire (4.6.0)
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
   - DropDown (2.0.2)
+  - FBSDKCoreKit (4.33.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.33.0):
+    - FBSDKCoreKit
   - Firebase/Auth (5.2.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.1)
@@ -70,6 +80,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - DropDown
+  - FBSDKLoginKit
   - Firebase/Auth
   - Firebase/Core
   - GoogleMaps
@@ -86,7 +97,10 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Bolts
     - DropDown
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -109,7 +123,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   DropDown: 75562633a203f57a917021b4edb96c76f293b0ec
+  FBSDKCoreKit: 572b047a7e029bc44542bcf8a59414e7ff2b543e
+  FBSDKLoginKit: 88cb456349cfb3b554427ce4f8b43729d85dfb40
   Firebase: 25ed0412036d7d008568d1fb4d2e9d81ea8a0a2c
   FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
   FirebaseAuth: 463b8ce33bd5d05f706dcd4615499e3212b4132b
@@ -130,6 +147,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TabPageViewController: c37a1257a50c2b50712dde61bf499768eee95b67
 
-PODFILE CHECKSUM: 9d90961eec30c15b052f5ab9d99a899d40e52088
+PODFILE CHECKSUM: 9292a3d7e474b6b00b9ba1825b0ea0d6108f9e59
 
 COCOAPODS: 1.5.3
