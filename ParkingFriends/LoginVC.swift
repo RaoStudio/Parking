@@ -18,7 +18,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
     
     @IBOutlet weak var btnGoogleLogin: GIDSignInButton!
-    @IBOutlet weak var btnFacebookLogin: FBSDKLoginButton!
+    @IBOutlet weak var btnFacebookLogin: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +39,8 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         
         
 //        self.btnFacebookLogin.delegate = self
+//        btnFacebookLogin.readPermissions = ["public_profile", "email"]
+        
         
         
     }
@@ -163,7 +165,24 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
     
     @IBAction func onBtnFacebook(_ sender: UIButton) {
-        self.facebookLogin()
+        
+        /*
+        if let token = FBSDKAccessToken.current() {
+            
+        } else {
+            self.facebookLogin()
+        }
+         */
+        
+        //*
+        let loginButton = FBSDKLoginButton()
+        loginButton.delegate = self
+        
+        loginButton.loginBehavior = FBSDKLoginBehavior.web
+//        .facebookLoginManager().loginBehavior = FBSDKLoginBehavior.web
+        
+        loginButton.sendActions(for: UIControlEvents.touchUpInside)
+        //*/
     }
     
     // MARK: - GIDSignInDelegate
@@ -215,14 +234,13 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
     func facebookLogin() {
         let fbLoginManager: FBSDKLoginManager = FBSDKLoginManager()
-        fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+        fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
             if error != nil {
                 NSLog("Process Error")
             } else if result?.isCancelled == true {
                 NSLog("Cancelled")
             } else {
                 NSLog("Logged in")
-                
             }
         }
     }
@@ -233,6 +251,30 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         if let error = error {
             print(error.localizedDescription)
             return
+        }
+        
+        if result.isCancelled == true {
+            NSLog("Cancelled")
+            return
+        }
+        
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        // ...
+        
+        Auth.auth().signIn(with: credential) { (user, error) in
+            // ...
+            if let err = error {
+                print("LoginViewController:    error = \(err)")
+                return
+            }
+            
+            // todo...
+            // 넘어오는 값을 기준으로 회원가입을 진행하면 됩니다.
+            print("name: \(user?.displayName)")
+            print("email: \(user?.email)")
+            
+            self.alert("name: \(user?.displayName), email: \(user?.email)")
+            
         }
     }
     

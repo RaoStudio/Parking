@@ -54,6 +54,10 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaoffd0911b43f73e0798069464b53ffcb9</string>
+        <string>fbapi</string>
+        <string>fb-messenger-share-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
