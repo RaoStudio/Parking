@@ -28,14 +28,14 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         self.navigationItem.title = "Login"
         
         
- /*
+ //*
         self.navigationController?.navigationBar.isHidden = true
         
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapMyView(_:)))
         self.view.addGestureRecognizer(tap)
         self.navigationController?.navigationBar.isTranslucent = true
- */
+ //*/
         
         
 //        self.btnFacebookLogin.delegate = self
@@ -44,7 +44,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
+//        self.navigationController?.navigationBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {

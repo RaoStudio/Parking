@@ -214,6 +214,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     override func viewWillAppear(_ animated: Bool) {
 //        lbl_Test.text = dicPlace?.description     // Test
+        
+        self.navigationController?.navigationBar.isHidden = false
+        
+        
         self.view.bringSubview(toFront: self.btnExit)
         
         if let dataPlace = self.dicPlace {
