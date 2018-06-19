@@ -1113,6 +1113,9 @@
                                         <state key="normal" title="구글계정으로 로그인" image="Login_google_icon" backgroundImage="Login_google_btn">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onBtnGoogle:" destination="88g-JK-Fkw" eventType="touchUpInside" id="Vnm-3o-7e7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kao-d7-mYQ">
                                         <rect key="frame" x="70" y="494" width="235" height="34"/>
@@ -1160,6 +1163,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GiR-zw-dMc"/>
                     </view>
+                    <connections>
+                        <outlet property="btnGoogleLogin" destination="E4K-pA-q91" id="CfS-Ml-RnZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ez-mK-aYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

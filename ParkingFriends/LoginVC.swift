@@ -9,9 +9,14 @@
 import UIKit
 import CoreData
 
+import Firebase
+import GoogleSignIn
 
-class LoginVC: UIViewController {
 
+class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
+
+    @IBOutlet weak var btnGoogleLogin: GIDSignInButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -127,6 +132,63 @@ class LoginVC: UIViewController {
                 print("isNotOpen")
             }
         })
+    }
+    
+    
+    
+    @IBAction func onBtnGoogle(_ sender: UIButton) {
+    
+//        FirebaseApp.configure()
+//        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        
+//        GIDSignIn.sharedInstance().clientID = "com.googleusercontent.apps.675515171374-k5bqb7s78ttsjp1tvp4ec9umiqeuumph"
+//        GIDSignIn.sharedInstance().delegate = self
+ 
+    
+//        GIDSignIn.sharedInstance().signIn()
+        
+        GIDSignIn.sharedInstance().delegate = self
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    
+    
+    
+    // MARK: - GIDSignInDelegate
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        // ...
+        if let error = error {
+            // ...
+            return
+        }
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        // ...
+        
+        Auth.auth().signIn(with: credential) { (user, error) in
+            // ...
+            if let err = error {
+                print("LoginViewController:    error = \(err)")
+                return
+            }
+            
+            // todo...
+            // 넘어오는 값을 기준으로 회원가입을 진행하면 됩니다.
+            print("name: \(user?.displayName)")
+            print("email: \(user?.email)")
+            
+            self.alert("name: \(user?.displayName), email: \(user?.email)")
+            
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
     }
     
     

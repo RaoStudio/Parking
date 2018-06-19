@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "30A37109D0BD180D883CAD731C03F5AC"
+               BlueprintIdentifier = "6447BDA4E3DE98B17E3B59A9AA44D10A"
                BlueprintName = "TabPageViewController"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "TabPageViewController.framework">

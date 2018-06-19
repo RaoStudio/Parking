@@ -15,4 +15,6 @@ target 'ParkingFriends' do
     pod 'DropDown'
     pod 'SwiftDate'
     pod 'Firebase/Core'
+    pod 'Firebase/Auth'
+    pod 'GoogleSignIn'
 end

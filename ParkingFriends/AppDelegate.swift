@@ -12,6 +12,7 @@ import GoogleMaps
 import GooglePlaces
 
 import Firebase
+import GoogleSignIn
 
 let googleApiKey = "AIzaSyBwqFR308aG7E02HTXsopaJmGTUbmPFMI8"
 //let googleApiKey = "AIzaSyDU39SZ_T7pc_0nkKdvfvHO1LS7hxiXZQE"
@@ -30,7 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey(googleApiKey)     // For Place
         GMSServices.provideAPIKey(googleApiKey)
         
+ 
         FirebaseApp.configure()     // For Google Auth
+        
+//        GIDSignIn.sharedInstance().clientID = "com.googleusercontent.apps.675515171374-k5bqb7s78ttsjp1tvp4ec9umiqeuumph"
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+//        GIDSignIn.sharedInstance().delegate = self
+ 
         
         return true
     }
@@ -58,6 +65,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    /*
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
+        -> Bool {
+            return GIDSignIn.sharedInstance().handle(url,
+                                                     sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                     annotation: [:])
+    }
+*/
+    
+    /*
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        // ...
+        if let error = error {
+            // ...
+            return
+        }
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        // ...
+        
+        Auth.auth().signIn(with: credential) { (user, error) in
+            // ...
+            if let err = error {
+                print("LoginViewController:    error = \(err)")
+                return
+            }
+            
+            // todo...
+            // 넘어오는 값을 기준으로 회원가입을 진행하면 됩니다.
+            print("name: \(user?.displayName)")
+            print("name: \(user?.email)")
+            
+            
+            
+            
+        }
+        
+        
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
+    }
+ */
 
     // MARK: - Core Data stack
 

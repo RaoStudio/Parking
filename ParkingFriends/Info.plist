@@ -26,6 +26,14 @@
 				<string>kakaoffd0911b43f73e0798069464b53ffcb9</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.675515171374-k5bqb7s78ttsjp1tvp4ec9umiqeuumph</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -34,11 +42,6 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaoffd0911b43f73e0798069464b53ffcb9</string>
-		<!--<string>kakaokompassauth</string>
-		<string>storykompassauth</string>
-		<string>kakaolink</string>
-		<string>kakaotalk-4.5.0</string>
-		<string>kakaostory-2.9.0</string>-->
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
