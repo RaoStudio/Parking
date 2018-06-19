@@ -11,6 +11,8 @@ import CoreData
 import GoogleMaps
 import GooglePlaces
 
+import Firebase
+
 let googleApiKey = "AIzaSyBwqFR308aG7E02HTXsopaJmGTUbmPFMI8"
 //let googleApiKey = "AIzaSyDU39SZ_T7pc_0nkKdvfvHO1LS7hxiXZQE"
 
@@ -27,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         GMSPlacesClient.provideAPIKey(googleApiKey)     // For Place
         GMSServices.provideAPIKey(googleApiKey)
+        
+        FirebaseApp.configure()     // For Google Auth
         
         return true
     }

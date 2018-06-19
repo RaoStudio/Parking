@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */; };
+		2942FB3920D88B4E00FBCAEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2942FB3820D88B4D00FBCAEB /* GoogleService-Info.plist */; };
 		2946600020BD3A420000D8B9 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29465FFF20BD3A420000D8B9 /* RoundView.swift */; };
 		294E5F9C20A53CEE00CF9D03 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E5F9B20A53CEE00CF9D03 /* RoundButton.swift */; };
 		29559EF4204CE28E000EB12B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29559EF3204CE28E000EB12B /* AppDelegate.swift */; };
@@ -45,11 +46,14 @@
 		29AA1267207DA06A00F4648C /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA1265207DA06A00F4648C /* GooglePlace.swift */; };
 		29B4CDED20CF96390055852F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4CDEC20CF96390055852F /* LoginVC.swift */; };
 		29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */; };
+		4BBC88AF11E0D545AF0CDA1E /* Pods_ParkingFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16606D5EB15EA7DA51DACE9F /* Pods_ParkingFriends.framework */; };
 		5AE7C80E869B4337F04B6493 /* Pods_ParkingFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA1467F876F3F1665825730 /* Pods_ParkingFriends.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16606D5EB15EA7DA51DACE9F /* Pods_ParkingFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerVC.swift; sourceTree = "<group>"; };
+		2942FB3820D88B4D00FBCAEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29465FFF20BD3A420000D8B9 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		294E5F9B20A53CEE00CF9D03 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		29559EF0204CE28E000EB12B /* ParkingFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +107,7 @@
 			files = (
 				5AE7C80E869B4337F04B6493 /* Pods_ParkingFriends.framework in Frameworks */,
 				298DF7ED20D24D1100F0B653 /* KakaoOpenSDK.framework in Frameworks */,
+				4BBC88AF11E0D545AF0CDA1E /* Pods_ParkingFriends.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +149,7 @@
 				29559EFD204CE28E000EB12B /* Assets.xcassets */,
 				29559EFF204CE28E000EB12B /* LaunchScreen.storyboard */,
 				29559F02204CE28E000EB12B /* Info.plist */,
+				2942FB3820D88B4D00FBCAEB /* GoogleService-Info.plist */,
 				29559EFA204CE28E000EB12B /* ParkingFriends.xcdatamodeld */,
 				295FF12120688AA2000CBF15 /* MainViewController.swift */,
 				2960237F2091A65600481134 /* DetailVC.swift */,
@@ -192,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				298DF7EC20D24D1100F0B653 /* KakaoOpenSDK.framework */,
+				16606D5EB15EA7DA51DACE9F /* Pods_ParkingFriends.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -329,6 +336,7 @@
 			files = (
 				2971A3F1209AECC400C1AD84 /* Tutorial.storyboard in Resources */,
 				29875E5520ABD1000029E4BD /* ParkingLot.storyboard in Resources */,
+				2942FB3920D88B4E00FBCAEB /* GoogleService-Info.plist in Resources */,
 				29AA1260207D9FF400F4648C /* MarkerInfoView.xib in Resources */,
 				29559F01204CE28E000EB12B /* LaunchScreen.storyboard in Resources */,
 				29559EFE204CE28E000EB12B /* Assets.xcassets in Resources */,
@@ -350,23 +358,27 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ParkingFriends/Pods-ParkingFriends-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TabPageViewController/TabPageViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TabPageViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -14,4 +14,5 @@ target 'ParkingFriends' do
     pod 'PureLayout'
     pod 'DropDown'
     pod 'SwiftDate'
+    pod 'Firebase/Core'
 end
