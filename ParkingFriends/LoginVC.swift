@@ -74,14 +74,34 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
     func requestUserLogin(email: String, provider: String, authid: String) {
         let url = UrlStrings.URL_API_USER_LOGIN
+//        let url = UrlStrings.URL_API_USER_SIGNUP
         
         let param = ["email": email,
                      "provider": provider,
                      "auth_id": authid] as [String: Any]
         
-        Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+        Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
+         
+            guard response.result.isSuccess else {
+                
+                self.alert("\(url) : \(String(describing: response.result.error))")
+                return
+            }
             
             
+            if let value = response.result.value as NSString? {
+                
+                if value.isEqual(to: "Not Found") {     // First Login (go to SMS Auth)
+                    
+                }
+                
+                if value.isEqual(to: "Auth Id Mismatch") {
+                
+                    self.alert("requestUserLogin = \(value)")
+                }
+                
+                
+            }
         }
         
     }
@@ -102,20 +122,24 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
             // 카카오 로그인 화면에서 벋어날 시 호출됨. (취소일 때도 표시됨)
             if error != nil
             {
-                print(error?.localizedDescription ?? "")
-            } else if session.isOpen() {
-                KOSessionTask.meTask(completionHandler: {(profile, error) -> Void in
+                self.alert(error?.localizedDescription ?? "")
+            }
+            else if session.isOpen() {
+                KOSessionTask.userMeTask(completion: {(error, profile) -> Void in
                     
                     if profile != nil {
                         DispatchQueue.main.async(execute: { () -> Void in
+                            let kakao : KOUserMe = profile as! KOUserMe
                             
+                            if let email = kakao.account?.email, let id = kakao.id {
                             
-                            let kakao : KOUser = profile as! KOUser
-                            
-                            if let value = kakao.properties?["nickname"] as? String{
-                             
-                                self.alert(value)
+//                                self.alert("\(email), \(id)")
+                                
+                                
+                                self.requestUserLogin(email: email, provider: "kakao", authid: id)
                             }
+                            
+                            
                             
 //                            let kakao : KOUser = profile as! KOUser
                             //String(kakao.ID)
