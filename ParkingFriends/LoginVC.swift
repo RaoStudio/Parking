@@ -20,6 +20,8 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     @IBOutlet weak var btnGoogleLogin: GIDSignInButton!
     @IBOutlet weak var btnFacebookLogin: UIButton!
     
+    let uSession = UserSession()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -64,6 +66,12 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                 self.navigationController?.navigationBar.isHidden = true
             }
         }
+    }
+    
+    // MARK: - Request to Parking Server ( SNS value -> Parking Server )
+    
+    func requestUserLogin(email: String, provider: String, authid: String) {
+        
     }
     
     
