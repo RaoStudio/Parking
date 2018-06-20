@@ -103,6 +103,82 @@ extension UIViewController {
     }
 }
 
+extension UIViewController {
+    
+    func startLoading(){
+        
+        print("START LOADING")
+        (UIApplication.shared.delegate as! AppDelegate).startLoading()
+        
+    }
+    
+    func endLoading(){
+        
+        print("END LOADING")
+        (UIApplication.shared.delegate as! AppDelegate).endLoading()
+        
+    }
+    
+    func showToast(toastTitle: String, toastMsg: String, interval: Double) {
+        
+        // show message
+        let message = UIAlertController(title: toastTitle, message: toastMsg, preferredStyle: UIAlertControllerStyle.alert)
+        self.present(message, animated: true, completion: {})
+        Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(dismissToastMessage(sender:)), userInfo: nil, repeats: true)
+        
+    }
+    
+    @objc func dismissToastMessage(sender: AnyObject?) {
+        var timer = sender as? Timer
+        self.dismiss(animated: true, completion: {
+            timer?.invalidate()
+            timer = nil
+        })
+    }
+    
+    func showAlert(toastTitle: String, toastMsg: String, positiveBtn: Bool, negativeBtn: Bool ,  done_action: @escaping () -> Void , cancel_action: @escaping () -> Void) {
+        // dismiss any popup
+        
+        // alert을 하나만 띄울 수 있기 때문에 보여지고 있는 것이 있다면 다 닫는다.
+        // Material 의 툴바등의 UIView확장 클래스는 모두 중첩뷰이므로, 올라온 얼럿을 닫기위해서는 tag처럼 구분자 추가 필요
+        // self.dismiss(animated: true, completion: nil)
+        
+        let message = UIAlertController(title: toastTitle, message: toastMsg, preferredStyle: UIAlertControllerStyle.alert)
+        
+        // 확인 버튼
+        if positiveBtn {
+            message.addAction(
+                UIAlertAction(title: "확인", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+                    done_action()
+                }
+            )
+        }
+        
+        // 취소 버튼
+        if negativeBtn {
+            message.addAction(
+                UIAlertAction(title: "취소", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+                    cancel_action()
+                }
+            )
+        }
+        
+        // show message
+        self.present(message, animated: true, completion: {})
+    }
+    
+    // 확인 버튼 클릭시 호출
+    func onClickedPositiveButton() {
+        print("onClicked Positive Button")
+    }
+    
+    // 취소 버튼 클릭시 호출
+    func onClickedNegativeButton() {
+        print("onClicked Negative Button")
+    }
+    
+}
+
 extension UIView {
     
     func dictionaryOfNames(arr:UIView...) -> Dictionary<String,UIView> {

@@ -223,3 +223,45 @@ class UserSession {
         }
     }
 }
+
+extension UserSession {
+    
+    func initUserSession() {
+        sid = ""
+        name = ""
+        email = ""
+        provider = ""
+        authId = ""
+        mobile = ""
+        photoUrl = ""
+        carName = ""
+        carNum = ""
+        parkOwned = ""
+        point = -1
+        cardNum = ""
+        cardExpire = ""
+        isLogin = false
+        isMonthlyPark = false
+        isPaying = false
+        
+    }
+    
+    /*
+    public void clear() {
+    this.mSID = null;
+    this.mName = null;
+    this.mEmail = null;
+    this.mProvider = null;
+    this.mAuthId = null;
+    this.mMobile = null;
+    this.mPhotoUrl = null;
+    this.mCarName = null;
+    this.mCarNum = null;
+    this.mParkOwned = null;
+    this.mPoint = -1;
+    this.mCardNum = null;
+    this.mCardExpire = null;
+    setLogin(false);
+    }
+     */
+}

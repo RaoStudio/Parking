@@ -836,6 +836,7 @@ extension MainViewController: GMSMapViewDelegate {
     
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        
         addressLabel.lock()
         
         if (gesture) {

@@ -25,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var loginList = [NSManagedObject]()
     
+    
+    var spinner = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
+    var loadingView: UIView?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
        
@@ -162,3 +166,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate{
+    
+    func startLoading() {
+        DispatchQueue.main.async{
+            
+            if(self.loadingView == nil){
+                
+                self.loadingView = UIView()
+                self.loadingView?.frame = CGRect(x: 0.0, y: 0.0, width: (self.window?.bounds.width)!, height: (self.window?.bounds.height)!)
+                self.loadingView?.center = (self.window?.center)!
+                self.loadingView?.backgroundColor = UIColor.black
+                self.loadingView?.alpha = 0.46
+                self.loadingView?.clipsToBounds = true
+                self.spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+                self.spinner.frame = CGRect(x: 0.0, y: 0.0, width: 80.0, height: 80.0)
+                self.spinner.center = CGPoint(x:(self.loadingView?.bounds.size.width)! / 2, y:(self.loadingView?.bounds.size.height)! / 2)
+                
+                self.loadingView?.addSubview(self.spinner)
+                self.window?.addSubview(self.loadingView!)
+                self.spinner.startAnimating()
+            }
+        }
+        
+    }
+    
+    func endLoading() {
+        
+        DispatchQueue.main.async{
+            
+            guard self.loadingView != nil
+                else{
+                    return
+            }
+            
+            self.spinner.stopAnimating()
+            self.loadingView?.removeFromSuperview()
+            self.loadingView = nil
+        }
+        
+    }
+    
+}

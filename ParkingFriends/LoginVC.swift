@@ -13,6 +13,8 @@ import Firebase
 import GoogleSignIn
 import FBSDKLoginKit
 
+import Alamofire
+
 
 class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLoginButtonDelegate {
     
@@ -71,6 +73,16 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     // MARK: - Request to Parking Server ( SNS value -> Parking Server )
     
     func requestUserLogin(email: String, provider: String, authid: String) {
+        let url = UrlStrings.URL_API_USER_LOGIN
+        
+        let param = ["email": email,
+                     "provider": provider,
+                     "auth_id": authid] as [String: Any]
+        
+        Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+            
+            
+        }
         
     }
     
