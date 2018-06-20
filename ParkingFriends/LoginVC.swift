@@ -92,13 +92,17 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
             if let value = response.result.value as NSString? {
                 
                 if value.isEqual(to: "Not Found") {     // First Login (go to SMS Auth)
-                    
+                  
+                    return
                 }
                 
                 if value.isEqual(to: "Auth Id Mismatch") {
                 
                     self.alert("requestUserLogin = \(value)")
+                    return
                 }
+                
+                
                 
                 
             }
@@ -131,10 +135,14 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                         DispatchQueue.main.async(execute: { () -> Void in
                             let kakao : KOUserMe = profile as! KOUserMe
                             
-                            if let email = kakao.account?.email, let id = kakao.id {
+                            if let email = kakao.account?.email, let id = kakao.id, let nickName = kakao.properties?["nickname"], let thumbImgPath = kakao.properties?["thumbnail_image"]{
                             
-//                                self.alert("\(email), \(id)")
-                                
+                                self.uSession.initUserSession()
+                                self.uSession.provider = "kakao"
+                                self.uSession.authId = id
+                                self.uSession.email = email
+                                self.uSession.name = nickName
+                                self.uSession.photoUrl = thumbImgPath
                                 
                                 self.requestUserLogin(email: email, provider: "kakao", authid: id)
                             }
