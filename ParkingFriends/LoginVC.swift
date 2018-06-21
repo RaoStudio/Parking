@@ -50,6 +50,10 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
 //        self.navigationController?.navigationBar.isHidden = false
     }
@@ -152,7 +156,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                             }
                             
                         }
-                                                                                                                        
+                        
                     } catch {
                         self.alert("requestUserLogin = \(value)")
                     }
