@@ -101,9 +101,67 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                     return
                 }
                 
-                if let data = response.data {
+                if let dataFromString = value.data(using: String.Encoding.utf8.rawValue, allowLossyConversion: false) {
                     do {
-                        let json = try JSON(data: data)
+                        let json = try JSON(data: dataFromString)
+                        
+                        let dic = json[0]
+                        
+                        if let strProvider = self.uSession.provider, let strAuthId = self.uSession.authId {
+                            
+                            if strProvider == dic["provider"].stringValue && strAuthId == dic["auth_id"].stringValue {
+                                /*  Android
+                                mApp.user.clear();
+                                mApp.user.setSID(json.getString("sid"));
+                                mApp.user.setProvider(json.getString("provider"));
+                                mApp.user.setAuthId(json.getString("auth_id"));
+                                mApp.user.setEmail(json.getString("email"));
+                                mApp.user.setName(json.getString("name"));
+                                mApp.user.setMobile(json.getString("mobile"));
+                                mApp.user.setPhotoUrl(json.getString("photo"));
+                                mApp.user.setPoint(json.getInt("point"));
+                                mApp.user.setCarName(json.getString("car_name"));
+                                mApp.user.setCarNum(json.getString("car_num"));
+                                //mApp.user.setParkOwned(json.getString("parkinglot_sid"));
+                                mApp.user.setLogin(true);
+                                
+                                toast(json.getString("name") + "님 환영합니다");
+                                
+                                if (!PNPreferences.getFirstLogin(mContext)) {
+                                    Utility.FcmTopicSubscribe("pf");
+                                    PNPreferences.setFirstLogin(mContext, true);
+                                }
+                                finish();
+                                */
+                                
+                                
+                                self.uSession.initUserSession()
+                                self.uSession.sid = dic["sid"].stringValue
+                                self.uSession.provider = dic["provider"].stringValue
+                                self.uSession.authId = dic["auth_id"].stringValue
+                                self.uSession.email = dic["email"].stringValue
+                                self.uSession.name = dic["name"].stringValue
+                                self.uSession.mobile = dic["mobile"].stringValue
+                                self.uSession.photoUrl = dic["photo"].stringValue
+                                self.uSession.point = Int(dic["point"].stringValue)
+                                self.uSession.carName = dic["car_name"].stringValue
+                                self.uSession.carNum = dic["car_num"].stringValue
+                                self.uSession.isLogin = true
+                                
+                                let strComment = String(format: "%@님 환영합니다", dic["name"].stringValue)
+                                self.showToast(toastTitle: nil, toastMsg: strComment, interval: 1.5)
+                                
+                                
+//                                self.alert("requestUserLogin JSON = \(json)")
+                            }
+                            
+                        }
+                        
+                        
+                        
+                        
+                        
+//                        self.alert("requestUserLogin JSON = \(json)")
                     } catch {
                         self.alert("requestUserLogin = \(value)")
                     }
@@ -118,6 +176,17 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     func requestUserRegister(provider: String, id: String, email: String, name: String, mobile: String, photoUrl: String) {
         let url = UrlStrings.URL_API_USER_SIGNUP
         
+        
+        let param = ["provider": provider,
+                     "id": id,
+                     "email": email,
+                     "name": name,
+                     "mobile": mobile,
+                     "photo": photoUrl] as [String: Any]
+        
+        Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
+            
+        }
         
     }
     

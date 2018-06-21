@@ -119,7 +119,7 @@ extension UIViewController {
         
     }
     
-    func showToast(toastTitle: String, toastMsg: String, interval: Double) {
+    func showToast(toastTitle: String?, toastMsg: String, interval: Double) {
         
         // show message
         let message = UIAlertController(title: toastTitle, message: toastMsg, preferredStyle: UIAlertControllerStyle.alert)
