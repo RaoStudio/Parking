@@ -201,7 +201,8 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
             // 카카오 로그인 화면에서 벋어날 시 호출됨. (취소일 때도 표시됨)
             if error != nil
             {
-                self.alert(error?.localizedDescription ?? "")
+//                self.alert(error?.localizedDescription ?? "")
+                self.navigationController?.view.makeToast(error?.localizedDescription ?? "", duration: 2.0, position: .bottom)
             }
             else if session.isOpen() {
                 KOSessionTask.userMeTask(completion: {(error, profile) -> Void in
