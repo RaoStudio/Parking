@@ -14,7 +14,7 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 import Alamofire
-
+import SwiftyJSON
 
 class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLoginButtonDelegate {
     
@@ -88,7 +88,6 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                 return
             }
             
-            
             if let value = response.result.value as NSString? {
                 
                 if value.isEqual(to: "Not Found") {     // First Login (go to SMS Auth)
@@ -96,17 +95,29 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                     return
                 }
                 
-                if value.isEqual(to: "Auth Id Mismatch") {
+                if value.isEqual(to: "Auth Id Mismatch") || value.isEqual(to: "Provider Mismatch") {
                 
                     self.alert("requestUserLogin = \(value)")
                     return
                 }
                 
-                
-                
+                if let data = response.data {
+                    do {
+                        let json = try JSON(data: data)
+                    } catch {
+                        self.alert("requestUserLogin = \(value)")
+                    }
+
+                }
                 
             }
         }
+        
+    }
+    
+    func requestUserRegister(provider: String, id: String, email: String, name: String, mobile: String, photoUrl: String) {
+        let url = UrlStrings.URL_API_USER_SIGNUP
+        
         
     }
     
