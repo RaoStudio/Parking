@@ -76,6 +76,7 @@ PODS:
   - SwiftDate (4.5.1)
   - SwiftyJSON (4.0.0)
   - TabPageViewController (0.2.7)
+  - Toast-Swift (3.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
@@ -93,6 +94,7 @@ DEPENDENCIES:
   - SwiftDate
   - SwiftyJSON
   - TabPageViewController
+  - Toast-Swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -120,6 +122,7 @@ SPEC REPOS:
     - SwiftDate
     - SwiftyJSON
     - TabPageViewController
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -146,7 +149,8 @@ SPEC CHECKSUMS:
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TabPageViewController: c37a1257a50c2b50712dde61bf499768eee95b67
+  Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: 9292a3d7e474b6b00b9ba1825b0ea0d6108f9e59
+PODFILE CHECKSUM: fae6a369decaf30d20943235b4e0fc849aed2407
 
 COCOAPODS: 1.5.3

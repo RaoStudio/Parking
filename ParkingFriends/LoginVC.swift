@@ -15,6 +15,7 @@ import FBSDKLoginKit
 
 import Alamofire
 import SwiftyJSON
+import Toast_Swift
 
 class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLoginButtonDelegate {
     
@@ -110,29 +111,6 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                         if let strProvider = self.uSession.provider, let strAuthId = self.uSession.authId {
                             
                             if strProvider == dic["provider"].stringValue && strAuthId == dic["auth_id"].stringValue {
-                                /*  Android
-                                mApp.user.clear();
-                                mApp.user.setSID(json.getString("sid"));
-                                mApp.user.setProvider(json.getString("provider"));
-                                mApp.user.setAuthId(json.getString("auth_id"));
-                                mApp.user.setEmail(json.getString("email"));
-                                mApp.user.setName(json.getString("name"));
-                                mApp.user.setMobile(json.getString("mobile"));
-                                mApp.user.setPhotoUrl(json.getString("photo"));
-                                mApp.user.setPoint(json.getInt("point"));
-                                mApp.user.setCarName(json.getString("car_name"));
-                                mApp.user.setCarNum(json.getString("car_num"));
-                                //mApp.user.setParkOwned(json.getString("parkinglot_sid"));
-                                mApp.user.setLogin(true);
-                                
-                                toast(json.getString("name") + "님 환영합니다");
-                                
-                                if (!PNPreferences.getFirstLogin(mContext)) {
-                                    Utility.FcmTopicSubscribe("pf");
-                                    PNPreferences.setFirstLogin(mContext, true);
-                                }
-                                finish();
-                                */
                                 
                                 
                                 self.uSession.initUserSession()
@@ -148,20 +126,33 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                                 self.uSession.carNum = dic["car_num"].stringValue
                                 self.uSession.isLogin = true
                                 
+                                
+                                
                                 let strComment = String(format: "%@님 환영합니다", dic["name"].stringValue)
-                                self.showToast(toastTitle: nil, toastMsg: strComment, interval: 1.5)
+//                                self.showToast(toastTitle: nil, toastMsg: strComment, interval: 1)
                                 
                                 
-//                                self.alert("requestUserLogin JSON = \(json)")
+                                
+                                self.navigationController?.view.makeToast(strComment, duration: 2.0, position: .bottom, title: nil, image: nil) { didTap in
+                                    if didTap {
+                                        print("completion from tap")
+                                    } else {
+                                        print("completion without tap")
+                                    }
+                                }
+                                
+                                self.navigationController?.popViewController(animated: true)
+                                
+                                /*
+                                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
+                                    self.navigationController?.popViewController(animated: true)
+                                }
+                                */
+
                             }
                             
                         }
-                        
-                        
-                        
-                        
-                        
-//                        self.alert("requestUserLogin JSON = \(json)")
+                                                                                                                        
                     } catch {
                         self.alert("requestUserLogin = \(value)")
                     }

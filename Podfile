@@ -18,4 +18,5 @@ target 'ParkingFriends' do
     pod 'Firebase/Auth'
     pod 'GoogleSignIn'
     pod 'FBSDKLoginKit'
+    pod 'Toast-Swift'
 end
