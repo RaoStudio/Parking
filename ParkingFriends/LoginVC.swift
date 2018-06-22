@@ -33,14 +33,14 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         self.navigationItem.title = "Login"
         
         
- //*
+ /*
         self.navigationController?.navigationBar.isHidden = true
         
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapMyView(_:)))
         self.view.addGestureRecognizer(tap)
         self.navigationController?.navigationBar.isTranslucent = true
- //*/
+ */
         
         
 //        self.btnFacebookLogin.delegate = self
@@ -51,7 +51,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
+//        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -88,19 +88,15 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                      "auth_id": authid] as [String: Any]
         
         Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
-         
+            
             self.endLoading()
             
             guard response.result.isSuccess else {
-                
-                
                 self.alert("\(url) : \(String(describing: response.result.error))")
                 return
             }
             
             if let value = response.result.value as NSString? {
-                
-                
                 
                 if value.isEqual(to: "Not Found") {     // First Login (go to SMS Auth)
                  
@@ -127,7 +123,6 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                             
                             if strProvider == dic["provider"].stringValue && strAuthId == dic["auth_id"].stringValue {
                                 
-                                
                                 self.uSession.initUserSession()
                                 self.uSession.sid = dic["sid"].stringValue
                                 self.uSession.provider = dic["provider"].stringValue
@@ -140,8 +135,6 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                                 self.uSession.carName = dic["car_name"].stringValue
                                 self.uSession.carNum = dic["car_num"].stringValue
                                 self.uSession.isLogin = true
-                                
-                                
                                 
                                 let strComment = String(format: "%@님 환영합니다", dic["name"].stringValue)
 //                                self.showToast(toastTitle: nil, toastMsg: strComment, interval: 1)
@@ -176,7 +169,6 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                 
             }
         }
-        
     }
     
     func requestUserRegister(provider: String, id: String, email: String, name: String, mobile: String, photoUrl: String) {
@@ -207,15 +199,19 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         
         session.presentingViewController = self
         
+        self.startLoading()
+        
         session.open(completionHandler: {(error) -> Void in
             
             // 카카오 로그인 화면에서 벋어날 시 호출됨. (취소일 때도 표시됨)
             if error != nil
             {
 //                self.alert(error?.localizedDescription ?? "")
+                self.endLoading()
                 self.navigationController?.view.makeToast(error?.localizedDescription ?? "", duration: 2.0, position: .bottom)
             }
-            else if session.isOpen() {
+            else if session.isOpen()
+            {
                 KOSessionTask.userMeTask(completion: {(error, profile) -> Void in
                     
                     if profile != nil {
@@ -276,10 +272,14 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                             self.gotoMainViewController(user: info)
                              */
                         })
+                    } else {
+                        self.endLoading()
+                        self.navigationController?.view.makeToast("Kakao profile is nil", duration: 2.0, position: .bottom)
                     }
                 })
             } else {
-                print("isNotOpen")
+                self.endLoading()
+                self.navigationController?.view.makeToast("isNotOpen", duration: 2.0, position: .bottom)
             }
         })
     }
@@ -316,6 +316,9 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
             self.facebookLogin()
         }
          */
+        
+        
+//        self.startLoading()
         
         //*
         let loginButton = FBSDKLoginButton()
@@ -385,6 +388,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                 
             } else {
                 self.endLoading()
+                self.navigationController?.view.makeToast("GG: Result is nil" , duration: 2.0, position: .bottom)
             }
         }
         
@@ -412,6 +416,8 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         // ...
         
         self.navigationController?.view.makeToast(error?.localizedDescription ?? "didDisconnectWith", duration: 2.0, position: .bottom)
+        
+        self.endLoading()
     }
     
     
@@ -443,11 +449,13 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if let error = error {
+            self.endLoading()
             self.navigationController?.view.makeToast(error.localizedDescription , duration: 2.0, position: .bottom)
             return
         }
         
         if result.isCancelled == true {
+            self.endLoading()
             self.navigationController?.view.makeToast("Cancelled" , duration: 2.0, position: .bottom)
             return
         }
@@ -459,6 +467,8 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         Auth.auth().signInAndRetrieveData(with: credential) { (result, error) in
             if let err = error {
                 print("LoginViewController:    error = \(err)")
+                self.endLoading()
+                self.navigationController?.view.makeToast(err.localizedDescription , duration: 2.0, position: .bottom)
                 return
             }
             
@@ -480,6 +490,9 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                     self.requestUserLogin(email: email, provider: "facebook", authid: id)
                     
                 }
+            } else {
+                self.endLoading()
+                self.navigationController?.view.makeToast("FB: Result is nil" , duration: 2.0, position: .bottom)
             }
         }
         
