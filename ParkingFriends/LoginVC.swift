@@ -78,6 +78,10 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     // MARK: - Request to Parking Server ( SNS value -> Parking Server )
     
     func requestUserLogin(email: String, provider: String, authid: String) {
+        
+        self.startLoading()
+        
+        
         let url = UrlStrings.URL_API_USER_LOGIN
 //        let url = UrlStrings.URL_API_USER_SIGNUP
         
@@ -87,6 +91,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         
         Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
          
+            self.endLoading()
             guard response.result.isSuccess else {
                 
                 self.alert("\(url) : \(String(describing: response.result.error))")
@@ -96,13 +101,17 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
             if let value = response.result.value as NSString? {
                 
                 if value.isEqual(to: "Not Found") {     // First Login (go to SMS Auth)
-                  
+                 
+//                    self.navigationController?.view.makeToast("Not Found ~ Need Register ~", duration: 2.0, position: .bottom)
+                    self.showToast(toastTitle: nil, toastMsg: "Not Found ~ Need Register ~", interval: 1)
                     return
                 }
                 
                 if value.isEqual(to: "Auth Id Mismatch") || value.isEqual(to: "Provider Mismatch") {
                 
-                    self.alert("requestUserLogin = \(value)")
+//                    self.alert("requestUserLogin = \(value)")
+//                    self.navigationController?.view.makeToast(value as String, duration: 2.0, position: .bottom)
+                    self.showToast(toastTitle: nil, toastMsg: value as String, interval: 1)
                     return
                 }
                 
@@ -211,7 +220,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                         DispatchQueue.main.async(execute: { () -> Void in
                             let kakao : KOUserMe = profile as! KOUserMe
                             
-                            if let email = kakao.account?.email, let id = kakao.id, let nickName = kakao.properties?["nickname"], let thumbImgPath = kakao.properties?["thumbnail_image"]{
+                            if let email = kakao.account?.email, let id = kakao.id, let nickName = kakao.properties?["nickname"], let thumbImgPath = kakao.properties?["thumbnail_image"], email.count > 0, id.count > 0{
                             
                                 self.uSession.initUserSession()
                                 self.uSession.provider = "kakao"
@@ -219,6 +228,8 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                                 self.uSession.email = email
                                 self.uSession.name = nickName
                                 self.uSession.photoUrl = thumbImgPath
+                                
+                                
                                 
                                 self.requestUserLogin(email: email, provider: "kakao", authid: id)
                             }
@@ -318,6 +329,9 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         // ...
         if let error = error {
             // ...
+            
+            self.navigationController?.view.makeToast(error.localizedDescription , duration: 2.0, position: .bottom)
+            
             return
         }
         
@@ -325,7 +339,47 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
         // ...
+        Auth.auth().signInAndRetrieveData(with: credential) { (result, error) in
+            if let err = error {
+                print("LoginViewController:    error = \(err)")
+                return
+            }
+            
+            
+            if let user = result?.user {
+                
+                if let email = user.email, let nickName = user.displayName, let thumbImgPath = user.photoURL, let id = result?.user.uid, email.count > 0, id.count > 0 {
+                    
+                    self.uSession.initUserSession()
+                    self.uSession.provider = "google"
+                    self.uSession.authId = id
+                    self.uSession.email = email
+                    self.uSession.name = nickName
+                    self.uSession.photoUrl = thumbImgPath.absoluteString
+                    
+                    
+                    
+                    
+                    self.requestUserLogin(email: email, provider: "google", authid: id)
+                    
+                }
+                
+                
+                
+                /*
+                // todo...
+                // 넘어오는 값을 기준으로 회원가입을 진행하면 됩니다.
+                print("name: \(String(describing: user.displayName))")
+                print("email: \(String(describing: user.email))")
+                
+                self.alert("name: \(String(describing: user.displayName)), email: \(String(describing: user.email))")
+                 */
+                
+            }
+        }
         
+        
+        /*
         Auth.auth().signIn(with: credential) { (user, error) in
             // ...
             if let err = error {
@@ -339,13 +393,15 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
             print("email: \(user?.email)")
             
             self.alert("name: \(user?.displayName), email: \(user?.email)")
-            
         }
+        */
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         // Perform any operations when the user disconnects from app here.
         // ...
+        
+        self.navigationController?.view.makeToast(error?.localizedDescription ?? "didDisconnectWith", duration: 2.0, position: .bottom)
     }
     
     
@@ -377,25 +433,54 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if let error = error {
-            print(error.localizedDescription)
+            self.navigationController?.view.makeToast(error.localizedDescription , duration: 2.0, position: .bottom)
             return
         }
         
         if result.isCancelled == true {
-            NSLog("Cancelled")
+            self.navigationController?.view.makeToast("Cancelled" , duration: 2.0, position: .bottom)
             return
         }
+        
         
         let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         // ...
         
+        Auth.auth().signInAndRetrieveData(with: credential) { (result, error) in
+            if let err = error {
+                print("LoginViewController:    error = \(err)")
+                return
+            }
+            
+            
+            if let user = result?.user {
+                
+                if let email = user.email, let nickName = user.displayName, let thumbImgPath = user.photoURL, let id = result?.user.uid, email.count > 0, id.count > 0 {
+                    
+                    self.uSession.initUserSession()
+                    self.uSession.provider = "facebook"
+                    self.uSession.authId = id
+                    self.uSession.email = email
+                    self.uSession.name = nickName
+                    self.uSession.photoUrl = thumbImgPath.absoluteString
+                    
+                    
+                    
+                    
+                    self.requestUserLogin(email: email, provider: "facebook", authid: id)
+                    
+                }
+            }
+        }
+        
+        
+        /*
         Auth.auth().signIn(with: credential) { (user, error) in
             // ...
             if let err = error {
                 print("LoginViewController:    error = \(err)")
                 return
             }
-            
             // todo...
             // 넘어오는 값을 기준으로 회원가입을 진행하면 됩니다.
             print("name: \(user?.displayName)")
@@ -404,6 +489,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
             self.alert("name: \(user?.displayName), email: \(user?.email)")
             
         }
+ */
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
