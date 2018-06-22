@@ -101,7 +101,14 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                 if value.isEqual(to: "Not Found") {     // First Login (go to SMS Auth)
                  
 //                    self.navigationController?.view.makeToast("Not Found ~ Need Register ~", duration: 2.0, position: .bottom)
-                    self.showToast(toastTitle: nil, toastMsg: "Not Found ~ Need Register ~", interval: 1)
+//                    self.showToast(toastTitle: nil, toastMsg: "Not Found ~ Need Register ~", interval: 1)
+                    
+                    guard let RegisterNavi = self.storyboard?.instantiateViewController(withIdentifier: "RegisterVC") as? UINavigationController else {
+                        return
+                    }
+                    
+                    self.present(RegisterNavi, animated: true, completion: nil)
+                    
                     return
                 }
                 

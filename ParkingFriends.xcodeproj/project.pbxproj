@@ -39,6 +39,7 @@
 		2999636B20B6546600AC180C /* LotPayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636A20B6546600AC180C /* LotPayVC.swift */; };
 		2999636D20B65F4200AC180C /* PresentTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636C20B65F4200AC180C /* PresentTestVC.swift */; };
 		29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0FFDB207B429200B13638 /* UrlStrings.swift */; };
+		29A1AABC20DCC0F500C8EE66 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A1AABB20DCC0F500C8EE66 /* RegisterVC.swift */; };
 		29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA125B207D9FF400F4648C /* MarkerInfoView.swift */; };
 		29AA1260207D9FF400F4648C /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29AA125C207D9FF400F4648C /* MarkerInfoView.xib */; };
 		29AA1261207D9FF400F4648C /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA125D207D9FF400F4648C /* PlaceMarker.swift */; };
@@ -89,6 +90,7 @@
 		2999636A20B6546600AC180C /* LotPayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotPayVC.swift; sourceTree = "<group>"; };
 		2999636C20B65F4200AC180C /* PresentTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentTestVC.swift; sourceTree = "<group>"; };
 		29A0FFDB207B429200B13638 /* UrlStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlStrings.swift; sourceTree = "<group>"; };
+		29A1AABB20DCC0F500C8EE66 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		29AA125B207D9FF400F4648C /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
 		29AA125C207D9FF400F4648C /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
 		29AA125D207D9FF400F4648C /* PlaceMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				2983BD9920A16BA60033035D /* RaoPageVC.swift */,
 				291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */,
 				29B4CDEC20CF96390055852F /* LoginVC.swift */,
+				29A1AABB20DCC0F500C8EE66 /* RegisterVC.swift */,
 			);
 			path = ParkingFriends;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29875E5720ABF7C60029E4BD /* ParkingLotTabPageVC.swift in Sources */,
+				29A1AABC20DCC0F500C8EE66 /* RegisterVC.swift in Sources */,
 				294E5F9C20A53CEE00CF9D03 /* RoundButton.swift in Sources */,
 				29B4CDED20CF96390055852F /* LoginVC.swift in Sources */,
 				2983D63620B5356B003CAB1C /* TestView.swift in Sources */,
