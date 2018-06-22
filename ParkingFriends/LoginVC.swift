@@ -79,7 +79,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
     func requestUserLogin(email: String, provider: String, authid: String) {
         
-        self.startLoading()
+//        self.startLoading()
         
         
         let url = UrlStrings.URL_API_USER_LOGIN
@@ -91,7 +91,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         
         Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
          
-            self.endLoading()
+//            self.endLoading()
             guard response.result.isSuccess else {
                 
                 self.alert("\(url) : \(String(describing: response.result.error))")
