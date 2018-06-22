@@ -79,8 +79,6 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
     func requestUserLogin(email: String, provider: String, authid: String) {
         
-//        self.startLoading()
-        
         
         let url = UrlStrings.URL_API_USER_LOGIN
 //        let url = UrlStrings.URL_API_USER_SIGNUP
@@ -91,14 +89,18 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         
         Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
          
-//            self.endLoading()
+            self.endLoading()
+            
             guard response.result.isSuccess else {
+                
                 
                 self.alert("\(url) : \(String(describing: response.result.error))")
                 return
             }
             
             if let value = response.result.value as NSString? {
+                
+                
                 
                 if value.isEqual(to: "Not Found") {     // First Login (go to SMS Auth)
                  
@@ -294,6 +296,8 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
  
     
 //        GIDSignIn.sharedInstance().signIn()
+     
+        self.startLoading()
         
         GIDSignIn.sharedInstance().delegate = self
         
@@ -326,10 +330,12 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
     // MARK: - GIDSignInDelegate
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        
         // ...
         if let error = error {
             // ...
-            
+        
+            self.endLoading()
             self.navigationController?.view.makeToast(error.localizedDescription , duration: 2.0, position: .bottom)
             
             return
@@ -342,6 +348,8 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         Auth.auth().signInAndRetrieveData(with: credential) { (result, error) in
             if let err = error {
                 print("LoginViewController:    error = \(err)")
+                self.endLoading()
+                self.navigationController?.view.makeToast(err.localizedDescription , duration: 2.0, position: .bottom)
                 return
             }
             
@@ -375,6 +383,8 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                 self.alert("name: \(String(describing: user.displayName)), email: \(String(describing: user.email))")
                  */
                 
+            } else {
+                self.endLoading()
             }
         }
         
