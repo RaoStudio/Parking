@@ -17,6 +17,9 @@ class RegisterVC: UIViewController {
     
     
     
+    @IBOutlet weak var txtPhoneNum: UITextField!
+    @IBOutlet weak var txtAuthNum: UITextField!
+    
     @IBOutlet weak var lbl_Tel: UILabel!
     
     override func viewDidLoad() {
@@ -27,6 +30,11 @@ class RegisterVC: UIViewController {
         self.constCompleteView.constant = 0.0
         stackComplete.isHidden = true
         
+        
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapMyView(_:)))
+        self.view.addGestureRecognizer(tap)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +43,12 @@ class RegisterVC: UIViewController {
     }
     
 
+    
+    @objc func tapMyView(_ sender : UIView) {
+        txtPhoneNum.resignFirstResponder()
+        txtAuthNum.resignFirstResponder()
+    }
+    
     @IBAction func onBtnExit(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }

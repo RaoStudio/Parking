@@ -1342,6 +1342,8 @@
                         <outlet property="constInputView" destination="ssc-rm-GH4" id="r9v-q2-GzG"/>
                         <outlet property="lbl_Tel" destination="u7R-Lx-dwz" id="sil-wR-73Z"/>
                         <outlet property="stackComplete" destination="aNL-SS-uGD" id="nBc-8Z-0ry"/>
+                        <outlet property="txtAuthNum" destination="bgt-kq-EhL" id="4Sh-q6-j4J"/>
+                        <outlet property="txtPhoneNum" destination="Ldc-ss-sg9" id="EbV-2s-C45"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zMb-A9-Q1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1366,21 +1368,34 @@
             </objects>
             <point key="canvasLocation" x="1174" y="-327"/>
         </scene>
-        <!--View Controller-->
+        <!--SideVC-->
         <scene sceneID="84R-iq-73J">
             <objects>
-                <viewController id="K6u-5I-ZT8" sceneMemberID="viewController">
+                <viewController id="K6u-5I-ZT8" customClass="SideVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WkX-fO-DAq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX7-cH-PeE">
+                                <rect key="frame" x="164" y="318.5" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onBtnTest:" destination="K6u-5I-ZT8" eventType="touchUpInside" id="AoP-Pz-dmW"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EX7-cH-PeE" firstAttribute="centerY" secondItem="WkX-fO-DAq" secondAttribute="centerY" id="Moo-0k-hDV"/>
+                            <constraint firstItem="EX7-cH-PeE" firstAttribute="centerX" secondItem="WkX-fO-DAq" secondAttribute="centerX" id="phH-p7-x1R"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VJa-bR-Z55"/>
                     </view>
                     <navigationItem key="navigationItem" id="cV4-Fe-VDu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXp-zw-Kwc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2034" y="-331"/>
+            <point key="canvasLocation" x="2032.8" y="-331.48425787106447"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="fBC-Ii-VKp">
