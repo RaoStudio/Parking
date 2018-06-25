@@ -13,6 +13,11 @@ class RegisterVC: UIViewController {
     
     @IBOutlet weak var constInputView: NSLayoutConstraint!      // Orig ( 200 )
     @IBOutlet weak var constCompleteView: NSLayoutConstraint!   // Orig ( 90 )
+    @IBOutlet weak var stackComplete: UIStackView!
+    
+    
+    
+    @IBOutlet weak var lbl_Tel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +25,8 @@ class RegisterVC: UIViewController {
         // Do any additional setup after loading the view.
         
         self.constCompleteView.constant = 0.0
+        stackComplete.isHidden = true
+        
     }
 
     override func didReceiveMemoryWarning() {
