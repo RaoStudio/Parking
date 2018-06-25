@@ -1242,18 +1242,51 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="29" id="8pe-w1-1og"/>
                                                                     <constraint firstItem="g1x-iI-dGQ" firstAttribute="leading" secondItem="M2Q-Ge-13a" secondAttribute="leading" constant="12" id="R2m-dy-yXL"/>
                                                                     <constraint firstItem="g1x-iI-dGQ" firstAttribute="centerY" secondItem="M2Q-Ge-13a" secondAttribute="centerY" id="rgO-Fe-75f"/>
                                                                 </constraints>
                                                             </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nka-d0-zwY">
+                                                                <rect key="frame" x="0.0" y="134" width="375" height="46"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0K-yR-gQH" userLabel="bottomLine">
+                                                                        <rect key="frame" x="0.0" y="45" width="375" height="1"/>
+                                                                        <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="gel-Jt-JGw"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRd-W3-RD2">
+                                                                        <rect key="frame" x="12" y="12" width="351" height="17"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                        <state key="normal" title="모두 동의" image="Register_Check_Off">
+                                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="BRd-W3-RD2" secondAttribute="trailing" constant="12" id="5qk-tn-SIF"/>
+                                                                    <constraint firstItem="BRd-W3-RD2" firstAttribute="top" secondItem="nka-d0-zwY" secondAttribute="top" constant="12" id="Hdf-O2-EPT"/>
+                                                                    <constraint firstItem="BRd-W3-RD2" firstAttribute="leading" secondItem="nka-d0-zwY" secondAttribute="leading" constant="12" id="RZn-hD-CfO"/>
+                                                                    <constraint firstAttribute="height" constant="46" id="TPi-eG-kYT"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Q0K-yR-gQH" secondAttribute="trailing" id="Us9-1t-dh9"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Q0K-yR-gQH" secondAttribute="bottom" id="jDD-82-DsC"/>
+                                                                    <constraint firstItem="Q0K-yR-gQH" firstAttribute="leading" secondItem="nka-d0-zwY" secondAttribute="leading" id="qtE-Yg-hBd"/>
+                                                                </constraints>
+                                                            </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="180" id="DxU-Qp-WVZ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="nka-d0-zwY" secondAttribute="trailing" id="R8a-mC-hYD"/>
+                                                            <constraint firstAttribute="bottom" secondItem="nka-d0-zwY" secondAttribute="bottom" id="Trw-mk-v3u"/>
                                                             <constraint firstAttribute="trailing" secondItem="M2Q-Ge-13a" secondAttribute="trailing" id="XLR-YU-y2h"/>
+                                                            <constraint firstItem="nka-d0-zwY" firstAttribute="leading" secondItem="K6r-eW-m6a" secondAttribute="leading" id="k06-mG-f2O"/>
                                                             <constraint firstItem="M2Q-Ge-13a" firstAttribute="top" secondItem="K6r-eW-m6a" secondAttribute="top" id="l7r-ay-Ndj"/>
                                                             <constraint firstItem="M2Q-Ge-13a" firstAttribute="leading" secondItem="K6r-eW-m6a" secondAttribute="leading" id="z8I-IQ-Otd"/>
                                                         </constraints>
@@ -1301,7 +1334,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="Rsi-ZR-Gle" firstAttribute="centerX" secondItem="DaG-b6-foZ" secondAttribute="centerX" id="HB9-rF-BxN"/>
                                             <constraint firstAttribute="bottom" secondItem="Rsi-ZR-Gle" secondAttribute="bottom" constant="24" id="KD1-SE-8gO"/>
@@ -1913,6 +1946,7 @@
         <image name="Main_TP_BackGround" width="296" height="60"/>
         <image name="MyLocation" width="33" height="33"/>
         <image name="MyLocation_Sel" width="38" height="37"/>
+        <image name="Register_Check_Off" width="17" height="17"/>
         <image name="Register_Confirm_Btn" width="22" height="22"/>
         <image name="Register_NumSend_Btn" width="22" height="22"/>
         <image name="SideMenuBtn" width="30" height="30"/>
