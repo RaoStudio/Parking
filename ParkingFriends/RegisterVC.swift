@@ -22,6 +22,15 @@ class RegisterVC: UIViewController {
     
     @IBOutlet weak var lbl_Tel: UILabel!
     
+    
+    
+    @IBOutlet weak var btnPF: UIButton!
+    @IBOutlet weak var btnPersonal: UIButton!
+    @IBOutlet weak var btnLocation: UIButton!
+    @IBOutlet weak var btnAll: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,9 +58,45 @@ class RegisterVC: UIViewController {
         txtAuthNum.resignFirstResponder()
     }
     
+    
+    // MARK: - Btn Action
     @IBAction func onBtnExit(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
+    
+    
+    
+    @IBAction func onBtnAction(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            btnAll.isSelected = false
+        } else {
+            sender.isSelected = true
+        }
+    }
+    
+    
+    
+    
+    
+    @IBAction func onBtnAll(_ sender: UIButton) {
+        
+        if sender.isSelected {
+            sender.isSelected = false
+            btnPF.isSelected = false
+            btnPersonal.isSelected = false
+            btnLocation.isSelected = false
+        } else {
+            sender.isSelected = true
+            btnPF.isSelected = true
+            btnPersonal.isSelected = true
+            btnLocation.isSelected = true
+//            btnAll.isSelected = true
+        }
+    }
+    
+    
     /*
     // MARK: - Navigation
 
