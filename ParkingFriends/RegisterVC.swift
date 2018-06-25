@@ -10,10 +10,16 @@ import UIKit
 
 class RegisterVC: UIViewController {
 
+    
+    @IBOutlet weak var constInputView: NSLayoutConstraint!
+    @IBOutlet weak var constCompleteView: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.constCompleteView.constant = 0.0
     }
 
     override func didReceiveMemoryWarning() {
