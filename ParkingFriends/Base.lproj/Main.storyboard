@@ -1051,9 +1051,119 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0V-Rd-rA7" userLabel="Input View">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQw-Bh-0Sm">
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lQH-p9-bUP">
+                                                                        <rect key="frame" x="70" y="25" width="235" height="40"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 이용을 위해 휴대폰 인증이 필요합니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1w-0w-H7Q">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="235" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="본인 명의 휴대폰 정보를 입력해주세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LJ-dT-tod">
+                                                                                <rect key="frame" x="18.5" y="24" width="198.5" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="lQH-p9-bUP" firstAttribute="centerY" secondItem="HQw-Bh-0Sm" secondAttribute="centerY" id="k3q-dm-cgr"/>
+                                                                    <constraint firstItem="lQH-p9-bUP" firstAttribute="centerX" secondItem="HQw-Bh-0Sm" secondAttribute="centerX" id="owI-ed-Qw3"/>
+                                                                    <constraint firstAttribute="height" constant="90" id="rjr-dO-7BN"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mb-c3-Kvr">
+                                                                <rect key="frame" x="0.0" y="90" width="375" height="110"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oru-OG-Yud">
+                                                                        <rect key="frame" x="12" y="0.0" width="351" height="42"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대폰 번호" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INb-UU-BXG">
+                                                                                <rect key="frame" x="0.0" y="13" width="60" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2DM-l5-8Ao" userLabel="bottomLine">
+                                                                                <rect key="frame" x="0.0" y="41" width="351" height="1"/>
+                                                                                <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="cpt-cF-BkY"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XT9-5u-bFe">
+                                                                                <rect key="frame" x="267" y="10" width="84" height="22"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="84" id="2Bd-1W-xrv"/>
+                                                                                    <constraint firstAttribute="height" constant="22" id="HMI-9T-OBx"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                                                <state key="normal" title="인증번호발송" backgroundImage="Register_NumSend_Btn">
+                                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
+                                                                            </button>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="XT9-5u-bFe" firstAttribute="centerY" secondItem="Oru-OG-Yud" secondAttribute="centerY" id="5X0-1U-h96"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="XT9-5u-bFe" secondAttribute="trailing" id="6M4-7B-Pbv"/>
+                                                                            <constraint firstItem="INb-UU-BXG" firstAttribute="centerY" secondItem="Oru-OG-Yud" secondAttribute="centerY" id="Bxu-df-i4f"/>
+                                                                            <constraint firstItem="2DM-l5-8Ao" firstAttribute="leading" secondItem="Oru-OG-Yud" secondAttribute="leading" id="TPw-QT-yDz"/>
+                                                                            <constraint firstItem="INb-UU-BXG" firstAttribute="leading" secondItem="Oru-OG-Yud" secondAttribute="leading" id="WWC-5Y-hiM"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="2DM-l5-8Ao" secondAttribute="trailing" id="fDJ-Cc-tx2"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="2DM-l5-8Ao" secondAttribute="bottom" id="iVk-rQ-WTp"/>
+                                                                            <constraint firstAttribute="height" constant="42" id="o6C-1C-Bkb"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsE-ZS-cIm">
+                                                                        <rect key="frame" x="12" y="42" width="351" height="42"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQT-pN-Oiv" userLabel="bottomLine">
+                                                                                <rect key="frame" x="0.0" y="41" width="351" height="1"/>
+                                                                                <color key="backgroundColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="fFt-QQ-Z2b"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="bottom" secondItem="uQT-pN-Oiv" secondAttribute="bottom" id="6ys-hD-REh"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="uQT-pN-Oiv" secondAttribute="trailing" id="LMd-AQ-cg8"/>
+                                                                            <constraint firstItem="uQT-pN-Oiv" firstAttribute="leading" secondItem="NsE-ZS-cIm" secondAttribute="leading" id="abe-Fb-DBk"/>
+                                                                            <constraint firstAttribute="height" constant="42" id="c86-zB-MpN"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="Oru-OG-Yud" firstAttribute="leading" secondItem="6mb-c3-Kvr" secondAttribute="leading" constant="12" id="Mzn-hB-o62"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Oru-OG-Yud" secondAttribute="trailing" constant="12" id="ScA-3o-hsl"/>
+                                                                    <constraint firstItem="Oru-OG-Yud" firstAttribute="top" secondItem="6mb-c3-Kvr" secondAttribute="top" id="ZF3-7P-ffq"/>
+                                                                    <constraint firstItem="NsE-ZS-cIm" firstAttribute="leading" secondItem="6mb-c3-Kvr" secondAttribute="leading" constant="12" id="h3Z-Z9-EcO"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="NsE-ZS-cIm" secondAttribute="trailing" constant="12" id="mLh-GE-2CY"/>
+                                                                    <constraint firstItem="NsE-ZS-cIm" firstAttribute="top" secondItem="Oru-OG-Yud" secondAttribute="bottom" id="pxW-Si-0hk"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
+                                                            <constraint firstItem="6mb-c3-Kvr" firstAttribute="top" secondItem="HQw-Bh-0Sm" secondAttribute="bottom" id="4tg-vi-3Pu"/>
+                                                            <constraint firstAttribute="trailing" secondItem="HQw-Bh-0Sm" secondAttribute="trailing" id="Ado-7U-bGw"/>
+                                                            <constraint firstItem="HQw-Bh-0Sm" firstAttribute="top" secondItem="Y0V-Rd-rA7" secondAttribute="top" id="Cu7-Ab-geK"/>
+                                                            <constraint firstItem="6mb-c3-Kvr" firstAttribute="leading" secondItem="Y0V-Rd-rA7" secondAttribute="leading" id="YRb-H5-uBK"/>
+                                                            <constraint firstItem="HQw-Bh-0Sm" firstAttribute="leading" secondItem="Y0V-Rd-rA7" secondAttribute="leading" id="bwN-kf-WwN"/>
+                                                            <constraint firstAttribute="bottom" secondItem="6mb-c3-Kvr" secondAttribute="bottom" id="mhB-sb-j8O"/>
                                                             <constraint firstAttribute="height" constant="200" id="ssc-rm-GH4"/>
+                                                            <constraint firstAttribute="trailing" secondItem="6mb-c3-Kvr" secondAttribute="trailing" id="tfI-dP-GIN"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvJ-34-8l2" userLabel="Complete View">
@@ -1113,7 +1223,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="Rsi-ZR-Gle" firstAttribute="centerX" secondItem="DaG-b6-foZ" secondAttribute="centerX" id="HB9-rF-BxN"/>
                                             <constraint firstAttribute="bottom" secondItem="Rsi-ZR-Gle" secondAttribute="bottom" constant="24" id="KD1-SE-8gO"/>
@@ -1708,6 +1818,7 @@
         <image name="Main_TP_BackGround" width="296" height="60"/>
         <image name="MyLocation" width="33" height="33"/>
         <image name="MyLocation_Sel" width="38" height="37"/>
+        <image name="Register_NumSend_Btn" width="22" height="22"/>
         <image name="SideMenuBtn" width="30" height="30"/>
         <image name="btn_distance_round" width="22" height="22"/>
         <image name="btn_green_round" width="34" height="34"/>

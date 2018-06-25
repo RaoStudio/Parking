@@ -11,8 +11,8 @@ import UIKit
 class RegisterVC: UIViewController {
 
     
-    @IBOutlet weak var constInputView: NSLayoutConstraint!
-    @IBOutlet weak var constCompleteView: NSLayoutConstraint!
+    @IBOutlet weak var constInputView: NSLayoutConstraint!      // Orig ( 200 )
+    @IBOutlet weak var constCompleteView: NSLayoutConstraint!   // Orig ( 90 )
     
     override func viewDidLoad() {
         super.viewDidLoad()
