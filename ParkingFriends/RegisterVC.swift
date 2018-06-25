@@ -73,6 +73,10 @@ class RegisterVC: UIViewController {
             btnAll.isSelected = false
         } else {
             sender.isSelected = true
+            
+            if btnPF.isSelected && btnPersonal.isSelected && btnLocation.isSelected {
+                self.onBtnAll(btnAll)
+            }
         }
     }
     
