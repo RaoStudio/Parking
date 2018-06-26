@@ -20,6 +20,7 @@
 		295FF12220688AA2000CBF15 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FF12120688AA2000CBF15 /* MainViewController.swift */; };
 		296023802091A65600481134 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960237F2091A65600481134 /* DetailVC.swift */; };
 		296F966120E1CE15008C58B6 /* InfoDataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 296F966020E1CE15008C58B6 /* InfoDataList.plist */; };
+		296F966320E1D18D008C58B6 /* AgreeInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F966220E1D18D008C58B6 /* AgreeInfoVC.swift */; };
 		2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971A3EE209ADD8200C1AD84 /* Utils.swift */; };
 		2971A3F1209AECC400C1AD84 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2971A3F0209AECC400C1AD84 /* Tutorial.storyboard */; };
 		2971A3F5209AED1300C1AD84 /* TutorialContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971A3F3209AED1200C1AD84 /* TutorialContentsVC.swift */; };
@@ -71,6 +72,7 @@
 		295FF12120688AA2000CBF15 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2960237F2091A65600481134 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		296F966020E1CE15008C58B6 /* InfoDataList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = InfoDataList.plist; sourceTree = "<group>"; };
+		296F966220E1D18D008C58B6 /* AgreeInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeInfoVC.swift; sourceTree = "<group>"; };
 		2971A3EE209ADD8200C1AD84 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		2971A3F0209AECC400C1AD84 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		2971A3F3209AED1200C1AD84 /* TutorialContentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContentsVC.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				29A1AABB20DCC0F500C8EE66 /* RegisterVC.swift */,
 				29D6C26120E0BC8B001EF09B /* SideVC.swift */,
 				296F966020E1CE15008C58B6 /* InfoDataList.plist */,
+				296F966220E1D18D008C58B6 /* AgreeInfoVC.swift */,
 			);
 			path = ParkingFriends;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				29AA1267207DA06A00F4648C /* GooglePlace.swift in Sources */,
 				2999636520B644F300AC180C /* CustomView.swift in Sources */,
 				29AA1261207D9FF400F4648C /* PlaceMarker.swift in Sources */,
+				296F966320E1D18D008C58B6 /* AgreeInfoVC.swift in Sources */,
 				291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */,
 				29559EF6204CE28E000EB12B /* ViewController.swift in Sources */,
 				2971A3F5209AED1300C1AD84 /* TutorialContentsVC.swift in Sources */,

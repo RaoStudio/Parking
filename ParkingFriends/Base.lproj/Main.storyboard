@@ -1269,12 +1269,23 @@
                                                                             <action selector="onBtnAction:" destination="RsD-tj-ewK" eventType="touchUpInside" id="tlp-ru-wKP"/>
                                                                         </connections>
                                                                     </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbZ-rh-9aF">
+                                                                        <rect key="frame" x="213" y="0.0" width="162" height="17"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <connections>
+                                                                            <action selector="onBtnPushAgreeInfoVC:" destination="RsD-tj-ewK" eventType="touchUpInside" id="wMs-Qj-VSS"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
+                                                                    <constraint firstItem="GbZ-rh-9aF" firstAttribute="top" secondItem="S2b-zQ-FRS" secondAttribute="top" id="3mt-S2-YMX"/>
                                                                     <constraint firstItem="hWu-dI-8Iq" firstAttribute="top" secondItem="S2b-zQ-FRS" secondAttribute="top" id="Ldb-pS-BO0"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="GbZ-rh-9aF" secondAttribute="trailing" id="MpW-1r-aJm"/>
                                                                     <constraint firstItem="hWu-dI-8Iq" firstAttribute="leading" secondItem="S2b-zQ-FRS" secondAttribute="leading" constant="12" id="N87-2I-y6e"/>
                                                                     <constraint firstAttribute="height" constant="17" id="cp6-C6-IEV"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="GbZ-rh-9aF" secondAttribute="bottom" id="dc0-2V-efy"/>
+                                                                    <constraint firstItem="GbZ-rh-9aF" firstAttribute="leading" secondItem="hWu-dI-8Iq" secondAttribute="trailing" id="frs-R9-ZHO"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEX-a2-2Ll">
@@ -1497,6 +1508,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zMb-A9-Q1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3941.5999999999999" y="678.71064467766121"/>
+        </scene>
+        <!--Agree InfoVC-->
+        <scene sceneID="E6H-xO-wW3">
+            <objects>
+                <viewController storyboardIdentifier="AgreeInfoVC" id="Mkn-OJ-RRL" customClass="AgreeInfoVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6MB-wK-yZA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTh-m7-Rdn">
+                                <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lTh-m7-Rdn" firstAttribute="top" secondItem="Gdn-N0-OoM" secondAttribute="top" constant="-64" id="BWD-Zg-8Hb"/>
+                            <constraint firstItem="Gdn-N0-OoM" firstAttribute="bottom" secondItem="lTh-m7-Rdn" secondAttribute="bottom" id="Sp7-el-IIT"/>
+                            <constraint firstItem="Gdn-N0-OoM" firstAttribute="trailing" secondItem="lTh-m7-Rdn" secondAttribute="trailing" id="bCh-CM-dhB"/>
+                            <constraint firstItem="lTh-m7-Rdn" firstAttribute="leading" secondItem="Gdn-N0-OoM" secondAttribute="leading" id="cnU-Vc-q1G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gdn-N0-OoM"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="txtContentsView" destination="lTh-m7-Rdn" id="OUb-t1-a8u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W6R-XJ-dhW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4996" y="580.65967016491754"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="FsK-Oh-jHo">
