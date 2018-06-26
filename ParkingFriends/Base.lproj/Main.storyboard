@@ -1271,7 +1271,6 @@
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbZ-rh-9aF">
                                                                         <rect key="frame" x="213" y="0.0" width="162" height="17"/>
-                                                                        <state key="normal" title="Button"/>
                                                                         <connections>
                                                                             <action selector="onBtnPushAgreeInfoVC:" destination="RsD-tj-ewK" eventType="touchUpInside" id="wMs-Qj-VSS"/>
                                                                         </connections>
@@ -1308,12 +1307,22 @@
                                                                             <action selector="onBtnAction:" destination="RsD-tj-ewK" eventType="touchUpInside" id="HCr-OG-VMq"/>
                                                                         </connections>
                                                                     </button>
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kle-pp-xL3">
+                                                                        <rect key="frame" x="200" y="0.0" width="175" height="17"/>
+                                                                        <connections>
+                                                                            <action selector="onBtnPushAgreeInfoVC:" destination="RsD-tj-ewK" eventType="touchUpInside" id="WdQ-3Z-7NZ"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="17" id="78g-pL-fBq"/>
+                                                                    <constraint firstItem="kle-pp-xL3" firstAttribute="top" secondItem="GEX-a2-2Ll" secondAttribute="top" id="Ks6-oN-tro"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="kle-pp-xL3" secondAttribute="trailing" id="WFU-Jd-rg1"/>
                                                                     <constraint firstItem="pOJ-vO-Bu1" firstAttribute="top" secondItem="GEX-a2-2Ll" secondAttribute="top" id="YYh-5Z-OVe"/>
                                                                     <constraint firstItem="pOJ-vO-Bu1" firstAttribute="leading" secondItem="GEX-a2-2Ll" secondAttribute="leading" constant="12" id="bn3-dR-kqQ"/>
+                                                                    <constraint firstItem="kle-pp-xL3" firstAttribute="leading" secondItem="pOJ-vO-Bu1" secondAttribute="trailing" id="lDO-bT-k2S"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="kle-pp-xL3" secondAttribute="bottom" id="oOi-a1-RRV"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1s-69-kvG">
@@ -1336,12 +1345,22 @@
                                                                             <action selector="onBtnAction:" destination="RsD-tj-ewK" eventType="touchUpInside" id="8b2-NT-Saa"/>
                                                                         </connections>
                                                                     </button>
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yv0-Li-nZ5">
+                                                                        <rect key="frame" x="237" y="0.0" width="138" height="17"/>
+                                                                        <connections>
+                                                                            <action selector="onBtnPushAgreeInfoVC:" destination="RsD-tj-ewK" eventType="touchUpInside" id="L5j-Gc-LZG"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
+                                                                    <constraint firstItem="Yv0-Li-nZ5" firstAttribute="top" secondItem="p1s-69-kvG" secondAttribute="top" id="A4G-Yg-V0I"/>
                                                                     <constraint firstItem="sSy-02-mTp" firstAttribute="leading" secondItem="p1s-69-kvG" secondAttribute="leading" constant="12" id="AHs-4V-rHl"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Yv0-Li-nZ5" secondAttribute="trailing" id="IEC-9s-p8V"/>
                                                                     <constraint firstItem="sSy-02-mTp" firstAttribute="top" secondItem="p1s-69-kvG" secondAttribute="top" id="Lbg-l9-fY4"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Yv0-Li-nZ5" secondAttribute="bottom" id="bIJ-oF-IDA"/>
                                                                     <constraint firstAttribute="height" constant="17" id="cac-Eb-9hx"/>
+                                                                    <constraint firstItem="Yv0-Li-nZ5" firstAttribute="leading" secondItem="sSy-02-mTp" secondAttribute="trailing" id="lgK-2g-Q3L"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvk-xu-OSd" userLabel="bottomLine">

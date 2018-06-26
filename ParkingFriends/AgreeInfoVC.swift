@@ -61,6 +61,10 @@ class AgreeInfoVC: UIViewController {
         }
         
         
+        let contentHeight = txtContentsView.contentSize.height
+        let offSet = txtContentsView.contentOffset.x
+        let contentOffset = contentHeight - offSet
+        txtContentsView.contentOffset = CGPoint(x: 0, y: -contentOffset)
         
         
         

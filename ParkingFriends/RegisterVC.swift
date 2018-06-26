@@ -103,6 +103,7 @@ class RegisterVC: UIViewController {
     
     @IBAction func onBtnPushAgreeInfoVC(_ sender: UIButton) {
         if let agreeVC = self.storyboard?.instantiateViewController(withIdentifier: "AgreeInfoVC") as? AgreeInfoVC {
+            agreeVC.nTag = sender.tag
             self.navigationController?.pushViewController(agreeVC, animated: true)
         }
     }
