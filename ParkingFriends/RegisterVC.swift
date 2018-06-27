@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+import Toast_Swift
 
 class RegisterVC: UIViewController {
 
@@ -87,6 +89,18 @@ class RegisterVC: UIViewController {
             }
             
             
+            if let value = response.result.value as NSString? {
+                if let dataFromString = value.data(using: String.Encoding.utf8.rawValue, allowLossyConversion: false) {
+                    
+                    do {
+                        let json = try JSON(data: dataFromString)
+                    } catch {
+                        self.alert("requestUserLogin = \(value)")
+                    }
+                    
+                }
+                
+            }
             
         }
         
