@@ -1120,6 +1120,9 @@
                                                                                 <state key="normal" title="인증번호발송" backgroundImage="Register_NumSend_Btn">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="onBtnSMS:" destination="RsD-tj-ewK" eventType="touchUpInside" id="koH-jN-4ic"/>
+                                                                                </connections>
                                                                             </button>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Ldc-ss-sg9">
                                                                                 <rect key="frame" x="90" y="0.0" width="177" height="40"/>
@@ -1184,6 +1187,9 @@
                                                                                 <state key="normal" title="확인" backgroundImage="Register_Confirm_Btn">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="onBtnConfirm:" destination="RsD-tj-ewK" eventType="touchUpInside" id="dvR-d9-P1U"/>
+                                                                                </connections>
                                                                             </button>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgt-kq-EhL">
                                                                                 <rect key="frame" x="90" y="0.0" width="157" height="40"/>
@@ -1526,7 +1532,7 @@
                                                 </state>
                                                 <state key="disabled" backgroundImage="btn_gray_round"/>
                                                 <connections>
-                                                    <action selector="onBtnOk:" destination="DuC-R0-Kk9" eventType="touchUpInside" id="sGE-J3-GDF"/>
+                                                    <action selector="onBtnRegisterComplete:" destination="RsD-tj-ewK" eventType="touchUpInside" id="0dI-cF-e2z"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1568,9 +1574,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnAll" destination="BRd-W3-RD2" id="Vuw-5Q-oVp"/>
+                        <outlet property="btnConfirm" destination="SQQ-Tk-bQU" id="l6e-6q-Hp8"/>
                         <outlet property="btnLocation" destination="sSy-02-mTp" id="leL-up-fpq"/>
                         <outlet property="btnPF" destination="hWu-dI-8Iq" id="QqB-Gw-hQG"/>
                         <outlet property="btnPersonal" destination="pOJ-vO-Bu1" id="b7F-EY-XfA"/>
+                        <outlet property="btnRegisterComplete" destination="Rsi-ZR-Gle" id="xAt-tm-2Po"/>
+                        <outlet property="btnSMS" destination="XT9-5u-bFe" id="sVv-qi-2tk"/>
                         <outlet property="constCompleteView" destination="xwS-a1-fpl" id="jqv-a2-yM9"/>
                         <outlet property="constInputView" destination="ssc-rm-GH4" id="r9v-q2-GzG"/>
                         <outlet property="lbl_Tel" destination="u7R-Lx-dwz" id="sil-wR-73Z"/>

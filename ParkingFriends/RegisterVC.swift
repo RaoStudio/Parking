@@ -20,6 +20,12 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var txtPhoneNum: UITextField!
     @IBOutlet weak var txtAuthNum: UITextField!
     
+    
+    @IBOutlet weak var btnSMS: UIButton!
+    @IBOutlet weak var btnConfirm: UIButton!
+    @IBOutlet weak var btnRegisterComplete: UIButton!
+    
+    
     @IBOutlet weak var lbl_Tel: UILabel!
     
     
@@ -108,7 +114,18 @@ class RegisterVC: UIViewController {
         }
     }
     
+    @IBAction func onBtnSMS(_ sender: UIButton) {
+        
+    }
     
+    @IBAction func onBtnConfirm(_ sender: UIButton) {
+    }
+    
+    @IBAction func onBtnRegisterComplete(_ sender: UIButton) {
+    }
+    
+    
+    // MARK: - PF API Call 
     
     
     
