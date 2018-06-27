@@ -69,11 +69,24 @@ class RegisterVC: UIViewController {
     
     func requestSMSSend(phone: String) {
         
+        self.navigationController?.view.makeToastActivity(.center)
+        
         let url = UrlStrings.URL_API_SMS
         
         let param = ["phone": phone]
         
         Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
+            
+            
+            self.navigationController?.view.hideToastActivity()
+            
+            
+            guard response.result.isSuccess else {
+                self.alert("\(url) : \(String(describing: response.result.error))")
+                return
+            }
+            
+            
             
         }
         
