@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegisterVC: UIViewController {
 
@@ -64,6 +65,21 @@ class RegisterVC: UIViewController {
         txtAuthNum.resignFirstResponder()
     }
     
+    // MARK: - PF API Call
+    
+    func requestSMSSend(phone: String) {
+        
+        let url = UrlStrings.URL_API_SMS
+        
+        let param = ["phone": phone]
+        
+        Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
+            
+        }
+        
+        
+    }
+    
     
     // MARK: - Btn Action
     @IBAction func onBtnExit(_ sender: Any) {
@@ -116,6 +132,15 @@ class RegisterVC: UIViewController {
     
     @IBAction func onBtnSMS(_ sender: UIButton) {
         
+        txtPhoneNum.resignFirstResponder()
+        txtAuthNum.resignFirstResponder()
+        
+        guard let phone = txtPhoneNum.text, false == phone.isEmpty else {
+            self.navigationController?.view.makeToast("휴대폰번호를 입력해주세요.", duration: 2.0, position: .bottom)
+            return
+        }
+        
+        self.requestSMSSend(phone: phone)
     }
     
     @IBAction func onBtnConfirm(_ sender: UIButton) {
@@ -125,7 +150,6 @@ class RegisterVC: UIViewController {
     }
     
     
-    // MARK: - PF API Call 
     
     
     

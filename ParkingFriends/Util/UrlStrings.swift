@@ -26,6 +26,12 @@ class UrlStrings {
     
     static let URL_API_FCM_TOPIC = URL_API_BASE + "/message/fcm_topic_reg.php";
     
+    
+    // SMS
+    static let URL_API_CERTIFICATION = URL_API_BASE + "/user/certification"
+    static let URL_API_SMS = URL_API_CERTIFICATION + "/sms_cert.php"
+    static let URL_API_SMSCONFIRM = URL_API_CERTIFICATION + "/check_cert_code.php"
+    
     // PARKINGLOT
     static let URL_API_PARKINGLOT =             URL_API_BASE + "/parkinglot";
     static let URL_API_PARKINGLOT_FETCH =       URL_API_PARKINGLOT + "/get.php";
