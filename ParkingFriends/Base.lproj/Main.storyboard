@@ -1141,7 +1141,6 @@
                                                                             <constraint firstAttribute="bottom" secondItem="MGd-mu-MHn" secondAttribute="bottom" id="WI9-ge-p2o"/>
                                                                             <constraint firstItem="INb-UU-BXG" firstAttribute="leading" secondItem="Oru-OG-Yud" secondAttribute="leading" id="WWC-5Y-hiM"/>
                                                                             <constraint firstAttribute="trailing" secondItem="2DM-l5-8Ao" secondAttribute="trailing" id="fDJ-Cc-tx2"/>
-                                                                            <constraint firstItem="MGd-mu-MHn" firstAttribute="top" secondItem="INb-UU-BXG" secondAttribute="bottom" id="iBg-vs-bFC"/>
                                                                             <constraint firstItem="Ldc-ss-sg9" firstAttribute="leading" secondItem="INb-UU-BXG" secondAttribute="trailing" id="iCR-SJ-hVH"/>
                                                                             <constraint firstAttribute="bottom" secondItem="2DM-l5-8Ao" secondAttribute="bottom" id="iVk-rQ-WTp"/>
                                                                             <constraint firstAttribute="height" constant="42" id="o6C-1C-Bkb"/>
@@ -1226,7 +1225,6 @@
                                                                             <constraint firstAttribute="height" constant="42" id="c86-zB-MpN"/>
                                                                             <constraint firstItem="z3F-8x-Asc" firstAttribute="leading" secondItem="RJ5-3L-iZk" secondAttribute="trailing" constant="6" id="dQa-aQ-HhX"/>
                                                                             <constraint firstAttribute="bottom" secondItem="ovZ-uK-oUc" secondAttribute="bottom" id="h1k-49-dz1"/>
-                                                                            <constraint firstItem="ovZ-uK-oUc" firstAttribute="top" secondItem="AJ7-Xv-hbC" secondAttribute="bottom" id="i6e-Bd-sqf"/>
                                                                             <constraint firstItem="bgt-kq-EhL" firstAttribute="top" secondItem="NsE-ZS-cIm" secondAttribute="top" id="vcK-FW-6bS"/>
                                                                             <constraint firstItem="ovZ-uK-oUc" firstAttribute="leading" secondItem="NsE-ZS-cIm" secondAttribute="leading" id="wVd-E8-qzI"/>
                                                                             <constraint firstItem="RJ5-3L-iZk" firstAttribute="leading" secondItem="bgt-kq-EhL" secondAttribute="trailing" id="y4L-mD-j3b"/>
@@ -1236,7 +1234,6 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="AJ7-Xv-hbC" firstAttribute="width" secondItem="INb-UU-BXG" secondAttribute="width" id="L2R-3u-NNr"/>
                                                                     <constraint firstItem="Oru-OG-Yud" firstAttribute="leading" secondItem="6mb-c3-Kvr" secondAttribute="leading" constant="12" id="Mzn-hB-o62"/>
                                                                     <constraint firstAttribute="trailing" secondItem="Oru-OG-Yud" secondAttribute="trailing" constant="12" id="ScA-3o-hsl"/>
                                                                     <constraint firstItem="Oru-OG-Yud" firstAttribute="top" secondItem="6mb-c3-Kvr" secondAttribute="top" id="ZF3-7P-ffq"/>
