@@ -149,8 +149,20 @@ class RegisterVC: UIViewController {
                     do {
                         let json = try JSON(data: dataFromString)
                         print(json)
+                        
+                        let dic = json
+                        
+                        let strStatus = dic["status"].stringValue
+                        
+                        if strStatus == "200" {
+//                            self.navigationController?.view.makeToast("인증번호를 발송하였습니다.", duration: 2.0, position: .bottom)
+                            self.showToast(toastTitle: nil, toastMsg: "인증번호를 발송하였습니다. 인증번호를 입력해주세요." as String, interval: 2.0)
+                            
+                            
+                        }
+                        
                     } catch {
-                        self.alert("requestUserLogin = \(value)")
+                        self.alert("requestSMSSend = \(value)")
                     }
                     
                 }
@@ -162,6 +174,55 @@ class RegisterVC: UIViewController {
         
         
     }
+    
+    
+    func requestSMSConfirm(phone: String, code: String) {
+        self.navigationController?.view.makeToastActivity(.center)
+        
+        let url = UrlStrings.URL_API_SMSCONFIRM
+        
+        let param = ["phone": phone, "code": code]
+        
+        Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
+            
+            
+            self.navigationController?.view.hideToastActivity()
+            
+            guard response.result.isSuccess else {
+                self.alert("\(url) : \(String(describing: response.result.error))")
+                return
+            }
+            
+            if let value = response.result.value as NSString? {
+                
+                if let dataFromString = value.data(using: String.Encoding.utf8.rawValue, allowLossyConversion: false) {
+                    
+                    do {
+                        let json = try JSON(data: dataFromString)
+                        print(json)
+                        
+                        let dic = json
+                        
+                        let strStatus = dic["status"].stringValue
+                        
+                        if strStatus == "200" {
+                            
+                            
+                            
+                        }
+                        
+                    } catch {
+                        self.alert("requestSMSConfirm = \(value)")
+                    }
+                }
+                
+            }
+            
+            
+            
+        }
+    }
+    
     
     
     // MARK: - Btn Action
@@ -230,6 +291,18 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func onBtnConfirm(_ sender: UIButton) {
+        
+        txtPhoneNum.resignFirstResponder()
+        txtAuthNum.resignFirstResponder()
+        
+        guard let phone = txtPhoneNum.text, false == phone.isEmpty,  let code = txtAuthNum.text, false == code.isEmpty else {
+            self.navigationController?.view.makeToast("번호를 입력해주세요.", duration: 2.0, position: .bottom)
+            return
+        }
+        
+        
+        self.requestSMSConfirm(phone: phone, code: code)
+        
     }
     
     @IBAction func onBtnRegisterComplete(_ sender: UIButton) {
