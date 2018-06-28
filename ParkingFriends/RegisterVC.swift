@@ -157,8 +157,8 @@ class RegisterVC: UIViewController {
                         if strStatus == "200" {
 //                            self.navigationController?.view.makeToast("인증번호를 발송하였습니다.", duration: 2.0, position: .bottom)
                             self.showToast(toastTitle: nil, toastMsg: "인증번호를 발송하였습니다. 인증번호를 입력해주세요." as String, interval: 2.0)
-                            
-                            
+                        } else {
+                            self.navigationController?.view.makeToast("잠시후 다시 요청해주세요.", duration: 2.0, position: .bottom)
                         }
                         
                     } catch {
@@ -206,9 +206,16 @@ class RegisterVC: UIViewController {
                         let strStatus = dic["status"].stringValue
                         
                         if strStatus == "200" {
+                            self.constInputView.constant = 0.0
+                            self.constCompleteView.constant = 90.0
+                            self.stackComplete.isHidden = false
+                            self.lbl_Tel.text = self.txtPhoneNum.text
                             
-                            
-                            
+                            self.btnRegisterComplete.isEnabled = true
+                        } else if strStatus == "400" {
+                            self.navigationController?.view.makeToast("인증번호가 맞지않습니다. 다시 입력해주세요.", duration: 2.0, position: .bottom)
+                        } else if strStatus == "401" {
+                            self.navigationController?.view.makeToast("휴대폰번호가 맞지않습니다. 다시 입력해주세요.", duration: 2.0, position: .bottom)
                         }
                         
                     } catch {
