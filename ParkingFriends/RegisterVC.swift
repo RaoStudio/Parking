@@ -313,6 +313,13 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func onBtnRegisterComplete(_ sender: UIButton) {
+        
+        if btnAll.isSelected {
+            UserSession().isLogin = true            
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        } else {
+            self.navigationController?.view.makeToast("이용약관에 확인해주세요.", duration: 2.0, position: .bottom)
+        }
     }
     
     

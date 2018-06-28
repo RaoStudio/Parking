@@ -52,6 +52,12 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
     override func viewWillAppear(_ animated: Bool) {
 //        self.navigationController?.navigationBar.isHidden = true
+        
+        if self.uSession.isLogin == true {
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
