@@ -89,16 +89,72 @@ class RegisterVC: UIViewController {
             }
             
             
+            
             if let value = response.result.value as NSString? {
+            
+            
+                /*
+                let dict: [String: Int] = [:]
+                
+                let arrStr = value.split(separator: ":")
+                
+                
+                
+                let jsonText = "{\"first_name\":\"Sergey\"}"
+                var dictonary:NSDictionary?
+                
+                if let data = value.data(using: String.Encoding.utf8) {
+                    
+                    do {
+                        dictonary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] as! NSDictionary
+                        
+                        if let myDictionary = dictonary
+                        {
+                            print(" First name is: \(myDictionary["first_name"]!)")
+                        }
+                    } catch let error as NSError {
+                        print(error)
+                    }
+                }
+                */
+     
+                
+                
+                /*
+                if let data = response.result.value?.data(using: String.Encoding.utf8) {
+                    do {
+                        let json = JSON(parseJSON: response.result.value!)
+                        print(json)
+                    } catch {
+                        self.alert("requestUserLogin = \(value)")
+                    }
+                }
+                */
+                
+                /*
+                if let data = value.data(using: String.Encoding.utf8.rawValue) {
+                    do {
+                        let json = try? JSON(data: data)
+                        print(json)
+                    } catch {
+                        self.alert("requestUserLogin = \(value)")
+                    }
+                }
+                */
+                
+                //*
                 if let dataFromString = value.data(using: String.Encoding.utf8.rawValue, allowLossyConversion: false) {
+                
                     
                     do {
                         let json = try JSON(data: dataFromString)
+                        print(json)
                     } catch {
                         self.alert("requestUserLogin = \(value)")
                     }
                     
                 }
+                //*/
                 
             }
             
@@ -162,6 +218,9 @@ class RegisterVC: UIViewController {
         txtPhoneNum.resignFirstResponder()
         txtAuthNum.resignFirstResponder()
         
+        
+        txtPhoneNum.text = "01032433956"    // Test
+        
         guard let phone = txtPhoneNum.text, false == phone.isEmpty else {
             self.navigationController?.view.makeToast("휴대폰번호를 입력해주세요.", duration: 2.0, position: .bottom)
             return
@@ -190,4 +249,21 @@ class RegisterVC: UIViewController {
     }
     */
 
+}
+
+
+extension Dictionary {
+    var json: String {
+        let invalidJson = "Not a valid JSON"
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
+            return String(bytes: jsonData, encoding: String.Encoding.utf8) ?? invalidJson
+        } catch {
+            return invalidJson
+        }
+    }
+    
+    func dict2json() -> String {
+        return json
+    }
 }
