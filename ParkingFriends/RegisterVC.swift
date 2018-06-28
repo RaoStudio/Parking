@@ -30,7 +30,9 @@ class RegisterVC: UIViewController {
     
     
     @IBOutlet weak var lbl_Tel: UILabel!
-    
+    @IBOutlet weak var lbl_Time: UILabel!
+    var countDown = 300
+    var timer: Timer?
     
     
     @IBOutlet weak var btnPF: UIButton!
@@ -67,8 +69,36 @@ class RegisterVC: UIViewController {
         txtAuthNum.resignFirstResponder()
     }
     
-    // MARK: - PF API Call
     
+    // MARK: - Timer
+    func countDown(time: Double) {
+        self.timer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(updateCountDown), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateCountDown() {
+        if(countDown > 0) {
+            let minutes = String(countDown / 60)
+            let seconds = String(format: "%02d", countDown % 60)
+            
+            lbl_Time.text = minutes + ":" + seconds
+            
+            countDown = countDown - 1
+        } else {
+            removeCountDown()
+        }
+    }
+    
+    private func removeCountDown() {
+        countDown = 300
+        lbl_Time.text = "5:00"
+        
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    
+    
+    // MARK: - PF API Call
     func requestSMSSend(phone: String) {
         
         self.navigationController?.view.makeToastActivity(.center)
@@ -157,6 +187,11 @@ class RegisterVC: UIViewController {
                         if strStatus == "200" {
 //                            self.navigationController?.view.makeToast("인증번호를 발송하였습니다.", duration: 2.0, position: .bottom)
                             self.showToast(toastTitle: nil, toastMsg: "인증번호를 발송하였습니다. 인증번호를 입력해주세요." as String, interval: 2.0)
+                            
+                            self.removeCountDown()
+                            self.countDown(time: 1.0)
+                            
+                            
                         } else {
                             self.navigationController?.view.makeToast("잠시후 다시 요청해주세요.", duration: 2.0, position: .bottom)
                         }

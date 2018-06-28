@@ -1192,22 +1192,22 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgt-kq-EhL">
-                                                                                <rect key="frame" x="90" y="0.0" width="157" height="40"/>
+                                                                                <rect key="frame" x="90" y="0.0" width="155" height="40"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                                             </textField>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-8x-Asc">
-                                                                                <rect key="frame" x="262" y="13" width="28" height="16"/>
+                                                                                <rect key="frame" x="260" y="13" width="30" height="16"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="width" constant="28" id="TuG-Us-A6f"/>
+                                                                                    <constraint firstAttribute="width" constant="30" id="TuG-Us-A6f"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                                                 <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Register_Clock_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="RJ5-3L-iZk">
-                                                                                <rect key="frame" x="247" y="17" width="9" height="9"/>
+                                                                                <rect key="frame" x="245" y="17" width="9" height="9"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="9" id="RBc-kc-Wae"/>
                                                                                     <constraint firstAttribute="width" constant="9" id="Tog-7L-3uu"/>
@@ -1583,6 +1583,7 @@
                         <outlet property="constCompleteView" destination="xwS-a1-fpl" id="jqv-a2-yM9"/>
                         <outlet property="constInputView" destination="ssc-rm-GH4" id="r9v-q2-GzG"/>
                         <outlet property="lbl_Tel" destination="u7R-Lx-dwz" id="sil-wR-73Z"/>
+                        <outlet property="lbl_Time" destination="z3F-8x-Asc" id="da0-HF-UUv"/>
                         <outlet property="stackComplete" destination="aNL-SS-uGD" id="nBc-8Z-0ry"/>
                         <outlet property="txtAuthNum" destination="bgt-kq-EhL" id="4Sh-q6-j4J"/>
                         <outlet property="txtPhoneNum" destination="Ldc-ss-sg9" id="EbV-2s-C45"/>
