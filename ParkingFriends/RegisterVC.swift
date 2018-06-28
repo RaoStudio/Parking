@@ -299,7 +299,11 @@ class RegisterVC: UIViewController {
                     
                 } else {
                     self.navigationController?.view.makeToast("이미 가입된 이메일 주소입니다.", duration: 2.0, position: .bottom)
-                    self.presentingViewController?.dismiss(animated: true, completion: nil)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1500)) {
+                        self.presentingViewController?.dismiss(animated: true, completion: nil)
+                    }
+                    
                 }
                 
             }
