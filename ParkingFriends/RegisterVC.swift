@@ -297,6 +297,9 @@ class RegisterVC: UIViewController {
                     uSession.point = 0
                     self.presentingViewController?.dismiss(animated: true, completion: nil)
                     
+                } else {
+                    self.navigationController?.view.makeToast("이미 가입된 이메일 주소입니다.", duration: 2.0, position: .bottom)
+                    self.presentingViewController?.dismiss(animated: true, completion: nil)
                 }
                 
             }
