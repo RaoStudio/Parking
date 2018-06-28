@@ -298,12 +298,35 @@ class RegisterVC: UIViewController {
                     self.presentingViewController?.dismiss(animated: true, completion: nil)
                     
                 } else {
+                    
+                    let arrStr = value.components(separatedBy: ":")
+                    
+                    if let strCode = arrStr.first {
+                        if strCode == "1062" {
+                            self.navigationController?.view.makeToast("이미 가입된 이메일 주소입니다.", duration: 2.0, position: .bottom)
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1500)) {
+                                self.presentingViewController?.dismiss(animated: true, completion: nil)
+                            }
+                        } else if let strContents = arrStr.last {
+                            
+                            self.navigationController?.view.makeToast(strContents, duration: 2.0, position: .bottom)
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1500)) {
+                                self.presentingViewController?.dismiss(animated: true, completion: nil)
+                            }
+                        }
+                        
+                        
+                    }
+                    
+                    /*
                     self.navigationController?.view.makeToast("이미 가입된 이메일 주소입니다.", duration: 2.0, position: .bottom)
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1500)) {
                         self.presentingViewController?.dismiss(animated: true, completion: nil)
                     }
-                    
+                    */
                 }
                 
             }
@@ -368,7 +391,7 @@ class RegisterVC: UIViewController {
         txtAuthNum.resignFirstResponder()
         
         
-        txtPhoneNum.text = "01032433956"    // Test
+//        txtPhoneNum.text = "01032433956"    // Test
         
         guard let phone = txtPhoneNum.text, false == phone.isEmpty else {
             self.navigationController?.view.makeToast("휴대폰번호를 입력해주세요.", duration: 2.0, position: .bottom)
