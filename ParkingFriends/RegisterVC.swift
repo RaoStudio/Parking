@@ -231,6 +231,45 @@ class RegisterVC: UIViewController {
     }
     
     
+    func requestUserRegister(provider: String, id: String, email: String, name: String, mobile: String, photoUrl: String) {
+        
+        self.navigationController?.view.makeToastActivity(.center)
+        
+        let url = UrlStrings.URL_API_USER_SIGNUP
+        
+        let param = ["provider": provider,
+                     "id": id,
+                     "email": email,
+                     "name": name,
+                     "mobile": mobile,
+                     "photo": photoUrl] as [String: Any]
+        
+        Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
+            
+            self.navigationController?.view.hideToastActivity()
+            
+            guard response.result.isSuccess else {
+                self.alert("\(url) : \(String(describing: response.result.error))")
+                return
+            }
+            
+            if let value = response.result.value as NSString? {
+                
+                if value.isEqual(to: "OK") {
+                    let uSession = UserSession()
+                    uSession.isLogin = true
+                    uSession.mobile = self.lbl_Tel.text
+                    uSession.point = 0
+                    self.presentingViewController?.dismiss(animated: true, completion: nil)
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
     
     // MARK: - Btn Action
     @IBAction func onBtnExit(_ sender: Any) {
@@ -315,8 +354,13 @@ class RegisterVC: UIViewController {
     @IBAction func onBtnRegisterComplete(_ sender: UIButton) {
         
         if btnAll.isSelected {
-            UserSession().isLogin = true            
-            self.presentingViewController?.dismiss(animated: true, completion: nil)
+//            UserSession().isLogin = true
+//            self.presentingViewController?.dismiss(animated: true, completion: nil)
+            
+            let uSession = UserSession()
+            if let provider = uSession.provider, let id = uSession.authId, let email = uSession.email, let name = uSession.name, let mobile = self.lbl_Tel.text, let photoUrl = uSession.photoUrl {
+                self.requestUserRegister(provider: provider, id: id, email: email, name: name, mobile: mobile, photoUrl: photoUrl)
+            }
         } else {
             self.navigationController?.view.makeToast("이용약관에 확인해주세요.", duration: 2.0, position: .bottom)
         }

@@ -48,6 +48,8 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         
         
         
+        self.uSession.isLogin = false
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
