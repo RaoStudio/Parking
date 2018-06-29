@@ -219,6 +219,17 @@ class MainViewController: UIViewController {
         
 //        let strDay = uinfo.dayFromDate(strNowDate)
         
+        
+        
+        guard let LaunchVC = self.storyboard?.instantiateViewController(withIdentifier: "LaunchVC") as?  LaunchVC else {
+            return
+        }
+        
+        LaunchVC.willMove(toParentViewController: self)
+        self.addChildViewController(LaunchVC)
+        self.view.addSubview(LaunchVC.view)
+        LaunchVC.didMove(toParentViewController: self)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
