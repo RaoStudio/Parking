@@ -43,6 +43,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        GIDSignIn.sharedInstance().delegate = self
  
         
+        /*
+        guard let LaunchVC = self.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "LaunchVC") as?  LaunchVC else {
+            return true
+        }
+        
+        
+        self.window?.rootViewController?.addChildViewController(LaunchVC)
+        self.window?.rootViewController?.view.addSubview(LaunchVC.view)
+        LaunchVC.didMove(toParentViewController: self.window?.rootViewController)
+        */
+        
+        
         return true
     }
 

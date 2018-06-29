@@ -1643,7 +1643,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5r-Cp-ZVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174" y="-327"/>
+            <point key="canvasLocation" x="2112.8000000000002" y="-327.88605697151428"/>
         </scene>
         <!--SideVC-->
         <scene sceneID="84R-iq-73J">
@@ -1672,7 +1672,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXp-zw-Kwc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2032.8" y="-331.48425787106447"/>
+            <point key="canvasLocation" x="2972" y="-331.48425787106447"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="fBC-Ii-VKp">
@@ -1781,12 +1781,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ez-mK-aYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3023" y="-60"/>
+            <point key="canvasLocation" x="3960.8000000000002" y="-60.719640179910051"/>
+        </scene>
+        <!--LaunchVC-->
+        <scene sceneID="wbk-Cd-pKw">
+            <objects>
+                <viewController storyboardIdentifier="LaunchVC" id="slT-Lk-mg5" customClass="LaunchVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ee9-UQ-Mme">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yi6-DZ-rHB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Intro_bg" translatesAutoresizingMaskIntoConstraints="NO" id="cEi-AY-zbx">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="cEi-AY-zbx" firstAttribute="top" secondItem="yi6-DZ-rHB" secondAttribute="top" id="0Xg-ZW-y2c"/>
+                                    <constraint firstAttribute="bottom" secondItem="cEi-AY-zbx" secondAttribute="bottom" id="c73-1i-NLx"/>
+                                    <constraint firstItem="cEi-AY-zbx" firstAttribute="leading" secondItem="yi6-DZ-rHB" secondAttribute="leading" id="f7U-eM-shF"/>
+                                    <constraint firstAttribute="trailing" secondItem="cEi-AY-zbx" secondAttribute="trailing" id="nFw-88-0kC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TyC-ES-t7y" firstAttribute="trailing" secondItem="yi6-DZ-rHB" secondAttribute="trailing" id="0ef-Nt-Ekw"/>
+                            <constraint firstItem="TyC-ES-t7y" firstAttribute="bottom" secondItem="yi6-DZ-rHB" secondAttribute="bottom" id="91F-FY-KvP"/>
+                            <constraint firstItem="yi6-DZ-rHB" firstAttribute="leading" secondItem="TyC-ES-t7y" secondAttribute="leading" id="KtA-VK-kPs"/>
+                            <constraint firstItem="yi6-DZ-rHB" firstAttribute="top" secondItem="TyC-ES-t7y" secondAttribute="top" id="xDb-2F-HUh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TyC-ES-t7y"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GmK-bL-86w"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mth-iR-rev" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-849" y="-627"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LsN-S6-NMC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bBa-bh-qHc" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavi" automaticallyAdjustsScrollViewInsets="NO" id="bBa-bh-qHc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LQh-kL-TXV">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -2162,6 +2201,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Intro_bg" width="320" height="568"/>
         <image name="Login_bg" width="320" height="568"/>
         <image name="Login_facebook_btn" width="34" height="34"/>
         <image name="Login_facebook_icon" width="17" height="18"/>

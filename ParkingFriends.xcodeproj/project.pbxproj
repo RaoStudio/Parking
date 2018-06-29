@@ -29,6 +29,7 @@
 		2983D63320B52F01003CAB1C /* RaoBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983D63220B52F01003CAB1C /* RaoBaseView.swift */; };
 		2983D63620B5356B003CAB1C /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983D63520B5356B003CAB1C /* TestView.swift */; };
 		2983D63820B535A7003CAB1C /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2983D63720B535A7003CAB1C /* TestView.xib */; };
+		2987403720E618410042014A /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987403620E618410042014A /* LaunchVC.swift */; };
 		29875E5320ABC81F0029E4BD /* ParkingLotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29875E5220ABC81F0029E4BD /* ParkingLotVC.swift */; };
 		29875E5520ABD1000029E4BD /* ParkingLot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29875E5420ABD1000029E4BD /* ParkingLot.storyboard */; };
 		29875E5720ABF7C60029E4BD /* ParkingLotTabPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29875E5620ABF7C60029E4BD /* ParkingLotTabPageVC.swift */; };
@@ -81,6 +82,7 @@
 		2983D63220B52F01003CAB1C /* RaoBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaoBaseView.swift; sourceTree = "<group>"; };
 		2983D63520B5356B003CAB1C /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		2983D63720B535A7003CAB1C /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
+		2987403620E618410042014A /* LaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
 		29875E5220ABC81F0029E4BD /* ParkingLotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotVC.swift; sourceTree = "<group>"; };
 		29875E5420ABD1000029E4BD /* ParkingLot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParkingLot.storyboard; sourceTree = "<group>"; };
 		29875E5620ABF7C60029E4BD /* ParkingLotTabPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotTabPageVC.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				29A1AABB20DCC0F500C8EE66 /* RegisterVC.swift */,
 				29D6C26120E0BC8B001EF09B /* SideVC.swift */,
 				296F966020E1CE15008C58B6 /* InfoDataList.plist */,
+				2987403620E618410042014A /* LaunchVC.swift */,
 				296F966220E1D18D008C58B6 /* AgreeInfoVC.swift */,
 			);
 			path = ParkingFriends;
@@ -467,6 +470,7 @@
 				294E5F9C20A53CEE00CF9D03 /* RoundButton.swift in Sources */,
 				29B4CDED20CF96390055852F /* LoginVC.swift in Sources */,
 				2983D63620B5356B003CAB1C /* TestView.swift in Sources */,
+				2987403720E618410042014A /* LaunchVC.swift in Sources */,
 				29D6C26220E0BC8B001EF09B /* SideVC.swift in Sources */,
 				29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */,
 				2983BD9A20A16BA60033035D /* RaoPageVC.swift in Sources */,
