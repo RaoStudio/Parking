@@ -38,6 +38,13 @@ class LaunchVC: UIViewController {
             self.present(mainNavi, animated: true, completion: nil)
              */
             
+            self.navigationController?.navigationBar.isHidden = false
+            
+            self.willMove(toParentViewController: nil)
+            self.removeFromParentViewController()
+            self.view.removeFromSuperview()
+            self.didMove(toParentViewController: nil)
+            
         }
         
     }

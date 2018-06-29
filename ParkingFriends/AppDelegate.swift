@@ -48,11 +48,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
         
-        
+        LaunchVC.willMove(toParentViewController: self.window?.rootViewController)
         self.window?.rootViewController?.addChildViewController(LaunchVC)
+//        self.window?.addSubview(LaunchVC.view)
         self.window?.rootViewController?.view.addSubview(LaunchVC.view)
         LaunchVC.didMove(toParentViewController: self.window?.rootViewController)
         */
+        
         
         
         return true
