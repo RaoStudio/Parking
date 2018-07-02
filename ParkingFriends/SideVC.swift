@@ -40,6 +40,15 @@ class SideVC: UIViewController {
         }
     }
     
+    @IBAction func onBtnSetting(_ sender: UIButton) {
+    }
+    
+    @IBAction func onBtnFaq(_ sender: UIButton) {
+    }
+    
+    @IBAction func onBtnQuestion(_ sender: UIButton) {
+    }
+    
     
     @IBAction func onBtnTest(_ sender: Any) {
         guard let RegisterNavi = self.storyboard?.instantiateViewController(withIdentifier: "RegisterVC") as? UINavigationController else {

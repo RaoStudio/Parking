@@ -1818,6 +1818,9 @@
                                                 <state key="normal" title="설정" image="Side_setting_icon" backgroundImage="Side_black_btn">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onBtnSetting:" destination="K6u-5I-ZT8" eventType="touchUpInside" id="QGi-oQ-EEg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBQ-qS-DNR">
                                                 <rect key="frame" x="90" y="0.0" width="80" height="29"/>
@@ -1831,6 +1834,9 @@
                                                 <state key="normal" title="FAQ" image="Side_faq_icon" backgroundImage="Side_black_btn">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onBtnFaq:" destination="K6u-5I-ZT8" eventType="touchUpInside" id="Ww7-z3-CCU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1845,6 +1851,9 @@
                                                 <state key="normal" title="주차장 제휴 문의" image="Side_bottom_icon">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onBtnQuestion:" destination="K6u-5I-ZT8" eventType="touchUpInside" id="Csn-io-cdg"/>
+                                                </connections>
                                             </button>
                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="cqq-B8-Waa">
                                                 <rect key="frame" x="135.5" y="13.5" width="104.5" height="11"/>
