@@ -21,6 +21,11 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var lblCellTitle: UILabel!
+    @IBOutlet weak var btnCellEventCount: UIButton!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
