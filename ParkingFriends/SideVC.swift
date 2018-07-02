@@ -35,6 +35,7 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
+//        constLogin.constant = 0.0     // 5S Test
     }
 
     override func didReceiveMemoryWarning() {
