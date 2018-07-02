@@ -10,6 +10,17 @@ import UIKit
 
 class SideVC: UIViewController {
 
+    @IBOutlet weak var constLogout: NSLayoutConstraint!     // orig 187
+    @IBOutlet weak var constLogin: NSLayoutConstraint!      // orig 173
+    
+    
+    @IBOutlet weak var ivThumb: UIImageView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblPoint: UILabel!
+    @IBOutlet weak var lblCar: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +33,14 @@ class SideVC: UIViewController {
     }
     
 
+    
+    @IBAction func onBtnLogin(_ sender: UIButton) {
+        if let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
+            self.navigationController?.pushViewController(loginVC, animated: true)
+        }
+    }
+    
+    
     @IBAction func onBtnTest(_ sender: Any) {
         guard let RegisterNavi = self.storyboard?.instantiateViewController(withIdentifier: "RegisterVC") as? UINavigationController else {
             return

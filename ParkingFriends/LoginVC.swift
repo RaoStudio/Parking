@@ -48,7 +48,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         
         
         
-        self.uSession.isLogin = false
+        self.uSession.isLogin = false       // Force Entry for Test ~ 
         
     }
     

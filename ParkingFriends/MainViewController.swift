@@ -545,6 +545,11 @@ class MainViewController: UIViewController {
         SideMenuManager.default.menuPresentMode = modes[0]
         SideMenuManager.default.menuAnimationFadeStrength = 0.5
         SideMenuManager.default.menuFadeStatusBar = false
+     
+        let appWindowRect = UIApplication.shared.keyWindow?.bounds ?? UIWindow().bounds
+        
+//        SideMenuManager.default.menuWidth = min(round(min((appWindowRect.width), (appWindowRect.height)) * 0.87), 279)
+        SideMenuManager.default.menuWidth = min(round(min((appWindowRect.width), (appWindowRect.height)) * 0.87), 326)
     }
 
     /*
