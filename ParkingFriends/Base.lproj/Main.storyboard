@@ -1805,9 +1805,44 @@
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sY0-lF-gvu" userLabel="Bottom View">
                                         <rect key="frame" x="0.0" y="609" width="375" height="38"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ok-qs-XX3">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="6" maxY="0.0"/>
+                                                <state key="normal" title="주차장 제휴 문의" image="Side_bottom_icon">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="cqq-B8-Waa">
+                                                <rect key="frame" x="135.5" y="13.5" width="104.5" height="11"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Side_bottom_icon" translatesAutoresizingMaskIntoConstraints="NO" id="SFJ-1g-n0F">
+                                                        <rect key="frame" x="0.0" y="0.0" width="13" height="11"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="11" id="3gV-aG-GzI"/>
+                                                            <constraint firstAttribute="width" constant="13" id="6NF-vZ-qc6"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주차장 제휴 문의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjc-Zj-SnS">
+                                                        <rect key="frame" x="19" y="0.0" width="85.5" height="11"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="cqq-B8-Waa" firstAttribute="centerY" secondItem="sY0-lF-gvu" secondAttribute="centerY" id="LjM-pm-KDg"/>
+                                            <constraint firstItem="cqq-B8-Waa" firstAttribute="centerX" secondItem="sY0-lF-gvu" secondAttribute="centerX" id="Wc5-G1-wsv"/>
                                             <constraint firstAttribute="height" constant="38" id="b48-25-lGE"/>
+                                            <constraint firstItem="6Ok-qs-XX3" firstAttribute="leading" secondItem="sY0-lF-gvu" secondAttribute="leading" id="h7B-vX-wRq"/>
+                                            <constraint firstItem="6Ok-qs-XX3" firstAttribute="top" secondItem="sY0-lF-gvu" secondAttribute="top" id="rOO-3m-3br"/>
+                                            <constraint firstAttribute="bottom" secondItem="6Ok-qs-XX3" secondAttribute="bottom" id="tOD-CB-aQs"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Ok-qs-XX3" secondAttribute="trailing" id="zCF-Uf-PN9"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -2395,6 +2430,7 @@
         <image name="Register_Confirm_Btn" width="22" height="22"/>
         <image name="Register_NumSend_Btn" width="22" height="22"/>
         <image name="SideMenuBtn" width="30" height="30"/>
+        <image name="Side_bottom_icon" width="12" height="11"/>
         <image name="Side_login_bg" width="279" height="173"/>
         <image name="Side_login_btn" width="34" height="34"/>
         <image name="Side_logout_bg" width="279" height="187"/>
