@@ -1803,6 +1803,37 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CNj-bE-dbu">
+                                        <rect key="frame" x="102.5" y="556" width="170" height="29"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEh-d9-jrs">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="1Xw-ay-Hzv"/>
+                                                    <constraint firstAttribute="height" constant="29" id="1mq-E3-wMH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="6" maxY="0.0"/>
+                                                <state key="normal" title="설정" image="Side_setting_icon" backgroundImage="Side_black_btn">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBQ-qS-DNR">
+                                                <rect key="frame" x="90" y="0.0" width="80" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="KqF-k9-Yor"/>
+                                                    <constraint firstAttribute="height" constant="29" id="h5Z-Ct-vVf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="6" maxY="0.0"/>
+                                                <state key="normal" title="FAQ" image="Side_faq_icon" backgroundImage="Side_black_btn">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sY0-lF-gvu" userLabel="Bottom View">
                                         <rect key="frame" x="0.0" y="609" width="375" height="38"/>
                                         <subviews>
@@ -1850,6 +1881,7 @@
                                 <constraints>
                                     <constraint firstItem="ikB-jD-EzD" firstAttribute="top" secondItem="KdD-p8-Od3" secondAttribute="bottom" id="BdC-X6-bc5"/>
                                     <constraint firstItem="ikB-jD-EzD" firstAttribute="leading" secondItem="yy1-NJ-Xsg" secondAttribute="leading" id="KYU-m9-g53"/>
+                                    <constraint firstItem="sY0-lF-gvu" firstAttribute="top" secondItem="CNj-bE-dbu" secondAttribute="bottom" constant="24" id="KkS-dc-SbV"/>
                                     <constraint firstAttribute="trailing" secondItem="ikB-jD-EzD" secondAttribute="trailing" id="Kw8-hP-sHl"/>
                                     <constraint firstItem="KdD-p8-Od3" firstAttribute="top" secondItem="yy1-NJ-Xsg" secondAttribute="top" id="Usd-zn-tJr"/>
                                     <constraint firstAttribute="bottom" secondItem="sY0-lF-gvu" secondAttribute="bottom" id="VsA-QE-9so"/>
@@ -1857,6 +1889,7 @@
                                     <constraint firstAttribute="trailing" secondItem="sY0-lF-gvu" secondAttribute="trailing" id="grZ-2u-jZ9"/>
                                     <constraint firstItem="KdD-p8-Od3" firstAttribute="leading" secondItem="yy1-NJ-Xsg" secondAttribute="leading" id="j5F-zc-wLQ"/>
                                     <constraint firstAttribute="trailing" secondItem="KdD-p8-Od3" secondAttribute="trailing" id="uP2-sz-vXJ"/>
+                                    <constraint firstItem="CNj-bE-dbu" firstAttribute="centerX" secondItem="yy1-NJ-Xsg" secondAttribute="centerX" id="uoH-g6-LUj"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2430,11 +2463,14 @@
         <image name="Register_Confirm_Btn" width="22" height="22"/>
         <image name="Register_NumSend_Btn" width="22" height="22"/>
         <image name="SideMenuBtn" width="30" height="30"/>
+        <image name="Side_black_btn" width="29" height="29"/>
         <image name="Side_bottom_icon" width="12" height="11"/>
+        <image name="Side_faq_icon" width="11" height="11"/>
         <image name="Side_login_bg" width="279" height="173"/>
         <image name="Side_login_btn" width="34" height="34"/>
         <image name="Side_logout_bg" width="279" height="187"/>
         <image name="Side_pf_logo" width="50" height="50"/>
+        <image name="Side_setting_icon" width="11" height="11"/>
         <image name="btn_distance_round" width="22" height="22"/>
         <image name="btn_gray_round" width="34" height="34"/>
         <image name="btn_green_round" width="34" height="34"/>
