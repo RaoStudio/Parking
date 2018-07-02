@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SideVC: UIViewController {
+class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet weak var constLogout: NSLayoutConstraint!     // orig 187
     @IBOutlet weak var constLogin: NSLayoutConstraint!      // orig 173
@@ -20,11 +20,16 @@ class SideVC: UIViewController {
     @IBOutlet weak var lblCar: UILabel!
     
     
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +62,24 @@ class SideVC: UIViewController {
         
         self.present(RegisterNavi, animated: true, completion: nil)
     }
+    
+    
+    // MARK: - TableView
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "side_text_cell")!
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 54.0
+    }
+    
+    
     /*
     // MARK: - Navigation
 
