@@ -1827,7 +1827,7 @@
                                                                 <constraint firstAttribute="width" constant="6" id="rBx-po-ylc"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUi-hE-av1">
+                                                        <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUi-hE-av1">
                                                             <rect key="frame" x="54" y="21.5" width="11" height="11"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="11" id="2wv-uQ-qQb"/>
@@ -1863,11 +1863,37 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Side_friend_invite_bg" translatesAutoresizingMaskIntoConstraints="NO" id="hfZ-u9-UPl">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구초대 이벤트" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWB-RJ-bPc">
+                                                            <rect key="frame" x="12" y="18" width="82.5" height="16"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Side_friend_plus_icon" translatesAutoresizingMaskIntoConstraints="NO" id="o8F-dw-B1K">
+                                                            <rect key="frame" x="100.5" y="20.5" width="11" height="11"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="11" id="LfQ-YG-WLk"/>
+                                                                <constraint firstAttribute="height" constant="11" id="acP-Hg-ozU"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_arrow_white" translatesAutoresizingMaskIntoConstraints="NO" id="fqv-AC-7qn">
+                                                            <rect key="frame" x="357" y="21" width="6" height="11"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="6" id="7uG-nP-9JH"/>
+                                                                <constraint firstAttribute="height" constant="11" id="bD5-kt-sZz"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="o8F-dw-B1K" firstAttribute="centerY" secondItem="oWB-RJ-bPc" secondAttribute="centerY" id="C99-Ce-0Ik"/>
+                                                        <constraint firstItem="o8F-dw-B1K" firstAttribute="leading" secondItem="oWB-RJ-bPc" secondAttribute="trailing" constant="6" id="WuN-Wd-I31"/>
                                                         <constraint firstItem="hfZ-u9-UPl" firstAttribute="top" secondItem="2FF-qU-4XN" secondAttribute="top" id="a4Y-sU-GVD"/>
+                                                        <constraint firstItem="fqv-AC-7qn" firstAttribute="centerY" secondItem="2FF-qU-4XN" secondAttribute="centerY" id="alg-qd-irb"/>
+                                                        <constraint firstItem="oWB-RJ-bPc" firstAttribute="centerY" secondItem="2FF-qU-4XN" secondAttribute="centerY" id="b2I-X1-P46"/>
                                                         <constraint firstAttribute="trailing" secondItem="hfZ-u9-UPl" secondAttribute="trailing" id="kKP-7g-vOf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fqv-AC-7qn" secondAttribute="trailing" constant="12" id="l28-gQ-9qM"/>
                                                         <constraint firstItem="hfZ-u9-UPl" firstAttribute="leading" secondItem="2FF-qU-4XN" secondAttribute="leading" id="ohw-3a-UxA"/>
+                                                        <constraint firstItem="oWB-RJ-bPc" firstAttribute="leading" secondItem="2FF-qU-4XN" secondAttribute="leading" constant="12" id="xgE-M4-Uhi"/>
                                                         <constraint firstAttribute="bottom" secondItem="hfZ-u9-UPl" secondAttribute="bottom" id="zDz-R4-l6q"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
@@ -2551,6 +2577,7 @@
         <image name="Side_bottom_icon" width="12" height="11"/>
         <image name="Side_faq_icon" width="11" height="11"/>
         <image name="Side_friend_invite_bg" width="534" height="105"/>
+        <image name="Side_friend_plus_icon" width="11" height="11"/>
         <image name="Side_login_bg" width="279" height="173"/>
         <image name="Side_login_btn" width="34" height="34"/>
         <image name="Side_logout_bg" width="279" height="187"/>
@@ -2564,6 +2591,7 @@
         <image name="distance_icon" width="12" height="12"/>
         <image name="graph_seperate" width="1" height="1"/>
         <image name="icon_arrow" width="6" height="11"/>
+        <image name="icon_arrow_white" width="6" height="11"/>
         <image name="icon_distance" width="11" height="13"/>
         <image name="icon_navi" width="13" height="13"/>
         <image name="img_detail_table" width="12" height="73"/>

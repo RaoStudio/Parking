@@ -82,6 +82,25 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             cell = tableView.dequeueReusableCell(withIdentifier: "side_friend_cell")!
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: "side_text_cell")! as! SideMenuCell
+            
+            if let menuCell = cell as? SideMenuCell {
+                if indexPath.row == 2 {
+                    menuCell.btnCount.isHidden = false
+                }
+                
+                switch indexPath.row {
+                case 0:
+                    menuCell.lblTitle.text = "예약 내역"
+                case 1:
+                    menuCell.lblTitle.text = "내 정보"
+                case 2:
+                    menuCell.lblTitle.text = "이벤트・공지사항"
+                default:
+                    ()
+                }
+                
+            }
+            
         }
         
         
@@ -91,6 +110,10 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 54.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
