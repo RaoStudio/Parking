@@ -25,6 +25,7 @@
 		2971A3F1209AECC400C1AD84 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2971A3F0209AECC400C1AD84 /* Tutorial.storyboard */; };
 		2971A3F5209AED1300C1AD84 /* TutorialContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971A3F3209AED1200C1AD84 /* TutorialContentsVC.swift */; };
 		2971A3F6209AED1300C1AD84 /* TutorialMasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971A3F4209AED1300C1AD84 /* TutorialMasterVC.swift */; };
+		297A606D20EA0B7E00A18B9A /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A606C20EA0B7D00A18B9A /* SideMenuCell.swift */; };
 		2983BD9A20A16BA60033035D /* RaoPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983BD9920A16BA60033035D /* RaoPageVC.swift */; };
 		2983D63320B52F01003CAB1C /* RaoBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983D63220B52F01003CAB1C /* RaoBaseView.swift */; };
 		2983D63620B5356B003CAB1C /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983D63520B5356B003CAB1C /* TestView.swift */; };
@@ -78,6 +79,7 @@
 		2971A3F0209AECC400C1AD84 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		2971A3F3209AED1200C1AD84 /* TutorialContentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContentsVC.swift; sourceTree = "<group>"; };
 		2971A3F4209AED1300C1AD84 /* TutorialMasterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialMasterVC.swift; sourceTree = "<group>"; };
+		297A606C20EA0B7D00A18B9A /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		2983BD9920A16BA60033035D /* RaoPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaoPageVC.swift; sourceTree = "<group>"; };
 		2983D63220B52F01003CAB1C /* RaoBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaoBaseView.swift; sourceTree = "<group>"; };
 		2983D63520B5356B003CAB1C /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		29559EF2204CE28E000EB12B /* ParkingFriends */ = {
 			isa = PBXGroup;
 			children = (
+				297A606B20EA0B3700A18B9A /* Cell */,
 				298DF7EE20D2510F00F0B653 /* Header */,
 				29875E5120ABC7D50029E4BD /* ParkingLot */,
 				29E8F25A20A95EDA004CE3F2 /* Manager */,
@@ -185,6 +188,14 @@
 				2971A3F0209AECC400C1AD84 /* Tutorial.storyboard */,
 			);
 			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		297A606B20EA0B3700A18B9A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				297A606C20EA0B7D00A18B9A /* SideMenuCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		2983D63420B534F0003CAB1C /* Views */ = {
@@ -466,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29875E5720ABF7C60029E4BD /* ParkingLotTabPageVC.swift in Sources */,
+				297A606D20EA0B7E00A18B9A /* SideMenuCell.swift in Sources */,
 				29A1AABC20DCC0F500C8EE66 /* RegisterVC.swift in Sources */,
 				294E5F9C20A53CEE00CF9D03 /* RoundButton.swift in Sources */,
 				29B4CDED20CF96390055852F /* LoginVC.swift in Sources */,

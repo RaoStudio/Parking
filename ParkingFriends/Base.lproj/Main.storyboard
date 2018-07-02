@@ -1807,7 +1807,7 @@
                                         <color key="separatorColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="side_text_cell" rowHeight="54" id="M6n-fQ-e9J">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="side_text_cell" rowHeight="54" id="M6n-fQ-e9J" customClass="SideMenuCell" customModule="ParkingFriends" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="54"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M6n-fQ-e9J" id="U9c-DT-VbV">
@@ -1827,7 +1827,7 @@
                                                                 <constraint firstAttribute="width" constant="6" id="rBx-po-ylc"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUi-hE-av1">
+                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUi-hE-av1">
                                                             <rect key="frame" x="54" y="21.5" width="11" height="11"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="11" id="2wv-uQ-qQb"/>
@@ -1848,6 +1848,10 @@
                                                         <constraint firstItem="ZUi-hE-av1" firstAttribute="centerY" secondItem="U9c-DT-VbV" secondAttribute="centerY" id="uJM-8o-GjI"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="btnCount" destination="ZUi-hE-av1" id="EOf-f4-HzZ"/>
+                                                    <outlet property="lblTitle" destination="PUg-hR-ibe" id="emv-Bu-mYL"/>
+                                                </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="side_friend_cell" rowHeight="54" id="cW4-nD-bu8">
                                                 <rect key="frame" x="0.0" y="82" width="375" height="54"/>
@@ -1855,6 +1859,17 @@
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cW4-nD-bu8" id="2FF-qU-4XN">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Side_friend_invite_bg" translatesAutoresizingMaskIntoConstraints="NO" id="hfZ-u9-UPl">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="hfZ-u9-UPl" firstAttribute="top" secondItem="2FF-qU-4XN" secondAttribute="top" id="a4Y-sU-GVD"/>
+                                                        <constraint firstAttribute="trailing" secondItem="hfZ-u9-UPl" secondAttribute="trailing" id="kKP-7g-vOf"/>
+                                                        <constraint firstItem="hfZ-u9-UPl" firstAttribute="leading" secondItem="2FF-qU-4XN" secondAttribute="leading" id="ohw-3a-UxA"/>
+                                                        <constraint firstAttribute="bottom" secondItem="hfZ-u9-UPl" secondAttribute="bottom" id="zDz-R4-l6q"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
@@ -2535,6 +2550,7 @@
         <image name="Side_black_btn" width="29" height="29"/>
         <image name="Side_bottom_icon" width="12" height="11"/>
         <image name="Side_faq_icon" width="11" height="11"/>
+        <image name="Side_friend_invite_bg" width="534" height="105"/>
         <image name="Side_login_bg" width="279" height="173"/>
         <image name="Side_login_btn" width="34" height="34"/>
         <image name="Side_logout_bg" width="279" height="187"/>

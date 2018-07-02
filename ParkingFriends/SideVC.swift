@@ -75,7 +75,16 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "side_text_cell")!
+        
+        var cell: UITableViewCell
+        
+        if indexPath.row == 3 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "side_friend_cell")!
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "side_text_cell")! as! SideMenuCell
+        }
+        
+        
         
         return cell
     }
