@@ -54,7 +54,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         
         
         
-        self.navigationController?.view.makeToast("로그인이 필요합니다.", duration: 2.0, position: .bottom)
+        self.navigationController?.view.makeToast("로그인이 필요합니다.", duration: 1.0, position: .bottom)
         
     }
     
@@ -62,6 +62,18 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
 //        self.navigationController?.navigationBar.isHidden = true
         
         if self.uSession.isLogin == true {
+            
+            
+            let strComment = String(format: "%@님 환영합니다", uSession.name!)
+            
+            self.navigationController?.view.makeToast(strComment, duration: 2.0, position: .bottom, title: nil, image: nil) { didTap in
+                if didTap {
+                    print("completion from tap")
+                } else {
+                    print("completion without tap")
+                }
+            }
+            
             self.navigationController?.popViewController(animated: true)
         }
         
@@ -324,7 +336,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
      
 //        self.startLoading()
         
-                
+        
         
         GIDSignIn.sharedInstance().delegate = self
         

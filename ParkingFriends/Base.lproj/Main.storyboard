@@ -2022,6 +2022,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cV4-Fe-VDu"/>
                     <connections>
+                        <outlet property="btnLogin" destination="LEa-zd-EQR" id="YZA-y1-dao"/>
                         <outlet property="constLogin" destination="x7Z-SU-L6s" id="mXU-v4-eIU"/>
                         <outlet property="constLogout" destination="Dmu-fs-XOX" id="igr-Gx-725"/>
                         <outlet property="ivThumb" destination="PK6-hI-Mw4" id="KxR-2J-NNA"/>

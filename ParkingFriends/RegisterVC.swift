@@ -295,6 +295,24 @@ class RegisterVC: UIViewController {
                     uSession.isLogin = true
                     uSession.mobile = self.lbl_Tel.text
                     uSession.point = 0
+                    
+                    
+                    /*
+                    let strComment = String(format: "%@님 환영합니다", uSession.name!)
+                    
+                    self.navigationController?.view.makeToast(strComment, duration: 2.0, position: .bottom, title: nil, image: nil) { didTap in
+                        if didTap {
+                            print("completion from tap")
+                        } else {
+                            print("completion without tap")
+                        }
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1500)) {
+                        self.presentingViewController?.dismiss(animated: true, completion: nil)
+                    }
+                    */
+                    
                     self.presentingViewController?.dismiss(animated: true, completion: nil)
                     
                 } else {

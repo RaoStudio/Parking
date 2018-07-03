@@ -24,8 +24,8 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var lblCellTitle: UILabel!
-    @IBOutlet weak var btnCellEventCount: UIButton!
+    
+    @IBOutlet weak var btnLogin: UIButton!
     
     
     let uSession = UserSession()
@@ -185,6 +185,33 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        var bLogon: Bool = true
+        if let bLog = uSession.isLogin {
+            bLogon = bLog
+        }
+        
+        switch indexPath.row {
+        case 0:
+            if bLogon {
+                
+            } else {
+                self.onBtnLogin(self.btnLogin)
+            }
+        case 1:
+            if bLogon {
+                
+            } else {
+                self.onBtnLogin(self.btnLogin)
+            }
+        case 2:
+            self.navigationController?.view.makeToast("Event", duration: 1.0, position: .bottom)
+        case 3:
+            self.navigationController?.view.makeToast("Friend", duration: 1.0, position: .bottom)
+        default:
+            ()
+        }
+        
     }
     
     
