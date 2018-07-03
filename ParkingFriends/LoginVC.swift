@@ -51,6 +51,11 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         // Test For Loigin
 //        self.uSession.isLogin = false       // Force Entry for Test ~
         
+        
+        
+        
+        self.navigationController?.view.makeToast("로그인이 필요합니다.", duration: 2.0, position: .bottom)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -207,6 +212,8 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
     // MARK: - Action
     @IBAction func onBtnKakao(_ sender: UIButton) {
+        
+        self.startLoading()
         let session :KOSession = KOSession.shared()
         
         if session.isOpen() {
@@ -217,6 +224,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         
 //        self.startLoading()
         
+        self.endLoading()
         session.open(completionHandler: {(error) -> Void in
             
             // 카카오 로그인 화면에서 벋어날 시 호출됨. (취소일 때도 표시됨)
@@ -364,6 +372,10 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
+        
+        
+        self.endLoading()
+        
         // ...
         Auth.auth().signInAndRetrieveData(with: credential) { (result, error) in
             if let err = error {
@@ -437,6 +449,15 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         self.endLoading()
     }
     
+    /*
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
+ */
     
     // MARK: - Facebook Login
     /*

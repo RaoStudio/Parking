@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/Util/Utils.swift"
-            timestampString = "551327980.1325051"
+            timestampString = "552291457.629636"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "186"
@@ -554,7 +554,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/Tutorial/TutorialContentsVC.swift"
-            timestampString = "552286584.439698"
+            timestampString = "552291751.599317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -1002,11 +1002,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.440414"
+            timestampString = "552293375.3756191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "requestUserRegister(provider:id:email:name:mobile:photoUrl:)"
             landmarkType = "7">
             <Locations>
@@ -1018,12 +1018,12 @@
                   moduleName = "ParkingFriends"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/LoginVC.swift"
-                  timestampString = "552286473.9435199"
+                  timestampString = "552292486.103362"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "201"
-                  endingLineNumber = "201"
-                  offsetFromSymbolStart = "1332">
+                  startingLineNumber = "206"
+                  endingLineNumber = "206"
+                  offsetFromSymbolStart = "904">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1033,12 +1033,12 @@
                   moduleName = "ParkingFriends"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/LoginVC.swift"
-                  timestampString = "552286473.945153"
+                  timestampString = "552292486.1053129"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "203"
-                  endingLineNumber = "203"
-                  offsetFromSymbolStart = "12">
+                  startingLineNumber = "208"
+                  endingLineNumber = "208"
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1050,27 +1050,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.440482"
+            timestampString = "552293375.375939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
-            landmarkName = "onBtnKakao(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.440523"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "onBtnKakao(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1082,7 +1066,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/AppDelegate.swift"
-            timestampString = "551955373.896791"
+            timestampString = "552293375.376159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
@@ -1098,7 +1082,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/AppDelegate.swift"
-            timestampString = "551955373.8968281"
+            timestampString = "552293375.376363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
@@ -1114,11 +1098,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.440596"
+            timestampString = "552293375.376532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "459"
-            endingLineNumber = "459"
+            startingLineNumber = "479"
+            endingLineNumber = "479"
             landmarkName = "facebookLogin()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1130,11 +1114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.440665"
+            timestampString = "552293375.376749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "446"
-            endingLineNumber = "446"
+            startingLineNumber = "466"
+            endingLineNumber = "466"
             landmarkName = "LoginVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -1146,11 +1130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.440704"
+            timestampString = "552293375.376959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "444"
-            endingLineNumber = "444"
+            startingLineNumber = "464"
+            endingLineNumber = "464"
             landmarkName = "LoginVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -1162,11 +1146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.440758"
+            timestampString = "552293375.377169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "450"
-            endingLineNumber = "450"
+            startingLineNumber = "470"
+            endingLineNumber = "470"
             landmarkName = "LoginVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -1178,11 +1162,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.440809"
+            timestampString = "552293375.377377"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "onBtnKakao(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1194,11 +1178,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.440846"
+            timestampString = "552293375.377582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "onBtnKakao(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1210,11 +1194,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.440884"
+            timestampString = "552293375.37778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "requestUserLogin(email:provider:authid:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1226,11 +1210,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.440922"
+            timestampString = "552293375.377979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "416"
-            endingLineNumber = "416"
+            startingLineNumber = "428"
+            endingLineNumber = "428"
             landmarkName = "sign(_:didSignInFor:withError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1242,11 +1226,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.440986"
+            timestampString = "552293375.378266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "435"
-            endingLineNumber = "435"
+            startingLineNumber = "447"
+            endingLineNumber = "447"
             landmarkName = "sign(_:didDisconnectWith:withError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1258,11 +1242,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.441023"
+            timestampString = "552293375.378473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
             landmarkName = "sign(_:didSignInFor:withError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1274,11 +1258,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.441087"
+            timestampString = "552293375.3787071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "468"
-            endingLineNumber = "468"
+            startingLineNumber = "488"
+            endingLineNumber = "488"
             landmarkName = "loginButton(_:didCompleteWith:error:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1290,11 +1274,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/LoginVC.swift"
-            timestampString = "552286584.441144"
+            timestampString = "552293375.378912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
             landmarkName = "onBtnGoogle(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1322,7 +1306,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.441215"
+            timestampString = "552291985.312894"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "396"
@@ -1338,7 +1322,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.441258"
+            timestampString = "552291985.313162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
@@ -1354,7 +1338,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.441292"
+            timestampString = "552291985.313362"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
@@ -1370,7 +1354,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.441326"
+            timestampString = "552291985.31356"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
@@ -1386,12 +1370,12 @@
                   moduleName = "ParkingFriends"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/RegisterVC.swift"
-                  timestampString = "552286474.2793519"
+                  timestampString = "552292486.163514"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "110"
                   endingLineNumber = "110"
-                  offsetFromSymbolStart = "773">
+                  offsetFromSymbolStart = "604">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1401,12 +1385,12 @@
                   moduleName = "ParkingFriends"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/RegisterVC.swift"
-                  timestampString = "552286474.280877"
+                  timestampString = "552292486.1649849"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "113"
                   endingLineNumber = "113"
-                  offsetFromSymbolStart = "61">
+                  offsetFromSymbolStart = "44">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1418,7 +1402,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.441359"
+            timestampString = "552291985.313773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
@@ -1434,7 +1418,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.4413919"
+            timestampString = "552291985.313966"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "154"
@@ -1450,7 +1434,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.441424"
+            timestampString = "552291985.314181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
@@ -1466,7 +1450,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.441456"
+            timestampString = "552291985.314378"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "167"
@@ -1482,7 +1466,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.441488"
+            timestampString = "552291985.314571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "165"
@@ -1498,7 +1482,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.441519"
+            timestampString = "552291985.3147629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "176"
@@ -1514,7 +1498,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.441551"
+            timestampString = "552291985.314952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "180"
@@ -1530,7 +1514,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.441583"
+            timestampString = "552291985.315163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "221"
@@ -1546,12 +1530,12 @@
                   moduleName = "ParkingFriends"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/RegisterVC.swift"
-                  timestampString = "552286474.395232"
+                  timestampString = "552292486.459453"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "221"
                   endingLineNumber = "221"
-                  offsetFromSymbolStart = "928">
+                  offsetFromSymbolStart = "708">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1561,12 +1545,12 @@
                   moduleName = "ParkingFriends"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/RegisterVC.swift"
-                  timestampString = "552286474.397202"
+                  timestampString = "552292486.461048"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "224"
                   endingLineNumber = "224"
-                  offsetFromSymbolStart = "61">
+                  offsetFromSymbolStart = "44">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1578,7 +1562,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.441615"
+            timestampString = "552291985.315357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "226"
@@ -1594,7 +1578,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.441648"
+            timestampString = "552291985.315547"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "282"
@@ -1610,12 +1594,12 @@
                   moduleName = "ParkingFriends"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/RegisterVC.swift"
-                  timestampString = "552286474.404465"
+                  timestampString = "552292486.468749"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "282"
                   endingLineNumber = "282"
-                  offsetFromSymbolStart = "1751">
+                  offsetFromSymbolStart = "1212">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1625,12 +1609,12 @@
                   moduleName = "ParkingFriends"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/RegisterVC.swift"
-                  timestampString = "552286474.406646"
+                  timestampString = "552292486.47043"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "284"
                   endingLineNumber = "284"
-                  offsetFromSymbolStart = "55">
+                  offsetFromSymbolStart = "36">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1642,7 +1626,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/RegisterVC.swift"
-            timestampString = "552286584.44168"
+            timestampString = "552291985.315749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "291"
@@ -1658,11 +1642,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/SideVC.swift"
-            timestampString = "552286584.441716"
+            timestampString = "552293375.379352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "updateProfile()"
             landmarkType = "7">
             <Locations>
@@ -1674,12 +1658,12 @@
                   moduleName = "ParkingFriends"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/SideVC.swift"
-                  timestampString = "552286474.449891"
+                  timestampString = "552292486.477916"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "104">
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "100">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1689,12 +1673,12 @@
                   moduleName = "ParkingFriends"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/SideVC.swift"
-                  timestampString = "552286474.451456"
+                  timestampString = "552292486.479481"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "33">
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "36">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1706,11 +1690,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/SideVC.swift"
-            timestampString = "552286584.442233"
+            timestampString = "552293375.379714"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "updateProfile()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1722,13 +1706,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParkingFriends/SideVC.swift"
-            timestampString = "552286584.4430701"
+            timestampString = "552293375.380025"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ParkingFriends/LoginVC.swift"
+            timestampString = "552293375.380248"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "381"
+            endingLineNumber = "381"
+            landmarkName = "sign(_:didSignInFor:withError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ParkingFriends/LoginVC.swift"
+            timestampString = "552293375.38051"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "onBtnKakao(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ParkingFriends.LoginVC.onBtnKakao(__ObjC.UIButton) -&gt; ()"
+                  moduleName = "ParkingFriends"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/LoginVC.swift"
+                  timestampString = "552292486.576087"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "228"
+                  endingLineNumber = "228"
+                  offsetFromSymbolStart = "440">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ParkingFriends.LoginVC.onBtnKakao(__ObjC.UIButton) -&gt; ()"
+                  moduleName = "ParkingFriends"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rao/Project/XCode/Misco/ParkingFriends/ParkingFriends/LoginVC.swift"
+                  timestampString = "552292486.577679"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "231"
+                  endingLineNumber = "231"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

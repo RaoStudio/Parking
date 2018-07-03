@@ -47,22 +47,8 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         self.ivThumb.layer.cornerRadius = self.ivThumb.frame.width/2
         self.ivThumb.layer.masksToBounds = true
         
-        if let bLogin = uSession.isLogin, bLogin == true, bFirstLogon == true {
-            //            self.updateProfile()
-            //            bFirstLogon = false
-            
-            lblName.text = uSession.name
-            lblPoint.text = String(format: "%d P", uSession.point!)
-            lblEmail.text = uSession.email
-            lblCar.text = uSession.carName
-            
-            if let strPhoto = uSession.photoUrl, false == strPhoto.isEmpty {
-                self.ivThumb.sd_setImage(with: URL(string: strPhoto), placeholderImage: UIImage(named: "Side_pf_logo"))
-            }
-            
-        } else {
-            
-        }
+        
+        self.setupLogon()
         
     }
     
@@ -80,6 +66,30 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }
     
 
+    
+    func setupLogon() {
+        if let bLogin = uSession.isLogin, bLogin == true, bFirstLogon == true {
+            //            self.updateProfile()
+            //            bFirstLogon = false
+            
+            
+            constLogout.constant = 0.0
+            constLogin.constant = 173.0
+            
+            lblName.text = uSession.name
+            lblPoint.text = String(format: "%d P", uSession.point!)
+            lblEmail.text = uSession.email
+            lblCar.text = uSession.carName
+            
+            if let strPhoto = uSession.photoUrl, false == strPhoto.isEmpty {
+                self.ivThumb.sd_setImage(with: URL(string: strPhoto), placeholderImage: UIImage(named: "Side_pf_logo"))
+            }
+            
+        } else {
+            constLogout.constant = 187.0
+            constLogin.constant = 0.0
+        }
+    }
     
     // MARK: - API
     func updateProfile() {
@@ -121,6 +131,11 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         self.present(RegisterNavi, animated: true, completion: nil)
     }
     
+    
+    @IBAction func onBtnLogoutTest(_ sender: UIButton) {
+        uSession.initUserSession()
+        self.setupLogon()
+    }
     
     // MARK: - TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

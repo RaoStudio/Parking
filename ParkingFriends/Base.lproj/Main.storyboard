@@ -1707,9 +1707,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX7-cH-PeE">
-                                                <rect key="frame" x="20" y="16" width="46" height="30"/>
+                                                <rect key="frame" x="11" y="16" width="65" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="SMS Test"/>
                                                 <connections>
                                                     <action selector="onBtnTest:" destination="K6u-5I-ZT8" eventType="touchUpInside" id="AoP-Pz-dmW"/>
                                                 </connections>
@@ -1778,6 +1778,14 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ile-qu-Y7r">
+                                                <rect key="frame" x="221" y="27" width="81" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Logout Test"/>
+                                                <connections>
+                                                    <action selector="onBtnLogoutTest:" destination="K6u-5I-ZT8" eventType="touchUpInside" id="gUi-h8-k96"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
