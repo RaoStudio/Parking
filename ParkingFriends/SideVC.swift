@@ -86,7 +86,10 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             
             if let menuCell = cell as? SideMenuCell {
                 if indexPath.row == 2 {
-                    menuCell.btnCount.isHidden = false
+//                    menuCell.btnCount.isHidden = false
+                    
+//                    menuCell.btnCount.setTitle("123", for: UIControlState.normal)
+//                    menuCell.constCellEventBtnWidth.constant = 33.0
                 }
                 
                 switch indexPath.row {

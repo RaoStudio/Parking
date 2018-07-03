@@ -12,6 +12,7 @@ class SideMenuCell: UITableViewCell {
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnCount: UIButton!
+    @IBOutlet weak var constCellEventBtnWidth: NSLayoutConstraint!      // orig 11
     
     
     override func awakeFromNib() {

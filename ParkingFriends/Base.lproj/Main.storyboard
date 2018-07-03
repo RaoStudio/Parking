@@ -1850,6 +1850,7 @@
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="btnCount" destination="ZUi-hE-av1" id="EOf-f4-HzZ"/>
+                                                    <outlet property="constCellEventBtnWidth" destination="Wja-md-XlY" id="cSh-0r-lbM"/>
                                                     <outlet property="lblTitle" destination="PUg-hR-ibe" id="emv-Bu-mYL"/>
                                                 </connections>
                                             </tableViewCell>
