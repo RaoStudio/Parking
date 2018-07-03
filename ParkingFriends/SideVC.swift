@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SDWebImage
 
 class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
@@ -18,6 +19,7 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var ivThumb: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblPoint: UILabel!
+    @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var lblCar: UILabel!
     
     
@@ -42,22 +44,33 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         
         
         
+        self.ivThumb.layer.cornerRadius = self.ivThumb.frame.width/2
+        self.ivThumb.layer.masksToBounds = true
+        
+        if let bLogin = uSession.isLogin, bLogin == true, bFirstLogon == true {
+            //            self.updateProfile()
+            //            bFirstLogon = false
+            
+            lblName.text = uSession.name
+            lblPoint.text = String(format: "%d P", uSession.point!)
+            lblEmail.text = uSession.email
+            lblCar.text = uSession.carName
+            
+            if let strPhoto = uSession.photoUrl, false == strPhoto.isEmpty {
+                self.ivThumb.sd_setImage(with: URL(string: strPhoto), placeholderImage: UIImage(named: "Side_pf_logo"))
+            }
+            
+        } else {
+            
+        }
+        
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let bLogin = uSession.isLogin, bLogin == true, bFirstLogon == true {
-//            self.updateProfile()
-//            bFirstLogon = false
-        
-            lblName.text = uSession.name
-            
-        } else {
-            
-        }
-        
+       
     }
 
     
