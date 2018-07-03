@@ -324,6 +324,8 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
      
 //        self.startLoading()
         
+                
+        
         GIDSignIn.sharedInstance().delegate = self
         
         GIDSignIn.sharedInstance().uiDelegate = self
