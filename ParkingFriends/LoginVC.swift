@@ -48,7 +48,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         
         
         
-        self.uSession.isLogin = false       // Force Entry for Test ~ 
+        self.uSession.isLogin = false       // Force Entry for Test ~
         
     }
     
@@ -214,7 +214,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         
         session.presentingViewController = self
         
-        self.startLoading()
+//        self.startLoading()
         
         session.open(completionHandler: {(error) -> Void in
             
@@ -227,6 +227,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
             }
             else if session.isOpen()
             {
+                self.endLoading()
                 KOSessionTask.userMeTask(completion: {(error, profile) -> Void in
                     
                     if profile != nil {
@@ -312,7 +313,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
 //        GIDSignIn.sharedInstance().signIn()
      
-        self.startLoading()
+//        self.startLoading()
         
         GIDSignIn.sharedInstance().delegate = self
         

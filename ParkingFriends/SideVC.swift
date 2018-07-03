@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
@@ -25,6 +26,8 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var btnCellEventCount: UIButton!
     
     
+    let uSession = UserSession()
+    var bFirstLogon = true
     
     
     override func viewDidLoad() {
@@ -36,14 +39,50 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         self.tableView.delegate = self
         
 //        constLogin.constant = 0.0     // 5S Test
+        
+        
+        
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let bLogin = uSession.isLogin, bLogin == true, bFirstLogon == true {
+//            self.updateProfile()
+//            bFirstLogon = false
+        
+            lblName.text = uSession.name
+            
+        } else {
+            
+        }
+        
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
+    
+    // MARK: - API
+    func updateProfile() {
+        let url = UrlStrings.URL_API_USER_GET
+        Alamofire.request(url).responseJSON { (response) in
+            
+            guard response.result.isSuccess else {
+                print("\(url) : \(String(describing: response.result.error))")
+                return
+            }
+        }
+        
+    }
+    
+    
+    
     
     @IBAction func onBtnLogin(_ sender: UIButton) {
         if let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
