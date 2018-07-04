@@ -17,6 +17,7 @@ import PureLayout
 import DropDown
 import SwiftDate
 
+/*
 enum RadiusType: String {
     case fiveH = "500m"
     case oneT = "1Km"
@@ -34,6 +35,7 @@ enum RadiusValue: Int {
     
     static let allValues = [fiveH, oneT, fiveT, tenT]
 }
+ */
 
 class MainViewController: UIViewController {
     

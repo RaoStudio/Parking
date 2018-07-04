@@ -10,6 +10,26 @@ import Foundation
 import Security
 import Alamofire
 
+
+enum RadiusType: String {
+    case fiveH = "500m"
+    case oneT = "1Km"
+    case fiveT = "5Km"
+    case tenT = "10km"
+    
+    static let allValues = [fiveH, oneT, fiveT, tenT]
+}
+
+enum RadiusValue: Int {
+    case fiveH = 500
+    case oneT = 1000
+    case fiveT = 5000
+    case tenT = 10000
+    
+    static let allValues = [fiveH, oneT, fiveT, tenT]
+}
+
+
 struct Platform {
     static let isSimulator: Bool = {
         var isSim = false

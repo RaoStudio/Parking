@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import DropDown
+
+
 
 class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    let uinfo = UserInfoManager()
+    
+    
+    let radiusDropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,9 +66,49 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         var cell: UITableViewCell
         
-        cell = tableView.dequeueReusableCell(withIdentifier: "radiusCell")!
+        let nSection = indexPath.section
+        let nRow = indexPath.row
+        
+        if nSection == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "SetRadiusCell")!
+            
+            if let radiusCell = cell as? SetRadiusCell {
+                radiusCell.lblRadius.text = uinfo.radius ?? RadiusType.fiveH.rawValue
+            }
+            
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "SetRadiusCell")!
+        }
+        
+        
+        
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let nSection = indexPath.section
+        let nRow = indexPath.row
+        
+        if nSection == 0 {
+            return 53.0
+        } else if nSection == 1 {
+            if nRow == 0 {
+                return 88.0
+            } else {
+                return 53.0
+            }
+            
+        } else if nSection == 2 {
+            if nRow == 4 {
+                return 53.0
+            } else {
+                return 44.0
+            }
+        }
+        
+        return 53.0
     }
     
     
