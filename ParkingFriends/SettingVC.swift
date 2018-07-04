@@ -8,12 +8,17 @@
 
 import UIKit
 
-class SettingVC: UIViewController {
+class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +33,71 @@ class SettingVC: UIViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    
+    // MARK: - TableView
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return 3
+        case 2:
+            return 5
+        default:
+            return 1
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var cell: UITableViewCell
+        
+        cell = tableView.dequeueReusableCell(withIdentifier: "radiusCell")!
+        
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 29.0
+    }
+
+    
+    //*
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.textColor = UIColor.black
+        header.textLabel?.font = UIFont.systemFont(ofSize: 13.0)
+        
+//        let rect = CGRect(x: 12.0, y: header.frame.origin.y, width: header.frame.size.width - 12.0, height: header.frame.size.height)
+        
+        header.textLabel?.frame = header.frame
+        header.textLabel?.textAlignment = .left
+        
+        var strSection: String
+        switch section {
+        case 0:
+            strSection = "지도"
+        case 1:
+            strSection = "알림"
+        case 2:
+            strSection = "서비스 정보"
+        default:
+            strSection = ""
+        }
+        header.textLabel?.text = strSection
+    }
+    //*/
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     /*
     // MARK: - Navigation

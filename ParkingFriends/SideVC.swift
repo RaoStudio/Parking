@@ -156,7 +156,7 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         if indexPath.row == 3 {
             cell = tableView.dequeueReusableCell(withIdentifier: "side_friend_cell")!
         } else {
-            cell = tableView.dequeueReusableCell(withIdentifier: "side_text_cell")! as! SideMenuCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "side_text_cell") as! SideMenuCell
             
             if let menuCell = cell as? SideMenuCell {
                 if indexPath.row == 2 {
