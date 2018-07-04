@@ -2085,6 +2085,36 @@
                                             <outlet property="lblRadius" destination="kG6-K7-Wdv" id="mTg-wo-90h"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetNoticeCell" rowHeight="88" id="q7k-4u-o2T" customClass="SetNoticeCell" customModule="ParkingFriends" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="82" width="375" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q7k-4u-o2T" id="BoF-NH-itF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lc-pT-adT">
+                                                    <rect key="frame" x="346" y="36" width="17" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="17" id="hSl-Am-JB5"/>
+                                                        <constraint firstAttribute="height" constant="17" id="tWQ-Fl-wF8"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="Register_Check_Off"/>
+                                                    <state key="selected" image="Register_Check_On"/>
+                                                    <state key="highlighted" image="Register_Check_On"/>
+                                                    <connections>
+                                                        <action selector="onBtnCheck:" destination="q7k-4u-o2T" eventType="touchUpInside" id="gPb-78-0gU"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1lc-pT-adT" firstAttribute="centerY" secondItem="BoF-NH-itF" secondAttribute="centerY" id="0bt-yf-K0H"/>
+                                                <constraint firstAttribute="trailing" secondItem="1lc-pT-adT" secondAttribute="trailing" constant="12" id="PSx-D6-cjw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnCheck" destination="1lc-pT-adT" id="p04-q4-8xR"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>

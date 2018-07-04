@@ -76,7 +76,16 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 radiusCell.lblRadius.text = uinfo.radius ?? RadiusType.fiveH.rawValue
             }
             
-        } else {
+        } else if nSection == 1 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "SetNoticeCell")!
+            
+            if let noticeCell = cell as? SetNoticeCell {
+                
+            }                
+        }
+        
+        else
+        {
             cell = tableView.dequeueReusableCell(withIdentifier: "SetRadiusCell")!
         }
         
