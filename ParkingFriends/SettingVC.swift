@@ -191,6 +191,26 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let nSection = indexPath.section
+        let nRow = indexPath.row
+        
+        if nSection == 2 {
+            if nRow != 4 {
+                if let agreeVC = self.storyboard?.instantiateViewController(withIdentifier: "AgreeInfoVC") as? AgreeInfoVC {
+                    
+                    var nTag = nRow-1
+                    
+                    if nTag < 0 {
+                        nTag = 3
+                    }
+                    
+                    agreeVC.nTag = nTag
+                    self.navigationController?.pushViewController(agreeVC, animated: true)
+                }
+            }
+        }
+        
     }
     
     /*
