@@ -2037,6 +2037,36 @@
             </objects>
             <point key="canvasLocation" x="3048.8000000000002" y="-658.02098950524737"/>
         </scene>
+        <!--설정-->
+        <scene sceneID="FdO-UV-11N">
+            <objects>
+                <viewController id="GBF-db-g7l" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UMx-2m-4Lj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RwP-ne-oZe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0s5-1m-QHy" firstAttribute="trailing" secondItem="RwP-ne-oZe" secondAttribute="trailing" id="Do9-wG-YwK"/>
+                            <constraint firstItem="RwP-ne-oZe" firstAttribute="leading" secondItem="0s5-1m-QHy" secondAttribute="leading" id="POm-Az-2Cf"/>
+                            <constraint firstItem="0s5-1m-QHy" firstAttribute="bottom" secondItem="RwP-ne-oZe" secondAttribute="bottom" id="fEA-b2-Q5l"/>
+                            <constraint firstItem="RwP-ne-oZe" firstAttribute="top" secondItem="0s5-1m-QHy" secondAttribute="top" id="nsd-NI-EQD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0s5-1m-QHy"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="설정" id="Va1-rV-U4Z">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="ZgP-PI-CLX"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fkz-bk-Dla" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5279.1999999999998" y="-953.97301349325346"/>
+        </scene>
         <!--LoginVC-->
         <scene sceneID="fBC-Ii-VKp">
             <objects>
@@ -2561,6 +2591,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9d-y5-9lY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3170" y="654"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sJT-sM-I7G">
+            <objects>
+                <navigationController storyboardIdentifier="SettingNavi" automaticallyAdjustsScrollViewInsets="NO" id="VZ1-lG-dj0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cSf-Qd-cqw">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GBF-db-g7l" kind="relationship" relationship="rootViewController" id="MM8-9h-6Le"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YIo-yp-Q1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4340" y="-954.87256371814101"/>
         </scene>
     </scenes>
     <resources>

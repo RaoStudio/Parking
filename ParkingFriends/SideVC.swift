@@ -114,6 +114,13 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }
     
     @IBAction func onBtnSetting(_ sender: UIButton) {
+        guard let setVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingNavi") as? UINavigationController else {
+            return
+        }
+        
+        self.present(setVC, animated: true, completion: nil)
+        
+        
     }
     
     @IBAction func onBtnFaq(_ sender: UIButton) {
