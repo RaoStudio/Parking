@@ -28,6 +28,8 @@
 		29742FF320EC531A008C4647 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29742FF220EC531A008C4647 /* SettingVC.swift */; };
 		29742FF520EC87F6008C4647 /* SetRadiusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29742FF420EC87F6008C4647 /* SetRadiusCell.swift */; };
 		29742FF720EC8DD3008C4647 /* SetNoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29742FF620EC8DD3008C4647 /* SetNoticeCell.swift */; };
+		29742FF920EC9D0C008C4647 /* SetAlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29742FF820EC9D0C008C4647 /* SetAlarmCell.swift */; };
+		29742FFB20EC9D3E008C4647 /* SetInfoAuthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29742FFA20EC9D3E008C4647 /* SetInfoAuthCell.swift */; };
 		297A606D20EA0B7E00A18B9A /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A606C20EA0B7D00A18B9A /* SideMenuCell.swift */; };
 		2983BD9A20A16BA60033035D /* RaoPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983BD9920A16BA60033035D /* RaoPageVC.swift */; };
 		2983D63320B52F01003CAB1C /* RaoBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983D63220B52F01003CAB1C /* RaoBaseView.swift */; };
@@ -85,6 +87,8 @@
 		29742FF220EC531A008C4647 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		29742FF420EC87F6008C4647 /* SetRadiusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRadiusCell.swift; sourceTree = "<group>"; };
 		29742FF620EC8DD3008C4647 /* SetNoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNoticeCell.swift; sourceTree = "<group>"; };
+		29742FF820EC9D0C008C4647 /* SetAlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAlarmCell.swift; sourceTree = "<group>"; };
+		29742FFA20EC9D3E008C4647 /* SetInfoAuthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetInfoAuthCell.swift; sourceTree = "<group>"; };
 		297A606C20EA0B7D00A18B9A /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		2983BD9920A16BA60033035D /* RaoPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaoPageVC.swift; sourceTree = "<group>"; };
 		2983D63220B52F01003CAB1C /* RaoBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaoBaseView.swift; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 				297A606C20EA0B7D00A18B9A /* SideMenuCell.swift */,
 				29742FF420EC87F6008C4647 /* SetRadiusCell.swift */,
 				29742FF620EC8DD3008C4647 /* SetNoticeCell.swift */,
+				29742FF820EC9D0C008C4647 /* SetAlarmCell.swift */,
+				29742FFA20EC9D3E008C4647 /* SetInfoAuthCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -486,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29875E5720ABF7C60029E4BD /* ParkingLotTabPageVC.swift in Sources */,
+				29742FF920EC9D0C008C4647 /* SetAlarmCell.swift in Sources */,
 				29742FF320EC531A008C4647 /* SettingVC.swift in Sources */,
 				297A606D20EA0B7E00A18B9A /* SideMenuCell.swift in Sources */,
 				29A1AABC20DCC0F500C8EE66 /* RegisterVC.swift in Sources */,
@@ -510,6 +517,7 @@
 				29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */,
 				29559EFC204CE28E000EB12B /* ParkingFriends.xcdatamodeld in Sources */,
 				29742FF520EC87F6008C4647 /* SetRadiusCell.swift in Sources */,
+				29742FFB20EC9D3E008C4647 /* SetInfoAuthCell.swift in Sources */,
 				29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */,
 				298DF7F420D2526900F0B653 /* Util.m in Sources */,
 				2999636920B6544600AC180C /* LotDistanceVC.swift in Sources */,

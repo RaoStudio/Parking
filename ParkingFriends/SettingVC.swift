@@ -77,13 +77,49 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
             
         } else if nSection == 1 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "SetNoticeCell")!
             
-            if let noticeCell = cell as? SetNoticeCell {
-                
-            }                
+            if nRow == 0 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "SetNoticeCell")!
+                if let noticeCell = cell as? SetNoticeCell {
+                }
+            } else {
+                cell = tableView.dequeueReusableCell(withIdentifier: "SetAlarmCell")!
+                if let alarmCell = cell as? SetAlarmCell {
+                    if nRow == 1 {
+                        alarmCell.lblTitle.text = "입차시간 알림"
+                    } else {
+                        alarmCell.lblTitle.text = "출차시간 알림"
+                    }
+                }
+            }
+        } else if nSection == 2 {
+            if nRow == 4 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "SetRadiusCell")!
+            } else {
+                cell = tableView.dequeueReusableCell(withIdentifier: "SetInfoAuthCell")!
+                if let infoAuthCell = cell as? SetInfoAuthCell {
+                    var strTitle: String
+                    
+                    
+                    switch nRow {
+                    case 0:
+                        strTitle = "사업자 정보"
+                    case 1:
+                        strTitle = "이용약관"
+                    case 2:
+                        strTitle = "개인정보 취급방식"
+                    case 3:
+                        strTitle = "위치기반 서비스 이용약관"
+                    default:
+                        strTitle = "사업자정보"
+                    }
+                    
+                    
+                    infoAuthCell.lblTitle.text = strTitle
+                }
+            }
+            
         }
-        
         else
         {
             cell = tableView.dequeueReusableCell(withIdentifier: "SetRadiusCell")!
@@ -117,7 +153,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
         
-        return 53.0
+        return 44.0
     }
     
     
