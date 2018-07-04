@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */; };
+		293545F120ECBB3800077B75 /* SetVersionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293545F020ECBB3800077B75 /* SetVersionCell.swift */; };
 		2942FB3B20D8C47200FBCAEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2942FB3A20D8C47200FBCAEB /* GoogleService-Info.plist */; };
 		2946600020BD3A420000D8B9 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29465FFF20BD3A420000D8B9 /* RoundView.swift */; };
 		294E5F9C20A53CEE00CF9D03 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E5F9B20A53CEE00CF9D03 /* RoundButton.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		16606D5EB15EA7DA51DACE9F /* Pods_ParkingFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerVC.swift; sourceTree = "<group>"; };
+		293545F020ECBB3800077B75 /* SetVersionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVersionCell.swift; sourceTree = "<group>"; };
 		2942FB3A20D8C47200FBCAEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29465FFF20BD3A420000D8B9 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		294E5F9B20A53CEE00CF9D03 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				29742FF620EC8DD3008C4647 /* SetNoticeCell.swift */,
 				29742FF820EC9D0C008C4647 /* SetAlarmCell.swift */,
 				29742FFA20EC9D3E008C4647 /* SetInfoAuthCell.swift */,
+				293545F020ECBB3800077B75 /* SetVersionCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				2971A3F6209AED1300C1AD84 /* TutorialMasterVC.swift in Sources */,
 				29AA1262207D9FF400F4648C /* UIViewExtension.swift in Sources */,
 				295FF12220688AA2000CBF15 /* MainViewController.swift in Sources */,
+				293545F120ECBB3800077B75 /* SetVersionCell.swift in Sources */,
 				29875E5320ABC81F0029E4BD /* ParkingLotVC.swift in Sources */,
 				2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */,
 				29742FF720EC8DD3008C4647 /* SetNoticeCell.swift in Sources */,

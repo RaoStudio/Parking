@@ -94,7 +94,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         } else if nSection == 2 {
             if nRow == 4 {
-                cell = tableView.dequeueReusableCell(withIdentifier: "SetRadiusCell")!
+                cell = tableView.dequeueReusableCell(withIdentifier: "SetVersionCell")!
             } else {
                 cell = tableView.dequeueReusableCell(withIdentifier: "SetInfoAuthCell")!
                 if let infoAuthCell = cell as? SetInfoAuthCell {

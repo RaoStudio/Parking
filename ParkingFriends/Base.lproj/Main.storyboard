@@ -2232,6 +2232,37 @@
                                             <outlet property="lblTitle" destination="01r-h7-SJL" id="dVD-3q-DW1"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SetVersionCell" rowHeight="53" id="GEH-cE-DrS" customClass="SetVersionCell" customModule="ParkingFriends" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="267" width="375" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GEH-cE-DrS" id="sTC-H1-5cn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="파킹프렌즈 버전" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSg-di-giW">
+                                                    <rect key="frame" x="12" y="18.5" width="82.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whB-0T-3m4">
+                                                    <rect key="frame" x="330" y="18.5" width="33" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tSg-di-giW" firstAttribute="centerY" secondItem="sTC-H1-5cn" secondAttribute="centerY" id="6aB-qt-XMw"/>
+                                                <constraint firstAttribute="trailing" secondItem="whB-0T-3m4" secondAttribute="trailing" constant="12" id="6zi-DU-emB"/>
+                                                <constraint firstItem="tSg-di-giW" firstAttribute="leading" secondItem="sTC-H1-5cn" secondAttribute="leading" constant="12" id="Cuu-3f-f0H"/>
+                                                <constraint firstItem="whB-0T-3m4" firstAttribute="centerY" secondItem="sTC-H1-5cn" secondAttribute="centerY" id="p9M-bc-jLu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblVersion" destination="whB-0T-3m4" id="7uK-to-hha"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
