@@ -2040,7 +2040,7 @@
         <!--설정-->
         <scene sceneID="FdO-UV-11N">
             <objects>
-                <viewController id="GBF-db-g7l" sceneMemberID="viewController">
+                <viewController id="GBF-db-g7l" customClass="SettingVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UMx-2m-4Lj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2060,7 +2060,11 @@
                         <viewLayoutGuide key="safeArea" id="0s5-1m-QHy"/>
                     </view>
                     <navigationItem key="navigationItem" title="설정" id="Va1-rV-U4Z">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="ZgP-PI-CLX"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="ZgP-PI-CLX">
+                            <connections>
+                                <action selector="onBtnExit:" destination="GBF-db-g7l" id="vEF-XP-Y6e"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkz-bk-Dla" userLabel="First Responder" sceneMemberID="firstResponder"/>

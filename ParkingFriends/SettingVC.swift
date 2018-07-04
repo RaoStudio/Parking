@@ -24,6 +24,9 @@ class SettingVC: UIViewController {
 
     
     // MARK: - Button Action
+    @IBAction func onBtnExit(_ sender: UIBarButtonItem) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     
     
     /*
