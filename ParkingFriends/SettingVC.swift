@@ -95,6 +95,14 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         } else if nSection == 2 {
             if nRow == 4 {
                 cell = tableView.dequeueReusableCell(withIdentifier: "SetVersionCell")!
+                if let versionCell = cell as? SetVersionCell {
+                    
+//                    let versionCode = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+//                    let buildNumber = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"] as! String
+                    versionCell.lblVersion.text = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String
+                }
+                
+                
             } else {
                 cell = tableView.dequeueReusableCell(withIdentifier: "SetInfoAuthCell")!
                 if let infoAuthCell = cell as? SetInfoAuthCell {
