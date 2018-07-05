@@ -277,7 +277,11 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 self.setupRadiusDropDown()
                 self.radiusDropDown.show()
             }
-            
+        } else if nSection == 1 {
+            let cell = tableView.cellForRow(at: indexPath)
+            if let noticeCell = cell as? SetNoticeCell {
+                noticeCell.onBtnCheck(noticeCell.btnCheck)
+            }
         }
         else if nSection == 2 {
             if nRow != 4 {
