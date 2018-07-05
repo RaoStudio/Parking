@@ -71,6 +71,9 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         radiusDropDown.selectionAction = { [weak self] (index, item) in
 //            self?.btnRadius.setTitle(item, for: .normal)
 //            self?.radiusPicker(strRadius: item)
+            
+            self?.lblRadius?.text = item
+            self?.uinfo.radius = item
         }
     }
     
