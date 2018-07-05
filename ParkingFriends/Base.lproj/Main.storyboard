@@ -2416,13 +2416,27 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Intro_bg" translatesAutoresizingMaskIntoConstraints="NO" id="cEi-AY-zbx">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Intro_PF_logo" translatesAutoresizingMaskIntoConstraints="NO" id="WBn-Om-doX">
+                                        <rect key="frame" x="108" y="208.5" width="159" height="130"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Intro_misco_logo" translatesAutoresizingMaskIntoConstraints="NO" id="scr-Pw-Mf7">
+                                        <rect key="frame" x="161.5" y="603" width="52" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="74V-hd-xoT"/>
+                                            <constraint firstAttribute="width" constant="52" id="CRc-Fa-0bN"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="cEi-AY-zbx" firstAttribute="top" secondItem="yi6-DZ-rHB" secondAttribute="top" id="0Xg-ZW-y2c"/>
+                                    <constraint firstItem="scr-Pw-Mf7" firstAttribute="centerX" secondItem="yi6-DZ-rHB" secondAttribute="centerX" id="4fY-vr-fNe"/>
+                                    <constraint firstItem="WBn-Om-doX" firstAttribute="centerY" secondItem="yi6-DZ-rHB" secondAttribute="centerY" constant="-50" id="NN1-1A-1H7"/>
+                                    <constraint firstItem="WBn-Om-doX" firstAttribute="centerX" secondItem="yi6-DZ-rHB" secondAttribute="centerX" id="a2S-lD-Pao"/>
                                     <constraint firstAttribute="bottom" secondItem="cEi-AY-zbx" secondAttribute="bottom" id="c73-1i-NLx"/>
                                     <constraint firstItem="cEi-AY-zbx" firstAttribute="leading" secondItem="yi6-DZ-rHB" secondAttribute="leading" id="f7U-eM-shF"/>
                                     <constraint firstAttribute="trailing" secondItem="cEi-AY-zbx" secondAttribute="trailing" id="nFw-88-0kC"/>
+                                    <constraint firstAttribute="bottom" secondItem="scr-Pw-Mf7" secondAttribute="bottom" constant="24" id="y0P-KH-d4n"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2839,7 +2853,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Intro_PF_logo" width="159" height="130"/>
         <image name="Intro_bg" width="320" height="568"/>
+        <image name="Intro_misco_logo" width="52" height="20"/>
         <image name="Login_bg" width="320" height="568"/>
         <image name="Login_facebook_btn" width="34" height="34"/>
         <image name="Login_facebook_icon" width="17" height="18"/>
