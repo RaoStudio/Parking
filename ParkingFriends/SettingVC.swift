@@ -66,7 +66,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             RadiusType.tenT.rawValue
         ]
         
-        radiusDropDown.direction = .top
+        radiusDropDown.direction = .bottom
         // Action triggered on selection
         radiusDropDown.selectionAction = { [weak self] (index, item) in
 //            self?.btnRadius.setTitle(item, for: .normal)
