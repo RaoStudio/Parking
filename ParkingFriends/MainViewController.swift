@@ -74,6 +74,7 @@ class MainViewController: UIViewController {
     
     let uinfo = UserInfoManager()
     
+    var strRadius: String = ""
     
     var bTime: Bool = false
     var bStart: Bool = true
@@ -106,6 +107,7 @@ class MainViewController: UIViewController {
         
         mapView.delegate = self
         
+        strRadius = uinfo.radius ?? RadiusType.fiveH.rawValue
         
         btnRadius.setTitle(uinfo.radius ?? RadiusType.fiveH.rawValue, for: UIControlState.normal)
         
@@ -247,6 +249,14 @@ class MainViewController: UIViewController {
         }
          */
         
+        
+        if let strUinfoRadius = uinfo.radius {
+            if strRadius != strUinfoRadius {
+                strRadius = strUinfoRadius
+                btnRadius.setTitle(strRadius, for: UIControlState.normal)
+                radiusPicker(strRadius: strRadius)
+            }
+        }
         
         
     }
