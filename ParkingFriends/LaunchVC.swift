@@ -149,6 +149,10 @@ class LaunchVC: UIViewController {
                                 self.uSession.carNum = dic["car_num"].stringValue
                                 self.uSession.isLogin = true
                                 
+                                
+                                
+                                self.navigationController?.view.hideToastActivity()
+                                
                                 let strComment = String(format: "%@님 환영합니다", dic["name"].stringValue)
                                 
                                 
