@@ -11,6 +11,7 @@ import UIKit
 class SetRadiusCell: UITableViewCell {
 
     @IBOutlet weak var lblRadius: UILabel!
+    @IBOutlet var btnRadius: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

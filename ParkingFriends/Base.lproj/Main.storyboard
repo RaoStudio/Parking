@@ -2285,6 +2285,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnExit" destination="ZgP-PI-CLX" id="vdZ-1i-m6e"/>
                         <outlet property="tableView" destination="RwP-ne-oZe" id="p0C-CR-Ycl"/>
                     </connections>
                 </viewController>

@@ -15,6 +15,9 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var lblRadius: UILabel?
+    var btnRadius: UIButton?
+    @IBOutlet var btnExit: UIBarButtonItem!
     
     let uinfo = UserInfoManager()
     
@@ -28,6 +31,15 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        /*
+        radiusDropDown.dataSource = [
+            RadiusType.fiveH.rawValue,
+            RadiusType.oneT.rawValue,
+            RadiusType.fiveT.rawValue,
+            RadiusType.tenT.rawValue
+        ]
+ */
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +47,57 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: - DropDown
+    func setupRadiusDropDown() {
+        radiusDropDown.anchorView = self.lblRadius
+        
+        // By default, the dropdown will have its origin on the top left corner of its anchor view
+        // So it will come over the anchor view and hide it completely
+        // If you want to have the dropdown underneath your anchor view, you can do this:
+        radiusDropDown.topOffset = CGPoint(x: 0, y: (self.lblRadius?.bounds.height)!)
+        
+        
+        // You can also use localizationKeysDataSource instead. Check the docs.
+        radiusDropDown.dataSource = [
+            RadiusType.fiveH.rawValue,
+            RadiusType.oneT.rawValue,
+            RadiusType.fiveT.rawValue,
+            RadiusType.tenT.rawValue
+        ]
+        
+        radiusDropDown.direction = .top
+        // Action triggered on selection
+        radiusDropDown.selectionAction = { [weak self] (index, item) in
+//            self?.btnRadius.setTitle(item, for: .normal)
+//            self?.radiusPicker(strRadius: item)
+        }
+    }
+    
+    func setupRadiusDropDownTest() {
+    radiusDropDown.anchorView = self.lblRadius
+    
+    // By default, the dropdown will have its origin on the top left corner of its anchor view
+    // So it will come over the anchor view and hide it completely
+    // If you want to have the dropdown underneath your anchor view, you can do this:
+//    radiusDropDown.topOffset = CGPoint(x: 0, y: self.btnExit.bounds.height)
+    
+    
+    // You can also use localizationKeysDataSource instead. Check the docs.
+    radiusDropDown.dataSource = [
+    RadiusType.fiveH.rawValue,
+    RadiusType.oneT.rawValue,
+    RadiusType.fiveT.rawValue,
+    RadiusType.tenT.rawValue
+    ]
+    
+    radiusDropDown.direction = .top
+    // Action triggered on selection
+    radiusDropDown.selectionAction = { [weak self] (index, item) in
+    //            self?.btnRadius.setTitle(item, for: .normal)
+    //            self?.radiusPicker(strRadius: item)
+    }
+    }
 
     
     // MARK: - Button Action
@@ -203,7 +266,17 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let nSection = indexPath.section
         let nRow = indexPath.row
         
-        if nSection == 2 {
+        if nSection == 0 {
+//            var cell = tableView.dequeueReusableCell(withIdentifier: "SetRadiusCell")!
+            let cell = tableView.cellForRow(at: indexPath)
+            if let radiusCell = cell as? SetRadiusCell {
+                self.lblRadius = radiusCell.lblRadius
+                self.setupRadiusDropDown()
+                self.radiusDropDown.show()
+            }
+            
+        }
+        else if nSection == 2 {
             if nRow != 4 {
                 if let agreeVC = self.storyboard?.instantiateViewController(withIdentifier: "AgreeInfoVC") as? AgreeInfoVC {
                     
