@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Toast_Swift
 
 class LaunchVC: UIViewController {
 
@@ -83,7 +84,16 @@ class LaunchVC: UIViewController {
     
     func requestUserLogin(email: String, provider: String, authid: String, completionHandler:@escaping ()->()) {
         
-        self.navigationController?.view.makeToastActivity(.center)
+        /*
+        var style = ToastStyle()
+        style.activitySize = CGSize(width: 50.0, height: 50.0)
+        ToastManager.shared.style = style
+ */
+        
+        
+        
+        self.navigationController?.view.makeToastActivity(.downCenter)
+        
         
 //        self.navigationController?.view.makeToast("로그인이 필요합니다.", duration: 1.0, position: .bottom)
         
@@ -143,7 +153,8 @@ class LaunchVC: UIViewController {
                                 
                                 
                                 
-                                self.navigationController?.view.makeToast(strComment, duration: 2.0, position: .bottom, title: nil, image: nil) { didTap in
+                                self.navigationController?.view.makeToast(strComment, duration: 2.0, position: .upBottom, title: nil, image: nil) { didTap in
+//                                self.navigationController?.view.makeToast(strComment, duration: 2.0, point: CGPoint(x: 110.0, y: 110.0), title: nil, image: nil) { didTap in
                                     if didTap {
                                         print("completion from tap")
                                     } else {
