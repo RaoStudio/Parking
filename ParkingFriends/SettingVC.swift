@@ -315,8 +315,27 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     
                     noticeCell.onBtnCheck(noticeCell.btnCheck)
                     uinfo.isUserAlarm = noticeCell.btnCheck.isSelected
+                    
+                    
+                    if uinfo.isUserAlarm == false {
+                        let nextIndex = IndexPath(row: 1, section: 1)
+                        
+                        let nextCell = tableView.cellForRow(at: nextIndex)
+                        if let alarmCell = nextCell as? SetAlarmCell {
+                            alarmCell.lblTime.text = UserAlarmType.none.rawValue
+                        }
+                        
+                        let nextIndex2 = IndexPath(row: 2, section: 1)
+                        
+                        let nextCell2 = tableView.cellForRow(at: nextIndex2)
+                        if let alarmCell2 = nextCell2 as? SetAlarmCell {
+                            alarmCell2.lblTime.text = UserAlarmType.none.rawValue
+                        }
+                        
+                    }
+                    
                 }
-            } else if nRow == 1 {
+            } else if nRow == 1 && uinfo.isUserAlarm == true {
                 let cell = tableView.cellForRow(at: indexPath)
                 if let alarmCell = cell as? SetAlarmCell {
                     self.lblEntry = alarmCell.lblTime
@@ -324,7 +343,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     self.alarmDropDown.show()
                 }
                 
-            } else if nRow == 2 {
+            } else if nRow == 2 && uinfo.isUserAlarm == true{
                 let cell = tableView.cellForRow(at: indexPath)
                 if let alarmCell = cell as? SetAlarmCell {
                     self.lblEntry = alarmCell.lblTime
