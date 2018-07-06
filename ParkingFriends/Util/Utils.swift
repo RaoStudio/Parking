@@ -10,7 +10,7 @@ import Foundation
 import Security
 import Alamofire
 
-
+// Raduis
 enum RadiusType: String {
     case fiveH = "500m"
     case oneT = "1Km"
@@ -28,6 +28,35 @@ enum RadiusValue: Int {
     
     static let allValues = [fiveH, oneT, fiveT, tenT]
 }
+
+
+// UserAlarmTime
+enum UserAlarmType: String {
+    case none = "알람 안함"
+    case appoint = "정각"
+    case one = "1분 전"
+    case three = "3분 전"
+    case five = "5분 전"
+    case ten = "10분 전"
+    case fifteen = "15분 전"
+    case twenty = "20분 전"
+    case thirty = "30분 전"
+    case hour = "1시간 전"
+}
+
+enum UserAlarmValue: Int {
+    case none = -1
+    case appoint = 0
+    case one = 60
+    case three = 180
+    case five = 300
+    case ten = 600
+    case fifteen = 900
+    case twenty = 1200
+    case thirty = 1800
+    case hour = 3600
+}
+
 
 
 struct Platform {

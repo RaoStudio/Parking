@@ -16,13 +16,23 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     var lblRadius: UILabel?
-    var btnRadius: UIButton?
+    
+    var viewEntry: UIView?
+    var viewExit: UIView?
+    
+    
+    var lblEntry: UILabel?
+    var lblExit: UILabel?
+    
+    
     @IBOutlet var btnExit: UIBarButtonItem!
     
     let uinfo = UserInfoManager()
     
     
     let radiusDropDown = DropDown()
+    let alarmDropDown = DropDown()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,30 +87,33 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func setupRadiusDropDownTest() {
-    radiusDropDown.anchorView = self.lblRadius
     
-    // By default, the dropdown will have its origin on the top left corner of its anchor view
-    // So it will come over the anchor view and hide it completely
-    // If you want to have the dropdown underneath your anchor view, you can do this:
-//    radiusDropDown.topOffset = CGPoint(x: 0, y: self.btnExit.bounds.height)
-    
-    
-    // You can also use localizationKeysDataSource instead. Check the docs.
-    radiusDropDown.dataSource = [
-    RadiusType.fiveH.rawValue,
-    RadiusType.oneT.rawValue,
-    RadiusType.fiveT.rawValue,
-    RadiusType.tenT.rawValue
-    ]
-    
-    radiusDropDown.direction = .top
-    // Action triggered on selection
-    radiusDropDown.selectionAction = { [weak self] (index, item) in
-    //            self?.btnRadius.setTitle(item, for: .normal)
-    //            self?.radiusPicker(strRadius: item)
+    func setupAlarmDropDown(label: UILabel) {
+        alarmDropDown.anchorView = label
+        
+        radiusDropDown.topOffset = CGPoint(x: 0, y: label.bounds.height)
+        
+        alarmDropDown.dataSource = [
+            UserAlarmType.none.rawValue,
+            UserAlarmType.appoint.rawValue,
+            UserAlarmType.one.rawValue,
+            UserAlarmType.three.rawValue,
+            UserAlarmType.five.rawValue,
+            UserAlarmType.ten.rawValue,
+            UserAlarmType.fifteen.rawValue,
+            UserAlarmType.twenty.rawValue,
+            UserAlarmType.thirty.rawValue,
+            UserAlarmType.hour.rawValue
+        ]
+        
+        alarmDropDown.direction = .bottom
+        alarmDropDown.selectionAction = { [weak self] (index, item) in
+            
+        }
+        
+        
     }
-    }
+    
 
     
     // MARK: - Button Action
@@ -288,6 +301,14 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     noticeCell.onBtnCheck(noticeCell.btnCheck)
                     uinfo.isUserAlarm = noticeCell.btnCheck.isSelected
                 }
+            } else if nRow == 1 {
+                let cell = tableView.cellForRow(at: indexPath)
+                if let alarmCell = cell as? SetAlarmCell {
+                    self.lblEntry = alarmCell.lblTime
+                    self.setupAlarmDropDown(label: self.lblEntry!)
+                    self.alarmDropDown.show()
+                }
+                
             }
         }
         else if nSection == 2 {

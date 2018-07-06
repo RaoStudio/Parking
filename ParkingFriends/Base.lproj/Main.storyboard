@@ -2198,6 +2198,7 @@
                                         <connections>
                                             <outlet property="lblTime" destination="hH8-62-RPD" id="EJo-ES-USw"/>
                                             <outlet property="lblTitle" destination="cyA-bg-nms" id="cIY-HC-EPh"/>
+                                            <outlet property="roundView" destination="huC-AW-LKT" id="Myr-d3-q5O"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetInfoAuthCell" rowHeight="44" id="Q8D-UX-JR9" customClass="SetInfoAuthCell" customModule="ParkingFriends" customModuleProvider="target">
