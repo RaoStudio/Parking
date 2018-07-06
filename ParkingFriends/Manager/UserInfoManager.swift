@@ -14,6 +14,7 @@ struct UserInfoKey {
     static let radius = "RADIUS"
     static let startTime = "STARTTIME"
     static let endTime = "ENDTIME"
+    static let isUserAlarm = "ISUSERALARM"
 }
 
 
@@ -53,6 +54,18 @@ class UserInfoManager {
         set(v) {
             let ud = UserDefaults.standard
             ud.setValue(v, forKey: UserInfoKey.endTime)
+            ud.synchronize()
+        }
+    }
+    
+    var isUserAlarm: Bool? {
+        get {
+            return UserDefaults.standard.bool(forKey: UserInfoKey.isUserAlarm)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.isUserAlarm)
             ud.synchronize()
         }
     }
