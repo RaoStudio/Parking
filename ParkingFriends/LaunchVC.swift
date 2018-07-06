@@ -111,6 +111,9 @@ class LaunchVC: UIViewController {
             
             guard response.result.isSuccess else {
 //                self.alert("\(url) : \(String(describing: response.result.error))")
+                
+                self.uSession.isLogin = false
+                self.uSession.initUserSession()
                 self.navigationController?.view.makeToast("\(url) : \(String(describing: response.result.error))", duration: 2.0, position: .bottom)
                 completionHandler()
                 return
@@ -119,7 +122,8 @@ class LaunchVC: UIViewController {
             if let value = response.result.value as NSString? {
                 
                 if value.isEqual(to: "Not Found") || value.isEqual(to: "Auth Id Mismatch") || value.isEqual(to: "Provider Mismatch") || value.isEqual(to: "Post Error") {
-                    
+                    self.uSession.isLogin = false
+                    self.uSession.initUserSession()
                     self.navigationController?.view.makeToast(value as String, duration: 2.0, position: .bottom)
                     completionHandler()
                     return
@@ -151,7 +155,7 @@ class LaunchVC: UIViewController {
                                 
                                 
                                 
-                                self.navigationController?.view.hideToastActivity()
+//                                self.navigationController?.view.hideToastActivity()
                                 
                                 let strComment = String(format: "%@님 환영합니다", dic["name"].stringValue)
                                 
@@ -174,6 +178,8 @@ class LaunchVC: UIViewController {
                         
                     } catch {
 //                        self.alert("requestUserLogin = \(value)")
+                        self.uSession.isLogin = false
+                        self.uSession.initUserSession()
                         self.navigationController?.view.makeToast("자동 로그인 실패", duration: 2.0, position: .bottom)
                         completionHandler()
                     }
