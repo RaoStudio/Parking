@@ -147,6 +147,8 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             if nRow == 0 {
                 cell = tableView.dequeueReusableCell(withIdentifier: "SetNoticeCell")!
                 if let noticeCell = cell as? SetNoticeCell {
+                    let bUse = uinfo.isUserAlarm ?? false
+                    noticeCell.btnCheck.isSelected = bUse
                 }
             } else {
                 cell = tableView.dequeueReusableCell(withIdentifier: "SetAlarmCell")!
@@ -278,9 +280,14 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 self.radiusDropDown.show()
             }
         } else if nSection == 1 {
-            let cell = tableView.cellForRow(at: indexPath)
-            if let noticeCell = cell as? SetNoticeCell {
-                noticeCell.onBtnCheck(noticeCell.btnCheck)
+            
+            if nRow == 0 {
+                let cell = tableView.cellForRow(at: indexPath)
+                if let noticeCell = cell as? SetNoticeCell {
+                    
+                    noticeCell.onBtnCheck(noticeCell.btnCheck)
+                    uinfo.isUserAlarm = noticeCell.btnCheck.isSelected
+                }
             }
         }
         else if nSection == 2 {
