@@ -331,10 +331,12 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                         if let alarmCell2 = nextCell2 as? SetAlarmCell {
                             alarmCell2.lblTime.text = UserAlarmType.none.rawValue
                         }
-                        
+                      
+                        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                     }
                     
                 }
+                
             } else if nRow == 1 && uinfo.isUserAlarm == true {
                 let cell = tableView.cellForRow(at: indexPath)
                 if let alarmCell = cell as? SetAlarmCell {
