@@ -88,7 +88,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     
-    func setupAlarmDropDown(label: UILabel) {
+    func setupAlarmDropDown(label: UILabel, bEntry: Bool) {
         alarmDropDown.anchorView = label
         
         radiusDropDown.topOffset = CGPoint(x: 0, y: label.bounds.height)
@@ -108,7 +108,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         alarmDropDown.direction = .bottom
         alarmDropDown.selectionAction = { [weak self] (index, item) in
-            
+            label.text = item
         }
         
         
@@ -305,10 +305,17 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 let cell = tableView.cellForRow(at: indexPath)
                 if let alarmCell = cell as? SetAlarmCell {
                     self.lblEntry = alarmCell.lblTime
-                    self.setupAlarmDropDown(label: self.lblEntry!)
+                    self.setupAlarmDropDown(label: self.lblEntry!, bEntry: true)
                     self.alarmDropDown.show()
                 }
                 
+            } else if nRow == 2 {
+                let cell = tableView.cellForRow(at: indexPath)
+                if let alarmCell = cell as? SetAlarmCell {
+                    self.lblEntry = alarmCell.lblTime
+                    self.setupAlarmDropDown(label: self.lblEntry!, bEntry: false)
+                    self.alarmDropDown.show()
+                }
             }
         }
         else if nSection == 2 {
