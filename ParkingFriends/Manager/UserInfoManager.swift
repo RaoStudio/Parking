@@ -67,7 +67,7 @@ class UserInfoManager {
             let ud = UserDefaults.standard
             ud.setValue(v, forKey: UserInfoKey.isUserAlarm)
             ud.synchronize()
-        }
+        }                
     }
 }
 

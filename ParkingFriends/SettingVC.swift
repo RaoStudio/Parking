@@ -9,7 +9,7 @@
 import UIKit
 import DropDown
 
-
+import UserNotifications
 
 class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -42,14 +42,22 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        /*
+        //*
         radiusDropDown.dataSource = [
             RadiusType.fiveH.rawValue,
             RadiusType.oneT.rawValue,
             RadiusType.fiveT.rawValue,
             RadiusType.tenT.rawValue
         ]
- */
+        //*/
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (didAllow, Error) in
+            
+        }
+        
+        UNUserNotificationCenter.current().delegate = self
+        
+     
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,12 +77,15 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         
         // You can also use localizationKeysDataSource instead. Check the docs.
+        /*
         radiusDropDown.dataSource = [
             RadiusType.fiveH.rawValue,
             RadiusType.oneT.rawValue,
             RadiusType.fiveT.rawValue,
             RadiusType.tenT.rawValue
         ]
+        */
+        
         
         radiusDropDown.direction = .bottom
         // Action triggered on selection
@@ -109,6 +120,10 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         alarmDropDown.direction = .bottom
         alarmDropDown.selectionAction = { [weak self] (index, item) in
             label.text = item
+            
+            if self?.uinfo.isUserAlarm == true {
+                self?.setUserAlarmNotification()
+            }
         }
         
         
@@ -336,6 +351,28 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    // MARK: - UNUserNotificationCenter
+    func setUserAlarmNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Title Test"
+        content.subtitle = "Subtitle Test"
+        content.body = "Alarm ~~"
+        content.sound = UNNotificationSound.default()
+        
+        // UNCalendarNotificationTrigger
+        let date = Date(timeIntervalSinceNow: 5)
+        var dateCompenents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        let Calendartrigger = UNCalendarNotificationTrigger(dateMatching: dateCompenents, repeats: false)
+        
+        // Use TimeIntervalNotificationTrigger
+        let TimeIntervalTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "timerdone", content: content, trigger: Calendartrigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -347,3 +384,10 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     */
 
 }
+
+extension SettingVC: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, .badge])
+    }
+}
+
