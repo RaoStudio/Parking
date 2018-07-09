@@ -350,7 +350,9 @@ class MainViewController: UIViewController {
             tbItems[1].title = "요금순"
         }
         
-        
+        if let listVC = vc.viewControllers?.last as? LotListVC {
+            listVC.arrPlace = self.arrPlace
+        }
         
         //*/
 
