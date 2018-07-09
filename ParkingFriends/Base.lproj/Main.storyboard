@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--메인-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
@@ -164,7 +164,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="L9O-61-SM0">
+                    <navigationItem key="navigationItem" title="메인" id="L9O-61-SM0">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="SideMenuBtn" id="d0v-th-GIk">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -2797,6 +2797,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ve0-yb-cad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1580" y="1245.4272863568217"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nfA-A4-TJ0">
+            <objects>
+                <viewController id="vZc-Fb-ImE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bV5-eZ-e0G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="nWf-F7-cb5">
+                                <rect key="frame" x="0.0" y="186" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="552793186.15345502">
+                                    <!--2018-07-09 01:39:46 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="ko_KR"/>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="txf-Fv-qYc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ea-Xo-zIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2959" y="1565"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZiC-J1-d9D">

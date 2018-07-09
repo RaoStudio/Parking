@@ -20,6 +20,7 @@
 		29559F01204CE28E000EB12B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29559EFF204CE28E000EB12B /* LaunchScreen.storyboard */; };
 		295FF12220688AA2000CBF15 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FF12120688AA2000CBF15 /* MainViewController.swift */; };
 		296023802091A65600481134 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960237F2091A65600481134 /* DetailVC.swift */; };
+		29659A0220F2F94700E289DC /* CSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29659A0120F2F94400E289DC /* CSTabBarController.swift */; };
 		296F966120E1CE15008C58B6 /* InfoDataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 296F966020E1CE15008C58B6 /* InfoDataList.plist */; };
 		296F966320E1D18D008C58B6 /* AgreeInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F966220E1D18D008C58B6 /* AgreeInfoVC.swift */; };
 		2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971A3EE209ADD8200C1AD84 /* Utils.swift */; };
@@ -80,6 +81,7 @@
 		29559F02204CE28E000EB12B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		295FF12120688AA2000CBF15 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2960237F2091A65600481134 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		29659A0120F2F94400E289DC /* CSTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSTabBarController.swift; sourceTree = "<group>"; };
 		296F966020E1CE15008C58B6 /* InfoDataList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = InfoDataList.plist; sourceTree = "<group>"; };
 		296F966220E1D18D008C58B6 /* AgreeInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeInfoVC.swift; sourceTree = "<group>"; };
 		2971A3EE209ADD8200C1AD84 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		29875E5120ABC7D50029E4BD /* ParkingLot */ = {
 			isa = PBXGroup;
 			children = (
+				29659A0120F2F94400E289DC /* CSTabBarController.swift */,
 				29875E5220ABC81F0029E4BD /* ParkingLotVC.swift */,
 				29875E5420ABD1000029E4BD /* ParkingLot.storyboard */,
 				29875E5620ABF7C60029E4BD /* ParkingLotTabPageVC.swift */,
@@ -513,6 +516,7 @@
 				29AA1261207D9FF400F4648C /* PlaceMarker.swift in Sources */,
 				296F966320E1D18D008C58B6 /* AgreeInfoVC.swift in Sources */,
 				291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */,
+				29659A0220F2F94700E289DC /* CSTabBarController.swift in Sources */,
 				29559EF6204CE28E000EB12B /* ViewController.swift in Sources */,
 				2971A3F5209AED1300C1AD84 /* TutorialContentsVC.swift in Sources */,
 				29559EF4204CE28E000EB12B /* AppDelegate.swift in Sources */,
