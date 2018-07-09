@@ -60,6 +60,8 @@
 		29B4CDED20CF96390055852F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4CDEC20CF96390055852F /* LoginVC.swift */; };
 		29D6C26220E0BC8B001EF09B /* SideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D6C26120E0BC8B001EF09B /* SideVC.swift */; };
 		29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */; };
+		29F4EB2A20F2FEFC009C2AE2 /* LotListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4EB2920F2FEFC009C2AE2 /* LotListVC.swift */; };
+		29F4EB2C20F3301F009C2AE2 /* ParkingLotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4EB2B20F3301F009C2AE2 /* ParkingLotCell.swift */; };
 		4BBC88AF11E0D545AF0CDA1E /* Pods_ParkingFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16606D5EB15EA7DA51DACE9F /* Pods_ParkingFriends.framework */; };
 		5AE7C80E869B4337F04B6493 /* Pods_ParkingFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA1467F876F3F1665825730 /* Pods_ParkingFriends.framework */; };
 /* End PBXBuildFile section */
@@ -123,6 +125,8 @@
 		29B4CDEC20CF96390055852F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		29D6C26120E0BC8B001EF09B /* SideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideVC.swift; sourceTree = "<group>"; };
 		29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
+		29F4EB2920F2FEFC009C2AE2 /* LotListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotListVC.swift; sourceTree = "<group>"; };
+		29F4EB2B20F3301F009C2AE2 /* ParkingLotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotCell.swift; sourceTree = "<group>"; };
 		5692CC7AA31AE36E141C127A /* Pods-ParkingFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingFriends.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingFriends/Pods-ParkingFriends.release.xcconfig"; sourceTree = "<group>"; };
 		BBA1467F876F3F1665825730 /* Pods_ParkingFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BC42507866129D0B36DF16 /* Pods-ParkingFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingFriends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingFriends/Pods-ParkingFriends.debug.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 				29742FF820EC9D0C008C4647 /* SetAlarmCell.swift */,
 				29742FFA20EC9D3E008C4647 /* SetInfoAuthCell.swift */,
 				293545F020ECBB3800077B75 /* SetVersionCell.swift */,
+				29F4EB2B20F3301F009C2AE2 /* ParkingLotCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 				29875E5620ABF7C60029E4BD /* ParkingLotTabPageVC.swift */,
 				2999636820B6544600AC180C /* LotDistanceVC.swift */,
 				2999636A20B6546600AC180C /* LotPayVC.swift */,
+				29F4EB2920F2FEFC009C2AE2 /* LotListVC.swift */,
 			);
 			path = ParkingLot;
 			sourceTree = "<group>";
@@ -519,6 +525,7 @@
 				29659A0220F2F94700E289DC /* CSTabBarController.swift in Sources */,
 				29559EF6204CE28E000EB12B /* ViewController.swift in Sources */,
 				2971A3F5209AED1300C1AD84 /* TutorialContentsVC.swift in Sources */,
+				29F4EB2C20F3301F009C2AE2 /* ParkingLotCell.swift in Sources */,
 				29559EF4204CE28E000EB12B /* AppDelegate.swift in Sources */,
 				2999636D20B65F4200AC180C /* PresentTestVC.swift in Sources */,
 				29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */,
@@ -537,6 +544,7 @@
 				2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */,
 				29742FF720EC8DD3008C4647 /* SetNoticeCell.swift in Sources */,
 				2999636B20B6546600AC180C /* LotPayVC.swift in Sources */,
+				29F4EB2A20F2FEFC009C2AE2 /* LotListVC.swift in Sources */,
 				2946600020BD3A420000D8B9 /* RoundView.swift in Sources */,
 				2983D63320B52F01003CAB1C /* RaoBaseView.swift in Sources */,
 			);

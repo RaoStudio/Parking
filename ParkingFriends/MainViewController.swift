@@ -95,6 +95,10 @@ class MainViewController: UIViewController {
     let bUseDropDown = false
     
     
+//    var arrPlace = [Dictionary<String, Any>]()
+    var arrPlace = [GMSMarker]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -334,17 +338,23 @@ class MainViewController: UIViewController {
         }
         */
         
+        
         //*
         guard let vc = sb.instantiateViewController(withIdentifier: "ParkingLotTabBar") as? UITabBarController else {
             return
         }
  
+        vc.navigationItem.title = "주변 주차장 목록"
         
         if let tbItems = vc.tabBar.items {
             tbItems[1].title = "요금순"
         }
+        
+        
+        
         //*/
 
+        
         //        self.present(vc, animated: true, completion: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -644,6 +654,8 @@ class MainViewController: UIViewController {
             
             
             
+            self.arrPlace.removeAll()
+            
             guard response.result.isSuccess else {
                 print("\(url) : \(String(describing: response.result.error))")
                 
@@ -752,6 +764,8 @@ class MainViewController: UIViewController {
                             self.circle.map = self.mapView
                             
                             
+//                            self.arrPlace.append(dicPlace)
+                            self.arrPlace.append(marker)
                             
                         }
                         
