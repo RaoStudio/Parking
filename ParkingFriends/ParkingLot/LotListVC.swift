@@ -14,6 +14,8 @@ class LotListVC: UITableViewController {
     var arrPlace = [GMSMarker]()
     var bDistance = true
     
+    var arrDisplay = [GMSMarker]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +24,28 @@ class LotListVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
+        if true == bDistance {
+            arrDisplay = arrPlace.sorted(by: { (first: GMSMarker, second: GMSMarker) -> Bool in
+                let dic = first.userData as? Dictionary<String, Any>
+                let dic2 = second.userData as? Dictionary<String, Any>
+                let one = dic!["distance"] as! Double
+                let two = dic2!["distance"] as! Double
+                
+                return one < two
+            })
+        } else {
+            arrDisplay = arrPlace.sorted(by: { (first: GMSMarker, second: GMSMarker) -> Bool in
+                let dic = first.userData as? Dictionary<String, Any>
+                let dic2 = second.userData as? Dictionary<String, Any>
+                let one = dic!["default_fees"] as! String
+                let two = dic2!["default_fees"] as! String
+                
+                return Int(one)! < Int(two)!
+            })
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +62,7 @@ class LotListVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.arrPlace.count
+        return self.arrDisplay.count
     }
 
     

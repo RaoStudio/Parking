@@ -351,6 +351,7 @@ class MainViewController: UIViewController {
         }
         
         if let listVC = vc.viewControllers?.last as? LotListVC {
+            listVC.bDistance = false
             listVC.arrPlace = self.arrPlace
         }
         
