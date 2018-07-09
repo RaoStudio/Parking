@@ -717,7 +717,7 @@ class MainViewController: UIViewController {
                         //                        let marker = PlaceMarker(place: place as! GooglePlace)
                         //                        marker.map = self.mapView
                         
-                        if let dicPlace = place as? Dictionary<String, Any> {
+                        if var dicPlace = place as? Dictionary<String, Any> {
                             
                             let lat: NSString = dicPlace["latitude"] as! NSString
                             let long: NSString = dicPlace["longitude"] as! NSString
@@ -753,6 +753,17 @@ class MainViewController: UIViewController {
                             }
                             
                             
+                            let markerLocation = CLLocation.init(latitude: lat.doubleValue, longitude: long.doubleValue)
+                            var originLocation: CLLocation?
+                            if self.destCoordinate != nil {
+                                originLocation = CLLocation(latitude: (self.destCoordinate?.latitude)!, longitude: (self.destCoordinate?.longitude)!)
+                            } else {
+                                originLocation = CLLocation(latitude: (self.myCoordinate?.latitude)!, longitude: (self.myCoordinate?.longitude)!)
+                            }
+                            
+                            
+                            dicPlace["distance"] = markerLocation.distance(from: originLocation!)
+                            
                             
                             marker.groundAnchor = CGPoint(x: 0.5, y: 1)
                             marker.appearAnimation = GMSMarkerAnimation.pop
@@ -762,6 +773,8 @@ class MainViewController: UIViewController {
                             
                             marker.map = self.mapView
                             self.circle.map = self.mapView
+                            
+                            
                             
                             
 //                            self.arrPlace.append(dicPlace)
