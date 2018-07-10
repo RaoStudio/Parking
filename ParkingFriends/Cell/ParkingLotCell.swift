@@ -21,6 +21,7 @@ class ParkingLotCell: UITableViewCell {
     @IBOutlet weak var lbl_trans2: UILabel!
     
     
+    @IBOutlet weak var ivThumb: UIImageView!
     
     
     

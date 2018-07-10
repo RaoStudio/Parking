@@ -35,6 +35,8 @@ class LotListVC: UITableViewController {
                 
                 return one < two
             })
+            
+            self.tabBarItem.title = "거리순"
         } else {
             arrDisplay = arrPlace.sorted(by: { (first: GMSMarker, second: GMSMarker) -> Bool in
                 let dic = first.userData as? Dictionary<String, Any>
@@ -44,6 +46,8 @@ class LotListVC: UITableViewController {
                 
                 return Int(one)! < Int(two)!
             })
+            
+            self.tabBarItem.title = "요금순"
         }
         
     }
@@ -83,6 +87,21 @@ class LotListVC: UITableViewController {
             
             // Configure the cell...
             if let dic = arrDisplay[indexPath.row].userData as? Dictionary<String, Any> {
+                
+                /*
+                let str = "img"+String(i)
+                if let img: String = dataPlace[str] as? String, false == img.isEmpty {
+                    contentImages.append(UrlStrings.URL_API_PARKINGLOT_IMG + (img as String))
+                }
+                self.bgImageView.sd_setImage(with: URL(string: self.imageFile), placeholderImage: UIImage(named: "Detail_NoImage"))
+                */
+                
+                if let img: String = dic["img1"] as? String, false == img.isEmpty {
+                    let strImg: String = UrlStrings.URL_API_PARKINGLOT_IMG + img
+                    
+                    pCell.ivThumb.sd_setImage(with: URL(string: strImg), placeholderImage: UIImage(named: "List_NoImage"))
+                }
+                
                 
                 pCell.lbl_available.text = dic["available"] as? String
                 pCell.lbl_capacity.text = String(format: "%@ 면", (dic["capacity"] as? String)!)
