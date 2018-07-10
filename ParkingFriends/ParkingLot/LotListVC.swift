@@ -103,7 +103,8 @@ class LotListVC: UITableViewController {
                  "default_fees": "5000",
                  */
                 
-                let strPay = String(format: "%@분/%@원", (dic["default_minute"] as? String)!, (dic["default_fees"] as? String)!)
+//                let strPay = String(format: "%@분/%@원", (dic["default_minute"] as? String)!, (dic["default_fees"] as? String)!)
+                let strPay = String(format: "%@원", dic["default_fees"] as! String)
                 
                 
                 
