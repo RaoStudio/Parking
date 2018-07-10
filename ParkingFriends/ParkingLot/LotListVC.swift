@@ -67,9 +67,55 @@ class LotListVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ParkingLotCell", for: indexPath)
-
-        // Configure the cell...
+        
+        var cell: UITableViewCell
+        
+        /*
+        let nSection = indexPath.section
+        let nRow = indexPath.row
+         */
+        
+        cell = tableView.dequeueReusableCell(withIdentifier: "ParkingLotCell")!
+        
+            
+        
+        if let pCell = cell as? ParkingLotCell {
+            
+            // Configure the cell...
+            if let dic = arrDisplay[indexPath.row].userData as? Dictionary<String, Any> {
+                
+                pCell.lbl_available.text = dic["available"] as? String
+                pCell.lbl_capacity.text = String(format: "%@ 면", (dic["capacity"] as? String)!)
+                
+                pCell.lbl_company.text = dic["company"] as? String
+                pCell.lbl_address.text = dic["address"] as? String
+                
+                let strDistance: String
+                let distance = dic["distance"] as? Double ?? 0
+                if distance > 1000 {
+                    strDistance = String(format: "%.2fkm", distance/1000)
+                } else {
+                    strDistance = String(format: "%.0fm", distance)
+                }
+                
+                /*
+                 "default_minute": "60",
+                 "default_fees": "5000",
+                 */
+                
+                let strPay = String(format: "%@분/%@원", (dic["default_minute"] as? String)!, (dic["default_fees"] as? String)!)
+                
+                
+                
+                if true == bDistance {
+                    pCell.lbl_trans1.text = strDistance
+                    pCell.lbl_trans2.text = strPay
+                } else {
+                    pCell.lbl_trans1.text = strPay
+                    pCell.lbl_trans2.text = strDistance
+                }
+            }
+        }
 
         return cell
     }
