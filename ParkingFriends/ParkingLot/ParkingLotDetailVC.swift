@@ -119,7 +119,7 @@ extension ParkingLotDetailVC: UITableViewDataSource, UITableViewDelegate {
                     
                     pCell.ivThumb.sd_setImage(with: URL(string: strImg), placeholderImage: UIImage(named: "List_NoImage"))
                 } else {
-                    pCell.ivThumb.image = UIImage(named: "List_NoImage")                    
+                    pCell.ivThumb.image = UIImage(named: "List_NoImage")
                 }
                 
                 
@@ -165,5 +165,28 @@ extension ParkingLotDetailVC: UITableViewDataSource, UITableViewDelegate {
         return 89.0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let navi = self.presentingViewController as? UINavigationController {
+            if let vc = navi.topViewController as? MainViewController {
+                self.presentingViewController?.dismiss(animated: true, completion: nil)
+                vc.mapView(vc.mapView , didTap: self.arrDisplay[indexPath.row])
+                if let dic = arrDisplay[indexPath.row].userData as? Dictionary<String, Any> {
+                    if let lat = dic["latitude"] as? String, let long = dic["longitude"] as? String {
+                        vc.mapViewPositon(coordinate: CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(long)!))
+                    }
+                }
+                
+                
+                
+                
+//                vc.mapView(vc.mapView, idleAt: GMSCameraPosition)
+                
+//                self.presentingViewController?.dismiss(animated: true, completion: nil)
+            }
+        }
+        
+    }
     
 }
