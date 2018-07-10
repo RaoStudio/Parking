@@ -58,6 +58,7 @@
 		29AA1266207DA06A00F4648C /* GoogleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA1264207DA06A00F4648C /* GoogleDataProvider.swift */; };
 		29AA1267207DA06A00F4648C /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA1265207DA06A00F4648C /* GooglePlace.swift */; };
 		29B4CDED20CF96390055852F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4CDEC20CF96390055852F /* LoginVC.swift */; };
+		29B7CEB620F4802800A39315 /* ParkingLotDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B7CEB520F4802800A39315 /* ParkingLotDetailVC.swift */; };
 		29D6C26220E0BC8B001EF09B /* SideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D6C26120E0BC8B001EF09B /* SideVC.swift */; };
 		29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */; };
 		29F4EB2A20F2FEFC009C2AE2 /* LotListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4EB2920F2FEFC009C2AE2 /* LotListVC.swift */; };
@@ -123,6 +124,7 @@
 		29AA1264207DA06A00F4648C /* GoogleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleDataProvider.swift; sourceTree = "<group>"; };
 		29AA1265207DA06A00F4648C /* GooglePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
 		29B4CDEC20CF96390055852F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		29B7CEB520F4802800A39315 /* ParkingLotDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotDetailVC.swift; sourceTree = "<group>"; };
 		29D6C26120E0BC8B001EF09B /* SideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideVC.swift; sourceTree = "<group>"; };
 		29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 		29F4EB2920F2FEFC009C2AE2 /* LotListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotListVC.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				2999636820B6544600AC180C /* LotDistanceVC.swift */,
 				2999636A20B6546600AC180C /* LotPayVC.swift */,
 				29F4EB2920F2FEFC009C2AE2 /* LotListVC.swift */,
+				29B7CEB520F4802800A39315 /* ParkingLotDetailVC.swift */,
 			);
 			path = ParkingLot;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				297A606D20EA0B7E00A18B9A /* SideMenuCell.swift in Sources */,
 				29A1AABC20DCC0F500C8EE66 /* RegisterVC.swift in Sources */,
 				294E5F9C20A53CEE00CF9D03 /* RoundButton.swift in Sources */,
+				29B7CEB620F4802800A39315 /* ParkingLotDetailVC.swift in Sources */,
 				29B4CDED20CF96390055852F /* LoginVC.swift in Sources */,
 				2983D63620B5356B003CAB1C /* TestView.swift in Sources */,
 				2987403720E618410042014A /* LaunchVC.swift in Sources */,

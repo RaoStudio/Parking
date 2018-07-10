@@ -29,11 +29,11 @@ class ParkingLotVC: UIViewController {
         
         let sb = UIStoryboard(name: "ParkingLot", bundle: Bundle.main)
         
-        guard let vc1 = sb.instantiateViewController(withIdentifier: "LotListVC") as? LotListVC else {
+        guard let vc1 = sb.instantiateViewController(withIdentifier: "ParkingLotDetailVC") as? ParkingLotDetailVC else {
             return
         }
         
-        guard let vc2 = sb.instantiateViewController(withIdentifier: "LotListVC") as? LotListVC else {
+        guard let vc2 = sb.instantiateViewController(withIdentifier: "ParkingLotDetailVC") as? ParkingLotDetailVC else {
             return
         }
 
@@ -46,8 +46,8 @@ class ParkingLotVC: UIViewController {
 //        let vc2 = UIViewController()
         
         
-        vc1.bDistance = false
-        vc1.arrPlace = self.arrPlace
+        vc2.bDistance = false
+        vc2.arrPlace = self.arrPlace
         vc2.view.backgroundColor = UIColor.white
         
         tabPageVC.tabItems = [(vc1, "거리순"), (vc2, "요금순")]
