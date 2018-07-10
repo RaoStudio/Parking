@@ -53,7 +53,7 @@ class ParkingLotDetailVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        
+//        tableView.scrollToBottom(animated: true)
         
     }
 
