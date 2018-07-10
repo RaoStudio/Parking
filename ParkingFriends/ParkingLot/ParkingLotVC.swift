@@ -52,6 +52,11 @@ class ParkingLotVC: UIViewController {
         
         tabPageVC.tabItems = [(vc1, "거리순"), (vc2, "요금순")]
         tabPageVC.option.tabWidth = view.frame.width / CGFloat(tabPageVC.tabItems.count)
+
+        tabPageVC.option.currentColor = hexStringToUIColor(hex: "#000000")
+        
+        
+        
 //        tabPageVC.option.hidesTopViewOnSwipeType = .all
         
 //        self.navigationController?.pushViewController(tabPageVC, animated: true)
