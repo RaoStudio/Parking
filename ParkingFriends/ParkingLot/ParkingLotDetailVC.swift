@@ -118,6 +118,8 @@ extension ParkingLotDetailVC: UITableViewDataSource, UITableViewDelegate {
                     let strImg: String = UrlStrings.URL_API_PARKINGLOT_IMG + img
                     
                     pCell.ivThumb.sd_setImage(with: URL(string: strImg), placeholderImage: UIImage(named: "List_NoImage"))
+                } else {
+                    pCell.ivThumb.image = UIImage(named: "List_NoImage")                    
                 }
                 
                 
