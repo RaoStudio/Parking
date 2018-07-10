@@ -8,9 +8,12 @@
 
 import UIKit
 import TabPageViewController
+import GoogleMaps
 
 class ParkingLotVC: UIViewController {
 
+    var arrPlace = [GMSMarker]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,10 +24,31 @@ class ParkingLotVC: UIViewController {
         
         //*
         let tabPageVC = TabPageViewController.create()
-        let vc1 = UIViewController()
+        
+//        let vc1 = UIViewController()
+        
+        let sb = UIStoryboard(name: "ParkingLot", bundle: Bundle.main)
+        
+        guard let vc1 = sb.instantiateViewController(withIdentifier: "LotListVC") as? LotListVC else {
+            return
+        }
+        
+        guard let vc2 = sb.instantiateViewController(withIdentifier: "LotListVC") as? LotListVC else {
+            return
+        }
+
+        vc1.bDistance = true
+        vc1.arrPlace = self.arrPlace
+        
         vc1.view.backgroundColor = UIColor.white
-        let vc2 = UIViewController()
-        vc2.view.backgroundColor = UIColor.blue
+        
+        
+//        let vc2 = UIViewController()
+        
+        
+        vc1.bDistance = false
+        vc1.arrPlace = self.arrPlace
+        vc2.view.backgroundColor = UIColor.white
         
         tabPageVC.tabItems = [(vc1, "거리순"), (vc2, "요금순")]
         tabPageVC.option.tabWidth = view.frame.width / CGFloat(tabPageVC.tabItems.count)
@@ -47,6 +71,10 @@ class ParkingLotVC: UIViewController {
     }
     
 
+    @IBAction func onBtnExit(_ sender: UIBarButtonItem) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
