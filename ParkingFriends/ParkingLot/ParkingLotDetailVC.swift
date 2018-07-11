@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import TabPageViewController
 
 class ParkingLotDetailVC: UIViewController {
     
@@ -24,8 +25,10 @@ class ParkingLotDetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
+//        self.navigationController?.view.makeToastActivity(.center)
         
-        
+        //*
         if true == bDistance {
             arrDisplay = arrPlace.sorted(by: { (first: GMSMarker, second: GMSMarker) -> Bool in
                 let dic = first.userData as? Dictionary<String, Any>
@@ -49,11 +52,87 @@ class ParkingLotDetailVC: UIViewController {
             
             self.tabBarItem.title = "요금순"
         }
+ //*/
         
         tableView.dataSource = self
         tableView.delegate = self
         
 //        tableView.scrollToBottom(animated: true)
+        
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        /*
+        if arrDisplay.isEmpty == true {
+            
+            if true == bDistance {
+                arrDisplay = arrPlace.sorted(by: { (first: GMSMarker, second: GMSMarker) -> Bool in
+                    let dic = first.userData as? Dictionary<String, Any>
+                    let dic2 = second.userData as? Dictionary<String, Any>
+                    let one = dic!["distance"] as! Double
+                    let two = dic2!["distance"] as! Double
+                    
+                    return one < two
+                })
+                
+                self.tabBarItem.title = "거리순"
+            } else {
+                arrDisplay = arrPlace.sorted(by: { (first: GMSMarker, second: GMSMarker) -> Bool in
+                    let dic = first.userData as? Dictionary<String, Any>
+                    let dic2 = second.userData as? Dictionary<String, Any>
+                    let one = dic!["default_fees"] as! String
+                    let two = dic2!["default_fees"] as! String
+                    
+                    return Int(one)! < Int(two)!
+                })
+                
+                self.tabBarItem.title = "요금순"
+            }
+        }
+ */
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+//        self.navigationController?.view.hideToastActivity()
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        /*
+        if let pVC = self.parent as? ParkingLotVC {
+            let arrVC = pVC.childViewControllers
+            
+            for vc in arrVC {
+                if vc is TabPageViewController {
+                    let navigationHeight = topLayoutGuide.length
+                    tableView.contentInset.top = navigationHeight + TabPageOption().tabHeight
+                }
+            }
+            
+        }
+         */
+        
+        /*
+        let navigationHeight = topLayoutGuide.length
+        tableView.contentInset.top = navigationHeight + TabPageOption().tabHeight
+ */
+        
+        if iOS_VERSION_LESS_THAN_OR_EQUAL_TO(version: "10.3.3") {
+        
+            let navigationHeight = topLayoutGuide.length
+            tableView.contentInset.top = navigationHeight - TabPageOption().tabHeight
+            tableView.contentInset.top = 0.0
+        }
+        
+        
         
     }
 

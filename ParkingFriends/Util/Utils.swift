@@ -100,6 +100,27 @@ struct RaoIPhoneX {
 */
 
 
+func iOS_VERSION_EQUAL_TO(version: String) -> Bool {
+    return UIDevice.current.systemVersion.compare(version, options: NSString.CompareOptions.numeric) == ComparisonResult.orderedSame
+}
+
+func iOS_VERSION_GREATER_THAN(version: String) -> Bool {
+    return UIDevice.current.systemVersion.compare(version, options: NSString.CompareOptions.numeric) == ComparisonResult.orderedDescending
+}
+
+func iOS_VERSION_GREATER_THAN_OR_EQUAL_TO(version: String) -> Bool {
+    return UIDevice.current.systemVersion.compare(version, options: NSString.CompareOptions.numeric) != ComparisonResult.orderedAscending
+}
+
+func iOS_VERSION_LESS_THAN(version: String) -> Bool {
+    return UIDevice.current.systemVersion.compare(version, options: NSString.CompareOptions.numeric) == ComparisonResult.orderedAscending
+}
+
+func iOS_VERSION_LESS_THAN_OR_EQUAL_TO(version: String) -> Bool {
+    return UIDevice.current.systemVersion.compare(version, options: NSString.CompareOptions.numeric) != ComparisonResult.orderedDescending
+}
+
+
 func hexStringToUIColor (hex:String) -> UIColor {
     var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
     
