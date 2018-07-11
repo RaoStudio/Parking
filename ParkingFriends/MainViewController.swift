@@ -254,6 +254,8 @@ class MainViewController: UIViewController {
          */
         
         
+        self.navigationController?.view.hideToastActivity()
+        
         if let strUinfoRadius = uinfo.radius {
             if strRadius != strUinfoRadius {
                 strRadius = strUinfoRadius
@@ -263,6 +265,11 @@ class MainViewController: UIViewController {
         }
         
         
+    }
+    
+    
+    func hideToastActivity() {
+        self.navigationController?.view.hideToastActivity()
     }
 
     override func didReceiveMemoryWarning() {
@@ -342,8 +349,9 @@ class MainViewController: UIViewController {
             return
         }
         
-        vc.arrPlace = self.arrPlace
+        self.navigationController?.view.makeToastActivity(.center)
         
+        vc.arrPlace = self.arrPlace
         
         self.present(ParkingLotNavi, animated: true, completion: nil)
         

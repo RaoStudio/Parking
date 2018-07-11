@@ -54,10 +54,17 @@ class ParkingLotDetailVC: UIViewController {
         }
  //*/
         
+        
+        if iOS_VERSION_LESS_THAN_OR_EQUAL_TO(version: "10.3.3") {
+            self.edgesForExtendedLayout = []
+        }
+        
         tableView.dataSource = self
         tableView.delegate = self
         
 //        tableView.scrollToBottom(animated: true)
+        
+        
         
     }
     
@@ -99,7 +106,22 @@ class ParkingLotDetailVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        self.navigationController?.view.hideToastActivity()
+
+        if let navi = self.presentingViewController as? UINavigationController {
+            if let vc = navi.topViewController as? MainViewController {
+                vc.hideToastActivity()
+            }
+        }
+        
+        
+        if iOS_VERSION_LESS_THAN_OR_EQUAL_TO(version: "10.3.3") {
+            
+            let navigationHeight = topLayoutGuide.length
+            tableView.contentInset.top = navigationHeight - TabPageOption().tabHeight
+            tableView.contentInset.top = 0.0
+            self.edgesForExtendedLayout = []
+        }
+        
         
     }
     

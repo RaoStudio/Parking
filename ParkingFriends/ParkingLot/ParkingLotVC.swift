@@ -19,6 +19,9 @@ class ParkingLotVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        
+        
+        
         self.navigationItem.title = "주차장목록"
         self.tabBarItem.title = "거리순"
         
