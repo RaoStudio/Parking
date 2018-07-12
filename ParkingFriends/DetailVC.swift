@@ -72,6 +72,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var lbl_TotalPay: UILabel!
     
     
+    @IBOutlet weak var lbl_OperationTime: UILabel!
+    
+    
+    
     let uinfo = UserInfoManager()
     
     var arrImpossible: [String] = []   // For Store ( URL_API_RESERVATION_IMPOSSIBLE )
@@ -138,6 +142,13 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             if let strAddMin = dataPlace["additional_minute"] as? String, let strAddFee = dataPlace["additional_fees"] as? String {
                 self.lbl_additinal.text = "\(strAddMin)분 \(strAddFee)원"
             }
+            
+            if let strOperationTime = dataPlace["operationtime_week"] as? String {
+                self.lbl_OperationTime.text = strOperationTime
+            }
+            
+            
+            
         }
         
         
@@ -157,9 +168,9 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             self.pageVC?.view.frame.size.height += 37
             
             if #available(iOS 11.0, *) {
-            if RaoIPhoneX.isIPhoneX {
-                self.pageVC?.view.frame.size.height += 24
-            }
+                if RaoIPhoneX.isIPhoneX {
+                    self.pageVC?.view.frame.size.height += 24
+                }
             }
             
         }

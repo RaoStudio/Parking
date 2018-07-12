@@ -120,6 +120,8 @@ class ParkingLotDetailVC: UIViewController {
             tableView.contentInset.top = navigationHeight - TabPageOption().tabHeight
             tableView.contentInset.top = 0.0
             self.edgesForExtendedLayout = []
+            
+//            self.view.layoutIfNeeded()  // Test
         }
         
         
@@ -152,6 +154,7 @@ class ParkingLotDetailVC: UIViewController {
             let navigationHeight = topLayoutGuide.length
             tableView.contentInset.top = navigationHeight - TabPageOption().tabHeight
             tableView.contentInset.top = 0.0
+            self.view.layoutIfNeeded()  // Test 
         }
         
         

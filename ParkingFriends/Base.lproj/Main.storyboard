@@ -1015,6 +1015,7 @@
                         <outlet property="lblAddress" destination="2wW-kZ-qHV" id="bk5-dj-LuF"/>
                         <outlet property="lblAvailable" destination="kqa-uK-BR6" id="5eN-rz-fns"/>
                         <outlet property="lblCompany" destination="Ul5-0E-php" id="TB7-wb-eM5"/>
+                        <outlet property="lbl_OperationTime" destination="biu-6I-ZjS" id="pm0-h6-WYs"/>
                         <outlet property="lbl_TotalPay" destination="Sh7-Zj-muv" id="U67-m3-Oze"/>
                         <outlet property="lbl_TotalTime" destination="Mr1-2K-pcd" id="ndu-r3-Xi8"/>
                         <outlet property="lbl_additinal" destination="miV-vv-JSp" id="7Ci-m9-tlU"/>
