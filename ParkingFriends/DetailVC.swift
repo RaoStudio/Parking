@@ -226,8 +226,11 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         ContentsView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
         
         
+        let sWidth = UIScreen.main.bounds.width - 24
         
-        fDistanceOfOneTime = viewTimeGraph.frame.width/24
+        
+//        fDistanceOfOneTime = viewTimeGraph.frame.width/24
+        fDistanceOfOneTime = sWidth/24
         fDistanceOfTenMinute = fDistanceOfOneTime/6
         fDistanceOfOneMinute = fDistanceOfTenMinute/10
         
