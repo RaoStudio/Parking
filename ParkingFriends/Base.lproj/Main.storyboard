@@ -325,7 +325,7 @@
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="MqY-En-bgM" firstAttribute="top" secondItem="EQm-o8-Y4O" secondAttribute="top" id="0jb-u6-hhv"/>
                                                             <constraint firstAttribute="trailing" secondItem="MqY-En-bgM" secondAttribute="trailing" id="EEO-nj-qjw"/>
@@ -1023,6 +1023,7 @@
                         <outlet property="publicPayInfoView" destination="hjc-Bg-dux" id="Xe5-e0-JIv"/>
                         <outlet property="scrollView" destination="QCj-GD-uUd" id="69A-p4-yp9"/>
                         <outlet property="viewPay" destination="kQ0-5O-2ia" id="XGx-Nt-58W"/>
+                        <outlet property="viewTimeGraph" destination="BeP-ti-85F" id="oC3-PL-7il"/>
                         <outletCollection property="lbl_default_minute" destination="5q3-hA-Q3P" collectionClass="NSMutableArray" id="PZ3-fV-AvU"/>
                         <outletCollection property="lbl_default_minute" destination="5Og-WK-QNK" collectionClass="NSMutableArray" id="DGs-bs-lPP"/>
                         <outletCollection property="lbl_default_fees" destination="dz9-tT-vAh" collectionClass="NSMutableArray" id="ReJ-oN-Yit"/>

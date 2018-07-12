@@ -73,7 +73,19 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     
     @IBOutlet weak var lbl_OperationTime: UILabel!
+    @IBOutlet weak var viewTimeGraph: UIView!
     
+    var strOperationTime: String = ""
+    
+    var fDistanceOfOneTime: CGFloat = 0
+    var fDistanceOfTenMinute: CGFloat = 0
+    var fDistanceOfOneMinute: CGFloat = 0
+    
+    var fOpStartHour: Float = 0
+    var fOpStartMin: Float = 0
+    
+    var fOpEndHour: Float = 0
+    var fOpEndMin: Float = 0
     
     
     let uinfo = UserInfoManager()
@@ -145,9 +157,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             
             if let strOperationTime = dataPlace["operationtime_week"] as? String {
                 self.lbl_OperationTime.text = strOperationTime
+                self.strOperationTime = strOperationTime
             }
-            
-            
             
         }
         
@@ -215,6 +226,28 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         ContentsView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
         
         
+        
+        fDistanceOfOneTime = viewTimeGraph.frame.width/24
+        fDistanceOfTenMinute = fDistanceOfOneTime/6
+        fDistanceOfOneMinute = fDistanceOfTenMinute/10
+        
+        
+        // Test ~
+        let df = DateFormatter()
+        df.locale = Locale.current
+        df.timeZone = TimeZone.current
+        df.dateFormat = "HHmm"
+        if let date = df.date(from: "1900") {
+            let str = df.string(from: date)
+            print(str)
+        }
+        // Test ~
+        
+        
+        
+        
+        
+        
         requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
     }
 
@@ -260,6 +293,20 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             if let address: NSString = dataPlace["address"] as? NSString {
                 lblAddress.text = String(format: "%@", address)
             }
+            
+            
+            calcOperationTime(strOperation: strOperationTime)
+            
+            
+            
+            
+            let xPos: CGFloat = (fDistanceOfOneTime * CGFloat(fOpStartHour)) + (fDistanceOfOneMinute * CGFloat(fOpStartMin))
+            let wGreen: CGFloat = (fDistanceOfOneTime * CGFloat(fOpEndHour-fOpStartHour)) + (fDistanceOfOneMinute * CGFloat(fOpEndMin))
+            
+            let viewOpGreen = UIView(frame: CGRect(x: xPos, y: 0, width: wGreen, height: 10))
+            viewOpGreen.backgroundColor = hexStringToUIColor(hex: "#22d158")
+            self.viewTimeGraph.addSubview(viewOpGreen)
+            
         }
         
         
@@ -291,6 +338,30 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         }
     }
      */
+    
+    
+    
+    // MARK: - Calc Operation Time
+    func calcOperationTime(strOperation: String) {
+        
+        let arrStr = strOperation.split(separator: "~").map { String($0)}
+        
+        if let strStart = arrStr.first, let strEnd = arrStr.last {
+            print(strStart)
+            print(strEnd)
+            
+            
+            fOpStartHour = Float(strStart[0..<2])!
+            fOpStartMin = Float(strStart[2..<strStart.count])!
+            
+            fOpEndHour = Float(strEnd[0..<2])!
+            fOpEndMin = Float(strEnd[2..<strEnd.count])!
+            
+            if fOpEndHour == 00 {
+                fOpEndHour = 24
+            }
+        }
+    }
     
     // MARK: - API ( URL_API_RESERVATION_IMPOSSIBLE )
     func requestReservationImpossible(parkinglot_sid: String, start_time: String) {
