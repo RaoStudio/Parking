@@ -155,7 +155,25 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 self.lbl_additinal.text = "\(strAddMin)분 \(strAddFee)원"
             }
             
-            if let strOperationTime = dataPlace["operationtime_week"] as? String {
+            
+            var strWeek: String = ""
+            let today = Date()
+            
+            print(today.weekdayName)
+            
+            if today.isInWeekend {
+                let nNum = today.weekday
+                if nNum == 1 {
+                    strWeek = "operationtime_holiday"
+                } else {
+                    strWeek = "operationtime_saturday"
+                }
+            } else {
+                strWeek = "operationtime_week"
+            }
+            
+            
+            if let strOperationTime = dataPlace[strWeek] as? String {
                 self.lbl_OperationTime.text = strOperationTime
                 self.strOperationTime = strOperationTime
             }
