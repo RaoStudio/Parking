@@ -343,6 +343,26 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
      */
     
     
+    /*
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        fDistanceOfOneTime = viewTimeGraph.frame.width/24
+        fDistanceOfTenMinute = fDistanceOfOneTime/6
+        fDistanceOfOneMinute = fDistanceOfTenMinute/10
+        
+        let xPos: CGFloat = (fDistanceOfOneTime * CGFloat(fOpStartHour)) + (fDistanceOfOneMinute * CGFloat(fOpStartMin))
+        let wGreen: CGFloat = (fDistanceOfOneTime * CGFloat(fOpEndHour-fOpStartHour)) + (fDistanceOfOneMinute * CGFloat(fOpEndMin))
+        
+        let viewOpGreen = UIView(frame: CGRect(x: xPos, y: 0, width: wGreen, height: 10))
+        viewOpGreen.backgroundColor = hexStringToUIColor(hex: "#22d158")
+        self.viewTimeGraph.addSubview(viewOpGreen)
+        
+//        self.alert("\(viewTimeGraph.frame.width)")
+        
+    }
+    */
     
     // MARK: - Calc Operation Time
     func calcOperationTime(strOperation: String) {
