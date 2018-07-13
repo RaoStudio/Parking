@@ -93,6 +93,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     var arrImpossible: [String] = []   // For Store ( URL_API_RESERVATION_IMPOSSIBLE )
     
+    var strOperationDay: String = ""
     
     @IBOutlet weak var lblToday: UILabel!
     @IBOutlet weak var lblTomorrow: UILabel!
@@ -163,7 +164,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             
             
             var strWeek: String = ""
-            let today = Date()
+//            let today = Date()
+            let today = uinfo.stringToDate(uinfo.startTime!)
             
             print(today.weekdayName)
             
@@ -171,11 +173,14 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 let nNum = today.weekday
                 if nNum == 1 {
                     strWeek = "operationtime_holiday"
+                    strOperationDay = "일요일"
                 } else {
                     strWeek = "operationtime_saturday"
+                    strOperationDay = "토요일"
                 }
             } else {
                 strWeek = "operationtime_week"
+                strOperationDay = "평일"
             }
             
             
@@ -439,6 +444,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             if fOpEndHour == 00 {
                 fOpEndHour = 24
             }
+            
+            self.lbl_OperationTime.text = String(format: "%@ %02.0f:%02.0f~%02.0f:%02.0f", strOperationDay,fOpStartHour, fOpStartMin, fOpEndHour, fOpEndMin)
         }
     }
     
