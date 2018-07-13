@@ -269,7 +269,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         
         
-        requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
+//        requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
     }
 
     override func didReceiveMemoryWarning() {
@@ -341,6 +341,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         btnStartTime.setTitle(strStart, for: UIControlState.normal)
         btnEndTime.setTitle(strEnd, for: UIControlState.normal)
         
+        
+        
+//        requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
+        
         /*
         let testView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         testView.backgroundColor = UIColor.red
@@ -361,10 +365,11 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
      */
     
     
-    /*
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+    
+        /*
         
         fDistanceOfOneTime = viewTimeGraph.frame.width/24
         fDistanceOfTenMinute = fDistanceOfOneTime/6
@@ -376,11 +381,15 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         let viewOpGreen = UIView(frame: CGRect(x: xPos, y: 0, width: wGreen, height: 10))
         viewOpGreen.backgroundColor = hexStringToUIColor(hex: "#22d158")
         self.viewTimeGraph.addSubview(viewOpGreen)
+         */
         
 //        self.alert("\(viewTimeGraph.frame.width)")
         
+        
+        requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
+        
     }
-    */
+    
     
     // MARK: - Calc Operation Time
     func calcOperationTime(strOperation: String) {
@@ -404,6 +413,49 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         }
     }
     
+    
+    func calcImpossibelTime(arrTime: Array<String>) {
+        guard arrTime.isEmpty == false else {
+            return
+        }
+        
+        var fStartHour: Float = 0
+        var fStartMin: Float = 0
+        
+        var fEndHour: Float = 0
+        var fEndMin: Float = 0
+        
+        for (index, value) in arrImpossible.enumerated() {
+            print("\(index) : \(value)")
+            
+            let arrStr = value.split(separator: " ").map { String($0) }
+            
+            if let strFirst = arrStr.first, let strEnd = arrStr.last {
+//                print(strFirst)
+//                print(strEnd)
+                
+                if (index % 2 == 0) {
+                    fStartHour = Float(strEnd[0..<2])!
+                    fStartMin = Float(strEnd[3..<5])!
+                } else {
+                    fEndHour = Float(strEnd[0..<2])!
+                    fEndMin = Float(strEnd[3..<5])!
+                    
+                    let xPos: CGFloat = (fDistanceOfOneTime * CGFloat(fStartHour)) + (fDistanceOfOneMinute * CGFloat(fStartMin))
+                    let wRed: CGFloat = (fDistanceOfOneTime * CGFloat(fEndHour-fStartHour)) + (fDistanceOfOneMinute * CGFloat(fEndMin))
+                    
+                    let viewOpRed = UIView(frame: CGRect(x: xPos, y: 0, width: wRed, height: 10))
+                    //                viewOpRed.backgroundColor = hexStringToUIColor(hex: "#22d158")
+                    viewOpRed.backgroundColor = UIColor.red
+                    self.viewTimeGraph.addSubview(viewOpRed)
+                }
+                
+            }
+        }
+        
+    }
+    
+    
     // MARK: - API ( URL_API_RESERVATION_IMPOSSIBLE )
     func requestReservationImpossible(parkinglot_sid: String, start_time: String) {
         let param = ["parkinglot_sid" : parkinglot_sid,
@@ -419,6 +471,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             
             if let value = response.result.value as? String {
                 self.arrImpossible = value.components(separatedBy: "/")
+                self.calcImpossibelTime(arrTime: self.arrImpossible)
             }
         }
     }
