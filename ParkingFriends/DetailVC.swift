@@ -320,6 +320,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             calcOperationTime(strOperation: strOperationTime)
             
             
+            self.drawTimeStick()
+            
             
             
             let xPos: CGFloat = (fDistanceOfOneTime * CGFloat(fOpStartHour)) + (fDistanceOfOneMinute * CGFloat(fOpStartMin))
@@ -389,6 +391,18 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
         
+    }
+    
+    func drawTimeStick() {
+        for i in 0 ..< 24 {
+            
+            let xPos: CGFloat = fDistanceOfOneTime * CGFloat(i)
+            
+            let viewStick = UIView(frame: CGRect(x: xPos, y: 10, width: 1, height: 3))
+//            viewStick.backgroundColor = hexStringToUIColor(hex: "#22d158")
+            viewStick.backgroundColor = hexStringToUIColor(hex: "#AAAAAA")
+            self.viewTimeGraph.addSubview(viewStick)
+        }
     }
     
     
