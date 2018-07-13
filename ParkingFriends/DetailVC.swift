@@ -352,8 +352,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         let startDate = uinfo.stringToDate(uinfo.startTime!)
         let endDate = uinfo.stringToDate(uinfo.endTime!)
         
-        let strStart = String(format: "입차시간    %d.%02d.%02d %@ %d:%d", startDate.year, startDate.month, startDate.day, startDate.weekdayName, startDate.hour, startDate.minute)
-        let strEnd = String(format: "출차시간    %d.%02d.%02d %@ %d:%d", endDate.year, endDate.month, endDate.day, endDate.weekdayName, endDate.hour, endDate.minute)
+        let strStart = String(format: "입차시간    %d.%02d.%02d %@ %02d:%02d", startDate.year, startDate.month, startDate.day, startDate.weekdayName, startDate.hour, startDate.minute)
+        let strEnd = String(format: "출차시간    %d.%02d.%02d %@ %02d:%02d", endDate.year, endDate.month, endDate.day, endDate.weekdayName, endDate.hour, endDate.minute)
         
         
         btnStartTime.setTitle(strStart, for: UIControlState.normal)
