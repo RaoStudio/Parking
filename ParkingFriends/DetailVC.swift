@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import Alamofire
+import SwiftDate
 
 class DetailVC: UIViewController, UIPageViewControllerDataSource {
 
@@ -421,9 +422,13 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         var fStartHour: Float = 0
         var fStartMin: Float = 0
+        var dateStart: Date!
         
         var fEndHour: Float = 0
         var fEndMin: Float = 0
+        var dateEnd: Date!
+        
+        let uinfo = UserInfoManager()
         
         for (index, value) in arrImpossible.enumerated() {
             print("\(index) : \(value)")
@@ -437,17 +442,32 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 if (index % 2 == 0) {
                     fStartHour = Float(strEnd[0..<2])!
                     fStartMin = Float(strEnd[3..<5])!
+                    dateStart = uinfo.stringToDate(value)
+                    
                 } else {
                     fEndHour = Float(strEnd[0..<2])!
                     fEndMin = Float(strEnd[3..<5])!
+                    dateEnd = uinfo.stringToDate(value)
+                    
+                    let minInteval = dateEnd.timeIntervalSince(dateStart)/60
                     
                     let xPos: CGFloat = (fDistanceOfOneTime * CGFloat(fStartHour)) + (fDistanceOfOneMinute * CGFloat(fStartMin))
-                    let wRed: CGFloat = (fDistanceOfOneTime * CGFloat(fEndHour-fStartHour)) + (fDistanceOfOneMinute * CGFloat(fEndMin))
+//                    let wRed: CGFloat = (fDistanceOfOneTime * CGFloat(fEndHour-fStartHour)) + (fDistanceOfOneMinute * CGFloat(fEndMin))
+                    let wRed: CGFloat = (fDistanceOfOneMinute * CGFloat(minInteval))
                     
                     let viewOpRed = UIView(frame: CGRect(x: xPos, y: 0, width: wRed, height: 10))
                     //                viewOpRed.backgroundColor = hexStringToUIColor(hex: "#22d158")
                     viewOpRed.backgroundColor = UIColor.red
                     self.viewTimeGraph.addSubview(viewOpRed)
+                    
+                    
+                    fStartHour = 0
+                    fStartMin = 0
+                    
+                    fEndHour = 0
+                    fEndMin = 0
+                    
+                    print(" ")
                 }
                 
             }
