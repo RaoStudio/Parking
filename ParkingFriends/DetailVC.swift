@@ -364,6 +364,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         self.lblTomorrow.text = String(format: "%02d.%02d", startDate.month, startDate.day+1)
         
         
+        
+        let nTime = endDate - startDate
+        
+        
 //        requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
         
         /*
