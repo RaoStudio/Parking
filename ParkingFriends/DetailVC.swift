@@ -94,6 +94,11 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     var arrImpossible: [String] = []   // For Store ( URL_API_RESERVATION_IMPOSSIBLE )
     
     
+    @IBOutlet weak var lblToday: UILabel!
+    @IBOutlet weak var lblTomorrow: UILabel!
+    
+    var strSid: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -177,6 +182,11 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             if let strOperationTime = dataPlace[strWeek] as? String {
                 self.lbl_OperationTime.text = strOperationTime
                 self.strOperationTime = strOperationTime
+            }
+            
+            
+            if let strSID = dataPlace["sid"] as? String {
+                self.strSid = strSID
             }
             
         }
@@ -345,6 +355,9 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         btnEndTime.setTitle(strEnd, for: UIControlState.normal)
         
         
+        self.lblToday.text = String(format: "%02d.%02d", startDate.month, startDate.day)
+        self.lblTomorrow.text = String(format: "%02d.%02d", startDate.month, startDate.day+1)
+        
         
 //        requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
         
@@ -389,7 +402,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
 //        self.alert("\(viewTimeGraph.frame.width)")
         
         
-        requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
+//        requestReservationImpossible(parkinglot_sid: "936", start_time: uinfo.startTime!)
+        requestReservationImpossible(parkinglot_sid: strSid, start_time: uinfo.startTime!)
         
     }
     
@@ -493,7 +507,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     // MARK: - API ( URL_API_RESERVATION_IMPOSSIBLE )
     func requestReservationImpossible(parkinglot_sid: String, start_time: String) {
         let param = ["parkinglot_sid" : parkinglot_sid,
-            "start_time" : "2018-05-14 10:50:00",
+//            "start_time" : "2018-05-14 10:50:00",
+            "start_time" : start_time,
             "offset" : "600"] as [String: Any]
         
         Alamofire.request(UrlStrings.URL_API_RESERVATION_IMPOSSIBLE, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
@@ -503,7 +518,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 return
             }
             
-            if let value = response.result.value as? String {
+            if let value = response.result.value as? String, false == value.isEmpty {
                 self.arrImpossible = value.components(separatedBy: "/")
                 self.calcImpossibelTime(arrTime: self.arrImpossible)
             }
