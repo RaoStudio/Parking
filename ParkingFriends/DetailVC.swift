@@ -367,6 +367,9 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         let nTime = endDate - startDate
         
+        let nHour = Int(nTime) / 3600
+        let nMin = (Int(nTime) % 3600) / 60
+        
         
 //        requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
         
