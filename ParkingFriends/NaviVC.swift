@@ -21,7 +21,22 @@ class NaviVC: PresentTestVC {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    // MARK: - Btn Action
+    
+    
+    @IBAction func onBtnKakao(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func onBtnTmap(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func onBtnOneNavi(_ sender: UIButton) {
+    }
+    
+    
     /*
     // MARK: - Navigation
 

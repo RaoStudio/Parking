@@ -2829,6 +2829,9 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhZ-kQ-cUe">
                                                         <rect key="frame" x="0.0" y="0.0" width="85" height="106"/>
+                                                        <connections>
+                                                            <action selector="onBtnKakao:" destination="Xap-Id-FMY" eventType="touchUpInside" id="zn6-v4-HVx"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Navi_kakao" translatesAutoresizingMaskIntoConstraints="NO" id="Ukq-sH-2Rb">
                                                         <rect key="frame" x="21" y="17" width="43" height="48"/>
@@ -2868,6 +2871,9 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJv-Hk-4Cs">
                                                         <rect key="frame" x="0.0" y="0.0" width="85" height="106"/>
+                                                        <connections>
+                                                            <action selector="onBtnTmap:" destination="Xap-Id-FMY" eventType="touchUpInside" id="5oL-9w-F8q"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Navi_tmap" translatesAutoresizingMaskIntoConstraints="NO" id="Ckh-5Y-8LO">
                                                         <rect key="frame" x="21" y="17" width="43" height="48"/>
@@ -2907,6 +2913,9 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JL-uc-XYr">
                                                         <rect key="frame" x="0.0" y="0.0" width="85" height="106"/>
+                                                        <connections>
+                                                            <action selector="onBtnOneNavi:" destination="Xap-Id-FMY" eventType="touchUpInside" id="cf1-Jb-CPd"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Navi_one" translatesAutoresizingMaskIntoConstraints="NO" id="O9V-YE-Bju">
                                                         <rect key="frame" x="21" y="17" width="43" height="48"/>
