@@ -104,6 +104,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet weak var lblTomorrow: UILabel!
     
     var strSid: String = ""
+    var strPay: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,6 +155,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 for label in lbl_default_fees {
                     label.text = "\(strFee)원"
                 }
+                
+                self.strPay = strFee
             }
             
             if let strDailyFee = dataPlace["daily_fees"] as? String {
@@ -374,6 +377,16 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         let nHour = Int(nTime) / 3600
         let nMin = (Int(nTime) % 3600) / 60
+        
+        
+        if nMin > 0 {
+            self.lbl_TotalTime.text = String(format: "%d시간 %d분", nHour, nMin)
+            self.lbl_TotalPay.text = String(format: "%d 원", (Int(strPay)! * nHour) + Int(strPay)!)
+        } else {
+            self.lbl_TotalTime.text = String(format: "%d시간", nHour)
+            self.lbl_TotalPay.text = String(format: "%d 원", Int(strPay)! * nHour)
+        }
+        
         
         
 //        requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
