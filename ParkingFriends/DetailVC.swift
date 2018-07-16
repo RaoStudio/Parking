@@ -379,14 +379,18 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         let nMin = (Int(nTime) % 3600) / 60
         
         
+        
         if nMin > 0 {
             self.lbl_TotalTime.text = String(format: "%d시간 %d분", nHour, nMin)
-            self.lbl_TotalPay.text = String(format: "%d 원", (Int(strPay)! * nHour) + Int(strPay)!)
+//            self.lbl_TotalPay.text = String(format: "%d 원", (Int(strPay)! * nHour) + Int(strPay)!)
+            strPay = String(format: "%d", (Int(strPay)! * nHour) + Int(strPay)!)
         } else {
             self.lbl_TotalTime.text = String(format: "%d시간", nHour)
-            self.lbl_TotalPay.text = String(format: "%d 원", Int(strPay)! * nHour)
+//            self.lbl_TotalPay.text = String(format: "%d 원", Int(strPay)! * nHour)
+            strPay = String(format: "%d", Int(strPay)! * nHour)
         }
         
+        self.lbl_TotalPay.text = "\(strPay.decimalPresent) 원"
         
         
 //        requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
