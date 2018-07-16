@@ -10,6 +10,8 @@ import UIKit
 
 class PresentTestVC: UIViewController {
 
+    var bTab: Bool = true
+    
     @IBOutlet var contentsView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +20,11 @@ class PresentTestVC: UIViewController {
         
         self.view.alpha = 0
         
-        let tapG = UITapGestureRecognizer(target: self, action: #selector(tapMainView(_:)))
-        self.view.addGestureRecognizer(tapG)
+        
+        if true == bTab {
+            let tapG = UITapGestureRecognizer(target: self, action: #selector(tapMainView(_:)))
+            self.view.addGestureRecognizer(tapG)
+        }
         
         /*
         UIView.animate(withDuration: 0.3, animations: {

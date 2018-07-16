@@ -596,7 +596,13 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     
     @IBAction func onBtnNavi(_ sender: UIButton) {
+        /*
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "PresentTestVC") else {
+            return
+        }
+        */
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "NaviVC") else {
             return
         }
         

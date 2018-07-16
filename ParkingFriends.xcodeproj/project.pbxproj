@@ -49,6 +49,7 @@
 		2999636920B6544600AC180C /* LotDistanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636820B6544600AC180C /* LotDistanceVC.swift */; };
 		2999636B20B6546600AC180C /* LotPayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636A20B6546600AC180C /* LotPayVC.swift */; };
 		2999636D20B65F4200AC180C /* PresentTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636C20B65F4200AC180C /* PresentTestVC.swift */; };
+		299D7CC920FC5DC100D680CF /* NaviVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299D7CC820FC5DC100D680CF /* NaviVC.swift */; };
 		29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0FFDB207B429200B13638 /* UrlStrings.swift */; };
 		29A1AABC20DCC0F500C8EE66 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A1AABB20DCC0F500C8EE66 /* RegisterVC.swift */; };
 		29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA125B207D9FF400F4648C /* MarkerInfoView.swift */; };
@@ -115,6 +116,7 @@
 		2999636820B6544600AC180C /* LotDistanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotDistanceVC.swift; sourceTree = "<group>"; };
 		2999636A20B6546600AC180C /* LotPayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotPayVC.swift; sourceTree = "<group>"; };
 		2999636C20B65F4200AC180C /* PresentTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentTestVC.swift; sourceTree = "<group>"; };
+		299D7CC820FC5DC100D680CF /* NaviVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviVC.swift; sourceTree = "<group>"; };
 		29A0FFDB207B429200B13638 /* UrlStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlStrings.swift; sourceTree = "<group>"; };
 		29A1AABB20DCC0F500C8EE66 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		29AA125B207D9FF400F4648C /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				2987403620E618410042014A /* LaunchVC.swift */,
 				296F966220E1D18D008C58B6 /* AgreeInfoVC.swift */,
 				29742FF220EC531A008C4647 /* SettingVC.swift */,
+				299D7CC820FC5DC100D680CF /* NaviVC.swift */,
 			);
 			path = ParkingFriends;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */,
 				29659A0220F2F94700E289DC /* CSTabBarController.swift in Sources */,
 				29559EF6204CE28E000EB12B /* ViewController.swift in Sources */,
+				299D7CC920FC5DC100D680CF /* NaviVC.swift in Sources */,
 				2971A3F5209AED1300C1AD84 /* TutorialContentsVC.swift in Sources */,
 				29F4EB2C20F3301F009C2AE2 /* ParkingLotCell.swift in Sources */,
 				29559EF4204CE28E000EB12B /* AppDelegate.swift in Sources */,
