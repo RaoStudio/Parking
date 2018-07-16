@@ -73,11 +73,15 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             //            bFirstLogon = false
             
             
+            
+            let strPoint = String(format: "%d", uSession.point!)
+            
             constLogout.constant = 0.0
             constLogin.constant = 173.0
             
             lblName.text = uSession.name
-            lblPoint.text = String(format: "%d P", uSession.point!)
+//            lblPoint.text = String(format: "%d P", uSession.point!)
+            lblPoint.text = String(format: "%@ P", strPoint.decimalPresent)
             lblEmail.text = uSession.email
             lblCar.text = uSession.carName
             
