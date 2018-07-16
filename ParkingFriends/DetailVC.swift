@@ -11,8 +11,13 @@ import CoreLocation
 import Alamofire
 import SwiftDate
 
+
+
 class DetailVC: UIViewController, UIPageViewControllerDataSource {
 
+    
+    let bUseImpossibleTest: Bool = false
+    
     @IBOutlet var ContentsView: UIView!
     @IBOutlet var lbl_Test: UILabel!
     @IBOutlet var btnExit: UIButton!
@@ -520,9 +525,19 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     // MARK: - API ( URL_API_RESERVATION_IMPOSSIBLE )
     func requestReservationImpossible(parkinglot_sid: String, start_time: String) {
+        
+        var strStart: String
+        
+        if bUseImpossibleTest {
+            strStart = "2018-05-14 10:50:00"
+        } else {
+            strStart = start_time
+        }
+        
+        
         let param = ["parkinglot_sid" : parkinglot_sid,
 //            "start_time" : "2018-05-14 10:50:00",
-            "start_time" : start_time,
+            "start_time" : strStart,
             "offset" : "600"] as [String: Any]
         
         Alamofire.request(UrlStrings.URL_API_RESERVATION_IMPOSSIBLE, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
