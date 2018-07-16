@@ -9,6 +9,8 @@
 #import <KakaoOpenSDK/KOSessionTask.h>
 #import <KakaoOpenSDK/KOToken.h>
 
+#import <KakaoNavi/KakaoNavi.h>
+
 #endif
 
 
