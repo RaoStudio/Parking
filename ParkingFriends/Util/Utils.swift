@@ -143,6 +143,22 @@ func hexStringToUIColor (hex:String) -> UIColor {
     )
 }
 
+
+extension String {
+    var numberValue:NSNumber? {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter.number(from: self)
+    }
+    
+    var decimalPresent:NSString {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let number = formatter.number(from: self)
+        return formatter.string(from: number!)! as NSString
+    }
+}
+
 extension UIAlertAction {
     func setTextColor(_ color: UIColor) {
 //        self.setValue(color, forKey: "titleTextColor")

@@ -16,7 +16,7 @@ import SwiftDate
 class DetailVC: UIViewController, UIPageViewControllerDataSource {
 
     
-    let bUseImpossibleTest: Bool = false
+    let bUseImpossibleTest: Bool = true
     
     @IBOutlet var ContentsView: UIView!
     @IBOutlet var lbl_Test: UILabel!
@@ -153,7 +153,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             if let strFee = dataPlace["default_fees"] as? String {
 //                self.lbl_default_fees.text = "\(strFee)원"
                 for label in lbl_default_fees {
-                    label.text = "\(strFee)원"
+                    label.text = "\(strFee.decimalPresent)원"
                 }
                 
                 self.strPay = strFee
@@ -162,7 +162,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             if let strDailyFee = dataPlace["daily_fees"] as? String {
 //                self.lbl_daily_fees.text = "\(strDailyFee)원"
                 for label in lbl_daily_fees {
-                    label.text = "\(strDailyFee)원"
+                    label.text = "\(strDailyFee.decimalPresent)원"
                 }
             }
             
