@@ -22,6 +22,15 @@ class ResCheckVC: PresentTestVC {
     }
     
 
+    // MARK: Button Action
+    
+    @IBAction func onBtnCancel(_ sender: UIButton) {
+        
+        self.tapMainView(self.view)
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
