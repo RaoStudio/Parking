@@ -2759,11 +2759,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4I-bF-Yhk" customClass="RoundView" customModule="ParkingFriends" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4I-bF-Yhk" customClass="RoundView" customModule="ParkingFriends" customModuleProvider="target">
                                 <rect key="frame" x="18" y="164" width="339" height="339"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xgB-t9-uFg">
+                                        <rect key="frame" x="0.0" y="301" width="339" height="38"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jq0-A4-2iu">
+                                                <rect key="frame" x="0.0" y="0.0" width="169.5" height="38"/>
+                                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                <state key="normal" title="취소">
+                                                    <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfe-0I-mSY">
+                                                <rect key="frame" x="169.5" y="0.0" width="169.5" height="38"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="9EM-gj-DYF"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="xgB-t9-uFg" secondAttribute="trailing" id="FrY-CU-k8d"/>
+                                    <constraint firstAttribute="bottom" secondItem="xgB-t9-uFg" secondAttribute="bottom" id="Hky-Nb-l1s"/>
                                     <constraint firstAttribute="height" constant="339" id="opR-I9-Ygo"/>
+                                    <constraint firstItem="xgB-t9-uFg" firstAttribute="leading" secondItem="Y4I-bF-Yhk" secondAttribute="leading" id="qYk-xe-AE7"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
