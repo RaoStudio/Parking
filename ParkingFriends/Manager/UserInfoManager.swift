@@ -15,6 +15,9 @@ struct UserInfoKey {
     static let startTime = "STARTTIME"
     static let endTime = "ENDTIME"
     static let isUserAlarm = "ISUSERALARM"
+    
+    static let rLatitude = "RESERVE_LATITUDE"
+    static let rLongtitude = "RESERVE_LONGITUDE"
 }
 
 
@@ -68,6 +71,31 @@ class UserInfoManager {
             ud.setValue(v, forKey: UserInfoKey.isUserAlarm)
             ud.synchronize()
         }                
+    }
+    
+    var rLatitude: Double? {
+        get {
+            return UserDefaults.standard.double(forKey: UserInfoKey.rLatitude)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.rLatitude)
+            ud.synchronize()
+        }
+    }
+    
+    
+    var rLongtitude: Double? {
+        get {
+            return UserDefaults.standard.double(forKey: UserInfoKey.rLongtitude)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.rLongtitude)
+            ud.synchronize()
+        }
     }
 }
 
