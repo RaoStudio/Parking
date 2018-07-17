@@ -29,7 +29,7 @@ class NaviVC: PresentTestVC {
     
     @IBAction func onBtnKakao(_ sender: UIButton) {
         // 목적지 길안내 - 카카오판교오피스 - 전체 경로정보 보기
-//        let destination = KNVLocation(name: "카카오판교오피스", x: 321286, y: 533707)
+//        let destination = KNVLocation(name: "카카오판교오피스", x: 127.1087, y: 37.40206)
         let destination = KNVLocation(name: uinfo.rCompany ?? "", x: NSNumber(value: uinfo.rLongtitude ?? 0), y: NSNumber(value: uinfo.rLatitude ?? 0))
         let options = KNVOptions()
         options.coordType = KNVCoordType.WGS84
