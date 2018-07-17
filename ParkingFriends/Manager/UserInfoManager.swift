@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftDate
+import CoreLocation
 
 struct UserInfoKey {
     static let tutorial = "TUTORIAL"
@@ -18,6 +19,7 @@ struct UserInfoKey {
     
     static let rLatitude = "RESERVE_LATITUDE"
     static let rLongtitude = "RESERVE_LONGITUDE"
+    static let rLocation = "RESERVE_LOCATION"
 }
 
 
@@ -94,6 +96,18 @@ class UserInfoManager {
         set(v) {
             let ud = UserDefaults.standard
             ud.setValue(v, forKey: UserInfoKey.rLongtitude)
+            ud.synchronize()
+        }
+    }
+    
+    var rLocation: CLLocationCoordinate2D? {
+        get {
+            return UserDefaults.standard.object(forKey: UserInfoKey.rLocation) as? CLLocationCoordinate2D
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.rLocation)
             ud.synchronize()
         }
     }

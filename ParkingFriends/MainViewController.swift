@@ -974,6 +974,8 @@ extension MainViewController: GMSMapViewDelegate {
             }
         }
         
+        uinfo.rLatitude = marker.position.latitude
+        uinfo.rLongtitude = marker.position.longitude
         
         self.present(detailNavi!, animated: true, completion: nil)
          //*/
