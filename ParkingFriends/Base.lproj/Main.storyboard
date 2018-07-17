@@ -3019,6 +3019,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jU5-hX-33W"/>
                     </view>
+                    <connections>
+                        <outlet property="lbl_CarInfo" destination="new-i3-Lbg" id="nPD-US-JgU"/>
+                        <outlet property="lbl_Company" destination="2Te-VF-Ax8" id="tak-xz-tPj"/>
+                        <outlet property="lbl_Pay" destination="wwT-gG-1c5" id="4n3-vN-iWS"/>
+                        <outlet property="lbl_ResTime" destination="L5w-Oc-hh7" id="A0Q-Rj-F71"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2o-Ia-k3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

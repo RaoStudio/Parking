@@ -10,6 +10,13 @@ import UIKit
 
 class ResCheckVC: PresentTestVC {
 
+    
+    @IBOutlet weak var lbl_Company: UILabel!
+    @IBOutlet weak var lbl_ResTime: UILabel!
+    @IBOutlet weak var lbl_Pay: UILabel!
+    @IBOutlet weak var lbl_CarInfo: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
