@@ -957,6 +957,8 @@ extension MainViewController: GMSMapViewDelegate {
         
         detailVC?.dicPlace = marker.userData as? Dictionary<String, Any>
         
+        var strCompany: String = ""
+        
         if let dicPlace = marker.userData as? Dictionary<String, Any> {
             if let latitude = dicPlace["latitude"] as? NSString {
                 if let longitude = dicPlace["longitude"] as? NSString {
@@ -972,10 +974,14 @@ extension MainViewController: GMSMapViewDelegate {
                     
                 }
             }
+            
+            strCompany = dicPlace["company"] as! String
         }
+        
         
         uinfo.rLatitude = marker.position.latitude
         uinfo.rLongtitude = marker.position.longitude
+        uinfo.rCompany = strCompany
         
         self.present(detailNavi!, animated: true, completion: nil)
          //*/
