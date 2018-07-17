@@ -636,6 +636,12 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         let uSession = UserSession()                
         
         if uSession.isLogin == true {
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ResCheckVC") else {
+                return
+            }
+            
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: false, completion: nil)
             
         } else {
             

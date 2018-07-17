@@ -2751,6 +2751,41 @@
             </objects>
             <point key="canvasLocation" x="776.79999999999995" y="821.73913043478262"/>
         </scene>
+        <!--Res CheckVC-->
+        <scene sceneID="3vA-Q4-ilQ">
+            <objects>
+                <viewController storyboardIdentifier="ResCheckVC" id="lLm-6R-5Dm" customClass="ResCheckVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ApF-sD-2tt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4I-bF-Yhk" customClass="RoundView" customModule="ParkingFriends" customModuleProvider="target">
+                                <rect key="frame" x="18" y="164" width="339" height="339"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="339" id="opR-I9-Ygo"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y4I-bF-Yhk" firstAttribute="leading" secondItem="jU5-hX-33W" secondAttribute="leading" constant="18" id="UeD-wY-0u8"/>
+                            <constraint firstItem="jU5-hX-33W" firstAttribute="trailing" secondItem="Y4I-bF-Yhk" secondAttribute="trailing" constant="18" id="hvJ-qo-ETq"/>
+                            <constraint firstItem="Y4I-bF-Yhk" firstAttribute="centerY" secondItem="ApF-sD-2tt" secondAttribute="centerY" id="kYt-oa-aco"/>
+                            <constraint firstItem="Y4I-bF-Yhk" firstAttribute="centerX" secondItem="ApF-sD-2tt" secondAttribute="centerX" id="s7N-OV-3iT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jU5-hX-33W"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i2o-Ia-k3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="698" y="1842"/>
+        </scene>
         <!--Present TestVC-->
         <scene sceneID="YZ3-Rh-4vk">
             <objects>
