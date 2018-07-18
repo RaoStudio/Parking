@@ -91,6 +91,26 @@ class NaviVC: PresentTestVC, TMapTapiDelegate {
     
     
     @IBAction func onBtnOneNavi(_ sender: UIButton) {
+        
+        // ollehnavi://kt.navi/?method=routeguide&end=("+latitude+","+longitude+")
+//        let strUrl = String(format: "ollehnavi://kt.navi/?method=routeguide&end=(\"%f\",\"%f\")", uinfo.rLatitude ?? 0, uinfo.rLongtitude ?? 0)
+        let strUrl = String(format: "ollehnavi://")
+        print(strUrl)
+        
+        if let url = URL(string: strUrl) {
+            if UIApplication.shared.canOpenURL(url) {
+                
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                self.showAlert(toastTitle: "AppStore", toastMsg: "원내비 어플설치를 위해 AppStore로 이동하시겠습니까?", positiveBtn: true, negativeBtn: true, done_action: {
+                    
+                    UIApplication.shared.open(URL(string: "https://itunes.apple.com/kr/app/id390369834")!, options: [:], completionHandler: nil)
+                }) {
+                    
+                }
+            }
+        }
+        
     }
     
     
