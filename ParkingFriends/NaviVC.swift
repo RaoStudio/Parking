@@ -17,6 +17,8 @@ class NaviVC: PresentTestVC, TMapTapiDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        TMapTapi.setSKPMapAuthenticationWith(self, apiKey:"3f936e4b-cbea-4c51-8411-f20659ac8a4f");
     }
 
     override func didReceiveMemoryWarning() {
