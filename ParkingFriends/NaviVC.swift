@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class NaviVC: PresentTestVC {
+class NaviVC: PresentTestVC, TMapTapiDelegate {
 
     let uinfo = UserInfoManager()
     
@@ -44,6 +45,29 @@ class NaviVC: PresentTestVC {
     
     
     @IBAction func onBtnTmap(_ sender: UIButton) {
+        
+        var bTmap:Bool = TMapTapi.isTmapApplicationInstalled()
+        
+        TMapTapi.setSKPMapAuthenticationWith(self, apiKey:"3f936e4b-cbea-4c51-8411-f20659ac8a4f");
+        
+        if bTmap == true {
+//            TMapTapi.setSKPMapAuthenticationWith(self, apiKey: "3f936e4b-cbea-4c51-8411-f20659ac8a4f");
+            let destDrdX:Double = 126.958535225971;
+            let destDrdY:Double = 37.4865233562417;
+            let destAddr:String = "서울 관악구 관악로30길 13";
+            let coordinate = CLLocationCoordinate2D(latitude: destDrdX, longitude: destDrdY);
+            TMapTapi.invokeRoute(destAddr, coordinate: coordinate);
+        } else {
+            if let strUrl = TMapTapi.getTMapDownUrl() {
+                if let url = URL(string: strUrl) {
+                    if UIApplication.shared.canOpenURL(url) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                }
+            }
+            
+        }
+        
     }
     
     

@@ -45,6 +45,7 @@
 		298BFE5020D9EB19006D0B51 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BFE4F20D9EB19006D0B51 /* UserSession.swift */; };
 		298DF7ED20D24D1100F0B653 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298DF7EC20D24D1100F0B653 /* KakaoOpenSDK.framework */; };
 		298DF7F420D2526900F0B653 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298DF7F320D2526900F0B653 /* Util.m */; };
+		2993979520FED27E00F1BFB3 /* TopLib_Op.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2993979420FED27E00F1BFB3 /* TopLib_Op.a */; };
 		2999636520B644F300AC180C /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636420B644F300AC180C /* CustomView.swift */; };
 		2999636720B6451400AC180C /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2999636620B6451400AC180C /* CustomView.xib */; };
 		2999636920B6544600AC180C /* LotDistanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636820B6544600AC180C /* LotDistanceVC.swift */; };
@@ -115,6 +116,26 @@
 		298DF7F120D2526800F0B653 /* ParkingFriends-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParkingFriends-Bridging-Header.h"; sourceTree = "<group>"; };
 		298DF7F220D2526900F0B653 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		298DF7F320D2526900F0B653 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		2993978120FED27400F1BFB3 /* BizCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BizCategory.h; sourceTree = "<group>"; };
+		2993978220FED27400F1BFB3 /* TMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMap.h; sourceTree = "<group>"; };
+		2993978320FED27400F1BFB3 /* TMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapAnnotation.h; sourceTree = "<group>"; };
+		2993978420FED27400F1BFB3 /* TMapBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapBaseView.h; sourceTree = "<group>"; };
+		2993978520FED27400F1BFB3 /* TMapCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapCircle.h; sourceTree = "<group>"; };
+		2993978620FED27400F1BFB3 /* TMapGpsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapGpsManager.h; sourceTree = "<group>"; };
+		2993978720FED27400F1BFB3 /* TMapKatec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapKatec.h; sourceTree = "<group>"; };
+		2993978820FED27400F1BFB3 /* TMapMarkerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapMarkerItem.h; sourceTree = "<group>"; };
+		2993978920FED27400F1BFB3 /* TMapMarkerItem2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapMarkerItem2.h; sourceTree = "<group>"; };
+		2993978A20FED27400F1BFB3 /* TMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapObject.h; sourceTree = "<group>"; };
+		2993978B20FED27400F1BFB3 /* TMapOverlayItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapOverlayItem.h; sourceTree = "<group>"; };
+		2993978C20FED27400F1BFB3 /* TMapPathData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapPathData.h; sourceTree = "<group>"; };
+		2993978D20FED27400F1BFB3 /* TMapPOIItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapPOIItem.h; sourceTree = "<group>"; };
+		2993978E20FED27400F1BFB3 /* TMapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapPoint.h; sourceTree = "<group>"; };
+		2993978F20FED27400F1BFB3 /* TMapPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapPolygon.h; sourceTree = "<group>"; };
+		2993979020FED27400F1BFB3 /* TMapPolyLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapPolyLine.h; sourceTree = "<group>"; };
+		2993979120FED27400F1BFB3 /* TMapTapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapTapi.h; sourceTree = "<group>"; };
+		2993979220FED27400F1BFB3 /* TMapType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapType.h; sourceTree = "<group>"; };
+		2993979320FED27400F1BFB3 /* TMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapView.h; sourceTree = "<group>"; };
+		2993979420FED27E00F1BFB3 /* TopLib_Op.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = TopLib_Op.a; sourceTree = "<group>"; };
 		2999636420B644F300AC180C /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		2999636620B6451400AC180C /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		2999636820B6544600AC180C /* LotDistanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotDistanceVC.swift; sourceTree = "<group>"; };
@@ -149,6 +170,7 @@
 			files = (
 				299D7CCD20FC8E7F00D680CF /* KakaoCommon.framework in Frameworks */,
 				299D7CCC20FC8E7F00D680CF /* KakaoNavi.framework in Frameworks */,
+				2993979520FED27E00F1BFB3 /* TopLib_Op.a in Frameworks */,
 				5AE7C80E869B4337F04B6493 /* Pods_ParkingFriends.framework in Frameworks */,
 				298DF7ED20D24D1100F0B653 /* KakaoOpenSDK.framework in Frameworks */,
 				4BBC88AF11E0D545AF0CDA1E /* Pods_ParkingFriends.framework in Frameworks */,
@@ -179,6 +201,7 @@
 		29559EF2204CE28E000EB12B /* ParkingFriends */ = {
 			isa = PBXGroup;
 			children = (
+				2993977F20FED25300F1BFB3 /* sktmap */,
 				297A606B20EA0B3700A18B9A /* Cell */,
 				298DF7EE20D2510F00F0B653 /* Header */,
 				29875E5120ABC7D50029E4BD /* ParkingLot */,
@@ -283,6 +306,41 @@
 				298DF7F120D2526800F0B653 /* ParkingFriends-Bridging-Header.h */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		2993977F20FED25300F1BFB3 /* sktmap */ = {
+			isa = PBXGroup;
+			children = (
+				2993979420FED27E00F1BFB3 /* TopLib_Op.a */,
+				2993978020FED27400F1BFB3 /* Headers */,
+			);
+			path = sktmap;
+			sourceTree = "<group>";
+		};
+		2993978020FED27400F1BFB3 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				2993978120FED27400F1BFB3 /* BizCategory.h */,
+				2993978220FED27400F1BFB3 /* TMap.h */,
+				2993978320FED27400F1BFB3 /* TMapAnnotation.h */,
+				2993978420FED27400F1BFB3 /* TMapBaseView.h */,
+				2993978520FED27400F1BFB3 /* TMapCircle.h */,
+				2993978620FED27400F1BFB3 /* TMapGpsManager.h */,
+				2993978720FED27400F1BFB3 /* TMapKatec.h */,
+				2993978820FED27400F1BFB3 /* TMapMarkerItem.h */,
+				2993978920FED27400F1BFB3 /* TMapMarkerItem2.h */,
+				2993978A20FED27400F1BFB3 /* TMapObject.h */,
+				2993978B20FED27400F1BFB3 /* TMapOverlayItem.h */,
+				2993978C20FED27400F1BFB3 /* TMapPathData.h */,
+				2993978D20FED27400F1BFB3 /* TMapPOIItem.h */,
+				2993978E20FED27400F1BFB3 /* TMapPoint.h */,
+				2993978F20FED27400F1BFB3 /* TMapPolygon.h */,
+				2993979020FED27400F1BFB3 /* TMapPolyLine.h */,
+				2993979120FED27400F1BFB3 /* TMapTapi.h */,
+				2993979220FED27400F1BFB3 /* TMapType.h */,
+				2993979320FED27400F1BFB3 /* TMapView.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		29A0FFDA207B423A00B13638 /* Util */ = {
@@ -714,6 +772,10 @@
 				INFOPLIST_FILE = ParkingFriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ParkingFriends/sktmap",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -797,6 +859,10 @@
 				INFOPLIST_FILE = ParkingFriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ParkingFriends/sktmap",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

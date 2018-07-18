@@ -10,6 +10,8 @@
 #import <KakaoOpenSDK/KOToken.h>
 
 #import <KakaoNavi/KakaoNavi.h>
+#import "TMapView.h"
+#import "TMapTapi.h"
 
 #endif
 

@@ -54,6 +54,7 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaonavi-sdk</string>
+		<string>tmap</string>
 		<string>kakaoffd0911b43f73e0798069464b53ffcb9</string>
 		<string>fbapi</string>
 		<string>fb-messenger-share-api</string>
