@@ -94,7 +94,8 @@ class NaviVC: PresentTestVC, TMapTapiDelegate {
         
         // ollehnavi://kt.navi/?method=routeguide&end=("+latitude+","+longitude+")
 //        let strUrl = String(format: "ollehnavi://kt.navi/?method=routeguide&end=(\"%f\",\"%f\")", uinfo.rLatitude ?? 0, uinfo.rLongtitude ?? 0)
-        let strUrl = String(format: "ollehnavi://")
+//        let strUrl = String(format: "ollehnavi://")
+        let strUrl = "ollehnavi://"
         print(strUrl)
         
         if let url = URL(string: strUrl) {
