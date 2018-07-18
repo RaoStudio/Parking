@@ -51,17 +51,34 @@ class NaviVC: PresentTestVC, TMapTapiDelegate {
         TMapTapi.setSKPMapAuthenticationWith(self, apiKey:"3f936e4b-cbea-4c51-8411-f20659ac8a4f");
         
         if bTmap == true {
+            /*
 //            TMapTapi.setSKPMapAuthenticationWith(self, apiKey: "3f936e4b-cbea-4c51-8411-f20659ac8a4f");
-            let destDrdX:Double = 126.958535225971;
-            let destDrdY:Double = 37.4865233562417;
-            let destAddr:String = "서울 관악구 관악로30길 13";
+//            let destDrdX:Double = 126.958535225971;
+//            let destDrdY:Double = 37.4865233562417;
+//            let destAddr:String = "서울 관악구 관악로30길 13";
+ */
+            
+            let destDrdX:Double = uinfo.rLatitude ?? 0;
+            let destDrdY:Double = uinfo.rLongtitude ?? 0;
+            let destAddr:String = uinfo.rCompany ?? "";
+            
             let coordinate = CLLocationCoordinate2D(latitude: destDrdX, longitude: destDrdY);
             TMapTapi.invokeRoute(destAddr, coordinate: coordinate);
         } else {
+            
+            
             if let strUrl = TMapTapi.getTMapDownUrl() {
                 if let url = URL(string: strUrl) {
                     if UIApplication.shared.canOpenURL(url) {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        
+                        self.showAlert(toastTitle: "AppStore", toastMsg: "TMap 어플설치를 위해 AppStore로 이동하시겠습니까?", positiveBtn: true, negativeBtn: true, done_action: {
+                        
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        }) {
+//                            self.tapMainView(self.view)
+                        }
+                        
+//                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     }
                 }
             }
