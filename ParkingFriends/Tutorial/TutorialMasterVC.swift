@@ -30,7 +30,8 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
         
         self.pageVC?.view.frame.origin = CGPoint(x: 0, y: 0)
         self.pageVC?.view.frame.size.width = self.view.frame.width
-        self.pageVC?.view.frame.size.height = self.view.frame.height - 150
+//        self.pageVC?.view.frame.size.height = self.view.frame.height - 150
+        self.pageVC?.view.frame.size.height = self.view.frame.height
         
         self.addChildViewController(self.pageVC)
         self.view.addSubview(self.pageVC.view)
