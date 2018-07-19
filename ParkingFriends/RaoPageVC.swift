@@ -42,7 +42,7 @@ class RaoPageVC: UIPageViewController {
 
             if subView is UIScrollView {
                 if let scrollView = subView as? UIScrollView {
-                    scrollView.frame.size.height = self.view.frame.size.height
+                    scrollView.frame.size.height = self.view.frame.size.height                    
                 }
             }
         }
