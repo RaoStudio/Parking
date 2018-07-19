@@ -59,7 +59,14 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
         ud.synchronize()
         */
         
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.alpha = 0;
+        }) { (_) in
+            self.presentingViewController?.dismiss(animated: false, completion: nil)
+        }
+        
+//        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     func getContentVC(atIndex idx: Int) -> UIViewController? {
