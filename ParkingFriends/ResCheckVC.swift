@@ -25,7 +25,7 @@ class ResCheckVC: PresentTestVC {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        /*
         self.lbl_Company.text = uinfo.rCompany
         if let strPay = uinfo.totalPay {
             self.lbl_Pay.text = "\(strPay.decimalPresent) 원"
@@ -44,12 +44,42 @@ class ResCheckVC: PresentTestVC {
         }
         
         lbl_CarInfo.text = uSession.getCarInfo()
+ */
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.lbl_Company.text = uinfo.rCompany
+        if let strPay = uinfo.totalPay {
+            self.lbl_Pay.text = "\(strPay.decimalPresent) 원"
+        }
+        
+        if let strStart = uinfo.startTime, let strEnd = uinfo.endTime {
+            //            lbl_ResTime.text = "\(strStart) ~ \(strEnd)"
+            
+            let startDate = uinfo.stringToDate(strStart)
+            let endDate = uinfo.stringToDate(strEnd)
+            
+            let strS = String(format: "%d월%d일(%@) %02d:%02d",startDate.month, startDate.day, startDate.weekdayName, startDate.hour, startDate.minute)
+            let strE = String(format: "%02d:%02d", endDate.hour, endDate.minute)
+            
+            lbl_ResTime.text = "\(strS) ~ \(strE)"
+        }
+        
+        lbl_CarInfo.text = uSession.getCarInfo()
+        
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 
     // MARK: Button Action

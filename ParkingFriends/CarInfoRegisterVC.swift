@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Alamofire
 
-class CarInfoRegisterVC: PresentTestVC {
+class CarInfoRegisterVC: PresentTestVC, UITextFieldDelegate {
 
     @IBOutlet weak var txtCarName: UITextField!
     @IBOutlet weak var txtCarNum: UITextField!
@@ -18,6 +19,9 @@ class CarInfoRegisterVC: PresentTestVC {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        txtCarName.delegate = self
+        txtCarNum.delegate = self
         
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapMyView(_:)))
@@ -69,8 +73,48 @@ class CarInfoRegisterVC: PresentTestVC {
         txtCarNum.resignFirstResponder()
     }
     
-    // MARK: - Btn Action
+    // MARK: - API ( URL_API_USER_CARINFO )
+    func requestUserCarInfoCahnge(strName: String, strNum: String) {
+     
+        self.view.makeToastActivity(.center)
+        
+        let param = ["car_name": strName,
+                     "car_num": strNum] as [String: Any]
+        
+        
+        Alamofire.request(UrlStrings.URL_API_USER_CARINFO, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
+        
+            self.view.hideToastActivity()
+            
+            guard response.result.isSuccess else {
+                self.alert("\(UrlStrings.URL_API_USER_CARINFO) : \(String(describing: response.result.error))")
+                return
+            }
+            
+            if let value = response.result.value as NSString? {
+                /*
+                if value.isEqual(to: "OK") {
+                    
+                    let uSession = UserSession()
+                    uSession.carName = strName
+                    uSession.carNum = strNum
+                    self.tapMainView(self.view)
+                } else {
+                    self.view.makeToast("차량 정보 업데이트 실패!", duration: 2.0, position: .bottom)
+                }
+                 */
+                
+                let uSession = UserSession()
+                uSession.carName = strName
+                uSession.carNum = strNum
+                self.tapMainView(self.view)
+                
+            }
+        }
+    }
     
+    
+    // MARK: - Btn Action
     
     @IBAction func onBtnCancel(_ sender: UIButton) {
         self.tapMainView(self.view)
@@ -78,8 +122,27 @@ class CarInfoRegisterVC: PresentTestVC {
     
     
     @IBAction func onBtnOk(_ sender: UIButton) {
-        
+        if let strName = txtCarName.text, let strNum = txtCarNum.text, !strName.isEmpty, !strNum.isEmpty {
+            requestUserCarInfoCahnge(strName: strName, strNum: strNum)
+        } else {
+            self.view.makeToast("정보를 입력해주세요.", duration: 2.0, position: .top)
+        }
     }
+    
+    
+    // MARK: - UITextField Delegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField.isEqual(self.txtCarName) {
+            self.txtCarNum.becomeFirstResponder()
+        } else {
+            tapMyView(self.view)
+        }
+        
+        return true
+    }
+    
     
     /*
     // MARK: - Navigation
