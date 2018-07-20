@@ -19,6 +19,7 @@ class ResCheckVC: PresentTestVC {
     @IBOutlet weak var btnAccept: UIButton!
     
     let uinfo = UserInfoManager()
+    let uSession = UserSession()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,15 @@ class ResCheckVC: PresentTestVC {
         }
         
         if let strStart = uinfo.startTime, let strEnd = uinfo.endTime {
-            lbl_ResTime.text = "\(strStart) ~ \(strEnd)"
+//            lbl_ResTime.text = "\(strStart) ~ \(strEnd)"
+            
+            let startDate = uinfo.stringToDate(strStart)
+            let endDate = uinfo.stringToDate(strEnd)
+            
+            let strS = String(format: "%d월%d일(%@) %02d:%02d",startDate.month, startDate.day, startDate.weekdayName, startDate.hour, startDate.minute)
+            let strE = String(format: "%02d:%02d", endDate.hour, endDate.minute)
+            
+            lbl_ResTime.text = "\(strS) ~ \(strE)"
         }
     }
 
