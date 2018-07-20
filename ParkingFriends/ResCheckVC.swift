@@ -78,14 +78,14 @@ class ResCheckVC: PresentTestVC {
     
     
     @IBAction func onBtnCarInfo(_ sender: UIButton) {
-        /*
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "NaviVC") else {
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CarInfoRegisterVC") as? CarInfoRegisterVC else {
             return
         }
+        vc.bTab = false
         
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: false, completion: nil)
- */
         
     }
     

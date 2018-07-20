@@ -22,6 +22,19 @@ class CarInfoRegisterVC: PresentTestVC {
     }
     
 
+    
+    // MARK: - Btn Action
+    
+    
+    @IBAction func onBtnCancel(_ sender: UIButton) {
+        self.tapMainView(self.view)
+    }
+    
+    
+    @IBAction func onBtnOk(_ sender: UIButton) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
