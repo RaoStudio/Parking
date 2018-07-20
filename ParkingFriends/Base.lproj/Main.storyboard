@@ -2995,7 +2995,7 @@
                                             <constraint firstAttribute="height" constant="46" id="g6a-KL-v34"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2u-JX-745">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2u-JX-745">
                                         <rect key="frame" x="12" y="218" width="315" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="EzS-TP-Xxf"/>
