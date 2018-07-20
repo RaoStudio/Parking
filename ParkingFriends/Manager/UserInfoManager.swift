@@ -21,6 +21,8 @@ struct UserInfoKey {
     static let rLongtitude = "RESERVE_LONGITUDE"
     static let rCompany = "RESERVE_COMPANY"
     static let rLocation = "RESERVE_LOCATION"       // Not Use
+    
+    static let totalPay = "TOTALPAY"
 }
 
 
@@ -121,6 +123,19 @@ class UserInfoManager {
         set(v) {
             let ud = UserDefaults.standard
             ud.setValue(v, forKey: UserInfoKey.rLocation)
+            ud.synchronize()
+        }
+    }
+    
+    
+    var totalPay: String? {
+        get {
+            return UserDefaults.standard.string(forKey: UserInfoKey.totalPay)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.totalPay)
             ud.synchronize()
         }
     }

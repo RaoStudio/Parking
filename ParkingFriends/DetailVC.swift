@@ -392,6 +392,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         self.lbl_TotalPay.text = "\(strPay.decimalPresent) 원"
         
+        uinfo.totalPay = strPay
+        
         
 //        requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
         

@@ -18,10 +18,21 @@ class ResCheckVC: PresentTestVC {
     
     @IBOutlet weak var btnAccept: UIButton!
     
+    let uinfo = UserInfoManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.lbl_Company.text = uinfo.rCompany
+        if let strPay = uinfo.totalPay {
+            self.lbl_Pay.text = "\(strPay.decimalPresent) 원"
+        }
+        
+        if let strStart = uinfo.startTime, let strEnd = uinfo.endTime {
+            lbl_ResTime.text = "\(strStart) ~ \(strEnd)"
+        }
     }
 
     override func didReceiveMemoryWarning() {
