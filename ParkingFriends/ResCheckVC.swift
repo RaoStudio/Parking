@@ -42,6 +42,8 @@ class ResCheckVC: PresentTestVC {
             
             lbl_ResTime.text = "\(strS) ~ \(strE)"
         }
+        
+        lbl_CarInfo.text = uSession.getCarInfo()
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +64,11 @@ class ResCheckVC: PresentTestVC {
             
         } else {
             self.view.makeToast("약관에 동의해주세요.", duration: 2.0, position: .bottom)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.btnAccept.alpha = 0;
+            }) { (_) in
+                self.btnAccept.alpha = 1;
+            }
         }
     }
     

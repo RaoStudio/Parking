@@ -246,6 +246,15 @@ extension UserSession {
         
     }
     
+    func getCarInfo() -> String {
+        if let strCarName = self.carName, let strCarNum = self.carNum, !strCarName.isEmpty, !strCarNum.isEmpty {
+            return "\(strCarName) (\(strCarNum))"
+        } else {
+            return "(차량 없음)"
+        }
+        
+    }
+    
     /*
     public void clear() {
     this.mSID = null;

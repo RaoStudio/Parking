@@ -32,6 +32,7 @@
 		29742FF720EC8DD3008C4647 /* SetNoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29742FF620EC8DD3008C4647 /* SetNoticeCell.swift */; };
 		29742FF920EC9D0C008C4647 /* SetAlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29742FF820EC9D0C008C4647 /* SetAlarmCell.swift */; };
 		29742FFB20EC9D3E008C4647 /* SetInfoAuthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29742FFA20EC9D3E008C4647 /* SetInfoAuthCell.swift */; };
+		2975B02E2101A68F006556B6 /* CarInfoRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2975B02D2101A68E006556B6 /* CarInfoRegisterVC.swift */; };
 		297A606D20EA0B7E00A18B9A /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A606C20EA0B7D00A18B9A /* SideMenuCell.swift */; };
 		29806B3020FDA901000CB3F5 /* ResCheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29806B2F20FDA901000CB3F5 /* ResCheckVC.swift */; };
 		2983BD9A20A16BA60033035D /* RaoPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983BD9920A16BA60033035D /* RaoPageVC.swift */; };
@@ -101,6 +102,7 @@
 		29742FF620EC8DD3008C4647 /* SetNoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNoticeCell.swift; sourceTree = "<group>"; };
 		29742FF820EC9D0C008C4647 /* SetAlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAlarmCell.swift; sourceTree = "<group>"; };
 		29742FFA20EC9D3E008C4647 /* SetInfoAuthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetInfoAuthCell.swift; sourceTree = "<group>"; };
+		2975B02D2101A68E006556B6 /* CarInfoRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoRegisterVC.swift; sourceTree = "<group>"; };
 		297A606C20EA0B7D00A18B9A /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		29806B2F20FDA901000CB3F5 /* ResCheckVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResCheckVC.swift; sourceTree = "<group>"; };
 		2983BD9920A16BA60033035D /* RaoPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaoPageVC.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				29742FF220EC531A008C4647 /* SettingVC.swift */,
 				299D7CC820FC5DC100D680CF /* NaviVC.swift */,
 				29806B2F20FDA901000CB3F5 /* ResCheckVC.swift */,
+				2975B02D2101A68E006556B6 /* CarInfoRegisterVC.swift */,
 			);
 			path = ParkingFriends;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				29742FFB20EC9D3E008C4647 /* SetInfoAuthCell.swift in Sources */,
 				29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */,
 				298DF7F420D2526900F0B653 /* Util.m in Sources */,
+				2975B02E2101A68F006556B6 /* CarInfoRegisterVC.swift in Sources */,
 				2999636920B6544600AC180C /* LotDistanceVC.swift in Sources */,
 				298BFE5020D9EB19006D0B51 /* UserSession.swift in Sources */,
 				2971A3F6209AED1300C1AD84 /* TutorialMasterVC.swift in Sources */,
