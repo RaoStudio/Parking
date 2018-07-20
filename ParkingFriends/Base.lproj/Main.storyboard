@@ -2904,6 +2904,9 @@
                                                             <constraint firstAttribute="width" constant="46" id="hf8-Ha-3eh"/>
                                                         </constraints>
                                                         <state key="normal" image="Res_Check_Car"/>
+                                                        <connections>
+                                                            <action selector="onBtnCarInfo:" destination="lLm-6R-5Dm" eventType="touchUpInside" id="AVK-5G-aqr"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -2956,6 +2959,9 @@
                                                 <state key="normal" title="확인">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onBtnOk:" destination="lLm-6R-5Dm" eventType="touchUpInside" id="hXL-Ku-STR"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -3001,6 +3007,9 @@
                                         </state>
                                         <state key="selected" image="Register_Check_On"/>
                                         <state key="highlighted" image="Register_Check_On"/>
+                                        <connections>
+                                            <action selector="onBtnAccept:" destination="lLm-6R-5Dm" eventType="touchUpInside" id="UIx-MS-poc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3036,6 +3045,7 @@
                         <viewLayoutGuide key="safeArea" id="jU5-hX-33W"/>
                     </view>
                     <connections>
+                        <outlet property="btnAccept" destination="O2u-JX-745" id="1lb-wK-5kg"/>
                         <outlet property="lbl_CarInfo" destination="new-i3-Lbg" id="nPD-US-JgU"/>
                         <outlet property="lbl_Company" destination="2Te-VF-Ax8" id="tak-xz-tPj"/>
                         <outlet property="lbl_Pay" destination="wwT-gG-1c5" id="4n3-vN-iWS"/>

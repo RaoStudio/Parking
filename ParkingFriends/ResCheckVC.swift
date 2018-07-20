@@ -16,6 +16,7 @@ class ResCheckVC: PresentTestVC {
     @IBOutlet weak var lbl_Pay: UILabel!
     @IBOutlet weak var lbl_CarInfo: UILabel!
     
+    @IBOutlet weak var btnAccept: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,23 @@ class ResCheckVC: PresentTestVC {
     @IBAction func onBtnCancel(_ sender: UIButton) {
         
         self.tapMainView(self.view)
+    }
+    
+    @IBAction func onBtnOk(_ sender: UIButton) {
+        if btnAccept.isSelected {
+            
+        } else {
+            self.view.makeToast("약관에 동의해주세요.", duration: 2.0, position: .bottom)
+        }
+    }
+    
+    @IBAction func onBtnAccept(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+    }
+    
+    
+    @IBAction func onBtnCarInfo(_ sender: UIButton) {
+        
     }
     
     
