@@ -10,10 +10,18 @@ import UIKit
 
 class CarInfoRegisterVC: PresentTestVC {
 
+    @IBOutlet weak var txtCarName: UITextField!
+    @IBOutlet weak var txtCarNum: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapMyView(_:)))
+        self.view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +30,10 @@ class CarInfoRegisterVC: PresentTestVC {
     }
     
 
+    @objc func tapMyView(_ sender : UIView) {
+        txtCarName.resignFirstResponder()
+        txtCarNum.resignFirstResponder()
+    }
     
     // MARK: - Btn Action
     

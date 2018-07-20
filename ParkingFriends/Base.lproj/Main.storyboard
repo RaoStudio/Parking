@@ -3263,6 +3263,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kEG-kv-USf"/>
                     </view>
+                    <connections>
+                        <outlet property="txtCarName" destination="4y5-bU-APu" id="gwC-sY-Pcc"/>
+                        <outlet property="txtCarNum" destination="uEa-Be-5J1" id="gGd-At-Hnp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jN-XO-cFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
