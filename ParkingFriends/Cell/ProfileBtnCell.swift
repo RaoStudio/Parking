@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol RegisterBtnDelegate {
+    func onRegisterBtn(at index:IndexPath)
+}
+
 class ProfileBtnCell: UITableViewCell {
 
     @IBOutlet weak var lbl_Title: UILabel!
     @IBOutlet weak var lbl_Contents: UILabel!
-    
+    var indexPath: IndexPath!
+    var delegate: RegisterBtnDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,4 +30,7 @@ class ProfileBtnCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func onBtnRegister(_ sender: UIButton) {
+        self.delegate.onRegisterBtn(at: indexPath)
+    }
 }

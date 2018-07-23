@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate, RegisterBtnDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var ivThumb: UIImageView!
@@ -62,6 +62,12 @@ class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     
+    func onRegisterBtn(at index: IndexPath) {
+        if index.row == 1 {
+            tableView(self.tableView, didSelectRowAt: index)
+        }
+    }
+    
     // MARK: - TableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -90,6 +96,9 @@ class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             if let btnCell = cell as? ProfileBtnCell {
                 btnCell.lbl_Title.text = "차량정보"
                 btnCell.lbl_Contents.text = uSession.getCarInfo()
+                btnCell.delegate = self
+                btnCell.indexPath = indexPath
+                
             }
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextCell")!
@@ -127,6 +136,9 @@ class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
         
     }
+    
+    
+    
     
     
     /*

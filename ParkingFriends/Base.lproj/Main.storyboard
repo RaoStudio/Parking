@@ -2452,7 +2452,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2M-7y-gSD">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2M-7y-gSD">
                                                             <rect key="frame" x="291" y="18" width="70" height="26"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="A3d-Gg-R3Q"/>
@@ -2462,6 +2462,9 @@
                                                             <state key="normal" title="등록하기" backgroundImage="Profile_btn_register">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="onBtnRegister:" destination="9EH-cW-rgH" eventType="touchUpInside" id="IOo-YN-Oa1"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDz-O8-3wa">
                                                             <rect key="frame" x="244" y="23" width="33" height="16"/>
