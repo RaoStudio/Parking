@@ -212,6 +212,12 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         case 1:
             if bLogon {
                 
+                guard let ProfileVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as? ProfileVC else {
+                    return
+                }
+                
+                self.present(ProfileVC, animated: true, completion: nil)
+                
             } else {
                 self.onBtnLogin(self.btnLogin)
             }

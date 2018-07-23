@@ -8,8 +8,10 @@
 
 import Foundation
 
+
 class UrlStrings {
-    static let URL_SERVER_BASE = "http://api.parkingfriends.net"
+//    static let URL_SERVER_BASE = "http://api.parkingfriends.net"
+    static let URL_SERVER_BASE = "http://dev.parkingfriends.net/~vata/api"
     
     // API
     static let URL_API_BASE = URL_SERVER_BASE + "/app"
@@ -47,9 +49,15 @@ class UrlStrings {
     //  static let URL_API_NICEPAY_REQUEST = URL_API_PAYMENT + "/nicepay_etc/request.php";
     //  static let URL_API_NICEPAY_CARD_REQUEST = URL_API_PAYMENT + "/nicepay_card/request.php";
     //  static let URL_API_KAKAOPAY_REQUEST = URL_API_PAYMENT + "/kakao/kakaopayLiteRequest.php";
-    static let URL_API_NICEPAY_REQUEST =      "http://api.parkingfriends.net/app/payment/unipay.php";
-    static let URL_API_NICEPAY_CARD_REQUEST = "http://api.parkingfriends.net/app/payment/unipay.php";
-    static let URL_API_KAKAOPAY_REQUEST =     "http://api.parkingfriends.net/app/payment/unipay.php";
+//    static let URL_API_NICEPAY_REQUEST =      "http://api.parkingfriends.net/app/payment/unipay.php";
+//    static let URL_API_NICEPAY_CARD_REQUEST = "http://api.parkingfriends.net/app/payment/unipay.php";
+//    static let URL_API_KAKAOPAY_REQUEST =     "http://api.parkingfriends.net/app/payment/unipay.php";
+    
+    
+    static let URL_API_NICEPAY_REQUEST =      URL_API_PAYMENT + "/unipay.php";
+    static let URL_API_NICEPAY_CARD_REQUEST = URL_API_PAYMENT + "/unipay.php";
+    static let URL_API_KAKAOPAY_REQUEST =     URL_API_PAYMENT + "/unipay.php";
+    
     
     // RESERVATION
     static let URL_API_RESERVATION =                URL_API_BASE + "/reservation";

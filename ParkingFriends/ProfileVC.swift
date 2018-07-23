@@ -10,10 +10,15 @@ import UIKit
 
 class ProfileVC: UIViewController {
 
+    @IBOutlet weak var ivThumb: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.ivThumb.layer.cornerRadius = self.ivThumb.frame.width/2
+        self.ivThumb.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +27,13 @@ class ProfileVC: UIViewController {
     }
     
 
+    // MARK: - Btn Action
+    
+    @IBAction func onBtnExit(_ sender: UIButton) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
