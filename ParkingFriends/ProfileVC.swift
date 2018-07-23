@@ -31,6 +31,23 @@ class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.tableView.delegate = self
         //*/
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let strName = uSession.name {
+            lblName.text = strName
+        }
+        
+        if let strEmail = uSession.email {
+            lblEmail.text = strEmail
+        }
+        
+        if let strPhoto = uSession.photoUrl, false == strPhoto.isEmpty {
+            self.ivThumb.sd_setImage(with: URL(string: strPhoto), placeholderImage: UIImage(named: "Profile_Thumb"))
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -94,6 +111,21 @@ class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 62.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+     
+        if indexPath.row == 1 {
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CarInfoRegisterVC") as? CarInfoRegisterVC else {
+                return
+            }
+            vc.bTab = false
+            
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: false, completion: nil)
+        }
+        
     }
     
     

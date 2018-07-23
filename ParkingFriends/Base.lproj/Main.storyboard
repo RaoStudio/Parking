@@ -2367,13 +2367,23 @@
                                                 <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTJ-qg-MQP">
+                                                <rect key="frame" x="0.0" y="159" width="375" height="1"/>
+                                                <color key="backgroundColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="V90-zk-7aR"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="160" id="3kW-5X-eSF"/>
+                                            <constraint firstAttribute="trailing" secondItem="pTJ-qg-MQP" secondAttribute="trailing" id="DWE-Sr-uGL"/>
                                             <constraint firstItem="xqG-m7-ty0" firstAttribute="centerX" secondItem="ggC-og-JO9" secondAttribute="centerX" id="IDJ-Zo-PSN"/>
                                             <constraint firstItem="U79-7k-sZW" firstAttribute="top" secondItem="xqG-m7-ty0" secondAttribute="bottom" constant="14" id="Vfo-Om-keb"/>
+                                            <constraint firstAttribute="bottom" secondItem="pTJ-qg-MQP" secondAttribute="bottom" id="eHr-ji-CCy"/>
                                             <constraint firstItem="U79-7k-sZW" firstAttribute="centerX" secondItem="ggC-og-JO9" secondAttribute="centerX" id="had-0w-cCq"/>
+                                            <constraint firstItem="pTJ-qg-MQP" firstAttribute="leading" secondItem="ggC-og-JO9" secondAttribute="leading" id="llQ-Iz-1VI"/>
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_Thumb" translatesAutoresizingMaskIntoConstraints="NO" id="PnS-EE-zXj">
@@ -2442,7 +2452,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2M-7y-gSD">
+                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2M-7y-gSD">
                                                             <rect key="frame" x="291" y="18" width="70" height="26"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="A3d-Gg-R3Q"/>
@@ -2459,10 +2469,20 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOv-Xw-bTA">
+                                                            <rect key="frame" x="0.0" y="61" width="375" height="1"/>
+                                                            <color key="backgroundColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="1" id="5t5-PS-5CP"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="WOv-Xw-bTA" secondAttribute="trailing" id="DuC-dB-lgB"/>
+                                                        <constraint firstItem="WOv-Xw-bTA" firstAttribute="leading" secondItem="7Bg-jL-xtF" secondAttribute="leading" id="GnQ-Dc-642"/>
                                                         <constraint firstItem="xva-Ti-0be" firstAttribute="centerY" secondItem="7Bg-jL-xtF" secondAttribute="centerY" id="I0A-lG-P6Y"/>
                                                         <constraint firstItem="xva-Ti-0be" firstAttribute="leading" secondItem="7Bg-jL-xtF" secondAttribute="leading" constant="14" id="Kx6-bF-7tb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="WOv-Xw-bTA" secondAttribute="bottom" id="ONp-gF-3TJ"/>
                                                         <constraint firstAttribute="trailing" secondItem="X2M-7y-gSD" secondAttribute="trailing" constant="14" id="P3x-oW-U52"/>
                                                         <constraint firstItem="BDz-O8-3wa" firstAttribute="centerY" secondItem="7Bg-jL-xtF" secondAttribute="centerY" id="ajI-Rr-Rz9"/>
                                                         <constraint firstItem="X2M-7y-gSD" firstAttribute="centerY" secondItem="7Bg-jL-xtF" secondAttribute="centerY" id="g4a-DR-uzA"/>
