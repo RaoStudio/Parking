@@ -125,7 +125,12 @@ class CarInfoRegisterVC: PresentTestVC, UITextFieldDelegate {
         if let strName = txtCarName.text, let strNum = txtCarNum.text, !strName.isEmpty, !strNum.isEmpty {
             requestUserCarInfoCahnge(strName: strName, strNum: strNum)
         } else {
-            self.view.makeToast("정보를 입력해주세요.", duration: 2.0, position: .top)
+            
+            if txtCarNum.isFirstResponder || txtCarName.isFirstResponder {
+                self.view.makeToast("정보를 입력해주세요.", duration: 2.0, position: .downCenter)
+            } else {
+                self.view.makeToast("정보를 입력해주세요.", duration: 2.0, position: .bottom)
+            }
         }
     }
     
