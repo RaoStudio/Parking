@@ -130,8 +130,11 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             }
          
             
+            let partner : NSString = dataPlace["partner"] as! NSString
+            let nPartner: Int = Int(partner.intValue)
             
-            if let partner : NSString = dataPlace["partner"] as? NSString, partner.isEqual(to: "0") {
+            if nPartner == 0 {
+//            if let partner : NSString = dataPlace["partner"] as? NSString, partner.isEqual(to: "0") {
                 self.graphView.isHidden = true
                 self.conHeightGraphView.constant = 0
                 
@@ -310,7 +313,13 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         self.view.bringSubview(toFront: self.btnExit)
         
         if let dataPlace = self.dicPlace {
-            if let partner : NSString = dataPlace["partner"] as? NSString, partner.isEqual(to: "1") {
+            
+            let partner : NSString = dataPlace["partner"] as! NSString
+            let nPartner: Int = Int(partner.intValue)
+            
+            if nPartner == 1 {
+            
+//            if let partner : NSString = dataPlace["partner"] as? NSString, partner.isEqual(to: "1") {
                 self.btnSensor.isHidden = false
                 self.view.bringSubview(toFront: self.btnSensor)
                
@@ -439,7 +448,16 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         
 //        requestReservationImpossible(parkinglot_sid: "936", start_time: uinfo.startTime!)
-        requestReservationImpossible(parkinglot_sid: strSid, start_time: uinfo.startTime!)
+        
+        
+        if let dataPlace = self.dicPlace {
+            
+            let partner : NSString = dataPlace["partner"] as! NSString
+            let nPartner: Int = Int(partner.intValue)
+            if nPartner == 1 {
+                requestReservationImpossible(parkinglot_sid: strSid, start_time: uinfo.startTime!)
+            }
+        }
         
     }
     
@@ -568,7 +586,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             
             if let value = response.result.value as? String, false == value.isEmpty {
                 self.arrImpossible = value.components(separatedBy: "/")
-                self.calcImpossibelTime(arrTime: self.arrImpossible)
+                
+                if self.arrImpossible.count >= 2 {
+                    self.calcImpossibelTime(arrTime: self.arrImpossible)
+                }
             }
         }
     }

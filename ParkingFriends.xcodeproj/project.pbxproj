@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29012A8821057BE1005D99FC /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29012A8721057BE1005D99FC /* ProfileVC.swift */; };
 		291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */; };
 		293545F120ECBB3800077B75 /* SetVersionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293545F020ECBB3800077B75 /* SetVersionCell.swift */; };
 		2942FB3B20D8C47200FBCAEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2942FB3A20D8C47200FBCAEB /* GoogleService-Info.plist */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		16606D5EB15EA7DA51DACE9F /* Pods_ParkingFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29012A8721057BE1005D99FC /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerVC.swift; sourceTree = "<group>"; };
 		293545F020ECBB3800077B75 /* SetVersionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVersionCell.swift; sourceTree = "<group>"; };
 		2942FB3A20D8C47200FBCAEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				299D7CC820FC5DC100D680CF /* NaviVC.swift */,
 				29806B2F20FDA901000CB3F5 /* ResCheckVC.swift */,
 				2975B02D2101A68E006556B6 /* CarInfoRegisterVC.swift */,
+				29012A8721057BE1005D99FC /* ProfileVC.swift */,
 			);
 			path = ParkingFriends;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				29B7CEB620F4802800A39315 /* ParkingLotDetailVC.swift in Sources */,
 				29B4CDED20CF96390055852F /* LoginVC.swift in Sources */,
 				2983D63620B5356B003CAB1C /* TestView.swift in Sources */,
+				29012A8821057BE1005D99FC /* ProfileVC.swift in Sources */,
 				2987403720E618410042014A /* LaunchVC.swift in Sources */,
 				29D6C26220E0BC8B001EF09B /* SideVC.swift in Sources */,
 				29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */,

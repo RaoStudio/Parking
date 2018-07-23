@@ -2299,6 +2299,22 @@
             </objects>
             <point key="canvasLocation" x="5279.1999999999998" y="-953.97301349325346"/>
         </scene>
+        <!--ProfileVC-->
+        <scene sceneID="IRe-EJ-t1j">
+            <objects>
+                <viewController id="Ynr-AO-I1I" customClass="ProfileVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gqo-Iq-ATD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="KZj-LU-64h"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="l4z-OQ-JRa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zY9-Ik-Yc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7044" y="-282.00899550224892"/>
+        </scene>
         <!--LoginVC-->
         <scene sceneID="fBC-Ii-VKp">
             <objects>
@@ -3578,6 +3594,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YIo-yp-Q1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4340" y="-954.87256371814101"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oBf-Xr-Soj">
+            <objects>
+                <navigationController storyboardIdentifier="ProfileNavi" automaticallyAdjustsScrollViewInsets="NO" id="Iao-2x-3x6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5OV-d1-1tK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ynr-AO-I1I" kind="relationship" relationship="rootViewController" id="1zr-S2-JK8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdQ-3g-MxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6104.8000000000002" y="-282.00899550224892"/>
         </scene>
     </scenes>
     <resources>
