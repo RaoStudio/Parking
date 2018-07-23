@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		29012A8821057BE1005D99FC /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29012A8721057BE1005D99FC /* ProfileVC.swift */; };
+		29012A8A2105B227005D99FC /* ProfileTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29012A892105B227005D99FC /* ProfileTextCell.swift */; };
+		29012A8C2105B2C5005D99FC /* ProfileBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29012A8B2105B2C5005D99FC /* ProfileBtnCell.swift */; };
 		291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */; };
 		293545F120ECBB3800077B75 /* SetVersionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293545F020ECBB3800077B75 /* SetVersionCell.swift */; };
 		2942FB3B20D8C47200FBCAEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2942FB3A20D8C47200FBCAEB /* GoogleService-Info.plist */; };
@@ -77,6 +79,8 @@
 /* Begin PBXFileReference section */
 		16606D5EB15EA7DA51DACE9F /* Pods_ParkingFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29012A8721057BE1005D99FC /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		29012A892105B227005D99FC /* ProfileTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextCell.swift; sourceTree = "<group>"; };
+		29012A8B2105B2C5005D99FC /* ProfileBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBtnCell.swift; sourceTree = "<group>"; };
 		291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerVC.swift; sourceTree = "<group>"; };
 		293545F020ECBB3800077B75 /* SetVersionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVersionCell.swift; sourceTree = "<group>"; };
 		2942FB3A20D8C47200FBCAEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 				29742FFA20EC9D3E008C4647 /* SetInfoAuthCell.swift */,
 				293545F020ECBB3800077B75 /* SetVersionCell.swift */,
 				29F4EB2B20F3301F009C2AE2 /* ParkingLotCell.swift */,
+				29012A892105B227005D99FC /* ProfileTextCell.swift */,
+				29012A8B2105B2C5005D99FC /* ProfileBtnCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -620,6 +626,7 @@
 				29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */,
 				298DF7F420D2526900F0B653 /* Util.m in Sources */,
 				2975B02E2101A68F006556B6 /* CarInfoRegisterVC.swift in Sources */,
+				29012A8C2105B2C5005D99FC /* ProfileBtnCell.swift in Sources */,
 				2999636920B6544600AC180C /* LotDistanceVC.swift in Sources */,
 				298BFE5020D9EB19006D0B51 /* UserSession.swift in Sources */,
 				2971A3F6209AED1300C1AD84 /* TutorialMasterVC.swift in Sources */,
@@ -628,6 +635,7 @@
 				293545F120ECBB3800077B75 /* SetVersionCell.swift in Sources */,
 				29875E5320ABC81F0029E4BD /* ParkingLotVC.swift in Sources */,
 				2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */,
+				29012A8A2105B227005D99FC /* ProfileTextCell.swift in Sources */,
 				29742FF720EC8DD3008C4647 /* SetNoticeCell.swift in Sources */,
 				2999636B20B6546600AC180C /* LotPayVC.swift in Sources */,
 				29F4EB2A20F2FEFC009C2AE2 /* LotListVC.swift in Sources */,

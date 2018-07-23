@@ -2354,9 +2354,26 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggC-og-JO9" userLabel="BottomView">
                                         <rect key="frame" x="0.0" y="207" width="375" height="160"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqG-m7-ty0">
+                                                <rect key="frame" x="167.5" y="89" width="40" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U79-7k-sZW">
+                                                <rect key="frame" x="171" y="121" width="33" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="160" id="3kW-5X-eSF"/>
+                                            <constraint firstItem="xqG-m7-ty0" firstAttribute="centerX" secondItem="ggC-og-JO9" secondAttribute="centerX" id="IDJ-Zo-PSN"/>
+                                            <constraint firstItem="U79-7k-sZW" firstAttribute="top" secondItem="xqG-m7-ty0" secondAttribute="bottom" constant="14" id="Vfo-Om-keb"/>
+                                            <constraint firstItem="U79-7k-sZW" firstAttribute="centerX" secondItem="ggC-og-JO9" secondAttribute="centerX" id="had-0w-cCq"/>
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_Thumb" translatesAutoresizingMaskIntoConstraints="NO" id="PnS-EE-zXj">
@@ -2370,7 +2387,7 @@
                                         <rect key="frame" x="0.0" y="367" width="375" height="280"/>
                                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OnlyTextCell" rowHeight="62" id="DAt-Gc-tJx">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileTextCell" rowHeight="62" id="DAt-Gc-tJx" customClass="ProfileTextCell" customModule="ParkingFriends" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="62"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DAt-Gc-tJx" id="4AR-bY-Fbc">
@@ -2397,8 +2414,12 @@
                                                         <constraint firstItem="VnH-Ay-uT0" firstAttribute="leading" secondItem="4AR-bY-Fbc" secondAttribute="leading" constant="14" id="Sg8-wZ-5o2"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="lbl_Contents" destination="Uif-oj-gsT" id="i3x-N3-7xt"/>
+                                                    <outlet property="lbl_Title" destination="VnH-Ay-uT0" id="myl-hr-MPl"/>
+                                                </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextNBtnCell" rowHeight="62" id="9EH-cW-rgH">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileBtnCell" rowHeight="62" id="9EH-cW-rgH" customClass="ProfileBtnCell" customModule="ParkingFriends" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="90" width="375" height="62"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9EH-cW-rgH" id="7Bg-jL-xtF">
@@ -2438,6 +2459,10 @@
                                                         <constraint firstItem="X2M-7y-gSD" firstAttribute="leading" secondItem="BDz-O8-3wa" secondAttribute="trailing" constant="14" id="mpF-WY-36E"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="lbl_Contents" destination="BDz-O8-3wa" id="oQW-WV-8Jd"/>
+                                                    <outlet property="lbl_Title" destination="xva-Ti-0be" id="pBy-Ww-l0z"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -2450,6 +2475,7 @@
                                     <constraint firstItem="PnS-EE-zXj" firstAttribute="baseline" secondItem="TMa-Jj-SoQ" secondAttribute="baseline" constant="73" id="Jjw-A4-fPl"/>
                                     <constraint firstItem="TMa-Jj-SoQ" firstAttribute="top" secondItem="PIb-IQ-WRy" secondAttribute="top" id="LTq-zO-5GD"/>
                                     <constraint firstItem="TMa-Jj-SoQ" firstAttribute="leading" secondItem="PIb-IQ-WRy" secondAttribute="leading" id="N1i-JM-tIv"/>
+                                    <constraint firstItem="xqG-m7-ty0" firstAttribute="top" secondItem="PnS-EE-zXj" secondAttribute="bottom" constant="16" id="O9g-yP-pud"/>
                                     <constraint firstItem="7fa-8l-suB" firstAttribute="leading" secondItem="PIb-IQ-WRy" secondAttribute="leading" id="OER-Mf-MoY"/>
                                     <constraint firstItem="ggC-og-JO9" firstAttribute="top" secondItem="TMa-Jj-SoQ" secondAttribute="bottom" id="OKy-52-Xyw"/>
                                     <constraint firstItem="7fa-8l-suB" firstAttribute="top" secondItem="ggC-og-JO9" secondAttribute="bottom" id="bxO-LX-IH8"/>
@@ -2471,6 +2497,9 @@
                     <navigationItem key="navigationItem" id="l4z-OQ-JRa"/>
                     <connections>
                         <outlet property="ivThumb" destination="PnS-EE-zXj" id="W1K-qf-KbJ"/>
+                        <outlet property="lblEmail" destination="U79-7k-sZW" id="49Z-Ij-Ee6"/>
+                        <outlet property="lblName" destination="xqG-m7-ty0" id="yhB-5Q-P9q"/>
+                        <outlet property="tableView" destination="7fa-8l-suB" id="5cH-Vn-Ut2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zY9-Ik-Yc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
