@@ -2337,6 +2337,9 @@
                                                 <state key="normal" title="로그아웃" backgroundImage="Profile_Logout">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onBtnLogout:" destination="Ynr-AO-I1I" eventType="touchUpInside" id="sbR-pq-mjE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

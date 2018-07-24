@@ -56,6 +56,10 @@ class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate, R
     
 
     // MARK: - Btn Action
+    @IBAction func onBtnLogout(_ sender: UIButton) {
+        self.uSession.initUserSession()
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func onBtnExit(_ sender: UIButton) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
