@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResCheckVC: PresentTestVC {
+class ResCheckVC: PresentTestVC, PresentExitDelegate {
 
     
     @IBOutlet weak var lbl_Company: UILabel!
@@ -80,6 +80,9 @@ class ResCheckVC: PresentTestVC {
     }
     
     
+    func onPresentExit() {
+        lbl_CarInfo.text = uSession.getCarInfo()
+    }
     
 
     // MARK: Button Action
@@ -113,6 +116,7 @@ class ResCheckVC: PresentTestVC {
             return
         }
         vc.bTab = false
+        vc.delegate = self
         
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: false, completion: nil)
