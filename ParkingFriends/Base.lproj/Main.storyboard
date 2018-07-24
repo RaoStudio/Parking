@@ -2299,20 +2299,65 @@
             </objects>
             <point key="canvasLocation" x="5279.1999999999998" y="-953.97301349325346"/>
         </scene>
-        <!--View Controller-->
+        <!--PaymentVC-->
         <scene sceneID="DLa-Bc-Vch">
             <objects>
-                <viewController id="Bmq-fO-qii" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PaymentVC" id="Bmq-fO-qii" customClass="PaymentVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h0v-Ii-A1L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QOv-Dh-iap">
+                                <rect key="frame" x="0.0" y="64" width="375" height="521"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vg-L5-3hA">
+                                <rect key="frame" x="0.0" y="585" width="375" height="82"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93d-iS-Spt">
+                                        <rect key="frame" x="129" y="24" width="117" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="117" id="FTR-KF-z7u"/>
+                                            <constraint firstAttribute="height" constant="34" id="bdE-Rb-qiD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <state key="normal" title="결제하기" backgroundImage="btn_green_round">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="93d-iS-Spt" firstAttribute="centerY" secondItem="9vg-L5-3hA" secondAttribute="centerY" id="4Pd-r7-O0K"/>
+                                    <constraint firstItem="93d-iS-Spt" firstAttribute="centerX" secondItem="9vg-L5-3hA" secondAttribute="centerX" id="FdT-pa-JKm"/>
+                                    <constraint firstAttribute="height" constant="82" id="Iya-rH-ASM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9vg-L5-3hA" firstAttribute="leading" secondItem="SGH-yV-RlI" secondAttribute="leading" id="1v2-H8-5Ve"/>
+                            <constraint firstItem="QOv-Dh-iap" firstAttribute="top" secondItem="SGH-yV-RlI" secondAttribute="top" id="8tH-g4-Kx2"/>
+                            <constraint firstItem="SGH-yV-RlI" firstAttribute="trailing" secondItem="QOv-Dh-iap" secondAttribute="trailing" id="DUo-OD-DZk"/>
+                            <constraint firstItem="QOv-Dh-iap" firstAttribute="leading" secondItem="SGH-yV-RlI" secondAttribute="leading" id="GDz-MX-huc"/>
+                            <constraint firstItem="SGH-yV-RlI" firstAttribute="trailing" secondItem="9vg-L5-3hA" secondAttribute="trailing" id="Jvd-AG-uxe"/>
+                            <constraint firstItem="9vg-L5-3hA" firstAttribute="top" secondItem="QOv-Dh-iap" secondAttribute="bottom" id="aP0-7s-FbI"/>
+                            <constraint firstItem="SGH-yV-RlI" firstAttribute="bottom" secondItem="QOv-Dh-iap" secondAttribute="bottom" constant="82" id="wYY-Sy-YdV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SGH-yV-RlI"/>
                     </view>
+                    <navigationItem key="navigationItem" id="07C-4S-VlT">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="PWa-5a-ZQA">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onBtnExit:" destination="Bmq-fO-qii" id="ORe-yF-KVC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfV-cl-PNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6950" y="-1039"/>
+            <point key="canvasLocation" x="7373.6000000000004" y="-1004.3478260869566"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="IRe-EJ-t1j">
@@ -3836,6 +3881,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YIo-yp-Q1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4340" y="-954.87256371814101"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tLI-tU-mhK">
+            <objects>
+                <navigationController storyboardIdentifier="PaymentNavi" automaticallyAdjustsScrollViewInsets="NO" id="4WJ-Rt-smO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qmr-TN-eTB">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Bmq-fO-qii" kind="relationship" relationship="rootViewController" id="bNQ-NJ-fti"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mbd-dr-OU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6401" y="-1153"/>
         </scene>
     </scenes>
     <resources>

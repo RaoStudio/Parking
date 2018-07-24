@@ -59,6 +59,7 @@
 		299D7CCC20FC8E7F00D680CF /* KakaoNavi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299D7CCA20FC8E7D00D680CF /* KakaoNavi.framework */; };
 		299D7CCD20FC8E7F00D680CF /* KakaoCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299D7CCB20FC8E7E00D680CF /* KakaoCommon.framework */; };
 		29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0FFDB207B429200B13638 /* UrlStrings.swift */; };
+		29A17DCE2106C30D002772A1 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A17DCD2106C30D002772A1 /* PaymentVC.swift */; };
 		29A1AABC20DCC0F500C8EE66 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A1AABB20DCC0F500C8EE66 /* RegisterVC.swift */; };
 		29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA125B207D9FF400F4648C /* MarkerInfoView.swift */; };
 		29AA1260207D9FF400F4648C /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29AA125C207D9FF400F4648C /* MarkerInfoView.xib */; };
@@ -153,6 +154,7 @@
 		299D7CCA20FC8E7D00D680CF /* KakaoNavi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoNavi.framework; sourceTree = "<group>"; };
 		299D7CCB20FC8E7E00D680CF /* KakaoCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoCommon.framework; sourceTree = "<group>"; };
 		29A0FFDB207B429200B13638 /* UrlStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlStrings.swift; sourceTree = "<group>"; };
+		29A17DCD2106C30D002772A1 /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
 		29A1AABB20DCC0F500C8EE66 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		29AA125B207D9FF400F4648C /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
 		29AA125C207D9FF400F4648C /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				29806B2F20FDA901000CB3F5 /* ResCheckVC.swift */,
 				2975B02D2101A68E006556B6 /* CarInfoRegisterVC.swift */,
 				29012A8721057BE1005D99FC /* ProfileVC.swift */,
+				29A17DCD2106C30D002772A1 /* PaymentVC.swift */,
 			);
 			path = ParkingFriends;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				29F4EB2C20F3301F009C2AE2 /* ParkingLotCell.swift in Sources */,
 				29559EF4204CE28E000EB12B /* AppDelegate.swift in Sources */,
 				2999636D20B65F4200AC180C /* PresentTestVC.swift in Sources */,
+				29A17DCE2106C30D002772A1 /* PaymentVC.swift in Sources */,
 				29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */,
 				29559EFC204CE28E000EB12B /* ParkingFriends.xcdatamodeld in Sources */,
 				29742FF520EC87F6008C4647 /* SetRadiusCell.swift in Sources */,
