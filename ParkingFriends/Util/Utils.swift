@@ -10,6 +10,16 @@ import Foundation
 import Security
 import Alamofire
 
+
+// Coupon
+enum CouponType: String {
+    case month = "이달의 쿠폰 - 10% 할인"
+    case launch = "출시 기념! 2000원 할인"
+    case dev = "개발팀에게만! 90% 할인"
+}
+
+
+
 // Raduis
 enum RadiusType: String {
     case fiveH = "500m"
