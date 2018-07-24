@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate, RegisterBtnDelegate {
+class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate, RegisterBtnDelegate, PresentExitDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var ivThumb: UIImageView!
@@ -48,20 +48,20 @@ class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate, R
             self.ivThumb.sd_setImage(with: URL(string: strPhoto), placeholderImage: UIImage(named: "Profile_Thumb"))
         }
         
-        self.tableView.reloadData()
+//        self.tableView.reloadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        self.tableView.reloadData()
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func onPresentExit() {
+        self.tableView.reloadData()
+    }
 
     // MARK: - Btn Action
     @IBAction func onBtnLogout(_ sender: UIButton) {
@@ -142,6 +142,7 @@ class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate, R
                 return
             }
             vc.bTab = false
+            vc.delegate = self
             
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: false, completion: nil)

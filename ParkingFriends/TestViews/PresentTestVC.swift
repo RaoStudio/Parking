@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol PresentExitDelegate {
+    func onPresentExit()
+}
+
 class PresentTestVC: UIViewController {
 
     var bTab: Bool = true
+    var delegate: PresentExitDelegate?
     
     @IBOutlet var contentsView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -72,6 +78,11 @@ class PresentTestVC: UIViewController {
             self.view.alpha = 0;
         }) { (_) in
             self.presentingViewController?.dismiss(animated: false, completion: nil)
+            
+            if let presentDelegate = self.delegate {
+                presentDelegate.onPresentExit()
+            }
+            
         }
         
         
