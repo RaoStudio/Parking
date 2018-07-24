@@ -95,6 +95,13 @@ class ResCheckVC: PresentTestVC, PresentExitDelegate {
     @IBAction func onBtnOk(_ sender: UIButton) {
         if btnAccept.isSelected {
             
+            guard let paymentNavi = self.storyboard?.instantiateViewController(withIdentifier: "PaymentNavi") as? UINavigationController else {
+                return;
+            }
+            
+            self.present(paymentNavi, animated: true, completion: nil)
+            
+            
         } else {
             self.view.makeToast("약관에 동의해주세요.", duration: 2.0, position: .bottom)
             UIView.animate(withDuration: 0.5, animations: {

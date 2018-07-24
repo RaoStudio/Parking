@@ -2622,6 +2622,9 @@
                                         <state key="normal" title="결제하기" backgroundImage="btn_green_round">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onBtnPayment:" destination="Bmq-fO-qii" eventType="touchUpInside" id="3WF-Gz-hul"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
@@ -2652,6 +2655,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="QOv-Dh-iap" id="1Yf-hP-8Ad"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfV-cl-PNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
