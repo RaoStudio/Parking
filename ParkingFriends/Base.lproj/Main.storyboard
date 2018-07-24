@@ -2363,7 +2363,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1h-6k-Lnx">
+                                                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1h-6k-Lnx">
                                                     <rect key="frame" x="12" y="12" width="240" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="Nf4-JT-Btw"/>
@@ -2376,8 +2376,11 @@
                                                     </state>
                                                     <state key="selected" image="Payment_Radio_On"/>
                                                     <state key="highlighted" image="Payment_Radio_On"/>
+                                                    <connections>
+                                                        <action selector="onBtnSelect:" destination="oXD-h3-gsI" eventType="touchUpInside" id="JNg-eR-741"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vym-xd-flO">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vym-xd-flO">
                                                     <rect key="frame" x="12" y="41" width="240" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="titleEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2386,8 +2389,11 @@
                                                     </state>
                                                     <state key="selected" image="Payment_Radio_On"/>
                                                     <state key="highlighted" image="Payment_Radio_On"/>
+                                                    <connections>
+                                                        <action selector="onBtnSelect:" destination="oXD-h3-gsI" eventType="touchUpInside" id="wv1-Wc-Q2X"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0Y-Vx-ptd">
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0Y-Vx-ptd">
                                                     <rect key="frame" x="12" y="70" width="240" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="titleEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2396,8 +2402,11 @@
                                                     </state>
                                                     <state key="selected" image="Payment_Radio_On"/>
                                                     <state key="highlighted" image="Payment_Radio_On"/>
+                                                    <connections>
+                                                        <action selector="onBtnSelect:" destination="oXD-h3-gsI" eventType="touchUpInside" id="t1Q-eu-rgu"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fu-Rk-sLw">
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fu-Rk-sLw">
                                                     <rect key="frame" x="12" y="99" width="240" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="titleEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2406,6 +2415,9 @@
                                                     </state>
                                                     <state key="selected" image="Payment_Radio_On"/>
                                                     <state key="highlighted" image="Payment_Radio_On"/>
+                                                    <connections>
+                                                        <action selector="onBtnSelect:" destination="oXD-h3-gsI" eventType="touchUpInside" id="xNJ-1k-YCK"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -2425,6 +2437,12 @@
                                                 <constraint firstItem="Vym-xd-flO" firstAttribute="width" secondItem="d1h-6k-Lnx" secondAttribute="width" id="gDs-AY-IjB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnAccount" destination="m0Y-Vx-ptd" id="dfR-Vs-rcx"/>
+                                            <outlet property="btnCellular" destination="Vym-xd-flO" id="fzn-lg-IRq"/>
+                                            <outlet property="btnCreditCard" destination="d1h-6k-Lnx" id="L09-GU-egn"/>
+                                            <outlet property="btnKakao" destination="9fu-Rk-sLw" id="wWB-yZ-Y2W"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="53" id="sS5-lr-11l">
                                         <rect key="frame" x="0.0" y="199" width="375" height="53"/>
