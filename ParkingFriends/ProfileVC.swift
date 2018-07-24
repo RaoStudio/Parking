@@ -47,6 +47,14 @@ class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate, R
         if let strPhoto = uSession.photoUrl, false == strPhoto.isEmpty {
             self.ivThumb.sd_setImage(with: URL(string: strPhoto), placeholderImage: UIImage(named: "Profile_Thumb"))
         }
+        
+        self.tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

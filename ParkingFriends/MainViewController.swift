@@ -765,6 +765,7 @@ class MainViewController: UIViewController {
                             
                             
                             let nPartner: Int = Int(partner.intValue)
+                            let nCCTV: Int = Int(cctv.intValue)
                             
                             /*
                              let position = CLLocationCoordinate2D(latitude: 37, longitude: 127)
@@ -776,7 +777,8 @@ class MainViewController: UIViewController {
                             
                             if nPartner == 1 {
 //                            if partner.isEqual(to: "1") {
-                                if cctv.isEqual(to: "1") {
+//                                if cctv.isEqual(to: "1") {
+                                if nCCTV > 0 {
                                     if available.isEqual(to: "0") {
                                         marker.icon = UIImage(named: "partner_lot_cctv_full")
                                     } else {
