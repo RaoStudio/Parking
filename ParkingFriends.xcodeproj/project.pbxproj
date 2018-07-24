@@ -60,6 +60,8 @@
 		299D7CCD20FC8E7F00D680CF /* KakaoCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299D7CCB20FC8E7E00D680CF /* KakaoCommon.framework */; };
 		29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A0FFDB207B429200B13638 /* UrlStrings.swift */; };
 		29A17DCE2106C30D002772A1 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A17DCD2106C30D002772A1 /* PaymentVC.swift */; };
+		29A17DD121070779002772A1 /* PaymentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A17DD021070778002772A1 /* PaymentInfoCell.swift */; };
+		29A17DD3210708A6002772A1 /* PaymentSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A17DD2210708A6002772A1 /* PaymentSelectCell.swift */; };
 		29A1AABC20DCC0F500C8EE66 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A1AABB20DCC0F500C8EE66 /* RegisterVC.swift */; };
 		29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA125B207D9FF400F4648C /* MarkerInfoView.swift */; };
 		29AA1260207D9FF400F4648C /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29AA125C207D9FF400F4648C /* MarkerInfoView.xib */; };
@@ -155,6 +157,8 @@
 		299D7CCB20FC8E7E00D680CF /* KakaoCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoCommon.framework; sourceTree = "<group>"; };
 		29A0FFDB207B429200B13638 /* UrlStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlStrings.swift; sourceTree = "<group>"; };
 		29A17DCD2106C30D002772A1 /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
+		29A17DD021070778002772A1 /* PaymentInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfoCell.swift; sourceTree = "<group>"; };
+		29A17DD2210708A6002772A1 /* PaymentSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSelectCell.swift; sourceTree = "<group>"; };
 		29A1AABB20DCC0F500C8EE66 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		29AA125B207D9FF400F4648C /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
 		29AA125C207D9FF400F4648C /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 		297A606B20EA0B3700A18B9A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				29A17DCF21070650002772A1 /* Payment */,
 				297A606C20EA0B7D00A18B9A /* SideMenuCell.swift */,
 				29742FF420EC87F6008C4647 /* SetRadiusCell.swift */,
 				29742FF620EC8DD3008C4647 /* SetNoticeCell.swift */,
@@ -367,6 +372,15 @@
 				29465FFF20BD3A420000D8B9 /* RoundView.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		29A17DCF21070650002772A1 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				29A17DD021070778002772A1 /* PaymentInfoCell.swift */,
+				29A17DD2210708A6002772A1 /* PaymentSelectCell.swift */,
+			);
+			path = Payment;
 			sourceTree = "<group>";
 		};
 		29AA125A207D9FF400F4648C /* TestViews */ = {
@@ -621,6 +635,7 @@
 				2971A3F5209AED1300C1AD84 /* TutorialContentsVC.swift in Sources */,
 				29F4EB2C20F3301F009C2AE2 /* ParkingLotCell.swift in Sources */,
 				29559EF4204CE28E000EB12B /* AppDelegate.swift in Sources */,
+				29A17DD3210708A6002772A1 /* PaymentSelectCell.swift in Sources */,
 				2999636D20B65F4200AC180C /* PresentTestVC.swift in Sources */,
 				29A17DCE2106C30D002772A1 /* PaymentVC.swift in Sources */,
 				29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */,
@@ -638,6 +653,7 @@
 				295FF12220688AA2000CBF15 /* MainViewController.swift in Sources */,
 				293545F120ECBB3800077B75 /* SetVersionCell.swift in Sources */,
 				29875E5320ABC81F0029E4BD /* ParkingLotVC.swift in Sources */,
+				29A17DD121070779002772A1 /* PaymentInfoCell.swift in Sources */,
 				2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */,
 				29012A8A2105B227005D99FC /* ProfileTextCell.swift in Sources */,
 				29742FF720EC8DD3008C4647 /* SetNoticeCell.swift in Sources */,
