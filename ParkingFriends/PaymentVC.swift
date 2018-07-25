@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DropDown
 
 class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, PaymentSelectProtocol {
 
@@ -18,6 +19,8 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     var strTotalPay = ""
     var strResTime = ""
     var nSelect: Int = 0
+    
+    let coupDropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,9 +63,27 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: DropDown
+    func setupCoupDropDown(label: UILabel) {
+        coupDropDown.anchorView = label
+        
+//        coupDropDown.topOffset = CGPoint(x: 0, y: label.bounds.height)
+        coupDropDown.topOffset = CGPoint(x: 0, y: 0)
+        
+        coupDropDown.dataSource = [
+            CouponType.month.rawValue,
+            CouponType.launch.rawValue,
+            CouponType.dev.rawValue
+        ]
+        
+        coupDropDown.direction = .top
+        coupDropDown.selectionAction = { [weak self] (index, item) in
+            label.text = item
+        }
+    }
+    
     
     // MARK: NotificationCenter
-    
     @objc func keyboardWillHide() {
         self.view.frame.origin.y = 0
     }
@@ -96,7 +117,6 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     }
     
     
-    // MARK: - TableView
     // MARK: - TableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -152,6 +172,7 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         } else if nSection == 2 {
             if nRow == 0 {
                 cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCoupSelectCell")!
+                
             } else if nRow == 1 {
                 cell = tableView.dequeueReusableCell(withIdentifier: "PaymentPointInputCell")!
             } else {
@@ -216,6 +237,26 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         header.textLabel?.text = strSection
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let nSection = indexPath.section
+        let nRow = indexPath.row
+        
+        print("%d:Section %d:Row", nSection, nRow)
+        
+        if nSection == 2 {
+            if nRow == 0 {
+                let cell = tableView.cellForRow(at: indexPath)
+                if let CoupSelectCell = cell as? PaymentCoupSelectCell {
+                    self.setupCoupDropDown(label: CoupSelectCell.lbl_Title)
+                    self.coupDropDown.show()
+                }
+            }
+        }
+    }
     
     
     /*

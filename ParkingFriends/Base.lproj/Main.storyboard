@@ -2422,7 +2422,7 @@
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Payment_kakao" translatesAutoresizingMaskIntoConstraints="NO" id="Lps-jS-hxk">
-                                                    <rect key="frame" x="38" y="102" width="48" height="12"/>
+                                                    <rect key="frame" x="39" y="102" width="48" height="12"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -2433,7 +2433,7 @@
                                                 <constraint firstItem="m0Y-Vx-ptd" firstAttribute="top" secondItem="Vym-xd-flO" secondAttribute="bottom" constant="12" id="Czt-RO-Gt5"/>
                                                 <constraint firstItem="m0Y-Vx-ptd" firstAttribute="leading" secondItem="Vym-xd-flO" secondAttribute="leading" id="Fju-w3-7eJ"/>
                                                 <constraint firstItem="9fu-Rk-sLw" firstAttribute="leading" secondItem="m0Y-Vx-ptd" secondAttribute="leading" id="GRa-yJ-Rag"/>
-                                                <constraint firstItem="Lps-jS-hxk" firstAttribute="leading" secondItem="9fu-Rk-sLw" secondAttribute="leading" constant="26" id="NtV-Bz-7BT"/>
+                                                <constraint firstItem="Lps-jS-hxk" firstAttribute="leading" secondItem="9fu-Rk-sLw" secondAttribute="leading" constant="27" id="NtV-Bz-7BT"/>
                                                 <constraint firstItem="d1h-6k-Lnx" firstAttribute="top" secondItem="VPu-sN-dCp" secondAttribute="top" constant="12" id="P3S-fF-GLz"/>
                                                 <constraint firstItem="9fu-Rk-sLw" firstAttribute="width" secondItem="m0Y-Vx-ptd" secondAttribute="width" id="Prh-EJ-Rhi"/>
                                                 <constraint firstItem="d1h-6k-Lnx" firstAttribute="leading" secondItem="VPu-sN-dCp" secondAttribute="leading" constant="12" id="V3k-v5-7Uq"/>
@@ -2520,7 +2520,7 @@
                                             <outlet property="lbl_Title" destination="m0g-Ma-SaF" id="KkR-fi-Gvl"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PaymentPointInputCell" rowHeight="53" id="5it-lr-nCl" customClass="PaymentPointInputCell" customModule="ParkingFriends" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentPointInputCell" rowHeight="53" id="5it-lr-nCl" customClass="PaymentPointInputCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="252" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5it-lr-nCl" id="Jxv-zq-Ckw">
@@ -2602,7 +2602,7 @@
                                             <outlet property="txt_Point" destination="xZs-qY-W06" id="sHl-Tz-Y9K"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PaymentTotalCountCell" rowHeight="53" id="jfG-0z-T5j" customClass="PaymentTotalCountCell" customModule="ParkingFriends" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentTotalCountCell" rowHeight="53" id="jfG-0z-T5j" customClass="PaymentTotalCountCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="305" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jfG-0z-T5j" id="iG2-Lj-kbD">
