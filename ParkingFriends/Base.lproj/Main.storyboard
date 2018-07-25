@@ -2513,7 +2513,7 @@
                                             <outlet property="lbl_Title" destination="m0g-Ma-SaF" id="KkR-fi-Gvl"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="53" id="5it-lr-nCl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PaymentPointInputCell" rowHeight="53" id="5it-lr-nCl" customClass="PaymentPointInputCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="252" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5it-lr-nCl" id="Jxv-zq-Ckw">
@@ -2590,6 +2590,10 @@
                                                 <constraint firstItem="fDZ-e6-AY5" firstAttribute="leading" secondItem="jGo-Fp-U9D" secondAttribute="trailing" constant="8" id="mbl-6U-kan"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lbl_Point" destination="jGo-Fp-U9D" id="fio-cr-shd"/>
+                                            <outlet property="txt_Point" destination="xZs-qY-W06" id="sHl-Tz-Y9K"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="53" id="jfG-0z-T5j">
                                         <rect key="frame" x="0.0" y="305" width="375" height="53"/>

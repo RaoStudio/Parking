@@ -13,6 +13,7 @@
 		291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */; };
 		293545F120ECBB3800077B75 /* SetVersionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293545F020ECBB3800077B75 /* SetVersionCell.swift */; };
 		293C50BF2107FEE400E53620 /* PaymentCoupSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C50BE2107FEE400E53620 /* PaymentCoupSelectCell.swift */; };
+		293C50C1210802EE00E53620 /* PaymentPointInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C50C0210802ED00E53620 /* PaymentPointInputCell.swift */; };
 		2942FB3B20D8C47200FBCAEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2942FB3A20D8C47200FBCAEB /* GoogleService-Info.plist */; };
 		2946600020BD3A420000D8B9 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29465FFF20BD3A420000D8B9 /* RoundView.swift */; };
 		294E5F9C20A53CEE00CF9D03 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E5F9B20A53CEE00CF9D03 /* RoundButton.swift */; };
@@ -88,6 +89,7 @@
 		291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerVC.swift; sourceTree = "<group>"; };
 		293545F020ECBB3800077B75 /* SetVersionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVersionCell.swift; sourceTree = "<group>"; };
 		293C50BE2107FEE400E53620 /* PaymentCoupSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCoupSelectCell.swift; sourceTree = "<group>"; };
+		293C50C0210802ED00E53620 /* PaymentPointInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPointInputCell.swift; sourceTree = "<group>"; };
 		2942FB3A20D8C47200FBCAEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29465FFF20BD3A420000D8B9 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		294E5F9B20A53CEE00CF9D03 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				29A17DD021070778002772A1 /* PaymentInfoCell.swift */,
 				29A17DD2210708A6002772A1 /* PaymentSelectCell.swift */,
 				293C50BE2107FEE400E53620 /* PaymentCoupSelectCell.swift */,
+				293C50C0210802ED00E53620 /* PaymentPointInputCell.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				29559EF4204CE28E000EB12B /* AppDelegate.swift in Sources */,
 				29A17DD3210708A6002772A1 /* PaymentSelectCell.swift in Sources */,
 				2999636D20B65F4200AC180C /* PresentTestVC.swift in Sources */,
+				293C50C1210802EE00E53620 /* PaymentPointInputCell.swift in Sources */,
 				29A17DCE2106C30D002772A1 /* PaymentVC.swift in Sources */,
 				29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */,
 				29559EFC204CE28E000EB12B /* ParkingFriends.xcdatamodeld in Sources */,
