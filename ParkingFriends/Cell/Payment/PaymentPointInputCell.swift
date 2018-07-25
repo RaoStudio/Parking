@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol PaymentPointInput {
+    func onPointChange(strPoint: String)
+}
+
 class PaymentPointInputCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var lbl_Point: UILabel!
     @IBOutlet weak var txt_Point: UITextField!
     
+    var delegate: PaymentPointInput?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -58,8 +63,15 @@ class PaymentPointInputCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print("\(textField.text)")
-        print("\(string)")
+//        print("\(textField.text)")
+//        print("\(string)")
+        
+        if let strTxt = textField.text {
+            let strSend = String(format: "%@%@", strTxt, string)
+            print(strSend)
+            self.delegate?.onPointChange(strPoint: strSend)
+        }
+        
         return true
     }
     
