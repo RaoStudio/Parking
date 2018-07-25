@@ -12,6 +12,12 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
+    let uinfo = UserInfoManager()
+    let uSession = UserSession()
+    
+    var strTotalPay = ""
+    var strResTime = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +25,22 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        if let strPay = uinfo.totalPay {
+            strTotalPay = strPay
+        }
+        
+        if let strStart = uinfo.startTime, let strEnd = uinfo.endTime {
+            
+            let startDate = uinfo.stringToDate(strStart)
+            let endDate = uinfo.stringToDate(strEnd)
+            
+            let strS = String(format: "%d-%d-%d %02d:%02d",startDate.year, startDate.month, startDate.day, startDate.hour, startDate.minute)
+            let strE = String(format: "%02d:%02d", endDate.hour, endDate.minute)
+            
+            strResTime = "\(strS) ~ \(strE)"
+        }
+        
     }
     
     
@@ -98,10 +120,17 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             if let infoCell = cell as? PaymentInfoCell {
                 if nRow == 0 {
                     infoCell.lbl_Title.text = "주차장"
+                    infoCell.lbl_Contents.text = uinfo.rCompany
                 } else if nRow == 1 {
                     infoCell.lbl_Title.text = "예약시간"
+                    if !strResTime.isEmpty {
+                        infoCell.lbl_Contents.text = strResTime
+                    }
                 } else {
                     infoCell.lbl_Title.text = "결제금액"
+                    if !strTotalPay.isEmpty {
+                        infoCell.lbl_Contents.text = "\(strTotalPay.decimalPresent)원"
+                    }
                 }
             }
         } else if nSection == 1 {

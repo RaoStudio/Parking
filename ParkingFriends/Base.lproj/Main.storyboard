@@ -2335,9 +2335,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzg-nN-XOM">
-                                                    <rect key="frame" x="86" y="15" width="33" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzg-nN-XOM">
+                                                    <rect key="frame" x="84" y="14" width="279" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2347,8 +2346,11 @@
                                                 <constraint firstAttribute="bottom" secondItem="yNi-O1-3TZ" secondAttribute="bottom" id="7Ls-fm-e3d"/>
                                                 <constraint firstItem="0ME-PE-1b7" firstAttribute="centerY" secondItem="LlC-Ui-Uvk" secondAttribute="centerY" id="C2v-EV-6Ke"/>
                                                 <constraint firstItem="0ME-PE-1b7" firstAttribute="leading" secondItem="LlC-Ui-Uvk" secondAttribute="leading" constant="12" id="dLP-6T-gUH"/>
+                                                <constraint firstItem="Qzg-nN-XOM" firstAttribute="centerY" secondItem="LlC-Ui-Uvk" secondAttribute="centerY" id="dvV-p2-pJz"/>
                                                 <constraint firstAttribute="trailing" secondItem="yNi-O1-3TZ" secondAttribute="trailing" id="hX3-K4-95q"/>
+                                                <constraint firstAttribute="trailing" secondItem="Qzg-nN-XOM" secondAttribute="trailing" constant="12" id="qTC-LI-Igx"/>
                                                 <constraint firstItem="yNi-O1-3TZ" firstAttribute="leading" secondItem="LlC-Ui-Uvk" secondAttribute="leading" id="xup-Rm-LAa"/>
+                                                <constraint firstItem="Qzg-nN-XOM" firstAttribute="leading" secondItem="0ME-PE-1b7" secondAttribute="trailing" constant="24" id="ycV-OE-0qu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
