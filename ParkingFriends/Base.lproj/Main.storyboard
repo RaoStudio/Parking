@@ -2595,7 +2595,7 @@
                                             <outlet property="txt_Point" destination="xZs-qY-W06" id="sHl-Tz-Y9K"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="53" id="jfG-0z-T5j">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PaymentTotalCountCell" rowHeight="53" id="jfG-0z-T5j" customClass="PaymentTotalCountCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="305" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jfG-0z-T5j" id="iG2-Lj-kbD">
@@ -2632,6 +2632,9 @@
                                                 <constraint firstItem="8bL-WB-p6g" firstAttribute="centerY" secondItem="iG2-Lj-kbD" secondAttribute="centerY" id="xVN-Xo-uWt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lbl_TotalCount" destination="8bL-WB-p6g" id="uSt-F1-AZ2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
