@@ -18,13 +18,18 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     
     var strTotalPay = ""
     var strCoupPay = "0"
+    var strPointPay = "0"
     
+    
+    var strLastPay = ""
     
     var strResTime = ""
     var nSelect: Int = 0
     
     let coupDropDown = DropDown()
     var strCoup = ""
+    
+    var arrCoupPay:Array = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +41,7 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         
         if let strPay = uinfo.totalPay {
             strTotalPay = strPay
+            strLastPay = strPay
         }
         
         if let strStart = uinfo.startTime, let strEnd = uinfo.endTime {
@@ -50,6 +56,13 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         }
         
         strCoup = CouponType.month.rawValue
+        
+        
+        arrCoupPay = [
+            CouponValue.month.rawValue,
+            CouponValue.launch.rawValue,
+            CouponValue.dev.rawValue
+        ]
     }
     
     
@@ -81,20 +94,26 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
             CouponType.dev.rawValue
         ]
         
-        let arrCoupPay = [
-            CouponValue.month.rawValue,
-            CouponValue.launch.rawValue,
-            CouponValue.dev.rawValue
-        ]
+        
         
         coupDropDown.direction = .top
         coupDropDown.selectionAction = { [weak self] (index, item) in
             label.text = item
             self?.strCoup = item
-            self?.strCoupPay = arrCoupPay[index]
-            self?.tableView.reloadData()
+            self?.strCoupPay = (self?.arrCoupPay[index])!
+            self?.calcLastPay()
         }
     }
+    
+    func calcLastPay() {
+        let nTotal = Int(strTotalPay)
+        let nCoupPay = Int(strCoupPay)
+        
+        strLastPay = "\(nTotal!-nCoupPay!)"
+        
+        self.tableView.reloadData()
+    }
+    
     
     
     // MARK: NotificationCenter
@@ -207,13 +226,15 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
                         let strPoint = String(format: "%d", nPoint)
                         pointCell.lbl_Point.text = "\(strPoint.decimalPresent)P"
                     }
-                    
-                    
                 }
-                
                 
             } else {
                 cell = tableView.dequeueReusableCell(withIdentifier: "PaymentTotalCountCell")!
+                if let totalCell = cell as? PaymentTotalCountCell {
+                    if !strLastPay.isEmpty {
+                        totalCell.lbl_TotalCount.text = "\(strLastPay.decimalPresent) 원"
+                    }
+                }
             }
         }
         else {
