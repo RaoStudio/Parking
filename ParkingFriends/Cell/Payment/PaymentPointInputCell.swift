@@ -57,7 +57,11 @@ class PaymentPointInputCell: UITableViewCell, UITextFieldDelegate {
         return true
     }
     
-    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print("\(textField.text)")
+        print("\(string)")
+        return true
+    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         print("\(textField.text)")
