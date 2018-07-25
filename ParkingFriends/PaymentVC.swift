@@ -40,7 +40,7 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - TableView
     // MARK: - TableView
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,6 +49,8 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             return 3
         case 1:
             return 1
+        case 2:
+            return 3
         default:
             return 1
         }
@@ -81,6 +83,14 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 
             }
             
+        } else if nSection == 2 {
+            if nRow == 0 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCoupSelectCell")!
+            } else if nRow == 1 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "PaymentPointInputCell")!
+            } else {
+                cell = tableView.dequeueReusableCell(withIdentifier: "PaymentTotalCountCell")!
+            }
         }
         else {
             cell = tableView.dequeueReusableCell(withIdentifier: "PaymentInfoCell")!
