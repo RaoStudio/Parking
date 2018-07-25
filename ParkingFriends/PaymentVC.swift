@@ -113,7 +113,15 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     
     // MARK: - Btn Action
     @IBAction func onBtnExit(_ sender: UIBarButtonItem) {
+        
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+        
+        /*
+        if let vc = self.presentingViewController as? ResCheckVC {
+            vc.tapMainView(vc.view)
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
+         */
     }
     
     @IBAction func onBtnPayment(_ sender: UIButton) {
@@ -181,6 +189,17 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
                 
             } else if nRow == 1 {
                 cell = tableView.dequeueReusableCell(withIdentifier: "PaymentPointInputCell")!
+                if let pointCell = cell as? PaymentPointInputCell {
+                    
+                    if let nPoint = uSession.point {
+                        let strPoint = String(format: "%d", nPoint)
+                        pointCell.lbl_Point.text = "\(strPoint.decimalPresent)P"
+                    }
+                    
+                    
+                }
+                
+                
             } else {
                 cell = tableView.dequeueReusableCell(withIdentifier: "PaymentTotalCountCell")!
             }
