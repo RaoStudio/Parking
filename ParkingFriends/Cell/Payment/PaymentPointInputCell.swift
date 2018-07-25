@@ -56,5 +56,11 @@ class PaymentPointInputCell: UITableViewCell, UITextFieldDelegate {
         
         return true
     }
+    
+    
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("\(textField.text)")
+    }
 
 }
