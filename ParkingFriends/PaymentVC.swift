@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, PaymentSelectProtocol {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,6 +17,7 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var strTotalPay = ""
     var strResTime = ""
+    var nSelect: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,9 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: NotificationCenter
+    
     @objc func keyboardWillHide() {
         self.view.frame.origin.y = 0
     }
@@ -77,6 +81,11 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
 
+    // MARK: - PaymentSelectProtocol
+    func onPaymentSelct(nTag: Int) {
+        self.nSelect = nTag
+        print("\(self.nSelect)")
+    }
     
     // MARK: - Btn Action
     @IBAction func onBtnExit(_ sender: UIBarButtonItem) {
@@ -137,7 +146,7 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             cell = tableView.dequeueReusableCell(withIdentifier: "PaymentSelectCell")!
             
             if let selectCell = cell as? PaymentSelectCell {
-                
+                selectCell.delegate = self
             }
             
         } else if nSection == 2 {

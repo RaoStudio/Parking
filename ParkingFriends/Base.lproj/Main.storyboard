@@ -2309,7 +2309,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QOv-Dh-iap">
-                                <rect key="frame" x="0.0" y="64" width="375" height="521"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="585"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentInfoCell" rowHeight="44" id="Hoi-ID-fcc" customClass="PaymentInfoCell" customModule="ParkingFriends" customModuleProvider="target">
@@ -2412,7 +2412,7 @@
                                                     <rect key="frame" x="12" y="99" width="240" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="titleEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="kakaopay" image="Payment_Radio_Off">
+                                                    <state key="normal" image="Payment_Radio_Off">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <state key="selected" image="Payment_Radio_On"/>
@@ -2421,6 +2421,9 @@
                                                         <action selector="onBtnSelect:" destination="oXD-h3-gsI" eventType="touchUpInside" id="xNJ-1k-YCK"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Payment_kakao" translatesAutoresizingMaskIntoConstraints="NO" id="Lps-jS-hxk">
+                                                    <rect key="frame" x="38" y="102" width="48" height="12"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="9fu-Rk-sLw" firstAttribute="top" secondItem="m0Y-Vx-ptd" secondAttribute="bottom" constant="12" id="2qC-LN-gPV"/>
@@ -2430,12 +2433,14 @@
                                                 <constraint firstItem="m0Y-Vx-ptd" firstAttribute="top" secondItem="Vym-xd-flO" secondAttribute="bottom" constant="12" id="Czt-RO-Gt5"/>
                                                 <constraint firstItem="m0Y-Vx-ptd" firstAttribute="leading" secondItem="Vym-xd-flO" secondAttribute="leading" id="Fju-w3-7eJ"/>
                                                 <constraint firstItem="9fu-Rk-sLw" firstAttribute="leading" secondItem="m0Y-Vx-ptd" secondAttribute="leading" id="GRa-yJ-Rag"/>
+                                                <constraint firstItem="Lps-jS-hxk" firstAttribute="leading" secondItem="9fu-Rk-sLw" secondAttribute="leading" constant="26" id="NtV-Bz-7BT"/>
                                                 <constraint firstItem="d1h-6k-Lnx" firstAttribute="top" secondItem="VPu-sN-dCp" secondAttribute="top" constant="12" id="P3S-fF-GLz"/>
                                                 <constraint firstItem="9fu-Rk-sLw" firstAttribute="width" secondItem="m0Y-Vx-ptd" secondAttribute="width" id="Prh-EJ-Rhi"/>
                                                 <constraint firstItem="d1h-6k-Lnx" firstAttribute="leading" secondItem="VPu-sN-dCp" secondAttribute="leading" constant="12" id="V3k-v5-7Uq"/>
                                                 <constraint firstItem="Vym-xd-flO" firstAttribute="leading" secondItem="d1h-6k-Lnx" secondAttribute="leading" id="WpX-WJ-P7f"/>
                                                 <constraint firstItem="Vym-xd-flO" firstAttribute="top" secondItem="d1h-6k-Lnx" secondAttribute="bottom" constant="12" id="YNG-jg-dDn"/>
                                                 <constraint firstItem="9fu-Rk-sLw" firstAttribute="height" secondItem="m0Y-Vx-ptd" secondAttribute="height" id="ZGl-hR-IcL"/>
+                                                <constraint firstItem="Lps-jS-hxk" firstAttribute="centerY" secondItem="9fu-Rk-sLw" secondAttribute="centerY" id="b2C-ds-KMx"/>
                                                 <constraint firstItem="Vym-xd-flO" firstAttribute="width" secondItem="d1h-6k-Lnx" secondAttribute="width" id="gDs-AY-IjB"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -2669,7 +2674,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9vg-L5-3hA" firstAttribute="leading" secondItem="SGH-yV-RlI" secondAttribute="leading" id="1v2-H8-5Ve"/>
-                            <constraint firstItem="QOv-Dh-iap" firstAttribute="top" secondItem="SGH-yV-RlI" secondAttribute="top" id="8tH-g4-Kx2"/>
+                            <constraint firstItem="QOv-Dh-iap" firstAttribute="top" secondItem="SGH-yV-RlI" secondAttribute="top" constant="-64" id="8tH-g4-Kx2"/>
                             <constraint firstItem="SGH-yV-RlI" firstAttribute="trailing" secondItem="QOv-Dh-iap" secondAttribute="trailing" id="DUo-OD-DZk"/>
                             <constraint firstItem="QOv-Dh-iap" firstAttribute="leading" secondItem="SGH-yV-RlI" secondAttribute="leading" id="GDz-MX-huc"/>
                             <constraint firstItem="SGH-yV-RlI" firstAttribute="trailing" secondItem="9vg-L5-3hA" secondAttribute="trailing" id="Jvd-AG-uxe"/>
@@ -4258,6 +4263,7 @@
         <image name="Navi_tmap" width="43" height="48"/>
         <image name="Payment_Radio_Off" width="17" height="17"/>
         <image name="Payment_Radio_On" width="17" height="17"/>
+        <image name="Payment_kakao" width="48" height="12"/>
         <image name="Profile_BG" width="375" height="228"/>
         <image name="Profile_Logout" width="26" height="26"/>
         <image name="Profile_Thumb" width="145" height="145"/>

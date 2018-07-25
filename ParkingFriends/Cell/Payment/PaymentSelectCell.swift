@@ -8,8 +8,7 @@
 
 import UIKit
 
-protocol PaymentSelectProtocol {
- 
+protocol PaymentSelectProtocol { 
     func onPaymentSelct(nTag: Int) 
 }
 
