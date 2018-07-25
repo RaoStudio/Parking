@@ -20,12 +20,40 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)),
+                                               name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
+                                               name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @objc func keyboardWillHide() {
+        self.view.frame.origin.y = 0
+    }
+    
+    @objc func keyboardWillChange(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            
+            self.view.frame.origin.y = -(keyboardSize.height/2)
+            
+            /*
+            if (txtCarName.isFirstResponder || txtCarNum.isFirstResponder ){
+                self.view.frame.origin.y = -(keyboardSize.height/2)
+            }
+             */
+        }
+    }
 
     
     // MARK: - Btn Action
