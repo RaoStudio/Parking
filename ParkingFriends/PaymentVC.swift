@@ -21,6 +21,7 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     var nSelect: Int = 0
     
     let coupDropDown = DropDown()
+    var strCoup = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,7 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
             strResTime = "\(strS) ~ \(strE)"
         }
         
+        strCoup = CouponType.month.rawValue
     }
     
     
@@ -79,6 +81,7 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         coupDropDown.direction = .top
         coupDropDown.selectionAction = { [weak self] (index, item) in
             label.text = item
+            self?.strCoup = item
         }
     }
     
@@ -172,6 +175,9 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         } else if nSection == 2 {
             if nRow == 0 {
                 cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCoupSelectCell")!
+                if let coupCell = cell as? PaymentCoupSelectCell {
+                    coupCell.lbl_Title.text = self.strCoup
+                }
                 
             } else if nRow == 1 {
                 cell = tableView.dequeueReusableCell(withIdentifier: "PaymentPointInputCell")!
