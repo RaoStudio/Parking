@@ -17,6 +17,9 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     let uSession = UserSession()
     
     var strTotalPay = ""
+    var strCoupPay = "0"
+    
+    
     var strResTime = ""
     var nSelect: Int = 0
     
@@ -78,10 +81,18 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
             CouponType.dev.rawValue
         ]
         
+        let arrCoupPay = [
+            CouponValue.month.rawValue,
+            CouponValue.launch.rawValue,
+            CouponValue.dev.rawValue
+        ]
+        
         coupDropDown.direction = .top
         coupDropDown.selectionAction = { [weak self] (index, item) in
             label.text = item
             self?.strCoup = item
+            self?.strCoupPay = arrCoupPay[index]
+            self?.tableView.reloadData()
         }
     }
     
@@ -185,6 +196,7 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
                 cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCoupSelectCell")!
                 if let coupCell = cell as? PaymentCoupSelectCell {
                     coupCell.lbl_Title.text = self.strCoup
+                    coupCell.lbl_Count.text = "\(strCoupPay.decimalPresent)원"
                 }
                 
             } else if nRow == 1 {

@@ -18,6 +18,11 @@ enum CouponType: String {
     case dev = "개발팀에게만! 90% 할인"
 }
 
+enum CouponValue: String {
+    case month = "0"
+    case launch = "2000"
+    case dev = "1000"
+}
 
 
 // Raduis
