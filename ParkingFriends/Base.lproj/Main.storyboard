@@ -2373,7 +2373,7 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="titleEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="Button" image="Payment_Radio_Off">
+                                                    <state key="normal" title="신용카드" image="Payment_Radio_Off">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <state key="selected" image="Payment_Radio_On"/>
@@ -2386,7 +2386,7 @@
                                                     <rect key="frame" x="12" y="41" width="240" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="titleEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="Button" image="Payment_Radio_Off">
+                                                    <state key="normal" title="휴대폰" image="Payment_Radio_Off">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <state key="selected" image="Payment_Radio_On"/>
@@ -2399,7 +2399,7 @@
                                                     <rect key="frame" x="12" y="70" width="240" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="titleEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="Button" image="Payment_Radio_Off">
+                                                    <state key="normal" title="실시간 계좌이체" image="Payment_Radio_Off">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <state key="selected" image="Payment_Radio_On"/>
@@ -2412,7 +2412,7 @@
                                                     <rect key="frame" x="12" y="99" width="240" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="titleEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="Button" image="Payment_Radio_Off">
+                                                    <state key="normal" title="kakaopay" image="Payment_Radio_Off">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <state key="selected" image="Payment_Radio_On"/>
