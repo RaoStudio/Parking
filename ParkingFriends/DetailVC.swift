@@ -413,16 +413,19 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         let nDisplayMin = (Int(nTime) % 3600) / 60
         
         
-        
         if nDisplayMin > 0 {
             self.lbl_TotalTime.text = String(format: "%d시간 %d분", nDisplayHour, nDisplayMin)
-//            self.lbl_TotalPay.text = String(format: "%d 원", (Int(strPay)! * nHour) + Int(strPay)!)
             strPay = String(format: "%d", (Int(strPay)! * nDisplayHour) + Int(strPay)!)
         } else {
             self.lbl_TotalTime.text = String(format: "%d시간", nDisplayHour)
-//            self.lbl_TotalPay.text = String(format: "%d 원", Int(strPay)! * nHour)
             strPay = String(format: "%d", Int(strPay)! * nDisplayHour)
         }
+        
+        
+        // Calc Total Pay
+        let nTotalMin = Int(nTime) / 60
+        let nRestMin = nTotalMin - self.nDefaultMin
+        
         
         self.lbl_TotalPay.text = "\(strPay.decimalPresent) 원"
         
