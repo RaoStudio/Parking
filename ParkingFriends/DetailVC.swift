@@ -57,7 +57,6 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var btnEndTime: UIButton!
     
     
-
     
     @IBOutlet var lblCompany: UILabel!
     @IBOutlet var lblAddress: UILabel!
@@ -106,6 +105,13 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     var strSid: String = ""
     var strPay: String = ""
     
+    
+    var nDefaultMin: Int = 0
+    var nDefaultFee: Int = 0
+    
+    var nAddMin: Int = 0
+    var nAddFee: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -151,6 +157,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                     label.text = "\(strMin)분"
                 }
                 
+                if !strMin.isEmpty {
+                    nDefaultMin = Int(strMin)!
+                }
+                
             }
             
             if let strFee = dataPlace["default_fees"] as? String {
@@ -160,6 +170,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 }
                 
                 self.strPay = strFee
+                
+                if !strFee.isEmpty {
+                    nDefaultFee = Int(strFee)!
+                }
             }
             
             if let strDailyFee = dataPlace["daily_fees"] as? String {
@@ -167,10 +181,21 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 for label in lbl_daily_fees {
                     label.text = "\(strDailyFee.decimalPresent)원"
                 }
+            } else if let nDailyFee = dataPlace["daily_fees"] as? NSNumber {
+                for label in lbl_daily_fees {
+                    label.text = "\(nDailyFee.stringValue.decimalPresent)원"
+                }
             }
+            
             
             if let strAddMin = dataPlace["additional_minute"] as? String, let strAddFee = dataPlace["additional_fees"] as? String {
                 self.lbl_additinal.text = "\(strAddMin)분 \(strAddFee)원"
+                
+                if !strAddMin.isEmpty, !strAddFee.isEmpty {
+                    nAddMin = Int(strAddMin)!
+                    nAddFee = Int(strAddFee)!
+                }
+                
             }
             
             
@@ -384,19 +409,19 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         let nTime = endDate - startDate
         
-        let nHour = Int(nTime) / 3600
-        let nMin = (Int(nTime) % 3600) / 60
+        let nDisplayHour = Int(nTime) / 3600
+        let nDisplayMin = (Int(nTime) % 3600) / 60
         
         
         
-        if nMin > 0 {
-            self.lbl_TotalTime.text = String(format: "%d시간 %d분", nHour, nMin)
+        if nDisplayMin > 0 {
+            self.lbl_TotalTime.text = String(format: "%d시간 %d분", nDisplayHour, nDisplayMin)
 //            self.lbl_TotalPay.text = String(format: "%d 원", (Int(strPay)! * nHour) + Int(strPay)!)
-            strPay = String(format: "%d", (Int(strPay)! * nHour) + Int(strPay)!)
+            strPay = String(format: "%d", (Int(strPay)! * nDisplayHour) + Int(strPay)!)
         } else {
-            self.lbl_TotalTime.text = String(format: "%d시간", nHour)
+            self.lbl_TotalTime.text = String(format: "%d시간", nDisplayHour)
 //            self.lbl_TotalPay.text = String(format: "%d 원", Int(strPay)! * nHour)
-            strPay = String(format: "%d", Int(strPay)! * nHour)
+            strPay = String(format: "%d", Int(strPay)! * nDisplayHour)
         }
         
         self.lbl_TotalPay.text = "\(strPay.decimalPresent) 원"
