@@ -19,6 +19,7 @@ class PaymentPointInputCell: UITableViewCell, UITextFieldDelegate {
     
     var delegate: PaymentPointInputProtocol?
     let uSession = UserSession()
+    let uinfo = UserInfoManager()
     
     
     override func awakeFromNib() {
@@ -86,8 +87,21 @@ class PaymentPointInputCell: UITableViewCell, UITextFieldDelegate {
         }
          */
         
+        /*
+        if let strTotal = uinfo.totalPay, let strPoint = txt_Point.text, !strPoint.isEmpty {
+            let nTotal = Int(strTotal)!
+            let nPoint = Int(strPoint)!
+            
+            if nPoint > nTotal {
+                return false
+            }
+        }
+         */
+        
+        
         if let text = textField.text, let textRange = Range(range, in:text) {
-            let updatedText = text.replacingCharacters(in: textRange, with: string)
+            var updatedText = text.replacingCharacters(in: textRange, with: string)
+            
             self.delegate?.onPointChange(strPoint: updatedText)
             print(updatedText)
         }
