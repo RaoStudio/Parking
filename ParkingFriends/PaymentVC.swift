@@ -16,7 +16,7 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     let uinfo = UserInfoManager()
     let uSession = UserSession()
     
-    var strTotalPay = ""
+    var strTotalPay = "0"
     var strCoupPay = "0"
     var strPointPay = "0"
     
@@ -108,10 +108,12 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     func calcLastPay() {
         let nTotal = Int(strTotalPay)
         let nCoupPay = Int(strCoupPay)
+        let nPointPay = Int(strPointPay)
         
-        strLastPay = "\(nTotal!-nCoupPay!)"
+        strLastPay = "\(nTotal!-nCoupPay!-nPointPay!)"
         
-        self.tableView.reloadData()
+//        self.tableView.reloadData()
+        self.tableView.reloadRows(at: [IndexPath(row: 2, section: 2)], with: UITableViewRowAnimation.none)
     }
     
     
@@ -139,12 +141,13 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     func onPointChange(strPoint: String) {
         self.strPointPay = strPoint
         print("##\(self.strPointPay)##")
+        self.calcLastPay()
     }
 
     // MARK: - PaymentSelectProtocol
     func onPaymentSelct(nTag: Int) {
         self.nSelect = nTag
-        print("\(self.nSelect)")
+        print("onPaymentSelct: \(self.nSelect)")
     }
     
     // MARK: - Btn Action
