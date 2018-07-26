@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PaymentPointInput {
+protocol PaymentPointInputProtocol {
     func onPointChange(strPoint: String)
 }
 
@@ -17,7 +17,9 @@ class PaymentPointInputCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var lbl_Point: UILabel!
     @IBOutlet weak var txt_Point: UITextField!
     
-    var delegate: PaymentPointInput?
+    var delegate: PaymentPointInputProtocol?
+    let uSession = UserSession()
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -57,26 +59,46 @@ class PaymentPointInputCell: UITableViewCell, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
+        
+        
         textField.resignFirstResponder()
         
         return true
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        print("\(textField.text)")
-//        print("\(string)")
-        
-        if let strTxt = textField.text {
-            let strSend = String(format: "%@%@", strTxt, string)
-            print(strSend)
-            self.delegate?.onPointChange(strPoint: strSend)
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if let nPoint = uSession.point {
+            if nPoint < 0 {
+                return false
+            }
         }
         
         return true
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        /*
+        if let strTxt = textField.text {
+            let strSend = String(format: "%@%@", strTxt, string)
+            print(strSend)
+            print(range)
+            self.delegate?.onPointChange(strPoint: strSend)
+        }
+         */
+        
+        if let text = textField.text, let textRange = Range(range, in:text) {
+            let updatedText = text.replacingCharacters(in: textRange, with: string)
+            self.delegate?.onPointChange(strPoint: updatedText)
+            print(updatedText)
+        }
+        
+        return true
+    }
+    
+    /*
     func textFieldDidEndEditing(_ textField: UITextField) {
         print("\(textField.text)")
     }
+ */
 
 }

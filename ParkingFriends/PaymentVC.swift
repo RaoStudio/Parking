@@ -9,7 +9,7 @@
 import UIKit
 import DropDown
 
-class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, PaymentSelectProtocol {
+class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, PaymentSelectProtocol, PaymentPointInputProtocol {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -134,6 +134,12 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
              */
         }
     }
+    
+    // MARK: - PaymentPointInputProtocol
+    func onPointChange(strPoint: String) {
+        self.strPointPay = strPoint
+        print("##\(self.strPointPay)##")
+    }
 
     // MARK: - PaymentSelectProtocol
     func onPaymentSelct(nTag: Int) {
@@ -221,6 +227,8 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
             } else if nRow == 1 {
                 cell = tableView.dequeueReusableCell(withIdentifier: "PaymentPointInputCell")!
                 if let pointCell = cell as? PaymentPointInputCell {
+                    
+                    pointCell.delegate = self
                     
                     if let nPoint = uSession.point {
                         let strPoint = String(format: "%d", nPoint)
