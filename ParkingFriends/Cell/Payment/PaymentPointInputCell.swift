@@ -101,10 +101,25 @@ class PaymentPointInputCell: UITableViewCell, UITextFieldDelegate {
         
         if let text = textField.text, let textRange = Range(range, in:text) {
             var updatedText = text.replacingCharacters(in: textRange, with: string)
+         
+            if let strTotal = uinfo.totalPay, !strTotal.isEmpty, !updatedText.isEmpty {
+                let nTotal = Int(strTotal)!
+                let nPoint = Int(updatedText)!
+                
+                if nPoint > nTotal {
+                    updatedText = strTotal
+                    self.delegate?.onPointChange(strPoint: updatedText)
+                    self.txt_Point.text = updatedText
+                    return false
+                }
+            }
             
             self.delegate?.onPointChange(strPoint: updatedText)
             print(updatedText)
         }
+        
+        
+        
         
         return true
     }
