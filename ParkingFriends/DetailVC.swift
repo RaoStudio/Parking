@@ -423,9 +423,18 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         
         // Calc Total Pay
+        var nTotalPay: Int = nDefaultFee
         let nTotalMin = Int(nTime) / 60
         let nRestMin = nTotalMin - self.nDefaultMin
         
+        let nTimeMultiply = nRestMin / nAddMin
+        let nTimeMultiplyRest = nRestMin % nAddMin
+        nTotalPay = nTotalPay + nAddFee * nTimeMultiply
+        if nTimeMultiplyRest > 0 {
+            nTotalPay = nTotalPay + nAddFee
+        }
+        
+        strPay = String(format: "%d", nTotalPay)
         
         self.lbl_TotalPay.text = "\(strPay.decimalPresent) 원"
         
