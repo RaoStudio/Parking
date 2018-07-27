@@ -114,6 +114,9 @@ class PaymentPointInputCell: UITableViewCell, UITextFieldDelegate {
                 }
             }
             
+            if updatedText.isEmpty {
+                updatedText = "0"
+            }
             self.delegate?.onPointChange(strPoint: updatedText)
             print(updatedText)
         }
