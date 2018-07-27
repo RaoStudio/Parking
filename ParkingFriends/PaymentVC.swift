@@ -120,14 +120,14 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     
     // MARK: NotificationCenter
     @objc func keyboardWillHide() {
-        self.view.frame.origin.y = 0
+        self.tableView.frame.origin.y = 0
     }
     
     @objc func keyboardWillChange(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             
-            self.view.frame.origin.y = -(keyboardSize.height/2)
+            self.tableView.frame.origin.y = -(keyboardSize.height/2)
             
             /*
             if (txtCarName.isFirstResponder || txtCarNum.isFirstResponder ){
@@ -164,6 +164,16 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     }
     
     @IBAction func onBtnPayment(_ sender: UIButton) {
+        switch self.nSelect {
+        case 0:
+            if let cardVC = self.storyboard?.instantiateViewController(withIdentifier: "CardVC") as? CardVC {
+                self.navigationController?.pushViewController(cardVC, animated: true)
+            }
+        default:
+            ()
+        }
+        
+        
     }
     
     
