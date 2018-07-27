@@ -2842,10 +2842,10 @@
                                                     <constraint firstAttribute="height" constant="1" id="WBN-bl-1KG"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TrI-6o-xWG">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TrI-6o-xWG" userLabel="Card_One">
                                                 <rect key="frame" x="166" y="0.0" width="43" height="44"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pdZ-Dh-50A">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pdZ-Dh-50A">
                                                         <rect key="frame" x="0.0" y="0.0" width="43" height="44"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2872,14 +2872,47 @@
                                                     <constraint firstItem="FQe-95-6cj" firstAttribute="leading" secondItem="TrI-6o-xWG" secondAttribute="leading" id="pUT-1l-5bN"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MwM-FH-Tmf" userLabel="Card_Two">
+                                                <rect key="frame" x="238" y="0.0" width="43" height="44"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WAy-3K-PaR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="43" height="44"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mg-6H-3bv">
+                                                        <rect key="frame" x="0.0" y="42" width="43" height="2"/>
+                                                        <color key="backgroundColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="2" id="zDW-py-7EH"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="1mg-6H-3bv" secondAttribute="bottom" id="3LM-kA-CpW"/>
+                                                    <constraint firstAttribute="width" constant="43" id="5YK-gW-Apb"/>
+                                                    <constraint firstAttribute="height" constant="44" id="Aqp-ta-WZ6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1mg-6H-3bv" secondAttribute="trailing" id="Upi-uO-jDD"/>
+                                                    <constraint firstAttribute="bottom" secondItem="WAy-3K-PaR" secondAttribute="bottom" id="YhZ-zL-kTu"/>
+                                                    <constraint firstItem="WAy-3K-PaR" firstAttribute="top" secondItem="MwM-FH-Tmf" secondAttribute="top" id="c1T-Ry-iHF"/>
+                                                    <constraint firstItem="WAy-3K-PaR" firstAttribute="leading" secondItem="MwM-FH-Tmf" secondAttribute="leading" id="doZ-l5-WKz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="WAy-3K-PaR" secondAttribute="trailing" id="si0-EY-2SQ"/>
+                                                    <constraint firstItem="1mg-6H-3bv" firstAttribute="leading" secondItem="MwM-FH-Tmf" secondAttribute="leading" id="thu-xD-SG7"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="MwM-FH-Tmf" secondAttribute="bottom" id="4Hy-Ef-7fn"/>
                                             <constraint firstItem="gjM-4F-4af" firstAttribute="leading" secondItem="KUm-P6-znO" secondAttribute="leading" constant="12" id="Ban-9Z-DDf"/>
                                             <constraint firstItem="18X-tQ-x5K" firstAttribute="top" secondItem="gjM-4F-4af" secondAttribute="bottom" id="HjI-P1-LU8"/>
                                             <constraint firstItem="TrI-6o-xWG" firstAttribute="top" secondItem="KUm-P6-znO" secondAttribute="top" id="I8l-bK-GVT"/>
+                                            <constraint firstItem="MwM-FH-Tmf" firstAttribute="top" secondItem="KUm-P6-znO" secondAttribute="top" id="IUg-d3-Frq"/>
                                             <constraint firstItem="18X-tQ-x5K" firstAttribute="leading" secondItem="KUm-P6-znO" secondAttribute="leading" constant="12" id="PFJ-LB-ocU"/>
                                             <constraint firstAttribute="trailing" secondItem="18X-tQ-x5K" secondAttribute="trailing" constant="12" id="Uuf-aQ-NiF"/>
+                                            <constraint firstItem="MwM-FH-Tmf" firstAttribute="leading" secondItem="TrI-6o-xWG" secondAttribute="trailing" constant="29" id="YYu-v1-Zrs"/>
                                             <constraint firstItem="gjM-4F-4af" firstAttribute="top" secondItem="KUm-P6-znO" secondAttribute="top" id="bX2-QD-dAS"/>
                                             <constraint firstItem="TrI-6o-xWG" firstAttribute="centerX" secondItem="KUm-P6-znO" secondAttribute="centerX" id="hSN-tZ-aTr"/>
                                             <constraint firstAttribute="bottom" secondItem="TrI-6o-xWG" secondAttribute="bottom" id="leB-7g-DAK"/>
