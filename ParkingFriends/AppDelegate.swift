@@ -44,6 +44,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
         
         /*
+        var navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.isTranslucent = false
+ */
+        
+        
+//        navigationBarAppearace.barTintColor = UIColor.black
+//        navigationBarAppearace.tintColor = UIColor.white
+        
+        /*
         guard let LaunchVC = self.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "LaunchVC") as?  LaunchVC else {
             return true
         }
