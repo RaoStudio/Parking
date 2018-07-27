@@ -43,10 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        GIDSignIn.sharedInstance().delegate = self
  
         
-        /*
+        //*
         var navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.isTranslucent = false
- */
+        navigationBarAppearace.tintColor = UIColor.black
+        //*/
         
         
 //        navigationBarAppearace.barTintColor = UIColor.black
