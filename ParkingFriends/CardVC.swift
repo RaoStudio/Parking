@@ -108,14 +108,12 @@ class CardVC: UIViewController, UITextFieldDelegate {
     @objc func keyboardWillChange(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                        
             
-//            self.contentsView.frame.origin.y = -(keyboardSize.height/2)
-            
-            /*
-             if (txtCarName.isFirstResponder || txtCarNum.isFirstResponder ){
-             self.view.frame.origin.y = -(keyboardSize.height/2)
+             if (txtPassword.isFirstResponder || txtBirth.isFirstResponder ){
+                self.contentsView.frame.origin.y = -(keyboardSize.height/2)
              }
-             */
+            
         }
     }
 
