@@ -42,6 +42,8 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         if let strPay = uinfo.totalPay {
             strTotalPay = strPay
             strLastPay = strPay
+            
+            uinfo.lastPay = strLastPay
         }
         
         if let strStart = uinfo.startTime, let strEnd = uinfo.endTime {
@@ -114,6 +116,9 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         
 //        self.tableView.reloadData()
         self.tableView.reloadRows(at: [IndexPath(row: 2, section: 2)], with: UITableViewRowAnimation.none)
+        
+        
+        uinfo.lastPay = strLastPay
     }
     
     

@@ -12,6 +12,9 @@ class CardVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var contentsView: UIView!
     
+    @IBOutlet weak var lbl_LastPay: UILabel!
+    
+    
     @IBOutlet weak var txtCard_One: UITextField!
     @IBOutlet weak var txtCard_Two: UITextField!
     @IBOutlet weak var txtCard_Three: UITextField!
@@ -23,6 +26,8 @@ class CardVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtPassword: UITextField!
     
     @IBOutlet weak var txtBirth: UITextField!
+    
+    let uinfo = UserInfoManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +73,11 @@ class CardVC: UIViewController, UITextFieldDelegate {
         txtPassword.inputAccessoryView = toolBar
         
         txtBirth.inputAccessoryView = toolBar
+        
+        
+        if let strLastPay = uinfo.lastPay {
+            self.lbl_LastPay.text = "\(strLastPay.decimalPresent) 원"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,7 +118,7 @@ class CardVC: UIViewController, UITextFieldDelegate {
     @objc func keyboardWillChange(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                        
+            
             
              if (txtPassword.isFirstResponder || txtBirth.isFirstResponder ){
                 self.contentsView.frame.origin.y = -(keyboardSize.height/2)

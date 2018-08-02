@@ -2772,8 +2772,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jo8-dE-OIm" customClass="RoundView" customModule="ParkingFriends" customModuleProvider="target">
                                                 <rect key="frame" x="259" y="10" width="104" height="23"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@@@@@" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bG-bB-JaU">
-                                                        <rect key="frame" x="9" y="3.5" width="78" height="16"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bG-bB-JaU">
+                                                        <rect key="frame" x="9" y="11.5" width="78" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -3269,6 +3269,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="contentsView" destination="lRi-wU-GZf" id="C6v-ck-5y9"/>
+                        <outlet property="lbl_LastPay" destination="t8R-Sz-Qwr" id="MX5-cd-HSY"/>
                         <outlet property="txtBirth" destination="oMj-em-rKz" id="FEg-H9-baa"/>
                         <outlet property="txtCard_Four" destination="WAy-3K-PaR" id="QFU-Ju-wZL"/>
                         <outlet property="txtCard_One" destination="pdZ-Dh-50A" id="v3n-HF-XFy"/>
