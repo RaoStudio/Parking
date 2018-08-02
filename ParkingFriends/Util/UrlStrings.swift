@@ -10,8 +10,8 @@ import Foundation
 
 
 class UrlStrings {
-    static let URL_SERVER_BASE = "http://api.parkingfriends.net"
-//    static let URL_SERVER_BASE = "http://dev.parkingfriends.net/~vata/api"
+//    static let URL_SERVER_BASE = "http://api.parkingfriends.net"
+    static let URL_SERVER_BASE = "http://dev.parkingfriends.net/~vata/api"
     
     // API
     static let URL_API_BASE = URL_SERVER_BASE + "/app"

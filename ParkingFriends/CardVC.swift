@@ -11,7 +11,15 @@ import UIKit
 class CardVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var contentsView: UIView!
+    
     @IBOutlet weak var txtCard_One: UITextField!
+    @IBOutlet weak var txtCard_Two: UITextField!
+    @IBOutlet weak var txtCard_Three: UITextField!
+    @IBOutlet weak var txtCard_Four: UITextField!
+    
+    @IBOutlet weak var txtMonth: UITextField!
+    @IBOutlet weak var txtYear: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +29,35 @@ class CardVC: UIViewController, UITextFieldDelegate {
         self.navigationItem.title = "카드 결제"
         
         txtCard_One.delegate = self
+        txtCard_Two.delegate = self
+        txtCard_Three.delegate = self
+        txtCard_Four.delegate = self
+        
+        txtMonth.delegate = self
+        txtYear.delegate = self
+        
+        
+        
+        var btnDone = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.sendCodeBtnAction(sender:)))
+        btnDone.tintColor = UIColor.black
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.isUserInteractionEnabled = true
+        toolBar.sizeToFit()
+        toolBar.items = [
+            btnDone
+        ]
+        
+        
+        txtCard_One.inputAccessoryView = toolBar
+        txtCard_Two.inputAccessoryView = toolBar
+        txtCard_Three.inputAccessoryView = toolBar
+        txtCard_Four.inputAccessoryView = toolBar
+        
+        txtMonth.inputAccessoryView = toolBar
+        txtYear.inputAccessoryView = toolBar
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +75,13 @@ class CardVC: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @objc func sendCodeBtnAction(sender: UIBarButtonItem){
+        txtCard_One.resignFirstResponder()
+        txtCard_Two.resignFirstResponder()
+        txtCard_Three.resignFirstResponder()
+        txtCard_Four.resignFirstResponder()
+    }
     
     // MARK: NotificationCenter
     @objc func keyboardWillHide() {
@@ -72,6 +116,9 @@ class CardVC: UIViewController, UITextFieldDelegate {
  */
         
         txtCard_One.resignFirstResponder()
+        txtCard_Two.resignFirstResponder()
+        txtCard_Three.resignFirstResponder()
+        txtCard_Four.resignFirstResponder()
         
         return true
     }

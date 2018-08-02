@@ -151,6 +151,16 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 self.conHeightPublicPayInfoView.constant = 0
             }
             
+            
+            // Test
+            /*
+            self.publicPayInfoView.isHidden = true
+            self.conHeightPublicPayInfoView.constant = 0
+             */
+            //
+            
+            
+            
             if let strMin = dataPlace["default_minute"] as? String {
 //                self.lbl_default_minute.text = "\(strMin)분"
                 for label in lbl_default_minute {
