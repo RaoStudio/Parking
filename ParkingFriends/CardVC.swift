@@ -20,6 +20,7 @@ class CardVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtMonth: UITextField!
     @IBOutlet weak var txtYear: UITextField!
     
+    @IBOutlet weak var txtPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,7 @@ class CardVC: UIViewController, UITextFieldDelegate {
         txtMonth.delegate = self
         txtYear.delegate = self
         
+        txtPassword.delegate = self
         
         
         var btnDone = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.sendCodeBtnAction(sender:)))
@@ -58,6 +60,8 @@ class CardVC: UIViewController, UITextFieldDelegate {
         
         txtMonth.inputAccessoryView = toolBar
         txtYear.inputAccessoryView = toolBar
+        
+        txtPassword.inputAccessoryView = toolBar
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,6 +85,11 @@ class CardVC: UIViewController, UITextFieldDelegate {
         txtCard_Two.resignFirstResponder()
         txtCard_Three.resignFirstResponder()
         txtCard_Four.resignFirstResponder()
+        
+        txtMonth.resignFirstResponder()
+        txtYear.resignFirstResponder()
+        
+        txtPassword.resignFirstResponder()
     }
     
     // MARK: NotificationCenter
@@ -92,7 +101,7 @@ class CardVC: UIViewController, UITextFieldDelegate {
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             
-            self.contentsView.frame.origin.y = -(keyboardSize.height/2)
+//            self.contentsView.frame.origin.y = -(keyboardSize.height/2)
             
             /*
              if (txtCarName.isFirstResponder || txtCarNum.isFirstResponder ){

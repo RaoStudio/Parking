@@ -2998,13 +2998,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Mer-CS-5lc">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mer-CS-5lc">
                                                 <rect key="frame" x="112" y="0.0" width="251" height="44"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2A-kP-FLu" userLabel="vMonth">
                                                         <rect key="frame" x="0.0" y="0.0" width="98" height="44"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsH-8T-rfd">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="월" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsH-8T-rfd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="98" height="44"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -3034,7 +3034,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crv-aE-fxc" userLabel="vYear">
                                                         <rect key="frame" x="153" y="0.0" width="98" height="44"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Afk-EJ-0bJ">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="년" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Afk-EJ-0bJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="98" height="44"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -3062,6 +3062,9 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="FMH-FP-SEb"/>
+                                                </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uU9-bH-6gh">
                                                 <rect key="frame" x="12" y="43" width="351" height="1"/>
@@ -3098,6 +3101,34 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUg-QE-Pku" userLabel="vPassword">
+                                                <rect key="frame" x="112" y="0.0" width="251" height="44"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="앞 2자리" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="86j-lY-7DX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="251" height="44"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ER-F0-ntU">
+                                                        <rect key="frame" x="0.0" y="42" width="251" height="2"/>
+                                                        <color key="backgroundColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="2" id="Rn0-HO-uLu"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="7ER-F0-ntU" secondAttribute="trailing" id="5rz-BU-COq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="86j-lY-7DX" secondAttribute="trailing" id="7av-Dx-Dr8"/>
+                                                    <constraint firstAttribute="bottom" secondItem="7ER-F0-ntU" secondAttribute="bottom" id="M6h-qw-M8K"/>
+                                                    <constraint firstItem="86j-lY-7DX" firstAttribute="top" secondItem="LUg-QE-Pku" secondAttribute="top" id="QCB-ac-eki"/>
+                                                    <constraint firstAttribute="bottom" secondItem="86j-lY-7DX" secondAttribute="bottom" id="Rix-53-oxF"/>
+                                                    <constraint firstItem="7ER-F0-ntU" firstAttribute="leading" secondItem="LUg-QE-Pku" secondAttribute="leading" id="eXC-Kg-pj7"/>
+                                                    <constraint firstItem="86j-lY-7DX" firstAttribute="leading" secondItem="LUg-QE-Pku" secondAttribute="leading" id="k2H-QZ-G3i"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi9-n1-BYs">
                                                 <rect key="frame" x="12" y="43" width="351" height="1"/>
                                                 <color key="backgroundColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -3108,11 +3139,15 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="LUg-QE-Pku" firstAttribute="leading" secondItem="dIn-qu-anZ" secondAttribute="trailing" constant="12" id="0ct-vK-SSv"/>
                                             <constraint firstItem="gi9-n1-BYs" firstAttribute="top" secondItem="dIn-qu-anZ" secondAttribute="bottom" id="DZn-3l-jHw"/>
+                                            <constraint firstAttribute="trailing" secondItem="LUg-QE-Pku" secondAttribute="trailing" constant="12" id="Dac-ps-UW4"/>
+                                            <constraint firstItem="LUg-QE-Pku" firstAttribute="top" secondItem="87b-pd-fWw" secondAttribute="top" id="Myd-xZ-Fc0"/>
                                             <constraint firstAttribute="bottom" secondItem="gi9-n1-BYs" secondAttribute="bottom" id="PyZ-ED-kRo"/>
                                             <constraint firstItem="dIn-qu-anZ" firstAttribute="leading" secondItem="87b-pd-fWw" secondAttribute="leading" constant="12" id="Qhz-z3-x7d"/>
                                             <constraint firstAttribute="trailing" secondItem="gi9-n1-BYs" secondAttribute="trailing" constant="12" id="Xfm-pN-j11"/>
                                             <constraint firstItem="gi9-n1-BYs" firstAttribute="leading" secondItem="87b-pd-fWw" secondAttribute="leading" constant="12" id="d8d-ZW-tv4"/>
+                                            <constraint firstAttribute="bottom" secondItem="LUg-QE-Pku" secondAttribute="bottom" id="iGJ-LH-U0b"/>
                                             <constraint firstAttribute="height" constant="44" id="jfb-6T-8dW"/>
                                             <constraint firstItem="dIn-qu-anZ" firstAttribute="top" secondItem="87b-pd-fWw" secondAttribute="top" id="kak-tL-ihg"/>
                                         </constraints>
@@ -3205,6 +3240,7 @@
                         <outlet property="txtCard_Three" destination="nCK-MY-HV3" id="6Bz-4l-eFN"/>
                         <outlet property="txtCard_Two" destination="bDF-dZ-BLX" id="PAU-ss-RJ5"/>
                         <outlet property="txtMonth" destination="xsH-8T-rfd" id="wkZ-EN-3l5"/>
+                        <outlet property="txtPassword" destination="86j-lY-7DX" id="jFI-4c-mOB"/>
                         <outlet property="txtYear" destination="Afk-EJ-0bJ" id="iWe-6f-6E5"/>
                     </connections>
                 </viewController>
