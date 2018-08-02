@@ -175,6 +175,11 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
             if let cardVC = self.storyboard?.instantiateViewController(withIdentifier: "CardVC") as? CardVC {
                 self.navigationController?.pushViewController(cardVC, animated: true)
             }
+            
+        case 1:
+            if let niceVC = self.storyboard?.instantiateViewController(withIdentifier: "NicePayVC") as? NicePayVC {
+                self.navigationController?.pushViewController(niceVC, animated: true)
+            }
         default:
             ()
         }

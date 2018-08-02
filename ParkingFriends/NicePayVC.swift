@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import WebKit
 
 class NicePayVC: UIViewController {
 
     @IBOutlet weak var contentsView: UIView!
+    var webView: WKWebView?
+    var host = "http://m.daum.net"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.webView = initWebView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +29,20 @@ class NicePayVC: UIViewController {
     }
     
 
+    func initWebView() -> WKWebView {
+        
+        let config = WKWebViewConfiguration()
+        
+        let webView:WKWebView = WKWebView(frame: self.contentsView.frame, configuration: config)
+        let url = NSURL(string: host)
+        
+        let request = NSURLRequest(url: url! as URL)
+        webView.load(request as URLRequest)
+        self.contentsView.addSubview(webView)
+        
+        return webView
+        
+    }
     /*
     // MARK: - Navigation
 
