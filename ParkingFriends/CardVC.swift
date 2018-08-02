@@ -22,6 +22,8 @@ class CardVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var txtPassword: UITextField!
     
+    @IBOutlet weak var txtBirth: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +40,8 @@ class CardVC: UIViewController, UITextFieldDelegate {
         txtYear.delegate = self
         
         txtPassword.delegate = self
+        
+        txtBirth.delegate = self
         
         
         var btnDone = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.sendCodeBtnAction(sender:)))
@@ -62,6 +66,8 @@ class CardVC: UIViewController, UITextFieldDelegate {
         txtYear.inputAccessoryView = toolBar
         
         txtPassword.inputAccessoryView = toolBar
+        
+        txtBirth.inputAccessoryView = toolBar
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,6 +96,8 @@ class CardVC: UIViewController, UITextFieldDelegate {
         txtYear.resignFirstResponder()
         
         txtPassword.resignFirstResponder()
+        
+        txtBirth.resignFirstResponder()
     }
     
     // MARK: NotificationCenter
