@@ -132,7 +132,8 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             
-            self.tableView.frame.origin.y = -(keyboardSize.height/2)
+//            self.tableView.frame.origin.y = -(keyboardSize.height/2)
+            self.tableView.frame.origin.y = -(keyboardSize.height)
             
             /*
             if (txtCarName.isFirstResponder || txtCarNum.isFirstResponder ){

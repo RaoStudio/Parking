@@ -145,8 +145,17 @@ class CardVC: UIViewController, UITextFieldDelegate {
         txtCard_Three.resignFirstResponder()
         txtCard_Four.resignFirstResponder()
         
+        txtMonth.resignFirstResponder()
+        txtYear.resignFirstResponder()
+        
+        txtPassword.resignFirstResponder()
+        
+        txtBirth.resignFirstResponder()
+        
         return true
     }
+    
+    
     
     
     /*
