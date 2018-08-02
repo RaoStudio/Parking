@@ -23,6 +23,7 @@ struct UserInfoKey {
     static let rLocation = "RESERVE_LOCATION"       // Not Use
     
     static let totalPay = "TOTALPAY"
+    static let lastPay = "LASTPAY"
 }
 
 
@@ -136,6 +137,18 @@ class UserInfoManager {
         set(v) {
             let ud = UserDefaults.standard
             ud.setValue(v, forKey: UserInfoKey.totalPay)
+            ud.synchronize()
+        }
+    }
+    
+    var lastPay: String? {
+        get {
+            return UserDefaults.standard.string(forKey: UserInfoKey.lastPay)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.lastPay)
             ud.synchronize()
         }
     }
