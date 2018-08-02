@@ -74,6 +74,8 @@
 		29AA1267207DA06A00F4648C /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA1265207DA06A00F4648C /* GooglePlace.swift */; };
 		29B4CDED20CF96390055852F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4CDEC20CF96390055852F /* LoginVC.swift */; };
 		29B7CEB620F4802800A39315 /* ParkingLotDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B7CEB520F4802800A39315 /* ParkingLotDetailVC.swift */; };
+		29C5908E2112EDBD0024FC68 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C5908D2112EDBC0024FC68 /* WebKit.framework */; };
+		29C590902112F7790024FC68 /* NicePayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5908F2112F7790024FC68 /* NicePayVC.swift */; };
 		29CB4FE7210AE8E300BBCE51 /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB4FE6210AE8E200BBCE51 /* CardVC.swift */; };
 		29D6C26220E0BC8B001EF09B /* SideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D6C26120E0BC8B001EF09B /* SideVC.swift */; };
 		29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */; };
@@ -175,6 +177,8 @@
 		29AA1265207DA06A00F4648C /* GooglePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
 		29B4CDEC20CF96390055852F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		29B7CEB520F4802800A39315 /* ParkingLotDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotDetailVC.swift; sourceTree = "<group>"; };
+		29C5908D2112EDBC0024FC68 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		29C5908F2112F7790024FC68 /* NicePayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicePayVC.swift; sourceTree = "<group>"; };
 		29CB4FE6210AE8E200BBCE51 /* CardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
 		29D6C26120E0BC8B001EF09B /* SideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideVC.swift; sourceTree = "<group>"; };
 		29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C5908E2112EDBD0024FC68 /* WebKit.framework in Frameworks */,
 				299D7CCD20FC8E7F00D680CF /* KakaoCommon.framework in Frameworks */,
 				299D7CCC20FC8E7F00D680CF /* KakaoNavi.framework in Frameworks */,
 				2993979520FED27E00F1BFB3 /* TopLib_Op.a in Frameworks */,
@@ -258,6 +263,7 @@
 				29012A8721057BE1005D99FC /* ProfileVC.swift */,
 				29A17DCD2106C30D002772A1 /* PaymentVC.swift */,
 				29CB4FE6210AE8E200BBCE51 /* CardVC.swift */,
+				29C5908F2112F7790024FC68 /* NicePayVC.swift */,
 			);
 			path = ParkingFriends;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 		298DF7EB20D24CD900F0B653 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				29C5908D2112EDBC0024FC68 /* WebKit.framework */,
 				299D7CCB20FC8E7E00D680CF /* KakaoCommon.framework */,
 				299D7CCA20FC8E7D00D680CF /* KakaoNavi.framework */,
 				298DF7EC20D24D1100F0B653 /* KakaoOpenSDK.framework */,
@@ -650,6 +657,7 @@
 				29A17DD3210708A6002772A1 /* PaymentSelectCell.swift in Sources */,
 				2999636D20B65F4200AC180C /* PresentTestVC.swift in Sources */,
 				293C50C1210802EE00E53620 /* PaymentPointInputCell.swift in Sources */,
+				29C590902112F7790024FC68 /* NicePayVC.swift in Sources */,
 				29A17DCE2106C30D002772A1 /* PaymentVC.swift in Sources */,
 				29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */,
 				29559EFC204CE28E000EB12B /* ParkingFriends.xcdatamodeld in Sources */,
