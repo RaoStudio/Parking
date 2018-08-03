@@ -17,11 +17,17 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
 //    var webView: UIWebView!
     
 //    var host = "http://m.daum.net"
-//    var host = UrlStrings.URL_API_NICEPAY_REQUEST
-    var host = "http://api.parkingfriends.net/app/payment/unipay.php"
+//    var host = "http://api.parkingfriends.net/app/payment/unipay.php"
+    var host = UrlStrings.URL_API_NICEPAY_REQUEST
    
    
-    var param = "PayMethod=CELLPHONE&BuyerName=%EB%AF%B8%EB%9E%98%EC%97%94%EC%94%A8%ED%8B%B0&BuyerTel=01036638266&BuyerEmail=misconct6161%40gmail.com&member_sid=8&parkinglot_sid=7874&reserve_type=R&begin=2018-08-03+11%3A20&end=2018-08-03+13%3A20&price_ori=5000&point=0&type=nice_etc&code=3RYF9V32S7UULZTNMV1GITB9"
+    // Test Param
+//    var param = "PayMethod=CELLPHONE&BuyerName=%EB%AF%B8%EB%9E%98%EC%97%94%EC%94%A8%ED%8B%B0&BuyerTel=01036638266&BuyerEmail=misconct6161%40gmail.com&member_sid=8&parkinglot_sid=7874&reserve_type=R&begin=2018-08-03+11%3A20&end=2018-08-03+13%3A20&price_ori=5000&point=0&type=nice_etc&code=3RYF9V32S7UULZTNMV1GITB9"
+    
+    
+//    PayMethod=CELLPHONE&BuyerName=%EB%AF%B8%EB%9E%98%EC%97%94%EC%94%A8%ED%8B%B0&BuyerTel=01036638266&BuyerEmail=misconct6161%40gmail.com&member_sid=8&parkinglot_sid=7874&reserve_type=R&begin=2018-08-03+17%3A20&end=2018-08-03+19%3A20&price_ori=5000&point=0&type=nice_etc&code=3RYF9V32S7UULZTNMV1GITB9
+    
+    var param = "PayMethod=CELLPHONE&BuyerName=미래엔씨티&BuyerTel=01036638266&BuyerEmail=misconct6161@gmail.com&member_sid=8&parkinglot_sid=7874&reserve_type=R&begin=2018-08-03 17:20&end=2018-08-03 19:20&price_ori=5000&point=0&type=nice_etc&code=3RYF9V32S7UULZTNMV1GITB9"
  
     
     override func viewDidLoad() {
@@ -31,6 +37,12 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         
         webView = initWebView()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+//        webView = initWebView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,7 +64,7 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.navigationDelegate = self
         webView.uiDelegate = self
-        webView.allowsBackForwardNavigationGestures = true
+//        webView.allowsBackForwardNavigationGestures = true
         
         
         self.contentsView.addSubview(webView)
@@ -134,7 +146,6 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         
         print("\(String(describing: navigationAction.request.allHTTPHeaderFields))")
         /*
-        
         let accessToken = "Bearer 527d3401f16a8a7955aeae62299dbfbd"
         var request = navigationAction.request
         
