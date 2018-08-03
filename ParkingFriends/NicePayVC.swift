@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class NicePayVC: UIViewController, WKNavigationDelegate {
+class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
 
     @IBOutlet weak var contentsView: UIView!
     
@@ -17,7 +17,8 @@ class NicePayVC: UIViewController, WKNavigationDelegate {
 //    var webView: UIWebView!
     
 //    var host = "http://m.daum.net"
-    var host = UrlStrings.URL_API_NICEPAY_REQUEST
+//    var host = UrlStrings.URL_API_NICEPAY_REQUEST
+    var host = "http://api.parkingfriends.net/app/payment/unipay.php"
    
    
     var param = "PayMethod=CELLPHONE&BuyerName=%EB%AF%B8%EB%9E%98%EC%97%94%EC%94%A8%ED%8B%B0&BuyerTel=01036638266&BuyerEmail=misconct6161%40gmail.com&member_sid=8&parkinglot_sid=7874&reserve_type=R&begin=2018-08-03+11%3A20&end=2018-08-03+13%3A20&price_ori=5000&point=0&type=nice_etc&code=3RYF9V32S7UULZTNMV1GITB9"
@@ -29,7 +30,7 @@ class NicePayVC: UIViewController, WKNavigationDelegate {
         // Do any additional setup after loading the view.
         
         webView = initWebView()
-        webView.navigationDelegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +50,10 @@ class NicePayVC: UIViewController, WKNavigationDelegate {
 //        let webView = UIWebView(frame: .zero)
         
         webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.navigationDelegate = self
+        webView.uiDelegate = self
+        webView.allowsBackForwardNavigationGestures = true
+        
         
         self.contentsView.addSubview(webView)
         
@@ -107,6 +112,24 @@ class NicePayVC: UIViewController, WKNavigationDelegate {
     }
     
     // MARK: - WKNavigationDelegate
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        print("Start")
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("End")
+    }
+    
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print("Fail Navigation")
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        print("Fail ProvisionalNavigation")
+    }
+    
+    
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void) {
         
         print("\(String(describing: navigationAction.request.allHTTPHeaderFields))")
@@ -123,6 +146,7 @@ class NicePayVC: UIViewController, WKNavigationDelegate {
             decisionHandler(WKNavigationActionPolicy.allow)
         }
  */
+        
         decisionHandler(WKNavigationActionPolicy.allow)
     }
     
