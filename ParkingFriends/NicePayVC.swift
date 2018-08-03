@@ -9,10 +9,12 @@
 import UIKit
 import WebKit
 
-class NicePayVC: UIViewController {
+class NicePayVC: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var contentsView: UIView!
-    var webView: WKWebView?
+    
+    var webView: WKWebView!
+//    var webView: UIWebView!
     
 //    var host = "http://m.daum.net"
     var host = UrlStrings.URL_API_NICEPAY_REQUEST
@@ -27,6 +29,7 @@ class NicePayVC: UIViewController {
         // Do any additional setup after loading the view.
         
         webView = initWebView()
+        webView.navigationDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,11 +40,13 @@ class NicePayVC: UIViewController {
     
 
     
+//    func initWebView() -> UIWebView {
     func initWebView() -> WKWebView {
-        
+    
         let config = WKWebViewConfiguration()
-        let webView:WKWebView = WKWebView(frame: self.contentsView.frame, configuration: config)
+        let webView:WKWebView = WKWebView(frame: .zero, configuration: config)
         
+//        let webView = UIWebView(frame: .zero)
         
         webView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -62,10 +67,12 @@ class NicePayVC: UIViewController {
         }
  */
         
+        
         webView.leadingAnchor.constraint(equalTo: contentsView.leadingAnchor).isActive = true
         webView.topAnchor.constraint(equalTo: contentsView.topAnchor).isActive = true
         webView.trailingAnchor.constraint(equalTo: contentsView.trailingAnchor).isActive = true
         webView.bottomAnchor.constraint(equalTo: contentsView.bottomAnchor).isActive = true
+
         
         let url = NSURL(string: host)
         
@@ -80,9 +87,51 @@ class NicePayVC: UIViewController {
         
         webView.load(request as URLRequest)
         
+        /*
+        let task = URLSession.shared.dataTask(with: request) { (data: Data?, respense: URLResponse?, error: Error?) in
+            if data != nil {
+                if let returnString = String(data: data!, encoding: .utf8) {
+                    webView.loadHTMLString(returnString, baseURL: url! as URL)
+                }
+                
+            }
+        }
+        */
+        
+        
+//        webView.loadRequest(request)
+        
+        
         
         return webView
     }
+    
+    // MARK: - WKNavigationDelegate
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void) {
+        
+        print("\(String(describing: navigationAction.request.allHTTPHeaderFields))")
+        /*
+        
+        let accessToken = "Bearer 527d3401f16a8a7955aeae62299dbfbd"
+        var request = navigationAction.request
+        
+        if !(request.allHTTPHeaderFields?.keys.contains("Authorization"))! {
+            request.setValue(accessToken, forHTTPHeaderField: "Authorization")
+            decisionHandler(WKNavigationActionPolicy.cancel)
+            self.webView.load(request)
+        } else {
+            decisionHandler(WKNavigationActionPolicy.allow)
+        }
+ */
+        decisionHandler(WKNavigationActionPolicy.allow)
+    }
+    
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Swift.Void) {
+        decisionHandler(WKNavigationResponsePolicy.allow)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
