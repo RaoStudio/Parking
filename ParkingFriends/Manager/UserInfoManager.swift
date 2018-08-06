@@ -24,6 +24,7 @@ struct UserInfoKey {
     
     static let totalPay = "TOTALPAY"
     static let lastPay = "LASTPAY"
+    static let lotSid = "LOTSID"
     static let extend = "EXTEND"
 }
 
@@ -162,6 +163,18 @@ class UserInfoManager {
         set(v) {
             let ud = UserDefaults.standard
             ud.setValue(v, forKey: UserInfoKey.extend)
+            ud.synchronize()
+        }
+    }
+    
+    var lotSid: String? {
+        get {
+            return UserDefaults.standard.string(forKey: UserInfoKey.lotSid)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.lotSid)
             ud.synchronize()
         }
     }

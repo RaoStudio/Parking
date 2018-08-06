@@ -170,14 +170,22 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     }
     
     @IBAction func onBtnPayment(_ sender: UIButton) {
+        
+        var strParam: String = ""
+        
         switch self.nSelect {
-        case 0:
+        case 0: // Credit Card
             if let cardVC = self.storyboard?.instantiateViewController(withIdentifier: "CardVC") as? CardVC {
                 self.navigationController?.pushViewController(cardVC, animated: true)
             }
             
-        case 1:
+        case 1: // phone
             if let niceVC = self.storyboard?.instantiateViewController(withIdentifier: "NicePayVC") as? NicePayVC {
+                
+                strParam = "PayMethod=CELLPHONE" + "&BuyerName=\(uSession.name!)"
+                    + "&BuyerTel=\(uSession.mobile!)" + "&BuyerEmail=\(uSession.email)"
+                    + "&member_sid=\(uSession.sid)" + "&parkinglot_sid=\(uinfo.lotSid)"
+                
                 self.navigationController?.pushViewController(niceVC, animated: true)
             }
         default:

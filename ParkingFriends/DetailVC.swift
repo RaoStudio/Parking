@@ -712,6 +712,9 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 return
             }
             
+            
+            uinfo.lotSid = strSid
+            
             vc.bTab = false
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: false, completion: nil)
