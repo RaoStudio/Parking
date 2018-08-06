@@ -235,6 +235,29 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
                 self.navigationController?.pushViewController(niceVC, animated: true)
             }
             
+        case 3: // kakao
+            if let niceVC = self.storyboard?.instantiateViewController(withIdentifier: "NicePayVC") as? NicePayVC {
+                
+                var strPayMethod: String = ""
+                
+                if strLastPay == "0" {
+                    strPayMethod = "POINT"
+                } else {
+                    strPayMethod = "KAKAO"
+                }
+                
+                strParam = "PayMethod=\(strPayMethod)" + "&BuyerName=\(uSession.name!)"
+                    + "&BuyerTel=\(uSession.mobile!)" + "&BuyerEmail=\(uSession.email!)"
+                    + "&member_sid=\(uSession.sid!)" + "&parkinglot_sid=\(uinfo.lotSid!)"
+                    + "&reserve_type=\(uinfo.rsvType!)" + "&begin=\(uinfo.startTime!)"
+                    + "&end=\(uinfo.endTime!)" + "&price_ori=\(uinfo.totalPay!)"
+                    + "&point=\(strPointPay)" + "&type=kakao"
+                
+                niceVC.param = strParam
+                
+                self.navigationController?.pushViewController(niceVC, animated: true)
+            }
+            
         default:
             ()
         }
