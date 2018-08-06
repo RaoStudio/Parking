@@ -185,17 +185,18 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         }
  */
         
-        decisionHandler(WKNavigationActionPolicy.allow)
+//        decisionHandler(WKNavigationActionPolicy.allow)
         
         
-        /*
+        //*
         if let url = navigationAction.request.url, url.scheme != "http" && url.scheme != "https" {
-            UIApplication.shared.openURL(url)
+//            UIApplication.shared.openURL(url)
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
             decisionHandler(.cancel)
         } else {
             decisionHandler(.allow)
         }
-         */
+        //*/
     }
     
     
