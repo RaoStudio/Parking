@@ -39,6 +39,8 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         
         webView = initWebView()
         
+        self.navigationItem.title = "결제"
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

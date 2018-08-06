@@ -174,6 +174,7 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         var strParam: String = ""
         
         switch self.nSelect {
+            
         case 0: // Credit Card
             if let cardVC = self.storyboard?.instantiateViewController(withIdentifier: "CardVC") as? CardVC {
                 self.navigationController?.pushViewController(cardVC, animated: true)
@@ -201,6 +202,30 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
                 
                 self.navigationController?.pushViewController(niceVC, animated: true)
             }
+            
+        case 2: // trasfer
+            if let niceVC = self.storyboard?.instantiateViewController(withIdentifier: "NicePayVC") as? NicePayVC {
+                
+                var strPayMethod: String = ""
+                
+                if strLastPay == "0" {
+                    strPayMethod = "POINT"
+                } else {
+                    strPayMethod = "BANK"
+                }
+                
+                strParam = "PayMethod=\(strPayMethod)" + "&BuyerName=\(uSession.name!)"
+                    + "&BuyerTel=\(uSession.mobile!)" + "&BuyerEmail=\(uSession.email!)"
+                    + "&member_sid=\(uSession.sid!)" + "&parkinglot_sid=\(uinfo.lotSid!)"
+                    + "&reserve_type=\(uinfo.rsvType!)" + "&begin=\(uinfo.startTime!)"
+                    + "&end=\(uinfo.endTime!)" + "&price_ori=\(uinfo.totalPay!)"
+                    + "&point=\(strPointPay)" + "&type=nice_etc"
+                
+                niceVC.param = strParam
+                
+                self.navigationController?.pushViewController(niceVC, animated: true)
+            }
+            
         default:
             ()
         }
