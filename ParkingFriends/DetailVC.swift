@@ -714,6 +714,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             
             
             uinfo.lotSid = strSid
+            uinfo.rsvType = "R"
             
             vc.bTab = false
             vc.modalPresentationStyle = .overFullScreen

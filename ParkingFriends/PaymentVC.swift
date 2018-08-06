@@ -183,8 +183,13 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
             if let niceVC = self.storyboard?.instantiateViewController(withIdentifier: "NicePayVC") as? NicePayVC {
                 
                 strParam = "PayMethod=CELLPHONE" + "&BuyerName=\(uSession.name!)"
-                    + "&BuyerTel=\(uSession.mobile!)" + "&BuyerEmail=\(uSession.email)"
-                    + "&member_sid=\(uSession.sid)" + "&parkinglot_sid=\(uinfo.lotSid)"
+                    + "&BuyerTel=\(uSession.mobile!)" + "&BuyerEmail=\(uSession.email!)"
+                    + "&member_sid=\(uSession.sid!)" + "&parkinglot_sid=\(uinfo.lotSid!)"
+                    + "&reserve_type=\(uinfo.rsvType!)" + "&begin=\(uinfo.startTime!)"
+                    + "&end=\(uinfo.endTime!)" + "&price_ori=\(uinfo.totalPay!)"
+                    + "&point=\(strPointPay)" + "&type=nice_etc"
+                
+                niceVC.param = strParam
                 
                 self.navigationController?.pushViewController(niceVC, animated: true)
             }

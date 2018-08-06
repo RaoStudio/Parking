@@ -24,6 +24,8 @@ struct UserInfoKey {
     
     static let totalPay = "TOTALPAY"
     static let lastPay = "LASTPAY"
+    
+    static let rsvType = "RSVTYPE"
     static let lotSid = "LOTSID"
     static let extend = "EXTEND"
 }
@@ -178,6 +180,19 @@ class UserInfoManager {
             ud.synchronize()
         }
     }
+    
+    var rsvType: String? {
+        get {
+            return UserDefaults.standard.string(forKey: UserInfoKey.rsvType)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.rsvType)
+            ud.synchronize()
+        }
+    }
+    
 }
 
 extension UserInfoManager {
