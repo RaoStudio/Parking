@@ -145,6 +145,13 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
             } else if strUrl.contains("payment_done") {
                 self.navigationController?.popViewController(animated: true)
             }
+                /*
+            else if strUrl.contains("kakaopay") {
+                var request = URLRequest(url: url)
+                request.httpMethod = "GET"
+                webView.load(request)
+            }
+             */
         }
     }
     
@@ -179,6 +186,16 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
  */
         
         decisionHandler(WKNavigationActionPolicy.allow)
+        
+        
+        /*
+        if let url = navigationAction.request.url, url.scheme != "http" && url.scheme != "https" {
+            UIApplication.shared.openURL(url)
+            decisionHandler(.cancel)
+        } else {
+            decisionHandler(.allow)
+        }
+         */
     }
     
     
