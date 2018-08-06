@@ -27,7 +27,9 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
     
 //    PayMethod=CELLPHONE&BuyerName=%EB%AF%B8%EB%9E%98%EC%97%94%EC%94%A8%ED%8B%B0&BuyerTel=01036638266&BuyerEmail=misconct6161%40gmail.com&member_sid=8&parkinglot_sid=7874&reserve_type=R&begin=2018-08-03+17%3A20&end=2018-08-03+19%3A20&price_ori=5000&point=0&type=nice_etc&code=3RYF9V32S7UULZTNMV1GITB9
     
-    var param = "PayMethod=CELLPHONE&BuyerName=미래엔씨티&BuyerTel=01036638266&BuyerEmail=misconct6161@gmail.com&member_sid=8&parkinglot_sid=7874&reserve_type=R&begin=2018-08-03 17:20&end=2018-08-03 19:20&price_ori=5000&point=0&type=nice_etc&code=3RYF9V32S7UULZTNMV1GITB9"
+//    var param = "PayMethod=CELLPHONE&BuyerName=미래엔씨티&BuyerTel=01036638266&BuyerEmail=misconct6161@gmail.com&member_sid=8&parkinglot_sid=7874&reserve_type=R&begin=2018-08-03 17:20&end=2018-08-03 19:20&price_ori=5000&point=0&type=nice_etc&code=3RYF9V32S7UULZTNMV1GITB9"
+    
+    var param: String = ""
  
     
     override func viewDidLoad() {

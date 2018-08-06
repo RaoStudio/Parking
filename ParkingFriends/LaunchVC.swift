@@ -92,7 +92,8 @@ class LaunchVC: UIViewController {
         
         
         
-        self.navigationController?.view.makeToastActivity(.downCenter)
+//        self.navigationController?.view.makeToastActivity(.downCenter)
+        self.navigationController?.view.makeToastActivity(.center)
         
         
 //        self.navigationController?.view.makeToast("로그인이 필요합니다.", duration: 1.0, position: .bottom)
@@ -160,8 +161,8 @@ class LaunchVC: UIViewController {
                                 let strComment = String(format: "%@님 환영합니다", dic["name"].stringValue)
                                 
                                 
-                                
-                                self.navigationController?.view.makeToast(strComment, duration: 2.0, position: .upBottom, title: nil, image: nil) { didTap in
+                                self.navigationController?.view.makeToast(strComment, duration: 2.0, position: .bottom, title: nil, image: nil) { didTap in
+//                                self.navigationController?.view.makeToast(strComment, duration: 2.0, position: .upBottom, title: nil, image: nil) { didTap in
 //                                self.navigationController?.view.makeToast(strComment, duration: 2.0, point: CGPoint(x: 110.0, y: 110.0), title: nil, image: nil) { didTap in
                                     if didTap {
                                         print("completion from tap")
