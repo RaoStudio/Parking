@@ -77,6 +77,15 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
                                                name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
