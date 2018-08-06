@@ -126,6 +126,16 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
     // MARK: - WKNavigationDelegate
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         print("Start")
+        
+        
+        if let url = webView.url {
+            let strUrl = url.path
+            if strUrl.contains("navigate") {
+                
+            } else if strUrl.contains("payment_done") {
+                
+            }
+        }
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
