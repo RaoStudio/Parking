@@ -129,11 +129,17 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         
         
         if let url = webView.url {
-            let strUrl = url.path
+            let strUrl = String(describing: url)
             if strUrl.contains("navigate") {
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "NaviVC") else {
+                    return
+                }
+                
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: false, completion: nil)
                 
             } else if strUrl.contains("payment_done") {
-                
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
