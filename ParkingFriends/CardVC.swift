@@ -234,8 +234,52 @@ class CardVC: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if let text = textField.text, let textRange = Range(range, in:text) {
+            let updatedText = text.replacingCharacters(in: textRange, with: string)
+            print("Update : \(updatedText)")
+            
+            if textField == txtCard_One, updatedText.count > 4 {
+                txtCard_Two.becomeFirstResponder()
+                return false
+            }
+            else if textField == txtCard_Two, updatedText.count > 4 {
+                txtCard_Three.becomeFirstResponder()
+                return false
+            }
+            else if textField == txtCard_Three, updatedText.count > 4 {
+                txtCard_Four.becomeFirstResponder()
+                return false
+            }
+            else if textField == txtCard_Four, updatedText.count > 4 {
+                txtMonth.becomeFirstResponder()
+                return false
+            }
+            else if textField == txtMonth, updatedText.count > 2 {
+                txtYear.becomeFirstResponder()
+                return false
+            }
+            else if textField == txtYear, updatedText.count > 2 {
+                txtPassword.becomeFirstResponder()
+                return false
+            }
+            else if textField == txtPassword, updatedText.count > 2 {
+                txtBirth.becomeFirstResponder()
+                return false
+            }
+            else if textField == txtBirth, updatedText.count > 10 {
+                return false
+            }
+            
+        }
+        
+        return true
+    }
     
-    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+//        print("\(textField.text)")
+    }
     
     /*
     // MARK: - Navigation

@@ -208,8 +208,18 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Swift.Void) {
         decisionHandler(WKNavigationResponsePolicy.allow)
+        
+        
     }
  
+    
+    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+        print("didReceiveServerRedirectForProvisionalNavigation : \(webView.url!)")
+    }
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        print(webView.url!)
+    }
     
     /*
     // MARK: - Navigation
