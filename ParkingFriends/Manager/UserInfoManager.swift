@@ -200,6 +200,78 @@ class UserInfoManager {
         }
     }
     
+    var creditOne: String? {
+        get {
+            return UserDefaults.standard.string(forKey: UserInfoKey.creditOne)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.creditOne)
+            ud.synchronize()
+        }
+    }
+    
+    var creditTwo: String? {
+        get {
+            return UserDefaults.standard.string(forKey: UserInfoKey.creditTwo)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.creditTwo)
+            ud.synchronize()
+        }
+    }
+    
+    var creditThree: String? {
+        get {
+            return UserDefaults.standard.string(forKey: UserInfoKey.creditThree)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.creditThree)
+            ud.synchronize()
+        }
+    }
+    
+    var creditFour: String? {
+        get {
+            return UserDefaults.standard.string(forKey: UserInfoKey.creditFour)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.creditFour)
+            ud.synchronize()
+        }
+    }
+    
+    var creditMonth: String? {
+        get {
+            return UserDefaults.standard.string(forKey: UserInfoKey.creditMonth)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.creditMonth)
+            ud.synchronize()
+        }
+    }
+    
+    var creditYear: String? {
+        get {
+            return UserDefaults.standard.string(forKey: UserInfoKey.creditYear)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.creditYear)
+            ud.synchronize()
+        }
+    }
+    
 }
 
 extension UserInfoManager {
