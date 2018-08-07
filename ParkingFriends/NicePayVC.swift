@@ -145,13 +145,18 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
             } else if strUrl.contains("payment_done") {
                 self.navigationController?.popViewController(animated: true)
             }
-                /*
-            else if strUrl.contains("kakaopay") {
-                var request = URLRequest(url: url)
-                request.httpMethod = "GET"
-                webView.load(request)
+            //*
+            else if strUrl.contains("kakaotalk") {
+                
+//                let arrStr = strUrl.components(separatedBy: "=")
+//                let kUrl = URL(string: arrStr.last!)
+//                var request = URLRequest(url: kUrl!)
+//                request.httpMethod = "GET"
+//                webView.load(request)
+                
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
-             */
+            //*/
         }
     }
     
@@ -185,10 +190,10 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         }
  */
         
-//        decisionHandler(WKNavigationActionPolicy.allow)
+        decisionHandler(WKNavigationActionPolicy.allow)
         
         
-        //*
+        /*
         if let url = navigationAction.request.url, url.scheme != "http" && url.scheme != "https" {
 //            UIApplication.shared.openURL(url)
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -196,14 +201,15 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         } else {
             decisionHandler(.allow)
         }
-        //*/
+        */
     }
+    
     
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Swift.Void) {
         decisionHandler(WKNavigationResponsePolicy.allow)
     }
-    
+ 
     
     /*
     // MARK: - Navigation

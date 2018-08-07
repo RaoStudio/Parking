@@ -28,6 +28,9 @@ class CardVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtBirth: UITextField!
     
     let uinfo = UserInfoManager()
+    let uSession = UserSession()
+    
+    var strPoint: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,6 +139,28 @@ class CardVC: UIViewController, UITextFieldDelegate {
         }
     }
 
+    // MARK: - Btn Action
+    @IBAction func onBtnPay(_ sender: Any) {
+        
+        var strParam: String = ""
+        
+        
+        if let niceVC = self.storyboard?.instantiateViewController(withIdentifier: "NicePayVC") as? NicePayVC {
+            
+            strParam = "&BuyerName=\(uSession.name!)"
+                + "&BuyerTel=\(uSession.mobile!)" + "&BuyerEmail=\(uSession.email!)"
+                + "&member_sid=\(uSession.sid!)" + "&parkinglot_sid=\(uinfo.lotSid!)"
+                + "&reserve_type=\(uinfo.rsvType!)" + "&begin=\(uinfo.startTime!)"
+                + "&end=\(uinfo.endTime!)" + "&price_ori=\(uinfo.totalPay!)"
+                + "&point=\(strPoint)" + "&type=nice_etc"
+            
+            niceVC.param = strParam
+            
+            self.navigationController?.pushViewController(niceVC, animated: true)
+        }
+    }
+    
+    
     
     // MARK: - UITextField Delegate
     

@@ -181,18 +181,38 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     @IBAction func onBtnPayment(_ sender: UIButton) {
         
         var strParam: String = ""
+        var strPayMethod: String = ""
         
         switch self.nSelect {
             
         case 0: // Credit Card
-            if let cardVC = self.storyboard?.instantiateViewController(withIdentifier: "CardVC") as? CardVC {
-                self.navigationController?.pushViewController(cardVC, animated: true)
+            
+            if strLastPay == "0" {
+                if let niceVC = self.storyboard?.instantiateViewController(withIdentifier: "NicePayVC") as? NicePayVC {
+                    strParam = "PayMethod=POINT" + "&BuyerName=\(uSession.name!)"
+                        + "&BuyerTel=\(uSession.mobile!)" + "&BuyerEmail=\(uSession.email!)"
+                        + "&member_sid=\(uSession.sid!)" + "&parkinglot_sid=\(uinfo.lotSid!)"
+                        + "&reserve_type=\(uinfo.rsvType!)" + "&begin=\(uinfo.startTime!)"
+                        + "&end=\(uinfo.endTime!)" + "&price_ori=\(uinfo.totalPay!)"
+                        + "&point=\(strPointPay)" + "&type=nice_etc"
+                    
+                    niceVC.param = strParam
+                    
+                    self.navigationController?.pushViewController(niceVC, animated: true)
+                }
+            }
+            else
+            {
+                if let cardVC = self.storyboard?.instantiateViewController(withIdentifier: "CardVC") as? CardVC {
+                    cardVC.strPoint = strPointPay
+                    self.navigationController?.pushViewController(cardVC, animated: true)
+                }
             }
             
         case 1: // phone
             if let niceVC = self.storyboard?.instantiateViewController(withIdentifier: "NicePayVC") as? NicePayVC {
                 
-                var strPayMethod: String = ""
+//                var strPayMethod: String = ""
                 
                 if strLastPay == "0" {
                     strPayMethod = "POINT"
@@ -215,7 +235,7 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         case 2: // trasfer
             if let niceVC = self.storyboard?.instantiateViewController(withIdentifier: "NicePayVC") as? NicePayVC {
                 
-                var strPayMethod: String = ""
+//                var strPayMethod: String = ""
                 
                 if strLastPay == "0" {
                     strPayMethod = "POINT"
@@ -238,7 +258,7 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         case 3: // kakao
             if let niceVC = self.storyboard?.instantiateViewController(withIdentifier: "NicePayVC") as? NicePayVC {
                 
-                var strPayMethod: String = ""
+//                var strPayMethod: String = ""
                 
                 if strLastPay == "0" {
                     strPayMethod = "POINT"

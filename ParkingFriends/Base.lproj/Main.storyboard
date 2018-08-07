@@ -3227,6 +3227,9 @@
                                         <state key="normal" title="결제하기" backgroundImage="btn_green_round">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onBtnPay:" destination="HIw-rA-2fh" eventType="touchUpInside" id="s3f-lS-MdE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
