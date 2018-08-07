@@ -91,6 +91,16 @@ class CardVC: UIViewController, UITextFieldDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
                                                name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        
+        
+        txtCard_One.text = uinfo.creditOne ?? ""
+        txtCard_Two.text = uinfo.creditTwo ?? ""
+        txtCard_Three.text = uinfo.creditThree ?? ""
+        txtCard_Four.text = uinfo.creditFour ?? ""
+        
+        txtMonth.text = uinfo.creditMonth ?? ""
+        txtYear.text = uinfo.creditYear ?? ""
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -161,7 +171,7 @@ class CardVC: UIViewController, UITextFieldDelegate {
         var strParam: String = ""
         let strCardNum = txtCard_One.text! + txtCard_Two.text! + txtCard_Three.text! + txtCard_Four.text!
         let strCardExpMonth = txtMonth.text!
-        let strYear = txtYear.text!
+        let strCardExpYear = txtYear.text!
         let strAuthNum = txtBirth.text!
         let strCardPwd = txtPassword.text!
         
@@ -176,7 +186,7 @@ class CardVC: UIViewController, UITextFieldDelegate {
                 + "&point=\(strPoint)" + "&type=nice_card"
                 + "&CardNum=\(strCardNum)"
                 + "&CardExpMonth=\(strCardExpMonth)"
-                + "&CardExpYear=\(strYear)"
+                + "&CardExpYear=\(strCardExpYear)"
                 + "&CardAuthNum=\(strAuthNum)"
                 + "&CardPwd=\(strCardPwd)"
                 + "&CardQuota=0"
@@ -184,6 +194,14 @@ class CardVC: UIViewController, UITextFieldDelegate {
             niceVC.param = strParam
             
             self.navigationController?.pushViewController(niceVC, animated: true)
+            
+            uinfo.creditOne = txtCard_One.text!
+            uinfo.creditTwo = txtCard_Two.text!
+            uinfo.creditThree = txtCard_Three.text!
+            uinfo.creditFour = txtCard_Four.text!
+            
+            uinfo.creditMonth = strCardExpMonth
+            uinfo.creditYear = strCardExpYear
         }
     }
     
