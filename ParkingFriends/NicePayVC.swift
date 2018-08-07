@@ -106,19 +106,26 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         request.setValue(String(paramData!.count), forHTTPHeaderField: "Content-Length")
         
         
-        webView.load(request as URLRequest)
         
-        /*
-        let task = URLSession.shared.dataTask(with: request) { (data: Data?, respense: URLResponse?, error: Error?) in
-            if data != nil {
-                if let returnString = String(data: data!, encoding: .utf8) {
-                    webView.loadHTMLString(returnString, baseURL: url! as URL)
-                }
-                
-            }
+        
+        if #available(iOS 11.0, *) {
+            webView.load(request as URLRequest)
         }
-        */
-        
+        else {
+            
+            
+            //*
+            let task = URLSession.shared.dataTask(with: request) { (data: Data?, respense: URLResponse?, error: Error?) in
+                if data != nil {
+                    if let returnString = String(data: data!, encoding: .utf8) {
+                        webView.loadHTMLString(returnString, baseURL: url! as URL)
+                    }
+                    
+                }
+            }
+            task.resume()
+            //*/
+        }
         
 //        webView.loadRequest(request)
         
