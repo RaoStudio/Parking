@@ -37,7 +37,8 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
 
         // Do any additional setup after loading the view.
         
-        webView = initWebView()
+//        webView = initWebView()
+        initWebView()
         
         self.navigationItem.title = "결제"
         
@@ -58,10 +59,14 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
 
     
 //    func initWebView() -> UIWebView {
-    func initWebView() -> WKWebView {
+//    func initWebView() -> WKWebView {
+    func initWebView() {
     
         let config = WKWebViewConfiguration()
-        let webView:WKWebView = WKWebView(frame: .zero, configuration: config)
+//        let webView:WKWebView = WKWebView(frame: .zero, configuration: config)
+        webView = WKWebView(frame: .zero, configuration: config)
+        
+        self.contentsView.addSubview(webView)
         
 //        let webView = UIWebView(frame: .zero)
         
@@ -71,7 +76,7 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
 //        webView.allowsBackForwardNavigationGestures = true
         
         
-        self.contentsView.addSubview(webView)
+//        self.contentsView.addSubview(webView)
         
         
         /*
@@ -107,31 +112,31 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
         
         
         
+        webView.load(request as URLRequest)
         
+        /*
         if #available(iOS 11.0, *) {
             webView.load(request as URLRequest)
         }
         else {
-            
-            
-            //*
             let task = URLSession.shared.dataTask(with: request) { (data: Data?, respense: URLResponse?, error: Error?) in
                 if data != nil {
                     if let returnString = String(data: data!, encoding: .utf8) {
                         webView.loadHTMLString(returnString, baseURL: url! as URL)
+//                        webView.loadHTMLString(returnString, baseURL: nil)
                     }
                     
                 }
             }
             task.resume()
-            //*/
         }
+    */
         
 //        webView.loadRequest(request)
         
         
         
-        return webView
+//        return webView
     }
     
     // MARK: - WKNavigationDelegate
