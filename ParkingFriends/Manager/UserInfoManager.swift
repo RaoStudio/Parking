@@ -29,9 +29,12 @@ struct UserInfoKey {
     static let lotSid = "LOTSID"
     static let extend = "EXTEND"
     
-    static let creditOne = ""
-    static let creditTwo = ""
-    
+    static let creditOne = "CREDIT_ONE"
+    static let creditTwo = "CREDIT_TWO"
+    static let creditThree = "CREDIT_THREE"
+    static let creditFour = "CREDIT_FOUR"
+    static let creditMonth = "CREDIT_MONTH"
+    static let creditYear = "CREDIT_YEAR"
 }
 
 
