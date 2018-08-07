@@ -157,6 +157,9 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
             //*/
+            else if strUrl.contains("itunes.apple.com") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
         }
     }
     
