@@ -28,6 +28,10 @@ struct UserInfoKey {
     static let rsvType = "RSVTYPE"
     static let lotSid = "LOTSID"
     static let extend = "EXTEND"
+    
+    static let creditOne = ""
+    static let creditTwo = ""
+    
 }
 
 

@@ -141,8 +141,29 @@ class CardVC: UIViewController, UITextFieldDelegate {
 
     // MARK: - Btn Action
     @IBAction func onBtnPay(_ sender: Any) {
+        /*
+        intent.putExtra( "CardNum", cardNum );
+        intent.putExtra( "CardExpMonth", cardExpMonth );
+        intent.putExtra( "CardExpYear", cardExpYear );
+        intent.putExtra( "CardAuthNum", cardAuthNum );
+        intent.putExtra( "CardPwd", cardPwd );;
+        intent.putExtra( "CardQuota", "0" );
+         
+         + "&CardNum=" + URLEncoder.encode(CardNum, "UTF-8")
+         + "&CardExpMonth=" + URLEncoder.encode(CardExpMonth, "UTF-8")
+         + "&CardExpYear=" + URLEncoder.encode(CardExpYear, "UTF-8")
+         + "&CardAuthNum=" + URLEncoder.encode(CardAuthNum, "UTF-8")
+         + "&CardPwd=" + URLEncoder.encode(CardPwd, "UTF-8")
+         + "&CardQuota=" + URLEncoder.encode(CardQuota, "UTF-8")
+         
+ */
         
         var strParam: String = ""
+        let strCardNum = txtCard_One.text! + txtCard_Two.text! + txtCard_Three.text! + txtCard_Four.text!
+        let strCardExpMonth = txtMonth.text!
+        let strYear = txtYear.text!
+        let strAuthNum = txtBirth.text!
+        let strCardPwd = txtPassword.text!
         
         
         if let niceVC = self.storyboard?.instantiateViewController(withIdentifier: "NicePayVC") as? NicePayVC {
@@ -152,7 +173,13 @@ class CardVC: UIViewController, UITextFieldDelegate {
                 + "&member_sid=\(uSession.sid!)" + "&parkinglot_sid=\(uinfo.lotSid!)"
                 + "&reserve_type=\(uinfo.rsvType!)" + "&begin=\(uinfo.startTime!)"
                 + "&end=\(uinfo.endTime!)" + "&price_ori=\(uinfo.totalPay!)"
-                + "&point=\(strPoint)" + "&type=nice_etc"
+                + "&point=\(strPoint)" + "&type=nice_card"
+                + "&CardNum=\(strCardNum)"
+                + "&CardExpMonth=\(strCardExpMonth)"
+                + "&CardExpYear=\(strYear)"
+                + "&CardAuthNum=\(strAuthNum)"
+                + "&CardPwd=\(strCardPwd)"
+                + "&CardQuota=0"
             
             niceVC.param = strParam
             
