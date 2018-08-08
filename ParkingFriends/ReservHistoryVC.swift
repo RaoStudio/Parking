@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ReservHistoryVC: UIViewController {
+class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,7 +21,8 @@ class ReservHistoryVC: UIViewController {
         // Do any additional setup after loading the view.
         
         
-        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         
         requestFetchReservationHistory()
     }
@@ -53,9 +54,36 @@ class ReservHistoryVC: UIViewController {
                 print("requestFetchReservationHistory JSON = \(value)")
                 
                 self.arrData = value as! [Dictionary<String, Any>]
+                
+                self.tableView.reloadData()
             }
         }
     }
+    
+    
+    // MARK: - TableView
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell
+        
+        cell = tableView.dequeueReusableCell(withIdentifier: "ReservHistoryCell")!
+        
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90.0
+    }
+    
     
     /*
     // MARK: - Navigation
