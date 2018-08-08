@@ -262,7 +262,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 29.0
+        return 29.0        
     }
 
     

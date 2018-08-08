@@ -15,7 +15,8 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     var arrData = [Dictionary<String, Any>]()
     var arrMake = [[Dictionary<String, Any>]]()
-    
+    var arrSection = [String]()
+    var nSection: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +60,7 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
             
                 self.makeArrayForTableView()
                 
-                self.tableView.reloadData()
+//                self.tableView.reloadData()
             }
         }
     }
@@ -87,8 +88,11 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         for item in setStrDate {
             var arrInsert = [Dictionary<String, Any>]()
             arrMake.append(arrInsert)
+            arrSection.append(item)
         }
         print(arrMake)
+        
+        nSection = arrSection.count
         
         for item in arrData {
             let strTime = item["reg_datetime"] as! String
@@ -108,17 +112,19 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
             }
         }
         
-        print(arrMake)
+//        print(arrMake)
+        self.tableView.reloadData()
     }
     
     // MARK: - TableView
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return arrSection.count
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrData.count
+        
+        return arrMake[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -128,17 +134,14 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         if let resCell = cell as? ReservHistoryCell {
             
-            if let dic = arrData[indexPath.row] as? Dictionary<String, Any> {
+            if let dic = arrMake[indexPath.section][indexPath.row] as? Dictionary<String, Any> {
                 if let img: String = dic["img"] as? String {
                     let strImg: String = UrlStrings.URL_API_PARKINGLOT_IMG + img
                     
                     resCell.ivLot.sd_setImage(with: URL(string: strImg), placeholderImage: UIImage(named: "List_NoImage"))
                 }
             }
-            
-            
         }
-        
         return cell
     }
     
@@ -147,6 +150,22 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         return 90.0
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 29.0
+        return 35.0
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.textColor = UIColor.black
+        header.textLabel?.font = UIFont.systemFont(ofSize: 13.0)
+        
+        //        let rect = CGRect(x: 12.0, y: header.frame.origin.y, width: header.frame.size.width - 12.0, height: header.frame.size.height)
+        
+        header.textLabel?.frame = header.frame
+        header.textLabel?.textAlignment = .left
+        header.textLabel?.text = arrSection[section]
+    }
     
     /*
     // MARK: - Navigation
