@@ -2699,7 +2699,7 @@
             </objects>
             <point key="canvasLocation" x="7373.6000000000004" y="-1004.3478260869566"/>
         </scene>
-        <!--Reserv HistoryVC-->
+        <!--예약 내역-->
         <scene sceneID="DAM-Hp-8xy">
             <objects>
                 <viewController storyboardIdentifier="ReservHistoryVC" id="eGl-G0-f7G" customClass="ReservHistoryVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
@@ -2708,7 +2708,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QDZ-yU-cxm">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReservHistoryCell" rowHeight="90" id="1Cf-fy-Put" customClass="ReservHistoryCell" customModule="ParkingFriends" customModuleProvider="target">
@@ -2753,11 +2753,11 @@
                             <constraint firstItem="QDZ-yU-cxm" firstAttribute="leading" secondItem="r5s-sW-y9B" secondAttribute="leading" id="KqA-u6-JrA"/>
                             <constraint firstItem="r5s-sW-y9B" firstAttribute="bottom" secondItem="QDZ-yU-cxm" secondAttribute="bottom" id="Zzm-eQ-nfr"/>
                             <constraint firstItem="r5s-sW-y9B" firstAttribute="trailing" secondItem="QDZ-yU-cxm" secondAttribute="trailing" id="aLR-Fm-SYg"/>
-                            <constraint firstItem="QDZ-yU-cxm" firstAttribute="top" secondItem="r5s-sW-y9B" secondAttribute="top" id="z0o-PC-7FW"/>
+                            <constraint firstItem="QDZ-yU-cxm" firstAttribute="top" secondItem="r5s-sW-y9B" secondAttribute="top" constant="-64" id="z0o-PC-7FW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r5s-sW-y9B"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UXx-KK-uGq">
+                    <navigationItem key="navigationItem" title="예약 내역" id="UXx-KK-uGq">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="FiO-zO-5bM">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>

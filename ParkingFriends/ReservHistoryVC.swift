@@ -139,6 +139,8 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                     let strImg: String = UrlStrings.URL_API_PARKINGLOT_IMG + img
                     
                     resCell.ivLot.sd_setImage(with: URL(string: strImg), placeholderImage: UIImage(named: "List_NoImage"))
+//                    let img = resCell.ivLot.image
+//                    resCell.ivLot.image = img?.noir
                 }
             }
         }
@@ -165,6 +167,10 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         header.textLabel?.frame = header.frame
         header.textLabel?.textAlignment = .left
         header.textLabel?.text = arrSection[section]
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     /*
