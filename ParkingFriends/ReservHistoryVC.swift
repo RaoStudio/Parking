@@ -13,10 +13,14 @@ class ReservHistoryVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var arrData = [Dictionary<String, Any>]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
         
         
         requestFetchReservationHistory()
@@ -47,6 +51,8 @@ class ReservHistoryVC: UIViewController {
             
             if let value = response.result.value {
                 print("requestFetchReservationHistory JSON = \(value)")
+                
+                self.arrData = value as! [Dictionary<String, Any>]
             }
         }
     }
