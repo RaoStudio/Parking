@@ -2718,13 +2718,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dSc-wZ-qLc">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McZ-Tb-49Y" customClass="RoundView" customModule="ParkingFriends" customModuleProvider="target">
                                                     <rect key="frame" x="12" y="12" width="95" height="65"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dSc-wZ-qLc">
+                                                            <rect key="frame" x="1" y="1" width="93" height="63"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="95" id="Obh-cQ-VMc"/>
-                                                        <constraint firstAttribute="height" constant="65" id="xGn-W0-mib"/>
+                                                        <constraint firstAttribute="bottom" secondItem="dSc-wZ-qLc" secondAttribute="bottom" constant="1" id="9Am-In-ZqL"/>
+                                                        <constraint firstItem="dSc-wZ-qLc" firstAttribute="top" secondItem="McZ-Tb-49Y" secondAttribute="top" constant="1" id="AhY-jE-PWr"/>
+                                                        <constraint firstAttribute="height" constant="65" id="cgw-HM-gD8"/>
+                                                        <constraint firstItem="dSc-wZ-qLc" firstAttribute="leading" secondItem="McZ-Tb-49Y" secondAttribute="leading" constant="1" id="gbb-1y-GvR"/>
+                                                        <constraint firstAttribute="width" constant="95" id="l8X-6q-XRm"/>
+                                                        <constraint firstAttribute="trailing" secondItem="dSc-wZ-qLc" secondAttribute="trailing" constant="1" id="vqv-PY-aTc"/>
                                                     </constraints>
-                                                </imageView>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYZ-VC-6Hz">
                                                     <rect key="frame" x="0.0" y="89" width="375" height="1"/>
                                                     <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
@@ -2734,11 +2752,11 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="McZ-Tb-49Y" firstAttribute="leading" secondItem="xBU-bS-XiH" secondAttribute="leading" constant="12" id="4O8-f1-5GT"/>
                                                 <constraint firstItem="vYZ-VC-6Hz" firstAttribute="leading" secondItem="xBU-bS-XiH" secondAttribute="leading" id="TQg-8w-oOq"/>
                                                 <constraint firstAttribute="trailing" secondItem="vYZ-VC-6Hz" secondAttribute="trailing" id="cqn-eN-sr2"/>
-                                                <constraint firstItem="dSc-wZ-qLc" firstAttribute="leading" secondItem="xBU-bS-XiH" secondAttribute="leading" constant="12" id="iue-yL-Msv"/>
+                                                <constraint firstItem="McZ-Tb-49Y" firstAttribute="top" secondItem="xBU-bS-XiH" secondAttribute="top" constant="12" id="ml4-Ds-Qmj"/>
                                                 <constraint firstAttribute="bottom" secondItem="vYZ-VC-6Hz" secondAttribute="bottom" id="umu-IX-g88"/>
-                                                <constraint firstItem="dSc-wZ-qLc" firstAttribute="top" secondItem="xBU-bS-XiH" secondAttribute="top" constant="12" id="wEs-Wx-H9X"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
