@@ -2699,6 +2699,44 @@
             </objects>
             <point key="canvasLocation" x="7373.6000000000004" y="-1004.3478260869566"/>
         </scene>
+        <!--Reserv HistoryVC-->
+        <scene sceneID="DAM-Hp-8xy">
+            <objects>
+                <viewController storyboardIdentifier="ReservHistoryVC" id="eGl-G0-f7G" customClass="ReservHistoryVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bQO-Lp-SIQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QDZ-yU-cxm">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QDZ-yU-cxm" firstAttribute="leading" secondItem="r5s-sW-y9B" secondAttribute="leading" id="KqA-u6-JrA"/>
+                            <constraint firstItem="r5s-sW-y9B" firstAttribute="bottom" secondItem="QDZ-yU-cxm" secondAttribute="bottom" id="Zzm-eQ-nfr"/>
+                            <constraint firstItem="r5s-sW-y9B" firstAttribute="trailing" secondItem="QDZ-yU-cxm" secondAttribute="trailing" id="aLR-Fm-SYg"/>
+                            <constraint firstItem="QDZ-yU-cxm" firstAttribute="top" secondItem="r5s-sW-y9B" secondAttribute="top" id="z0o-PC-7FW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r5s-sW-y9B"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UXx-KK-uGq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="FiO-zO-5bM">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onBtnExit:" destination="eGl-G0-f7G" id="hrw-3j-epU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="QDZ-yU-cxm" id="R2s-Cm-clr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nIW-yw-Y7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8927.2000000000007" y="-249.62518740629687"/>
+        </scene>
         <!--CardVC-->
         <scene sceneID="e2w-FE-NGO">
             <objects>
@@ -4858,6 +4896,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mbd-dr-OU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6401" y="-1153"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hz5-Pr-mst">
+            <objects>
+                <navigationController storyboardIdentifier="ReservationNavi" automaticallyAdjustsScrollViewInsets="NO" id="y9q-Lj-kPf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ss7-Id-JK3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eGl-G0-f7G" kind="relationship" relationship="rootViewController" id="lRp-HZ-EOE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zLY-kO-RgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7988" y="-249.62518740629687"/>
         </scene>
     </scenes>
     <resources>

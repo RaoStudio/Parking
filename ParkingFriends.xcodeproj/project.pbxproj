@@ -66,6 +66,7 @@
 		29A17DD121070779002772A1 /* PaymentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A17DD021070778002772A1 /* PaymentInfoCell.swift */; };
 		29A17DD3210708A6002772A1 /* PaymentSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A17DD2210708A6002772A1 /* PaymentSelectCell.swift */; };
 		29A1AABC20DCC0F500C8EE66 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A1AABB20DCC0F500C8EE66 /* RegisterVC.swift */; };
+		29A79B3C211A7AD3005440F8 /* ReservHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A79B3B211A7AD3005440F8 /* ReservHistoryVC.swift */; };
 		29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA125B207D9FF400F4648C /* MarkerInfoView.swift */; };
 		29AA1260207D9FF400F4648C /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29AA125C207D9FF400F4648C /* MarkerInfoView.xib */; };
 		29AA1261207D9FF400F4648C /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA125D207D9FF400F4648C /* PlaceMarker.swift */; };
@@ -169,6 +170,7 @@
 		29A17DD021070778002772A1 /* PaymentInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfoCell.swift; sourceTree = "<group>"; };
 		29A17DD2210708A6002772A1 /* PaymentSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSelectCell.swift; sourceTree = "<group>"; };
 		29A1AABB20DCC0F500C8EE66 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		29A79B3B211A7AD3005440F8 /* ReservHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservHistoryVC.swift; sourceTree = "<group>"; };
 		29AA125B207D9FF400F4648C /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
 		29AA125C207D9FF400F4648C /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
 		29AA125D207D9FF400F4648C /* PlaceMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				29A17DCD2106C30D002772A1 /* PaymentVC.swift */,
 				29CB4FE6210AE8E200BBCE51 /* CardVC.swift */,
 				29C5908F2112F7790024FC68 /* NicePayVC.swift */,
+				29A79B3B211A7AD3005440F8 /* ReservHistoryVC.swift */,
 			);
 			path = ParkingFriends;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 		297A606B20EA0B3700A18B9A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				29A79B3D211A7AF3005440F8 /* Reservation */,
 				29A17DCF21070650002772A1 /* Payment */,
 				297A606C20EA0B7D00A18B9A /* SideMenuCell.swift */,
 				29742FF420EC87F6008C4647 /* SetRadiusCell.swift */,
@@ -400,6 +404,13 @@
 				293C50C22108065800E53620 /* PaymentTotalCountCell.swift */,
 			);
 			path = Payment;
+			sourceTree = "<group>";
+		};
+		29A79B3D211A7AF3005440F8 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reservation;
 			sourceTree = "<group>";
 		};
 		29AA125A207D9FF400F4648C /* TestViews */ = {
@@ -672,6 +683,7 @@
 				2999636920B6544600AC180C /* LotDistanceVC.swift in Sources */,
 				298BFE5020D9EB19006D0B51 /* UserSession.swift in Sources */,
 				2971A3F6209AED1300C1AD84 /* TutorialMasterVC.swift in Sources */,
+				29A79B3C211A7AD3005440F8 /* ReservHistoryVC.swift in Sources */,
 				29AA1262207D9FF400F4648C /* UIViewExtension.swift in Sources */,
 				295FF12220688AA2000CBF15 /* MainViewController.swift in Sources */,
 				293545F120ECBB3800077B75 /* SetVersionCell.swift in Sources */,
