@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ReservHistoryVC: UIViewController {
 
@@ -16,6 +17,9 @@ class ReservHistoryVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        requestFetchReservationHistory()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +33,23 @@ class ReservHistoryVC: UIViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    
+    // MARK: - API ( URL_API_RESERVATION_FETCH_HISTORY )
+    func requestFetchReservationHistory() {
+        let param = ["reserve_type" : "ALL"] as [String: Any]
+        
+        Alamofire.request(UrlStrings.URL_API_RESERVATION_FETCH_HISTORY, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+            
+            guard response.result.isSuccess else {
+                print("\(UrlStrings.URL_API_RESERVATION_FETCH_HISTORY) : \(String(describing: response.result.error))")
+                return
+            }
+            
+            if let value = response.result.value {
+                print("requestFetchReservationHistory JSON = \(value)")
+            }
+        }
+    }
     
     /*
     // MARK: - Navigation

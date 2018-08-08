@@ -2741,6 +2741,9 @@
                                                 <constraint firstItem="dSc-wZ-qLc" firstAttribute="top" secondItem="xBU-bS-XiH" secondAttribute="top" constant="12" id="wEs-Wx-H9X"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ivLot" destination="dSc-wZ-qLc" id="sgm-pq-ooe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

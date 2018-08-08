@@ -10,6 +10,8 @@ import UIKit
 
 class ReservHistoryCell: UITableViewCell {
 
+    @IBOutlet weak var ivLot: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

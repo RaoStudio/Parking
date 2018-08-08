@@ -205,6 +205,11 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         switch indexPath.row {
         case 0:
             if bLogon {
+                guard let ResNavi = self.storyboard?.instantiateViewController(withIdentifier: "ReservationNavi") as? UINavigationController else {
+                    return
+                }
+                
+                self.present(ResNavi, animated: true, completion: nil)
                 
             } else {
                 self.onBtnLogin(self.btnLogin)
