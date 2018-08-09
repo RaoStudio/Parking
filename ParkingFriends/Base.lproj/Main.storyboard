@@ -2804,6 +2804,11 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ivLot" destination="dSc-wZ-qLc" id="sgm-pq-ooe"/>
+                                            <outlet property="lbl_Address" destination="taq-1r-lnb" id="tjb-u0-hcE"/>
+                                            <outlet property="lbl_Name" destination="tPi-Kf-F4n" id="lQs-99-7Zw"/>
+                                            <outlet property="lbl_Price" destination="Hlb-0l-eRi" id="zZ6-Ok-Zbl"/>
+                                            <outlet property="lbl_Status" destination="MmM-Yp-aI6" id="7WG-bc-bSL"/>
+                                            <outlet property="lbl_Time" destination="aOu-MS-Zud" id="mdc-ip-Kft"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

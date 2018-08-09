@@ -321,4 +321,43 @@ extension UserInfoManager {
         }
         return nil
     }
+    
+    func displayDuringTime(startTime: String, endTime: String) -> String {
+        
+        let startDate = stringToDate(startTime)
+        let endDate = stringToDate(endTime)
+        
+        let strDisplay = String(format: "%02d:%02d ~ %02d:%02d", startDate.hour, startDate.minute, endDate.hour, endDate.minute)
+        
+        return strDisplay
+    }
+    
+    func isAvailableTime(endTime: String) -> Bool {
+        let endDate = stringToDate(endTime)
+        
+        let nowDate = Date()
+        
+        if nowDate > endDate {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func calcleftTime(startTime: String, endTime: String) -> String {
+        
+        let startDate = stringToDate(startTime)
+        let endDate = stringToDate(endTime)
+        
+        let nowDate = Date()
+        
+        if nowDate > startDate && endDate > nowDate {
+//            let dateGap = endDate.minute - nowDate.minute
+        }
+        
+        let strLeft = ""
+        return strLeft
+    }
+    
+    
 }

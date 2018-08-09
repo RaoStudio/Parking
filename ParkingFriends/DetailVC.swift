@@ -630,6 +630,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             
             guard response.result.isSuccess else {
                 print("\(UrlStrings.URL_API_RESERVATION_IMPOSSIBLE) : \(String(describing: response.result.error))")
+                self.alert("\(UrlStrings.URL_API_RESERVATION_IMPOSSIBLE) : \(String(describing: response.result.error))")
                 return
             }
             

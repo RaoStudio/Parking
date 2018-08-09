@@ -696,6 +696,7 @@ class MainViewController: UIViewController {
             
             guard response.result.isSuccess else {
                 print("\(url) : \(String(describing: response.result.error))")
+                self.alert("\(url) : \(String(describing: response.result.error))")
                 
                 self.mapView.clear()
                 

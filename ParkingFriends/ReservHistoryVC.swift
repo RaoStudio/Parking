@@ -18,6 +18,8 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     var arrSection = [String]()
     var nSection: Int = 0
     
+    let uinfo = UserInfoManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,6 +52,7 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
             
             guard response.result.isSuccess else {
                 print("\(UrlStrings.URL_API_RESERVATION_FETCH_HISTORY) : \(String(describing: response.result.error))")
+                self.alert("\(UrlStrings.URL_API_RESERVATION_FETCH_HISTORY) : \(String(describing: response.result.error))")
                 return
             }
             
@@ -141,6 +144,39 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                     resCell.ivLot.sd_setImage(with: URL(string: strImg), placeholderImage: UIImage(named: "List_NoImage"))
 //                    let img = resCell.ivLot.image
 //                    resCell.ivLot.image = img?.noir
+                    
+                    resCell.lbl_Name.text = dic["company"] as! String
+                    resCell.lbl_Address.text = dic["address"] as! String
+                    
+                    resCell.lbl_Time.text = uinfo.displayDuringTime(startTime: dic["begin_datetime"] as! String, endTime: dic["end_datetime"] as! String)
+                    
+                    resCell.lbl_Price.text = "\(dic["price"] as! String)원"
+                    
+                    if uinfo.isAvailableTime(endTime: dic["end_datetime"] as! String) {
+                        resCell.lbl_Status.text = "예약"
+                        
+                        
+                        
+                        
+                        let img = resCell.ivLot.image
+                        resCell.ivLot.image = img
+                        
+                        
+                        
+                        resCell.lbl_Status.textColor = hexStringToUIColor(hex: "#13b6f7")
+                        
+                    } else {
+                        resCell.lbl_Status.text = "완료"
+                        
+                        let img = resCell.ivLot.image
+                        resCell.ivLot.image = img?.noir
+                        
+                        
+                        resCell.lbl_Status.textColor = hexStringToUIColor(hex: "#888888")
+                    }
+                    
+                    
+                    
                 }
             }
         }
