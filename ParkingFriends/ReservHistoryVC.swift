@@ -153,7 +153,18 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                     resCell.lbl_Price.text = "\(dic["price"] as! String)원"
                     
                     if uinfo.isAvailableTime(endTime: dic["end_datetime"] as! String) {
-                        resCell.lbl_Status.text = "예약"
+                        
+                        if let strMin = uinfo.calcleftTime(startTime: dic["begin_datetime"] as! String, endTime: dic["end_datetime"] as! String) {
+                            resCell.lbl_Status.text = "\(strMin)분 남음"
+                            resCell.lbl_Status.textColor = hexStringToUIColor(hex: "#22d158")
+                        } else {
+                        
+                           resCell.lbl_Status.text = "예약"
+                            resCell.lbl_Status.textColor = hexStringToUIColor(hex: "#13b6f7")
+                        }
+                        
+                        
+                        
                         
                         
                         
@@ -163,7 +174,7 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                         
                         
                         
-                        resCell.lbl_Status.textColor = hexStringToUIColor(hex: "#13b6f7")
+                        
                         
                     } else {
                         resCell.lbl_Status.text = "완료"

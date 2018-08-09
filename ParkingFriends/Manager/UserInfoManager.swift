@@ -344,7 +344,7 @@ extension UserInfoManager {
         }
     }
     
-    func calcleftTime(startTime: String, endTime: String) -> String {
+    func calcleftTime(startTime: String, endTime: String) -> String? {
         
         let startDate = stringToDate(startTime)
         let endDate = stringToDate(endTime)
@@ -353,10 +353,13 @@ extension UserInfoManager {
         
         if nowDate > startDate && endDate > nowDate {
 //            let dateGap = endDate.minute - nowDate.minute
+            let interval = endDate-nowDate
+            
+            return String(format: "%02.0f", interval/60)
+//            return "\(interval/60)"
+        } else {
+            return nil
         }
-        
-        let strLeft = ""
-        return strLeft
     }
     
     
