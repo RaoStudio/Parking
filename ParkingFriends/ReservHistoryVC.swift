@@ -91,7 +91,7 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         for item in setStrDate {
             var arrInsert = [Dictionary<String, Any>]()
             arrMake.append(arrInsert)
-            arrSection.append(item)
+//            arrSection.append(item)
         }
         print(arrMake)
         
@@ -104,11 +104,13 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
             if let strFirst = arrTime.first {
                 if strRegDate.isEmpty {
                     strRegDate = strFirst
+                    arrSection.append(strRegDate)
                 }
                 
                 if strRegDate != strFirst {
                     nIndex = nIndex + 1
                     strRegDate = strFirst
+                    arrSection.append(strRegDate)
                 }
                 
                 arrMake[nIndex].append(item)
