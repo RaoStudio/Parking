@@ -20,6 +20,24 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     let uinfo = UserInfoManager()
     
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(self.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+//        refreshControl.tintColor = UIColor.red
+        
+        return refreshControl
+    }()
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service, for example...
+
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +48,8 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         self.tableView.delegate = self
         
         requestFetchReservationHistory()
+        
+        self.tableView.addSubview(self.refreshControl)
     }
 
     override func didReceiveMemoryWarning() {
