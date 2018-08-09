@@ -2750,13 +2750,56 @@
                                                         <constraint firstAttribute="height" constant="1" id="Cbc-Y9-ugg"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPi-Kf-F4n" userLabel="lbl_Name">
+                                                    <rect key="frame" x="119" y="12" width="35.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmM-Yp-aI6" userLabel="lbl_Status">
+                                                    <rect key="frame" x="327" y="12" width="36" height="16"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taq-1r-lnb" userLabel="lbl_Address">
+                                                    <rect key="frame" x="119" y="36.5" width="33" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOu-MS-Zud" userLabel="lbl_Time">
+                                                    <rect key="frame" x="119" y="61" width="33" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlb-0l-eRi" userLabel="lbl_Price">
+                                                    <rect key="frame" x="327" y="61" width="36" height="16"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="McZ-Tb-49Y" firstAttribute="leading" secondItem="xBU-bS-XiH" secondAttribute="leading" constant="12" id="4O8-f1-5GT"/>
+                                                <constraint firstItem="MmM-Yp-aI6" firstAttribute="top" secondItem="tPi-Kf-F4n" secondAttribute="top" id="5JP-PT-eQW"/>
+                                                <constraint firstItem="aOu-MS-Zud" firstAttribute="bottom" secondItem="McZ-Tb-49Y" secondAttribute="bottom" id="Gt1-EE-tOM"/>
+                                                <constraint firstItem="taq-1r-lnb" firstAttribute="leading" secondItem="tPi-Kf-F4n" secondAttribute="leading" id="Ogb-1W-TNg"/>
+                                                <constraint firstItem="Hlb-0l-eRi" firstAttribute="top" secondItem="aOu-MS-Zud" secondAttribute="top" id="QJP-gx-Ur5"/>
                                                 <constraint firstItem="vYZ-VC-6Hz" firstAttribute="leading" secondItem="xBU-bS-XiH" secondAttribute="leading" id="TQg-8w-oOq"/>
+                                                <constraint firstAttribute="trailing" secondItem="MmM-Yp-aI6" secondAttribute="trailing" constant="12" id="U3g-eL-dDh"/>
                                                 <constraint firstAttribute="trailing" secondItem="vYZ-VC-6Hz" secondAttribute="trailing" id="cqn-eN-sr2"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hlb-0l-eRi" secondAttribute="trailing" constant="12" id="hOQ-wM-Ghw"/>
+                                                <constraint firstItem="tPi-Kf-F4n" firstAttribute="top" secondItem="McZ-Tb-49Y" secondAttribute="top" id="hSO-01-Faf"/>
                                                 <constraint firstItem="McZ-Tb-49Y" firstAttribute="top" secondItem="xBU-bS-XiH" secondAttribute="top" constant="12" id="ml4-Ds-Qmj"/>
+                                                <constraint firstItem="Hlb-0l-eRi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aOu-MS-Zud" secondAttribute="trailing" id="oXm-VZ-3sU"/>
+                                                <constraint firstItem="aOu-MS-Zud" firstAttribute="leading" secondItem="taq-1r-lnb" secondAttribute="leading" id="r69-vF-LoU"/>
+                                                <constraint firstItem="taq-1r-lnb" firstAttribute="centerY" secondItem="McZ-Tb-49Y" secondAttribute="centerY" id="trB-wg-zKg"/>
                                                 <constraint firstAttribute="bottom" secondItem="vYZ-VC-6Hz" secondAttribute="bottom" id="umu-IX-g88"/>
+                                                <constraint firstItem="tPi-Kf-F4n" firstAttribute="leading" secondItem="McZ-Tb-49Y" secondAttribute="trailing" constant="12" id="wtK-xe-kAT"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="taq-1r-lnb" secondAttribute="trailing" constant="12" id="zKp-kn-sbh"/>
+                                                <constraint firstItem="MmM-Yp-aI6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tPi-Kf-F4n" secondAttribute="trailing" id="zvG-KE-50D"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
