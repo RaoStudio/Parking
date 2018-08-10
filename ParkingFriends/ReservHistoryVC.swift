@@ -194,6 +194,11 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                         resCell.viewEnd.isHidden = true
                         
                         
+                        resCell.lbl_Name.textColor = hexStringToUIColor(hex: "#000000")
+                        resCell.lbl_Time.textColor = hexStringToUIColor(hex: "#000000")
+                        resCell.lbl_Price.textColor = hexStringToUIColor(hex: "#000000")
+                        
+                        
                         
                     } else {
                         resCell.lbl_Status.text = "완료"
@@ -203,6 +208,11 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                         
                         
                         resCell.viewEnd.isHidden = false
+                        
+                        
+                        resCell.lbl_Name.textColor = hexStringToUIColor(hex: "#888888")
+                        resCell.lbl_Time.textColor = hexStringToUIColor(hex: "#888888")
+                        resCell.lbl_Price.textColor = hexStringToUIColor(hex: "#888888")
                         
                         resCell.lbl_Status.textColor = hexStringToUIColor(hex: "#888888")
                     }
