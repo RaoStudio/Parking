@@ -155,6 +155,19 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
                 self.present(vc, animated: false, completion: nil)
                 
             } else if strUrl.contains("payment_done") {
+             
+                /*
+                if let top = UIApplication.shared.keyWindow {
+                    if let navi = top.rootViewController as? UINavigationController {
+                        
+                        if let arrVC = navi.viewControllers as? [UIViewController] {
+                            navi.popViewController(animated: true)
+                        }
+                    }
+                }
+                */
+                
+                
                 self.navigationController?.popViewController(animated: true)
             }
             //*
