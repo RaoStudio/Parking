@@ -58,6 +58,9 @@ class TimePickerVC: UIViewController {
         startPicker.maximumDate = Date(timeInterval: 60*60*24*2, since: Date())
          */
         
+        
+        
+        
         let startDate = uinfo.stringToDate(uinfo.startTime!)
         startPicker.minimumDate = startDate
         startPicker.date = startDate

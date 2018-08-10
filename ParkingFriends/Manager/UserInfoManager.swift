@@ -16,7 +16,7 @@ struct UserInfoKey {
     static let startTime = "STARTTIME"
     static let endTime = "ENDTIME"
     static let isUserAlarm = "ISUSERALARM"
-    
+        
     static let rLatitude = "RESERVE_LATITUDE"
     static let rLongtitude = "RESERVE_LONGITUDE"
     static let rCompany = "RESERVE_COMPANY"
