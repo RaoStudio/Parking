@@ -16,7 +16,12 @@ struct UserInfoKey {
     static let startTime = "STARTTIME"
     static let endTime = "ENDTIME"
     static let isUserAlarm = "ISUSERALARM"
-        
+    
+    
+    static let firstTime = "FIRST_TIME"
+    static let secondTime = "SECOND_TIME"
+    static let thirdTime = "THIRD_TIME"
+    
     static let rLatitude = "RESERVE_LATITUDE"
     static let rLongtitude = "RESERVE_LONGITUDE"
     static let rCompany = "RESERVE_COMPANY"
@@ -272,6 +277,43 @@ class UserInfoManager {
         }
     }
     
+    
+    var firstTime: String? {
+        get {
+            return UserDefaults.standard.string(forKey: UserInfoKey.firstTime)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.firstTime)
+            ud.synchronize()
+        }
+    }
+    
+    var secondTime: String? {
+        get {
+            return UserDefaults.standard.string(forKey: UserInfoKey.secondTime)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.secondTime)
+            ud.synchronize()
+        }
+    }
+    
+    var thirdTime: String? {
+        get {
+            return UserDefaults.standard.string(forKey: UserInfoKey.thirdTime)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.thirdTime)
+            ud.synchronize()
+        }
+    }
+    
 }
 
 extension UserInfoManager {
@@ -292,6 +334,18 @@ extension UserInfoManager {
         
         startTime = strNowDate
         endTime = strDateAfterNow
+    }
+    
+    
+    func initTimePickerVCTime() {
+        firstTime = startTime
+        let dateFirst = stringToDate(firstTime!)
+        let dateSecond = dateFirst + 1.day
+        let dateThird = dateFirst + 2.day
+        
+        secondTime = dateToString(dateSecond)
+        thirdTime = dateToString(dateThird)
+        
     }
     
     func stringToDate(_ value: String) -> Date {
