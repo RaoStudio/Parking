@@ -11,6 +11,7 @@ import UIKit
 class ReservHistoryCell: UITableViewCell {
 
     @IBOutlet weak var ivLot: UIImageView!
+    @IBOutlet weak var viewEnd: UIView!
     
     @IBOutlet weak var lbl_Name: UILabel!
     @IBOutlet weak var lbl_Status: UILabel!

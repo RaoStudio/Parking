@@ -32,10 +32,9 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         // Do some reloading of data and update the table view's data source
         // Fetch more objects from a web service, for example...
-
         
         self.tableView.reloadData()
-        refreshControl.endRefreshing()
+        refreshControl.endRefreshing() 
     }
     
     override func viewDidLoad() {
@@ -189,21 +188,21 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                         
                         
                         
+//                        let img = resCell.ivLot.image
+//                        resCell.ivLot.image = img
                         
-                        
-                        let img = resCell.ivLot.image
-                        resCell.ivLot.image = img
-                        
-                        
+                        resCell.viewEnd.isHidden = true
                         
                         
                         
                     } else {
                         resCell.lbl_Status.text = "완료"
                         
-                        let img = resCell.ivLot.image
-                        resCell.ivLot.image = img?.noir
+//                        let img = resCell.ivLot.image
+//                        resCell.ivLot.image = img?.noir
                         
+                        
+                        resCell.viewEnd.isHidden = false
                         
                         resCell.lbl_Status.textColor = hexStringToUIColor(hex: "#888888")
                     }
