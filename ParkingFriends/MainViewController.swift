@@ -213,6 +213,9 @@ class MainViewController: UIViewController {
         
         
         uinfo.initTime()
+        
+        uinfo.initTimePickerVCTime()      // Add new init timePickerVC 
+        
         displayTimeToButton()
 //        btnStart.setTitle(uinfo.startTime, for: UIControlState.normal)
 //        btnEnd.setTitle(uinfo.endTime, for: UIControlState.normal)
