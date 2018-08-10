@@ -1038,7 +1038,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhu-ej-MYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2260" y="449.32533733133437"/>
+            <point key="canvasLocation" x="6890" y="894"/>
         </scene>
         <!--회원가입-->
         <scene sceneID="Zjs-Rm-gzW">
@@ -2845,6 +2845,22 @@
             </objects>
             <point key="canvasLocation" x="8927.2000000000007" y="-249.62518740629687"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="AVl-xy-Gse">
+            <objects>
+                <viewController id="cdD-X8-4wD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0ZT-YT-UtO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="cSP-jO-kHD"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gAX-yA-sWt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8134" y="744"/>
+        </scene>
         <!--CardVC-->
         <scene sceneID="e2w-FE-NGO">
             <objects>
@@ -3903,7 +3919,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4B-Gq-jjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544.8" y="448.42578710644682"/>
+            <point key="canvasLocation" x="5070" y="1359"/>
         </scene>
         <!--Title-->
         <scene sceneID="iQ2-Hx-TRO">

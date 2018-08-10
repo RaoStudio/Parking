@@ -95,7 +95,8 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         var setStrDate = Set<String>()
         
         for item in arrData {
-            let strTime = item["reg_datetime"] as! String
+//            let strTime = item["reg_datetime"] as! String
+            let strTime = item["end_datetime"] as! String
             
             let arrTime = strTime.components(separatedBy: " ")
             print(arrTime)
@@ -117,7 +118,8 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         nSection = arrSection.count
         
         for item in arrData {
-            let strTime = item["reg_datetime"] as! String
+//            let strTime = item["reg_datetime"] as! String
+            let strTime = item["end_datetime"] as! String
             let arrTime = strTime.components(separatedBy: " ")
             
             if let strFirst = arrTime.first {

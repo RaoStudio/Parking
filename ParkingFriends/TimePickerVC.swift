@@ -75,8 +75,26 @@ class TimePickerVC: UIViewController {
         
 //        strDistance = String(format: "%.0fm", distance)
         
+        
+        /*
+        let nowDate = Date()
+        var nowDatePlus10 = nowDate + 10.minute
+        let min10 = (nowDatePlus10.minute / 10) * 10
+        nowDatePlus10 = nowDatePlus10 - nowDatePlus10.minute.minute + min10.minute
+        
+        let oneDate = nowDatePlus10 + 1.day
+        let twoDate = nowDatePlus10 + 2.day
+        */
+        
+        
+        
+        
         let oneDate = startDate + 1.day
         let twoDate = startDate + 2.day
+        
+        
+        
+        
         
         
         /*
@@ -84,6 +102,11 @@ class TimePickerVC: UIViewController {
         arrDay.append(oneDate)
         arrDay.append(twoDate)
  */
+        
+        
+        
+        
+        
         
         arrDay = [startDate, oneDate, twoDate]
         
