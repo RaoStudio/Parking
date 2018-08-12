@@ -69,54 +69,29 @@ class TimePickerVC: UIViewController {
         endPicker.minimumDate = endDate
         endPicker.date = endDate
         
-        /*
-        strNow = uinfo.startTime!
-        strOne = uinfo.dateToString(startDate+1.day)
-        strTwo = uinfo.dateToString(startDate+2.day)
-        */
-        
-        
-//        strDistance = String(format: "%.0fm", distance)
-        
-        
-        /*
-        let nowDate = Date()
-        var nowDatePlus10 = nowDate + 10.minute
-        let min10 = (nowDatePlus10.minute / 10) * 10
-        nowDatePlus10 = nowDatePlus10 - nowDatePlus10.minute.minute + min10.minute
-        
-        let oneDate = nowDatePlus10 + 1.day
-        let twoDate = nowDatePlus10 + 2.day
-        */
-        
-        
-        
-        
-        let oneDate = startDate + 1.day
-        let twoDate = startDate + 2.day
         
         
         
         
         
-        
-        /*
-        arrDay.append(startDate)
-        arrDay.append(oneDate)
-        arrDay.append(twoDate)
- */
+//        let oneDate = startDate + 1.day
+//        let twoDate = startDate + 2.day
         
         
-        
+        let firstDate = uinfo.stringToDate(uinfo.firstTime!)
+        let oneDate = uinfo.stringToDate(uinfo.secondTime!)
+        let twoDate = uinfo.stringToDate(uinfo.thirdTime!)
         
         
         
-        arrDay = [startDate, oneDate, twoDate]
         
-//        strOne = uinfo.dateToString(startDate+1.day)
-//        strTwo = uinfo.dateToString(startDate+2.day)
         
-        strNow = String(format: "%d년%02d월%02d일(%@)", startDate.year, startDate.month, startDate.day, startDate.weekdayName)
+//        arrDay = [startDate, oneDate, twoDate]
+        arrDay = [firstDate, oneDate, twoDate]
+        
+        
+//        strNow = String(format: "%d년%02d월%02d일(%@)", startDate.year, startDate.month, startDate.day, startDate.weekdayName)
+        strNow = String(format: "%d년%02d월%02d일(%@)", firstDate.year, firstDate.month, firstDate.day, firstDate.weekdayName)
         strOne = String(format: "%d년%02d월%02d일(%@)", oneDate.year, oneDate.month, oneDate.day, oneDate.weekdayName)
         strTwo = String(format: "%d년%02d월%02d일(%@)", twoDate.year, twoDate.month, twoDate.day, twoDate.weekdayName)
         
