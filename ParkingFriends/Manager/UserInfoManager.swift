@@ -22,6 +22,9 @@ struct UserInfoKey {
     static let secondTime = "SECOND_TIME"
     static let thirdTime = "THIRD_TIME"
     
+    static let nFirstTime = "INDEX_FIRST_TIME"
+    static let nLastTime = "INDEX_LAST_TIME"
+    
     static let rLatitude = "RESERVE_LATITUDE"
     static let rLongtitude = "RESERVE_LONGITUDE"
     static let rCompany = "RESERVE_COMPANY"
@@ -314,6 +317,29 @@ class UserInfoManager {
         }
     }
     
+    var nFirstTime: Int? {
+        get {
+            return UserDefaults.standard.integer(forKey: UserInfoKey.nFirstTime)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.nFirstTime)
+            ud.synchronize()
+        }
+    }
+    
+    var nLastTime: Int? {
+        get {
+            return UserDefaults.standard.integer(forKey: UserInfoKey.nLastTime)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.nLastTime)
+            ud.synchronize()
+        }
+    }
 }
 
 extension UserInfoManager {
@@ -345,6 +371,9 @@ extension UserInfoManager {
         
         secondTime = dateToString(dateSecond)
         thirdTime = dateToString(dateThird)
+        
+        nFirstTime = 0
+        nLastTime = 0
         
     }
     

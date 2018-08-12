@@ -170,13 +170,15 @@ class TimePickerVC: UIViewController {
         ]
         
         startDropDown.direction = .bottom
-        startDropDown.selectRow(0)
+        startDropDown.selectRow(uinfo.nFirstTime!)
         
         startDropDown.selectionAction = { [weak self] (index, item) in
             
             if self?.btnStart.title(for: UIControlState.normal) == item {
                 return
             }
+            
+            self?.uinfo.nFirstTime = index
             
             self?.btnStart.setTitle(item, for: UIControlState.normal)
             
@@ -206,13 +208,15 @@ class TimePickerVC: UIViewController {
         ]
         
         endDropDown.direction = .bottom
-        endDropDown.selectRow(0)
+        endDropDown.selectRow(uinfo.nLastTime!)
         
         endDropDown.selectionAction = { [weak self] (index, item) in
             
             if self?.btnEnd.title(for: UIControlState.normal) == item {
                 return
             }
+            
+            self?.uinfo.nLastTime = index
             
             self?.btnEnd.setTitle(item, for: UIControlState.normal)
             
@@ -269,7 +273,8 @@ class TimePickerVC: UIViewController {
         
         
         
-        if nTime < 3600 || startDay < uinfo.stringToDate(uinfo.startTime!) {
+//        if nTime < 3600 || startDay < uinfo.stringToDate(uinfo.startTime!) {
+        if nTime < 3600 || startDay < uinfo.stringToDate(uinfo.firstTime!) {
             self.subTitle.textColor = hexStringToUIColor(hex: "#ff3c4a")
             self.subTitle.text = "예약불가"
         } else {
