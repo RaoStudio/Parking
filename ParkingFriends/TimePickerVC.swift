@@ -97,12 +97,17 @@ class TimePickerVC: UIViewController {
         
         
         
-        btnStart.setTitle(strNow, for: UIControlState.normal)
-        btnEnd.setTitle(strNow, for: UIControlState.normal)
+//        btnStart.setTitle(strNow, for: UIControlState.normal)
+//        btnEnd.setTitle(strNow, for: UIControlState.normal)
         
 
         setupStartDropDown()
         setupEndDropDown()
+        
+        
+        btnStart.setTitle(startDropDown.selectedItem, for: UIControlState.normal)
+        btnEnd.setTitle(endDropDown.selectedItem, for: UIControlState.normal)
+        
         
         
         startPicker.addTarget(self, action: #selector(valueChanged(_:)), for: UIControlEvents.valueChanged)
@@ -178,7 +183,7 @@ class TimePickerVC: UIViewController {
                 return
             }
             
-            self?.uinfo.nFirstTime = index
+//            self?.uinfo.nFirstTime = index
             
             self?.btnStart.setTitle(item, for: UIControlState.normal)
             
@@ -216,7 +221,7 @@ class TimePickerVC: UIViewController {
                 return
             }
             
-            self?.uinfo.nLastTime = index
+//            self?.uinfo.nLastTime = index
             
             self?.btnEnd.setTitle(item, for: UIControlState.normal)
             
@@ -343,7 +348,8 @@ class TimePickerVC: UIViewController {
         else if nTime >= 0 && nTime < 3600 {
             self.alert("예약은 1시간 이상 설정해야 합니다.")
             return
-        } else if startDay < uinfo.stringToDate(uinfo.startTime!) {
+//        } else if startDay < uinfo.stringToDate(uinfo.startTime!) {
+        } else if startDay < uinfo.stringToDate(uinfo.firstTime!) {
             self.alert("지나간 시간입니다.")
             return
         }
@@ -358,6 +364,9 @@ class TimePickerVC: UIViewController {
         uinfo.startTime = strStart
         uinfo.endTime = strEnd
         
+        
+        uinfo.nFirstTime = startDropDown.indexForSelectedRow
+        uinfo.nLastTime = endDropDown.indexForSelectedRow
         
         if let myNC = self.navigationController {
             if let nc = myNC.presentingViewController as? UINavigationController {
