@@ -76,6 +76,7 @@
 		29AA1267207DA06A00F4648C /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA1265207DA06A00F4648C /* GooglePlace.swift */; };
 		29B4CDED20CF96390055852F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4CDEC20CF96390055852F /* LoginVC.swift */; };
 		29B7CEB620F4802800A39315 /* ParkingLotDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B7CEB520F4802800A39315 /* ParkingLotDetailVC.swift */; };
+		29BBB0B421211E6A001B27F5 /* ReserveDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BBB0B321211E6A001B27F5 /* ReserveDetailVC.swift */; };
 		29C5908E2112EDBD0024FC68 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C5908D2112EDBC0024FC68 /* WebKit.framework */; };
 		29C590902112F7790024FC68 /* NicePayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5908F2112F7790024FC68 /* NicePayVC.swift */; };
 		29CB4FE7210AE8E300BBCE51 /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB4FE6210AE8E200BBCE51 /* CardVC.swift */; };
@@ -181,6 +182,7 @@
 		29AA1265207DA06A00F4648C /* GooglePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
 		29B4CDEC20CF96390055852F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		29B7CEB520F4802800A39315 /* ParkingLotDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotDetailVC.swift; sourceTree = "<group>"; };
+		29BBB0B321211E6A001B27F5 /* ReserveDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveDetailVC.swift; sourceTree = "<group>"; };
 		29C5908D2112EDBC0024FC68 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		29C5908F2112F7790024FC68 /* NicePayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicePayVC.swift; sourceTree = "<group>"; };
 		29CB4FE6210AE8E200BBCE51 /* CardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				29CB4FE6210AE8E200BBCE51 /* CardVC.swift */,
 				29C5908F2112F7790024FC68 /* NicePayVC.swift */,
 				29A79B3B211A7AD3005440F8 /* ReservHistoryVC.swift */,
+				29BBB0B321211E6A001B27F5 /* ReserveDetailVC.swift */,
 			);
 			path = ParkingFriends;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				29B4CDED20CF96390055852F /* LoginVC.swift in Sources */,
 				2983D63620B5356B003CAB1C /* TestView.swift in Sources */,
 				29012A8821057BE1005D99FC /* ProfileVC.swift in Sources */,
+				29BBB0B421211E6A001B27F5 /* ReserveDetailVC.swift in Sources */,
 				2987403720E618410042014A /* LaunchVC.swift in Sources */,
 				29D6C26220E0BC8B001EF09B /* SideVC.swift in Sources */,
 				29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */,
