@@ -251,6 +251,12 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReserveDetailVC") else {
+            return
+        }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     /*
