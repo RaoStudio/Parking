@@ -3043,7 +3043,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="223" height="207"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dp9-wv-8sM">
+                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dp9-wv-8sM" customClass="RoundView" customModule="ParkingFriends" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="223" height="207"/>
                                                                             <subviews>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDC-Ko-yaG">
@@ -3092,6 +3092,11 @@
                                                                                 <constraint firstAttribute="trailing" secondItem="qDC-Ko-yaG" secondAttribute="trailing" constant="12" id="K9w-MA-n3q"/>
                                                                                 <constraint firstItem="qDC-Ko-yaG" firstAttribute="top" secondItem="Dp9-wv-8sM" secondAttribute="top" constant="24" id="fkg-MV-Lur"/>
                                                                             </constraints>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="7"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </view>
                                                                     </subviews>
                                                                 </view>
