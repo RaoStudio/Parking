@@ -2906,22 +2906,85 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Mgy-8b-3US">
+                                        <rect key="frame" x="12" y="124" width="296" height="34"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gr0-bu-YPv">
+                                                <rect key="frame" x="0.0" y="0.0" width="157" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="157" id="GU8-iG-JWS"/>
+                                                    <constraint firstAttribute="height" constant="34" id="sfb-yb-ENo"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="예약 연장하기" image="Res_Detail_Extend_ico" backgroundImage="btn_green_round">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6H-Gc-nLI">
+                                                <rect key="frame" x="173.5" y="0.0" width="72" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="I3X-r4-rAs"/>
+                                                    <constraint firstAttribute="height" constant="34" id="gTU-Mv-Ndu"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="CCTV" image="Res_Detail_CCTV_ico" backgroundImage="btn_blue_round">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JW2-cn-PVA">
+                                                <rect key="frame" x="262" y="0.0" width="34" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="34" id="Vay-Vy-ZwF"/>
+                                                    <constraint firstAttribute="height" constant="34" id="jS9-L5-tXf"/>
+                                                </constraints>
+                                                <state key="normal" image="Res_Detail_Tel_ico" backgroundImage="btn_red_round"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="rzZ-Rf-gRh"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbo-eV-HGs">
+                                        <rect key="frame" x="0.0" y="182" width="320" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제 정보" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IX8-wW-hZM">
+                                                <rect key="frame" x="12" y="6.5" width="49" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="IX8-wW-hZM" firstAttribute="leading" secondItem="gbo-eV-HGs" secondAttribute="leading" constant="12" id="0Dk-mV-afj"/>
+                                            <constraint firstItem="IX8-wW-hZM" firstAttribute="centerY" secondItem="gbo-eV-HGs" secondAttribute="centerY" id="LnC-ab-tsc"/>
+                                            <constraint firstAttribute="height" constant="29" id="i0m-dH-2hA"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="bX7-XH-hCX" firstAttribute="top" secondItem="oIk-3F-nID" secondAttribute="top" constant="24" id="0B2-7K-I20"/>
                                     <constraint firstItem="fPB-vC-48e" firstAttribute="top" secondItem="Atl-Ab-ept" secondAttribute="bottom" constant="19" id="0d6-vf-pXu"/>
                                     <constraint firstAttribute="trailing" secondItem="kAG-Ee-9AB" secondAttribute="trailing" constant="12" id="4rL-hb-YIQ"/>
+                                    <constraint firstItem="Mgy-8b-3US" firstAttribute="leading" secondItem="oIk-3F-nID" secondAttribute="leading" constant="12" id="8hl-j3-7un"/>
                                     <constraint firstItem="kAG-Ee-9AB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fPB-vC-48e" secondAttribute="trailing" id="Bam-qb-EED"/>
                                     <constraint firstAttribute="trailing" secondItem="ao5-hz-MNk" secondAttribute="trailing" constant="12" id="EBf-Gu-pF9"/>
+                                    <constraint firstItem="gbo-eV-HGs" firstAttribute="leading" secondItem="oIk-3F-nID" secondAttribute="leading" id="G0y-FJ-Lhd"/>
+                                    <constraint firstItem="gbo-eV-HGs" firstAttribute="top" secondItem="Mgy-8b-3US" secondAttribute="bottom" constant="24" id="RkI-CH-ZV4"/>
                                     <constraint firstItem="Atl-Ab-ept" firstAttribute="leading" secondItem="bX7-XH-hCX" secondAttribute="leading" id="Ta0-vV-0dU"/>
+                                    <constraint firstItem="Mgy-8b-3US" firstAttribute="top" secondItem="fPB-vC-48e" secondAttribute="bottom" constant="24" id="Y0p-IW-FA5"/>
                                     <constraint firstItem="ao5-hz-MNk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bX7-XH-hCX" secondAttribute="trailing" id="afu-wI-hNv"/>
                                     <constraint firstItem="fPB-vC-48e" firstAttribute="leading" secondItem="bX7-XH-hCX" secondAttribute="leading" id="bgx-nU-Vpg"/>
                                     <constraint firstAttribute="trailing" secondItem="Atl-Ab-ept" secondAttribute="trailing" constant="12" id="gku-Lz-f9l"/>
                                     <constraint firstItem="Atl-Ab-ept" firstAttribute="top" secondItem="bX7-XH-hCX" secondAttribute="bottom" constant="9" id="q7b-cD-tkC"/>
+                                    <constraint firstAttribute="trailing" secondItem="gbo-eV-HGs" secondAttribute="trailing" id="qqE-Xb-1nf"/>
                                     <constraint firstItem="bX7-XH-hCX" firstAttribute="leading" secondItem="oIk-3F-nID" secondAttribute="leading" constant="12" id="tly-L5-4SY"/>
                                     <constraint firstItem="ao5-hz-MNk" firstAttribute="top" secondItem="bX7-XH-hCX" secondAttribute="top" id="wVa-z4-cFI"/>
                                     <constraint firstItem="kAG-Ee-9AB" firstAttribute="top" secondItem="fPB-vC-48e" secondAttribute="top" id="yES-Fx-EsO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mgy-8b-3US" secondAttribute="trailing" constant="12" id="yaR-VU-jGN"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2940,7 +3003,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAX-yA-sWt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7794" y="793"/>
+            <point key="canvasLocation" x="7792.5" y="792.25352112676057"/>
         </scene>
         <!--CardVC-->
         <scene sceneID="e2w-FE-NGO">
@@ -3245,16 +3308,16 @@
                                                 <rect key="frame" x="112" y="0.0" width="196" height="44"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2A-kP-FLu" userLabel="vMonth">
-                                                        <rect key="frame" x="0.0" y="0.0" width="98" height="44"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="월" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsH-8T-rfd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="98" height="44"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOR-53-DgD">
-                                                                <rect key="frame" x="0.0" y="42" width="98" height="2"/>
+                                                                <rect key="frame" x="0.0" y="42" width="90" height="2"/>
                                                                 <color key="backgroundColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="2" id="Ha1-j9-fyW"/>
@@ -3275,16 +3338,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crv-aE-fxc" userLabel="vYear">
-                                                        <rect key="frame" x="106" y="0.0" width="90" height="44"/>
+                                                        <rect key="frame" x="98" y="0.0" width="98" height="44"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="년" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Afk-EJ-0bJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="98" height="44"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dxw-fG-XR1">
-                                                                <rect key="frame" x="0.0" y="42" width="90" height="2"/>
+                                                                <rect key="frame" x="0.0" y="42" width="98" height="2"/>
                                                                 <color key="backgroundColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="2" id="Dzg-a8-Pc8"/>
@@ -5155,7 +5218,10 @@
         <image name="Register_Confirm_Btn" width="22" height="22"/>
         <image name="Register_NumSend_Btn" width="22" height="22"/>
         <image name="Res_Check_Car" width="22" height="22"/>
+        <image name="Res_Detail_CCTV_ico" width="10" height="13"/>
+        <image name="Res_Detail_Extend_ico" width="14" height="13"/>
         <image name="Res_Detail_Navi_ico" width="12" height="12"/>
+        <image name="Res_Detail_Tel_ico" width="12" height="13"/>
         <image name="SideMenuBtn" width="30" height="30"/>
         <image name="Side_black_btn" width="29" height="29"/>
         <image name="Side_bottom_icon" width="12" height="11"/>
@@ -5168,10 +5234,12 @@
         <image name="Side_pf_logo" width="50" height="50"/>
         <image name="Side_setting_icon" width="11" height="11"/>
         <image name="Side_table_alarm_icon" width="11" height="11"/>
+        <image name="btn_blue_round" width="34" height="34"/>
         <image name="btn_distance_round" width="22" height="22"/>
         <image name="btn_gray_round" width="34" height="34"/>
         <image name="btn_green_round" width="34" height="34"/>
         <image name="btn_parking_lot" width="33" height="33"/>
+        <image name="btn_red_round" width="34" height="34"/>
         <image name="distance_icon" width="12" height="12"/>
         <image name="graph_seperate" width="1" height="1"/>
         <image name="icon_arrow" width="6" height="11"/>
