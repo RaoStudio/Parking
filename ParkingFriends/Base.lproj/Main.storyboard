@@ -2968,7 +2968,21 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ey3-pe-GIj">
                                                 <rect key="frame" x="0.0" y="211" width="320" height="255"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pd9-jP-9Nh">
+                                                        <rect key="frame" x="12" y="24" width="223" height="207"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="223" id="GAE-gC-hWn"/>
+                                                            <constraint firstAttribute="height" constant="207" id="Lfn-Yh-eJU"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.13333333333333333" green="0.81960784313725488" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="Pd9-jP-9Nh" firstAttribute="top" secondItem="Ey3-pe-GIj" secondAttribute="top" constant="24" id="uKm-fN-Xnu"/>
+                                                    <constraint firstItem="Pd9-jP-9Nh" firstAttribute="leading" secondItem="Ey3-pe-GIj" secondAttribute="leading" constant="12" id="wb2-Cq-yeg"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
