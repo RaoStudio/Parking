@@ -14,6 +14,8 @@ class ReserveDetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.navigationItem.title = "예약 상세보기"
     }
 
     override func didReceiveMemoryWarning() {
