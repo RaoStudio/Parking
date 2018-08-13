@@ -3026,11 +3026,35 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9aR-ts-0V9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="255"/>
+                                                        <color key="backgroundColor" red="0.13333333333333333" green="0.81960784313725488" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GG5-1f-Zvw">
+                                                            <size key="itemSize" width="223" height="207"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Tkk-sm-Cdx">
+                                                                <rect key="frame" x="0.0" y="24" width="223" height="207"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="223" height="207"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </view>
+                                                            </collectionViewCell>
+                                                        </cells>
+                                                    </collectionView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.13333333333333333" green="0.81960784313725488" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="9aR-ts-0V9" firstAttribute="leading" secondItem="Ey3-pe-GIj" secondAttribute="leading" id="Rqm-Dx-Ucb"/>
+                                                    <constraint firstItem="9aR-ts-0V9" firstAttribute="top" secondItem="Ey3-pe-GIj" secondAttribute="top" id="V3U-Ab-E1v"/>
                                                     <constraint firstItem="Pd9-jP-9Nh" firstAttribute="top" secondItem="Ey3-pe-GIj" secondAttribute="top" constant="24" id="uKm-fN-Xnu"/>
                                                     <constraint firstItem="Pd9-jP-9Nh" firstAttribute="leading" secondItem="Ey3-pe-GIj" secondAttribute="leading" constant="12" id="wb2-Cq-yeg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="9aR-ts-0V9" secondAttribute="trailing" id="wrw-rJ-3Av"/>
+                                                    <constraint firstAttribute="bottom" secondItem="9aR-ts-0V9" secondAttribute="bottom" id="yql-DQ-EVp"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
