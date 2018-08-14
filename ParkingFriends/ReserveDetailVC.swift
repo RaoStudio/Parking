@@ -135,7 +135,7 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
                 
                 scrollView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
                 
-                
+                self.collectionView.reloadData()
             }
         }
     }
@@ -173,7 +173,7 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
     // MARK: -  UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return arrData.count * 3
     }
     
     
@@ -183,6 +183,11 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
         var cell: UICollectionViewCell
         
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bill_Cell", for: indexPath)
+        
+        if let billCell = cell as? ResDetailBillCell {
+//            billCell.lbl_payment_date.text = arrData[indexPath.section]["payment_date"] as? String
+            billCell.lbl_payment_date.text = arrData[0]["payment_date"] as? String
+        }
         
         return cell
     }

@@ -11,6 +11,7 @@
 		29012A8A2105B227005D99FC /* ProfileTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29012A892105B227005D99FC /* ProfileTextCell.swift */; };
 		29012A8C2105B2C5005D99FC /* ProfileBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29012A8B2105B2C5005D99FC /* ProfileBtnCell.swift */; };
 		291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */; };
+		2933ECC22122BACD00F03D02 /* ResDetailBillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933ECC12122BACC00F03D02 /* ResDetailBillCell.swift */; };
 		293545F120ECBB3800077B75 /* SetVersionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293545F020ECBB3800077B75 /* SetVersionCell.swift */; };
 		293C50BF2107FEE400E53620 /* PaymentCoupSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C50BE2107FEE400E53620 /* PaymentCoupSelectCell.swift */; };
 		293C50C1210802EE00E53620 /* PaymentPointInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C50C0210802ED00E53620 /* PaymentPointInputCell.swift */; };
@@ -94,6 +95,7 @@
 		29012A892105B227005D99FC /* ProfileTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextCell.swift; sourceTree = "<group>"; };
 		29012A8B2105B2C5005D99FC /* ProfileBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBtnCell.swift; sourceTree = "<group>"; };
 		291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerVC.swift; sourceTree = "<group>"; };
+		2933ECC12122BACC00F03D02 /* ResDetailBillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResDetailBillCell.swift; sourceTree = "<group>"; };
 		293545F020ECBB3800077B75 /* SetVersionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVersionCell.swift; sourceTree = "<group>"; };
 		293C50BE2107FEE400E53620 /* PaymentCoupSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCoupSelectCell.swift; sourceTree = "<group>"; };
 		293C50C0210802ED00E53620 /* PaymentPointInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPointInputCell.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				29A79B3E211A7F63005440F8 /* ReservHistoryCell.swift */,
+				2933ECC12122BACC00F03D02 /* ResDetailBillCell.swift */,
 			);
 			path = Reservation;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				29A1AABC20DCC0F500C8EE66 /* RegisterVC.swift in Sources */,
 				294E5F9C20A53CEE00CF9D03 /* RoundButton.swift in Sources */,
 				29B7CEB620F4802800A39315 /* ParkingLotDetailVC.swift in Sources */,
+				2933ECC22122BACD00F03D02 /* ResDetailBillCell.swift in Sources */,
 				29B4CDED20CF96390055852F /* LoginVC.swift in Sources */,
 				2983D63620B5356B003CAB1C /* TestView.swift in Sources */,
 				29012A8821057BE1005D99FC /* ProfileVC.swift in Sources */,
