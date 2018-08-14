@@ -3158,6 +3158,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.81960784313725488" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="oIk-3F-nID" firstAttribute="top" secondItem="bc8-rl-esh" secondAttribute="top" id="W0b-jr-8dx"/>
                                     <constraint firstItem="oIk-3F-nID" firstAttribute="width" secondItem="bc8-rl-esh" secondAttribute="width" id="WvA-B4-Sqk"/>
