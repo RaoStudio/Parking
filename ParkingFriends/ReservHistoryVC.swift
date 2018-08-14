@@ -259,8 +259,26 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         if let dic = arrMake[indexPath.section][indexPath.row] as? Dictionary<String, Any> {
             if let strSid: String = dic["sid"] as? String {
                 
-                vc.resSid = strSid
-                self.navigationController?.pushViewController(vc, animated: true)
+                //*
+                let cell = tableView.cellForRow(at: indexPath)
+                if let resHistoryCell = cell as? ReservHistoryCell {
+                
+                    vc.strName = resHistoryCell.lbl_Name.text!
+                    vc.strStatus = resHistoryCell.lbl_Status.text!
+                    vc.strAddress = resHistoryCell.lbl_Address.text!
+                    vc.strTime = resHistoryCell.lbl_Time.text!
+                    vc.strPrice = resHistoryCell.lbl_Price.text!
+                    
+                    
+                    
+                    vc.resSid = strSid
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                //*/
+                
+//                vc.resSid = strSid
+//                self.navigationController?.pushViewController(vc, animated: true)
+                
             }
         }
         

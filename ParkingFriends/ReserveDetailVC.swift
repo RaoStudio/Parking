@@ -25,6 +25,22 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource {
     
     var arrData = [Dictionary<String, Any>]()
     
+    
+    var strName: String = ""
+    var strStatus: String = ""
+    var strAddress: String = ""
+    var strTime: String = ""
+    var strPrice: String = ""
+    
+    
+    @IBOutlet weak var lbl_Name: UILabel!
+    @IBOutlet weak var lbl_Status: UILabel!
+    @IBOutlet weak var lbl_Address: UILabel!
+    @IBOutlet weak var lbl_Time: UILabel!
+    @IBOutlet weak var lbl_Price: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +50,12 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource {
         
         
         requestFetchReservationDetail(sid: self.resSid)
+        
+        lbl_Name.text = strName
+        lbl_Status.text = strStatus
+        lbl_Address.text = strAddress
+        lbl_Time.text = strTime
+        lbl_Price.text = strPrice
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,12 +71,12 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource {
         
         if false == self.arrData.isEmpty {
             
-            if let dataPlace = self.arrData.first, contentImages.isEmpty {
+            if let dicData = self.arrData.first, contentImages.isEmpty {
                 
                 for i in 1...5
                 {
                     let str = "img"+String(i)
-                    if let img: String = dataPlace[str] as? String, false == img.isEmpty {
+                    if let img: String = dicData[str] as? String, false == img.isEmpty {
                         contentImages.append(UrlStrings.URL_API_PARKINGLOT_IMG + (img as String))
                     }
                 }
@@ -95,10 +117,8 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource {
                 
                 scrollView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
                 
+                
             }
-            
-//            scrollView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
-            
         }
     }
 
