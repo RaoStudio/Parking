@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource {
+class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UICollectionViewDataSource {
 
     @IBOutlet weak var btnNavi: RoundButton!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -47,6 +47,9 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource {
     
     
     
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,7 +60,7 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource {
         
         requestFetchReservationDetail(sid: self.resSid)
         
-        
+        collectionView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -164,6 +167,24 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource {
                 self.viewWillLayoutSubviews()
             }
         }
+    }
+    
+    
+    // MARK: -  UICollectionViewDataSource
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    
+    // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var cell: UICollectionViewCell
+        
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bill_Cell", for: indexPath)
+        
+        return cell
     }
     
     
