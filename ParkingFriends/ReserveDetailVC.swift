@@ -145,6 +145,28 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Btn Action
+    
+    @IBAction func onBtnNavi(_ sender: UIButton) {
+    }
+    
+    
+    
+    @IBAction func onBtnExtend(_ sender: UIButton) {
+    }
+    
+    @IBAction func onBtnCCTV(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func onBtnPhone(_ sender: UIButton) {
+        guard let url = URL(string: "tel://" + "10-3322-1214") else {
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
 
     // MARK: - API ( URL_API_RESERVATION_FETCH_DETAIL )
     func requestFetchReservationDetail(sid: String) {
