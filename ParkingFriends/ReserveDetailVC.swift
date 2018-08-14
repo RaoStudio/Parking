@@ -97,7 +97,7 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource {
                 
             }
             
-            scrollView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
+//            scrollView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
             
         }
     }
