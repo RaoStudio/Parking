@@ -51,17 +51,24 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource {
         
         requestFetchReservationDetail(sid: self.resSid)
         
-        lbl_Name.text = strName
-        lbl_Status.text = strStatus
-        lbl_Address.text = strAddress
-        lbl_Time.text = strTime
-        lbl_Price.text = strPrice
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        lbl_Name.text = strName
+        lbl_Status.text = strStatus
+        lbl_Address.text = strAddress
+        lbl_Time.text = strTime
+        lbl_Price.text = strPrice
         
+        
+        if strStatus == "완료" {
+            lbl_Status.textColor = hexStringToUIColor(hex: "#888888")
+        } else if strStatus == "예약" {
+            lbl_Status.textColor = hexStringToUIColor(hex: "#13b6f7")
+        }
         
     }
     
