@@ -2874,7 +2874,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bc8-rl-esh">
-                                <rect key="frame" x="0.0" y="55" width="320" height="449"/>
+                                <rect key="frame" x="0.0" y="65" width="320" height="439"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIk-3F-nID" userLabel="Contents View">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="466"/>
@@ -3165,12 +3165,16 @@
                             <constraint firstItem="bc8-rl-esh" firstAttribute="trailing" secondItem="cSP-jO-kHD" secondAttribute="trailing" id="fX1-cc-gBk"/>
                             <constraint firstItem="bc8-rl-esh" firstAttribute="bottom" secondItem="cSP-jO-kHD" secondAttribute="bottom" id="hH6-aL-sWJ"/>
                             <constraint firstItem="cSP-jO-kHD" firstAttribute="trailing" secondItem="UPq-e1-mNe" secondAttribute="trailing" constant="12" id="maa-fI-Lgu"/>
-                            <constraint firstItem="bc8-rl-esh" firstAttribute="top" secondItem="cSP-jO-kHD" secondAttribute="top" constant="55" id="quL-H5-DMK"/>
+                            <constraint firstItem="bc8-rl-esh" firstAttribute="top" secondItem="cSP-jO-kHD" secondAttribute="top" priority="750" constant="65" id="quL-H5-DMK"/>
                             <constraint firstItem="UPq-e1-mNe" firstAttribute="top" secondItem="cSP-jO-kHD" secondAttribute="top" constant="12" id="y65-my-8w6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cSP-jO-kHD"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="btnNavi" destination="UPq-e1-mNe" id="r9k-Od-XR6"/>
+                        <outlet property="scrollView" destination="bc8-rl-esh" id="Zz4-kp-RJJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAX-yA-sWt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3479,16 +3483,16 @@
                                                 <rect key="frame" x="112" y="0.0" width="196" height="44"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2A-kP-FLu" userLabel="vMonth">
-                                                        <rect key="frame" x="0.0" y="0.0" width="98" height="44"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="월" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsH-8T-rfd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="98" height="44"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOR-53-DgD">
-                                                                <rect key="frame" x="0.0" y="42" width="98" height="2"/>
+                                                                <rect key="frame" x="0.0" y="42" width="90" height="2"/>
                                                                 <color key="backgroundColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="2" id="Ha1-j9-fyW"/>
@@ -3509,16 +3513,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crv-aE-fxc" userLabel="vYear">
-                                                        <rect key="frame" x="106" y="0.0" width="90" height="44"/>
+                                                        <rect key="frame" x="98" y="0.0" width="98" height="44"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="년" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Afk-EJ-0bJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="98" height="44"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dxw-fG-XR1">
-                                                                <rect key="frame" x="0.0" y="42" width="90" height="2"/>
+                                                                <rect key="frame" x="0.0" y="42" width="98" height="2"/>
                                                                 <color key="backgroundColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="2" id="Dzg-a8-Pc8"/>

@@ -252,11 +252,20 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReserveDetailVC") else {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReserveDetailVC") as? ReserveDetailVC else {
             return
         }
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let dic = arrMake[indexPath.section][indexPath.row] as? Dictionary<String, Any> {
+            if let strSid: String = dic["sid"] as? String {
+                
+                vc.resSid = strSid
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+        
+        
+        
     }
     
     /*
