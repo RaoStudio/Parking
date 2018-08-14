@@ -15,6 +15,8 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet weak var scrollView: UIScrollView!
     
     
+    
+    
     var resSid: String = ""
     
     // PageVC
@@ -38,6 +40,10 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet weak var lbl_Address: UILabel!
     @IBOutlet weak var lbl_Time: UILabel!
     @IBOutlet weak var lbl_Price: UILabel!
+    
+    
+    @IBOutlet weak var btnExtend: UIButton!
+    @IBOutlet weak var btnCCTV: UIButton!
     
     
     
@@ -66,6 +72,8 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource {
         
         if strStatus == "완료" {
             lbl_Status.textColor = hexStringToUIColor(hex: "#888888")
+            btnExtend.isHidden = true
+            btnCCTV.isHidden = true
         } else if strStatus == "예약" {
             lbl_Status.textColor = hexStringToUIColor(hex: "#13b6f7")
         }
