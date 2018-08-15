@@ -3395,14 +3395,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRi-wU-GZf" userLabel="ContentsView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEx-pF-eWs">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEx-pF-eWs" userLabel="Header Like View">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="jfe-Z0-zQa"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArF-Qa-ecy">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArF-Qa-ecy" userLabel="Price View">
                                         <rect key="frame" x="0.0" y="44" width="320" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 결제 금액" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81a-sl-DJd">
@@ -3442,7 +3442,7 @@
                                             <constraint firstItem="81a-sl-DJd" firstAttribute="leading" secondItem="ArF-Qa-ecy" secondAttribute="leading" constant="12" id="vuy-lz-VAf"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0U-nu-c4Z">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0U-nu-c4Z" userLabel="Card Name View">
                                         <rect key="frame" x="0.0" y="88" width="320" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 사용한 카드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONX-dn-dTN">
@@ -3508,7 +3508,7 @@
                                             <constraint firstItem="ADE-Mx-Hfv" firstAttribute="leading" secondItem="A0U-nu-c4Z" secondAttribute="leading" constant="12" id="reH-5l-bLM"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUm-P6-znO">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUm-P6-znO" userLabel="Card Number View">
                                         <rect key="frame" x="0.0" y="132" width="320" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카드번호" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjM-4F-4af">
@@ -3671,7 +3671,7 @@
                                             <constraint firstAttribute="height" constant="44" id="yFG-p0-TgX"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVL-ZH-c7J">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVL-ZH-c7J" userLabel="Card Expire View">
                                         <rect key="frame" x="0.0" y="176" width="320" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유효기간" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZ0-Wm-8GC">
@@ -3774,7 +3774,7 @@
                                             <constraint firstItem="Mer-CS-5lc" firstAttribute="top" secondItem="IVL-ZH-c7J" secondAttribute="top" id="t9c-gg-2hx"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87b-pd-fWw">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87b-pd-fWw" userLabel="Password View">
                                         <rect key="frame" x="0.0" y="220" width="320" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIn-qu-anZ">
@@ -3838,7 +3838,7 @@
                                             <constraint firstItem="dIn-qu-anZ" firstAttribute="top" secondItem="87b-pd-fWw" secondAttribute="top" id="kak-tL-ihg"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ns5-bA-9oA">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ns5-bA-9oA" userLabel="Birth View">
                                         <rect key="frame" x="0.0" y="264" width="320" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생년월일" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gST-CT-tu6">
