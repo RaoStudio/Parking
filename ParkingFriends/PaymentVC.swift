@@ -168,14 +168,14 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     // MARK: - Btn Action
     @IBAction func onBtnExit(_ sender: UIBarButtonItem) {
         
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+//        self.presentingViewController?.dismiss(animated: true, completion: nil)
         
-        /*
+        //*
         if let vc = self.presentingViewController as? ResCheckVC {
             vc.tapMainView(vc.view)
             self.presentingViewController?.dismiss(animated: true, completion: nil)
         }
-         */
+        //*/
     }
     
     @IBAction func onBtnPayment(_ sender: UIButton) {

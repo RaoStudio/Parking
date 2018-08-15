@@ -168,7 +168,19 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
                 */
                 
                 
-                self.navigationController?.popViewController(animated: true)
+//                self.navigationController?.popViewController(animated: true)
+//                self.navigationController?.popToRootViewController(animated: true)
+                
+                
+                if let arrVC = self.navigationController?.viewControllers {
+                 
+                    for vc in arrVC {
+                        if let pVC = vc as? PaymentVC {
+                            pVC.onBtnExit(UIBarButtonItem())
+                        }
+                    }
+                }
+                
             }
             //*
             else if strUrl.contains("kakaotalk") {
