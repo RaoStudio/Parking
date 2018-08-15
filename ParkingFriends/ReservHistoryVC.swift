@@ -257,7 +257,7 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
         
         if let dic = arrMake[indexPath.section][indexPath.row] as? Dictionary<String, Any> {
-            if let strSid: String = dic["sid"] as? String {
+            if let strSid: String = dic["sid"] as? String, let strLotSid: String = dic["parkinglot_sid"] as? String {
                 
                 //*
                 let cell = tableView.cellForRow(at: indexPath)
@@ -272,6 +272,7 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                     
                     
                     vc.resSid = strSid
+                    vc.strLotSid = strLotSid
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
                 //*/

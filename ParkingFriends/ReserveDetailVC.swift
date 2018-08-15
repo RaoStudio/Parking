@@ -18,6 +18,7 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
     
     
     var resSid: String = ""
+    var strLotSid: String = ""
     
     // PageVC
     var pageVC: RaoPageVC!
@@ -27,6 +28,11 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
     
     var arrData = [Dictionary<String, Any>]()
     
+    var arrDetail = [Dictionary<String, Any>]()
+    var strLatitude: String = ""
+    var strLongitude: String = ""
+    var strTel: String = ""
+    let uinfo = UserInfoManager()
     
     var strName: String = ""
     var strStatus: String = ""
@@ -136,6 +142,9 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
                 scrollView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
                 
                 self.collectionView.reloadData()
+                
+                
+                requestFetchParkinglotDetail(sid: strLotSid)
             }
         }
     }
@@ -191,6 +200,47 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
             }
         }
     }
+    
+    
+    // MARK: - API ( URL_FETCH_PARKINGLOT_DETAIL )
+    func requestFetchParkinglotDetail(sid: String) {
+        
+        let param = ["sid" : sid] as [String: Any]
+        
+        Alamofire.request(UrlStrings.URL_FETCH_PARKINGLOT_DETAIL, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+            
+            guard response.result.isSuccess else {
+                print("\(UrlStrings.URL_FETCH_PARKINGLOT_DETAIL) : \(String(describing: response.result.error))")
+                self.alert("\(UrlStrings.URL_FETCH_PARKINGLOT_DETAIL) : \(String(describing: response.result.error))")
+                return
+            }
+            
+            if let value = response.result.value {
+                print("requestFetchParkinglotDetail JSON = \(value)")
+                
+                self.arrDetail = value as! [Dictionary<String, Any>]
+                
+                self.setPositionAndTelephone()
+                
+            }
+        }
+        
+    }
+    
+    
+    func setPositionAndTelephone() {
+        if false == self.arrDetail.isEmpty {
+            if let dicData = self.arrData.first {
+                if let lat = dicData["latitude"] as? NSString, let long = dicData["longitude"] as? NSString {
+                    uinfo.rLatitude = lat.doubleValue
+                    uinfo.rLongtitude = long.doubleValue
+                } else {
+                    
+                }
+            }
+        }
+    }
+    
     
     
     // MARK: -  UICollectionViewDataSource
