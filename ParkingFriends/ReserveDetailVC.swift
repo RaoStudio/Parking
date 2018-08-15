@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UICollectionViewDataSource {
+class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UICollectionViewDataSource, PresentExitDelegate {
 
     @IBOutlet weak var btnNavi: RoundButton!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -50,6 +50,7 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
     
     @IBOutlet weak var btnExtend: UIButton!
     @IBOutlet weak var btnCCTV: UIButton!
+    @IBOutlet var btnPhone: UIButton!
     
     
     
@@ -86,6 +87,8 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
         } else if strStatus == "예약" {
             lbl_Status.textColor = hexStringToUIColor(hex: "#13b6f7")
         }
+        
+        
         
     }
     
@@ -154,9 +157,41 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
         // Dispose of any resources that can be recreated.
     }
     
+    //
+    func onPresentExit() {
+     
+        if false == self.arrData.isEmpty {
+            
+            self.pageVC?.view.frame.origin = CGPoint(x: 0, y: 0)
+            self.pageVC?.view.frame.size.width = self.view.frame.width
+            //        self.pageVC?.view.frame.size.height = 180
+            self.pageVC?.view.frame.size.height = self.view.frame.width * (180/375)
+            
+            if let naviBar = self.navigationController?.navigationBar {
+                self.pageVC?.view.frame.size.height += 37
+                
+                if #available(iOS 11.0, *) {
+                    if RaoIPhoneX.isIPhoneX {
+                        self.pageVC?.view.frame.size.height += 24
+                    }
+                }
+                
+            }
+            
+            scrollView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
+        }
+    }
+    
     // MARK: - Btn Action
     
     @IBAction func onBtnNavi(_ sender: UIButton) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "NaviVC") as? NaviVC else {
+            return
+        }
+        
+        vc.modalPresentationStyle = .overFullScreen
+        vc.delegate = self
+        self.present(vc, animated: false, completion: nil)
     }
     
     
@@ -170,7 +205,7 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
     
     @IBAction func onBtnPhone(_ sender: UIButton) {
 //        guard let url = URL(string: "tel://01033221214") else {
-        guard let url = URL(string: "tel://01032263135") else {
+        guard let url = URL(string: "tel://\(strTel)") else {
             return
         }
         
@@ -230,12 +265,20 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
     
     func setPositionAndTelephone() {
         if false == self.arrDetail.isEmpty {
-            if let dicData = self.arrData.first {
+            if let dicData = self.arrDetail.first as? Dictionary<String, Any> {
                 if let lat = dicData["latitude"] as? NSString, let long = dicData["longitude"] as? NSString {
                     uinfo.rLatitude = lat.doubleValue
                     uinfo.rLongtitude = long.doubleValue
+                    self.btnNavi.isHidden = false
                 } else {
-                    
+                    self.btnNavi.isHidden = true
+                }
+                
+                if let tel = dicData["tel"] as? String {
+                    self.strTel = tel
+                    self.btnPhone.isHidden = false
+                } else {
+                    self.btnPhone.isHidden = true
                 }
             }
         }
