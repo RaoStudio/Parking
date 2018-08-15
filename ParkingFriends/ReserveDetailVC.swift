@@ -160,7 +160,8 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
     
     
     @IBAction func onBtnPhone(_ sender: UIButton) {
-        guard let url = URL(string: "tel://" + "10-3322-1214") else {
+//        guard let url = URL(string: "tel://01033221214") else {
+        guard let url = URL(string: "tel://01032263135") else {
             return
         }
         
