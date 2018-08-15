@@ -66,6 +66,8 @@ class NaviVC: PresentTestVC, TMapTapiDelegate {
             
             let coordinate = CLLocationCoordinate2D(latitude: destDrdX, longitude: destDrdY);
             TMapTapi.invokeRoute(destAddr, coordinate: coordinate);
+            
+//            self.tapMainView(self.view)
         } else {
             
             

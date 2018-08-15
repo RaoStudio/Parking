@@ -40,6 +40,8 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
     var strTime: String = ""
     var strPrice: String = ""
     
+    var hScroll: CGFloat = 0.0
+    
     
     @IBOutlet weak var lbl_Name: UILabel!
     @IBOutlet weak var lbl_Status: UILabel!
@@ -143,6 +145,8 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
                 
                 
                 scrollView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
+                hScroll = scrollView.contentSize.height
+                
                 
                 self.collectionView.reloadData()
                 
@@ -157,9 +161,10 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
         // Dispose of any resources that can be recreated.
     }
     
-    //
+    // MARK: PresentExitDelegate
     func onPresentExit() {
-     
+        
+        /*
         if false == self.arrData.isEmpty {
             
             self.pageVC?.view.frame.origin = CGPoint(x: 0, y: 0)
@@ -179,7 +184,12 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
             }
             
             scrollView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
+            scrollView.contentSize.height = self.hScroll
         }
+ */
+        
+        scrollView.contentOffset = CGPoint.zero
+//        scrollView.isScrollEnabled = false
     }
     
     // MARK: - Btn Action
