@@ -25,6 +25,8 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
     let uSession = UserSession()
     
+    var timer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -82,7 +84,9 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
     override func viewDidDisappear(_ animated: Bool) {
 //        self.navigationController?.navigationBar.isHidden = false
-    }
+        
+        self.updateCountDown()
+    }        
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -100,6 +104,25 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
             }
         }
     }
+    
+    // MARK: - Timer
+    func countDown(time: Double) {
+        self.timer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(updateCountDown), userInfo: nil, repeats: true)
+        
+        self.startLoading()
+    }
+    
+    @objc func updateCountDown() {
+        
+        self.endLoading()
+        removeCountDown()
+    }
+    
+    private func removeCountDown() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
     
     // MARK: - Request to Parking Server ( SNS value -> Parking Server )
     
@@ -224,6 +247,8 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
     
     // MARK: - Action
     @IBAction func onBtnKakao(_ sender: UIButton) {
+    
+        self.countDown(time: 3.0)
         
         self.startLoading()
         let session :KOSession = KOSession.shared()
@@ -342,6 +367,9 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
+        
+        
+        self.countDown(time: 3.0)
     }
     
     
