@@ -62,8 +62,8 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         
         arrCoupPay = [
             CouponValue.month.rawValue,
-            CouponValue.launch.rawValue,
-            CouponValue.dev.rawValue
+            CouponValue.month.rawValue,
+            CouponValue.month.rawValue,
         ]
     }
     
