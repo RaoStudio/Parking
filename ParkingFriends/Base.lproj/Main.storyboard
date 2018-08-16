@@ -5391,7 +5391,7 @@
         <!--View Controller-->
         <scene sceneID="grZ-xj-51b">
             <objects>
-                <viewController id="wIa-d6-zhe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReserveExtendVC" id="wIa-d6-zhe" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bgL-xb-is3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5399,6 +5399,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIk-Mg-XNx" customClass="RoundView" customModule="ParkingFriends" customModuleProvider="target">
                                 <rect key="frame" x="18" y="172.5" width="284" height="223"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연장할 시간을 선택해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFk-0N-fVx">
+                                        <rect key="frame" x="68.5" y="74.5" width="146" height="16"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABW-WB-VpR">
                                         <rect key="frame" x="0.0" y="0.5" width="284" height="46"/>
                                         <subviews>
@@ -5450,16 +5456,33 @@
                                             <constraint firstAttribute="height" constant="45" id="gNe-a7-XKG"/>
                                         </constraints>
                                     </stackView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tb5-7r-HCM">
+                                        <rect key="frame" x="20" y="110.5" width="244" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="B0z-ao-vZZ"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="30분"/>
+                                            <segment title="1시간"/>
+                                            <segment title="2시간"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.13333333333333333" green="0.81960784313725488" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="u8u-2o-SsU" secondAttribute="trailing" id="5Xx-zL-SHx"/>
+                                    <constraint firstItem="NFk-0N-fVx" firstAttribute="top" secondItem="ABW-WB-VpR" secondAttribute="bottom" constant="28" id="9Le-R1-xgh"/>
                                     <constraint firstAttribute="trailing" secondItem="ABW-WB-VpR" secondAttribute="trailing" id="Pkh-40-wO5"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tb5-7r-HCM" secondAttribute="trailing" constant="20" id="QVJ-Pl-ijm"/>
                                     <constraint firstItem="ABW-WB-VpR" firstAttribute="leading" secondItem="CIk-Mg-XNx" secondAttribute="leading" id="SKH-16-if6"/>
                                     <constraint firstItem="ABW-WB-VpR" firstAttribute="top" secondItem="CIk-Mg-XNx" secondAttribute="top" id="Y21-qO-EwZ"/>
+                                    <constraint firstItem="NFk-0N-fVx" firstAttribute="centerX" secondItem="CIk-Mg-XNx" secondAttribute="centerX" id="ZbJ-Fo-zV9"/>
+                                    <constraint firstItem="Tb5-7r-HCM" firstAttribute="top" secondItem="NFk-0N-fVx" secondAttribute="bottom" constant="20" id="ca9-kh-Q9z"/>
                                     <constraint firstItem="u8u-2o-SsU" firstAttribute="leading" secondItem="CIk-Mg-XNx" secondAttribute="leading" id="clG-m0-ht5"/>
                                     <constraint firstAttribute="height" constant="223" id="dh0-Om-oaY"/>
                                     <constraint firstAttribute="bottom" secondItem="u8u-2o-SsU" secondAttribute="bottom" id="hme-F8-IqL"/>
+                                    <constraint firstItem="Tb5-7r-HCM" firstAttribute="leading" secondItem="CIk-Mg-XNx" secondAttribute="leading" constant="20" id="qjx-jH-bgd"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -5480,7 +5503,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RkB-5m-8Cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8119" y="1538"/>
+            <point key="canvasLocation" x="8118.75" y="1536.9718309859154"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nfA-A4-TJ0">
