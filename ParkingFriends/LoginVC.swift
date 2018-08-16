@@ -86,7 +86,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
 //        self.navigationController?.navigationBar.isHidden = false
         
         self.updateCountDown()
-    }        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

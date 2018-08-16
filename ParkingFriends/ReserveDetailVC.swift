@@ -70,6 +70,7 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
         requestFetchReservationDetail(sid: self.resSid)
         
         collectionView.dataSource = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,7 +98,7 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        
+        /*
         if false == self.arrData.isEmpty {
             
             if let dicData = self.arrData.first, contentImages.isEmpty {
@@ -154,12 +155,79 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
                 requestFetchParkinglotDetail(sid: strLotSid)
             }
         }
+         */
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func setUpView() {
+        if false == self.arrData.isEmpty {
+            
+            if let dicData = self.arrData.first, contentImages.isEmpty {
+                
+                for i in 1...5
+                {
+                    let str = "img"+String(i)
+                    if let img: String = dicData[str] as? String, false == img.isEmpty {
+                        contentImages.append(UrlStrings.URL_API_PARKINGLOT_IMG + (img as String))
+                    }
+                }
+                
+                if contentImages.isEmpty {
+                    contentImages.append("Detail_NoImage")
+                }
+                
+                
+                self.pageVC = self.instanceTutorialVC(name: "PageVC") as? RaoPageVC
+                self.pageVC?.dataSource = self
+                
+                let startContentVC = self.getContentVC(atIndex: 0)
+                self.pageVC?.setViewControllers([startContentVC!], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+                
+                self.pageVC?.view.frame.origin = CGPoint(x: 0, y: 0)
+                self.pageVC?.view.frame.size.width = self.view.frame.width
+                //        self.pageVC?.view.frame.size.height = 180
+                self.pageVC?.view.frame.size.height = self.view.frame.width * (180/375)
+                
+                if let naviBar = self.navigationController?.navigationBar {
+                    self.pageVC?.view.frame.size.height += 37
+                    
+                    if #available(iOS 11.0, *) {
+                        if RaoIPhoneX.isIPhoneX {
+                            self.pageVC?.view.frame.size.height += 24
+                        }
+                    }
+                    
+                }
+                
+                self.addChildViewController(self.pageVC)
+                self.view.addSubview(self.pageVC.view)
+                self.pageVC.didMove(toParentViewController: self)
+                
+                
+                self.view.bringSubview(toFront: self.btnNavi)
+                
+                
+                scrollView.autoPinEdge(.top, to: .bottom, of: (self.pageVC?.view)!)
+                hScroll = scrollView.contentSize.height
+                
+                
+                self.collectionView.reloadData()
+                
+                
+                requestFetchParkinglotDetail(sid: strLotSid)
+                
+                
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    
     
     // MARK: PresentExitDelegate
     func onPresentExit() {
@@ -249,7 +317,9 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
                 
                 self.arrData = value as! [Dictionary<String, Any>]
                 
-                self.viewWillLayoutSubviews()
+//                self.viewWillLayoutSubviews()
+                
+                self.setUpView()
             }
         }
     }
