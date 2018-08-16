@@ -188,10 +188,11 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
                 let startContentVC = self.getContentVC(atIndex: 0)
                 self.pageVC?.setViewControllers([startContentVC!], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
                 
-                self.pageVC?.view.frame.origin = CGPoint(x: 0, y: 0)
+//                self.pageVC?.view.frame.origin = CGPoint(x: 0, y: 0)
+                self.pageVC?.view.frame.origin = CGPoint(x: 0, y: 64)
                 self.pageVC?.view.frame.size.width = self.view.frame.width
                 //        self.pageVC?.view.frame.size.height = 180
-                self.pageVC?.view.frame.size.height = self.view.frame.width * (180/375)
+                self.pageVC?.view.frame.size.height = self.view.frame.width * (180/375) - 64
                 
                 if let naviBar = self.navigationController?.navigationBar {
                     self.pageVC?.view.frame.size.height += 37
