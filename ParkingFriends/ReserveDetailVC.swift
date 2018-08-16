@@ -207,6 +207,14 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
     
     
     @IBAction func onBtnExtend(_ sender: UIButton) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReserveExtendVC") as? ReserveExtendVC else {
+            return
+        }
+        
+        vc.modalPresentationStyle = .overFullScreen
+        vc.bTab = false
+//        vc.delegate = self
+        self.present(vc, animated: false, completion: nil)
     }
     
     @IBAction func onBtnCCTV(_ sender: UIButton) {

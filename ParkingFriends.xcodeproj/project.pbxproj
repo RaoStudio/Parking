@@ -54,6 +54,7 @@
 		298DF7ED20D24D1100F0B653 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298DF7EC20D24D1100F0B653 /* KakaoOpenSDK.framework */; };
 		298DF7F420D2526900F0B653 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298DF7F320D2526900F0B653 /* Util.m */; };
 		2993979520FED27E00F1BFB3 /* TopLib_Op.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2993979420FED27E00F1BFB3 /* TopLib_Op.a */; };
+		2996DC53212515D300DE3A5E /* ReserveExtendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996DC52212515D300DE3A5E /* ReserveExtendVC.swift */; };
 		2999636520B644F300AC180C /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636420B644F300AC180C /* CustomView.swift */; };
 		2999636720B6451400AC180C /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2999636620B6451400AC180C /* CustomView.xib */; };
 		2999636920B6544600AC180C /* LotDistanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999636820B6544600AC180C /* LotDistanceVC.swift */; };
@@ -161,6 +162,7 @@
 		2993979220FED27400F1BFB3 /* TMapType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapType.h; sourceTree = "<group>"; };
 		2993979320FED27400F1BFB3 /* TMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMapView.h; sourceTree = "<group>"; };
 		2993979420FED27E00F1BFB3 /* TopLib_Op.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = TopLib_Op.a; sourceTree = "<group>"; };
+		2996DC52212515D300DE3A5E /* ReserveExtendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveExtendVC.swift; sourceTree = "<group>"; };
 		2999636420B644F300AC180C /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		2999636620B6451400AC180C /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		2999636820B6544600AC180C /* LotDistanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotDistanceVC.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				29C5908F2112F7790024FC68 /* NicePayVC.swift */,
 				29A79B3B211A7AD3005440F8 /* ReservHistoryVC.swift */,
 				29BBB0B321211E6A001B27F5 /* ReserveDetailVC.swift */,
+				2996DC52212515D300DE3A5E /* ReserveExtendVC.swift */,
 			);
 			path = ParkingFriends;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				29012A8821057BE1005D99FC /* ProfileVC.swift in Sources */,
 				29BBB0B421211E6A001B27F5 /* ReserveDetailVC.swift in Sources */,
 				2987403720E618410042014A /* LaunchVC.swift in Sources */,
+				2996DC53212515D300DE3A5E /* ReserveExtendVC.swift in Sources */,
 				29D6C26220E0BC8B001EF09B /* SideVC.swift in Sources */,
 				29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */,
 				2983BD9A20A16BA60033035D /* RaoPageVC.swift in Sources */,

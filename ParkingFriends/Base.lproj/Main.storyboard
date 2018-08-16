@@ -3629,16 +3629,16 @@
                                                 <rect key="frame" x="112" y="0.0" width="196" height="44"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2A-kP-FLu" userLabel="vMonth">
-                                                        <rect key="frame" x="0.0" y="0.0" width="98" height="44"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="월" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsH-8T-rfd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="98" height="44"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOR-53-DgD">
-                                                                <rect key="frame" x="0.0" y="42" width="98" height="2"/>
+                                                                <rect key="frame" x="0.0" y="42" width="90" height="2"/>
                                                                 <color key="backgroundColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="2" id="Ha1-j9-fyW"/>
@@ -3659,16 +3659,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crv-aE-fxc" userLabel="vYear">
-                                                        <rect key="frame" x="106" y="0.0" width="90" height="44"/>
+                                                        <rect key="frame" x="98" y="0.0" width="98" height="44"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="년" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Afk-EJ-0bJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="98" height="44"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dxw-fG-XR1">
-                                                                <rect key="frame" x="0.0" y="42" width="90" height="2"/>
+                                                                <rect key="frame" x="0.0" y="42" width="98" height="2"/>
                                                                 <color key="backgroundColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="2" id="Dzg-a8-Pc8"/>
@@ -5388,15 +5388,15 @@
             </objects>
             <point key="canvasLocation" x="4031" y="1553"/>
         </scene>
-        <!--View Controller-->
+        <!--Reserve ExtendVC-->
         <scene sceneID="grZ-xj-51b">
             <objects>
-                <viewController storyboardIdentifier="ReserveExtendVC" id="wIa-d6-zhe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReserveExtendVC" id="wIa-d6-zhe" customClass="ReserveExtendVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bgL-xb-is3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIk-Mg-XNx" customClass="RoundView" customModule="ParkingFriends" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIk-Mg-XNx" customClass="RoundView" customModule="ParkingFriends" customModuleProvider="target">
                                 <rect key="frame" x="18" y="172.5" width="284" height="223"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연장할 시간을 선택해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFk-0N-fVx">
@@ -5442,6 +5442,9 @@
                                                 <state key="normal" title="취소">
                                                     <color key="titleColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onBtnCancel:" destination="wIa-d6-zhe" eventType="touchUpInside" id="u7Z-In-4pb"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFu-55-kg3">
                                                 <rect key="frame" x="142" y="0.0" width="142" height="45"/>
@@ -5456,7 +5459,7 @@
                                             <constraint firstAttribute="height" constant="45" id="gNe-a7-XKG"/>
                                         </constraints>
                                     </stackView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tb5-7r-HCM">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tb5-7r-HCM">
                                         <rect key="frame" x="20" y="110.5" width="244" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="B0z-ao-vZZ"/>
@@ -5486,7 +5489,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="13"/>
+                                        <real key="value" value="14"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -5500,6 +5503,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E2R-DI-Kwq"/>
                     </view>
+                    <connections>
+                        <outlet property="segControl" destination="Tb5-7r-HCM" id="3JF-ag-2nF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RkB-5m-8Cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
