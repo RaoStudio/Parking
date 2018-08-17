@@ -65,6 +65,17 @@ class ReserveExtendVC: PresentTestVC {
         self.tapMainView(self.view)
     }
     
+    @IBAction func onBtnExtend(_ sender: UIButton) {
+        
+        guard let paymentNavi = self.storyboard?.instantiateViewController(withIdentifier: "PaymentNavi") as? UINavigationController else {
+            return;
+        }
+        
+        self.present(paymentNavi, animated: true, completion: nil)
+ 
+        
+        print("\(segControl.selectedSegmentIndex)")
+    }
     
     
     

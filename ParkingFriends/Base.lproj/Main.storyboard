@@ -5453,6 +5453,9 @@
                                                 <state key="normal" title="연장하기">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onBtnExtend:" destination="wIa-d6-zhe" eventType="touchUpInside" id="VQ7-RE-m43"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

@@ -223,6 +223,9 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
                 requestFetchParkinglotDetail(sid: strLotSid)
                 
                 
+                uinfo.extendStartTime = dicData["end_datetime"] as? String
+                
+                
                 self.view.layoutIfNeeded()
             }
         }

@@ -195,6 +195,9 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
         if let vc = self.presentingViewController as? ResCheckVC {
             vc.tapMainView(vc.view)
             self.presentingViewController?.dismiss(animated: true, completion: nil)
+        } else if let vc = self.presentingViewController as? ReserveExtendVC{
+            vc.tapMainView(vc.view)
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
         }
         //*/
     }
