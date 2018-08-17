@@ -232,6 +232,13 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
                         + "&end=\(strEndTime)" + "&price_ori=\(uinfo.totalPay!)"
                         + "&point=\(strPointPay)" + "&type=nice_etc"
                     
+                    if let strType = uinfo.rsvType {
+                        if strType == "E" {
+                            strParam = strParam + "&extend=\(uinfo.extend!)"
+                        }
+                    }
+                    
+                    
                     niceVC.param = strParam
                     
                     self.navigationController?.pushViewController(niceVC, animated: true)

@@ -274,6 +274,7 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                     vc.resSid = strSid
                     vc.strLotSid = strLotSid
                     uinfo.lotSid = strLotSid    // For Extend Payment
+                    uinfo.extend = strSid
                     
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
