@@ -286,6 +286,9 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
         vc.modalPresentationStyle = .overFullScreen
         vc.bTab = false
 //        vc.delegate = self
+        
+        
+        vc.arrDetail = self.arrDetail
         self.present(vc, animated: false, completion: nil)
     }
     

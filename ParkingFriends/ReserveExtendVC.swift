@@ -15,6 +15,11 @@ class ReserveExtendVC: PresentTestVC {
     
     var arrDetail = [Dictionary<String, Any>]()
     
+    let uinfo = UserInfoManager()
+    
+    var nAddMin: Int = 0
+    var nAddFee: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +33,21 @@ class ReserveExtendVC: PresentTestVC {
         segControl.layer.masksToBounds = true
         
 //        segControl.setEnabled(false, forSegmentAt: 0)
+        
+        
+        if false == self.arrDetail.isEmpty {
+            if let dicData = self.arrDetail.first as? Dictionary<String, Any> {
+                if let strAddMin = dicData["additional_minute"] as? String, let strAddFee = dicData["additional_fees"] as? String {
+                    
+                    if !strAddMin.isEmpty, !strAddFee.isEmpty {
+                        nAddMin = Int(strAddMin)!
+                        nAddFee = Int(strAddFee)!
+                    }
+                    
+                }
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,6 +90,18 @@ class ReserveExtendVC: PresentTestVC {
         guard let paymentNavi = self.storyboard?.instantiateViewController(withIdentifier: "PaymentNavi") as? UINavigationController else {
             return;
         }
+        
+        
+        let exStartDate = uinfo.stringToDate(uinfo.extendStartTime!)
+        var exEndDate: Date = Date()
+        
+        switch segControl.selectedSegmentIndex {
+        case 0:
+            exEndDate = exStartDate
+        default:
+            exEndDate = exStartDate
+        }
+        
         
         self.present(paymentNavi, animated: true, completion: nil)
  
