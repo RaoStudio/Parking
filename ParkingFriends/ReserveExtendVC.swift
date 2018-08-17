@@ -114,7 +114,7 @@ class ReserveExtendVC: PresentTestVC {
         }
         
         uinfo.extendEndTime = uinfo.dateToString(exEndDate)
-        
+        uinfo.rsvType = "E"
         
         self.present(paymentNavi, animated: true, completion: nil)
  

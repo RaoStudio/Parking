@@ -228,8 +228,8 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
                     strParam = "PayMethod=POINT" + "&BuyerName=\(uSession.name!)"
                         + "&BuyerTel=\(uSession.mobile!)" + "&BuyerEmail=\(uSession.email!)"
                         + "&member_sid=\(uSession.sid!)" + "&parkinglot_sid=\(uinfo.lotSid!)"
-                        + "&reserve_type=\(uinfo.rsvType!)" + "&begin=\(uinfo.startTime!)"
-                        + "&end=\(uinfo.endTime!)" + "&price_ori=\(uinfo.totalPay!)"
+                        + "&reserve_type=\(uinfo.rsvType!)" + "&begin=\(strStartTime)"
+                        + "&end=\(strEndTime)" + "&price_ori=\(uinfo.totalPay!)"
                         + "&point=\(strPointPay)" + "&type=nice_etc"
                     
                     niceVC.param = strParam
@@ -259,8 +259,8 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
                 strParam = "PayMethod=\(strPayMethod)" + "&BuyerName=\(uSession.name!)"
                     + "&BuyerTel=\(uSession.mobile!)" + "&BuyerEmail=\(uSession.email!)"
                     + "&member_sid=\(uSession.sid!)" + "&parkinglot_sid=\(uinfo.lotSid!)"
-                    + "&reserve_type=\(uinfo.rsvType!)" + "&begin=\(uinfo.startTime!)"
-                    + "&end=\(uinfo.endTime!)" + "&price_ori=\(uinfo.totalPay!)"
+                    + "&reserve_type=\(uinfo.rsvType!)" + "&begin=\(strStartTime)"
+                    + "&end=\(strEndTime)" + "&price_ori=\(uinfo.totalPay!)"
                     + "&point=\(strPointPay)" + "&type=nice_etc"
                 
                 niceVC.param = strParam
@@ -282,8 +282,8 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
                 strParam = "PayMethod=\(strPayMethod)" + "&BuyerName=\(uSession.name!)"
                     + "&BuyerTel=\(uSession.mobile!)" + "&BuyerEmail=\(uSession.email!)"
                     + "&member_sid=\(uSession.sid!)" + "&parkinglot_sid=\(uinfo.lotSid!)"
-                    + "&reserve_type=\(uinfo.rsvType!)" + "&begin=\(uinfo.startTime!)"
-                    + "&end=\(uinfo.endTime!)" + "&price_ori=\(uinfo.totalPay!)"
+                    + "&reserve_type=\(uinfo.rsvType!)" + "&begin=\(strStartTime)"
+                    + "&end=\(strEndTime)" + "&price_ori=\(uinfo.totalPay!)"
                     + "&point=\(strPointPay)" + "&type=nice_etc"
                 
                 niceVC.param = strParam
@@ -305,8 +305,8 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
                 strParam = "PayMethod=\(strPayMethod)" + "&BuyerName=\(uSession.name!)"
                     + "&BuyerTel=\(uSession.mobile!)" + "&BuyerEmail=\(uSession.email!)"
                     + "&member_sid=\(uSession.sid!)" + "&parkinglot_sid=\(uinfo.lotSid!)"
-                    + "&reserve_type=\(uinfo.rsvType!)" + "&begin=\(uinfo.startTime!)"
-                    + "&end=\(uinfo.endTime!)" + "&price_ori=\(uinfo.totalPay!)"
+                    + "&reserve_type=\(uinfo.rsvType!)" + "&begin=\(strStartTime)"
+                    + "&end=\(strEndTime)" + "&price_ori=\(uinfo.totalPay!)"
                     + "&point=\(strPointPay)" + "&type=kakao"
                 
                 niceVC.param = strParam

@@ -384,7 +384,8 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
     // MARK: -  UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrData.count * 10
+//        return arrData.count * 10
+        return arrData.count
     }
     
     
@@ -395,8 +396,8 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
         
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bill_Cell", for: indexPath)
         
-//        let nSection = indexPath.section
-        let nSection = 0
+        let nSection = indexPath.row
+//        let nSection = 0
         
         if let billCell = cell as? ResDetailBillCell {
 
