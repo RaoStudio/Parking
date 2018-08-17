@@ -31,6 +31,11 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
     
     var arrCoupPay:Array = [String]()
     
+    
+    var strStartTime: String = ""
+    var strEndTime: String = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,15 +51,31 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
             uinfo.lastPay = strLastPay
         }
         
-        if let strStart = uinfo.startTime, let strEnd = uinfo.endTime {
+        
+        if let strType = uinfo.rsvType {
             
-            let startDate = uinfo.stringToDate(strStart)
-            let endDate = uinfo.stringToDate(strEnd)
+            if strType == "R" {
+                
+                if let strStart = uinfo.startTime, let strEnd = uinfo.endTime {
+                    
+                    let startDate = uinfo.stringToDate(strStart)
+                    let endDate = uinfo.stringToDate(strEnd)
+                    
+                    let strS = String(format: "%d-%d-%d %02d:%02d",startDate.year, startDate.month, startDate.day, startDate.hour, startDate.minute)
+                    let strE = String(format: "%02d:%02d", endDate.hour, endDate.minute)
+                    
+                    strResTime = "\(strS) ~ \(strE)"
+                    
+                    
+                    strStartTime = strStart
+                    strEndTime = strEnd
+                }
+                
+            } else if strType == "E" {
+                
+                
+            }
             
-            let strS = String(format: "%d-%d-%d %02d:%02d",startDate.year, startDate.month, startDate.day, startDate.hour, startDate.minute)
-            let strE = String(format: "%02d:%02d", endDate.hour, endDate.minute)
-            
-            strResTime = "\(strS) ~ \(strE)"
         }
         
         strCoup = CouponType.month.rawValue
