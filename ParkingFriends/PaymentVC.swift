@@ -73,9 +73,21 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate, P
                 
             } else if strType == "E" {
                 
-                
+                if let strStart = uinfo.extendStartTime, let strEnd = uinfo.extendEndTime {
+                    
+                    let startDate = uinfo.stringToDate(strStart)
+                    let endDate = uinfo.stringToDate(strEnd)
+                    
+                    let strS = String(format: "%d-%d-%d %02d:%02d",startDate.year, startDate.month, startDate.day, startDate.hour, startDate.minute)
+                    let strE = String(format: "%02d:%02d", endDate.hour, endDate.minute)
+                    
+                    strResTime = "\(strS) ~ \(strE)"
+                    
+                    
+                    strStartTime = strStart
+                    strEndTime = strEnd
+                }
             }
-            
         }
         
         strCoup = CouponType.month.rawValue

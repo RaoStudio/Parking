@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftDate
 
 class ReserveExtendVC: PresentTestVC {
 
@@ -45,6 +46,12 @@ class ReserveExtendVC: PresentTestVC {
                     }
                     
                 }
+                
+                
+                if let company = dicData["company"] as? String {
+                    uinfo.rCompany = company
+                }
+                
             }
         }
         
@@ -97,16 +104,25 @@ class ReserveExtendVC: PresentTestVC {
         
         switch segControl.selectedSegmentIndex {
         case 0:
-            exEndDate = exStartDate
+            exEndDate = exStartDate + 30.minutes
+        case 1:
+            exEndDate = exStartDate + 1.hours
+        case 2:
+            exEndDate = exStartDate + 2.hours
         default:
             exEndDate = exStartDate
         }
+        
+        uinfo.extendEndTime = uinfo.dateToString(exEndDate)
         
         
         self.present(paymentNavi, animated: true, completion: nil)
  
         
         print("\(segControl.selectedSegmentIndex)")
+        print(uinfo.extendStartTime!)
+        print(uinfo.extendEndTime!)
+        
     }
     
     
