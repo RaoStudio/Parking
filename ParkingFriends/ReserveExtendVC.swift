@@ -18,8 +18,8 @@ class ReserveExtendVC: PresentTestVC {
     
     let uinfo = UserInfoManager()
     
-    var nAddMin: Int = 0
-    var nAddFee: Int = 0
+    var nAddMin: Double = 0.0
+    var nAddFee: Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +41,8 @@ class ReserveExtendVC: PresentTestVC {
                 if let strAddMin = dicData["additional_minute"] as? String, let strAddFee = dicData["additional_fees"] as? String {
                     
                     if !strAddMin.isEmpty, !strAddFee.isEmpty {
-                        nAddMin = Int(strAddMin)!
-                        nAddFee = Int(strAddFee)!
+                        nAddMin = Double(strAddMin)!
+                        nAddFee = Double(strAddFee)!
                     }
                     
                 }
@@ -99,22 +99,35 @@ class ReserveExtendVC: PresentTestVC {
         }
         
         
+        let nMinFee = nAddFee/nAddMin
+        var nTotalPay: Double = 0.0
+        
         let exStartDate = uinfo.stringToDate(uinfo.extendStartTime!)
         var exEndDate: Date = Date()
         
         switch segControl.selectedSegmentIndex {
         case 0:
             exEndDate = exStartDate + 30.minutes
+            nTotalPay = nMinFee * 30
         case 1:
             exEndDate = exStartDate + 1.hours
+            nTotalPay = nMinFee * 60
         case 2:
             exEndDate = exStartDate + 2.hours
+            nTotalPay = nMinFee * 120
         default:
             exEndDate = exStartDate
+            nTotalPay = nMinFee * 30
         }
         
         uinfo.extendEndTime = uinfo.dateToString(exEndDate)
         uinfo.rsvType = "E"
+        
+        
+        uinfo.totalPay = String(format: "%.f", nTotalPay)
+        
+        
+        
         
         self.present(paymentNavi, animated: true, completion: nil)
  
