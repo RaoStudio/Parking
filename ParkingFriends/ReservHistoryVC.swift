@@ -18,6 +18,8 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     var arrSection = [String]()
     var nSection: Int = 0
     
+    
+    
     let uinfo = UserInfoManager()
     
     
@@ -94,7 +96,18 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         var strRegDate: String = ""
         var setStrDate = Set<String>()
         
-        for item in arrData {
+        var arrExt = [Dictionary<String, Any>]()
+        
+        for (index, item) in arrData.enumerated() {
+            
+            if let strType = item["reserve_type"] as? String {
+                if strType == "E" {
+                    arrExt.append(item)
+                    arrData.remove(at: index)
+                    continue
+                }
+            }
+            
 //            let strTime = item["reg_datetime"] as! String
             let strTime = item["end_datetime"] as! String
             
