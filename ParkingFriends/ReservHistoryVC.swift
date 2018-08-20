@@ -130,7 +130,7 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         nSection = arrSection.count
         
-        for item in arrData {
+        for (index, item) in arrData.enumerated() {
 //            let strTime = item["reg_datetime"] as! String
             let strTime = item["end_datetime"] as! String
             let arrTime = strTime.components(separatedBy: " ")
@@ -146,8 +146,27 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                     strRegDate = strFirst
                     arrSection.append(strRegDate)
                 }
+             
                 
-                arrMake[nIndex].append(item)
+                
+                for exItem in arrExt {
+                    if let strExtend = exItem["extend"] as? String, let strSid = item["sid"] as? String {
+                        if strExtend == strSid {
+                            arrData[index]["end_datetime"] = exItem["end_datetime"]
+                            
+                            if let strPrice = item["price"] as? String, let strExPrice = exItem["price"] as? String {
+                                let nPrice = Int(strPrice)! + Int(strExPrice)!
+                                arrData[index]["price"] = "\(nPrice)"
+                                
+                            }
+                        }
+                    }
+                    
+                }
+                
+                
+                
+                arrMake[nIndex].append(arrData[index])
             }
         }
         
