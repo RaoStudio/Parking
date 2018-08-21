@@ -158,8 +158,28 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         var arrExt = [Dictionary<String, Any>]()
         
+        
+        var arrTempData = [Dictionary<String, Any>]()
+        
+        
+        
+        for (index, item) in arrData.enumerated() {
+            if let strType = item["reserve_type"] as? String {
+                if strType == "E" {
+                    arrExt.append(item)
+                } else {
+                    arrTempData.append(item)
+                }
+            }
+        }
+        
+        arrData = arrTempData
+        
+        
+        
         for (index, item) in arrData.enumerated() {
             
+            /*
             if let strType = item["reserve_type"] as? String {
                 if strType == "E" {
                     arrExt.append(item)
@@ -167,6 +187,7 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                     continue
                 }
             }
+             */
             
 //            let strTime = item["reg_datetime"] as! String
             let strTime = item["end_datetime"] as! String
