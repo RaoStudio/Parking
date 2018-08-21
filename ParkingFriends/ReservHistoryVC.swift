@@ -71,6 +71,7 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     // MARK: - API ( URL_API_RESERVATION_FETCH_HISTORY )
     func requestFetchReservationHistory() {
         let param = ["reserve_type" : "ALL"] as [String: Any]
+//        let param = ["reserve_type" : "R"] as [String: Any]
         
         Alamofire.request(UrlStrings.URL_API_RESERVATION_FETCH_HISTORY, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
             
@@ -85,9 +86,9 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                 
                 self.arrData = value as! [Dictionary<String, Any>]
             
-                self.makeArrayForTableView()
+//                self.makeArrayForTableView()
+                self.makeAllArrayForTableView()
                 
-//                self.tableView.reloadData()
             }
         }
     }
@@ -148,8 +149,8 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     
-    /* Data Remake Version
-    func makeArrayForTableView () {
+    // Data Remake Version
+    func makeAllArrayForTableView () {
         
         var nIndex: Int = 0
         var strRegDate: String = ""
@@ -232,7 +233,7 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
 //        print(arrMake)
         self.tableView.reloadData()
     }
- */
+ 
     
     // MARK: - TableView
     func numberOfSections(in tableView: UITableView) -> Int {

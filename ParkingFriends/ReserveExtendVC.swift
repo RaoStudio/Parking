@@ -156,6 +156,20 @@ class ReserveExtendVC: PresentTestVC {
     
     func calcImpossibleTime(arrTime: [[String]]) {
         
+        let exStartDate = uinfo.stringToDate(uinfo.extendStartTime!)
+        let exEndDate = exStartDate + 30.minutes
+        
+        /*
+        for item in arrTime {
+            
+            if let item.first
+            
+            exEndDate.isBetween(date: <#T##Date#>, and: <#T##Date#>)
+        }
+        
+        
+        exEndDate.isBetween(date: <#T##Date#>, and: <#T##Date#>)
+ */
     }
     
     
