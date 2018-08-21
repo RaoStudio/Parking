@@ -86,8 +86,8 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                 
                 self.arrData = value as! [Dictionary<String, Any>]
             
-//                self.makeArrayForTableView()
-                self.makeAllArrayForTableView()
+                self.makeArrayForTableView()
+//                self.makeAllArrayForTableView()
                 
             }
         }
