@@ -96,6 +96,61 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         var strRegDate: String = ""
         var setStrDate = Set<String>()
         
+        for item in arrData {
+            //            let strTime = item["reg_datetime"] as! String
+            let strTime = item["end_datetime"] as! String
+            
+            let arrTime = strTime.components(separatedBy: " ")
+            print(arrTime)
+            
+            if let strFirst = arrTime.first {
+                setStrDate.insert(strFirst)
+            }
+        }
+        print("Count of Set is \(setStrDate.count)")
+        
+        
+        for item in setStrDate {
+            var arrInsert = [Dictionary<String, Any>]()
+            arrMake.append(arrInsert)
+            //            arrSection.append(item)
+        }
+        print(arrMake)
+        
+        nSection = arrSection.count
+        
+        for item in arrData {
+            //            let strTime = item["reg_datetime"] as! String
+            let strTime = item["end_datetime"] as! String
+            let arrTime = strTime.components(separatedBy: " ")
+            
+            if let strFirst = arrTime.first {
+                if strRegDate.isEmpty {
+                    strRegDate = strFirst
+                    arrSection.append(strRegDate)
+                }
+                
+                if strRegDate != strFirst {
+                    nIndex = nIndex + 1
+                    strRegDate = strFirst
+                    arrSection.append(strRegDate)
+                }
+                
+                arrMake[nIndex].append(item)
+            }
+        }
+        
+        //        print(arrMake)
+        self.tableView.reloadData()
+    }
+    
+    /* Data Remake Version
+    func makeArrayForTableView () {
+        
+        var nIndex: Int = 0
+        var strRegDate: String = ""
+        var setStrDate = Set<String>()
+        
         var arrExt = [Dictionary<String, Any>]()
         
         for (index, item) in arrData.enumerated() {
@@ -173,6 +228,7 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
 //        print(arrMake)
         self.tableView.reloadData()
     }
+ */
     
     // MARK: - TableView
     func numberOfSections(in tableView: UITableView) -> Int {
