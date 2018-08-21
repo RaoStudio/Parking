@@ -12,6 +12,8 @@ import SwiftDate
 
 class ReserveExtendVC: PresentTestVC {
 
+    let bUseImpossibleTest: Bool = true
+    
     @IBOutlet weak var segControl: UISegmentedControl!
     
     var arrDetail = [Dictionary<String, Any>]()
@@ -23,6 +25,7 @@ class ReserveExtendVC: PresentTestVC {
     
     
     var arrImpossible: [String] = []   // For Store ( URL_API_RESERVATION_IMPOSSIBLE )
+    var arrArrangeImpossible: [[String]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +57,10 @@ class ReserveExtendVC: PresentTestVC {
                 if let company = dicData["company"] as? String {
                     uinfo.rCompany = company
                 }
-                
+
+                if let sid = dicData["sid"] as? String {
+                    self.requestReservationImpossible(parkinglot_sid: sid, start_time: uinfo.extendStartTime!)
+                }
             }
         }
         
@@ -93,9 +99,16 @@ class ReserveExtendVC: PresentTestVC {
     // MARK: - API ( URL_API_RESERVATION_IMPOSSIBLE )
     func requestReservationImpossible(parkinglot_sid: String, start_time: String) {
         
+        var strStart: String
+        
+        if bUseImpossibleTest {
+            strStart = "2018-05-14 10:50:00"
+        } else {
+            strStart = start_time
+        }
         
         let param = ["parkinglot_sid" : parkinglot_sid,
-                     "start_time" : start_time,
+                     "start_time" : strStart,
                      "offset" : "600"] as [String: Any]
         
         Alamofire.request(UrlStrings.URL_API_RESERVATION_IMPOSSIBLE, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
@@ -110,16 +123,41 @@ class ReserveExtendVC: PresentTestVC {
                 self.arrImpossible = value.components(separatedBy: "/")
                 
                 if self.arrImpossible.count >= 2 {
-                    self.calcImpossibelTime(arrTime: self.arrImpossible)
+                    self.arrangeImpossibleTime(arrTime: self.arrImpossible)
                 }
             }
         }
     }
     
     
-    func calcImpossibelTime(arrTime: Array<String>) {
+    func arrangeImpossibleTime(arrTime: Array<String>) {
+        guard arrTime.isEmpty == false else {
+            return
+        }
+        
+        var arrValue: [String] = []
+        
+        for (index, value) in arrTime.enumerated() {
+            print("\(index): \(value)")
+            
+            if (index % 2 == 0) {
+                arrValue = [String]()
+                arrValue.append(value)
+            } else {
+                arrValue.append(value)
+                arrArrangeImpossible.append(arrValue)
+            }
+            
+        }
+        
+        self.calcImpossibleTime(arrTime: arrArrangeImpossible)
+    }
+    
+    
+    func calcImpossibleTime(arrTime: [[String]]) {
         
     }
+    
     
     // MARK: - Btn Action
     

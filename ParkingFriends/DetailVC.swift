@@ -548,7 +548,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     }
     
     
-    func calcImpossibelTime(arrTime: Array<String>) {
+    func calcImpossibleTime(arrTime: Array<String>) {
         guard arrTime.isEmpty == false else {
             return
         }
@@ -638,7 +638,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 self.arrImpossible = value.components(separatedBy: "/")
                 
                 if self.arrImpossible.count >= 2 {
-                    self.calcImpossibelTime(arrTime: self.arrImpossible)
+                    self.calcImpossibleTime(arrTime: self.arrImpossible)
                 }
             }
         }
