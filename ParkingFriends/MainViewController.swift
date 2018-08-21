@@ -572,6 +572,8 @@ class MainViewController: UIViewController {
     @IBAction func onBtnTimeInit(_ sender: UIButton) {
         if self.bTime {
             uinfo.initTime()
+            uinfo.initTimePickerVCTime()      // Add new init timePickerVC 
+            
             self.bTime = false
             
 //            btnStart.setTitle(uinfo.startTime, for: UIControlState.normal)
