@@ -235,7 +235,7 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                         if strExtend == strSid {
                             arrData[index]["end_datetime"] = exItem["end_datetime"]
                             
-                            if let strPrice = item["price"] as? String, let strExPrice = exItem["price"] as? String {
+                            if let strPrice = arrData[index]["price"] as? String, let strExPrice = exItem["price"] as? String {
                                 let nPrice = Int(strPrice)! + Int(strExPrice)!
                                 arrData[index]["price"] = "\(nPrice)"
                                 
