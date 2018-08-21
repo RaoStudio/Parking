@@ -11,6 +11,9 @@ import Alamofire
 
 class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     var arrData = [Dictionary<String, Any>]()
@@ -143,6 +146,7 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         //        print(arrMake)
         self.tableView.reloadData()
     }
+    
     
     /* Data Remake Version
     func makeArrayForTableView () {

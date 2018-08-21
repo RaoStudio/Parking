@@ -21,6 +21,9 @@ class ReserveExtendVC: PresentTestVC {
     var nAddMin: Double = 0.0
     var nAddFee: Double = 0.0
     
+    
+    var arrImpossible: [String] = []   // For Store ( URL_API_RESERVATION_IMPOSSIBLE )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -62,6 +65,7 @@ class ReserveExtendVC: PresentTestVC {
         // Dispose of any resources that can be recreated.
     }
     
+    
     // MARK: - API ( URL_FETCH_PARKINGLOT_DETAIL )
     func requestFetchParkinglotDetail(sid: String) {
         
@@ -85,6 +89,37 @@ class ReserveExtendVC: PresentTestVC {
         
     }
     
+    
+    // MARK: - API ( URL_API_RESERVATION_IMPOSSIBLE )
+    func requestReservationImpossible(parkinglot_sid: String, start_time: String) {
+        
+        
+        let param = ["parkinglot_sid" : parkinglot_sid,
+                     "start_time" : start_time,
+                     "offset" : "600"] as [String: Any]
+        
+        Alamofire.request(UrlStrings.URL_API_RESERVATION_IMPOSSIBLE, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
+            
+            guard response.result.isSuccess else {
+                print("\(UrlStrings.URL_API_RESERVATION_IMPOSSIBLE) : \(String(describing: response.result.error))")
+                self.alert("\(UrlStrings.URL_API_RESERVATION_IMPOSSIBLE) : \(String(describing: response.result.error))")
+                return
+            }
+            
+            if let value = response.result.value as? String, false == value.isEmpty {
+                self.arrImpossible = value.components(separatedBy: "/")
+                
+                if self.arrImpossible.count >= 2 {
+                    self.calcImpossibelTime(arrTime: self.arrImpossible)
+                }
+            }
+        }
+    }
+    
+    
+    func calcImpossibelTime(arrTime: Array<String>) {
+        
+    }
     
     // MARK: - Btn Action
     

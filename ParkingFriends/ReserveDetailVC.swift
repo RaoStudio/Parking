@@ -226,6 +226,13 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
                 uinfo.extendStartTime = dicData["end_datetime"] as? String
                 
                 
+                if let strCCTV: NSString = dicData["cctv"] as? NSString, strCCTV.isEqual(to: "0") {
+                    self.btnCCTV.isHidden = true
+                } else {
+                    self.btnCCTV.isHidden = false
+                }
+                
+                
                 self.view.layoutIfNeeded()
             }
         }
