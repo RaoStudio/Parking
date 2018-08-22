@@ -65,10 +65,15 @@ class ReserveExtendVC: PresentTestVC {
                 
                 if let strDefaultMin = dicData["default_minute"] as? String {
                     let nDefaultMin = Int(strDefaultMin)!
-                    
+                                        
                     if nDefaultMin > 30 {
                         segControl.setEnabled(false, forSegmentAt: 0)
                         segControl.selectedSegmentIndex = 1
+                    }
+                    
+                    if nDefaultMin > 60 {
+                        segControl.setEnabled(false, forSegmentAt: 1)
+                        segControl.selectedSegmentIndex = 2
                     }
                     
                 }
