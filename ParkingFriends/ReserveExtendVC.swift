@@ -29,6 +29,7 @@ class ReserveExtendVC: PresentTestVC {
     
     
     var strOperation: String = ""
+    var dateOperationEnd: Date = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -267,6 +268,22 @@ class ReserveExtendVC: PresentTestVC {
         }
         
         print(arrStr)
+        
+        if let strStart = arrStr.first, let strEnd = arrStr.last {
+            print(strStart)
+            print(strEnd)
+            
+            var fOpEndHour = Float(strEnd[0..<2])!
+            let fOpEndMin = Float(strEnd[2..<strEnd.count])!
+            
+            if fOpEndHour == 00 {
+                fOpEndHour = 24
+            }
+        
+            let exStartDate = uinfo.stringToDate(uinfo.extendStartTime!)
+            print(uinfo.extendStartTime!)
+            print(exStartDate)
+        }
     }
     
     // MARK: - Btn Action
