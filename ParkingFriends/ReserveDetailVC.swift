@@ -225,6 +225,8 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
                 
                 uinfo.extendStartTime = dicData["end_datetime"] as? String
                 
+                self.setUpEndDateTime()
+                
                 
                 if let strCCTV: NSString = dicData["cctv"] as? NSString, strCCTV.isEqual(to: "0") {
                     self.btnCCTV.isHidden = true
@@ -248,6 +250,11 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
         }
     }
     
+    func setUpEndDateTime() {
+        for dic in arrData {
+            uinfo.extendStartTime = dic["end_datetime"] as? String
+        }
+    }
     
     
     // MARK: PresentExitDelegate

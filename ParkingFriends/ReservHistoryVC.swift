@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftDate
 
 class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -236,7 +237,15 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                 for exItem in arrExt {
                     if let strExtend = exItem["extend"] as? String, let strSid = item["sid"] as? String {
                         if strExtend == strSid {
-                            arrData[index]["end_datetime"] = exItem["end_datetime"]
+                            
+                            let origDate = uinfo.stringToDate(arrData[index]["end_datetime"] as! String)
+                            let extDate = uinfo.stringToDate(exItem["end_datetime"] as! String)
+                            
+                            if extDate > origDate {
+                                arrData[index]["end_datetime"] = exItem["end_datetime"]
+                            }
+                            
+//                            arrData[index]["end_datetime"] = exItem["end_datetime"]
                             
                             if let strPrice = arrData[index]["price"] as? String, let strExPrice = exItem["price"] as? String {
                                 let nPrice = Int(strPrice)! + Int(strExPrice)!
