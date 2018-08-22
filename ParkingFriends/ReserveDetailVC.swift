@@ -233,6 +233,16 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
                 }
                 
                 
+                
+                
+                if strStatus == "완료" {
+                    lbl_Status.textColor = hexStringToUIColor(hex: "#888888")
+                    btnExtend.isHidden = true
+                    btnCCTV.isHidden = true
+                } else if strStatus == "예약" {
+                    lbl_Status.textColor = hexStringToUIColor(hex: "#13b6f7")
+                }
+                
                 self.view.layoutIfNeeded()
             }
         }

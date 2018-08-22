@@ -39,7 +39,14 @@ class ReserveExtendVC: PresentTestVC {
         segControl.layer.borderColor = segControl.tintColor.cgColor
         segControl.layer.masksToBounds = true
         
-//        segControl.setEnabled(false, forSegmentAt: 0)
+        let titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.gray]
+        segControl.setTitleTextAttributes(titleTextAttributes, for: .disabled)
+//        segControl.setBackgroundImage(UIImage(named: "Detail_NoImage"), for: UIControlState.disabled, barMetrics: UIBarMetrics.default)
+        
+        /*
+        let segAppearance = UISegmentedControl.appearance()
+        segAppearance.setBackgroundImage(UIImage(named: "Detail_NoImage"), for: UIControlState.disabled, barMetrics: UIBarMetrics.default)
+        */
         
         
         if false == self.arrDetail.isEmpty {
@@ -65,7 +72,7 @@ class ReserveExtendVC: PresentTestVC {
                 
                 if let strDefaultMin = dicData["default_minute"] as? String {
                     let nDefaultMin = Int(strDefaultMin)!
-                                        
+                    
                     if nDefaultMin > 30 {
                         segControl.setEnabled(false, forSegmentAt: 0)
                         segControl.selectedSegmentIndex = 1
