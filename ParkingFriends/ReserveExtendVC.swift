@@ -39,7 +39,7 @@ class ReserveExtendVC: PresentTestVC {
         segControl.layer.borderColor = segControl.tintColor.cgColor
         segControl.layer.masksToBounds = true
         
-        let titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.gray]
+        let titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.darkGray]
         segControl.setTitleTextAttributes(titleTextAttributes, for: .disabled)
 //        segControl.setBackgroundImage(UIImage(named: "Detail_NoImage"), for: UIControlState.disabled, barMetrics: UIBarMetrics.default)
         
@@ -81,6 +81,16 @@ class ReserveExtendVC: PresentTestVC {
                     if nDefaultMin > 60 {
                         segControl.setEnabled(false, forSegmentAt: 1)
                         segControl.selectedSegmentIndex = 2
+                    }
+                    
+                }
+                
+                
+                
+                for item in segControl.subviews {
+                    let bEnable = item.isUserInteractionEnabled
+                    if bEnable == false {
+                        item.backgroundColor = UIColor.lightGray
                     }
                     
                 }
@@ -179,22 +189,30 @@ class ReserveExtendVC: PresentTestVC {
     }
     
     
-    func calcImpossibleTime(arrTime: [[String]]) {
+    func calcImpossibleTime(arrTime: [[String]]) -> Bool {
         
         let exStartDate = uinfo.stringToDate(uinfo.extendStartTime!)
         let exEndDate = exStartDate + 30.minutes
         
-        /*
+        //*
         for item in arrTime {
             
-            if let item.first
-            
-            exEndDate.isBetween(date: <#T##Date#>, and: <#T##Date#>)
+            if let strSTime = item.first, let strETime = item.last {
+                let sTime = uinfo.stringToDate(strSTime)
+                let eTime = uinfo.stringToDate(strETime)
+                
+                let bEnable = exEndDate.isBetween(date: sTime, and: eTime)
+                
+                if bEnable == true {
+                    print("calcImpossibleTime return false: \(sTime) ~ \(eTime) : \(exEndDate)")
+                    return bEnable
+                }
+            }
         }
+
+        return false
         
-        
-        exEndDate.isBetween(date: <#T##Date#>, and: <#T##Date#>)
- */
+        //*/
     }
     
     
