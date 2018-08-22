@@ -108,6 +108,13 @@ class ReserveExtendVC: PresentTestVC {
                 } else {
                     strOperation = dicData["operation_time_week"] as! String
                 }
+                
+                
+                let nSegSelect = segControl.selectedSegmentIndex
+                
+                print("SegSelect: \(nSegSelect)")
+                
+                self.calcOperationTime(strOperation: strOperation)
             }
         }
         
@@ -252,6 +259,15 @@ class ReserveExtendVC: PresentTestVC {
         //*/
     }
     
+    
+    
+    func calcOperationTime(strOperation: String) {
+        let arrStr = strOperation.split(separator: "~").map { (strTime) -> String in
+            return String(strTime)
+        }
+        
+        print(arrStr)
+    }
     
     // MARK: - Btn Action
     
