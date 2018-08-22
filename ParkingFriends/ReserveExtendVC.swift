@@ -61,6 +61,19 @@ class ReserveExtendVC: PresentTestVC {
                 if let sid = dicData["sid"] as? String {
                     self.requestReservationImpossible(parkinglot_sid: sid, start_time: uinfo.extendStartTime!)
                 }
+                
+                
+                if let strDefaultMin = dicData["default_minute"] as? String {
+                    let nDefaultMin = Int(strDefaultMin)!
+                    
+                    if nDefaultMin > 30 {
+                        segControl.setEnabled(false, forSegmentAt: 0)
+                        segControl.selectedSegmentIndex = 1
+                    }
+                    
+                }
+                
+                
             }
         }
         
