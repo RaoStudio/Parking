@@ -27,6 +27,9 @@ class ReserveExtendVC: PresentTestVC {
     var arrImpossible: [String] = []   // For Store ( URL_API_RESERVATION_IMPOSSIBLE )
     var arrArrangeImpossible: [[String]] = []
     
+    
+    var strOperation: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -95,6 +98,16 @@ class ReserveExtendVC: PresentTestVC {
                 }
                 
                 
+                let exStartDate = uinfo.stringToDate(uinfo.extendStartTime!)
+                print(exStartDate.weekdayName)
+                print(exStartDate.weekday)
+                
+                
+                if exStartDate.isInWeekend {
+                    strOperation = dicData["operation_time_holiday"] as! String
+                } else {
+                    strOperation = dicData["operation_time_week"] as! String
+                }
             }
         }
         

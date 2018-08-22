@@ -216,6 +216,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             print(today.weekdayName)
             
             if today.isInWeekend {
+                /*
                 let nNum = today.weekday
                 if nNum == 1 {
                     strWeek = "operationtime_holiday"
@@ -224,6 +225,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                     strWeek = "operationtime_saturday"
                     strOperationDay = "토요일"
                 }
+                */
+                strWeek = "operationtime_holiday"
+                strOperationDay = "휴일"
+                
             } else {
                 strWeek = "operationtime_week"
                 strOperationDay = "평일"
