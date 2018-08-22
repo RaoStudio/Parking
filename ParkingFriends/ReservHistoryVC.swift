@@ -12,7 +12,7 @@ import Alamofire
 class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
-    
+    let bUseALLData: Bool = true
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -86,8 +86,11 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                 
                 self.arrData = value as! [Dictionary<String, Any>]
             
-                self.makeArrayForTableView()
-//                self.makeAllArrayForTableView()
+                if self.bUseALLData {
+                  self.makeAllArrayForTableView()
+                } else {
+                    self.makeArrayForTableView()
+                }
                 
             }
         }
