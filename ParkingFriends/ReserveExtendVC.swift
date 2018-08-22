@@ -92,7 +92,6 @@ class ReserveExtendVC: PresentTestVC {
                     if bEnable == false {
                         item.backgroundColor = UIColor.lightGray
                     }
-                    
                 }
                 
                 
@@ -185,14 +184,39 @@ class ReserveExtendVC: PresentTestVC {
             
         }
         
-        self.calcImpossibleTime(arrTime: arrArrangeImpossible)
+        let bThrityMin = self.calcImpossibleTime(arrTime: arrArrangeImpossible, extendTime: 30)
+        let bOneHour = self.calcImpossibleTime(arrTime: arrArrangeImpossible, extendTime: 60)
+        let bTwoHour = self.calcImpossibleTime(arrTime: arrArrangeImpossible, extendTime: 120)
+     
+        
+        
+        if bThrityMin {
+            segControl.setEnabled(false, forSegmentAt: 0)
+            segControl.selectedSegmentIndex = 1
+        }
+        
+        if bOneHour {
+            segControl.setEnabled(false, forSegmentAt: 1)
+            segControl.selectedSegmentIndex = 2
+        }
+        
+        if bTwoHour {
+            segControl.setEnabled(false, forSegmentAt: 2)
+        }
+        
+        for item in segControl.subviews {
+            let bEnable = item.isUserInteractionEnabled
+            if bEnable == false {
+                item.backgroundColor = UIColor.lightGray
+            }
+        }
     }
     
     
-    func calcImpossibleTime(arrTime: [[String]]) -> Bool {
+    func calcImpossibleTime(arrTime: [[String]], extendTime: Int) -> Bool {
         
         let exStartDate = uinfo.stringToDate(uinfo.extendStartTime!)
-        let exEndDate = exStartDate + 30.minutes
+        let exEndDate = exStartDate + extendTime.minutes
         
         //*
         for item in arrTime {
