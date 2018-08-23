@@ -72,4 +72,10 @@ class UrlStrings {
     // DVR
     static let URL_API_DVR =         URL_SERVER_BASE + "/camera";
     static let URL_API_DVR_REQUEST = URL_API_DVR + "/get.php";
+    
+    // 2018.08.23
+    static let URL_EVENT =  "http://mgr.parkingfriends.net/mgr_page/board/event.php";
+    static let URL_NOTICE = "http://mgr.parkingfriends.net/mgr_page/board/notice.php";
+    static let URL_FAQ = "http://mgr.parkingfriends.net/mgr_page/board/faq.php";
+    static let URL_PARTNER_CONTRACT = "http://mgr.parkingfriends.net/contact/makeContact.php";
 }
