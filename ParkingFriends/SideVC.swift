@@ -143,6 +143,18 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }
     
     @IBAction func onBtnQuestion(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "Question", bundle: Bundle.main)
+        
+        guard  let QuestionNavi = sb.instantiateViewController(withIdentifier: "QuestionNavi") as? UINavigationController else {
+            return
+        }
+        
+        guard let vc = QuestionNavi.topViewController as? QuestionVC else {
+            return
+        }
+        
+        self.present(QuestionNavi, animated: true, completion: nil)
+        
     }
     
     

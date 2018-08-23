@@ -1,7 +1,78 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--주차장 제휴 문의-->
+        <scene sceneID="1jv-tK-WCA">
+            <objects>
+                <viewController storyboardIdentifier="QuestionVC" id="yT6-n8-tRd" customClass="QuestionVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zaz-YG-Jk3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dv-jT-v1I" userLabel="ContentsView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWU-IL-kVq">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="jWU-IL-kVq" secondAttribute="trailing" id="WW9-HI-uEh"/>
+                                    <constraint firstItem="jWU-IL-kVq" firstAttribute="top" secondItem="3dv-jT-v1I" secondAttribute="top" id="jtY-rr-7Sy"/>
+                                    <constraint firstAttribute="bottom" secondItem="jWU-IL-kVq" secondAttribute="bottom" id="uHl-6m-gvI"/>
+                                    <constraint firstItem="jWU-IL-kVq" firstAttribute="leading" secondItem="3dv-jT-v1I" secondAttribute="leading" id="yEK-CV-VBW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3dv-jT-v1I" firstAttribute="top" secondItem="5ti-45-bSZ" secondAttribute="top" id="8mm-nJ-UN2"/>
+                            <constraint firstItem="3dv-jT-v1I" firstAttribute="leading" secondItem="5ti-45-bSZ" secondAttribute="leading" id="A3f-wR-Y7v"/>
+                            <constraint firstItem="5ti-45-bSZ" firstAttribute="bottom" secondItem="3dv-jT-v1I" secondAttribute="bottom" id="ZQN-Hc-H8G"/>
+                            <constraint firstItem="5ti-45-bSZ" firstAttribute="trailing" secondItem="3dv-jT-v1I" secondAttribute="trailing" id="mMO-ww-VWa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5ti-45-bSZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="주차장 제휴 문의" id="1SQ-pB-XXh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="WQF-Uv-bcH">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onBtnExit:" destination="yT6-n8-tRd" id="CLx-X8-kDt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lqs-eG-CtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="238" y="205"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="50t-MA-u62">
+            <objects>
+                <navigationController storyboardIdentifier="QuestionNavi" automaticallyAdjustsScrollViewInsets="NO" id="TSB-wF-C14" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LmA-Jh-doh">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yT6-n8-tRd" kind="relationship" relationship="rootViewController" id="huI-Ya-n4X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z13-ET-fil" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-702" y="47"/>
+        </scene>
+    </scenes>
 </document>

@@ -22,6 +22,12 @@ class QuestionVC: UIViewController {
     }
     
 
+    // MARK: - Btn Action
+    @IBAction func onBtnExit(_ sender: UIBarButtonItem) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
