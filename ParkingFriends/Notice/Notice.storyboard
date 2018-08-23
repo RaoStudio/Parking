@@ -49,5 +49,36 @@
             </objects>
             <point key="canvasLocation" x="-25" y="45"/>
         </scene>
+        <!--NoticeVC-->
+        <scene sceneID="3Xn-8I-FCT">
+            <objects>
+                <viewController storyboardIdentifier="NoticeVC" id="1Tq-39-PTv" customClass="NoticeVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yM2-0C-7OZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2h-J5-gOp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="y2h-J5-gOp" firstAttribute="leading" secondItem="Aji-Ei-gEs" secondAttribute="leading" id="4IS-YO-g1D"/>
+                            <constraint firstItem="y2h-J5-gOp" firstAttribute="top" secondItem="Aji-Ei-gEs" secondAttribute="top" id="PU1-Af-vsY"/>
+                            <constraint firstItem="Aji-Ei-gEs" firstAttribute="bottom" secondItem="y2h-J5-gOp" secondAttribute="bottom" id="UQy-r0-5QC"/>
+                            <constraint firstItem="Aji-Ei-gEs" firstAttribute="trailing" secondItem="y2h-J5-gOp" secondAttribute="trailing" id="lDX-mK-AWV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Aji-Ei-gEs"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="contentsView" destination="y2h-J5-gOp" id="nHh-Bl-SDQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WJn-KM-8Kx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="805" y="125"/>
+        </scene>
     </scenes>
 </document>

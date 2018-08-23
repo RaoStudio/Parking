@@ -1,5 +1,5 @@
 //
-//  NoticeContainVC.swift
+//  NoticeVC.swift
 //  ParkingFriends
 //
 //  Created by Misco on 2018. 8. 23..
@@ -7,18 +7,15 @@
 //
 
 import UIKit
-import TabPageViewController
 
-class NoticeContainVC: UIViewController {
+class NoticeVC: UIViewController {
 
+    @IBOutlet weak var contentsView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,11 +24,6 @@ class NoticeContainVC: UIViewController {
     }
     
 
-    // MARK: - Btn Action
-    @IBAction func onBtnExit(_ sender: UIBarButtonItem) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-    }
-    
     /*
     // MARK: - Navigation
 
