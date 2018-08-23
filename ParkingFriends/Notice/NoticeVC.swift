@@ -65,6 +65,55 @@ class NoticeVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
     }
     
     
+    // MARK: - WKNavigationDelegate
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        print("Start")
+        self.navigationController?.view.makeToastActivity(.center)
+    }
+    
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("End")
+        self.navigationController?.view.hideToastActivity()
+    }
+    
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print("Fail Navigation")
+        self.navigationController?.view.hideToastActivity()
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        print("Fail ProvisionalNavigation")
+        self.navigationController?.view.hideToastActivity()
+    }
+    
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void) {
+        
+        print("\(String(describing: navigationAction.request.allHTTPHeaderFields))")
+        
+        decisionHandler(WKNavigationActionPolicy.allow)
+        
+        print("decidePolicyFor navigationAction")
+    }
+    
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Swift.Void) {
+        decisionHandler(WKNavigationResponsePolicy.allow)
+        
+        print("decidePolicyFor navigationResponse")
+    }
+    
+    
+    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+        print("didReceiveServerRedirectForProvisionalNavigation : \(webView.url!)")
+    }
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        print("didCommit : \(webView.url!)")
+    }
+    
     /*
     // MARK: - Navigation
 
