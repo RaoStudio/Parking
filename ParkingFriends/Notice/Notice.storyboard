@@ -58,14 +58,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2h-J5-gOp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="32" width="375" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="y2h-J5-gOp" firstAttribute="leading" secondItem="Aji-Ei-gEs" secondAttribute="leading" id="4IS-YO-g1D"/>
-                            <constraint firstItem="y2h-J5-gOp" firstAttribute="top" secondItem="Aji-Ei-gEs" secondAttribute="top" id="PU1-Af-vsY"/>
+                            <constraint firstItem="y2h-J5-gOp" firstAttribute="top" secondItem="Aji-Ei-gEs" secondAttribute="top" constant="32" id="PU1-Af-vsY"/>
                             <constraint firstItem="Aji-Ei-gEs" firstAttribute="bottom" secondItem="y2h-J5-gOp" secondAttribute="bottom" id="UQy-r0-5QC"/>
                             <constraint firstItem="Aji-Ei-gEs" firstAttribute="trailing" secondItem="y2h-J5-gOp" secondAttribute="trailing" id="lDX-mK-AWV"/>
                         </constraints>

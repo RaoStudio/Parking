@@ -40,6 +40,8 @@ class NoticeContainVC: UIViewController {
             return
         }
         
+        vc2.host = UrlStrings.URL_NOTICE
+        
         
         tabPageVC.tabItems = [(vc1, "이벤트"), (vc2, "공지사항")]
         tabPageVC.option.tabWidth = view.frame.width / CGFloat(tabPageVC.tabItems.count)
