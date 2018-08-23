@@ -32,6 +32,8 @@
 		296B797A212E428100234063 /* NoticeContainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B7979212E428100234063 /* NoticeContainVC.swift */; };
 		296B797C212E48F400234063 /* NoticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B797B212E48F400234063 /* NoticeVC.swift */; };
 		296B797E212E749300234063 /* FaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B797D212E749300234063 /* FaqVC.swift */; };
+		296B7981212E821400234063 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296B7980212E821400234063 /* Question.storyboard */; };
+		296B7983212E822C00234063 /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B7982212E822C00234063 /* QuestionVC.swift */; };
 		296F966120E1CE15008C58B6 /* InfoDataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 296F966020E1CE15008C58B6 /* InfoDataList.plist */; };
 		296F966320E1D18D008C58B6 /* AgreeInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F966220E1D18D008C58B6 /* AgreeInfoVC.swift */; };
 		2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971A3EE209ADD8200C1AD84 /* Utils.swift */; };
@@ -123,6 +125,8 @@
 		296B7979212E428100234063 /* NoticeContainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeContainVC.swift; sourceTree = "<group>"; };
 		296B797B212E48F400234063 /* NoticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeVC.swift; sourceTree = "<group>"; };
 		296B797D212E749300234063 /* FaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqVC.swift; sourceTree = "<group>"; };
+		296B7980212E821400234063 /* Question.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
+		296B7982212E822C00234063 /* QuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
 		296F966020E1CE15008C58B6 /* InfoDataList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = InfoDataList.plist; sourceTree = "<group>"; };
 		296F966220E1D18D008C58B6 /* AgreeInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeInfoVC.swift; sourceTree = "<group>"; };
 		2971A3EE209ADD8200C1AD84 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 				2983D63420B534F0003CAB1C /* Views */,
 				29A0FFDA207B423A00B13638 /* Util */,
 				296B7976212E407400234063 /* Notice */,
+				296B797F212E81C900234063 /* Question */,
 				29559EF3204CE28E000EB12B /* AppDelegate.swift */,
 				29559EF5204CE28E000EB12B /* ViewController.swift */,
 				29559EF7204CE28E000EB12B /* Main.storyboard */,
@@ -299,6 +304,15 @@
 				296B797D212E749300234063 /* FaqVC.swift */,
 			);
 			path = Notice;
+			sourceTree = "<group>";
+		};
+		296B797F212E81C900234063 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				296B7980212E821400234063 /* Question.storyboard */,
+				296B7982212E822C00234063 /* QuestionVC.swift */,
+			);
+			path = Question;
 			sourceTree = "<group>";
 		};
 		2971A3F2209AECF100C1AD84 /* Tutorial */ = {
@@ -558,6 +572,7 @@
 			files = (
 				296B7978212E40AF00234063 /* Notice.storyboard in Resources */,
 				2971A3F1209AECC400C1AD84 /* Tutorial.storyboard in Resources */,
+				296B7981212E821400234063 /* Question.storyboard in Resources */,
 				29875E5520ABD1000029E4BD /* ParkingLot.storyboard in Resources */,
 				296F966120E1CE15008C58B6 /* InfoDataList.plist in Resources */,
 				2942FB3B20D8C47200FBCAEB /* GoogleService-Info.plist in Resources */,
@@ -678,6 +693,7 @@
 				294E5F9C20A53CEE00CF9D03 /* RoundButton.swift in Sources */,
 				29B7CEB620F4802800A39315 /* ParkingLotDetailVC.swift in Sources */,
 				2933ECC22122BACD00F03D02 /* ResDetailBillCell.swift in Sources */,
+				296B7983212E822C00234063 /* QuestionVC.swift in Sources */,
 				29B4CDED20CF96390055852F /* LoginVC.swift in Sources */,
 				2983D63620B5356B003CAB1C /* TestView.swift in Sources */,
 				29012A8821057BE1005D99FC /* ProfileVC.swift in Sources */,
