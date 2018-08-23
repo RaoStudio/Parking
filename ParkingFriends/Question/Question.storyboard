@@ -68,16 +68,77 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgf-iP-rbM" userLabel="Address View">
                                                 <rect key="frame" x="0.0" y="118.5" width="320" height="89"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소를 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcD-qY-ATh">
+                                                        <rect key="frame" x="14" y="28" width="109" height="16"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSQ-jw-1u8" customClass="RoundView" customModule="ParkingFriends" customModuleProvider="target">
+                                                        <rect key="frame" x="14" y="58" width="92" height="23"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOw-2C-jZf">
+                                                                <rect key="frame" x="9" y="3.5" width="22.5" height="16"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timepick_dropdown_icon" translatesAutoresizingMaskIntoConstraints="NO" id="L0Z-jp-qyr">
+                                                                <rect key="frame" x="75" y="8.5" width="8" height="6"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="6" id="IUG-ZQ-qqA"/>
+                                                                    <constraint firstAttribute="width" constant="8" id="qNx-Q6-ckG"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KC-tm-hLk">
+                                                                <rect key="frame" x="0.0" y="0.0" width="92" height="23"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="L0Z-jp-qyr" firstAttribute="centerY" secondItem="tSQ-jw-1u8" secondAttribute="centerY" id="2JY-Nz-zvb"/>
+                                                            <constraint firstItem="hOw-2C-jZf" firstAttribute="leading" secondItem="tSQ-jw-1u8" secondAttribute="leading" constant="9" id="4ol-RR-CgJ"/>
+                                                            <constraint firstItem="3KC-tm-hLk" firstAttribute="leading" secondItem="tSQ-jw-1u8" secondAttribute="leading" id="DFJ-uK-0NR"/>
+                                                            <constraint firstItem="3KC-tm-hLk" firstAttribute="top" secondItem="tSQ-jw-1u8" secondAttribute="top" id="F6d-Yk-hY5"/>
+                                                            <constraint firstAttribute="trailing" secondItem="3KC-tm-hLk" secondAttribute="trailing" id="Ldd-tJ-91c"/>
+                                                            <constraint firstAttribute="bottom" secondItem="3KC-tm-hLk" secondAttribute="bottom" id="P9N-vj-uDy"/>
+                                                            <constraint firstAttribute="height" constant="23" id="TbD-p9-fdq"/>
+                                                            <constraint firstAttribute="trailing" secondItem="L0Z-jp-qyr" secondAttribute="trailing" constant="9" id="dke-K2-QmS"/>
+                                                            <constraint firstAttribute="width" constant="92" id="vJT-5w-6OV"/>
+                                                            <constraint firstItem="hOw-2C-jZf" firstAttribute="centerY" secondItem="tSQ-jw-1u8" secondAttribute="centerY" id="yMl-hr-1dm"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="tSQ-jw-1u8" firstAttribute="leading" secondItem="sgf-iP-rbM" secondAttribute="leading" constant="14" id="D3W-73-maS"/>
+                                                    <constraint firstItem="tSQ-jw-1u8" firstAttribute="top" secondItem="gcD-qY-ATh" secondAttribute="bottom" constant="14" id="f8D-4h-cMf"/>
+                                                    <constraint firstItem="gcD-qY-ATh" firstAttribute="top" secondItem="sgf-iP-rbM" secondAttribute="top" constant="28" id="nId-1t-F9N"/>
                                                     <constraint firstAttribute="height" constant="89" id="poL-64-iz8"/>
+                                                    <constraint firstItem="gcD-qY-ATh" firstAttribute="leading" secondItem="sgf-iP-rbM" secondAttribute="leading" constant="14" id="yfT-eL-ihn"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkg-Gy-974" userLabel="Contact View">
                                                 <rect key="frame" x="0.0" y="208" width="320" height="89"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연락처를 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jO4-sU-adq">
+                                                        <rect key="frame" x="14" y="28" width="120.5" height="16"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="jO4-sU-adq" firstAttribute="leading" secondItem="xkg-Gy-974" secondAttribute="leading" constant="14" id="NAU-gs-Fex"/>
                                                     <constraint firstAttribute="height" constant="89" id="k9S-xL-4xb"/>
+                                                    <constraint firstItem="jO4-sU-adq" firstAttribute="top" secondItem="xkg-Gy-974" secondAttribute="top" constant="28" id="qm6-Lo-Q8k"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxr-ap-buz">
@@ -179,5 +240,6 @@
         <image name="Register_Check_Off" width="17" height="17"/>
         <image name="Register_Check_On" width="17" height="17"/>
         <image name="btn_green_question" width="40" height="40"/>
+        <image name="timepick_dropdown_icon" width="8" height="6"/>
     </resources>
 </document>
