@@ -91,6 +91,20 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1Z-cQ-4nN">
+                                                <rect key="frame" x="59.5" y="391" width="201" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="201" id="R9y-nI-rpl"/>
+                                                    <constraint firstAttribute="height" constant="17" id="wqz-fJ-NSa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="개인정보 취급방침에 대한 동의" image="Register_Check_Off">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="selected" image="Register_Check_On"/>
+                                                <state key="highlighted" image="Register_Check_On"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -101,9 +115,11 @@
                                             <constraint firstItem="sgf-iP-rbM" firstAttribute="top" secondItem="qX6-4k-J0C" secondAttribute="bottom" id="7lv-4P-t18"/>
                                             <constraint firstItem="xkg-Gy-974" firstAttribute="leading" secondItem="SVg-Yj-arE" secondAttribute="leading" id="9gu-18-fMU"/>
                                             <constraint firstItem="Vxr-ap-buz" firstAttribute="centerX" secondItem="SVg-Yj-arE" secondAttribute="centerX" id="NYv-tW-Lku"/>
+                                            <constraint firstItem="D1Z-cQ-4nN" firstAttribute="centerX" secondItem="SVg-Yj-arE" secondAttribute="centerX" id="V04-3c-xM5"/>
                                             <constraint firstAttribute="trailing" secondItem="sgf-iP-rbM" secondAttribute="trailing" id="bzj-uj-Ue0"/>
                                             <constraint firstAttribute="trailing" secondItem="xkg-Gy-974" secondAttribute="trailing" id="cdS-fi-1b5"/>
                                             <constraint firstAttribute="bottom" secondItem="Vxr-ap-buz" secondAttribute="bottom" constant="28" id="mNG-tE-L7G"/>
+                                            <constraint firstItem="Vxr-ap-buz" firstAttribute="top" secondItem="D1Z-cQ-4nN" secondAttribute="bottom" constant="28" id="pV9-qH-LpW"/>
                                             <constraint firstItem="sgf-iP-rbM" firstAttribute="leading" secondItem="SVg-Yj-arE" secondAttribute="leading" id="wUt-Nk-VHW"/>
                                         </constraints>
                                     </view>
@@ -160,6 +176,8 @@
     </scenes>
     <resources>
         <image name="Question_BG" width="375" height="139"/>
+        <image name="Register_Check_Off" width="17" height="17"/>
+        <image name="Register_Check_On" width="17" height="17"/>
         <image name="btn_green_question" width="40" height="40"/>
     </resources>
 </document>
