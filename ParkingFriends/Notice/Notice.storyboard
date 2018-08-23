@@ -82,7 +82,7 @@
             </objects>
             <point key="canvasLocation" x="1502" y="-54"/>
         </scene>
-        <!--FaqVC-->
+        <!--FAQ-->
         <scene sceneID="ESo-64-JnP">
             <objects>
                 <viewController storyboardIdentifier="FaqVC" id="w0M-vu-1xE" customClass="FaqVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,7 +104,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ACV-TO-9uh"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Mh4-du-c50">
+                    <navigationItem key="navigationItem" title="FAQ" id="Mh4-du-c50">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="NDl-5o-6CE">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -112,6 +112,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contentsView" destination="emH-uK-CfI" id="URv-EE-p72"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NI-gv-u74" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

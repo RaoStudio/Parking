@@ -7,13 +7,25 @@
 //
 
 import UIKit
+import WebKit
 
-class FaqVC: UIViewController {
+class FaqVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
 
+    @IBOutlet weak var contentsView: UIView!
+    
+    
+    var webView: WKWebView!
+    
+    var host = UrlStrings.URL_FAQ
+    
+    var param: String = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.initWebView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +34,38 @@ class FaqVC: UIViewController {
     }
     
 
+    
+    func initWebView() {
+        let config = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: config)
+        
+        self.contentsView.addSubview(webView)
+        
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.navigationDelegate = self
+        webView.uiDelegate = self
+        
+        webView.leadingAnchor.constraint(equalTo: contentsView.leadingAnchor).isActive = true
+        webView.topAnchor.constraint(equalTo: contentsView.topAnchor).isActive = true
+        webView.trailingAnchor.constraint(equalTo: contentsView.trailingAnchor).isActive = true
+        webView.bottomAnchor.constraint(equalTo: contentsView.bottomAnchor).isActive = true
+        
+        let url = NSURL(string: host)
+        
+        var request = URLRequest(url: url! as URL)
+        let paramData = param.data(using: .utf8)
+        request.httpMethod = "POST"
+        request.httpBody = paramData
+        
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.setValue(String(paramData!.count), forHTTPHeaderField: "Content-Length")
+        
+        
+        
+        webView.load(request as URLRequest)
+    }
+    
+    // MARK: - Btn Action
     @IBAction func onBtnFaq(_ sender: UIBarButtonItem) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
