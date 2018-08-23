@@ -114,11 +114,68 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJF-WT-kpm">
+                                                        <rect key="frame" x="115" y="61" width="12" height="16"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etW-cs-XMp" customClass="RoundView" customModule="ParkingFriends" customModuleProvider="target">
+                                                        <rect key="frame" x="141" y="58" width="92" height="23"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서초" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2o-C3-nmn">
+                                                                <rect key="frame" x="9" y="3.5" width="22.5" height="16"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timepick_dropdown_icon" translatesAutoresizingMaskIntoConstraints="NO" id="sSe-32-8pV">
+                                                                <rect key="frame" x="75" y="8.5" width="8" height="6"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="6" id="OvC-AI-dcK"/>
+                                                                    <constraint firstAttribute="width" constant="8" id="fnC-p7-sJi"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JrO-zc-hYf">
+                                                                <rect key="frame" x="0.0" y="0.0" width="92" height="23"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="f2o-C3-nmn" firstAttribute="leading" secondItem="etW-cs-XMp" secondAttribute="leading" constant="9" id="3Uc-yi-rpZ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="JrO-zc-hYf" secondAttribute="trailing" id="4zR-bW-QB4"/>
+                                                            <constraint firstItem="JrO-zc-hYf" firstAttribute="leading" secondItem="etW-cs-XMp" secondAttribute="leading" id="H5h-vZ-r1l"/>
+                                                            <constraint firstAttribute="height" constant="23" id="Keg-dV-FQQ"/>
+                                                            <constraint firstAttribute="bottom" secondItem="JrO-zc-hYf" secondAttribute="bottom" id="Mcl-9w-H54"/>
+                                                            <constraint firstItem="f2o-C3-nmn" firstAttribute="centerY" secondItem="etW-cs-XMp" secondAttribute="centerY" id="Nnk-zg-OnC"/>
+                                                            <constraint firstAttribute="trailing" secondItem="sSe-32-8pV" secondAttribute="trailing" constant="9" id="Qq2-6x-LmK"/>
+                                                            <constraint firstItem="JrO-zc-hYf" firstAttribute="top" secondItem="etW-cs-XMp" secondAttribute="top" id="Wkd-wI-gK3"/>
+                                                            <constraint firstAttribute="width" constant="92" id="XFo-vB-nXN"/>
+                                                            <constraint firstItem="sSe-32-8pV" firstAttribute="centerY" secondItem="etW-cs-XMp" secondAttribute="centerY" id="XRq-4D-5d2"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hql-kS-Upl">
+                                                        <rect key="frame" x="242" y="61.5" width="12" height="16"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="Hql-kS-Upl" firstAttribute="leading" secondItem="etW-cs-XMp" secondAttribute="trailing" constant="9" id="8TJ-JM-o9A"/>
+                                                    <constraint firstItem="etW-cs-XMp" firstAttribute="leading" secondItem="XJF-WT-kpm" secondAttribute="trailing" constant="14" id="8s1-Fg-CuD"/>
                                                     <constraint firstItem="tSQ-jw-1u8" firstAttribute="leading" secondItem="sgf-iP-rbM" secondAttribute="leading" constant="14" id="D3W-73-maS"/>
+                                                    <constraint firstItem="XJF-WT-kpm" firstAttribute="centerY" secondItem="tSQ-jw-1u8" secondAttribute="centerY" id="HsT-Yb-Vva"/>
+                                                    <constraint firstItem="etW-cs-XMp" firstAttribute="top" secondItem="tSQ-jw-1u8" secondAttribute="top" id="ds9-94-UlN"/>
+                                                    <constraint firstItem="XJF-WT-kpm" firstAttribute="leading" secondItem="tSQ-jw-1u8" secondAttribute="trailing" constant="9" id="eLn-Wc-nlW"/>
                                                     <constraint firstItem="tSQ-jw-1u8" firstAttribute="top" secondItem="gcD-qY-ATh" secondAttribute="bottom" constant="14" id="f8D-4h-cMf"/>
+                                                    <constraint firstItem="Hql-kS-Upl" firstAttribute="centerY" secondItem="etW-cs-XMp" secondAttribute="centerY" id="lPq-Uy-brm"/>
                                                     <constraint firstItem="gcD-qY-ATh" firstAttribute="top" secondItem="sgf-iP-rbM" secondAttribute="top" constant="28" id="nId-1t-F9N"/>
                                                     <constraint firstAttribute="height" constant="89" id="poL-64-iz8"/>
                                                     <constraint firstItem="gcD-qY-ATh" firstAttribute="leading" secondItem="sgf-iP-rbM" secondAttribute="leading" constant="14" id="yfT-eL-ihn"/>
