@@ -71,14 +71,69 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Aji-Ei-gEs"/>
                     </view>
+                    <navigationItem key="navigationItem" id="J0U-sP-OYM"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="constTop" destination="PU1-Af-vsY" id="bLs-YP-Zmr"/>
                         <outlet property="contentsView" destination="y2h-J5-gOp" id="nHh-Bl-SDQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJn-KM-8Kx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="805" y="125"/>
+            <point key="canvasLocation" x="1502" y="-54"/>
+        </scene>
+        <!--FaqVC-->
+        <scene sceneID="ESo-64-JnP">
+            <objects>
+                <viewController storyboardIdentifier="FaqVC" id="w0M-vu-1xE" customClass="FaqVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xdc-Aw-2Ly">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emH-uK-CfI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="emH-uK-CfI" firstAttribute="leading" secondItem="ACV-TO-9uh" secondAttribute="leading" id="2Sa-B3-nHo"/>
+                            <constraint firstItem="ACV-TO-9uh" firstAttribute="bottom" secondItem="emH-uK-CfI" secondAttribute="bottom" id="HLq-zd-Xb7"/>
+                            <constraint firstItem="emH-uK-CfI" firstAttribute="top" secondItem="ACV-TO-9uh" secondAttribute="top" id="kvA-G8-LWc"/>
+                            <constraint firstItem="ACV-TO-9uh" firstAttribute="trailing" secondItem="emH-uK-CfI" secondAttribute="trailing" id="wgt-8h-Zkc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ACV-TO-9uh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mh4-du-c50">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="NDl-5o-6CE">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onBtnFaq:" destination="w0M-vu-1xE" id="NjH-PB-b3q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8NI-gv-u74" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1418" y="1174"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gHX-Rn-IQS">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YZg-m9-ZiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="FaqNavi" automaticallyAdjustsScrollViewInsets="NO" id="ep7-bj-Iia" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4jr-Om-SG2">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="w0M-vu-1xE" kind="relationship" relationship="rootViewController" id="M46-NX-T18"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="433" y="862"/>
         </scene>
     </scenes>
 </document>

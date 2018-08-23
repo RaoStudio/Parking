@@ -12,6 +12,7 @@ import WebKit
 class NoticeVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
 
     @IBOutlet weak var contentsView: UIView!
+    @IBOutlet weak var constTop: NSLayoutConstraint!
     
     var webView: WKWebView!
     
