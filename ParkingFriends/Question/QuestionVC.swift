@@ -26,6 +26,8 @@ class QuestionVC: UIViewController, UITextFieldDelegate {
     
     
     let wardDropDown = DropDown()
+    
+    var tap: UIGestureRecognizer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +54,10 @@ class QuestionVC: UIViewController, UITextFieldDelegate {
         
         txtPhone.inputAccessoryView = toolBar
         
+        
+        tap = UITapGestureRecognizer(target: self, action: #selector(tapMyView(_:)))
+        self.view.addGestureRecognizer(tap!)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,6 +77,9 @@ class QuestionVC: UIViewController, UITextFieldDelegate {
                                                   name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         NotificationCenter.default.removeObserver(self,
                                                   name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        
+        self.view.removeGestureRecognizer(tap!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,6 +105,10 @@ class QuestionVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc func sendCodeBtnAction(sender: UIBarButtonItem){
+        txtPhone.resignFirstResponder()
+    }
+    
+    @objc func tapMyView(_ sender : UIView) {
         txtPhone.resignFirstResponder()
     }
     

@@ -46,6 +46,8 @@ class CarInfoRegisterVC: PresentTestVC, UITextFieldDelegate {
                                                   name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         NotificationCenter.default.removeObserver(self,
                                                   name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        
     }
     
 
