@@ -9,15 +9,21 @@
 import UIKit
 import DropDown
 
-class QuestionVC: UIViewController {
+class QuestionVC: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var contentsView: UIView!
+    @IBOutlet weak var topView: UIView!
     
     @IBOutlet weak var btnWard: UIButton!
     @IBOutlet weak var btnAccept: UIButton!
     
     
-    
     @IBOutlet weak var lblCity: UILabel!
     @IBOutlet weak var lblWard: UILabel!
+    
+    
+    @IBOutlet weak var txtPhone: UITextField!
+    
     
     let wardDropDown = DropDown()
 
@@ -27,6 +33,44 @@ class QuestionVC: UIViewController {
         // Do any additional setup after loading the view.
         
         setupWardDropDown()
+        
+        
+        txtPhone.delegate = self
+        
+        var btnDone = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.sendCodeBtnAction(sender:)))
+        btnDone.tintColor = UIColor.black
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.isUserInteractionEnabled = true
+        toolBar.sizeToFit()
+        toolBar.items = [
+            btnDone
+        ]
+        
+        
+        txtPhone.inputAccessoryView = toolBar
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)),
+                                               name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
+                                               name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +78,28 @@ class QuestionVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: NotificationCenter & objc function
+    @objc func keyboardWillHide() {
+        self.topView.frame.origin.y = 0
+    }
     
+    @objc func keyboardWillChange(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            
+            
+            if (txtPhone.isFirstResponder){
+                self.topView.frame.origin.y = -(keyboardSize.height/2)
+            }
+            
+        }
+    }
+    
+    @objc func sendCodeBtnAction(sender: UIBarButtonItem){
+        txtPhone.resignFirstResponder()
+    }
+    
+    // MARK: - Setup DropDown
     func setupWardDropDown() {
         
         wardDropDown.textFont = UIFont.systemFont(ofSize: 13)

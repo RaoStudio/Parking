@@ -305,8 +305,11 @@
                     <connections>
                         <outlet property="btnAccept" destination="D1Z-cQ-4nN" id="bGe-E8-R8l"/>
                         <outlet property="btnWard" destination="JrO-zc-hYf" id="yBz-k4-6OD"/>
+                        <outlet property="contentsView" destination="3dv-jT-v1I" id="edc-b2-4Kd"/>
                         <outlet property="lblCity" destination="hOw-2C-jZf" id="cjI-sw-WR2"/>
                         <outlet property="lblWard" destination="f2o-C3-nmn" id="aOZ-Zt-O7m"/>
+                        <outlet property="topView" destination="SVg-Yj-arE" id="EJh-Nb-TSZ"/>
+                        <outlet property="txtPhone" destination="ny1-Pn-LhP" id="nkt-Aw-2li"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lqs-eG-CtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
