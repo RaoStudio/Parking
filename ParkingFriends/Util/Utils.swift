@@ -73,6 +73,35 @@ enum UserAlarmValue: Int {
 }
 
 
+// Question
+enum SeoulType: String {
+    case jongro = "종로구"
+    case joong = "중구"
+    case yongsan = "용산구"
+    case sungdong = "성동구"
+    case guangjin = "광진구"
+    case dongdaemoon = "동대문구"
+    case joongrang = "중랑구"
+    case sungbook = "성북구"
+    case gangbook = "강북구"
+    case dobong = "도봉구"
+    case nowon = "노원구"
+    case unpiung = "은평구"
+    case sudaemoon = "서대문구"
+    case mapo = "마포구"
+    case yangchun = "양천구"
+    case gangsu = "강서구"
+    case guro = "구로구"
+    case gumchun = "금천구"
+    case youngdungpo = "영등포구"
+    case dongjack = "동작구"
+    case guanark = "관악구"
+    case seocho = "서초구"
+    case gangnam = "강남구"
+    case songpa = "송파구"
+    case gangdong = "강동구"
+}
+
 
 struct Platform {
     static let isSimulator: Bool = {

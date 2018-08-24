@@ -28,6 +28,10 @@ class QuestionVC: UIViewController {
     }
     
     
+    // MARK: - Btn Action
+    @IBAction func onBtnWard(_ sender: UIButton) {
+        
+    }
     /*
     // MARK: - Navigation
 
