@@ -149,6 +149,7 @@ class QuestionVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func onBtnAccept(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
     }
     
     /*
