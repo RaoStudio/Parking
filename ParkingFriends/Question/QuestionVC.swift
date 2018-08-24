@@ -156,20 +156,29 @@ class QuestionVC: UIViewController, UITextFieldDelegate {
         
             
         
+            self.navigationController?.view.hideToastActivity()
         
             guard response.result.isSuccess else {
                 print("\(UrlStrings.URL_PARTNER_CONTRACT) : \(String(describing: response.result.error))")
                 self.alert("\(UrlStrings.URL_PARTNER_CONTRACT) : \(String(describing: response.result.error))")
                 
-                self.navigationController?.view.hideToastActivity()
+                
                 return
             }
             
-            if let value = response.result.value {
+            if let value = response.result.value as? Dictionary<String, Any> {
                 print("requestPartnerContact JSON = \(value)")
                 
              
-                self.navigationController?.view.hideToastActivity()
+                if let strStatus = value["status"] as? String {
+                    if strStatus == "200" {
+                        self.alert("문의 하였습니다. 감사합니다.") {
+                            self.presentingViewController?.dismiss(animated: true, completion: nil)
+                        }
+                    } else {
+                        self.alert("현재 정상적인 처리가 되지 않았습니다. 잠시후 다시 시도해 주세요.")
+                    }
+                }
             }
         }
     }
@@ -191,8 +200,15 @@ class QuestionVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func onBtnQuestion(_ sender: UIButton) {
         
-        if let strPhone = txtPhone.text, let strWard = lblWard.text {
-            self.requestPartnerContact(strAddr: "서울시(도)\(strWard)", strPhone: "01032439999")
+        if !btnAccept.isSelected {
+            self.alert("개인정보 취급방침에 동의해 주세요 ~ ")
+        }
+        
+        
+        if let strPhone = txtPhone.text, let strWard = lblWard.text, !strPhone.isEmpty, strPhone.count >= 11 {
+            self.requestPartnerContact(strAddr: "서울시(도)\(strWard)", strPhone: strPhone)
+        } else {
+            self.alert("연락처를 확인하세요~ ")
         }
     }
     
