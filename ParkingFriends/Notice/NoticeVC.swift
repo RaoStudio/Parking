@@ -8,8 +8,11 @@
 
 import UIKit
 import WebKit
+import MessageUI
 
-class NoticeVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
+class NoticeVC: UIViewController, WKNavigationDelegate, WKUIDelegate, MFMessageComposeViewControllerDelegate {
+    
+    
 
     @IBOutlet weak var contentsView: UIView!
     @IBOutlet weak var constTop: NSLayoutConstraint!
@@ -19,6 +22,8 @@ class NoticeVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
     var host = UrlStrings.URL_EVENT
     
     var param: String = ""
+    
+    let uSession = UserSession()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,10 +70,48 @@ class NoticeVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
     }
     
     
+    // MARK: - MFMessageComposeViewControllerDelegate
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult)
+    {
+        print(result.hashValue)
+        
+        if result == MessageComposeResult.sent {
+            
+        }
+        
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - WKNavigationDelegate
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         print("Start")
         self.navigationController?.view.makeToastActivity(.center)
+        
+        
+        if let url = webView.url {
+            let strUrl = String(describing: url)
+            
+            if strUrl.contains("mms") {
+                
+                if uSession.isLogin == true {
+                    let composeVC = MFMessageComposeViewController()
+                    composeVC.messageComposeDelegate = self
+                    
+                    composeVC.recipients = []
+                    composeVC.body = "파킹프렌즈 앱 출시!\nIoT 기반 실시간 주차정보를 사용해보세요.\nhttps://parkingfriends.net"
+                    
+                    if MFMessageComposeViewController.canSendText() {
+                        self.present(composeVC, animated: true, completion: nil)
+                    }
+                } else {
+                    let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
+                    
+                    if let loginVC = sb.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
+                        self.navigationController?.pushViewController(loginVC, animated: true)
+                    }
+                }
+            }
+        }
     }
     
     
