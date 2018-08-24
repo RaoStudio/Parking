@@ -239,6 +239,9 @@
                                                 <state key="normal" title="제휴 문의하기" backgroundImage="btn_green_question">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onBtnQuestion:" destination="yT6-n8-tRd" eventType="touchUpInside" id="wnB-HM-CYr"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1Z-cQ-4nN">
                                                 <rect key="frame" x="59.5" y="391" width="201" height="17"/>

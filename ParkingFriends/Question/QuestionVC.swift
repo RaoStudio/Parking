@@ -8,6 +8,7 @@
 
 import UIKit
 import DropDown
+import Alamofire
 
 class QuestionVC: UIViewController, UITextFieldDelegate {
     
@@ -138,6 +139,42 @@ class QuestionVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // MARK: - API Call ( URL_PARTNER_CONTRACT )
+    func requestPartnerContact(strAddr: String, strPhone: String) {
+        self.navigationController?.view.makeToastActivity(.center)
+        
+//        let url = UrlStrings.URL_PARTNER_CONTRACT + "?pNum=\(strPhone)&addr=\(strAddr)"
+        let url = UrlStrings.URL_PARTNER_CONTRACT
+        
+//        let param = ["pNum": strPhone, "addr": strAddr] as [String: Any]
+        
+        let param = ["pNum": strPhone, "addr": strAddr]
+        
+        
+        Alamofire.request(url, method: HTTPMethod.get, parameters: param, encoding: URLEncoding.default, headers: nil).validate().responseJSON { (response) in
+//        Alamofire.request(url).responseJSON { (response) in
+        
+            
+        
+        
+            guard response.result.isSuccess else {
+                print("\(UrlStrings.URL_PARTNER_CONTRACT) : \(String(describing: response.result.error))")
+                self.alert("\(UrlStrings.URL_PARTNER_CONTRACT) : \(String(describing: response.result.error))")
+                
+                self.navigationController?.view.hideToastActivity()
+                return
+            }
+            
+            if let value = response.result.value {
+                print("requestPartnerContact JSON = \(value)")
+                
+             
+                self.navigationController?.view.hideToastActivity()
+            }
+        }
+    }
+    
+    
     
     // MARK: - Btn Action
     @IBAction func onBtnExit(_ sender: UIBarButtonItem) {
@@ -150,6 +187,13 @@ class QuestionVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func onBtnAccept(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
+    }
+    
+    @IBAction func onBtnQuestion(_ sender: UIButton) {
+        
+        if let strPhone = txtPhone.text, let strWard = lblWard.text {
+            self.requestPartnerContact(strAddr: "서울시(도)\(strWard)", strPhone: "01032439999")
+        }
     }
     
     /*
