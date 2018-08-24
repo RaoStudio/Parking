@@ -25,6 +25,8 @@ class NoticeVC: UIViewController, WKNavigationDelegate, WKUIDelegate, MFMessageC
     
     let uSession = UserSession()
     
+    var strEventSid: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,9 +93,20 @@ class NoticeVC: UIViewController, WKNavigationDelegate, WKUIDelegate, MFMessageC
         if let url = webView.url {
             let strUrl = String(describing: url)
             
+            print(strUrl)
+            
             if strUrl.contains("mms") {
                 
                 if uSession.isLogin == true {
+                    
+                    let arrUrl = strUrl.split(separator: "&")
+                    let arrUseSid = arrUrl.first?.split(separator: "=").map { String($0)}
+                    
+                    if let strSid = arrUseSid?.last {
+                        strEventSid = strSid
+                    }
+                                        
+                    
                     let composeVC = MFMessageComposeViewController()
                     composeVC.messageComposeDelegate = self
                     
