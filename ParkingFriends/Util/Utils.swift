@@ -100,6 +100,13 @@ enum SeoulType: String {
     case gangnam = "강남구"
     case songpa = "송파구"
     case gangdong = "강동구"
+    
+    static let allValues = [jongro, joong, yongsan, sungdong,
+                            guangjin, dongdaemoon, joongrang, sungbook,
+                            gangbook, dobong, nowon, unpiung,
+                            sudaemoon, mapo, yangchun, gangsu, guro,
+                            gumchun, youngdungpo, dongjack, guanark,
+                            seocho, gangnam, songpa, gangdong]
 }
 
 

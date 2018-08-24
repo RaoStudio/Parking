@@ -123,8 +123,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etW-cs-XMp" customClass="RoundView" customModule="ParkingFriends" customModuleProvider="target">
                                                         <rect key="frame" x="141" y="58" width="92" height="23"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서초" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2o-C3-nmn">
-                                                                <rect key="frame" x="9" y="3.5" width="22.5" height="16"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2o-C3-nmn">
+                                                                <rect key="frame" x="9" y="3.5" width="28.5" height="16"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -155,6 +155,7 @@
                                                             <constraint firstItem="JrO-zc-hYf" firstAttribute="top" secondItem="etW-cs-XMp" secondAttribute="top" id="Wkd-wI-gK3"/>
                                                             <constraint firstAttribute="width" constant="92" id="XFo-vB-nXN"/>
                                                             <constraint firstItem="sSe-32-8pV" firstAttribute="centerY" secondItem="etW-cs-XMp" secondAttribute="centerY" id="XRq-4D-5d2"/>
+                                                            <constraint firstItem="sSe-32-8pV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="f2o-C3-nmn" secondAttribute="trailing" id="w0z-IH-3J8"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -252,6 +253,9 @@
                                                 </state>
                                                 <state key="selected" image="Register_Check_On"/>
                                                 <state key="highlighted" image="Register_Check_On"/>
+                                                <connections>
+                                                    <action selector="onBtnAccept:" destination="yT6-n8-tRd" eventType="touchUpInside" id="VWp-uw-2es"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -298,6 +302,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnAccept" destination="D1Z-cQ-4nN" id="bGe-E8-R8l"/>
+                        <outlet property="btnWard" destination="JrO-zc-hYf" id="yBz-k4-6OD"/>
+                        <outlet property="lblCity" destination="hOw-2C-jZf" id="cjI-sw-WR2"/>
+                        <outlet property="lblWard" destination="f2o-C3-nmn" id="aOZ-Zt-O7m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lqs-eG-CtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
