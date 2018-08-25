@@ -95,6 +95,8 @@ class MainViewController: UIViewController {
     let bUseDropDown = false
     
     
+    var bLocation: Bool = true
+    
 //    var arrPlace = [Dictionary<String, Any>]()
     var arrPlace = [GMSMarker]()
     
@@ -352,6 +354,9 @@ class MainViewController: UIViewController {
         let camera = GMSCameraPosition.camera(withLatitude: lat ,longitude: lng , zoom: self.mapView.camera.zoom)
         
         self.mapView.animate(to: camera)
+        
+        btnLocation.isSelected = false
+        bLocation = true
     }
     
     
@@ -890,6 +895,27 @@ extension MainViewController: GMSMapViewDelegate {
         
         self.mapViewPositon(coordinate: position.target)
         
+        
+        //*
+        guard let lat = self.mapView.myLocation?.coordinate.latitude,
+            let lng = self.mapView.myLocation?.coordinate.longitude else { return }
+        
+        let posCamera = position.target
+        
+        if posCamera.latitude.isEqual(to: lat) && posCamera.longitude.isEqual(to: lng) {
+            btnLocation.isSelected = false
+        } else {
+            btnLocation.isSelected = true
+        }
+        //*/
+        
+        
+        if bLocation == true {
+            btnLocation.isSelected = false
+            bLocation = false
+        } else {
+            btnLocation.isSelected = true
+        }
         
         
         /*
