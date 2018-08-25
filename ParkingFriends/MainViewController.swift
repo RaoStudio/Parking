@@ -287,6 +287,27 @@ class MainViewController: UIViewController {
         */
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        print("viewWillDisappear")
+        
+//        searchController?.searchBar.resignFirstResponder()
+        
+        /*
+        if (searchController?.searchBar.isFirstResponder)! {
+            self.wasCancelled(GMSAutocompleteViewController())
+        }
+ */
+        
+        if let bFirest = searchController?.searchBar.isFirstResponder {
+            if bFirest == true {
+                self.wasCancelled(GMSAutocompleteViewController())
+            }
+        }
+    }
+    
+    
     
     func hideToastActivity() {
         self.navigationController?.view.hideToastActivity()
@@ -1153,6 +1174,11 @@ extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
                            didFailAutocompleteWithError error: Error){
         // TODO: handle the error.
         print("Error: ", error.localizedDescription)
+    }
+    
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
     }
     
     // Turn the network activity indicator on and off again.
