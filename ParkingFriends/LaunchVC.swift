@@ -106,6 +106,11 @@ class LaunchVC: UIViewController {
                      "provider": provider,
                      "auth_id": authid] as [String: Any]
         
+        /*
+        let manager = Alamofire.SessionManager.default
+        manager.session.configuration.timeoutIntervalForRequest = 1
+ */
+        
         Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseString { (response) in
             
 //            self.navigationController?.view.hideToastActivity()
