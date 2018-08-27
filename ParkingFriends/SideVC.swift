@@ -265,7 +265,22 @@ class SideVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             
 //            self.navigationController?.view.makeToast("Event", duration: 1.0, position: .bottom)
         case 3:
-            self.navigationController?.view.makeToast("Friend", duration: 1.0, position: .bottom)
+            
+            let sb = UIStoryboard(name: "Notice", bundle: Bundle.main)
+            
+            guard let NoticeNavi = sb.instantiateViewController(withIdentifier: "NoticeNavi") as? UINavigationController else {
+                return
+            }
+            
+            guard let vc = NoticeNavi.topViewController as? NoticeContainVC else {
+                return
+            }
+            
+            vc.bFriends = true
+            
+            self.present(NoticeNavi, animated: true, completion: nil)
+            
+//            self.navigationController?.view.makeToast("Friend", duration: 1.0, position: .bottom)
         default:
             ()
         }

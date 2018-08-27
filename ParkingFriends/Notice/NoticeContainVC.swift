@@ -10,6 +10,8 @@ import UIKit
 import TabPageViewController
 
 class NoticeContainVC: UIViewController {
+    
+    var bFriends: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,10 @@ class NoticeContainVC: UIViewController {
         
         vc2.host = UrlStrings.URL_NOTICE
         
+        
+        if bFriends == true {
+            vc1.host = "http://dev.parkingfriends.net/~vata/mgr/mgr_page/board/event_content.php?sid=2"
+        }
         
         tabPageVC.tabItems = [(vc1, "이벤트"), (vc2, "공지사항")]
         tabPageVC.option.tabWidth = view.frame.width / CGFloat(tabPageVC.tabItems.count)
