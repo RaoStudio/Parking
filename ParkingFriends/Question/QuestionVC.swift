@@ -206,7 +206,8 @@ class QuestionVC: UIViewController, UITextFieldDelegate {
         
         
         if let strPhone = txtPhone.text, let strWard = lblWard.text, !strPhone.isEmpty, strPhone.count >= 11 {
-            self.requestPartnerContact(strAddr: "서울시(도)\(strWard)", strPhone: strPhone)
+//            self.requestPartnerContact(strAddr: "서울시(도)\(strWard)", strPhone: strPhone)
+            self.requestPartnerContact(strAddr: "서울 \(strWard)", strPhone: strPhone)
         } else {
             self.alert("연락처를 확인하세요~ ")
         }

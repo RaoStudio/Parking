@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 import MessageUI
+import Alamofire
 
 class NoticeVC: UIViewController, WKNavigationDelegate, WKUIDelegate, MFMessageComposeViewControllerDelegate {
     
@@ -72,13 +73,48 @@ class NoticeVC: UIViewController, WKNavigationDelegate, WKUIDelegate, MFMessageC
     }
     
     
+    // MARK: - API Call (URL_EVENT_REWARD)
+    func requestEventReward() {
+        
+        let url = UrlStrings.URL_EVENT_REWARD
+        
+//        let param = ["msid": uSession.sid!, "esid": strEventSid] as [String: Any]
+        let param = ["msid": uSession.sid!, "esid": strEventSid] as [String: Any]
+        
+        Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+            
+            guard response.result.isSuccess else {
+                print("\(UrlStrings.URL_EVENT_REWARD) : \(String(describing: response.result.error))")
+                self.alert("\(UrlStrings.URL_EVENT_REWARD) : \(String(describing: response.result.error))")
+                return
+            }
+            
+            if let value = response.result.value as? Dictionary<String, Any> {
+                print("requestPartnerContact JSON = \(value)")
+                
+                if let strStatus = value["status"] as? String {
+                    if strStatus == "200" {
+                        self.alert("포인트를 지급하였습니다. 감사합니다.") {
+                            self.presentingViewController?.dismiss(animated: true, completion: nil)
+                        }
+                    } else {
+                        self.alert("현재 정상적인 처리가 되지 않았습니다. 잠시후 다시 시도해 주세요.")
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    
+    
     // MARK: - MFMessageComposeViewControllerDelegate
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult)
     {
         print(result.hashValue)
         
         if result == MessageComposeResult.sent {
-            
+            self.requestEventReward()
         }
         
         controller.dismiss(animated: true, completion: nil)
