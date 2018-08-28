@@ -259,6 +259,9 @@ class MainViewController: UIViewController {
         */
         
         
+        displayTimeToButton()
+        
+        
         self.navigationController?.view.hideToastActivity()
         
         if let strUinfoRadius = uinfo.radius {
