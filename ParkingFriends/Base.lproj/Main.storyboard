@@ -4945,6 +4945,91 @@
             </objects>
             <point key="canvasLocation" x="698" y="1842"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ZWa-2B-s3n">
+            <objects>
+                <viewController storyboardIdentifier="ImpossibleVC" id="lee-lp-2fV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oLk-Z9-xws">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2De-7j-B1U" customClass="RoundView" customModule="ParkingFriends" customModuleProvider="target">
+                                <rect key="frame" x="18" y="158" width="339" height="350"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="J1k-Ho-Er2">
+                                        <rect key="frame" x="0.0" y="305" width="339" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mta-BL-Xkj">
+                                                <rect key="frame" x="0.0" y="0.0" width="339" height="45"/>
+                                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                <state key="normal" title="확인">
+                                                    <color key="titleColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onBtnCancel:" destination="Xht-Nh-gjX" eventType="touchUpInside" id="Lk3-so-mdd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Z3H-kv-j5Y"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선택된 시간에는" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgJ-tp-B3Z">
+                                        <rect key="frame" x="128.5" y="238" width="82.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 예약되어 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuE-3C-rnf">
+                                        <rect key="frame" x="108" y="264" width="123.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCb-dm-7Is">
+                                        <rect key="frame" x="10" y="25" width="319" height="193"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="cuE-3C-rnf" firstAttribute="centerX" secondItem="2De-7j-B1U" secondAttribute="centerX" id="0nA-th-8D5"/>
+                                    <constraint firstItem="J1k-Ho-Er2" firstAttribute="leading" secondItem="2De-7j-B1U" secondAttribute="leading" id="1hs-oP-Fvz"/>
+                                    <constraint firstItem="BgJ-tp-B3Z" firstAttribute="top" secondItem="KCb-dm-7Is" secondAttribute="bottom" constant="20" id="3lZ-gj-fQD"/>
+                                    <constraint firstItem="KCb-dm-7Is" firstAttribute="leading" secondItem="2De-7j-B1U" secondAttribute="leading" constant="10" id="9XD-Jt-BXo"/>
+                                    <constraint firstAttribute="trailing" secondItem="KCb-dm-7Is" secondAttribute="trailing" constant="10" id="HfA-qY-NP4"/>
+                                    <constraint firstItem="BgJ-tp-B3Z" firstAttribute="centerX" secondItem="2De-7j-B1U" secondAttribute="centerX" id="OKj-co-LiV"/>
+                                    <constraint firstItem="KCb-dm-7Is" firstAttribute="top" secondItem="2De-7j-B1U" secondAttribute="top" constant="25" id="Rbx-9m-LQx"/>
+                                    <constraint firstItem="cuE-3C-rnf" firstAttribute="top" secondItem="BgJ-tp-B3Z" secondAttribute="bottom" constant="10" id="Sdi-hX-Nac"/>
+                                    <constraint firstAttribute="bottom" secondItem="J1k-Ho-Er2" secondAttribute="bottom" id="WNN-wx-VQa"/>
+                                    <constraint firstItem="J1k-Ho-Er2" firstAttribute="top" secondItem="cuE-3C-rnf" secondAttribute="bottom" constant="25" id="dZK-5Z-JnF"/>
+                                    <constraint firstAttribute="trailing" secondItem="J1k-Ho-Er2" secondAttribute="trailing" id="dfE-wA-d45"/>
+                                    <constraint firstAttribute="height" constant="350" id="sIi-FB-Wqe"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2De-7j-B1U" firstAttribute="centerY" secondItem="oLk-Z9-xws" secondAttribute="centerY" id="BQ6-tS-4mm"/>
+                            <constraint firstItem="2De-7j-B1U" firstAttribute="leading" secondItem="ZfL-fb-mos" secondAttribute="leading" constant="18" id="bit-VB-UWa"/>
+                            <constraint firstItem="ZfL-fb-mos" firstAttribute="trailing" secondItem="2De-7j-B1U" secondAttribute="trailing" constant="18" id="pcW-d3-fdX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZfL-fb-mos"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u6d-vk-M8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6213.6000000000004" y="1674.5127436281859"/>
+        </scene>
         <!--Car Info RegisterVC-->
         <scene sceneID="u2g-fM-Dax">
             <objects>
