@@ -38,6 +38,9 @@ class TimePickerVC: UIViewController {
     var arrDay: [Date] = []
     
     var arrImpossibleTime: [String]?
+    var arrArrangeImpossible: [[String]]?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,6 +123,11 @@ class TimePickerVC: UIViewController {
 //        arrImpossibleTime = ["1111","2222","3333"]
         
 //        self.startPicker.setLimit(forCalendarComponent: .day, minimumUnit: 0, maximumUnit: 2)
+        
+        
+        
+        arrangeImpossibleTime(arrTime: arrImpossibleTime)
+        
     }
     
     
@@ -128,6 +136,43 @@ class TimePickerVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Arrange Impossible Time ~
+    func arrangeImpossibleTime(arrTime: Array<String>?) {
+        /*
+        guard arrTime?.isEmpty == false else {
+            return
+        }
+        */
+        
+        guard let arrImpossible = arrTime else {
+            return
+        }
+        
+        print(arrImpossible)
+        
+        arrArrangeImpossible = [[String]]()
+        
+        var arrValue: [String]?
+        
+        for (index, value) in arrImpossible.enumerated() {
+            print("\(index): \(value)")
+            
+            if (index % 2 == 0) {
+                arrValue = [String]()
+                arrValue?.append(value)
+            } else {
+                arrValue?.append(value)
+                arrArrangeImpossible?.append(arrValue!)
+            }
+        }
+        
+        print(arrArrangeImpossible!)
+        
+        
+    }
+    
+    
     
     // MARK: - Custom ( Navigation Title )
     func initTitleTwoLine() {
