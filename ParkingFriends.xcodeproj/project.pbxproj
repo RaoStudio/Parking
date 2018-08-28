@@ -83,6 +83,7 @@
 		29AA1266207DA06A00F4648C /* GoogleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA1264207DA06A00F4648C /* GoogleDataProvider.swift */; };
 		29AA1267207DA06A00F4648C /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA1265207DA06A00F4648C /* GooglePlace.swift */; };
 		29B4CDED20CF96390055852F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B4CDEC20CF96390055852F /* LoginVC.swift */; };
+		29B5995C2135371E0026554D /* ImpossibleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B5995B2135371D0026554D /* ImpossibleVC.swift */; };
 		29B7CEB620F4802800A39315 /* ParkingLotDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B7CEB520F4802800A39315 /* ParkingLotDetailVC.swift */; };
 		29BBB0B421211E6A001B27F5 /* ReserveDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BBB0B321211E6A001B27F5 /* ReserveDetailVC.swift */; };
 		29C5908E2112EDBD0024FC68 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C5908D2112EDBC0024FC68 /* WebKit.framework */; };
@@ -197,6 +198,7 @@
 		29AA1264207DA06A00F4648C /* GoogleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleDataProvider.swift; sourceTree = "<group>"; };
 		29AA1265207DA06A00F4648C /* GooglePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
 		29B4CDEC20CF96390055852F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		29B5995B2135371D0026554D /* ImpossibleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpossibleVC.swift; sourceTree = "<group>"; };
 		29B7CEB520F4802800A39315 /* ParkingLotDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotDetailVC.swift; sourceTree = "<group>"; };
 		29BBB0B321211E6A001B27F5 /* ReserveDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveDetailVC.swift; sourceTree = "<group>"; };
 		29C5908D2112EDBC0024FC68 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -291,6 +293,7 @@
 				29A79B3B211A7AD3005440F8 /* ReservHistoryVC.swift */,
 				29BBB0B321211E6A001B27F5 /* ReserveDetailVC.swift */,
 				2996DC52212515D300DE3A5E /* ReserveExtendVC.swift */,
+				29B5995B2135371D0026554D /* ImpossibleVC.swift */,
 			);
 			path = ParkingFriends;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				293545F120ECBB3800077B75 /* SetVersionCell.swift in Sources */,
 				29875E5320ABC81F0029E4BD /* ParkingLotVC.swift in Sources */,
 				293C50BF2107FEE400E53620 /* PaymentCoupSelectCell.swift in Sources */,
+				29B5995C2135371E0026554D /* ImpossibleVC.swift in Sources */,
 				29A17DD121070779002772A1 /* PaymentInfoCell.swift in Sources */,
 				2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */,
 				29012A8A2105B227005D99FC /* ProfileTextCell.swift in Sources */,

@@ -659,8 +659,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 if self.bUseImpossibleTest {
 //                    self.arrImpossible.append("2018-08-28 00:00:00")
 //                    self.arrImpossible.append("2018-08-28 01:00:00")
-                    self.arrImpossible.append("2018-08-28 16:00:00")
-                    self.arrImpossible.append("2018-08-28 17:00:00")
+                    self.arrImpossible.append("2018-08-28 18:00:00")
+                    self.arrImpossible.append("2018-08-28 19:00:00")
 //                    self.arrImpossible.append("2018-08-28 23:00:00")
 //                    self.arrImpossible.append("2018-08-29 01:00:00")
 //                    self.arrImpossible.append("2018-08-29 15:00:00")

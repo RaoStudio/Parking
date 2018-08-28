@@ -469,6 +469,19 @@ class TimePickerVC: UIViewController {
                     }
                     
                     self.alert(strImpossible)
+                    
+                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ImpossibleVC") as? ImpossibleVC else {
+                        return
+                    }
+                    
+                    vc.bTab = false
+                    vc.strImpossible = strImpossible
+                    
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: false, completion: nil)
+                    
+                    
+                    
                     return
                 }
             }

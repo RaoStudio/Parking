@@ -4945,10 +4945,10 @@
             </objects>
             <point key="canvasLocation" x="698" y="1842"/>
         </scene>
-        <!--View Controller-->
+        <!--ImpossibleVC-->
         <scene sceneID="ZWa-2B-s3n">
             <objects>
-                <viewController storyboardIdentifier="ImpossibleVC" id="lee-lp-2fV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImpossibleVC" id="lee-lp-2fV" customClass="ImpossibleVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oLk-Z9-xws">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4968,6 +4968,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="onBtnCancel:" destination="Xht-Nh-gjX" eventType="touchUpInside" id="Lk3-so-mdd"/>
+                                                    <action selector="onBtnOk:" destination="lee-lp-2fV" eventType="touchUpInside" id="qPP-Av-izW"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -4991,7 +4992,8 @@
                                         <rect key="frame" x="10" y="25" width="319" height="193"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="0.23529411764705882" blue="0.29019607843137252" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -5025,6 +5027,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZfL-fb-mos"/>
                     </view>
+                    <connections>
+                        <outlet property="txtImpossible" destination="KCb-dm-7Is" id="fyM-zy-Dh3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6d-vk-M8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
