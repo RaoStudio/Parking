@@ -396,14 +396,30 @@ class TimePickerVC: UIViewController {
     @IBAction func onBtnOk(_ sender: UIButton) {
 //        self.alert("Test\nTest\nTest\n")
         
+        onBtnOkCompletion(sender)
+        return
+        
         var strImpossible: String = ""
         if let arrImpossible = arrImpossibleTime {
             
-            if self.calcImpossibleTime(arrTime: arrArrangeImpossible!) {
+            
+            if let arrArrange = arrArrangeImpossible, arrArrange.isEmpty == false {
+               let bResult = self.calcImpossibleTime(arrTime: arrArrange)
                 
+                if bResult == true {
+                    for (ix,v) in arrImpossible.enumerated(){
+                        strImpossible.append(v)
+                    }
+                    
+                    self.alert(strImpossible)
+                } else {
+                    self.alert("설정하였습니다") {
+                        self.onBtnOkCompletion(sender)
+                    }
+                }
             }
             
-            
+            /*
             for (ix,v) in arrImpossible.enumerated(){
                 strImpossible.append(v)
             }
@@ -411,6 +427,7 @@ class TimePickerVC: UIViewController {
             self.alert(strImpossible) {
                 self.onBtnOkCompletion(sender)
             }
+ */
         } else {
             onBtnOkCompletion(sender)
         }
@@ -435,6 +452,28 @@ class TimePickerVC: UIViewController {
             self.alert("지나간 시간입니다.")
             return
         }
+        
+        
+        
+        
+        if let arrImpossible = arrImpossibleTime {
+            
+            var strImpossible: String = ""
+            
+            if let arrArrange = arrArrangeImpossible, arrArrange.isEmpty == false {
+                let bResult = self.calcImpossibleTime(arrTime: arrArrange)
+                
+                if bResult == true {
+                    for (ix,v) in arrImpossible.enumerated(){
+                        strImpossible.append(v)
+                    }
+                    
+                    self.alert(strImpossible)
+                    return
+                }
+            }
+        }
+        
         
         
         let startDate = startPicker.date
