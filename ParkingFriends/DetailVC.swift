@@ -16,7 +16,7 @@ import SwiftDate
 class DetailVC: UIViewController, UIPageViewControllerDataSource {
 
     
-    let bUseImpossibleTest: Bool = false
+    let bUseImpossibleTest: Bool = true
     
     @IBOutlet var ContentsView: UIView!
     @IBOutlet var lbl_Test: UILabel!
@@ -557,6 +557,19 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         guard arrTime.isEmpty == false else {
             return
         }
+        
+        
+        var arrValidate = [String]()
+        
+        for (index, item) in arrTime.enumerated() {
+            let date = self.uinfo.stringToDate(item)
+            if date.isToday == true {
+                arrValidate.append(self.uinfo.dateToString(date))
+            }
+        }
+        
+        print(arrValidate)
+        
         
         var fStartHour: Float = 0
         var fStartMin: Float = 0

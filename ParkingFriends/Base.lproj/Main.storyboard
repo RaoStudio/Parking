@@ -1838,7 +1838,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="8Rz-cS-3g4">
-                                                            <rect key="frame" x="302" y="21.5" width="6" height="11"/>
+                                                            <rect key="frame" x="357" y="21.5" width="6" height="11"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="11" id="iyw-7l-bDF"/>
                                                                 <constraint firstAttribute="width" constant="6" id="rBx-po-ylc"/>
@@ -1879,7 +1879,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Side_friend_invite_bg" translatesAutoresizingMaskIntoConstraints="NO" id="hfZ-u9-UPl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="53.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구초대 이벤트" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWB-RJ-bPc">
                                                             <rect key="frame" x="12" y="18" width="82.5" height="16"/>
@@ -1895,7 +1895,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_arrow_white" translatesAutoresizingMaskIntoConstraints="NO" id="fqv-AC-7qn">
-                                                            <rect key="frame" x="302" y="21" width="6" height="11"/>
+                                                            <rect key="frame" x="357" y="21" width="6" height="11"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="6" id="7uG-nP-9JH"/>
                                                                 <constraint firstAttribute="height" constant="11" id="bD5-kt-sZz"/>
@@ -2060,7 +2060,7 @@
                                 <color key="separatorColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetRadiusCell" rowHeight="53" id="BUL-Es-yfC" customClass="SetRadiusCell" customModule="ParkingFriends" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetRadiusCell" rowHeight="53" id="BUL-Es-yfC" customClass="SetRadiusCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="29" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BUL-Es-yfC" id="dR4-EF-E0s">
@@ -2091,7 +2091,7 @@
                                             <outlet property="lblRadius" destination="kG6-K7-Wdv" id="mTg-wo-90h"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetNoticeCell" rowHeight="88" id="q7k-4u-o2T" customClass="SetNoticeCell" customModule="ParkingFriends" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetNoticeCell" rowHeight="88" id="q7k-4u-o2T" customClass="SetNoticeCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="82" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q7k-4u-o2T" id="BoF-NH-itF">
@@ -2148,7 +2148,7 @@
                                             <outlet property="btnCheck" destination="1lc-pT-adT" id="p04-q4-8xR"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetAlarmCell" rowHeight="53" id="Euf-ef-8ze" customClass="SetAlarmCell" customModule="ParkingFriends" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetAlarmCell" rowHeight="53" id="Euf-ef-8ze" customClass="SetAlarmCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="170" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Euf-ef-8ze" id="pzc-Nm-9sP">
@@ -2207,7 +2207,7 @@
                                             <outlet property="roundView" destination="huC-AW-LKT" id="Myr-d3-q5O"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetInfoAuthCell" rowHeight="44" id="Q8D-UX-JR9" customClass="SetInfoAuthCell" customModule="ParkingFriends" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetInfoAuthCell" rowHeight="44" id="Q8D-UX-JR9" customClass="SetInfoAuthCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="223" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q8D-UX-JR9" id="GuS-kD-K1c">
@@ -2239,7 +2239,7 @@
                                             <outlet property="lblTitle" destination="01r-h7-SJL" id="dVD-3q-DW1"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SetVersionCell" rowHeight="53" id="GEH-cE-DrS" customClass="SetVersionCell" customModule="ParkingFriends" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SetVersionCell" rowHeight="53" id="GEH-cE-DrS" customClass="SetVersionCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="267" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GEH-cE-DrS" id="sTC-H1-5cn">
@@ -2312,7 +2312,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="521"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentInfoCell" rowHeight="44" id="Hoi-ID-fcc" customClass="PaymentInfoCell" customModule="ParkingFriends" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentInfoCell" rowHeight="44" id="Hoi-ID-fcc" customClass="PaymentInfoCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hoi-ID-fcc" id="LlC-Ui-Uvk">
@@ -2358,7 +2358,7 @@
                                             <outlet property="lbl_Title" destination="0ME-PE-1b7" id="J0M-dx-sCD"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentSelectCell" rowHeight="127" id="oXD-h3-gsI" customClass="PaymentSelectCell" customModule="ParkingFriends" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentSelectCell" rowHeight="127" id="oXD-h3-gsI" customClass="PaymentSelectCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="127"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oXD-h3-gsI" id="VPu-sN-dCp">
@@ -2451,7 +2451,7 @@
                                             <outlet property="btnKakao" destination="9fu-Rk-sLw" id="wWB-yZ-Y2W"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PaymentCoupSelectCell" rowHeight="53" id="sS5-lr-11l" customClass="PaymentCoupSelectCell" customModule="ParkingFriends" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PaymentCoupSelectCell" rowHeight="53" id="sS5-lr-11l" customClass="PaymentCoupSelectCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="199" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sS5-lr-11l" id="6hd-kJ-hdj">
@@ -2520,7 +2520,7 @@
                                             <outlet property="lbl_Title" destination="m0g-Ma-SaF" id="KkR-fi-Gvl"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentPointInputCell" rowHeight="53" id="5it-lr-nCl" customClass="PaymentPointInputCell" customModule="ParkingFriends" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentPointInputCell" rowHeight="53" id="5it-lr-nCl" customClass="PaymentPointInputCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="252" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5it-lr-nCl" id="Jxv-zq-Ckw">
@@ -2602,7 +2602,7 @@
                                             <outlet property="txt_Point" destination="xZs-qY-W06" id="sHl-Tz-Y9K"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentTotalCountCell" rowHeight="53" id="jfG-0z-T5j" customClass="PaymentTotalCountCell" customModule="ParkingFriends" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PaymentTotalCountCell" rowHeight="53" id="jfG-0z-T5j" customClass="PaymentTotalCountCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="305" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jfG-0z-T5j" id="iG2-Lj-kbD">
@@ -2711,7 +2711,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReservHistoryCell" rowHeight="90" id="1Cf-fy-Put" customClass="ReservHistoryCell" customModule="ParkingFriends" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReservHistoryCell" rowHeight="90" id="1Cf-fy-Put" customClass="ReservHistoryCell" customModule="ParkingFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Cf-fy-Put" id="xBU-bS-XiH">
@@ -4060,13 +4060,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uif-oj-gsT">
-                                                            <rect key="frame" x="273" y="23" width="33" height="16"/>
+                                                            <rect key="frame" x="328" y="23" width="33" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="539-Ok-rsT">
-                                                            <rect key="frame" x="0.0" y="61" width="320" height="1"/>
+                                                            <rect key="frame" x="0.0" y="61" width="375" height="1"/>
                                                             <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="x1o-NW-5sU"/>
@@ -4102,7 +4102,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2M-7y-gSD">
-                                                            <rect key="frame" x="236" y="18" width="70" height="26"/>
+                                                            <rect key="frame" x="291" y="18" width="70" height="26"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="A3d-Gg-R3Q"/>
                                                                 <constraint firstAttribute="height" constant="26" id="bUQ-Fh-EgJ"/>
@@ -4116,13 +4116,13 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDz-O8-3wa">
-                                                            <rect key="frame" x="189" y="23" width="33" height="16"/>
+                                                            <rect key="frame" x="244" y="23" width="33" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOv-Xw-bTA">
-                                                            <rect key="frame" x="0.0" y="61" width="320" height="1"/>
+                                                            <rect key="frame" x="0.0" y="61" width="375" height="1"/>
                                                             <color key="backgroundColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="5t5-PS-5CP"/>
