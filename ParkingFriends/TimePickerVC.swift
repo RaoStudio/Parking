@@ -173,6 +173,13 @@ class TimePickerVC: UIViewController {
     }
     
     
+    // MARK: - Reserve Time to Impossible Time
+    func calcImpossibleTime(arrTime: [[String]]) -> Bool {
+        
+        return false
+    }
+    
+    
     
     // MARK: - Custom ( Navigation Title )
     func initTitleTwoLine() {
