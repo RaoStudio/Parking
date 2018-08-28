@@ -464,8 +464,17 @@ class TimePickerVC: UIViewController {
                 let bResult = self.calcImpossibleTime(arrTime: arrArrange)
                 
                 if bResult == true {
-                    for (ix,v) in arrImpossible.enumerated(){
-                        strImpossible.append(v)
+                    for (index, value) in arrImpossible.enumerated(){
+                        
+                        if (index % 2 == 0) {
+                            strImpossible.append(value)
+                            strImpossible.append(" ~ ")
+                        } else {
+                            strImpossible.append(value)
+                            strImpossible.append("\n\n")
+                        }
+                        
+//                        strImpossible.append(value)
                     }
                     
                     self.alert(strImpossible)
