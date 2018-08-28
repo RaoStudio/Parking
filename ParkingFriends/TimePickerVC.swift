@@ -176,6 +176,31 @@ class TimePickerVC: UIViewController {
     // MARK: - Reserve Time to Impossible Time
     func calcImpossibleTime(arrTime: [[String]]) -> Bool {
         
+        let startDay = self.startPicker.date
+        let endDay = self.endPicker.date
+        
+        for item in arrTime {
+            
+            if let strSTime = item.first, let strETime = item.last {
+                let sTime = uinfo.stringToDate(strSTime)
+                let eTime = uinfo.stringToDate(strETime)
+                
+                let bStartEnable = startDay.isBetween(date: sTime, and: eTime)
+                let bEndEnable = endDay.isBetween(date: sTime, and: eTime)
+                
+                if bStartEnable == true {
+                    print("calcImpossibleTime return false: \(sTime) ~ \(eTime) : \(startDay)")
+                    return true
+                }
+                
+                if bEndEnable == true {
+                    print("calcImpossibleTime return false: \(sTime) ~ \(eTime) : \(endDay)")
+                    return true
+                }
+            }
+        }
+        
+        
         return false
     }
     
@@ -373,6 +398,11 @@ class TimePickerVC: UIViewController {
         
         var strImpossible: String = ""
         if let arrImpossible = arrImpossibleTime {
+            
+            if self.calcImpossibleTime(arrTime: arrArrangeImpossible!) {
+                
+            }
+            
             
             for (ix,v) in arrImpossible.enumerated(){
                 strImpossible.append(v)
