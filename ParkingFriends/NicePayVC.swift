@@ -9,7 +9,13 @@
 import UIKit
 import WebKit
 
-class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
+class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print("##userContentController")
+        print(message)
+        print("##userContentController")
+    }
+    
 
     @IBOutlet weak var contentsView: UIView!
     
@@ -62,7 +68,18 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
 //    func initWebView() -> WKWebView {
     func initWebView() {
     
+        
+        
+        
         let config = WKWebViewConfiguration()
+        
+        // Add 2018.08.29
+        let contentController = WKUserContentController();
+        contentController.add(self, name:"document.getElementsByClassName('wrapper')[0].innerHTML;")
+        config.userContentController = contentController
+        // Add 2018.08.29
+        
+        
 //        let webView:WKWebView = WKWebView(frame: .zero, configuration: config)
         webView = WKWebView(frame: .zero, configuration: config)
         
@@ -172,6 +189,21 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
 //                self.navigationController?.popToRootViewController(animated: true)
                 
                 
+                webView.evaluateJavaScript("document.getElementsByClassName('wrapper')[0].innerHTML;") { (result, error) in
+                    if error != nil {
+                        print("###Start###")
+                        print(result)
+                        print("###Start###")
+                    } else {
+                        print("###Start###")
+                        print(result)
+                        print("###Start###")
+                    }
+                }
+                
+                
+                
+                
                 if let arrVC = self.navigationController?.viewControllers {
                  
                     for vc in arrVC {
@@ -198,10 +230,45 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
+        
+        
+        webView.evaluateJavaScript("document.getElementsByClassName('wrapper')[0].innerHTML;") { (result, error) in
+            if error != nil {
+                print("###Start###")
+                print(result)
+                print("###Start###")
+            } else {
+                print("###Start###")
+                print(result)
+                print("###Start###")
+            }
+        }
+        
+        
+        
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("End")
+        
+        /*
+        webView.evaluateJavaScript("document.getElementById('wrapper').innerText") { (result, error) in
+            if error != nil {
+                print(result)
+            }
+        }
+        */
+        webView.evaluateJavaScript("document.getElementsByClassName('wrapper')[0].innerHTML;") { (result, error) in
+            if error != nil {
+                print("###End###")
+                print(result)
+                print("###End###")
+            } else {
+                print("###End###")
+                print(result)
+                print("###End###")
+            }
+        }
     }
     
     
@@ -262,6 +329,7 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         print(webView.url!)
     }
+    
     
     /*
     // MARK: - Navigation
