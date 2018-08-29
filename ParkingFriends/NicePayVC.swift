@@ -249,6 +249,8 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Swift.Void) {
         decisionHandler(WKNavigationResponsePolicy.allow)
         
+        print(navigationResponse)
+        
         
     }
  

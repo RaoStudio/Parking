@@ -466,11 +466,14 @@ class TimePickerVC: UIViewController {
                 if bResult == true {
                     for (index, value) in arrImpossible.enumerated(){
                         
+                        let dateValue = uinfo.stringToDate(value)
+                        let strValue = String(format: "%02d/%02d일 %02d:%02d", dateValue.month, dateValue.day, dateValue.hour, dateValue.minute)
+                        
                         if (index % 2 == 0) {
-                            strImpossible.append(value)
+                            strImpossible.append(strValue)
                             strImpossible.append(" ~ ")
                         } else {
-                            strImpossible.append(value)
+                            strImpossible.append(strValue)
                             strImpossible.append("\n\n")
                         }
                         
