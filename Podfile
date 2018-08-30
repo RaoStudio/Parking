@@ -13,7 +13,7 @@ target 'ParkingFriends' do
     pod 'TabPageViewController'
     pod 'PureLayout'
     pod 'DropDown'
-    pod 'SwiftDate'
+    pod 'SwiftDate', '4.5.1'
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
     pod 'GoogleSignIn'
