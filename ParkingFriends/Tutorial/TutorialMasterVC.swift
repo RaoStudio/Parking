@@ -37,11 +37,12 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
         self.view.addSubview(self.pageVC.view)
         self.pageVC.didMove(toParentViewController: self)
         
-        
+        /*
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.currentPageIndicatorTintColor = UIColor.black
         pageControl.backgroundColor = UIColor.white
+ */
         
         self.view.bringSubview(toFront: btnStart)
     }
@@ -52,12 +53,22 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
     }
     
     @IBAction func close(_ sender: Any) {
-
+        
+        /*
+        if let currentViewController = self.pageVC.viewControllers?[0] {
+            if let nextPage = self.pageVC.dataSource?.pageViewController(self.pageVC, viewControllerAfter: currentViewController){
+                self.pageVC.setViewControllers([nextPage], direction: .forward, animated: true, completion: nil)
+            }
+        }
+        */
+        
+        
         /*
         let ud = UserDefaults.standard
         ud.set(true, forKey: UserInfoKey.tutorial)
         ud.synchronize()
         */
+        
         
         
         UIView.animate(withDuration: 0.3, animations: {

@@ -279,7 +279,7 @@ class MainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        /*
+        //*
         let ud = UserDefaults.standard
         if ud.bool(forKey: UserInfoKey.tutorial) == false && bStart {
             let vc = self.instanceTutorialVC(name: "MasterVC")
@@ -287,7 +287,7 @@ class MainViewController: UIViewController {
             self.present(vc!, animated: false, completion: nil)
             bStart = false
         }
-        */
+        //*/
     }
     
     override func viewWillDisappear(_ animated: Bool) {
