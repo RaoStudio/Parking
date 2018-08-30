@@ -269,6 +269,16 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
                 print("###End###")
             }
         }
+        
+        
+        webView.evaluateJavaScript("document.cookie") { (object, error) in
+            if let string: String = object as? String {
+//                Devg.createFile("COOKIE", contents: string)
+                print("###End Cookie###")
+                print(object)
+                print("###End Cookie###")
+            }
+        }
     }
     
     
