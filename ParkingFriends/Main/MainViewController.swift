@@ -860,8 +860,9 @@ class MainViewController: UIViewController {
                     let marker = GMSMarker(position: coordinate)
 //                    marker.icon = UIImage(named: "Main_Many_Count")
                     
-                    let view = UINib(nibName: "ManyLotView", bundle: nil).instantiate(withOwner: self, options: nil).first as! ManyLotView
-                    view.lblCount.text = dicResponse["count"] as! String
+//                    let view = UINib(nibName: "ManyLotView", bundle: nil).instantiate(withOwner: self, options: nil).first as! ManyLotView
+                    let view = ManyLotView.instanceFromNib() as? ManyLotView
+                    view?.lblCount.text = dicResponse["count"] as? String
                     
                     marker.iconView = view
                     
