@@ -283,7 +283,7 @@ class MainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //*
+        /*
         let ud = UserDefaults.standard
         if ud.bool(forKey: UserInfoKey.tutorial) == false && bStart {
             let vc = self.instanceTutorialVC(name: "MasterVC")
@@ -291,7 +291,7 @@ class MainViewController: UIViewController {
             self.present(vc!, animated: false, completion: nil)
             bStart = false
         }
-        //*/
+        */
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -589,7 +589,7 @@ class MainViewController: UIViewController {
     
     func reserveFromTimePick() {
 
-        self.bTime = true
+//        self.bTime = true     // for version 2
         
 //        btnStart.setTitle(uinfo.startTime, for: UIControlState.normal)
 //        btnEnd.setTitle(uinfo.endTime, for: UIControlState.normal)
@@ -701,11 +701,9 @@ class MainViewController: UIViewController {
     
     // MARK: - PF API
     func RefreshParkingLot(_ coordinate: CLLocationCoordinate2D, url: String, bDest: Bool = false, bMarkerRemake: Bool = true, bTime: Bool = false) {
-        
         let strRadius = String(describing: getIntFromRadius())
-        
+//        let strRadius = "2000"
         let param: Parameters
-        
         var url: String
         
         if bTime {
@@ -730,6 +728,7 @@ class MainViewController: UIViewController {
         Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
             self.arrPlace.removeAll()
             
+                
             guard response.result.isSuccess else {
                 print("\(url) : \(String(describing: response.result.error))")
                 self.alert("\(url) : \(String(describing: response.result.error))")
@@ -829,6 +828,152 @@ class MainViewController: UIViewController {
                                 marker.icon = UIImage(named: "public_lot")
                             }
                             
+                            let markerLocation = CLLocation.init(latitude: lat.doubleValue, longitude: long.doubleValue)
+                            var originLocation: CLLocation?
+                            if self.destCoordinate != nil {
+                                originLocation = CLLocation(latitude: (self.destCoordinate?.latitude)!, longitude: (self.destCoordinate?.longitude)!)
+                            } else {
+                                originLocation = CLLocation(latitude: (self.myCoordinate?.latitude)!, longitude: (self.myCoordinate?.longitude)!)
+                            }
+                            
+                            dicPlace["distance"] = markerLocation.distance(from: originLocation!)
+                            
+                            marker.groundAnchor = CGPoint(x: 0.5, y: 1)
+                            marker.appearAnimation = GMSMarkerAnimation.pop
+                            marker.isTappable = true
+                            marker.userData = dicPlace
+                            
+                            
+                            marker.map = self.mapView
+                            self.circle.map = self.mapView
+                            
+                            //                            self.arrPlace.append(dicPlace)
+                            self.arrPlace.append(marker)
+                        }
+                        }
+                    )
+                    
+                    self.RefreshPartnerParkingLot(coordinate, url: UrlStrings.URL_API_PARKINGLOT_FETCH_RATIO, bTime: true)
+                }
+            }
+        }
+        
+    }
+    
+    func RefreshPartnerParkingLot(_ coordinate: CLLocationCoordinate2D, url: String, bDest: Bool = false, bMarkerRemake: Bool = true, bTime: Bool = true) {
+        let strRadius = String(describing: getIntFromRadius())
+        let param: Parameters
+        var url: String
+        
+        if bTime {
+            url = UrlStrings.URL_API_PARKINGLOT_FETCH_RATIO
+            param = ["latitude" : coordinate.latitude,
+                     "longitude" : coordinate.longitude,
+                     "radius" : strRadius,
+                     "begin" : uinfo.startTime!,
+                     "end" : uinfo.endTime!] as [String : Any]
+            
+        } else {
+            url = UrlStrings.URL_API_PARKINGLOT_FETCH
+            param = ["latitude" : coordinate.latitude,
+                     "longitude" : coordinate.longitude,
+                     "radius" : strRadius,
+                     "type" : "15"] as [String : Any]
+        }
+        
+        //        let paramData = try! JSONSerialization.data(withJSONObject: param, options: [])
+        //        let url = URL(string: UrlStrings.URL_API_PARKINGLOT_FETCH)
+        
+        Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+//            self.arrPlace.removeAll()
+            
+            guard response.result.isSuccess else {
+                print("\(url) : \(String(describing: response.result.error))")
+                self.alert("\(url) : \(String(describing: response.result.error))")
+                
+                self.mapView.clear()
+                
+                if self.circle != nil {
+                    self.circle.position = coordinate
+                    self.circle.radius = Double(self.getIntFromRadius())
+                    self.circle.map = self.mapView
+                }
+                return
+            }
+            
+            //*
+//            self.mapView.clear()
+            
+            if self.circle != nil {
+                self.circle.position = coordinate
+                self.circle.radius = Double(self.getIntFromRadius())
+                self.circle.map = self.mapView
+            }
+            //*/
+            
+            if let destCoord = self.destCoordinate {
+                let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: destCoord.latitude, longitude: destCoord.longitude))
+                marker.icon = UIImage(named: "destination")
+                marker.groundAnchor = CGPoint(x: 0.5, y: 1)
+                //                marker.isTappable = true
+                marker.map = self.mapView
+                marker.title = "목적지"
+                self.mapView.selectedMarker = marker
+                /*
+                 marker.title = "목적지"
+                 marker.snippet = "Snip Test"
+                 self.mapView.selectedMarker = marker
+                 */
+            }
+            
+            
+            if let value = response.result.value {
+                print("RefreshParkingLot JSON = \(value)")
+                
+                if let arrResponse = response.result.value as? Array<Any> {
+                    arrResponse.forEach({ place in
+                        //                        let marker = PlaceMarker(place: place as! GooglePlace)
+                        //                        marker.map = self.mapView
+                        
+                        if var dicPlace = place as? Dictionary<String, Any> {
+                            
+                            let lat: NSString = dicPlace["latitude"] as! NSString
+                            let long: NSString = dicPlace["longitude"] as! NSString
+                            let partner : NSString = dicPlace["partner"] as! NSString
+                            let cctv: NSString = dicPlace["cctv"] as! NSString
+                            let available: NSString = dicPlace["available"] as! NSString
+                            
+                            
+                            let nPartner: Int = Int(partner.intValue)
+                            let nCCTV: Int = Int(cctv.intValue)
+                            
+                            /*
+                             let position = CLLocationCoordinate2D(latitude: 37, longitude: 127)
+                             let marker = GMSMarker(position: position)
+                             */
+                            
+                            
+                            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat.doubleValue), longitude: CLLocationDegrees(long.doubleValue)))
+                            
+                            if nPartner == 1 {
+                                //                            if partner.isEqual(to: "1") {
+                                //                                if cctv.isEqual(to: "1") {
+                                if nCCTV > 0 {
+                                    if available.isEqual(to: "0") {
+                                        marker.icon = UIImage(named: "partner_lot_cctv_full")
+                                    } else {
+                                        marker.icon = UIImage(named: "partner_lot_cctv")
+                                    }
+                                } else {
+                                    if available.isEqual(to: "0") {
+                                        marker.icon = UIImage(named: "partner_lot_full")
+                                    } else {
+                                        marker.icon = UIImage(named: "partner_lot")
+                                    }
+                                }
+                            } else {
+                                marker.icon = UIImage(named: "public_lot")
+                            }
                             
                             let markerLocation = CLLocation.init(latitude: lat.doubleValue, longitude: long.doubleValue)
                             var originLocation: CLLocation?
@@ -851,20 +996,12 @@ class MainViewController: UIViewController {
                             
                             //                            self.arrPlace.append(dicPlace)
                             self.arrPlace.append(marker)
-                            
                         }
-                        
                         }
                     )
                 }
-
-
-                
             }
-            
-            
         }
-        
     }
     
     
