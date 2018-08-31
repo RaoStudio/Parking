@@ -854,7 +854,14 @@ class MainViewController: UIViewController {
                 } else if let dicResponse = response.result.value as? Dictionary <String, Any> {
                     print("##DicResponse")
                     print(dicResponse)
-                    print("##DicResponse")                    
+                    print("##DicResponse")
+                    
+                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainManyCountVC") else {
+                        return
+                    }
+                    
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: false, completion: nil)
                 }
             }
         }

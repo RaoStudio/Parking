@@ -90,6 +90,7 @@
 		29C590902112F7790024FC68 /* NicePayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5908F2112F7790024FC68 /* NicePayVC.swift */; };
 		29CB4FE7210AE8E300BBCE51 /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB4FE6210AE8E200BBCE51 /* CardVC.swift */; };
 		29D6C26220E0BC8B001EF09B /* SideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D6C26120E0BC8B001EF09B /* SideVC.swift */; };
+		29DB19A121390E7300906C20 /* MainManyCountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB19A021390E7300906C20 /* MainManyCountVC.swift */; };
 		29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */; };
 		29F4EB2A20F2FEFC009C2AE2 /* LotListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4EB2920F2FEFC009C2AE2 /* LotListVC.swift */; };
 		29F4EB2C20F3301F009C2AE2 /* ParkingLotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4EB2B20F3301F009C2AE2 /* ParkingLotCell.swift */; };
@@ -205,6 +206,7 @@
 		29C5908F2112F7790024FC68 /* NicePayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicePayVC.swift; sourceTree = "<group>"; };
 		29CB4FE6210AE8E200BBCE51 /* CardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
 		29D6C26120E0BC8B001EF09B /* SideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideVC.swift; sourceTree = "<group>"; };
+		29DB19A021390E7300906C20 /* MainManyCountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManyCountVC.swift; sourceTree = "<group>"; };
 		29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 		29F4EB2920F2FEFC009C2AE2 /* LotListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotListVC.swift; sourceTree = "<group>"; };
 		29F4EB2B20F3301F009C2AE2 /* ParkingLotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotCell.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				29A0FFDA207B423A00B13638 /* Util */,
 				296B7976212E407400234063 /* Notice */,
 				296B797F212E81C900234063 /* Question */,
+				29DB199F21390E2E00906C20 /* Main */,
 				29559EF3204CE28E000EB12B /* AppDelegate.swift */,
 				29559EF5204CE28E000EB12B /* ViewController.swift */,
 				29559EF7204CE28E000EB12B /* Main.storyboard */,
@@ -272,7 +275,6 @@
 				29559F02204CE28E000EB12B /* Info.plist */,
 				2942FB3A20D8C47200FBCAEB /* GoogleService-Info.plist */,
 				29559EFA204CE28E000EB12B /* ParkingFriends.xcdatamodeld */,
-				295FF12120688AA2000CBF15 /* MainViewController.swift */,
 				2960237F2091A65600481134 /* DetailVC.swift */,
 				2983BD9920A16BA60033035D /* RaoPageVC.swift */,
 				291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */,
@@ -481,6 +483,15 @@
 				29AA1265207DA06A00F4648C /* GooglePlace.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		29DB199F21390E2E00906C20 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				295FF12120688AA2000CBF15 /* MainViewController.swift */,
+				29DB19A021390E7300906C20 /* MainManyCountVC.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		29E8F25A20A95EDA004CE3F2 /* Manager */ = {
@@ -740,6 +751,7 @@
 				29AA125F207D9FF400F4648C /* MarkerInfoView.swift in Sources */,
 				298DF7F420D2526900F0B653 /* Util.m in Sources */,
 				2975B02E2101A68F006556B6 /* CarInfoRegisterVC.swift in Sources */,
+				29DB19A121390E7300906C20 /* MainManyCountVC.swift in Sources */,
 				29012A8C2105B2C5005D99FC /* ProfileBtnCell.swift in Sources */,
 				2999636920B6544600AC180C /* LotDistanceVC.swift in Sources */,
 				298BFE5020D9EB19006D0B51 /* UserSession.swift in Sources */,
