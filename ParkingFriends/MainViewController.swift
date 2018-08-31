@@ -100,7 +100,11 @@ class MainViewController: UIViewController {
 //    var arrPlace = [Dictionary<String, Any>]()
     var arrPlace = [GMSMarker]()
     
+    var arrPublicPlace = [GMSMarker]()
+    var arrPartnerPlace = [GMSMarker]()
     
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -694,6 +698,8 @@ class MainViewController: UIViewController {
         }
     }
     
+    
+    // MARK: - PF API
     func RefreshParkingLot(_ coordinate: CLLocationCoordinate2D, url: String, bDest: Bool = false, bMarkerRemake: Bool = true, bTime: Bool = false) {
         
         let strRadius = String(describing: getIntFromRadius())
@@ -717,15 +723,11 @@ class MainViewController: UIViewController {
                      "radius" : strRadius,
                      "type" : "15"] as [String : Any]
         }
-
         
 //        let paramData = try! JSONSerialization.data(withJSONObject: param, options: [])
 //        let url = URL(string: UrlStrings.URL_API_PARKINGLOT_FETCH)
         
         Alamofire.request(url, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
-            
-            
-            
             self.arrPlace.removeAll()
             
             guard response.result.isSuccess else {
@@ -739,7 +741,6 @@ class MainViewController: UIViewController {
                     self.circle.radius = Double(self.getIntFromRadius())
                     self.circle.map = self.mapView
                 }
-                
                 return
             }
             
@@ -753,7 +754,6 @@ class MainViewController: UIViewController {
             }
             //*/
             
-            
             /*
             if bDest {
                 let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude))
@@ -764,7 +764,6 @@ class MainViewController: UIViewController {
                 marker.map = self.mapView
             }
             */
-            
             
             if let destCoord = self.destCoordinate {
                 let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: destCoord.latitude, longitude: destCoord.longitude))
@@ -811,8 +810,8 @@ class MainViewController: UIViewController {
                             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat.doubleValue), longitude: CLLocationDegrees(long.doubleValue)))
                             
                             if nPartner == 1 {
-//                            if partner.isEqual(to: "1") {
-//                                if cctv.isEqual(to: "1") {
+                                //                            if partner.isEqual(to: "1") {
+                                //                                if cctv.isEqual(to: "1") {
                                 if nCCTV > 0 {
                                     if available.isEqual(to: "0") {
                                         marker.icon = UIImage(named: "partner_lot_cctv_full")
@@ -839,9 +838,7 @@ class MainViewController: UIViewController {
                                 originLocation = CLLocation(latitude: (self.myCoordinate?.latitude)!, longitude: (self.myCoordinate?.longitude)!)
                             }
                             
-                            
                             dicPlace["distance"] = markerLocation.distance(from: originLocation!)
-                            
                             
                             marker.groundAnchor = CGPoint(x: 0.5, y: 1)
                             marker.appearAnimation = GMSMarkerAnimation.pop
@@ -852,10 +849,7 @@ class MainViewController: UIViewController {
                             marker.map = self.mapView
                             self.circle.map = self.mapView
                             
-                            
-                            
-                            
-//                            self.arrPlace.append(dicPlace)
+                            //                            self.arrPlace.append(dicPlace)
                             self.arrPlace.append(marker)
                             
                         }
@@ -873,6 +867,8 @@ class MainViewController: UIViewController {
         
     }
     
+    
+    // MARK: - Call API Func ~ @@
     func mapViewPositon(coordinate: CLLocationCoordinate2D, bDest: Bool = false) {
         reverseGeocodeCoordinate(coordinate)
         
