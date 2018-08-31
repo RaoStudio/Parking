@@ -4654,6 +4654,13 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main_Many_Count" translatesAutoresizingMaskIntoConstraints="NO" id="dJe-2x-dCO">
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="318"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvJ-DL-atL">
+                                        <rect key="frame" x="115" y="148" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -4673,6 +4680,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="neE-FT-HoP"/>
                     </view>
+                    <connections>
+                        <outlet property="lblCount" destination="mvJ-DL-atL" id="5Fl-ab-uLe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFe-ZZ-cRF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,10 +10,15 @@ import UIKit
 
 class MainManyCountVC: PresentTestVC {
 
+    var strCount: String = ""
+    @IBOutlet weak var lblCount: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        lblCount.text = strCount
     }
 
     override func didReceiveMemoryWarning() {

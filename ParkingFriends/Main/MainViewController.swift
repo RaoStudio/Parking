@@ -856,9 +856,11 @@ class MainViewController: UIViewController {
                     print(dicResponse)
                     print("##DicResponse")
                     
-                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainManyCountVC") else {
+                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainManyCountVC") as? MainManyCountVC else {
                         return
                     }
+                    
+                    vc.strCount = dicResponse["count"] as! String
                     
                     vc.modalPresentationStyle = .overFullScreen
                     self.present(vc, animated: false, completion: nil)
