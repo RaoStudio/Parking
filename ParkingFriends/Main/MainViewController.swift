@@ -698,6 +698,11 @@ class MainViewController: UIViewController {
         }
     }
     
+    // MARK: - InstanceFromNib
+    func instanceFromNib(strNib: String) -> UIView {
+        return UINib(nibName: strNib, bundle: nil).instantiate(withOwner: self, options: nil).first as! UIView
+    }
+    
     
     // MARK: - PF API
     func RefreshParkingLot(_ coordinate: CLLocationCoordinate2D, url: String, bDest: Bool = false, bMarkerRemake: Bool = true, bTime: Bool = false) {
@@ -861,8 +866,8 @@ class MainViewController: UIViewController {
 //                    marker.icon = UIImage(named: "Main_Many_Count")
                     
 //                    let view = UINib(nibName: "ManyLotView", bundle: nil).instantiate(withOwner: self, options: nil).first as! ManyLotView
-                    let view = ManyLotView.instanceFromNib() as? ManyLotView
-                    view?.lblCount.text = dicResponse["count"] as? String
+                    let view = ManyLotView.instanceFromNib()
+                    view.lblCount.text = dicResponse["count"] as? String
                     
                     marker.iconView = view
                     
