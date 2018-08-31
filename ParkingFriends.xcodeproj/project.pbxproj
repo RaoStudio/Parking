@@ -91,6 +91,9 @@
 		29CB4FE7210AE8E300BBCE51 /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB4FE6210AE8E200BBCE51 /* CardVC.swift */; };
 		29D6C26220E0BC8B001EF09B /* SideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D6C26120E0BC8B001EF09B /* SideVC.swift */; };
 		29DB19A121390E7300906C20 /* MainManyCountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB19A021390E7300906C20 /* MainManyCountVC.swift */; };
+		29DB19A42139198900906C20 /* ManyLotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB19A32139198900906C20 /* ManyLotView.swift */; };
+		29DB19A6213919CA00906C20 /* ManyLotView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29DB19A5213919CA00906C20 /* ManyLotView.xib */; };
+		29DB19A821391DA900906C20 /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB19A721391DA900906C20 /* MarkerView.swift */; };
 		29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */; };
 		29F4EB2A20F2FEFC009C2AE2 /* LotListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4EB2920F2FEFC009C2AE2 /* LotListVC.swift */; };
 		29F4EB2C20F3301F009C2AE2 /* ParkingLotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4EB2B20F3301F009C2AE2 /* ParkingLotCell.swift */; };
@@ -207,6 +210,9 @@
 		29CB4FE6210AE8E200BBCE51 /* CardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
 		29D6C26120E0BC8B001EF09B /* SideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideVC.swift; sourceTree = "<group>"; };
 		29DB19A021390E7300906C20 /* MainManyCountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManyCountVC.swift; sourceTree = "<group>"; };
+		29DB19A32139198900906C20 /* ManyLotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManyLotView.swift; sourceTree = "<group>"; };
+		29DB19A5213919CA00906C20 /* ManyLotView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManyLotView.xib; sourceTree = "<group>"; };
+		29DB19A721391DA900906C20 /* MarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
 		29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 		29F4EB2920F2FEFC009C2AE2 /* LotListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotListVC.swift; sourceTree = "<group>"; };
 		29F4EB2B20F3301F009C2AE2 /* ParkingLotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotCell.swift; sourceTree = "<group>"; };
@@ -254,6 +260,7 @@
 		29559EF2204CE28E000EB12B /* ParkingFriends */ = {
 			isa = PBXGroup;
 			children = (
+				29DB19A22139179E00906C20 /* Marker */,
 				2993977F20FED25300F1BFB3 /* sktmap */,
 				297A606B20EA0B3700A18B9A /* Cell */,
 				298DF7EE20D2510F00F0B653 /* Header */,
@@ -494,6 +501,16 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		29DB19A22139179E00906C20 /* Marker */ = {
+			isa = PBXGroup;
+			children = (
+				29DB19A721391DA900906C20 /* MarkerView.swift */,
+				29DB19A32139198900906C20 /* ManyLotView.swift */,
+				29DB19A5213919CA00906C20 /* ManyLotView.xib */,
+			);
+			path = Marker;
+			sourceTree = "<group>";
+		};
 		29E8F25A20A95EDA004CE3F2 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +604,7 @@
 				296B7978212E40AF00234063 /* Notice.storyboard in Resources */,
 				2971A3F1209AECC400C1AD84 /* Tutorial.storyboard in Resources */,
 				296B7981212E821400234063 /* Question.storyboard in Resources */,
+				29DB19A6213919CA00906C20 /* ManyLotView.xib in Resources */,
 				29875E5520ABD1000029E4BD /* ParkingLot.storyboard in Resources */,
 				296F966120E1CE15008C58B6 /* InfoDataList.plist in Resources */,
 				2942FB3B20D8C47200FBCAEB /* GoogleService-Info.plist in Resources */,
@@ -741,6 +759,7 @@
 				29C590902112F7790024FC68 /* NicePayVC.swift in Sources */,
 				29A17DCE2106C30D002772A1 /* PaymentVC.swift in Sources */,
 				29A79B3F211A7F63005440F8 /* ReservHistoryCell.swift in Sources */,
+				29DB19A821391DA900906C20 /* MarkerView.swift in Sources */,
 				29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */,
 				29559EFC204CE28E000EB12B /* ParkingFriends.xcdatamodeld in Sources */,
 				29CB4FE7210AE8E300BBCE51 /* CardVC.swift in Sources */,
@@ -765,6 +784,7 @@
 				29B5995C2135371E0026554D /* ImpossibleVC.swift in Sources */,
 				29A17DD121070779002772A1 /* PaymentInfoCell.swift in Sources */,
 				2971A3EF209ADD8200C1AD84 /* Utils.swift in Sources */,
+				29DB19A42139198900906C20 /* ManyLotView.swift in Sources */,
 				29012A8A2105B227005D99FC /* ProfileTextCell.swift in Sources */,
 				29742FF720EC8DD3008C4647 /* SetNoticeCell.swift in Sources */,
 				2999636B20B6546600AC180C /* LotPayVC.swift in Sources */,

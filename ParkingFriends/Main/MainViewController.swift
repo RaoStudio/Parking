@@ -855,7 +855,26 @@ class MainViewController: UIViewController {
                     print("##DicResponse")
                     print(dicResponse)
                     print("##DicResponse")
+   
                     
+                    let marker = GMSMarker(position: coordinate)
+//                    marker.icon = UIImage(named: "Main_Many_Count")
+                    
+                    let view = UINib(nibName: "ManyLotView", bundle: nil).instantiate(withOwner: self, options: nil).first as! ManyLotView
+                    view.lblCount.text = dicResponse["count"] as! String
+                    
+                    marker.iconView = view
+                    
+                    
+                    
+                    marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+                    marker.appearAnimation = GMSMarkerAnimation.pop
+                    marker.isTappable = false
+                    marker.map = self.mapView
+                    
+                    
+                    
+                    /*
                     guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainManyCountVC") as? MainManyCountVC else {
                         return
                     }
@@ -864,6 +883,7 @@ class MainViewController: UIViewController {
                     
                     vc.modalPresentationStyle = .overFullScreen
                     self.present(vc, animated: false, completion: nil)
+ */
                 }
             }
         }
