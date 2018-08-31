@@ -782,12 +782,10 @@ class MainViewController: UIViewController {
             
             if let value = response.result.value {
                 print("RefreshParkingLot JSON = \(value)")
-                
                 if let arrResponse = response.result.value as? Array<Any> {
                     arrResponse.forEach({ place in
                         //                        let marker = PlaceMarker(place: place as! GooglePlace)
                         //                        marker.map = self.mapView
-                        
                         if var dicPlace = place as? Dictionary<String, Any> {
                             
                             let lat: NSString = dicPlace["latitude"] as! NSString
@@ -804,7 +802,6 @@ class MainViewController: UIViewController {
                              let position = CLLocationCoordinate2D(latitude: 37, longitude: 127)
                              let marker = GMSMarker(position: position)
                              */
-                            
                             
                             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat.doubleValue), longitude: CLLocationDegrees(long.doubleValue)))
                             
@@ -854,6 +851,10 @@ class MainViewController: UIViewController {
                     )
                     
                     self.RefreshPartnerParkingLot(coordinate, url: UrlStrings.URL_API_PARKINGLOT_FETCH_RATIO, bTime: true)
+                } else if let dicResponse = response.result.value as? Dictionary <String, Any> {
+                    print("##DicResponse")
+                    print(dicResponse)
+                    print("##DicResponse")                    
                 }
             }
         }
