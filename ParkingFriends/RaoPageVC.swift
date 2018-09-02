@@ -35,6 +35,17 @@ class RaoPageVC: UIPageViewController {
                     pageControl.pageIndicatorTintColor = UIColor.lightGray
                     pageControl.currentPageIndicatorTintColor = UIColor.green
                     pageControl.hidesForSinglePage = true
+                    
+                    
+                    if self.view.frame.size.height > 500 {
+                        pageControl.frame.origin.y = self.view.frame.size.height - self.view.frame.size.height/3
+                        
+                        if #available(iOS 11.0, *) {
+                            if RaoIPhoneX.isIPhoneX {
+                                pageControl.frame.origin.y = pageControl.frame.origin.y - 20
+                            }
+                        }
+                    }
                     self.view.bringSubview(toFront: pageControl)
                 }
             }

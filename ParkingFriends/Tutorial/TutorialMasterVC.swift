@@ -42,10 +42,23 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.currentPageIndicatorTintColor = UIColor.black
         pageControl.backgroundColor = UIColor.white
+        pageControl.frame.origin.y = self.view.frame.size.height - 200
  */
         
         self.view.bringSubview(toFront: btnStart)
     }
+    
+    
+    /*
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        for subView in view.subviews {
+            if  subView is  UIPageControl {
+                subView.frame.origin.y = self.view.frame.size.height - 164
+            }
+        }
+    }
+ */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
