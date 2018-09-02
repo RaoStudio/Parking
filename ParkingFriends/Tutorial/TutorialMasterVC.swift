@@ -10,7 +10,7 @@ import UIKit
 
 class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
 
-    var pageVC: UIPageViewController!
+    var pageVC: RaoPageVC!
     
     var contentTitles = ["STEP 1", "STEP 2","STEP 3","STEP 4"]
     var contentImages = ["Page0", "Page1", "Page2", "Page3"]
@@ -22,7 +22,7 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
 
         // Do any additional setup after loading the view.
         
-        self.pageVC = self.instanceTutorialVC(name: "PageVC") as? UIPageViewController
+        self.pageVC = self.instanceTutorialVC(name: "PageVC") as? RaoPageVC
         self.pageVC?.dataSource = self
         
         let startContentVC = self.getContentVC(atIndex: 0)
@@ -46,6 +46,9 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
  */
         
         self.view.bringSubview(toFront: btnStart)
+        
+        
+        
     }
     
     
@@ -60,6 +63,15 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
     }
  */
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let pageControl = self.pageVC.RaoPageControl {
+            self.btnStart.autoPinEdge(.top, to: .bottom, of: pageControl, withOffset: 20)
+        }
+    }
+ 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

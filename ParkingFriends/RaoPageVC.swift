@@ -10,6 +10,8 @@ import UIKit
 
 class RaoPageVC: UIPageViewController {
 
+    var RaoPageControl: UIPageControl?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +33,9 @@ class RaoPageVC: UIPageViewController {
                     
 //                    pageControl.frame.origin.y = self.view.frame.size.height - 100
 //                    pageControl.frame.origin.y = pageControl.frame.origin.y - pageControl.frame.size.height
+                    
+                    self.RaoPageControl = pageControl
+                    
                     pageControl.backgroundColor = UIColor.clear
                     pageControl.pageIndicatorTintColor = UIColor.lightGray
                     pageControl.currentPageIndicatorTintColor = UIColor.green

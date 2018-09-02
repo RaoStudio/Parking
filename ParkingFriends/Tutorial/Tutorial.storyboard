@@ -33,7 +33,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Dp0-sW-JLk" firstAttribute="centerX" secondItem="GNN-fq-d35" secondAttribute="centerX" id="8n1-C5-dQd"/>
-                            <constraint firstItem="DmY-PM-g36" firstAttribute="bottom" secondItem="Dp0-sW-JLk" secondAttribute="bottom" constant="200" id="uQW-WR-U8p"/>
+                            <constraint firstItem="DmY-PM-g36" firstAttribute="bottom" secondItem="Dp0-sW-JLk" secondAttribute="bottom" priority="250" constant="200" id="uQW-WR-U8p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DmY-PM-g36"/>
                     </view>
