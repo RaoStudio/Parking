@@ -10,6 +10,8 @@
 		29012A8821057BE1005D99FC /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29012A8721057BE1005D99FC /* ProfileVC.swift */; };
 		29012A8A2105B227005D99FC /* ProfileTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29012A892105B227005D99FC /* ProfileTextCell.swift */; };
 		29012A8C2105B2C5005D99FC /* ProfileBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29012A8B2105B2C5005D99FC /* ProfileBtnCell.swift */; };
+		291C90F8213CF34300C35E0D /* PublicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291C90F7213CF34300C35E0D /* PublicView.swift */; };
+		291C90FA213CF37B00C35E0D /* PublicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 291C90F9213CF37B00C35E0D /* PublicView.xib */; };
 		291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */; };
 		2933ECC22122BACD00F03D02 /* ResDetailBillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933ECC12122BACC00F03D02 /* ResDetailBillCell.swift */; };
 		293545F120ECBB3800077B75 /* SetVersionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293545F020ECBB3800077B75 /* SetVersionCell.swift */; };
@@ -106,6 +108,8 @@
 		29012A8721057BE1005D99FC /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		29012A892105B227005D99FC /* ProfileTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextCell.swift; sourceTree = "<group>"; };
 		29012A8B2105B2C5005D99FC /* ProfileBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBtnCell.swift; sourceTree = "<group>"; };
+		291C90F7213CF34300C35E0D /* PublicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicView.swift; sourceTree = "<group>"; };
+		291C90F9213CF37B00C35E0D /* PublicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicView.xib; sourceTree = "<group>"; };
 		291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerVC.swift; sourceTree = "<group>"; };
 		2933ECC12122BACC00F03D02 /* ResDetailBillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResDetailBillCell.swift; sourceTree = "<group>"; };
 		293545F020ECBB3800077B75 /* SetVersionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVersionCell.swift; sourceTree = "<group>"; };
@@ -507,6 +511,8 @@
 				29DB19A721391DA900906C20 /* MarkerView.swift */,
 				29DB19A32139198900906C20 /* ManyLotView.swift */,
 				29DB19A5213919CA00906C20 /* ManyLotView.xib */,
+				291C90F7213CF34300C35E0D /* PublicView.swift */,
+				291C90F9213CF37B00C35E0D /* PublicView.xib */,
 			);
 			path = Marker;
 			sourceTree = "<group>";
@@ -614,6 +620,7 @@
 				2999636720B6451400AC180C /* CustomView.xib in Resources */,
 				2983D63820B535A7003CAB1C /* TestView.xib in Resources */,
 				29559EF9204CE28E000EB12B /* Main.storyboard in Resources */,
+				291C90FA213CF37B00C35E0D /* PublicView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,6 +784,7 @@
 				2971A3F6209AED1300C1AD84 /* TutorialMasterVC.swift in Sources */,
 				29A79B3C211A7AD3005440F8 /* ReservHistoryVC.swift in Sources */,
 				29AA1262207D9FF400F4648C /* UIViewExtension.swift in Sources */,
+				291C90F8213CF34300C35E0D /* PublicView.swift in Sources */,
 				295FF12220688AA2000CBF15 /* MainViewController.swift in Sources */,
 				293545F120ECBB3800077B75 /* SetVersionCell.swift in Sources */,
 				29875E5320ABC81F0029E4BD /* ParkingLotVC.swift in Sources */,
