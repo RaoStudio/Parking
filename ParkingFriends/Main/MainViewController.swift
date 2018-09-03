@@ -912,6 +912,7 @@ class MainViewController: UIViewController {
         print("## Radius : \(radius)##")
         
         strRadius = String(format: "%.0f", radius)
+        print("## strRadius : \(strRadius)##")
         
         
         let param: Parameters
