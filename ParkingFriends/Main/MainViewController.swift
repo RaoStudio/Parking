@@ -706,7 +706,14 @@ class MainViewController: UIViewController {
     
     // MARK: - PF API
     func RefreshParkingLot(_ coordinate: CLLocationCoordinate2D, url: String, bDest: Bool = false, bMarkerRemake: Bool = true, bTime: Bool = false) {
-        let strRadius = String(describing: getIntFromRadius())
+        var strRadius = String(describing: getIntFromRadius())
+        
+        let radius = self.mapView.getRadius()
+        print("## Radius : \(radius)##")
+        
+        strRadius = String(format: "%.0f", radius)
+        print("## strRadius : \(strRadius)##")
+        
 //        let strRadius = "2000"
         let param: Parameters
         var url: String
@@ -897,7 +904,16 @@ class MainViewController: UIViewController {
     }
     
     func RefreshPartnerParkingLot(_ coordinate: CLLocationCoordinate2D, url: String, bDest: Bool = false, bMarkerRemake: Bool = true, bTime: Bool = true) {
-        let strRadius = String(describing: getIntFromRadius())
+//        let strRadius = String(describing: getIntFromRadius())
+        
+        var strRadius = String(describing: getIntFromRadius())
+        
+        let radius = self.mapView.getRadius()
+        print("## Radius : \(radius)##")
+        
+        strRadius = String(format: "%.0f", radius)
+        
+        
         let param: Parameters
         var url: String
         
@@ -1363,3 +1379,28 @@ extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
     }
 }
 // Google Sample
+
+
+extension GMSMapView {
+    func getCenterCoordinate() -> CLLocationCoordinate2D {
+        let centerPoint = self.center
+        let centerCoordinate = self.projection.coordinate(for: centerPoint)
+        return centerCoordinate
+    }
+    
+    func getTopCenterCoordinate() -> CLLocationCoordinate2D {
+        // to get coordinate from CGPoint of your map
+        let topCenterCoor = self.convert(CGPoint(x: self.frame.size.width, y: 0), from: self)
+        let point = self.projection.coordinate(for: topCenterCoor)
+        return point
+    }
+    
+    func getRadius() -> CLLocationDistance {
+        let centerCoordinate = getCenterCoordinate()
+        let centerLocation = CLLocation(latitude: centerCoordinate.latitude, longitude: centerCoordinate.longitude)
+        let topCenterCoordinate = self.getTopCenterCoordinate()
+        let topCenterLocation = CLLocation(latitude: topCenterCoordinate.latitude, longitude: topCenterCoordinate.longitude)
+        let radius = CLLocationDistance(centerLocation.distance(from: topCenterLocation))
+        return round(radius)
+    }
+}
