@@ -19,5 +19,9 @@ class PublicView: UIView {
         // Drawing code
     }
     */
+    
+    class func instanceFromNib() -> PublicView {
+        return UINib(nibName: "PublicView", bundle: nil).instantiate(withOwner: self, options: nil).first as! PublicView
+    }
 
 }

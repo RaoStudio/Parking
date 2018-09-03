@@ -834,7 +834,12 @@ class MainViewController: UIViewController {
                                     }
                                 }
                             } else {
-                                marker.icon = UIImage(named: "public_lot")
+//                                marker.icon = UIImage(named: "public_lot")
+                                let view = PublicView.instanceFromNib()
+                                let strPrice = dicPlace["default_fees"] as! String
+                                view.lblPrice.text = strPrice.decimalPresent as String
+                                
+                                marker.iconView = view
                             }
                             
                             let markerLocation = CLLocation.init(latitude: lat.doubleValue, longitude: long.doubleValue)
