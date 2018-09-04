@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="clT-Bg-7BI" customClass="ResidentView" customModule="ParkingFriends" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="76" height="34"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6I3-rn-WeF">
+                    <rect key="frame" x="0.0" y="0.0" width="76" height="34"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Marker_Resident_Long" translatesAutoresizingMaskIntoConstraints="NO" id="49i-6W-gFy">
+                            <rect key="frame" x="0.0" y="0.0" width="76" height="34"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9b-Id-jSV">
+                            <rect key="frame" x="19" y="5" width="38" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="F9b-Id-jSV" firstAttribute="centerX" secondItem="6I3-rn-WeF" secondAttribute="centerX" id="7Iv-Z0-dNN"/>
+                        <constraint firstAttribute="bottom" secondItem="49i-6W-gFy" secondAttribute="bottom" id="9rn-rY-qvI"/>
+                        <constraint firstItem="49i-6W-gFy" firstAttribute="top" secondItem="6I3-rn-WeF" secondAttribute="top" id="BT3-tW-RPe"/>
+                        <constraint firstItem="49i-6W-gFy" firstAttribute="centerX" secondItem="6I3-rn-WeF" secondAttribute="centerX" id="QSj-1N-YIz"/>
+                        <constraint firstItem="F9b-Id-jSV" firstAttribute="top" secondItem="6I3-rn-WeF" secondAttribute="top" constant="5" id="hfh-7f-mFD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="6I3-rn-WeF" firstAttribute="trailing" secondItem="RAa-N0-RJB" secondAttribute="trailing" priority="750" id="DYM-cN-IEV"/>
+                <constraint firstItem="6I3-rn-WeF" firstAttribute="leading" secondItem="RAa-N0-RJB" secondAttribute="leading" priority="750" id="PFh-6v-Sl8"/>
+                <constraint firstItem="6I3-rn-WeF" firstAttribute="bottom" secondItem="RAa-N0-RJB" secondAttribute="bottom" id="m3j-0d-VR3"/>
+                <constraint firstItem="6I3-rn-WeF" firstAttribute="top" secondItem="RAa-N0-RJB" secondAttribute="top" id="w1v-Lm-1L2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="RAa-N0-RJB"/>
+            <connections>
+                <outlet property="ivMarker" destination="49i-6W-gFy" id="RFC-43-50c"/>
+                <outlet property="lblPrice" destination="F9b-Id-jSV" id="Tx9-dV-snM"/>
+            </connections>
+            <point key="canvasLocation" x="-585" y="-409"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Marker_Resident_Long" width="76" height="34"/>
+    </resources>
+</document>

@@ -13,6 +13,8 @@
 		291C90F8213CF34300C35E0D /* PublicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291C90F7213CF34300C35E0D /* PublicView.swift */; };
 		291C90FA213CF37B00C35E0D /* PublicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 291C90F9213CF37B00C35E0D /* PublicView.xib */; };
 		291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */; };
+		2932DEA6213E58EE00742D97 /* ResidentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2932DEA5213E58EE00742D97 /* ResidentView.swift */; };
+		2932DEA8213E590700742D97 /* ResidentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2932DEA7213E590700742D97 /* ResidentView.xib */; };
 		2933ECC22122BACD00F03D02 /* ResDetailBillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933ECC12122BACC00F03D02 /* ResDetailBillCell.swift */; };
 		293545F120ECBB3800077B75 /* SetVersionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293545F020ECBB3800077B75 /* SetVersionCell.swift */; };
 		293C50BF2107FEE400E53620 /* PaymentCoupSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C50BE2107FEE400E53620 /* PaymentCoupSelectCell.swift */; };
@@ -111,6 +113,8 @@
 		291C90F7213CF34300C35E0D /* PublicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicView.swift; sourceTree = "<group>"; };
 		291C90F9213CF37B00C35E0D /* PublicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicView.xib; sourceTree = "<group>"; };
 		291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerVC.swift; sourceTree = "<group>"; };
+		2932DEA5213E58EE00742D97 /* ResidentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentView.swift; sourceTree = "<group>"; };
+		2932DEA7213E590700742D97 /* ResidentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResidentView.xib; sourceTree = "<group>"; };
 		2933ECC12122BACC00F03D02 /* ResDetailBillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResDetailBillCell.swift; sourceTree = "<group>"; };
 		293545F020ECBB3800077B75 /* SetVersionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVersionCell.swift; sourceTree = "<group>"; };
 		293C50BE2107FEE400E53620 /* PaymentCoupSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCoupSelectCell.swift; sourceTree = "<group>"; };
@@ -513,6 +517,8 @@
 				29DB19A5213919CA00906C20 /* ManyLotView.xib */,
 				291C90F7213CF34300C35E0D /* PublicView.swift */,
 				291C90F9213CF37B00C35E0D /* PublicView.xib */,
+				2932DEA5213E58EE00742D97 /* ResidentView.swift */,
+				2932DEA7213E590700742D97 /* ResidentView.xib */,
 			);
 			path = Marker;
 			sourceTree = "<group>";
@@ -617,6 +623,7 @@
 				29AA1260207D9FF400F4648C /* MarkerInfoView.xib in Resources */,
 				29559F01204CE28E000EB12B /* LaunchScreen.storyboard in Resources */,
 				29559EFE204CE28E000EB12B /* Assets.xcassets in Resources */,
+				2932DEA8213E590700742D97 /* ResidentView.xib in Resources */,
 				2999636720B6451400AC180C /* CustomView.xib in Resources */,
 				2983D63820B535A7003CAB1C /* TestView.xib in Resources */,
 				29559EF9204CE28E000EB12B /* Main.storyboard in Resources */,
@@ -770,6 +777,7 @@
 				29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */,
 				29559EFC204CE28E000EB12B /* ParkingFriends.xcdatamodeld in Sources */,
 				29CB4FE7210AE8E300BBCE51 /* CardVC.swift in Sources */,
+				2932DEA6213E58EE00742D97 /* ResidentView.swift in Sources */,
 				296B797E212E749300234063 /* FaqVC.swift in Sources */,
 				29742FF520EC87F6008C4647 /* SetRadiusCell.swift in Sources */,
 				293C50C32108065800E53620 /* PaymentTotalCountCell.swift in Sources */,
