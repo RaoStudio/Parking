@@ -703,6 +703,49 @@ class MainViewController: UIViewController {
         return UINib(nibName: strNib, bundle: nil).instantiate(withOwner: self, options: nil).first as! UIView
     }
     
+    // MARK: - Calculate
+    func calcPrice(dicPlace : Dictionary<String, Any>) -> String? {
+        
+        if let strMin = dicPlace["default_minute"] as? String, let strFee = dicPlace["default_fees"] as? String
+            , let strAddMin = dicPlace["additional_minute"] as? String, let strAddFee = dicPlace["additional_fees"] as? String
+        {
+            let startDate = uinfo.stringToDate(uinfo.startTime!)
+            let endDate = uinfo.stringToDate(uinfo.endTime!)
+            
+            let nTime = endDate - startDate
+            
+            let nDefaultMin = Int(strMin)!
+            let nDefaultFee = Int(strFee)!
+            
+            let nAddMin = Int(strAddMin)!
+            let nAddFee = Int(strAddFee)!
+            
+            
+            // Calc Total Pay
+            var nTotalPay: Int = nDefaultFee
+            let nTotalMin = Int(nTime) / 60
+            let nRestMin = nTotalMin - nDefaultMin
+            
+            if nAddMin > 0 {
+                let nTimeMultiply = nRestMin / nAddMin
+                let nTimeMultiplyRest = nRestMin % nAddMin
+                nTotalPay = nTotalPay + nAddFee * nTimeMultiply
+                if nTimeMultiplyRest > 0 {
+                    nTotalPay = nTotalPay + nAddFee
+                }
+            }
+            
+            return String(format: "%d", nTotalPay)
+        }
+        
+        return nil
+    }
+    
+    func calcOperationTime() -> Bool {
+        
+        return true
+    }
+    
     
     // MARK: - PF API
     func RefreshParkingLot(_ coordinate: CLLocationCoordinate2D, url: String, bDest: Bool = false, bMarkerRemake: Bool = true, bTime: Bool = false) {
@@ -836,14 +879,13 @@ class MainViewController: UIViewController {
                             } else {
 //                                marker.icon = UIImage(named: "public_lot")
                                 let view = PublicView.instanceFromNib()
-                                let strPrice = dicPlace["default_fees"] as! String
-                                /*
-                                view.lblPrice.text = strPrice.decimalPresent as String
-                                view.ivMarker.image = UIImage(named: "Marker_Public_Short")
-                                view.frame = CGRect(x: 0, y: 0, width: 54, height: 34)
-                                 */
+//                                let strPrice = dicPlace["default_fees"] as! String
                                 
-                                view.setPrice(strPrice: strPrice)
+                                if let strPrice = self.calcPrice(dicPlace: dicPlace) {
+                                    view.setPrice(strPrice: strPrice)
+                                }
+                                
+//                                view.setPrice(strPrice: strPrice)
                                 
                                 marker.iconView = view
                                 
