@@ -27,7 +27,7 @@ class PartnerView: UIView {
         return UINib(nibName: "PartnerView", bundle: nil).instantiate(withOwner: self, options: nil).first as! PartnerView
     }
     
-    func setPrice(strPrice: String) {
+    func setMarkerView(strPrice: String, strAvailable: String) {
         lblPrice.text = strPrice.decimalPresent as String
         
         if let nCount = lblPrice.text?.count {
@@ -46,6 +46,10 @@ class PartnerView: UIView {
                     lblPrice.text = "무료"
                 }
             }
+            
+            
+            
+            
         }
         
         

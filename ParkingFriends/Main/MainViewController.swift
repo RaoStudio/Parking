@@ -848,9 +848,13 @@ class MainViewController: UIViewController {
                                 marker.iconView = view
                                 
                                 let nowDate = Date()
-                                let calendar = Calendar(identifier:  .gregorian)
-                                let date = calendar.date(from: DateComponents(year: 2016, month:  10, day: 11))
+//                                let calendar = Calendar(identifier:  .gregorian)
+                                let calendar = Calendar.current
+//                                let date = calendar.date(from: DateComponents(year: 2016, month:  10, day: 11))
+                                let date = calendar.date(from: calendar.dateComponents(in: TimeZone.current, from: nowDate))
                                 // -> Oct 11, 2016, 12:00 AM
+                                
+                                
                                 print(date!)
                             }
                             
