@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Fbj-tP-3Dm" customClass="PartnerView" customModule="ParkingFriends" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="76" height="34"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uag-bk-J9f">
+                    <rect key="frame" x="0.0" y="0.0" width="76" height="34"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Marker_Partner_Long" translatesAutoresizingMaskIntoConstraints="NO" id="FDS-hR-fcX">
+                            <rect key="frame" x="0.0" y="0.0" width="76" height="34"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvI-8X-iNj">
+                            <rect key="frame" x="19" y="5" width="38" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="FDS-hR-fcX" firstAttribute="centerX" secondItem="uag-bk-J9f" secondAttribute="centerX" id="47T-eL-bbC"/>
+                        <constraint firstItem="FDS-hR-fcX" firstAttribute="top" secondItem="uag-bk-J9f" secondAttribute="top" id="I3W-9i-OaV"/>
+                        <constraint firstItem="RvI-8X-iNj" firstAttribute="top" secondItem="uag-bk-J9f" secondAttribute="top" constant="5" id="Ko6-Or-cLa"/>
+                        <constraint firstAttribute="bottom" secondItem="FDS-hR-fcX" secondAttribute="bottom" id="RVV-cn-adk"/>
+                        <constraint firstItem="RvI-8X-iNj" firstAttribute="centerX" secondItem="uag-bk-J9f" secondAttribute="centerX" id="hi7-KE-h9s"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="uag-bk-J9f" firstAttribute="trailing" secondItem="hhj-ty-0WU" secondAttribute="trailing" priority="750" id="Oru-Ls-ys2"/>
+                <constraint firstItem="uag-bk-J9f" firstAttribute="bottom" secondItem="hhj-ty-0WU" secondAttribute="bottom" id="Ug0-b1-iIz"/>
+                <constraint firstItem="uag-bk-J9f" firstAttribute="leading" secondItem="hhj-ty-0WU" secondAttribute="leading" priority="750" id="ha2-gI-upA"/>
+                <constraint firstItem="uag-bk-J9f" firstAttribute="top" secondItem="hhj-ty-0WU" secondAttribute="top" id="hvK-Sh-z54"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="hhj-ty-0WU"/>
+            <connections>
+                <outlet property="ivMarker" destination="FDS-hR-fcX" id="tPC-r1-tbL"/>
+                <outlet property="lblPrice" destination="RvI-8X-iNj" id="Y3y-vQ-zIX"/>
+            </connections>
+            <point key="canvasLocation" x="-585" y="-409"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Marker_Partner_Long" width="76" height="34"/>
+    </resources>
+</document>
