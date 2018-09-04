@@ -31,13 +31,13 @@ class PublicView: UIView {
             if nCount >= 6
             {
                 ivMarker.image = UIImage(named: "Marker_Public_Long")
-                self.frame = CGRect(x: 0, y: 0, width: MarkerWidth.long.rawValue, height: 34)
+                self.frame = CGRect(x: 0, y: 0, width: MarkerSize.long.rawValue, height: MarkerSize.height.rawValue)
             } else if nCount >= 5 {
                 ivMarker.image = UIImage(named: "Marker_Public_Normal")
-                self.frame = CGRect(x: 0, y: 0, width: MarkerWidth.normal.rawValue, height: 34)
+                self.frame = CGRect(x: 0, y: 0, width: MarkerSize.normal.rawValue, height: MarkerSize.height.rawValue)
             } else {
                 ivMarker.image = UIImage(named: "Marker_Public_Short")
-                self.frame = CGRect(x: 0, y: 0, width: MarkerWidth.short.rawValue, height: 34)
+                self.frame = CGRect(x: 0, y: 0, width: MarkerSize.short.rawValue, height: MarkerSize.height.rawValue)
                 
                 if strPrice == "0" {
                     lblPrice.text = "무료"

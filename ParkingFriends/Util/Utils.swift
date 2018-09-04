@@ -110,10 +110,11 @@ enum SeoulType: String {
 }
 
 
-enum MarkerWidth: Int {
+enum MarkerSize: Int {
     case short = 54
     case normal = 69
     case long = 76
+    case height = 34
 }
 
 
