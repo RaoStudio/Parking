@@ -97,7 +97,16 @@ class LotListVC: UITableViewController {
                 */
                 
                 if let img: String = dic["img1"] as? String, false == img.isEmpty {
-                    let strImg: String = UrlStrings.URL_API_PARKINGLOT_IMG + img
+//                    let strImg: String = UrlStrings.URL_API_PARKINGLOT_IMG + img
+                    
+                    var strImg: String
+                    
+                    if false == img.contains(UrlStrings.URL_API_PARKINGLOT_IMG) {
+                        strImg = UrlStrings.URL_API_PARKINGLOT_IMG + img
+                    } else {
+                        strImg = img
+                    }
+                    
                     
                     pCell.ivThumb.sd_setImage(with: URL(string: strImg), placeholderImage: UIImage(named: "List_NoImage"))
                 }

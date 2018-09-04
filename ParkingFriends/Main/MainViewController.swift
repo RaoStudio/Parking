@@ -846,6 +846,12 @@ class MainViewController: UIViewController {
                                 view.setPrice(strPrice: strPrice)
                                 
                                 marker.iconView = view
+                                
+                                let nowDate = Date()
+                                let calendar = Calendar(identifier:  .gregorian)
+                                let date = calendar.date(from: DateComponents(year: 2016, month:  10, day: 11))
+                                // -> Oct 11, 2016, 12:00 AM
+                                print(date!)
                             }
                             
                             let markerLocation = CLLocation.init(latitude: lat.doubleValue, longitude: long.doubleValue)

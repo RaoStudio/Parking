@@ -288,7 +288,15 @@ class ReservHistoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
             
             if let dic = arrMake[indexPath.section][indexPath.row] as? Dictionary<String, Any> {
                 if let img: String = dic["img"] as? String {
-                    let strImg: String = UrlStrings.URL_API_PARKINGLOT_IMG + img
+//                    let strImg: String = UrlStrings.URL_API_PARKINGLOT_IMG + img
+                    
+                    var strImg: String
+                    
+                    if false == img.contains(UrlStrings.URL_API_PARKINGLOT_IMG) {
+                        strImg = UrlStrings.URL_API_PARKINGLOT_IMG + img
+                    } else {
+                        strImg = img
+                    }
                     
                     resCell.ivLot.sd_setImage(with: URL(string: strImg), placeholderImage: UIImage(named: "List_NoImage"))
 //                    let img = resCell.ivLot.image

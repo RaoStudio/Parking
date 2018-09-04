@@ -127,7 +127,18 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             {
                 let str = "img"+String(i)
                 if let img: String = dataPlace[str] as? String, false == img.isEmpty {
-                    contentImages.append(UrlStrings.URL_API_PARKINGLOT_IMG + (img as String))
+                    
+                    var strImg: String
+                    
+                    if false == img.contains(UrlStrings.URL_API_PARKINGLOT_IMG) {
+                        strImg = UrlStrings.URL_API_PARKINGLOT_IMG + img
+                    } else {
+                        strImg = img
+                    }
+                    
+                    contentImages.append(strImg)
+                    
+//                    contentImages.append(UrlStrings.URL_API_PARKINGLOT_IMG + (img as String))
                 }
             }
             
