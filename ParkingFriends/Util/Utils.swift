@@ -110,6 +110,13 @@ enum SeoulType: String {
 }
 
 
+enum MarkerWidth: Int {
+    case short = 54
+    case normal = 69
+    case long = 76
+}
+
+
 struct Platform {
     static let isSimulator: Bool = {
         var isSim = false

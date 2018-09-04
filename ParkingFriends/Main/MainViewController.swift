@@ -283,7 +283,7 @@ class MainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //*
+        /*
         let ud = UserDefaults.standard
         if ud.bool(forKey: UserInfoKey.tutorial) == false && bStart {
             let vc = self.instanceTutorialVC(name: "MasterVC")
@@ -291,7 +291,7 @@ class MainViewController: UIViewController {
             self.present(vc!, animated: false, completion: nil)
             bStart = false
         }
-        //*/
+        */
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -837,7 +837,13 @@ class MainViewController: UIViewController {
 //                                marker.icon = UIImage(named: "public_lot")
                                 let view = PublicView.instanceFromNib()
                                 let strPrice = dicPlace["default_fees"] as! String
+                                /*
                                 view.lblPrice.text = strPrice.decimalPresent as String
+                                view.ivMarker.image = UIImage(named: "Marker_Public_Short")
+                                view.frame = CGRect(x: 0, y: 0, width: 54, height: 34)
+                                 */
+                                
+                                view.setPrice(strPrice: strPrice)
                                 
                                 marker.iconView = view
                             }
