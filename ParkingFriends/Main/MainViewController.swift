@@ -741,7 +741,22 @@ class MainViewController: UIViewController {
         return nil
     }
     
-    func calcOperationTime() -> Bool {
+    func calcOperationTime(dicPlace: Dictionary<String, Any>) -> Bool {
+        var strWeek: String = ""
+        let today = uinfo.stringToDate(uinfo.startTime!)
+        
+        print("##Today is \(today.weekdayName)")
+        
+        if today.isInWeekend {
+            strWeek = "operationtime_holiday"
+        } else {
+            strWeek = "operationtime_week"
+        }
+        
+        
+        if let strOperationTime = dicPlace[strWeek] as? String {
+            print("##Operation Time is \(strOperationTime)")
+        }
         
         return true
     }
@@ -1098,6 +1113,8 @@ class MainViewController: UIViewController {
                                     
                                     marker.iconView = view
                                 }
+                                
+                                self.calcOperationTime(dicPlace: dicPlace)
                                 
                                 
                             } else {
