@@ -790,6 +790,7 @@ class MainViewController: UIViewController {
             let calendar = Calendar.current
             let date = calendar.date(from: calendar.dateComponents(in: TimeZone.current, from: startDate))
             print(date)
+            print("##OriginalDate is \(uinfo.dateToString(date!))\n")
             
             
             var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: date!)
@@ -804,15 +805,19 @@ class MainViewController: UIViewController {
             components.minute = fOpEndMin
             components.second = 0
             
-            let opEndDate = calendar.date(from: components)
+            var opEndDate = calendar.date(from: components)
             
+            
+            if (fOpStartHour > fOpEndHour) {
+                opEndDate = opEndDate! + 24.hour
+            }
             
 //            let transDate = calendar.date(bySetting: .hour, value: fOpStartHour, of: date!)
             
             print(opStartDate)
-            print("##transDate is \(uinfo.dateToString(opStartDate!))")
+            print("##trans opStartDate is \(uinfo.dateToString(opStartDate!))\n")
             print(opEndDate)
-            print("##transDate is \(uinfo.dateToString(opEndDate!))")
+            print("##trans opEndDate is \(uinfo.dateToString(opEndDate!))\n")
             
         }
         
