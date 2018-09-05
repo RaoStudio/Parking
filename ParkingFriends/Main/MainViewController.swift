@@ -741,24 +741,71 @@ class MainViewController: UIViewController {
         return nil
     }
     
-    func calcOperationTime(dicPlace: Dictionary<String, Any>) -> Bool {
+    func isBetweenOperationTime(dicPlace: Dictionary<String, Any>) -> Bool {
         var strWeek: String = ""
-        let today = uinfo.stringToDate(uinfo.startTime!)
+        let startDate = uinfo.stringToDate(uinfo.startTime!)
         
-        print("##Today is \(today.weekdayName)")
+        print("##Today is \(startDate.weekdayName)  \(startDate)")
+        print("##Start is \(uinfo.dateToString(startDate))")
         
-        if today.isInWeekend {
+        if startDate.isInWeekend {
             strWeek = "operationtime_holiday"
         } else {
             strWeek = "operationtime_week"
         }
         
-        
+        /*
         if let strOperationTime = dicPlace[strWeek] as? String {
             print("##Operation Time is \(strOperationTime)")
+        } else {
+            return false
+        }
+        */
+        
+        guard let strOperation = dicPlace[strWeek] as? String else {
+            return false
         }
         
-        return true
+        let arrStr = strOperation.split(separator: "~").map { (strTime) -> String in
+            return String(strTime)
+        }
+        
+        print(arrStr)
+        
+        if let strStart = arrStr.first, let strEnd = arrStr.last {
+            print(strStart)
+            print(strEnd)
+            
+            
+            let fOpStartHour = Int(strStart[0..<2])!
+            let fOpStartMin = Int(strStart[2..<strStart.count])!
+            
+            var fOpEndHour = Float(strEnd[0..<2])!
+            let fOpEndMin = Float(strEnd[2..<strEnd.count])!
+            
+            if fOpEndHour == 00 {
+                fOpEndHour = 24
+            }
+            
+            let calendar = Calendar.current
+            let date = calendar.date(from: calendar.dateComponents(in: TimeZone.current, from: startDate))
+            print(date)
+            
+            
+            var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: date!)
+            components.hour = fOpStartHour
+            components.minute = fOpStartMin
+            components.second = 0
+            let opStartDate = calendar.date(from: components)
+            
+            
+//            let transDate = calendar.date(bySetting: .hour, value: fOpStartHour, of: date!)
+            
+            print(opStartDate)
+            print("##transDate is \(uinfo.dateToString(opStartDate!))")
+        }
+        
+        return false
     }
     
     
@@ -1114,7 +1161,7 @@ class MainViewController: UIViewController {
                                     marker.iconView = view
                                 }
                                 
-                                self.calcOperationTime(dicPlace: dicPlace)
+                                self.isBetweenOperationTime(dicPlace: dicPlace)
                                 
                                 
                             } else {
