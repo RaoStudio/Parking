@@ -414,6 +414,13 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             viewOpGreen.backgroundColor = hexStringToUIColor(hex: "#22d158")
             self.viewTimeGraph.addSubview(viewOpGreen)
             
+            
+            if wGreen < 0 {
+                let view = UIView()
+//                view.backgroundColor = self.viewTimeGraph.backgroundColor
+                viewOpGreen.backgroundColor = hexStringToUIColor(hex: "#aaaaaa")
+                self.viewTimeGraph.backgroundColor = hexStringToUIColor(hex: "#22d158")
+            }
         }
         
         
