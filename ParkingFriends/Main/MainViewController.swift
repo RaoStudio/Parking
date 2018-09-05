@@ -780,8 +780,8 @@ class MainViewController: UIViewController {
             let fOpStartHour = Int(strStart[0..<2])!
             let fOpStartMin = Int(strStart[2..<strStart.count])!
             
-            var fOpEndHour = Float(strEnd[0..<2])!
-            let fOpEndMin = Float(strEnd[2..<strEnd.count])!
+            var fOpEndHour = Int(strEnd[0..<2])!
+            let fOpEndMin = Int(strEnd[2..<strEnd.count])!
             
             if fOpEndHour == 00 {
                 fOpEndHour = 24
@@ -796,13 +796,24 @@ class MainViewController: UIViewController {
             components.hour = fOpStartHour
             components.minute = fOpStartMin
             components.second = 0
+            
             let opStartDate = calendar.date(from: components)
+            
+            
+            components.hour = fOpEndHour
+            components.minute = fOpEndMin
+            components.second = 0
+            
+            let opEndDate = calendar.date(from: components)
             
             
 //            let transDate = calendar.date(bySetting: .hour, value: fOpStartHour, of: date!)
             
             print(opStartDate)
             print("##transDate is \(uinfo.dateToString(opStartDate!))")
+            print(opEndDate)
+            print("##transDate is \(uinfo.dateToString(opEndDate!))")
+            
         }
         
         return false
