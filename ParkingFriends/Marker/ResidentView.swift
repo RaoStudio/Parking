@@ -25,7 +25,7 @@ class ResidentView: UIView {
         return UINib(nibName: "ResidentView", bundle: nil).instantiate(withOwner: self, options: nil).first as! ResidentView
     }
     
-    func setPrice(strPrice: String) {
+    func setMarkerView(strPrice: String, strAvailable: String) {
         lblPrice.text = strPrice.decimalPresent as String
         
         if let nCount = lblPrice.text?.count {

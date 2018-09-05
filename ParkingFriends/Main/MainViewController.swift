@@ -1058,22 +1058,16 @@ class MainViewController: UIViewController {
                             let partner : NSString = dicPlace["partner"] as! NSString
                             let cctv: NSString = dicPlace["cctv"] as! NSString
                             let available: NSString = dicPlace["available"] as! NSString
-                            
+                            let type: NSString = dicPlace["parkinglot_type"] as! NSString
                             
                             let nPartner: Int = Int(partner.intValue)
                             let nCCTV: Int = Int(cctv.intValue)
-                            
-                            /*
-                             let position = CLLocationCoordinate2D(latitude: 37, longitude: 127)
-                             let marker = GMSMarker(position: position)
-                             */
                             
                             
                             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: CLLocationDegrees(lat.doubleValue), longitude: CLLocationDegrees(long.doubleValue)))
                             
                             if nPartner == 1 {
-                                //                            if partner.isEqual(to: "1") {
-                                //                                if cctv.isEqual(to: "1") {
+                                /*
                                 if nCCTV > 0 {
                                     if available.isEqual(to: "0") {
                                         marker.icon = UIImage(named: "partner_lot_cctv_full")
@@ -1087,6 +1081,25 @@ class MainViewController: UIViewController {
                                         marker.icon = UIImage(named: "partner_lot")
                                     }
                                 }
+                                */
+                                
+                                if type.isEqual(to: "16") {
+                                    let view = ResidentView.instanceFromNib()
+                                    if let strPrice = self.calcPrice(dicPlace: dicPlace) {
+                                        view.setMarkerView(strPrice: strPrice, strAvailable: available as String)
+                                    }
+                                    
+                                    marker.iconView = view
+                                } else {
+                                    let view = PartnerView.instanceFromNib()
+                                    if let strPrice = self.calcPrice(dicPlace: dicPlace) {
+                                        view.setMarkerView(strPrice: strPrice, strAvailable: available as String)
+                                    }
+                                    
+                                    marker.iconView = view
+                                }
+                                
+                                
                             } else {
                                 marker.icon = UIImage(named: "public_lot")
                             }

@@ -46,12 +46,6 @@ class PartnerView: UIView {
                     lblPrice.text = "무료"
                 }
             }
-            
-            
-            
-            
         }
-        
-        
     }
 }
