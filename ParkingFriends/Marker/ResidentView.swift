@@ -44,9 +44,18 @@ class ResidentView: UIView {
                     lblPrice.text = "무료"
                 }
             }
+            
+            if strAvailable == "0" {
+                lblPrice.textColor = hexStringToUIColor(hex: "#888888")
+                if nCount >= 6 {
+                    ivMarker.image = UIImage(named: "Marker_Disable_Long")
+                } else if nCount >= 5 {
+                    ivMarker.image = UIImage(named: "Marker_Disable_Normal")
+                } else {
+                    ivMarker.image = UIImage(named: "Marker_Disable_Short")
+                }
+            }
         }
-        
-        
     }
     
 }
