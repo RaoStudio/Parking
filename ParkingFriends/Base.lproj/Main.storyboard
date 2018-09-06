@@ -912,10 +912,10 @@
                                         </constraints>
                                     </scrollView>
                                     <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azg-0U-0lc">
-                                        <rect key="frame" x="0.0" y="35" width="375" height="20"/>
+                                        <rect key="frame" x="0.0" y="35" width="375" height="18"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약가능한 시간이 아닙니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkN-Ce-t1P">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -923,7 +923,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="5xI-Dc-NUN"/>
+                                            <constraint firstAttribute="height" constant="18" id="5xI-Dc-NUN"/>
                                             <constraint firstItem="HkN-Ce-t1P" firstAttribute="leading" secondItem="Azg-0U-0lc" secondAttribute="leading" id="IY1-S5-33d"/>
                                             <constraint firstItem="HkN-Ce-t1P" firstAttribute="top" secondItem="Azg-0U-0lc" secondAttribute="top" id="oZQ-Ix-mN4"/>
                                             <constraint firstAttribute="bottom" secondItem="HkN-Ce-t1P" secondAttribute="bottom" id="oef-va-7Lo"/>

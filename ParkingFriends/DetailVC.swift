@@ -795,6 +795,15 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         let uSession = UserSession()                
         
         if uSession.isLogin == true {
+            
+            let bOpTimeViewHidden = self.opTimeView.isHidden
+            
+            if bOpTimeViewHidden == false {
+                self.alert("예약가능한 시간이 아닙니다.")
+                return
+            }
+            
+            
             guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ResCheckVC") as? ResCheckVC else {
                 return
             }
