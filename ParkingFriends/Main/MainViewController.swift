@@ -821,16 +821,22 @@ class MainViewController: UIViewController {
             print(opEndDate)
             print("##trans opEndDate is \(uinfo.dateToString(opEndDate!))\n")
             
+            let opAvailStartDate = opStartDate! - 1.seconds
+            print("##Avail StartDate is \(opAvailStartDate)")
+            print("##Avail StartDate is \(uinfo.dateToString(opAvailStartDate))\n")
+            
             let opAvailEndDate = opEndDate! + 1.seconds
             print("##Avail EndDate is \(opAvailEndDate)")
             print("##Avail EndDate is \(uinfo.dateToString(opAvailEndDate))\n")
             
-            var bEnable = startDate.isBetween(date: opStartDate!, and: opAvailEndDate)
-            bEnable = endDate.isBetween(date: opStartDate!, and: opAvailEndDate)
+            let bStartEnable = startDate.isBetween(date: opAvailStartDate, and: opAvailEndDate)
+            let bEndEnable = endDate.isBetween(date: opAvailStartDate, and: opAvailEndDate)
             
-            print("##Enable is \(bEnable)\n")
+            print("##StartEnable is \(bStartEnable)")
+            print("##EndEnable is \(bEndEnable)\n")
+            print("##Result is \(bStartEnable && bEndEnable)\n")
             
-            return bEnable
+            return bStartEnable && bEndEnable
             
         }
         
