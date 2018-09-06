@@ -747,7 +747,8 @@ class MainViewController: UIViewController {
         let endDate = uinfo.stringToDate(uinfo.endTime!)
         
         print("##Today is \(endDate.weekdayName)  \(endDate)")
-        print("##Start is \(uinfo.dateToString(endDate))")
+        print("##Start is \(uinfo.dateToString(startDate))")
+        print("##End is \(uinfo.dateToString(endDate))")
         
         if endDate.isInWeekend {
             strWeek = "operationtime_holiday"
@@ -797,14 +798,14 @@ class MainViewController: UIViewController {
             var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: date!)
             components.hour = fOpStartHour
             components.minute = fOpStartMin
-            components.second = 0
+//            components.second = 0
             
             let opStartDate = calendar.date(from: components)
             
             
             components.hour = fOpEndHour
             components.minute = fOpEndMin
-            components.second = 0
+//            components.second = 0
             
             var opEndDate = calendar.date(from: components)
             
@@ -820,11 +821,9 @@ class MainViewController: UIViewController {
             print(opEndDate)
             print("##trans opEndDate is \(uinfo.dateToString(opEndDate!))\n")
             
-            
-            let opAvailEndDate = opEndDate! - 2.hours
+            let opAvailEndDate = opEndDate! + 1.seconds
             print("##Avail EndDate is \(opAvailEndDate)")
             print("##Avail EndDate is \(uinfo.dateToString(opAvailEndDate))\n")
-            
             
             var bEnable = startDate.isBetween(date: opStartDate!, and: opAvailEndDate)
             bEnable = endDate.isBetween(date: opStartDate!, and: opAvailEndDate)
