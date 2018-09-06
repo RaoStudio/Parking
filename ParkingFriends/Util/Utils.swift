@@ -216,6 +216,11 @@ extension UIImage {
     }
 }
 
+
+extension Int {
+    var boolValue: Bool { return self != 0 }
+}
+
 extension String {
     var numberValue:NSNumber? {
         let formatter = NumberFormatter()

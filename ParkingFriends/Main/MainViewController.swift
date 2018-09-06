@@ -1192,17 +1192,19 @@ class MainViewController: UIViewController {
                                 
                                 
                                 
+                                
+                                
                                 if type.isEqual(to: "16") {
                                     let view = ResidentView.instanceFromNib()
                                     if let strPrice = self.calcPrice(dicPlace: dicPlace) {
-                                        view.setMarkerView(strPrice: strPrice, nAvailable: nAvailability)
+                                        view.setMarkerView(strPrice: strPrice, bAvailable: nAvailability.boolValue && bAvail)
                                     }
                                     
                                     marker.iconView = view
                                 } else {
                                     let view = PartnerView.instanceFromNib()
                                     if let strPrice = self.calcPrice(dicPlace: dicPlace) {
-                                        view.setMarkerView(strPrice: strPrice, nAvailable: nAvailability)
+                                        view.setMarkerView(strPrice: strPrice, bAvailable: nAvailability.boolValue && bAvail)
                                     }
                                     
                                     marker.iconView = view

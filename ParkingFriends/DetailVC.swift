@@ -102,6 +102,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet weak var lblToday: UILabel!
     @IBOutlet weak var lblTomorrow: UILabel!
     
+    
+    @IBOutlet weak var distanceStackView: UIStackView!
+    @IBOutlet weak var opTimeView: UIView!
+    
     var strSid: String = ""
     var strPay: String = ""
     
@@ -421,6 +425,19 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 viewOpGreen.backgroundColor = hexStringToUIColor(hex: "#aaaaaa")
                 self.viewTimeGraph.backgroundColor = hexStringToUIColor(hex: "#22d158")
             }
+            
+            if let bAvail = dataPlace["bAvailOpTime"] as? Bool {
+                if bAvail == false {
+                    self.opTimeView.isHidden = false
+                    self.view.bringSubview(toFront: self.opTimeView)
+                } else {
+                    self.opTimeView.isHidden = true
+                }
+            } else {
+                self.opTimeView.isHidden = true
+            }
+            
+            
         }
         
         
@@ -529,6 +546,24 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             if nPartner == 1 {
                 requestReservationImpossible(parkinglot_sid: strSid, start_time: uinfo.startTime!)
             }
+            
+            
+            /*
+            if let bAvail = dataPlace["bAvailOpTime"] as? Bool {
+                if bAvail == false {
+                    let lblAvail = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 10))
+                    lblAvail.backgroundColor = UIColor.red
+                    lblAvail.text = "예약 가능한 시간이 아닙니다."
+             
+                    self.view.addSubview(lblAvail)
+             
+                    lblAvail.autoPinEdge(.top, to: .bottom, of: distanceStackView)
+                }
+            }
+            */
+            
+            
+            
         }
         
     }

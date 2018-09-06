@@ -27,7 +27,7 @@ class ResidentView: UIView {
         return UINib(nibName: "ResidentView", bundle: nil).instantiate(withOwner: self, options: nil).first as! ResidentView
     }
     
-    func setMarkerView(strPrice: String, nAvailable: Int) {
+    func setMarkerView(strPrice: String, bAvailable: Bool) {
         lblPrice.text = strPrice.decimalPresent as String
         
         if let nCount = lblPrice.text?.count {
@@ -50,7 +50,7 @@ class ResidentView: UIView {
                 }
             }
             
-            if nAvailable == 0 {
+            if bAvailable == false {
                 lblPrice.textColor = hexStringToUIColor(hex: "#888888")
                 if nCount >= 6 {
                     ivMarker.image = UIImage(named: "Marker_Disable_Long")

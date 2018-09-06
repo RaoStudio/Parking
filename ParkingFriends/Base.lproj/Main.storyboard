@@ -911,6 +911,25 @@
                                             <constraint firstAttribute="trailing" secondItem="lH3-WP-2db" secondAttribute="trailing" id="uvb-2M-kn2"/>
                                         </constraints>
                                     </scrollView>
+                                    <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azg-0U-0lc">
+                                        <rect key="frame" x="0.0" y="35" width="375" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약가능한 시간이 아닙니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkN-Ce-t1P">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="5xI-Dc-NUN"/>
+                                            <constraint firstItem="HkN-Ce-t1P" firstAttribute="leading" secondItem="Azg-0U-0lc" secondAttribute="leading" id="IY1-S5-33d"/>
+                                            <constraint firstItem="HkN-Ce-t1P" firstAttribute="top" secondItem="Azg-0U-0lc" secondAttribute="top" id="oZQ-Ix-mN4"/>
+                                            <constraint firstAttribute="bottom" secondItem="HkN-Ce-t1P" secondAttribute="bottom" id="oef-va-7Lo"/>
+                                            <constraint firstAttribute="trailing" secondItem="HkN-Ce-t1P" secondAttribute="trailing" id="zID-6T-0La"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQ0-5O-2ia">
                                         <rect key="frame" x="0.0" y="455" width="375" height="83"/>
                                         <subviews>
@@ -969,6 +988,8 @@
                                 <constraints>
                                     <constraint firstItem="QCj-GD-uUd" firstAttribute="leading" secondItem="zbL-W2-Eai" secondAttribute="leading" id="2lS-o3-F7B"/>
                                     <constraint firstAttribute="trailing" secondItem="QCj-GD-uUd" secondAttribute="trailing" id="3ud-JJ-jAa"/>
+                                    <constraint firstAttribute="trailing" secondItem="Azg-0U-0lc" secondAttribute="trailing" id="IGL-aV-deZ"/>
+                                    <constraint firstItem="Azg-0U-0lc" firstAttribute="leading" secondItem="zbL-W2-Eai" secondAttribute="leading" id="Kdt-o6-uUL"/>
                                     <constraint firstItem="kQ0-5O-2ia" firstAttribute="top" secondItem="QCj-GD-uUd" secondAttribute="bottom" id="Q1Y-Kf-Qvy"/>
                                     <constraint firstItem="kQ0-5O-2ia" firstAttribute="leading" secondItem="zbL-W2-Eai" secondAttribute="leading" id="SCl-sZ-2pI"/>
                                     <constraint firstAttribute="trailing" secondItem="kQ0-5O-2ia" secondAttribute="trailing" id="T0M-Tb-EQe"/>
@@ -976,6 +997,7 @@
                                     <constraint firstAttribute="bottom" secondItem="kQ0-5O-2ia" secondAttribute="bottom" id="VXG-J3-hhQ"/>
                                     <constraint firstItem="4Vm-SJ-O8J" firstAttribute="leading" secondItem="zbL-W2-Eai" secondAttribute="leading" id="gp1-i1-WCJ"/>
                                     <constraint firstAttribute="trailing" secondItem="4Vm-SJ-O8J" secondAttribute="trailing" id="jR7-W5-UXG"/>
+                                    <constraint firstItem="Azg-0U-0lc" firstAttribute="top" secondItem="4Vm-SJ-O8J" secondAttribute="bottom" id="khm-Vs-ZXp"/>
                                     <constraint firstItem="QCj-GD-uUd" firstAttribute="top" secondItem="4Vm-SJ-O8J" secondAttribute="bottom" id="sNC-m4-Is2"/>
                                     <constraint firstItem="lH3-WP-2db" firstAttribute="width" secondItem="4Vm-SJ-O8J" secondAttribute="width" id="siD-KN-6iY"/>
                                 </constraints>
@@ -1013,6 +1035,7 @@
                         <outlet property="conHeightGraphView" destination="OXv-s0-c1M" id="BsC-lC-Q0w"/>
                         <outlet property="conHeightPayInfoView" destination="Zl9-6U-P8N" id="92x-yr-0h6"/>
                         <outlet property="conHeightPublicPayInfoView" destination="Dgr-yJ-jvm" id="HDu-1l-HMg"/>
+                        <outlet property="distanceStackView" destination="4Vm-SJ-O8J" id="s8h-vJ-pVS"/>
                         <outlet property="graphView" destination="QGU-Lx-znv" id="Xc8-ND-gCm"/>
                         <outlet property="lblAddress" destination="2wW-kZ-qHV" id="bk5-dj-LuF"/>
                         <outlet property="lblAvailable" destination="kqa-uK-BR6" id="5eN-rz-fns"/>
@@ -1023,6 +1046,7 @@
                         <outlet property="lbl_TotalPay" destination="Sh7-Zj-muv" id="U67-m3-Oze"/>
                         <outlet property="lbl_TotalTime" destination="Mr1-2K-pcd" id="ndu-r3-Xi8"/>
                         <outlet property="lbl_additinal" destination="miV-vv-JSp" id="7Ci-m9-tlU"/>
+                        <outlet property="opTimeView" destination="Azg-0U-0lc" id="aAJ-lp-WyO"/>
                         <outlet property="payInfoView" destination="ges-tU-4yL" id="N63-Bh-oSB"/>
                         <outlet property="publicPayInfoView" destination="hjc-Bg-dux" id="Xe5-e0-JIv"/>
                         <outlet property="scrollView" destination="QCj-GD-uUd" id="69A-p4-yp9"/>
@@ -1038,7 +1062,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhu-ej-MYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6890" y="894"/>
+            <point key="canvasLocation" x="6888.8000000000002" y="893.70314842578716"/>
         </scene>
         <!--회원가입-->
         <scene sceneID="Zjs-Rm-gzW">
