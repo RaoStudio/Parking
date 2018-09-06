@@ -744,11 +744,12 @@ class MainViewController: UIViewController {
     func isBetweenOperationTime(dicPlace: Dictionary<String, Any>) -> Bool {
         var strWeek: String = ""
         let startDate = uinfo.stringToDate(uinfo.startTime!)
+        let endDate = uinfo.stringToDate(uinfo.endTime!)
         
-        print("##Today is \(startDate.weekdayName)  \(startDate)")
-        print("##Start is \(uinfo.dateToString(startDate))")
+        print("##Today is \(endDate.weekdayName)  \(endDate)")
+        print("##Start is \(uinfo.dateToString(endDate))")
         
-        if startDate.isInWeekend {
+        if endDate.isInWeekend {
             strWeek = "operationtime_holiday"
         } else {
             strWeek = "operationtime_week"
@@ -788,7 +789,7 @@ class MainViewController: UIViewController {
             }
             
             let calendar = Calendar.current
-            let date = calendar.date(from: calendar.dateComponents(in: TimeZone.current, from: startDate))
+            let date = calendar.date(from: calendar.dateComponents(in: TimeZone.current, from: endDate))
             print(date)
             print("##OriginalDate is \(uinfo.dateToString(date!))\n")
             
@@ -818,6 +819,19 @@ class MainViewController: UIViewController {
             print("##trans opStartDate is \(uinfo.dateToString(opStartDate!))\n")
             print(opEndDate)
             print("##trans opEndDate is \(uinfo.dateToString(opEndDate!))\n")
+            
+            
+            let opAvailEndDate = opEndDate! - 2.hours
+            print("##Avail EndDate is \(opAvailEndDate)")
+            print("##Avail EndDate is \(uinfo.dateToString(opAvailEndDate))\n")
+            
+            
+            var bEnable = startDate.isBetween(date: opStartDate!, and: opAvailEndDate)
+            bEnable = endDate.isBetween(date: opStartDate!, and: opAvailEndDate)
+            
+            print("##Enable is \(bEnable)\n")
+            
+            return bEnable
             
         }
         
@@ -1161,6 +1175,9 @@ class MainViewController: UIViewController {
                                 }
                                 */
                                 
+                                
+                                let bAvail = self.isBetweenOperationTime(dicPlace: dicPlace)
+                                
                                 if type.isEqual(to: "16") {
                                     let view = ResidentView.instanceFromNib()
                                     if let strPrice = self.calcPrice(dicPlace: dicPlace) {
@@ -1177,7 +1194,6 @@ class MainViewController: UIViewController {
                                     marker.iconView = view
                                 }
                                 
-                                self.isBetweenOperationTime(dicPlace: dicPlace)
                                 
                                 
                             } else {
