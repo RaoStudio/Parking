@@ -13,6 +13,8 @@ class ResidentView: UIView {
     @IBOutlet weak var ivMarker: UIImageView!
     @IBOutlet weak var lblPrice: UILabel!
     
+    var nStrCount: Int = 0
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -25,10 +27,13 @@ class ResidentView: UIView {
         return UINib(nibName: "ResidentView", bundle: nil).instantiate(withOwner: self, options: nil).first as! ResidentView
     }
     
-    func setMarkerView(strPrice: String, strAvailable: String) {
+    func setMarkerView(strPrice: String, nAvailable: Int) {
         lblPrice.text = strPrice.decimalPresent as String
         
         if let nCount = lblPrice.text?.count {
+            
+            nStrCount = nCount
+            
             if nCount >= 6
             {
                 ivMarker.image = UIImage(named: "Marker_Resident_Long")
@@ -45,7 +50,7 @@ class ResidentView: UIView {
                 }
             }
             
-            if strAvailable == "0" {
+            if nAvailable == 0 {
                 lblPrice.textColor = hexStringToUIColor(hex: "#888888")
                 if nCount >= 6 {
                     ivMarker.image = UIImage(named: "Marker_Disable_Long")

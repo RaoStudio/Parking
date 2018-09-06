@@ -1157,6 +1157,8 @@ class MainViewController: UIViewController {
                             let available: NSString = dicPlace["available"] as! NSString
                             let type: NSString = dicPlace["parkinglot_type"] as! NSString
                             
+                            let nAvailability: Int  = dicPlace["availability"] as! Int
+                            
                             let nPartner: Int = Int(partner.intValue)
                             let nCCTV: Int = Int(cctv.intValue)
                             
@@ -1193,14 +1195,14 @@ class MainViewController: UIViewController {
                                 if type.isEqual(to: "16") {
                                     let view = ResidentView.instanceFromNib()
                                     if let strPrice = self.calcPrice(dicPlace: dicPlace) {
-                                        view.setMarkerView(strPrice: strPrice, strAvailable: available as String)
+                                        view.setMarkerView(strPrice: strPrice, nAvailable: nAvailability)
                                     }
                                     
                                     marker.iconView = view
                                 } else {
                                     let view = PartnerView.instanceFromNib()
                                     if let strPrice = self.calcPrice(dicPlace: dicPlace) {
-                                        view.setMarkerView(strPrice: strPrice, strAvailable: available as String)
+                                        view.setMarkerView(strPrice: strPrice, nAvailable: nAvailability)
                                     }
                                     
                                     marker.iconView = view
@@ -1236,7 +1238,25 @@ class MainViewController: UIViewController {
                         }
                         }
                     )
+                } else if let dicResponse = response.result.value as? Dictionary <String, Any> {
+                    print("##DicResponse Partner")
+                    print(dicResponse)
+                    print("##DicResponse Partner")
+                    
+                    let marker = GMSMarker(position: coordinate)
+                    let view = ManyLotView.instanceFromNib()
+                    view.lblCount.text = dicResponse["count"] as? String
+                    
+                    marker.iconView = view
+                    
+                    
+                    marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+                    marker.appearAnimation = GMSMarkerAnimation.pop
+                    marker.isTappable = false
+                    marker.map = self.mapView
+                    
                 }
+                
             }
         }
     }

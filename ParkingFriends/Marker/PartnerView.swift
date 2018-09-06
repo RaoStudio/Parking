@@ -13,6 +13,8 @@ class PartnerView: UIView {
     @IBOutlet weak var ivMarker: UIImageView!
     @IBOutlet weak var lblPrice: UILabel!
     
+    var nStrCount: Int = 0
+    
     
     /*
     // Only override draw() if you perform custom drawing.
@@ -27,13 +29,15 @@ class PartnerView: UIView {
         return UINib(nibName: "PartnerView", bundle: nil).instantiate(withOwner: self, options: nil).first as! PartnerView
     }
     
-    func setMarkerView(strPrice: String, strAvailable: String) {
+    func setMarkerView(strPrice: String, nAvailable: Int) {
         lblPrice.text = strPrice.decimalPresent as String
         
         if let nCount = lblPrice.text?.count {
+            
+            nStrCount = nCount
+            
             if nCount >= 6
             {
-                
                 ivMarker.image = UIImage(named: "Marker_Partner_Long")
                 self.frame = CGRect(x: 0, y: 0, width: MarkerSize.long.rawValue, height: MarkerSize.height.rawValue)
             } else if nCount >= 5 {
@@ -48,7 +52,7 @@ class PartnerView: UIView {
                 }
             }
             
-            if strAvailable == "0" {
+            if nAvailable == 0 {
                 lblPrice.textColor = hexStringToUIColor(hex: "#888888")
                 if nCount >= 6 {
                     ivMarker.image = UIImage(named: "Marker_Disable_Long")
