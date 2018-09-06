@@ -475,4 +475,103 @@ extension UserInfoManager {
     }
     
     
+    func isBetweenOperationTime(dicPlace: Dictionary<String, Any>) -> Bool {
+        var strWeek: String = ""
+        let startDate = stringToDate(startTime!)
+        let endDate = stringToDate(endTime!)
+        
+        print("##Today is \(endDate.weekdayName)  \(endDate)")
+        print("##Start is \(dateToString(startDate))")
+        print("##End is \(dateToString(endDate))")
+        
+        if endDate.isInWeekend {
+            strWeek = "operationtime_holiday"
+        } else {
+            strWeek = "operationtime_week"
+        }
+        
+        /*
+         if let strOperationTime = dicPlace[strWeek] as? String {
+         print("##Operation Time is \(strOperationTime)")
+         } else {
+         return false
+         }
+         */
+        
+        guard let strOperation = dicPlace[strWeek] as? String else {
+            return false
+        }
+        
+        let arrStr = strOperation.split(separator: "~").map { (strTime) -> String in
+            return String(strTime)
+        }
+        
+        print(arrStr)
+        
+        if let strStart = arrStr.first, let strEnd = arrStr.last {
+            print(strStart)
+            print(strEnd)
+            
+            
+            let fOpStartHour = Int(strStart[0..<2])!
+            let fOpStartMin = Int(strStart[2..<strStart.count])!
+            
+            var fOpEndHour = Int(strEnd[0..<2])!
+            let fOpEndMin = Int(strEnd[2..<strEnd.count])!
+            
+            if fOpEndHour == 00 {
+                fOpEndHour = 24
+            }
+            
+            let calendar = Calendar.current
+            let date = calendar.date(from: calendar.dateComponents(in: TimeZone.current, from: endDate))
+            print(date)
+            print("##OriginalDate is \(dateToString(date!))\n")
+            
+            
+            var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: date!)
+            components.hour = fOpStartHour
+            components.minute = fOpStartMin
+            
+            let opStartDate = calendar.date(from: components)
+            
+            
+            components.hour = fOpEndHour
+            components.minute = fOpEndMin
+            
+            var opEndDate = calendar.date(from: components)
+            
+            
+            if (fOpStartHour > fOpEndHour) {
+                opEndDate = opEndDate! + 24.hour
+            }
+            
+            print(opStartDate)
+            print("##trans opStartDate is \(dateToString(opStartDate!))\n")
+            print(opEndDate)
+            print("##trans opEndDate is \(dateToString(opEndDate!))\n")
+            
+            let opAvailStartDate = opStartDate! - 1.seconds
+            print("##Avail StartDate is \(opAvailStartDate)")
+            print("##Avail StartDate is \(dateToString(opAvailStartDate))\n")
+            
+            let opAvailEndDate = opEndDate! + 1.seconds
+            print("##Avail EndDate is \(opAvailEndDate)")
+            print("##Avail EndDate is \(dateToString(opAvailEndDate))\n")
+            
+            let bStartEnable = startDate.isBetween(date: opAvailStartDate, and: opAvailEndDate)
+            let bEndEnable = endDate.isBetween(date: opAvailStartDate, and: opAvailEndDate)
+            
+            print("##StartEnable is \(bStartEnable)")
+            print("##EndEnable is \(bEndEnable)\n")
+            print("##Result is \(bStartEnable && bEndEnable)\n")
+            
+            return bStartEnable && bEndEnable
+            
+        }
+        
+        return false
+    }
+    
+    
 }

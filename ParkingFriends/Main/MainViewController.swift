@@ -1180,8 +1180,15 @@ class MainViewController: UIViewController {
                                 }
                                 */
                                 
-                                
+                                /*
                                 let bAvail = self.isBetweenOperationTime(dicPlace: dicPlace)
+                                dicPlace["bAvailOpTime"] = bAvail
+                                */
+                                
+                                let bAvail = self.uinfo.isBetweenOperationTime(dicPlace: dicPlace)
+                                dicPlace["bAvailOpTime"] = bAvail
+                                
+                                
                                 
                                 if type.isEqual(to: "16") {
                                     let view = ResidentView.instanceFromNib()
