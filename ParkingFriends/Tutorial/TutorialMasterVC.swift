@@ -13,7 +13,7 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
     var pageVC: RaoPageVC!
     
     var contentTitles = ["STEP 1", "STEP 2","STEP 3","STEP 4"]
-    var contentImages = ["Page0", "Page1", "Page2", "Page3"]
+    var contentImages = ["PageStart", "Page0", "Page1", "Page2", "Page3"]
     
     @IBOutlet var btnStart: UIButton!
     
