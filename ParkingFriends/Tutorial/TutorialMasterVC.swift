@@ -50,7 +50,9 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
         self.view.bringSubview(toFront: btnStart)
         
         self.btnLook.isHidden = false
+        
         self.btnStart.isHidden = true
+        self.btnStart.alpha = 0;
         
     }
     
@@ -196,7 +198,17 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
         
         print("Afrer \(index)")
         if self.contentImages.count-1 == index {
-            self.btnStart.isHidden = false
+            
+            
+            UIView.animate(withDuration: 2, animations: {
+                self.btnStart.alpha = 1;
+                self.btnStart.isHidden = false
+            }) { (_) in
+                self.btnStart.alpha = 1;
+                self.btnStart.isHidden = false
+            }
+            
+//            self.btnStart.isHidden = false
         }
         
         return self.getContentVC(atIndex: index)
