@@ -29,15 +29,29 @@
                                     <action selector="close:" destination="5ZA-SY-TXd" eventType="touchUpInside" id="E8n-id-icI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="304-35-CYY">
+                                <rect key="frame" x="170" y="390" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="1bt-dL-YYE"/>
+                                    <constraint firstAttribute="height" constant="30" id="iHd-kX-QQQ"/>
+                                </constraints>
+                                <state key="normal" title="Look"/>
+                                <connections>
+                                    <action selector="onBtnLook:" destination="5ZA-SY-TXd" eventType="touchUpInside" id="0BG-sg-f4w"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Dp0-sW-JLk" firstAttribute="centerX" secondItem="GNN-fq-d35" secondAttribute="centerX" id="8n1-C5-dQd"/>
+                            <constraint firstItem="Dp0-sW-JLk" firstAttribute="top" secondItem="304-35-CYY" secondAttribute="bottom" priority="250" constant="17" id="WSd-lC-XVG"/>
+                            <constraint firstItem="304-35-CYY" firstAttribute="centerX" secondItem="GNN-fq-d35" secondAttribute="centerX" id="brf-vc-pov"/>
                             <constraint firstItem="DmY-PM-g36" firstAttribute="bottom" secondItem="Dp0-sW-JLk" secondAttribute="bottom" priority="250" constant="200" id="uQW-WR-U8p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DmY-PM-g36"/>
                     </view>
                     <connections>
+                        <outlet property="btnLook" destination="304-35-CYY" id="H63-K2-8PQ"/>
                         <outlet property="btnStart" destination="Dp0-sW-JLk" id="kob-9D-mlp"/>
                     </connections>
                 </viewController>

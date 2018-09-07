@@ -15,6 +15,7 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
     var contentTitles = ["STEP 0", "STEP 1", "STEP 2","STEP 3","STEP 4"]
     var contentImages = ["Page_0", "Page0", "Page1", "Page2", "Page3"]
     
+    @IBOutlet weak var btnLook: UIButton!
     @IBOutlet var btnStart: UIButton!
     
     override func viewDidLoad() {
@@ -45,9 +46,11 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
         pageControl.frame.origin.y = self.view.frame.size.height - 200
  */
         
+        self.view.bringSubview(toFront: btnLook)
         self.view.bringSubview(toFront: btnStart)
         
-        
+        self.btnLook.isHidden = false
+        self.btnStart.isHidden = true
         
     }
     
@@ -63,18 +66,53 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
     }
  */
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if let pageControl = self.pageVC.RaoPageControl {
             self.btnStart.autoPinEdge(.top, to: .bottom, of: pageControl, withOffset: 20)
+            
+            self.btnLook.autoPinEdge(.top, to: .bottom, of: pageControl, withOffset: 20)
+            
+            pageControl.isHidden = true
+            self.pageVC.view.isUserInteractionEnabled = false
         }
+        
     }
  
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    // MARK: - Btn Action
+    
+    
+    @IBAction func onBtnLook(_ sender: UIButton) {
+        self.btnLook.isHidden = true
+        self.btnStart.isHidden = false
+        
+        if let pageControl = self.pageVC.RaoPageControl {
+            pageControl.isHidden = false
+            self.pageVC.view.isUserInteractionEnabled = true
+            
+            contentTitles = ["STEP 1", "STEP 2","STEP 3","STEP 4"]
+            contentImages = ["Page0", "Page1", "Page2", "Page3"]
+            
+            let startContentVC = self.getContentVC(atIndex: 0)
+            self.pageVC?.setViewControllers([startContentVC!], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+        }
+            
     }
     
     @IBAction func close(_ sender: Any) {
