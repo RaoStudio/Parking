@@ -39,7 +39,8 @@ class UrlStrings {
     static let URL_API_PARKINGLOT_FETCH =       URL_API_PARKINGLOT + "/get.php";
     static let URL_API_PARKINGLOT_FETCH_RATIO = URL_API_PARKINGLOT + "/getWithRatio.php";
     //  static let URL_API_PARKINGLOT_IMG = URL_API_PARKINGLOT + "/img/";
-    static let URL_API_PARKINGLOT_IMG = "https://s3-ap-northeast-1.amazonaws.com/parkingfriends/parkinglots/";
+//    static let URL_API_PARKINGLOT_IMG = "https://s3-ap-northeast-1.amazonaws.com/parkingfriends/parkinglots/";
+    static let URL_API_PARKINGLOT_IMG = "http";
     static let URL_SETUP_PARKINGLOT_PAGE =      URL_API_PARKINGLOT + "/set_parkinglot.php";
     static let URL_FETCH_PARKINGLOT_DETAIL =    URL_API_PARKINGLOT + "/get_parkinglot_detail.php";
     static let URL_ROADVIEW_PAGE =              URL_API_PARKINGLOT + "/roadview.php";
