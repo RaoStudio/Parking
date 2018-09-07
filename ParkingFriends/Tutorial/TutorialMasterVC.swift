@@ -100,7 +100,7 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
     
     @IBAction func onBtnLook(_ sender: UIButton) {
         self.btnLook.isHidden = true
-        self.btnStart.isHidden = false
+//        self.btnStart.isHidden = false
         
         if let pageControl = self.pageVC.RaoPageControl {
             pageControl.isHidden = false
@@ -152,6 +152,9 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
             return nil
         }
         
+        
+        print("getContentVC \(idx)")
+        
         cvc.titleText = self.contentTitles[idx]
         cvc.imageFile = self.contentImages[idx]
         cvc.pageIndex = idx
@@ -172,6 +175,10 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
         }
         
         index -= 1
+        
+        
+        print("Before \(index)")
+        
         return self.getContentVC(atIndex: index)
     }
     
@@ -185,6 +192,11 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
         
         guard index < self.contentTitles.count else {
             return nil
+        }
+        
+        print("Afrer \(index)")
+        if self.contentImages.count-1 == index {
+            self.btnStart.isHidden = false
         }
         
         return self.getContentVC(atIndex: index)

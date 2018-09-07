@@ -19,23 +19,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dp0-sW-JLk">
-                                <rect key="frame" x="170" y="437" width="34" height="30"/>
+                                <rect key="frame" x="118.5" y="427" width="137" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="AJv-0z-Svx"/>
-                                    <constraint firstAttribute="width" constant="34" id="hHq-bC-1A5"/>
+                                    <constraint firstAttribute="height" constant="40" id="AJv-0z-Svx"/>
+                                    <constraint firstAttribute="width" constant="137" id="hHq-bC-1A5"/>
                                 </constraints>
-                                <state key="normal" title="Start"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <state key="normal" title="알겠습니다 ~ !" backgroundImage="btn_green_80">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="close:" destination="5ZA-SY-TXd" eventType="touchUpInside" id="E8n-id-icI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="304-35-CYY">
-                                <rect key="frame" x="170" y="390" width="34" height="30"/>
+                                <rect key="frame" x="118.5" y="370" width="137" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="1bt-dL-YYE"/>
-                                    <constraint firstAttribute="height" constant="30" id="iHd-kX-QQQ"/>
+                                    <constraint firstAttribute="width" constant="137" id="1bt-dL-YYE"/>
+                                    <constraint firstAttribute="height" constant="40" id="iHd-kX-QQQ"/>
                                 </constraints>
-                                <state key="normal" title="Look"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <state key="normal" title="알아보기 !" backgroundImage="btn_green_80">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="onBtnLook:" destination="5ZA-SY-TXd" eventType="touchUpInside" id="0BG-sg-f4w"/>
                                 </connections>
@@ -105,4 +111,7 @@
             <point key="canvasLocation" x="185" y="-172"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btn_green_80" width="40" height="40"/>
+    </resources>
 </document>
