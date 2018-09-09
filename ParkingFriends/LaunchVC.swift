@@ -64,8 +64,35 @@ class LaunchVC: UIViewController {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        /*
+        if let arrVC = self.navigationController?.viewControllers {
+            for vc in arrVC {
+                if let pVC = vc as? MainViewController {
+                    print("####### MainViewController #######")
+                }
+            }
+        }
+        */
+    }
+    
     func removeSelf() {
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) {
+            
+            
+            
+            if let arrVC = self.navigationController?.viewControllers {
+                for vc in arrVC {
+                    if let pVC = vc as? MainViewController {
+                        print("####### MainViewController #######")
+                        pVC.launchTutorial()
+                    }
+                }
+            }
+            
+            
             self.navigationController?.navigationBar.isHidden = false
             
             

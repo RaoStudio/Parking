@@ -314,7 +314,15 @@ class MainViewController: UIViewController {
         }
     }
     
-    
+    func launchTutorial() {
+        let ud = UserDefaults.standard
+        if ud.bool(forKey: UserInfoKey.tutorial) == false && bStart {
+            let vc = self.instanceTutorialVC(name: "MasterVC")
+            vc?.modalPresentationStyle = .overFullScreen
+            self.present(vc!, animated: true, completion: nil)
+            bStart = false
+        }
+    }
     
     func hideToastActivity() {
         self.navigationController?.view.hideToastActivity()
