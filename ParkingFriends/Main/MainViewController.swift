@@ -642,6 +642,11 @@ class MainViewController: UIViewController {
         
         btnStart.setTitle(strNow, for: UIControlState.normal)
         btnEnd.setTitle(strEnd, for: UIControlState.normal)
+        
+        print("@@@@@@\(startDate.weekday)")
+        lblDate.text = String(format: "%02d/%02d %@", startDate.month, startDate.day, startDate.weekdayShortName)
+        lblTime.text = String(format: "%02d:%02d", startDate.hour, startDate.minute)
+        
     }
     
     
