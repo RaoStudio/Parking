@@ -105,14 +105,33 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
 //        self.btnStart.isHidden = false
         
         if let pageControl = self.pageVC.RaoPageControl {
+            /*
             pageControl.isHidden = false
             self.pageVC.view.isUserInteractionEnabled = true
+ */
             
             contentTitles = ["STEP 1", "STEP 2","STEP 3","STEP 4"]
             contentImages = ["Page0", "Page1", "Page2", "Page3"]
             
+            /*
             let startContentVC = self.getContentVC(atIndex: 0)
-            self.pageVC?.setViewControllers([startContentVC!], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+            self.pageVC?.setViewControllers([startContentVC!], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+ */
+            
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.alpha = 0
+            }) { (_) in
+                pageControl.isHidden = false
+                self.pageVC.view.isUserInteractionEnabled = true
+                let startContentVC = self.getContentVC(atIndex: 0)
+                self.pageVC?.setViewControllers([startContentVC!], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.view.alpha = 1
+                }, completion: { (_) in
+                    self.view.alpha = 1
+                })
+            }
         }
             
     }
