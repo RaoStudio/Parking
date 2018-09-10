@@ -157,13 +157,13 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LS-rq-slQ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="82.5" height="49"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ix6-Ic-15e">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ix6-Ic-15e">
                                                                 <rect key="frame" x="91.5" y="0.0" width="82" height="49"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -287,6 +287,8 @@
                         <outlet property="constLotWidth" destination="y78-6h-XVG" id="oIw-1g-M37"/>
                         <outlet property="constRadiusHeight" destination="a1M-ja-LPK" id="L9N-lC-6gH"/>
                         <outlet property="constRadiusWidth" destination="485-Vx-vdF" id="0we-no-0wL"/>
+                        <outlet property="lblDate" destination="1LS-rq-slQ" id="Vt3-4N-p9N"/>
+                        <outlet property="lblTime" destination="ix6-Ic-15e" id="T5I-6I-6Yb"/>
                         <outlet property="mapView" destination="CWw-to-GRS" id="TMI-NV-ivN"/>
                     </connections>
                 </viewController>

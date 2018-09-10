@@ -61,6 +61,11 @@ class MainViewController: UIViewController {
     @IBOutlet var constRadiusHeight: NSLayoutConstraint!
     
     
+    @IBOutlet weak var lblDate: UILabel!
+    @IBOutlet weak var lblTime: UILabel!
+    
+    
+    
     
     var circle: GMSCircle!
     
