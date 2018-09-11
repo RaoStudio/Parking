@@ -425,6 +425,16 @@ class MainViewController: UIViewController {
             }
             
             self?.btnEndTime.setTitle(item, for: UIControlState.normal)
+            
+            let endDate = (self?.uinfo.stringToDate((self?.uinfo.startTime!)!))! + EndTimeValue.allValues[index].rawValue.hours
+            self?.uinfo.endTime = self?.uinfo.dateToString(endDate)
+            
+            print(self?.uinfo.startTime)
+            print(self?.uinfo.endTime)
+            print("\n")
+            
+            self?.reserveFromTimePick()
+            
         }
         
     }
