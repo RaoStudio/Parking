@@ -278,6 +278,12 @@ class MainViewController: UIViewController {
         
         displayTimeToButton()
         
+        /*
+        if let selIndex = endTimeDropDown.indexForSelectedRow {
+            print("@@@@@\(selIndex)@@@@@")
+        }
+        */
+        
         
         self.navigationController?.view.hideToastActivity()
         
@@ -288,6 +294,8 @@ class MainViewController: UIViewController {
                 radiusPicker(strRadius: strRadius)
             }
         }
+        
+        
         
         
     }
@@ -305,6 +313,10 @@ class MainViewController: UIViewController {
             bStart = false
         }
         */
+        
+        if let selIndex = endTimeDropDown.indexForSelectedRow {
+            print("@@@@@\(selIndex)@@@@@")
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
