@@ -216,6 +216,9 @@
                                             </view>
                                         </subviews>
                                     </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow_TimePick_Right" translatesAutoresizingMaskIntoConstraints="NO" id="8cN-D3-mLC">
+                                        <rect key="frame" x="163" y="14" width="21" height="21"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -224,6 +227,8 @@
                                     <constraint firstItem="xj7-Eq-sgs" firstAttribute="leading" secondItem="nj8-8j-MUm" secondAttribute="leading" id="Fjy-PH-0FR"/>
                                     <constraint firstAttribute="height" constant="49" id="NfQ-De-0IB"/>
                                     <constraint firstAttribute="bottom" secondItem="xj7-Eq-sgs" secondAttribute="bottom" id="ZoO-q3-h2f"/>
+                                    <constraint firstItem="8cN-D3-mLC" firstAttribute="centerY" secondItem="nj8-8j-MUm" secondAttribute="centerY" id="kkz-fE-Egq"/>
+                                    <constraint firstItem="8cN-D3-mLC" firstAttribute="centerX" secondItem="nj8-8j-MUm" secondAttribute="centerX" id="zIS-a0-L9x"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -5901,6 +5906,7 @@
     </scenes>
     <resources>
         <image name="Arrow_TimePick" width="8" height="7"/>
+        <image name="Arrow_TimePick_Right" width="21" height="21"/>
         <image name="Intro_PF_logo" width="159" height="130"/>
         <image name="Intro_bg" width="375" height="667"/>
         <image name="Intro_misco_logo" width="52" height="20"/>
