@@ -5142,6 +5142,21 @@
             </objects>
             <point key="canvasLocation" x="698" y="1842"/>
         </scene>
+        <!--Main QuestionVC-->
+        <scene sceneID="Lud-38-gAu">
+            <objects>
+                <viewController id="uaa-UL-fce" customClass="MainQuestionVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Npq-ZN-LB1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="gvO-vS-IW4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UhS-C8-mBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1494" y="2001"/>
+        </scene>
         <!--ImpossibleVC-->
         <scene sceneID="ZWa-2B-s3n">
             <objects>
