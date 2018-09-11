@@ -100,6 +100,7 @@
 		29DB19A42139198900906C20 /* ManyLotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB19A32139198900906C20 /* ManyLotView.swift */; };
 		29DB19A6213919CA00906C20 /* ManyLotView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29DB19A5213919CA00906C20 /* ManyLotView.xib */; };
 		29DB19A821391DA900906C20 /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB19A721391DA900906C20 /* MarkerView.swift */; };
+		29DF2ECC2147A5CF00A22FBA /* UnderlinedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DF2ECB2147A5CE00A22FBA /* UnderlinedLabel.swift */; };
 		29E8F25C20A95F11004CE3F2 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */; };
 		29F4EB2A20F2FEFC009C2AE2 /* LotListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4EB2920F2FEFC009C2AE2 /* LotListVC.swift */; };
 		29F4EB2C20F3301F009C2AE2 /* ParkingLotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F4EB2B20F3301F009C2AE2 /* ParkingLotCell.swift */; };
@@ -225,6 +226,7 @@
 		29DB19A32139198900906C20 /* ManyLotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManyLotView.swift; sourceTree = "<group>"; };
 		29DB19A5213919CA00906C20 /* ManyLotView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManyLotView.xib; sourceTree = "<group>"; };
 		29DB19A721391DA900906C20 /* MarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
+		29DF2ECB2147A5CE00A22FBA /* UnderlinedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedLabel.swift; sourceTree = "<group>"; };
 		29E8F25B20A95F11004CE3F2 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 		29F4EB2920F2FEFC009C2AE2 /* LotListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotListVC.swift; sourceTree = "<group>"; };
 		29F4EB2B20F3301F009C2AE2 /* ParkingLotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotCell.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 				2971A3EE209ADD8200C1AD84 /* Utils.swift */,
 				294E5F9B20A53CEE00CF9D03 /* RoundButton.swift */,
 				29465FFF20BD3A420000D8B9 /* RoundView.swift */,
+				29DF2ECB2147A5CE00A22FBA /* UnderlinedLabel.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -766,6 +769,7 @@
 				2999636520B644F300AC180C /* CustomView.swift in Sources */,
 				29AA1261207D9FF400F4648C /* PlaceMarker.swift in Sources */,
 				296F966320E1D18D008C58B6 /* AgreeInfoVC.swift in Sources */,
+				29DF2ECC2147A5CF00A22FBA /* UnderlinedLabel.swift in Sources */,
 				291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */,
 				29659A0220F2F94700E289DC /* CSTabBarController.swift in Sources */,
 				29559EF6204CE28E000EB12B /* ViewController.swift in Sources */,

@@ -19,10 +19,21 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main_Many_Count" translatesAutoresizingMaskIntoConstraints="NO" id="Jkd-nr-8Aq">
                     <rect key="frame" x="0.0" y="0.0" width="272" height="318"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xy-aL-SYK">
-                    <rect key="frame" x="115" y="125" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xy-aL-SYK" customClass="UnderlinedLabel" customModule="ParkingFriends" customModuleProvider="target">
+                    <rect key="frame" x="77.5" y="109" width="117" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 주차장 개수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3i1-xc-bzf">
+                    <rect key="frame" x="70.5" y="70" width="131" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지도를 확대해 주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQ4-De-k3Y">
+                    <rect key="frame" x="50.5" y="189" width="171" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -30,9 +41,15 @@
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Jkd-nr-8Aq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="440-4s-XFH"/>
+                <constraint firstItem="6Xy-aL-SYK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-20" id="6My-ef-huK"/>
                 <constraint firstItem="Jkd-nr-8Aq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="E1f-Sq-40g"/>
+                <constraint firstItem="KQ4-De-k3Y" firstAttribute="top" secondItem="6Xy-aL-SYK" secondAttribute="bottom" constant="20" id="I3k-0J-Y09"/>
+                <constraint firstItem="3i1-xc-bzf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="JOx-b6-t8n"/>
+                <constraint firstItem="KQ4-De-k3Y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bOZ-7F-Lby"/>
                 <constraint firstItem="Jkd-nr-8Aq" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="cuo-8w-IYw"/>
                 <constraint firstItem="Jkd-nr-8Aq" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="lbW-TF-AL5"/>
+                <constraint firstItem="6Xy-aL-SYK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mn8-Wd-ild"/>
+                <constraint firstItem="6Xy-aL-SYK" firstAttribute="top" secondItem="3i1-xc-bzf" secondAttribute="bottom" constant="15" id="yts-e1-jLc"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
