@@ -412,13 +412,19 @@ class MainViewController: UIViewController {
         endTimeDropDown.direction = .bottom
         
         
+        self.btnEndTime.setTitle(arrData.first, for: UIControlState.normal)
+        
         endTimeDropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
             // Setup your custom UI components
             cell.optionLabel.textAlignment = .center
         }
         
         endTimeDropDown.selectionAction = { [weak self] (index, item) in
+            if self?.btnEndTime.title(for: UIControlState.normal) == item {
+                return
+            }
             
+            self?.btnEndTime.setTitle(item, for: UIControlState.normal)
         }
         
     }
