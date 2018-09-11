@@ -45,6 +45,23 @@ enum RadiusValue: Int {
 }
 
 
+// EndTimeSelect
+enum EndTimeType: String {
+    case one = "1시간"
+    case two = "2시간"
+    case three = "3시간"
+    case four  = "4시간"
+    case five = "5시간"
+    case six = "6시간"
+    case eight = "8시간"
+    case ten = "10시간"
+    case twelve = "12시간"
+    
+    static let allValues = [one, two, three, four, five, six, eight, ten, twelve]
+}
+
+
+
 // UserAlarmTime
 enum UserAlarmType: String {
     case none = "알람 안함"

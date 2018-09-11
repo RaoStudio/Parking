@@ -63,7 +63,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblTime: UILabel!
-    
+    @IBOutlet weak var viewEndTimeSelect: UIView!
+    @IBOutlet weak var btnEndTime: UIButton!
     
     
     
@@ -96,6 +97,9 @@ class MainViewController: UIViewController {
     
     
     let chooseDropDown = DropDown()
+    let endTimeDropDown = DropDown()
+    
+    
     
     let bUseDropDown = false
     
@@ -187,6 +191,10 @@ class MainViewController: UIViewController {
         if bUseDropDown {
             setupChooseDropDown()
         }
+        
+        
+        setupEndTimeDropDown()
+        
         
         /*
         let height = UIScreen.main.nativeBounds.height
@@ -355,6 +363,8 @@ class MainViewController: UIViewController {
         marker.map = mapView
     }
     
+    
+    // MARK: - Setup DropDown
     func setupChooseDropDown() {
         chooseDropDown.anchorView = self.btnRadius
         
@@ -378,6 +388,39 @@ class MainViewController: UIViewController {
             self?.btnRadius.setTitle(item, for: .normal)
             self?.radiusPicker(strRadius: item)
         }
+    }
+    
+    func setupEndTimeDropDown() {
+        endTimeDropDown.textFont = UIFont.systemFont(ofSize: 23.0, weight: .bold)
+        endTimeDropDown.textColor = UIColor.white
+        endTimeDropDown.backgroundColor = hexStringToUIColor(hex: "#13b6f7")
+        endTimeDropDown.selectionBackgroundColor = hexStringToUIColor(hex: "#13c1ff")
+        endTimeDropDown.cellHeight = 49.0
+        
+        endTimeDropDown.bottomOffset = CGPoint(x: 0, y: self.viewEndTimeSelect.bounds.height)
+        endTimeDropDown.anchorView = self.viewEndTimeSelect
+        
+        var arrData: Array = [String]()
+        
+        for item in EndTimeType.allValues {
+            arrData.append(item.rawValue)
+        }
+        
+        endTimeDropDown.dataSource = arrData
+        endTimeDropDown.selectRow(0)
+        
+        endTimeDropDown.direction = .bottom
+        
+        
+        endTimeDropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            // Setup your custom UI components
+            cell.optionLabel.textAlignment = .center
+        }
+        
+        endTimeDropDown.selectionAction = { [weak self] (index, item) in
+            
+        }
+        
     }
     
     
@@ -519,6 +562,11 @@ class MainViewController: UIViewController {
         
         
         
+    }
+    
+    
+    @IBAction func onBtnEndTime(_ sender: UIButton) {
+        endTimeDropDown.show()
     }
     
     

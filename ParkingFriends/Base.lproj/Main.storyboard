@@ -192,6 +192,9 @@
                                                         <state key="normal" title="Button">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onBtnEndTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AdB-VK-fUQ"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow_TimePick" translatesAutoresizingMaskIntoConstraints="NO" id="ANg-QY-6C0">
                                                         <rect key="frame" x="151.5" y="21" width="8" height="7"/>
@@ -277,6 +280,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="ayX-mu-jII" id="4Dv-4r-dkH"/>
                         <outlet property="btnEnd" destination="VQ0-Ts-KHh" id="duD-v9-HW2"/>
+                        <outlet property="btnEndTime" destination="LdP-6b-4co" id="7l1-gz-xgH"/>
                         <outlet property="btnLocation" destination="6pm-aN-3qW" id="VWY-uE-pg3"/>
                         <outlet property="btnRadius" destination="4OL-ZZ-hAG" id="Ycq-CC-2yO"/>
                         <outlet property="btnStart" destination="ykB-Fv-la3" id="ttp-qf-LkT"/>
@@ -290,6 +294,7 @@
                         <outlet property="lblDate" destination="1LS-rq-slQ" id="Vt3-4N-p9N"/>
                         <outlet property="lblTime" destination="ix6-Ic-15e" id="T5I-6I-6Yb"/>
                         <outlet property="mapView" destination="CWw-to-GRS" id="TMI-NV-ivN"/>
+                        <outlet property="viewEndTimeSelect" destination="mvI-vJ-qIQ" id="Q56-lQ-mP4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
