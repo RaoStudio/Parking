@@ -5518,6 +5518,9 @@
                                                         <state key="normal" title="오늘" backgroundImage="start_timepick_dropdown_bg">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onBtnStart:" destination="ZrB-tn-MrF" eventType="touchUpInside" id="e4Y-QT-cPe"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow_DropDown" translatesAutoresizingMaskIntoConstraints="NO" id="yiz-qS-91t">
                                                         <rect key="frame" x="341" y="15" width="10" height="8"/>
