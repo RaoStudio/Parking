@@ -64,7 +64,7 @@
                                     <action selector="onBtnParkingLot:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lEh-t0-sfO"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhm-eP-8Wj">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhm-eP-8Wj">
                                 <rect key="frame" x="12" y="194" width="351" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main_TP_BackGround" translatesAutoresizingMaskIntoConstraints="NO" id="aQT-sq-8R1">
