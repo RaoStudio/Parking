@@ -5468,7 +5468,7 @@
             </objects>
             <point key="canvasLocation" x="8196" y="1661.9190404797603"/>
         </scene>
-        <!--Title-->
+        <!--주차시작 시간 선택-->
         <scene sceneID="7Qu-Xk-a0y">
             <objects>
                 <viewController storyboardIdentifier="StartTimePickerVC" id="ZrB-tn-MrF" customClass="StartTimePickerVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
@@ -5498,17 +5498,20 @@
                                                 </date>
                                                 <locale key="locale" localeIdentifier="ko_KR"/>
                                             </datePicker>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrF-Ut-UTD">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrF-Ut-UTD">
                                                 <rect key="frame" x="14" y="0.0" width="347" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="HHJ-b7-I6U"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="오늘" backgroundImage="timepick_dropdown_bg">
+                                                <state key="normal" title="오늘" backgroundImage="start_timepick_dropdown_bg">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow_DropDown" translatesAutoresizingMaskIntoConstraints="NO" id="yiz-qS-91t">
+                                                <rect key="frame" x="341" y="15" width="10" height="8"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -5516,17 +5519,48 @@
                                             <constraint firstAttribute="height" constant="260" id="7CV-kx-huP"/>
                                             <constraint firstItem="CrF-Ut-UTD" firstAttribute="leading" secondItem="87C-EF-RuV" secondAttribute="leading" constant="14" id="Ik9-pJ-oaE"/>
                                             <constraint firstItem="1uG-eY-yz8" firstAttribute="leading" secondItem="87C-EF-RuV" secondAttribute="leading" id="Uun-Ax-wwO"/>
+                                            <constraint firstItem="yiz-qS-91t" firstAttribute="centerY" secondItem="CrF-Ut-UTD" secondAttribute="centerY" id="asf-8D-WeF"/>
                                             <constraint firstItem="CrF-Ut-UTD" firstAttribute="top" secondItem="87C-EF-RuV" secondAttribute="top" id="ibp-cp-vwf"/>
                                             <constraint firstAttribute="trailing" secondItem="CrF-Ut-UTD" secondAttribute="trailing" constant="14" id="stJ-9n-cDu"/>
                                             <constraint firstAttribute="bottom" secondItem="1uG-eY-yz8" secondAttribute="bottom" constant="10" id="v1a-AY-2ub"/>
+                                            <constraint firstItem="yiz-qS-91t" firstAttribute="trailing" secondItem="CrF-Ut-UTD" secondAttribute="trailing" constant="-10" id="wTB-6u-Vha"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="gzA-c5-d1u">
+                                        <rect key="frame" x="43.5" y="535" width="288" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTv-WH-Tp2">
+                                                <rect key="frame" x="0.0" y="0.0" width="137" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="rWd-e9-3ky"/>
+                                                    <constraint firstAttribute="width" constant="137" id="s0e-CB-48e"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal" title="취소" backgroundImage="btn_gray_80">
+                                                    <color key="titleColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuT-9V-grX">
+                                                <rect key="frame" x="151" y="0.0" width="137" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="COX-TL-1OH"/>
+                                                    <constraint firstAttribute="width" constant="137" id="u0k-6x-KMf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal" title="확인" backgroundImage="btn_green_80">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="87C-EF-RuV" secondAttribute="trailing" id="0ls-ex-e76"/>
                                     <constraint firstItem="87C-EF-RuV" firstAttribute="leading" secondItem="YSP-Py-b7m" secondAttribute="leading" id="9ES-cq-2eT"/>
+                                    <constraint firstItem="gzA-c5-d1u" firstAttribute="centerX" secondItem="YSP-Py-b7m" secondAttribute="centerX" id="KPI-7g-za2"/>
                                     <constraint firstItem="87C-EF-RuV" firstAttribute="centerY" secondItem="YSP-Py-b7m" secondAttribute="centerY" id="XvQ-41-viU"/>
+                                    <constraint firstAttribute="bottom" secondItem="gzA-c5-d1u" secondAttribute="bottom" constant="28" id="wY3-Cf-i93"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -5539,7 +5573,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zky-oh-Wfv"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="hvw-pJ-RfZ">
+                    <navigationItem key="navigationItem" title="주차시작 시간 선택" id="hvw-pJ-RfZ">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="cyE-36-r5d">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
@@ -6038,6 +6072,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Arrow_DropDown" width="10" height="8"/>
         <image name="Arrow_TimePick" width="8" height="7"/>
         <image name="Arrow_TimePick_Right" width="21" height="21"/>
         <image name="Intro_PF_logo" width="159" height="130"/>
@@ -6093,7 +6128,9 @@
         <image name="btn_Question" width="39" height="39"/>
         <image name="btn_blue_round" width="34" height="34"/>
         <image name="btn_distance_round" width="22" height="22"/>
+        <image name="btn_gray_80" width="40" height="40"/>
         <image name="btn_gray_round" width="34" height="34"/>
+        <image name="btn_green_80" width="40" height="40"/>
         <image name="btn_green_round" width="34" height="34"/>
         <image name="btn_parking_lot" width="33" height="33"/>
         <image name="btn_red_round" width="34" height="34"/>
@@ -6104,6 +6141,7 @@
         <image name="icon_distance" width="11" height="13"/>
         <image name="icon_navi" width="13" height="13"/>
         <image name="img_detail_table" width="12" height="73"/>
+        <image name="start_timepick_dropdown_bg" width="14" height="38"/>
         <image name="timepick_dropdown_bg" width="12" height="23"/>
         <image name="timepick_dropdown_icon" width="8" height="6"/>
         <image name="timepick_in_bg" width="83" height="29"/>
