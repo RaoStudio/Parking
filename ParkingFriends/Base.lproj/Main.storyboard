@@ -1193,7 +1193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhu-ej-MYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6888.8000000000002" y="893.70314842578716"/>
+            <point key="canvasLocation" x="7828" y="893.70314842578716"/>
         </scene>
         <!--회원가입-->
         <scene sceneID="Zjs-Rm-gzW">
@@ -4539,7 +4539,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4B-Gq-jjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5070" y="1359"/>
+            <point key="canvasLocation" x="6008.8000000000002" y="1358.7706146926537"/>
         </scene>
         <!--Title-->
         <scene sceneID="iQ2-Hx-TRO">
@@ -5146,7 +5146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2o-Ia-k3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="698" y="1842"/>
+            <point key="canvasLocation" x="796" y="2284"/>
         </scene>
         <!--Main QuestionVC-->
         <scene sceneID="Lud-38-gAu">
@@ -5161,7 +5161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UhS-C8-mBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1494" y="2001"/>
+            <point key="canvasLocation" x="2432.8000000000002" y="2000.1499250374814"/>
         </scene>
         <!--ImpossibleVC-->
         <scene sceneID="ZWa-2B-s3n">
@@ -5251,7 +5251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6d-vk-M8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6213.6000000000004" y="1674.5127436281859"/>
+            <point key="canvasLocation" x="7152.8000000000002" y="1674.5127436281859"/>
         </scene>
         <!--Car Info RegisterVC-->
         <scene sceneID="u2g-fM-Dax">
@@ -5466,7 +5466,88 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jN-XO-cFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7258" y="1662"/>
+            <point key="canvasLocation" x="8196" y="1661.9190404797603"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="7Qu-Xk-a0y">
+            <objects>
+                <viewController storyboardIdentifier="StartTimePickerVC" id="ZrB-tn-MrF" customClass="StartTimePickerVC" customModule="ParkingFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tRU-f0-8uo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSP-Py-b7m" userLabel="ContentsView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87C-EF-RuV">
+                                        <rect key="frame" x="0.0" y="171" width="375" height="260"/>
+                                        <subviews>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="1uG-eY-yz8">
+                                                <rect key="frame" x="0.0" y="88" width="375" height="162"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="162" id="vS3-CC-At8"/>
+                                                </constraints>
+                                                <date key="date" timeIntervalSinceReferenceDate="547089136.18410695">
+                                                    <!--2018-05-04 01:12:16 +0000-->
+                                                </date>
+                                                <date key="minimumDate" timeIntervalSinceReferenceDate="549622800">
+                                                    <!--2018-06-02 09:00:00 +0000-->
+                                                </date>
+                                                <date key="maximumDate" timeIntervalSinceReferenceDate="549802800">
+                                                    <!--2018-06-04 11:00:00 +0000-->
+                                                </date>
+                                                <locale key="locale" localeIdentifier="ko_KR"/>
+                                            </datePicker>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrF-Ut-UTD">
+                                                <rect key="frame" x="14" y="0.0" width="347" height="38"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="HHJ-b7-I6U"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="오늘" backgroundImage="timepick_dropdown_bg">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="1uG-eY-yz8" secondAttribute="trailing" id="0jf-4W-qIS"/>
+                                            <constraint firstAttribute="height" constant="260" id="7CV-kx-huP"/>
+                                            <constraint firstItem="CrF-Ut-UTD" firstAttribute="leading" secondItem="87C-EF-RuV" secondAttribute="leading" constant="14" id="Ik9-pJ-oaE"/>
+                                            <constraint firstItem="1uG-eY-yz8" firstAttribute="leading" secondItem="87C-EF-RuV" secondAttribute="leading" id="Uun-Ax-wwO"/>
+                                            <constraint firstItem="CrF-Ut-UTD" firstAttribute="top" secondItem="87C-EF-RuV" secondAttribute="top" id="ibp-cp-vwf"/>
+                                            <constraint firstAttribute="trailing" secondItem="CrF-Ut-UTD" secondAttribute="trailing" constant="14" id="stJ-9n-cDu"/>
+                                            <constraint firstAttribute="bottom" secondItem="1uG-eY-yz8" secondAttribute="bottom" constant="10" id="v1a-AY-2ub"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="87C-EF-RuV" secondAttribute="trailing" id="0ls-ex-e76"/>
+                                    <constraint firstItem="87C-EF-RuV" firstAttribute="leading" secondItem="YSP-Py-b7m" secondAttribute="leading" id="9ES-cq-2eT"/>
+                                    <constraint firstItem="87C-EF-RuV" firstAttribute="centerY" secondItem="YSP-Py-b7m" secondAttribute="centerY" id="XvQ-41-viU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zky-oh-Wfv" firstAttribute="trailing" secondItem="YSP-Py-b7m" secondAttribute="trailing" id="8B9-an-HWi"/>
+                            <constraint firstItem="YSP-Py-b7m" firstAttribute="top" secondItem="Zky-oh-Wfv" secondAttribute="top" id="Bwz-8o-ZUH"/>
+                            <constraint firstItem="Zky-oh-Wfv" firstAttribute="bottom" secondItem="YSP-Py-b7m" secondAttribute="bottom" id="MDI-pj-w3P"/>
+                            <constraint firstItem="YSP-Py-b7m" firstAttribute="leading" secondItem="Zky-oh-Wfv" secondAttribute="leading" id="p4I-w4-Vqy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zky-oh-Wfv"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="hvw-pJ-RfZ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="cyE-36-r5d">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8FK-GF-JLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="777" y="1491"/>
         </scene>
         <!--Present TestVC-->
         <scene sceneID="YZ3-Rh-4vk">
@@ -5518,7 +5599,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ve0-yb-cad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="1245.4272863568217"/>
+            <point key="canvasLocation" x="2519.1999999999998" y="1245.4272863568217"/>
         </scene>
         <!--NaviVC-->
         <scene sceneID="Ih5-kM-Xd2">
@@ -5694,7 +5775,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQ7-6H-bSY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4031" y="1553"/>
+            <point key="canvasLocation" x="4968.8000000000002" y="1552.1739130434785"/>
         </scene>
         <!--Reserve ExtendVC-->
         <scene sceneID="grZ-xj-51b">
@@ -5820,7 +5901,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RkB-5m-8Cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8118.75" y="1536.9718309859154"/>
+            <point key="canvasLocation" x="9056.7999999999993" y="1536.8815592203898"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nfA-A4-TJ0">
@@ -5845,7 +5926,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ea-Xo-zIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3154" y="1732"/>
+            <point key="canvasLocation" x="4092" y="1731.1844077961021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZiC-J1-d9D">
@@ -5936,6 +6017,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLY-kO-RgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7988" y="-249.62518740629687"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="n7C-Kd-fyf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yjG-OI-8Nh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" restorationIdentifier="StartTimePickerNavi" insetsLayoutMarginsFromSafeArea="NO" id="lgr-59-xyV">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZrB-tn-MrF" kind="relationship" relationship="rootViewController" id="zBi-DF-AHc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y2y-o1-3O4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9" y="1502"/>
         </scene>
     </scenes>
     <resources>
