@@ -989,7 +989,7 @@ class MainViewController: UIViewController {
                 if self.circle != nil {
                     self.circle.position = coordinate
                     self.circle.radius = Double(self.getIntFromRadius())
-                    self.circle.map = self.mapView
+//                    self.circle.map = self.mapView
                 }
                 return
             }
@@ -1000,7 +1000,7 @@ class MainViewController: UIViewController {
             if self.circle != nil {
                 self.circle.position = coordinate
                 self.circle.radius = Double(self.getIntFromRadius())
-                self.circle.map = self.mapView
+//                self.circle.map = self.mapView
             }
             //*/
             
@@ -1113,7 +1113,7 @@ class MainViewController: UIViewController {
                             
                             
                             marker.map = self.mapView
-                            self.circle.map = self.mapView
+//                            self.circle.map = self.mapView
                             
                             //                            self.arrPlace.append(dicPlace)
                             self.arrPlace.append(marker)
@@ -1208,7 +1208,7 @@ class MainViewController: UIViewController {
                 if self.circle != nil {
                     self.circle.position = coordinate
                     self.circle.radius = Double(self.getIntFromRadius())
-                    self.circle.map = self.mapView
+//                    self.circle.map = self.mapView
                 }
                 return
             }
@@ -1219,7 +1219,7 @@ class MainViewController: UIViewController {
             if self.circle != nil {
                 self.circle.position = coordinate
                 self.circle.radius = Double(self.getIntFromRadius())
-                self.circle.map = self.mapView
+//                self.circle.map = self.mapView
             }
             //*/
             
@@ -1332,7 +1332,7 @@ class MainViewController: UIViewController {
                             
                             
                             marker.map = self.mapView
-                            self.circle.map = self.mapView
+//                            self.circle.map = self.mapView
                             
                             //                            self.arrPlace.append(dicPlace)
                             self.arrPlace.append(marker)
@@ -1394,7 +1394,7 @@ class MainViewController: UIViewController {
             circle.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.05)
             circle.strokeColor = UIColor.green
             circle.strokeWidth = 0.8
-            circle.map = self.mapView
+//            circle.map = self.mapView
             circle.position = coordinate
         } else {
             circle.position = coordinate
