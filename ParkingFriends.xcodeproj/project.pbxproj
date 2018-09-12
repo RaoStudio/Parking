@@ -14,6 +14,7 @@
 		291C90FA213CF37B00C35E0D /* PublicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 291C90F9213CF37B00C35E0D /* PublicView.xib */; };
 		291E153E20AA9D4A003EA0AD /* TimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */; };
 		2928471B2148D10300E2E945 /* StartTimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2928471A2148D10300E2E945 /* StartTimePickerVC.swift */; };
+		2928471D2148EB2800E2E945 /* RaoGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2928471C2148EB2800E2E945 /* RaoGradientView.swift */; };
 		2932DEA6213E58EE00742D97 /* ResidentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2932DEA5213E58EE00742D97 /* ResidentView.swift */; };
 		2932DEA8213E590700742D97 /* ResidentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2932DEA7213E590700742D97 /* ResidentView.xib */; };
 		2932DEAA213E5D0F00742D97 /* PartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2932DEA9213E5D0F00742D97 /* PartnerView.swift */; };
@@ -119,6 +120,7 @@
 		291C90F9213CF37B00C35E0D /* PublicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicView.xib; sourceTree = "<group>"; };
 		291E153D20AA9D4A003EA0AD /* TimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerVC.swift; sourceTree = "<group>"; };
 		2928471A2148D10300E2E945 /* StartTimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTimePickerVC.swift; sourceTree = "<group>"; };
+		2928471C2148EB2800E2E945 /* RaoGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaoGradientView.swift; sourceTree = "<group>"; };
 		2932DEA5213E58EE00742D97 /* ResidentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentView.swift; sourceTree = "<group>"; };
 		2932DEA7213E590700742D97 /* ResidentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResidentView.xib; sourceTree = "<group>"; };
 		2932DEA9213E5D0F00742D97 /* PartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerView.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				2983D63720B535A7003CAB1C /* TestView.xib */,
 				2999636420B644F300AC180C /* CustomView.swift */,
 				2999636620B6451400AC180C /* CustomView.xib */,
+				2928471C2148EB2800E2E945 /* RaoGradientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -776,6 +779,7 @@
 				2987403720E618410042014A /* LaunchVC.swift in Sources */,
 				2996DC53212515D300DE3A5E /* ReserveExtendVC.swift in Sources */,
 				296B797A212E428100234063 /* NoticeContainVC.swift in Sources */,
+				2928471D2148EB2800E2E945 /* RaoGradientView.swift in Sources */,
 				29D6C26220E0BC8B001EF09B /* SideVC.swift in Sources */,
 				29A0FFDC207B429200B13638 /* UrlStrings.swift in Sources */,
 				2983BD9A20A16BA60033035D /* RaoPageVC.swift in Sources */,

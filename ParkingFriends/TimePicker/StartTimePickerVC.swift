@@ -7,9 +7,29 @@
 //
 
 import UIKit
+import DropDown
+import SwiftDate
 
 class StartTimePickerVC: UIViewController {
 
+    @IBOutlet weak var startPicker: UIDatePicker!
+    @IBOutlet weak var btnStart: UIButton!
+    
+    
+    let startDropDown = DropDown()
+    
+    let uinfo = UserInfoManager()
+    
+    var strNow: String = ""
+    var strOne: String = ""
+    var strTwo: String = ""
+    
+    var arrImpossibleTime: [String]?
+    var arrArrangeImpossible: [[String]]?
+    
+    
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +40,14 @@ class StartTimePickerVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    // MARK: - Btn Action
+    @IBAction func onBtnExit(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     
 
     /*

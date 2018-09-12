@@ -456,6 +456,13 @@ class MainViewController: UIViewController {
     
     @IBAction func onBtnQuestion(_ sender: UIButton) {
         
+        guard let timePickerNavi = self.storyboard?.instantiateViewController(withIdentifier: "StartTimePickerNavi") as? UINavigationController else {
+            return
+        }
+        
+        //        let timePickerVC = timePickerNavi.topViewController as? TimePickerVC
+        self.present(timePickerNavi, animated: true, completion: nil)
+        
     }
     
     
