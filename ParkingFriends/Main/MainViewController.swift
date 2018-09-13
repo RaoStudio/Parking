@@ -736,7 +736,8 @@ class MainViewController: UIViewController {
         btnEnd.setTitle(strEnd, for: UIControlState.normal)
         
         print("@@@@@@\(startDate.weekday)")
-        lblDate.text = String(format: "%02d/%02d %@", startDate.month, startDate.day, startDate.weekdayShortName)
+//        lblDate.text = String(format: "%02d/%02d %@", startDate.month, startDate.day, startDate.weekdayShortName)
+        lblDate.text = String(format: "%02d/%02d %@", startDate.month, startDate.day, DayNameType.allValues[startDate.weekday-1].rawValue)
         lblTime.text = String(format: "%02d:%02d", startDate.hour, startDate.minute)
         
     }
