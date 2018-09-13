@@ -66,6 +66,8 @@ class StartTimePickerVC: UIViewController {
         btnStart.setTitle(startDropDown.selectedItem, for: UIControlState.normal)
         
         startPicker.addTarget(self, action: #selector(valueChanged(_:)), for: UIControlEvents.valueChanged)
+        
+        arrangeImpossibleTime(arrTime: arrImpossibleTime)
     }
 
     override func didReceiveMemoryWarning() {
@@ -117,6 +119,71 @@ class StartTimePickerVC: UIViewController {
     }
     
     
+    // MARK: - Arrange Impossible Time ~
+    func arrangeImpossibleTime(arrTime: Array<String>?) {
+        /*
+         guard arrTime?.isEmpty == false else {
+         return
+         }
+         */
+        
+        guard let arrImpossible = arrTime else {
+            return
+        }
+        
+        print(arrImpossible)
+        
+        arrArrangeImpossible = [[String]]()
+        
+        var arrValue: [String]?
+        
+        for (index, value) in arrImpossible.enumerated() {
+            print("\(index): \(value)")
+            
+            if (index % 2 == 0) {
+                arrValue = [String]()
+                arrValue?.append(value)
+            } else {
+                arrValue?.append(value)
+                arrArrangeImpossible?.append(arrValue!)
+            }
+        }
+        
+        print(arrArrangeImpossible!)
+        
+        
+    }
+    
+    // MARK: - Reserve Time to Impossible Time
+    func calcImpossibleTime(arrTime: [[String]], endDay: Date) -> Bool {
+        
+        let startDay = self.startPicker.date
+        
+        for item in arrTime {
+            
+            if let strSTime = item.first, let strETime = item.last {
+                let sTime = uinfo.stringToDate(strSTime)
+                let eTime = uinfo.stringToDate(strETime)
+                
+                let bStartEnable = startDay.isBetween(date: sTime, and: eTime)
+                let bEndEnable = endDay.isBetween(date: sTime, and: eTime)
+                
+                if bStartEnable == true {
+                    print("calcImpossibleTime return false: \(sTime) ~ \(eTime) : \(startDay)")
+                    return true
+                }
+                
+                if bEndEnable == true {
+                    print("calcImpossibleTime return false: \(sTime) ~ \(eTime) : \(endDay)")
+                    return true
+                }
+            }
+        }
+        
+        
+        return false
+    }
+    
     // MARK: - Btn Action
     @IBAction func onBtnExit(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -137,16 +204,82 @@ class StartTimePickerVC: UIViewController {
         print("\n")
         
         
-        
         let startDay = self.startPicker.date
+        
         
         if startDay < uinfo.stringToDate(uinfo.firstTime!) {
             self.alert("지나간 시간입니다.")
             return
         }
         
+        let endDay = startDay + (self.uinfo.endHours?.hours)!
         
-//        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        if let arrImpossible = arrImpossibleTime {
+            
+            var strImpossible: String = ""
+            
+            if let arrArrange = arrArrangeImpossible, arrArrange.isEmpty == false {
+                let bResult = self.calcImpossibleTime(arrTime: arrArrange, endDay: endDay)
+                
+                if bResult == true {
+                    for (index, value) in arrImpossible.enumerated(){
+                        
+                        let dateValue = uinfo.stringToDate(value)
+                        let strValue = String(format: "%02d/%02d일 %02d:%02d", dateValue.month, dateValue.day, dateValue.hour, dateValue.minute)
+                        
+                        if (index % 2 == 0) {
+                            strImpossible.append(strValue)
+                            strImpossible.append(" ~ ")
+                        } else {
+                            strImpossible.append(strValue)
+                            strImpossible.append("\n\n")
+                        }
+                        
+                        //                        strImpossible.append(value)
+                    }
+                    
+                    
+                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ImpossibleVC") as? ImpossibleVC else {
+                        return
+                    }
+                    
+                    vc.bTab = false
+                    vc.strImpossible = strImpossible
+                    
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: false, completion: nil)
+                    
+                    return
+                }
+            }
+        }
+        
+        
+        
+        let startDate = startPicker.date
+        
+        
+        let strStart = uinfo.dateToString(startDate)
+        let strEnd = uinfo.dateToString(endDay)
+        
+        uinfo.startTime = strStart
+        uinfo.endTime = strEnd
+        
+        
+        uinfo.nFirstTime = startDropDown.indexForSelectedRow
+        
+        
+        if let myNC = self.navigationController {
+            if let nc = myNC.presentingViewController as? UINavigationController {
+                
+                if let vc = nc.topViewController as? MainViewController {
+                    
+                    vc.reserveFromTimePick()
+                }
+            }
+        }
+        
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
 
