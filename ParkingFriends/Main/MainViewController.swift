@@ -1553,7 +1553,12 @@ extension MainViewController: GMSMapViewDelegate {
                 }
             }
             
-            strCompany = dicPlace["company"] as! String
+            if let company = dicPlace["company"] as? String {
+                strCompany = company
+            }
+            
+            
+            
         }
         
         

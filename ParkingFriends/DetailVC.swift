@@ -397,6 +397,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             
             if let company: NSString = dataPlace["company"] as? NSString {
                 lblCompany.text = String(format: "%@", company)
+            } else {
+                lblCompany.text = ""
             }
             
             if let address: NSString = dataPlace["address"] as? NSString {

@@ -299,7 +299,7 @@ class ReserveExtendVC: PresentTestVC {
             print(strEnd)
             
             
-            let arrEnd = strOperation.split(separator: ":").map { String($0)}
+            let arrEnd = strEnd.split(separator: ":").map { String($0)}
             
             
             
