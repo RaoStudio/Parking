@@ -585,18 +585,47 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     // MARK: - Calc Operation Time
     func calcOperationTime(strOperation: String) {
-        let arrStr = strOperation.split(separator: "~").map { String($0)}
+        var arrStr = strOperation.split(separator: "~").map { String($0)}
+        
+        
+        if arrStr.count < 2 {
+            arrStr.removeAll()
+            
+            arrStr = strOperation.split(separator: "-").map { String($0)}
+        }
+        
         
         if let strStart = arrStr.first, let strEnd = arrStr.last {
             print(strStart)
             print(strEnd)
             
             
+            let arrSTime = strStart.split(separator: ":").map { String($0)}
+            let arrETime = strEnd.split(separator: ":").map { String($0)}
+            
+            if arrSTime.count < 2 && arrETime.count < 2 {
+                fOpStartHour = Float(strStart[0..<2])!
+                fOpStartMin = Float(strStart[2..<strStart.count])!
+                
+                fOpEndHour = Float(strEnd[0..<2])!
+                fOpEndMin = Float(strEnd[2..<strEnd.count])!
+                
+            } else {
+                
+                fOpStartHour = Float(arrSTime.first!)!
+                fOpStartMin = Float(arrSTime.last!)!
+                
+                fOpEndHour = Float(arrETime.first!)!
+                fOpEndMin = Float(arrETime.last!)!
+            }
+            
+            /*
             fOpStartHour = Float(strStart[0..<2])!
             fOpStartMin = Float(strStart[2..<strStart.count])!
             
             fOpEndHour = Float(strEnd[0..<2])!
             fOpEndMin = Float(strEnd[2..<strEnd.count])!
+ */
             
             if fOpEndHour == 00 {
                 fOpEndHour = 24
