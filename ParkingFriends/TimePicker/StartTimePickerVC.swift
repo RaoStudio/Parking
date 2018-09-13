@@ -56,9 +56,15 @@ class StartTimePickerVC: UIViewController {
         
         arrDay = [firstDate, oneDate, twoDate]
         
-        strNow = String(format: "%d년%02d월%02d일(%@)", firstDate.year, firstDate.month, firstDate.day, firstDate.weekdayName)
-        strOne = String(format: "%d년%02d월%02d일(%@)", oneDate.year, oneDate.month, oneDate.day, oneDate.weekdayName)
-        strTwo = String(format: "%d년%02d월%02d일(%@)", twoDate.year, twoDate.month, twoDate.day, twoDate.weekdayName)
+//        strNow = String(format: "%d년%02d월%02d일(%@)", firstDate.year, firstDate.month, firstDate.day, firstDate.weekdayName)
+//        strOne = String(format: "%d년%02d월%02d일(%@)", oneDate.year, oneDate.month, oneDate.day, oneDate.weekdayName)
+//        strTwo = String(format: "%d년%02d월%02d일(%@)", twoDate.year, twoDate.month, twoDate.day, twoDate.weekdayName)
+        
+        
+        strNow = String(format: "%d년%02d월%02d일(%@)", firstDate.year, firstDate.month, firstDate.day, DayNameType.allValues[firstDate.weekday-1].rawValue)
+        strOne = String(format: "%d년%02d월%02d일(%@)", oneDate.year, oneDate.month, oneDate.day, DayNameType.allValues[oneDate.weekday-1].rawValue)
+        strTwo = String(format: "%d년%02d월%02d일(%@)", twoDate.year, twoDate.month, twoDate.day, DayNameType.allValues[twoDate.weekday-1].rawValue)
+        
         
         
         setupStartDropDown()

@@ -75,6 +75,18 @@ enum EndTimeValue: Int {
 }
 
 
+enum DayNameType: String {
+    case Sunday = "일"
+    case Monday = "월"
+    case Tuesday = "화"
+    case Wednesday = "수"
+    case Thursday = "목"
+    case Friday = "금"
+    case Saturday = "토"
+    
+    static let allValues = [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+}
+
 
 // UserAlarmTime
 enum UserAlarmType: String {
