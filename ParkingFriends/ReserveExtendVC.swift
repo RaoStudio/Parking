@@ -261,7 +261,7 @@ class ReserveExtendVC: PresentTestVC {
     }
     
     
-    
+    /*
     func calcOperationTime(strOperation: String) {
         let arrStr = strOperation.split(separator: "~").map { (strTime) -> String in
             return String(strTime)
@@ -280,6 +280,36 @@ class ReserveExtendVC: PresentTestVC {
                 fOpEndHour = 24
             }
         
+            let exStartDate = uinfo.stringToDate(uinfo.extendStartTime!)
+            print(uinfo.extendStartTime!)
+            print(exStartDate)
+        }
+    }
+ */
+    
+    func calcOperationTime(strOperation: String) {
+        let arrStr = strOperation.split(separator: "-").map { (strTime) -> String in
+            return String(strTime)
+        }
+        
+        print(arrStr)
+        
+        if let strStart = arrStr.first, let strEnd = arrStr.last {
+            print(strStart)
+            print(strEnd)
+            
+            
+            let arrEnd = strOperation.split(separator: ":").map { String($0)}
+            
+            
+            
+            var fOpEndHour = Float(arrEnd.first!)
+            let fOpEndMin = Float(arrEnd.last!)
+            
+            if fOpEndHour == 00 {
+                fOpEndHour = 24
+            }
+            
             let exStartDate = uinfo.stringToDate(uinfo.extendStartTime!)
             print(uinfo.extendStartTime!)
             print(exStartDate)
