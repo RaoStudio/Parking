@@ -5580,6 +5580,9 @@
                                                         <state key="normal" title="확인" backgroundImage="btn_green_80">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onBtnOk:" destination="ZrB-tn-MrF" eventType="touchUpInside" id="46L-Dq-rft"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>

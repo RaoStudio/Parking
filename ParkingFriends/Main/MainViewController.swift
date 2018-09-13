@@ -438,7 +438,11 @@ class MainViewController: UIViewController {
             
             self?.btnEndTime.setTitle(item, for: UIControlState.normal)
             
-            let endDate = (self?.uinfo.stringToDate((self?.uinfo.startTime!)!))! + EndTimeValue.allValues[index].rawValue.hours
+//            let endHours = EndTimeValue.allValues[index].rawValue.hours
+            let endHours = EndTimeValue.allValues[index].rawValue
+            self?.uinfo.endHours = endHours
+            
+            let endDate = (self?.uinfo.stringToDate((self?.uinfo.startTime!)!))! + endHours.hours
             self?.uinfo.endTime = self?.uinfo.dateToString(endDate)
             
             print(self?.uinfo.startTime)

@@ -16,6 +16,9 @@ class StartTimePickerVC: UIViewController {
     @IBOutlet weak var btnStart: UIButton!
     
     
+    var endDate: Date = Date()
+    
+    
     let startDropDown = DropDown()
     
     let uinfo = UserInfoManager()
@@ -41,6 +44,11 @@ class StartTimePickerVC: UIViewController {
         let startDate = uinfo.stringToDate(uinfo.startTime!)
         startPicker.minimumDate = startDate
         startPicker.date = startDate
+        
+        
+        endDate = uinfo.stringToDate(uinfo.endTime!)
+        
+        
         
         let firstDate = uinfo.stringToDate(uinfo.firstTime!)
         let oneDate = uinfo.stringToDate(uinfo.secondTime!)
@@ -102,6 +110,8 @@ class StartTimePickerVC: UIViewController {
             self?.startPicker.date = (self?.arrDay[index])! + nHourGap.hour
             
             self?.valueChanged((self?.startPicker)!)
+            
+//            print(self?.startPicker.date)
         }
     }
     
@@ -119,7 +129,19 @@ class StartTimePickerVC: UIViewController {
         
     }
     
-    
+    @IBAction func onBtnOk(_ sender: UIButton) {
+        print("StartTimeVC : OnBtnOk~ ")
+        
+        let startDay = self.startPicker.date
+        
+        if startDay < uinfo.stringToDate(uinfo.firstTime!) {
+            self.alert("지나간 시간입니다.")
+            return
+        }
+        
+        
+//        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     
 
     /*

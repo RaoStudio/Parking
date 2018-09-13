@@ -17,6 +17,8 @@ struct UserInfoKey {
     static let endTime = "ENDTIME"
     static let isUserAlarm = "ISUSERALARM"
     
+    static let endHours = "ENDHOURS"
+    
     
     static let extendStartTime = "EXTENDSTARTTIME"
     static let extendEndTime = "EXTENDENDTIME"
@@ -25,6 +27,7 @@ struct UserInfoKey {
     static let firstTime = "FIRST_TIME"
     static let secondTime = "SECOND_TIME"
     static let thirdTime = "THIRD_TIME"
+    
     
     static let nFirstTime = "INDEX_FIRST_TIME"
     static let nLastTime = "INDEX_LAST_TIME"
@@ -86,6 +89,18 @@ class UserInfoManager {
         set(v) {
             let ud = UserDefaults.standard
             ud.setValue(v, forKey: UserInfoKey.endTime)
+            ud.synchronize()
+        }
+    }
+    
+    var endHours: Int? {
+        get {
+            return UserDefaults.standard.integer(forKey: UserInfoKey.endHours)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.endHours)
             ud.synchronize()
         }
     }
@@ -389,6 +404,7 @@ extension UserInfoManager {
         
         startTime = strNowDate
         endTime = strDateAfterNow
+        endHours = 1
     }
     
     
