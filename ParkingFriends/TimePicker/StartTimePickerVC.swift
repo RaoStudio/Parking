@@ -111,7 +111,8 @@ class StartTimePickerVC: UIViewController {
             
             self?.valueChanged((self?.startPicker)!)
             
-//            print(self?.startPicker.date)
+            print(self?.startPicker.date)
+            print(self?.uinfo.dateToString((self?.startPicker.date)!))
         }
     }
     
@@ -131,6 +132,11 @@ class StartTimePickerVC: UIViewController {
     
     @IBAction func onBtnOk(_ sender: UIButton) {
         print("StartTimeVC : OnBtnOk~ ")
+        print(self.startPicker.date)
+        print(self.uinfo.dateToString(self.startPicker.date))
+        print("\n")
+        
+        
         
         let startDay = self.startPicker.date
         
