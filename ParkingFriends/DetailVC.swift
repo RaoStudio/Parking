@@ -585,7 +585,6 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     // MARK: - Calc Operation Time
     func calcOperationTime(strOperation: String) {
-        
         let arrStr = strOperation.split(separator: "~").map { String($0)}
         
         if let strStart = arrStr.first, let strEnd = arrStr.last {
