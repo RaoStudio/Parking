@@ -261,20 +261,40 @@ class ReserveExtendVC: PresentTestVC {
     }
     
     
-    /*
+    //*
     func calcOperationTime(strOperation: String) {
-        let arrStr = strOperation.split(separator: "~").map { (strTime) -> String in
+        var arrStr = strOperation.split(separator: "~").map { (strTime) -> String in
             return String(strTime)
         }
         
         print(arrStr)
         
+        if arrStr.count < 2 {
+            arrStr.removeAll()
+            
+            arrStr = strOperation.split(separator: "-").map { String($0)}
+        }
+        
         if let strStart = arrStr.first, let strEnd = arrStr.last {
             print(strStart)
             print(strEnd)
             
-            var fOpEndHour = Float(strEnd[0..<2])!
-            let fOpEndMin = Float(strEnd[2..<strEnd.count])!
+            
+            let arrEnd = strEnd.split(separator: ":").map { String($0)}
+            
+            
+            var fOpEndHour: Float
+            let fOpEndMin: Float
+            
+            if arrEnd.count < 2 {
+                
+                fOpEndHour = Float(strEnd[0..<2])!
+                fOpEndMin = Float(strEnd[2..<strEnd.count])!
+            } else {
+                fOpEndHour = Float(arrEnd.first!)!
+                fOpEndMin = Float(arrEnd.last!)!
+            }
+            
             
             if fOpEndHour == 00 {
                 fOpEndHour = 24
@@ -285,8 +305,39 @@ class ReserveExtendVC: PresentTestVC {
             print(exStartDate)
         }
     }
+ //*/
+   
+    /*
+    func calcOperationTime(strOperation: String) {
+        var arrStr = strOperation.split(separator: "~").map { (strTime) -> String in
+            return String(strTime)
+        }
+        
+        print(arrStr)
+        
+        
+        if let strStart = arrStr.first, let strEnd = arrStr.last {
+            print(strStart)
+            print(strEnd)
+            
+            
+            var fOpEndHour = Float(strEnd[0..<2])!
+            let fOpEndMin = Float(strEnd[2..<strEnd.count])!
+            
+            
+            if fOpEndHour == 00 {
+                fOpEndHour = 24
+            }
+            
+            let exStartDate = uinfo.stringToDate(uinfo.extendStartTime!)
+            print(uinfo.extendStartTime!)
+            print(exStartDate)
+        }
+    }
  */
     
+    
+    /*
     func calcOperationTime(strOperation: String) {
         let arrStr = strOperation.split(separator: "-").map { (strTime) -> String in
             return String(strTime)
@@ -303,8 +354,8 @@ class ReserveExtendVC: PresentTestVC {
             
             
             
-            var fOpEndHour = Float(arrEnd.first!)
-            let fOpEndMin = Float(arrEnd.last!)
+            var fOpEndHour = Float(arrEnd.first!)!
+            let fOpEndMin = Float(arrEnd.last!)!
             
             if fOpEndHour == 00 {
                 fOpEndHour = 24
@@ -315,6 +366,7 @@ class ReserveExtendVC: PresentTestVC {
             print(exStartDate)
         }
     }
+ */
     
     // MARK: - Btn Action
     

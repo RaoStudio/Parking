@@ -518,15 +518,27 @@ extension UserInfoManager {
             return false
         }
         
-        let arrStr = strOperation.split(separator: "~").map { (strTime) -> String in
+        var arrStr = strOperation.split(separator: "~").map { (strTime) -> String in
             return String(strTime)
         }
         
         print(arrStr)
         
+        
+        if arrStr.count < 2 {
+            arrStr.removeAll()
+            
+            arrStr = strOperation.split(separator: "-").map { String($0)}
+        }
+        
+        
+        
         if let strStart = arrStr.first, let strEnd = arrStr.last {
             print(strStart)
             print(strEnd)
+            
+            
+//            let arrFirst
             
             
             let fOpStartHour = Int(strStart[0..<2])!
@@ -538,6 +550,10 @@ extension UserInfoManager {
             if fOpEndHour == 00 {
                 fOpEndHour = 24
             }
+            
+            
+            
+            
             
             let calendar = Calendar.current
             let date = calendar.date(from: calendar.dateComponents(in: TimeZone.current, from: endDate))
