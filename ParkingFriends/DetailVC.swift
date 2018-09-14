@@ -105,6 +105,9 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     @IBOutlet weak var distanceStackView: UIStackView!
     @IBOutlet weak var opTimeView: UIView!
+    @IBOutlet weak var availCountView: UIView!
+    
+    
     
     var strSid: String = ""
     var strPay: String = ""
@@ -161,9 +164,14 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 
                 self.payInfoView.isHidden = true
                 self.conHeightPayInfoView.constant = 0
+                
+                self.availCountView.isHidden = true
+                
             } else {
                 self.publicPayInfoView.isHidden = true
                 self.conHeightPublicPayInfoView.constant = 0
+                
+                self.availCountView.isHidden = false
             }
             
             
@@ -547,6 +555,9 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             let nPartner: Int = Int(partner.intValue)
             if nPartner == 1 {
                 requestReservationImpossible(parkinglot_sid: strSid, start_time: uinfo.startTime!)
+                
+                
+                requestGetAvailable(parkinglot_sid: strSid, start_time: uinfo.startTime!, end_time: uinfo.endTime!)
             }
             
             
@@ -568,7 +579,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             
         }
         
-        requestGetAvailable(parkinglot_sid: strSid, start_time: uinfo.startTime!, end_time: uinfo.endTime!)
+        
         
     }
     
@@ -713,7 +724,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     }
     
     
-    // MARK - API ( URL_API_PARKINGLOT_AVAILABLE )
+    // MARK: - API ( URL_API_PARKINGLOT_AVAILABLE )
     func requestGetAvailable(parkinglot_sid: String, start_time: String, end_time: String) {
         self.navigationController?.view.makeToastActivity(.center)
         
@@ -737,7 +748,9 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 
                 if let strStatus = value["status"] as? String {
                     if strStatus == "200" {
-                        
+                        if let available : NSString = value["value"] as? NSString {
+                            self.lblAvailable.text = String(format: "%@대", available)
+                        }
                     } else {
                         
                     }
