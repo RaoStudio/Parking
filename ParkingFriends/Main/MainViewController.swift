@@ -460,12 +460,13 @@ class MainViewController: UIViewController {
     
     @IBAction func onBtnQuestion(_ sender: UIButton) {
         
-        guard let timePickerNavi = self.storyboard?.instantiateViewController(withIdentifier: "StartTimePickerNavi") as? UINavigationController else {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainQuestionVC") as? MainQuestionVC else {
             return
         }
         
-        //        let timePickerVC = timePickerNavi.topViewController as? TimePickerVC
-        self.present(timePickerNavi, animated: true, completion: nil)
+        vc.bTab = false
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false, completion: nil)
         
     }
     
@@ -531,6 +532,16 @@ class MainViewController: UIViewController {
 
         
         
+    }
+    
+    
+    @IBAction func onBtnStartTimePicker(_ sender: UIButton) {
+        guard let timePickerNavi = self.storyboard?.instantiateViewController(withIdentifier: "StartTimePickerNavi") as? UINavigationController else {
+            return
+        }
+        
+        //        let timePickerVC = timePickerNavi.topViewController as? TimePickerVC
+        self.present(timePickerNavi, animated: true, completion: nil)
     }
     
     
