@@ -16,7 +16,7 @@ import SwiftDate
 class DetailVC: UIViewController, UIPageViewControllerDataSource {
 
     
-    let bUseImpossibleTest: Bool = true
+    let bUseImpossibleTest: Bool = false
     
     @IBOutlet var ContentsView: UIView!
     @IBOutlet var lbl_Test: UILabel!
