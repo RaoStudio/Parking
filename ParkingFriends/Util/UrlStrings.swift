@@ -44,6 +44,8 @@ class UrlStrings {
     static let URL_SETUP_PARKINGLOT_PAGE =      URL_API_PARKINGLOT + "/set_parkinglot.php";
     static let URL_FETCH_PARKINGLOT_DETAIL =    URL_API_PARKINGLOT + "/get_parkinglot_detail.php";
     static let URL_ROADVIEW_PAGE =              URL_API_PARKINGLOT + "/roadview.php";
+    static let URL_API_PARKINGLOT_AVAILABLE =   URL_API_PARKINGLOT + "/getAvailable.php"
+    
     
     // PAYMENT
     static let URL_API_PAYMENT = URL_API_BASE + "/payment";
