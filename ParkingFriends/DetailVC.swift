@@ -724,6 +724,43 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     }
     
     
+    // MARK: - API ( URL_API_RESERVATION_CHECK )
+    func requestReservationCheck(parkinglot_sid: String, start_time: String, end_time: String) {
+        self.navigationController?.view.makeToastActivity(.center)
+        
+        let url = UrlStrings.URL_API_RESERVATION_CHECK
+        
+        let param = ["pSid": parkinglot_sid, "begin_datetime": start_time, "end_datetime": end_time]
+        
+        Alamofire.request(url, method: HTTPMethod.get, parameters: param, encoding: URLEncoding.default, headers: nil).validate().responseJSON { (response) in
+            
+            self.navigationController?.view.hideToastActivity()
+            
+            guard response.result.isSuccess else {
+                print("\(UrlStrings.URL_API_RESERVATION_CHECK) : \(String(describing: response.result.error))")
+                self.alert("\(UrlStrings.URL_API_RESERVATION_CHECK) : \(String(describing: response.result.error))")
+                return
+            }
+            
+            
+            if let value = response.result.value as? Dictionary<String, Any> {
+                print("requestGetAvailable JSON = \(value)")
+                
+                if let strStatus = value["status"] as? String {
+                    if strStatus == "200" {
+                        if let available : NSString = value["value"] as? NSString {
+                            
+                        }
+                    } else {
+                        
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
     // MARK: - API ( URL_API_PARKINGLOT_AVAILABLE )
     func requestGetAvailable(parkinglot_sid: String, start_time: String, end_time: String) {
         self.navigationController?.view.makeToastActivity(.center)
