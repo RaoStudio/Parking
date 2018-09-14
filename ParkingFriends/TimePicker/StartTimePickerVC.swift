@@ -171,8 +171,11 @@ class StartTimePickerVC: UIViewController {
                 let sTime = uinfo.stringToDate(strSTime)
                 let eTime = uinfo.stringToDate(strETime)
                 
-                let bStartEnable = startDay.isBetween(date: sTime, and: eTime)
-                let bEndEnable = endDay.isBetween(date: sTime, and: eTime)
+//                let bStartEnable = startDay.isBetween(date: sTime, and: eTime)
+//                let bEndEnable = endDay.isBetween(date: sTime, and: eTime)
+                
+                let bStartEnable = sTime.isBetween(date: startDay, and: endDay)
+                let bEndEnable = eTime.isBetween(date: startDay, and: endDay)
                 
                 if bStartEnable == true {
                     print("calcImpossibleTime return false: \(sTime) ~ \(eTime) : \(startDay)")
