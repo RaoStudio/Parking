@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainQuestionVC: UIViewController {
+class MainQuestionVC: PresentTestVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,14 @@ class MainQuestionVC: UIViewController {
     }
     
 
+    
+    // MARK: - Btn Action
+    
+    @IBAction func onBtnExit(_ sender: UIButton) {
+        self.tapMainView(self.view)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
