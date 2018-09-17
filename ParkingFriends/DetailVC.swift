@@ -57,6 +57,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var btnEndTime: UIButton!
     
     
+    @IBOutlet weak var btnEndDropDown: UIButton!
     
     @IBOutlet var lblCompany: UILabel!
     @IBOutlet var lblAddress: UILabel!
