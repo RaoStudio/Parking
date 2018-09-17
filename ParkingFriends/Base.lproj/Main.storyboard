@@ -833,6 +833,9 @@
                                                                                 <state key="normal" title="Button" backgroundImage="btn_blue_round_66">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="onBtnEndDropDown:" destination="S92-rk-C8t" eventType="touchUpInside" id="azk-CY-I0c"/>
+                                                                                </connections>
                                                                             </button>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow_TimePick_20" translatesAutoresizingMaskIntoConstraints="NO" id="xRG-bY-6aO">
                                                                                 <rect key="frame" x="94" y="12.5" width="10" height="8"/>

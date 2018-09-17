@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import Alamofire
 import SwiftDate
+import DropDown
 
 
 
@@ -119,6 +120,9 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     var nAddMin: Int = 0
     var nAddFee: Int = 0
+    
+    
+    let endTimeDropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -358,7 +362,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
         
         
-        
+        setupEndTimeDropDown()
         
 //        requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
     }
@@ -584,6 +588,63 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         
     }
     
+    
+    // MARK: - EndTime DropDown Setup
+    func setupEndTimeDropDown() {
+        endTimeDropDown.textFont = UIFont.systemFont(ofSize: 13.0, weight: .bold)
+        endTimeDropDown.textColor = UIColor.white
+        endTimeDropDown.backgroundColor = hexStringToUIColor(hex: "#13b6f7")
+        endTimeDropDown.selectionBackgroundColor = hexStringToUIColor(hex: "#13c1ff")
+        endTimeDropDown.cellHeight = 33.0
+        
+        endTimeDropDown.bottomOffset = CGPoint(x: 0, y: self.btnEndDropDown.bounds.height)
+        endTimeDropDown.anchorView = self.btnEndDropDown
+        
+        var arrData: Array = [String]()
+        
+        for item in EndTimeType.allValues {
+            arrData.append(item.rawValue)
+        }
+        
+        endTimeDropDown.dataSource = arrData
+        endTimeDropDown.selectRow(0)
+        
+        endTimeDropDown.direction = .bottom
+        
+        
+        self.btnEndDropDown.setTitle(arrData.first, for: UIControlState.normal)
+        
+        endTimeDropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            // Setup your custom UI components
+            cell.optionLabel.textAlignment = .center
+        }
+        
+        endTimeDropDown.selectionAction = { [weak self] (index, item) in
+            if self?.btnEndDropDown.title(for: UIControlState.normal) == item {
+                return
+            }
+            
+            self?.btnEndDropDown.setTitle(item, for: UIControlState.normal)
+            
+            //            let endHours = EndTimeValue.allValues[index].rawValue.hours
+            let endHours = EndTimeValue.allValues[index].rawValue
+            self?.uinfo.endHours = endHours
+            
+            let endDate = (self?.uinfo.stringToDate((self?.uinfo.startTime!)!))! + endHours.hours
+            self?.uinfo.endTime = self?.uinfo.dateToString(endDate)
+            
+            print(self?.uinfo.startTime)
+            print(self?.uinfo.endTime)
+            print("\n")
+            
+
+            
+        }
+        
+    }
+    
+    
+    // MARK: - Draw Time Stick ~
     func drawTimeStick() {
         for i in 0 ..< 24 {
             
@@ -852,6 +913,9 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     
     // MARK: - Button Action
+    @IBAction func onBtnEndDropDown(_ sender: UIButton) {
+        self.endTimeDropDown.show()
+    }
     
     @IBAction func onBtnTimePicker(_ sender: UIButton) {
         
