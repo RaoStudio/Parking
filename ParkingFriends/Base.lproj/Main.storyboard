@@ -1179,14 +1179,15 @@
                                                     <constraint firstAttribute="height" constant="1" id="5Uv-3r-0Ed"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tms-WI-uo6">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tms-WI-uo6">
                                                 <rect key="frame" x="203" y="25" width="160" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="160" id="TYD-Ka-oeZ"/>
                                                     <constraint firstAttribute="height" constant="34" id="iMy-Yv-2lN"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="바로 결제하기" backgroundImage="btn_green_round">
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="-15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="바로 예약하기" image="icon_car" backgroundImage="btn_green_round">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -6548,12 +6549,13 @@
         <image name="btn_gray_round" width="34" height="34"/>
         <image name="btn_green_80" width="40" height="40"/>
         <image name="btn_green_round" width="34" height="34"/>
-        <image name="btn_parking_lot" width="33" height="33"/>
+        <image name="btn_parking_lot" width="39" height="39"/>
         <image name="btn_red_round" width="34" height="34"/>
         <image name="distance_icon" width="12" height="12"/>
         <image name="graph_seperate" width="1" height="1"/>
         <image name="icon_arrow" width="6" height="11"/>
         <image name="icon_arrow_white" width="6" height="11"/>
+        <image name="icon_car" width="18" height="14"/>
         <image name="icon_distance" width="11" height="13"/>
         <image name="icon_navi" width="13" height="13"/>
         <image name="img_detail_table" width="12" height="73"/>
