@@ -628,6 +628,7 @@ class MainViewController: UIViewController {
     
     @IBAction func onBtnEndTime(_ sender: UIButton) {
         endTimeDropDown.show()
+        endTimeDropDown.selectRow(uinfo.nIndexEnd!)
     }
     
     
