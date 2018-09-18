@@ -720,6 +720,7 @@ class MainViewController: UIViewController {
         
         btnTimeInit.setTitle("처음으로 되돌리기", for: UIControlState.normal)
         
+        print("+++++++++++++++\(uinfo.nIndexEnd!)+++++++++++++++")
         
         endTimeDropDown.selectRow(uinfo.nIndexEnd!)
         self.btnEndTime.setTitle(EndTimeType.allValues[uinfo.nIndexEnd!].rawValue, for: UIControlState.normal)

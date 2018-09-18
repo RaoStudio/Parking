@@ -627,7 +627,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         endTimeDropDown.selectionBackgroundColor = hexStringToUIColor(hex: "#13c1ff")
         endTimeDropDown.cellHeight = 33.0
         
-        endTimeDropDown.bottomOffset = CGPoint(x: 0, y: self.btnEndDropDown.bounds.height)
+//        endTimeDropDown.bottomOffset = CGPoint(x: 0, y: self.btnEndDropDown.bounds.height)
+        endTimeDropDown.topOffset = CGPoint(x: 0, y: -self.btnEndDropDown.bounds.height)
         endTimeDropDown.anchorView = self.btnEndDropDown
         
         var arrData: Array = [String]()
@@ -639,7 +640,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         endTimeDropDown.dataSource = arrData
         endTimeDropDown.selectRow(uinfo.nIndexEnd!)
         
-        endTimeDropDown.direction = .bottom
+        endTimeDropDown.direction = .top
         
         
         self.btnEndDropDown.setTitle(arrData[uinfo.nIndexEnd!], for: UIControlState.normal)
