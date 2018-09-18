@@ -428,7 +428,7 @@ class MainViewController: UIViewController {
         endTimeDropDown.direction = .bottom
         
         
-        self.btnEndTime.setTitle(arrData.first, for: UIControlState.normal)
+        self.btnEndTime.setTitle(arrData[uinfo.nIndexEnd!], for: UIControlState.normal)
         
         endTimeDropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
             // Setup your custom UI components
@@ -719,6 +719,10 @@ class MainViewController: UIViewController {
         displayTimeToButton()
         
         btnTimeInit.setTitle("처음으로 되돌리기", for: UIControlState.normal)
+        
+        
+        endTimeDropDown.selectRow(uinfo.nIndexEnd!)
+        self.btnEndTime.setTitle(EndTimeType.allValues[uinfo.nIndexEnd!].rawValue, for: UIControlState.normal)
         
         RefreshParkingLot(self.mapView.camera.target, url: UrlStrings.URL_API_PARKINGLOT_FETCH_RATIO, bTime: self.bTime)
     }
