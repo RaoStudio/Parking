@@ -193,7 +193,7 @@ class MainViewController: UIViewController {
         }
         
         
-        setupEndTimeDropDown()
+        
         
         
         /*
@@ -236,6 +236,10 @@ class MainViewController: UIViewController {
         uinfo.initTimePickerVCTime()      // Add new init timePickerVC 
         
         displayTimeToButton()
+        
+        
+        setupEndTimeDropDown()
+        
 //        btnStart.setTitle(uinfo.startTime, for: UIControlState.normal)
 //        btnEnd.setTitle(uinfo.endTime, for: UIControlState.normal)
         
@@ -419,7 +423,7 @@ class MainViewController: UIViewController {
         }
         
         endTimeDropDown.dataSource = arrData
-        endTimeDropDown.selectRow(0)
+        endTimeDropDown.selectRow(uinfo.nIndexEnd!)
         
         endTimeDropDown.direction = .bottom
         
@@ -444,6 +448,8 @@ class MainViewController: UIViewController {
             
             let endDate = (self?.uinfo.stringToDate((self?.uinfo.startTime!)!))! + endHours.hours
             self?.uinfo.endTime = self?.uinfo.dateToString(endDate)
+            
+            self?.uinfo.nIndexEnd = index
             
             print(self?.uinfo.startTime)
             print(self?.uinfo.endTime)

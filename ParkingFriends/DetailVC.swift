@@ -607,12 +607,12 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         }
         
         endTimeDropDown.dataSource = arrData
-        endTimeDropDown.selectRow(0)
+        endTimeDropDown.selectRow(uinfo.nIndexEnd!)
         
         endTimeDropDown.direction = .bottom
         
         
-        self.btnEndDropDown.setTitle(arrData.first, for: UIControlState.normal)
+        self.btnEndDropDown.setTitle(arrData[uinfo.nIndexEnd!], for: UIControlState.normal)
         
         endTimeDropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
             // Setup your custom UI components
@@ -632,6 +632,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             
             let endDate = (self?.uinfo.stringToDate((self?.uinfo.startTime!)!))! + endHours.hours
             self?.uinfo.endTime = self?.uinfo.dateToString(endDate)
+            
+            self?.uinfo.nIndexEnd = index
             
             print(self?.uinfo.startTime)
             print(self?.uinfo.endTime)
@@ -936,6 +938,18 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     @IBAction func onExit(_ sender: Any) {
 //        self.dismiss(animated: true, completion: nil)
+        
+        
+        if let myNC = self.navigationController {
+            if let nc = myNC.presentingViewController as? UINavigationController {
+                
+                if let vc = nc.topViewController as? MainViewController {
+                    
+                    vc.reserveFromTimePick()
+                }
+            }
+        }
+        
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
