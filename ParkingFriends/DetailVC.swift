@@ -17,7 +17,7 @@ import DropDown
 class DetailVC: UIViewController, UIPageViewControllerDataSource {
 
     
-    let bUseImpossibleTest: Bool = false
+    let bUseImpossibleTest: Bool = true
     
     @IBOutlet var ContentsView: UIView!
     @IBOutlet var lbl_Test: UILabel!
@@ -58,6 +58,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var btnEndTime: UIButton!
     
     
+    @IBOutlet weak var btnNewStartTime: UIButton!
     @IBOutlet weak var btnEndDropDown: UIButton!
     
     @IBOutlet var lblCompany: UILabel!
@@ -529,6 +530,13 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 } else {
                     self.opTimeView.isHidden = true
                 }
+                
+                
+                
+                let strStart = String(format: "%d일(%@) %02d:%02d~", startDate.day, DayNameType.allValues[startDate.weekday-1].rawValue, startDate.hour, startDate.minute)
+                
+                btnNewStartTime.setTitle(strStart, for: UIControlState.normal)
+                
             }
         }
         
@@ -926,10 +934,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 if self.bUseImpossibleTest {
 //                    self.arrImpossible.append("2018-08-28 00:00:00")
 //                    self.arrImpossible.append("2018-08-28 01:00:00")
-                    self.arrImpossible.append("2018-08-29 12:00:00")
-                    self.arrImpossible.append("2018-08-29 13:00:00")
-                    self.arrImpossible.append("2018-08-30 15:00:00")
-                    self.arrImpossible.append("2018-08-30 16:40:00")
+                    self.arrImpossible.append("2018-09-18 15:00:00")
+                    self.arrImpossible.append("2018-09-18 16:00:00")
+                    self.arrImpossible.append("2018-09-18 17:00:00")
+                    self.arrImpossible.append("2018-09-18 19:40:00")
 //                    self.arrImpossible.append("2018-08-28 23:00:00")
 //                    self.arrImpossible.append("2018-08-29 01:00:00")
 //                    self.arrImpossible.append("2018-08-29 15:00:00")
@@ -947,6 +955,21 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     
     // MARK: - Button Action
+    
+    @IBAction func onBtnNewStart(_ sender: UIButton) {
+        guard let timePickerNavi = self.storyboard?.instantiateViewController(withIdentifier: "StartTimePickerNavi") as? UINavigationController else {
+            return
+        }
+        
+        
+        if let vc = timePickerNavi.topViewController as? StartTimePickerVC {
+            vc.arrImpossibleTime = self.arrImpossible
+        }
+        
+        self.present(timePickerNavi, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func onBtnEndDropDown(_ sender: UIButton) {
         self.endTimeDropDown.show()
     }

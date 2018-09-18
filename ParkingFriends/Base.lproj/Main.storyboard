@@ -808,27 +808,30 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이용시간" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kn5-Mq-1EZ">
-                                                                        <rect key="frame" x="0.0" y="16" width="49" height="17"/>
+                                                                        <rect key="frame" x="0.0" y="16" width="45" height="17"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="17" id="ScB-aY-rMC"/>
-                                                                            <constraint firstAttribute="width" constant="49" id="Vuh-xN-ese"/>
+                                                                            <constraint firstAttribute="width" constant="45" id="Vuh-xN-ese"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoL-mm-8Q9">
-                                                                        <rect key="frame" x="77" y="1" width="274" height="47"/>
+                                                                        <rect key="frame" x="73" y="1" width="278" height="47"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <state key="normal" title="Button">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="onBtnNewStart:" destination="S92-rk-C8t" eventType="touchUpInside" id="OXc-xY-o9K"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itB-zU-hjf">
-                                                                        <rect key="frame" x="236" y="8" width="115" height="33"/>
+                                                                        <rect key="frame" x="248" y="8" width="103" height="33"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKn-pB-IvC">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="115" height="33"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="103" height="33"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                                 <state key="normal" title="Button" backgroundImage="btn_blue_round_66">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -838,13 +841,13 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow_TimePick_20" translatesAutoresizingMaskIntoConstraints="NO" id="xRG-bY-6aO">
-                                                                                <rect key="frame" x="94" y="12.5" width="10" height="8"/>
+                                                                                <rect key="frame" x="82" y="12.5" width="10" height="8"/>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstItem="IKn-pB-IvC" firstAttribute="leading" secondItem="itB-zU-hjf" secondAttribute="leading" id="3DP-is-mqv"/>
-                                                                            <constraint firstAttribute="width" constant="115" id="5la-Cf-dE3"/>
+                                                                            <constraint firstAttribute="width" constant="103" id="5la-Cf-dE3"/>
                                                                             <constraint firstAttribute="trailing" secondItem="IKn-pB-IvC" secondAttribute="trailing" id="6FJ-JQ-6sA"/>
                                                                             <constraint firstAttribute="trailing" secondItem="xRG-bY-6aO" secondAttribute="trailing" constant="11" id="AEV-T6-wJd"/>
                                                                             <constraint firstItem="IKn-pB-IvC" firstAttribute="top" secondItem="itB-zU-hjf" secondAttribute="top" id="SvO-mf-ZdM"/>
@@ -1360,6 +1363,7 @@
                         <outlet property="btnEndDropDown" destination="IKn-pB-IvC" id="ScU-75-E4l"/>
                         <outlet property="btnEndTime" destination="w1O-SS-Mq1" id="CvD-Vq-M0s"/>
                         <outlet property="btnExit" destination="n2y-kF-x21" id="F0h-QG-Ijd"/>
+                        <outlet property="btnNewStartTime" destination="OoL-mm-8Q9" id="4aK-vV-YEb"/>
                         <outlet property="btnSensor" destination="fHX-4N-vxn" id="Oca-Xw-cUT"/>
                         <outlet property="btnStartTime" destination="rBx-fY-ojY" id="rRm-aA-tph"/>
                         <outlet property="conHeightGraphView" destination="OXv-s0-c1M" id="BsC-lC-Q0w"/>
