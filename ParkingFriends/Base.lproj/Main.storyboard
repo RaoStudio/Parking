@@ -1388,6 +1388,7 @@
                         <outlet property="conHeightPublicPayInfoView" destination="Dgr-yJ-jvm" id="HDu-1l-HMg"/>
                         <outlet property="distanceStackView" destination="4Vm-SJ-O8J" id="s8h-vJ-pVS"/>
                         <outlet property="graphView" destination="QGU-Lx-znv" id="Xc8-ND-gCm"/>
+                        <outlet property="ivStartTime" destination="bMv-sP-mRR" id="wDY-h4-GCi"/>
                         <outlet property="lblAddress" destination="2wW-kZ-qHV" id="bk5-dj-LuF"/>
                         <outlet property="lblAvailable" destination="kqa-uK-BR6" id="5eN-rz-fns"/>
                         <outlet property="lblCompany" destination="Ul5-0E-php" id="TB7-wb-eM5"/>

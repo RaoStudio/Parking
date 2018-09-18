@@ -61,6 +61,9 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet weak var lblNewStartTime: UILabel!
     @IBOutlet weak var btnNewStartTime: UIButton!
     @IBOutlet weak var btnEndDropDown: UIButton!
+    @IBOutlet weak var ivStartTime: UIImageView!
+    
+    
     
     @IBOutlet var lblCompany: UILabel!
     @IBOutlet var lblAddress: UILabel!
@@ -181,6 +184,15 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 self.conHeightPublicPayInfoView.constant = 0
                 
                 self.availCountView.isHidden = false
+                
+                let appWindowRect = UIApplication.shared.keyWindow?.bounds ?? UIWindow().bounds
+                
+                if appWindowRect.width <= 320 {
+                    ivStartTime.isHidden = true
+                } else {
+                    ivStartTime.isHidden = false
+                }
+                
             }
             
             
