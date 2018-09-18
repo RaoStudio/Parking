@@ -124,6 +124,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     let endTimeDropDown = DropDown()
     
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -508,6 +510,34 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         uinfo.totalPay = strPay
         
         
+        
+        if let dataPlace = self.dicPlace {
+            
+            let partner : NSString = dataPlace["partner"] as! NSString
+            let nPartner: Int = Int(partner.intValue)
+            if nPartner == 1 {
+                requestReservationImpossible(parkinglot_sid: strSid, start_time: uinfo.startTime!)
+                
+                requestGetAvailable(parkinglot_sid: strSid, start_time: uinfo.startTime!, end_time: uinfo.endTime!)
+                
+                
+                let bAvail = self.uinfo.isBetweenOperationTime(dicPlace: dataPlace)
+                
+                if bAvail == false {
+                    self.opTimeView.isHidden = false
+                    self.view.bringSubview(toFront: self.opTimeView)
+                } else {
+                    self.opTimeView.isHidden = true
+                }
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
 //        requestReservationImpossible(parkinglot_sid: "936", start_time: "test")
         
         /*
@@ -640,6 +670,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             print("\n")
             
 
+            self?.viewWillAppear(false)
             
         }
         
