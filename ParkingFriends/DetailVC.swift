@@ -606,6 +606,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
 //        requestReservationImpossible(parkinglot_sid: "936", start_time: uinfo.startTime!)
         
         
+        
+        /*
         if let dataPlace = self.dicPlace {
             
             let partner : NSString = dataPlace["partner"] as! NSString
@@ -618,24 +620,24 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             }
             
             
-            /*
-            if let bAvail = dataPlace["bAvailOpTime"] as? Bool {
-                if bAvail == false {
-                    let lblAvail = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 10))
-                    lblAvail.backgroundColor = UIColor.red
-                    lblAvail.text = "예약 가능한 시간이 아닙니다."
-             
-                    self.view.addSubview(lblAvail)
-             
-                    lblAvail.autoPinEdge(.top, to: .bottom, of: distanceStackView)
-                }
-            }
-            */
+           
+//            if let bAvail = dataPlace["bAvailOpTime"] as? Bool {
+//                if bAvail == false {
+//                    let lblAvail = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 10))
+//                    lblAvail.backgroundColor = UIColor.red
+//                    lblAvail.text = "예약 가능한 시간이 아닙니다."
+//
+//                    self.view.addSubview(lblAvail)
+//
+//                    lblAvail.autoPinEdge(.top, to: .bottom, of: distanceStackView)
+//                }
+//            }
+ 
             
             
             
         }
-        
+        */
         
         
     }
