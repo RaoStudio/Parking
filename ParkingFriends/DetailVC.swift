@@ -58,6 +58,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet var btnEndTime: UIButton!
     
     
+    @IBOutlet weak var lblNewStartTime: UILabel!
     @IBOutlet weak var btnNewStartTime: UIButton!
     @IBOutlet weak var btnEndDropDown: UIButton!
     
@@ -535,7 +536,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 
                 let strStart = String(format: "%d일(%@) %02d:%02d~", startDate.day, DayNameType.allValues[startDate.weekday-1].rawValue, startDate.hour, startDate.minute)
                 
-                btnNewStartTime.setTitle(strStart, for: UIControlState.normal)
+//                btnNewStartTime.setTitle(strStart, for: UIControlState.normal)
+                lblNewStartTime.text = strStart
                 
             }
         }
