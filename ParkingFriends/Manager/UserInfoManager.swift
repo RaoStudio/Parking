@@ -670,26 +670,36 @@ extension UserInfoManager {
             
             
             let calendar = Calendar.current
-            let date = calendar.date(from: calendar.dateComponents(in: TimeZone.current, from: endDate))
-            print(date)
-            print("##OriginalDate is \(dateToString(date!))\n")
+            let sDate = calendar.date(from: calendar.dateComponents(in: TimeZone.current, from: startDate))
+            print(sDate)
+            print("##OriginalSDate is \(dateToString(sDate!))\n")
             
             
-            var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: date!)
+            var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: sDate!)
             components.hour = fOpStartHour
             components.minute = fOpStartMin
             
             let opStartDate = calendar.date(from: components)
             
             
-            components.hour = fOpEndHour
-            components.minute = fOpEndMin
+            let eDate = calendar.date(from: calendar.dateComponents(in: TimeZone.current, from: startDate))
+            print(eDate)
+            var eComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: eDate!)
             
-            var opEndDate = calendar.date(from: components)
+            
+            eComponents.hour = fOpEndHour
+            eComponents.minute = fOpEndMin
+            
+            if (fOpStartHour > fOpEndHour) {
+//                eComponents.day = eComponents.day! + 1
+            }
+            
+            
+            var opEndDate = calendar.date(from: eComponents)
             
             
             if (fOpStartHour > fOpEndHour) {
-                opEndDate = opEndDate! + 24.hour
+//                opEndDate = opEndDate! + 24.hour
             }
             
             print(opStartDate)
