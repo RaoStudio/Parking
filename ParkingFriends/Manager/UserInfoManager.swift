@@ -505,6 +505,47 @@ extension UserInfoManager {
     }
     
     
+    func isImpossibleTime(arrImpossibleTime: [[String]], startDay: Date, endDay: Date) -> Bool {
+        
+        for item in arrImpossibleTime {
+            
+            if let strImpSTime = item.first, let strImpETime = item.last {
+                let impSTime = stringToDate(strImpSTime)
+                let impETime = stringToDate(strImpETime)
+                
+                let bStartDayEnable = startDay.isBetween(date: impSTime, and: impETime)
+                let bEndDayEnable = endDay.isBetween(date: impSTime, and: impETime)
+                
+                let bStartEnable = impSTime.isBetween(date: startDay, and: endDay)
+                let bEndEnable = impETime.isBetween(date: startDay, and: endDay)
+                
+                if bStartDayEnable == true {
+                    print("calcImpossibleTime return false: \(impSTime) ~ \(impETime) : \(startDay)")
+                    return true
+                }
+                
+                if bEndDayEnable == true {
+                    print("calcImpossibleTime return false: \(impSTime) ~ \(impETime) : \(startDay)")
+                    return true
+                }
+                
+                if bStartEnable == true {
+                    print("calcImpossibleTime return false: \(impSTime) ~ \(impETime) : \(startDay)")
+                    return true
+                }
+                
+                if bEndEnable == true {
+                    print("calcImpossibleTime return false: \(impSTime) ~ \(impETime) : \(endDay)")
+                    return true
+                }
+            }
+        }
+        
+        return false
+    }
+    
+    
+    
     func isBetweenOperationTime(dicPlace: Dictionary<String, Any>) -> Bool {
         var strWeek: String = ""
         let startDate = stringToDate(startTime!)
