@@ -17,7 +17,7 @@ import DropDown
 class DetailVC: UIViewController, UIPageViewControllerDataSource {
 
     
-    let bUseImpossibleTest: Bool = true
+    let bUseImpossibleTest: Bool = false
     var bOperation: Bool = true
     
     
@@ -558,7 +558,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 /*
                 if self.arrImpossible.count >= 2 {
                     let bImpossible = self.uinfo.isImpossibleTime(arrImpossibleTime: self.uinfo.arrangeImpossibleTime(arrTime: self.arrImpossible)!, startDay: uinfo.stringToDate(uinfo.startTime!), endDay: uinfo.stringToDate(uinfo.endTime!))
-                    
+                 
                     if bImpossible == true {
                         self.opTimeView.isHidden = false
                         self.view.bringSubview(toFront: self.opTimeView)
@@ -992,17 +992,26 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                     } else {
                         self.opTimeView.isHidden = true
                     }
+                  
                     
-                    
-                } else {
                     let bBetween = self.uinfo.isBetweenOperationTime(dicPlace: self.dicPlace!)
-                    if bBetween == true {
+                    if bBetween == false {
                         self.opTimeView.isHidden = false
                         self.view.bringSubview(toFront: self.opTimeView)
                     } else {
                         self.opTimeView.isHidden = true
                     }
+                    
                 }
+            } else {
+                let bBetween = self.uinfo.isBetweenOperationTime(dicPlace: self.dicPlace!)
+                if bBetween == false {
+                    self.opTimeView.isHidden = false
+                    self.view.bringSubview(toFront: self.opTimeView)
+                } else {
+                    self.opTimeView.isHidden = true
+                }
+                
             }
         }
     }
