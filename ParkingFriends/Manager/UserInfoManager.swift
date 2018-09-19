@@ -505,6 +505,38 @@ extension UserInfoManager {
     }
     
     
+    func arrangeImpossibleTime(arrTime: Array<String>?) -> Array<Array<String>>? {
+        
+        guard let arrImpossible = arrTime else {
+            return nil
+        }
+        
+        print(arrImpossible)
+        
+        var arrArrangeImpossible: [[String]]?
+        
+        arrArrangeImpossible = [[String]]()
+        
+        var arrValue: [String]?
+        
+        for (index, value) in arrImpossible.enumerated() {
+            print("\(index): \(value)")
+            
+            if (index % 2 == 0) {
+                arrValue = [String]()
+                arrValue?.append(value)
+            } else {
+                arrValue?.append(value)
+                arrArrangeImpossible?.append(arrValue!)
+            }
+        }
+        
+        print(arrArrangeImpossible!)
+        
+        return arrArrangeImpossible
+    }
+    
+    
     func isImpossibleTime(arrImpossibleTime: [[String]], startDay: Date, endDay: Date) -> Bool {
         
         for item in arrImpossibleTime {
@@ -596,11 +628,38 @@ extension UserInfoManager {
 //            let arrFirst
             
             
+            
+            let arrSTime = strStart.split(separator: ":").map { String($0)}
+            let arrETime = strEnd.split(separator: ":").map { String($0)}
+            
+            var fOpStartHour: Int
+            let fOpStartMin: Int
+            
+            var fOpEndHour: Int
+            let fOpEndMin: Int
+            
+            if arrSTime.count < 2 && arrETime.count < 2 {
+                fOpStartHour = Int(strStart[0..<2])!
+                fOpStartMin = Int(strStart[2..<strStart.count])!
+                
+                fOpEndHour = Int(strEnd[0..<2])!
+                fOpEndMin = Int(strEnd[2..<strEnd.count])!
+            } else {
+                fOpStartHour = Int(arrSTime.first!)!
+                fOpStartMin = Int(arrSTime.last!)!
+                
+                fOpEndHour = Int(arrETime.first!)!
+                fOpEndMin = Int(arrETime.last!)!
+                
+            }
+            
+            /*
             let fOpStartHour = Int(strStart[0..<2])!
             let fOpStartMin = Int(strStart[2..<strStart.count])!
             
             var fOpEndHour = Int(strEnd[0..<2])!
             let fOpEndMin = Int(strEnd[2..<strEnd.count])!
+             */
             
             if fOpEndHour == 00 {
                 fOpEndHour = 24

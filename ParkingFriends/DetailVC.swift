@@ -535,7 +535,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 requestGetAvailable(parkinglot_sid: strSid, start_time: uinfo.startTime!, end_time: uinfo.endTime!)
                 
                 
-                let bAvail = self.uinfo.isBetweenOperationTime(dicPlace: dataPlace)
+                var bAvail = self.uinfo.isBetweenOperationTime(dicPlace: dataPlace)
                 
                 if bAvail == false {
                     self.opTimeView.isHidden = false
@@ -550,6 +550,21 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 
 //                btnNewStartTime.setTitle(strStart, for: UIControlState.normal)
                 lblNewStartTime.text = strStart
+                
+                
+                if self.arrImpossible.count >= 2 {
+                    let bImpossible = self.uinfo.isImpossibleTime(arrImpossibleTime: self.uinfo.arrangeImpossibleTime(arrTime: self.arrImpossible)!, startDay: uinfo.stringToDate(uinfo.startTime!), endDay: uinfo.stringToDate(uinfo.endTime!))
+                    
+                    if bImpossible == true {
+                        self.opTimeView.isHidden = false
+                        self.view.bringSubview(toFront: self.opTimeView)
+                    } else {
+                        self.opTimeView.isHidden = true
+                    }
+                }
+                
+                
+                
                 
             }
         }
@@ -950,10 +965,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 if self.bUseImpossibleTest {
 //                    self.arrImpossible.append("2018-08-28 00:00:00")
 //                    self.arrImpossible.append("2018-08-28 01:00:00")
-                    self.arrImpossible.append("2018-09-18 15:00:00")
-                    self.arrImpossible.append("2018-09-18 16:00:00")
-                    self.arrImpossible.append("2018-09-18 17:00:00")
-                    self.arrImpossible.append("2018-09-18 19:40:00")
+                    self.arrImpossible.append("2018-09-19 15:00:00")
+                    self.arrImpossible.append("2018-09-19 16:00:00")
+                    self.arrImpossible.append("2018-09-19 17:00:00")
+                    self.arrImpossible.append("2018-09-19 19:40:00")
 //                    self.arrImpossible.append("2018-08-28 23:00:00")
 //                    self.arrImpossible.append("2018-08-29 01:00:00")
 //                    self.arrImpossible.append("2018-08-29 15:00:00")
