@@ -18,6 +18,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
 
     
     let bUseImpossibleTest: Bool = true
+    var bOperation: Bool = true
+    
     
     @IBOutlet var ContentsView: UIView!
     @IBOutlet var lbl_Test: UILabel!
@@ -535,6 +537,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 requestGetAvailable(parkinglot_sid: strSid, start_time: uinfo.startTime!, end_time: uinfo.endTime!)
                 
                 
+                /*
                 var bAvail = self.uinfo.isBetweenOperationTime(dicPlace: dataPlace)
                 
                 if bAvail == false {
@@ -543,7 +546,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 } else {
                     self.opTimeView.isHidden = true
                 }
-                
+                */
                 
                 
                 let strStart = String(format: "%d일(%@) %02d:%02d~", startDate.day, DayNameType.allValues[startDate.weekday-1].rawValue, startDate.hour, startDate.minute)
@@ -991,6 +994,14 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                     }
                     
                     
+                } else {
+                    let bBetween = self.uinfo.isBetweenOperationTime(dicPlace: self.dicPlace!)
+                    if bBetween == true {
+                        self.opTimeView.isHidden = false
+                        self.view.bringSubview(toFront: self.opTimeView)
+                    } else {
+                        self.opTimeView.isHidden = true
+                    }
                 }
             }
         }
