@@ -552,6 +552,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 lblNewStartTime.text = strStart
                 
                 
+                /*
                 if self.arrImpossible.count >= 2 {
                     let bImpossible = self.uinfo.isImpossibleTime(arrImpossibleTime: self.uinfo.arrangeImpossibleTime(arrTime: self.arrImpossible)!, startDay: uinfo.stringToDate(uinfo.startTime!), endDay: uinfo.stringToDate(uinfo.endTime!))
                     
@@ -562,7 +563,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                         self.opTimeView.isHidden = true
                     }
                 }
-                
+                */
                 
                 
                 
@@ -978,6 +979,18 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 
                 if self.arrImpossible.count >= 2 {
                     self.calcImpossibleTime(arrTime: self.arrImpossible)
+                    
+                    
+                    let bImpossible = self.uinfo.isImpossibleTime(arrImpossibleTime: self.uinfo.arrangeImpossibleTime(arrTime: self.arrImpossible)!, startDay: self.uinfo.stringToDate(self.uinfo.startTime!), endDay: self.uinfo.stringToDate(self.uinfo.endTime!))
+                    
+                    if bImpossible == true {
+                        self.opTimeView.isHidden = false
+                        self.view.bringSubview(toFront: self.opTimeView)
+                    } else {
+                        self.opTimeView.isHidden = true
+                    }
+                    
+                    
                 }
             }
         }
