@@ -981,6 +981,17 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 
                 
                 if self.arrImpossible.count >= 2 {
+                    
+                    let bBetween = self.uinfo.isBetweenOperationTime(dicPlace: self.dicPlace!)
+                    if bBetween == false {
+                        self.opTimeView.isHidden = false
+                        self.view.bringSubview(toFront: self.opTimeView)
+                    } else {
+                        self.opTimeView.isHidden = true
+                    }
+                    
+                    
+                    
                     self.calcImpossibleTime(arrTime: self.arrImpossible)
                     
                     
@@ -994,13 +1005,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                     }
                   
                     
-                    let bBetween = self.uinfo.isBetweenOperationTime(dicPlace: self.dicPlace!)
-                    if bBetween == false {
-                        self.opTimeView.isHidden = false
-                        self.view.bringSubview(toFront: self.opTimeView)
-                    } else {
-                        self.opTimeView.isHidden = true
-                    }
+                    
                     
                 }
             } else {
