@@ -165,7 +165,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             }
             
             if contentImages.isEmpty {
-                contentImages.append("Detail_NoImage")
+//                contentImages.append("Detail_NoImage")
+                contentImages.append("Public_Lot_Image")
             }
          
             
