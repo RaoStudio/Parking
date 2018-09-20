@@ -786,6 +786,10 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
         }
         
         
+        if arrStr.count < 2 {
+            return
+        }
+        
         if let strStart = arrStr.first, let strEnd = arrStr.last {
             print(strStart)
             print(strEnd)
