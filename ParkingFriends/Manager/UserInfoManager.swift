@@ -580,6 +580,7 @@ extension UserInfoManager {
     
     func isBetweenOperationTime(dicPlace: Dictionary<String, Any>) -> Bool {
         var strWeek: String = ""
+        var strEndWeek: String = ""
         let startDate = stringToDate(startTime!)
         let endDate = stringToDate(endTime!)
         
@@ -587,11 +588,18 @@ extension UserInfoManager {
         print("##Start is \(dateToString(startDate))")
         print("##End is \(dateToString(endDate))")
         
-        if endDate.isInWeekend {
+        if startDate.isInWeekend {
             strWeek = "operationtime_holiday"
         } else {
             strWeek = "operationtime_week"
         }
+        
+        if endDate.isInWeekend {
+            strEndWeek = "operationtime_holiday"
+        } else {
+            strEndWeek = "operationtime_week"
+        }
+        
         
         /*
          if let strOperationTime = dicPlace[strWeek] as? String {
