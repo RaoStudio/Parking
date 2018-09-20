@@ -631,6 +631,10 @@ extension UserInfoManager {
         }
         
         
+        if arrStr.count < 2 {
+            return false
+        }
+        
         
         if let strStart = arrStr.first, let strEnd = arrStr.last {
             print(strStart)
