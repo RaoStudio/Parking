@@ -736,7 +736,7 @@ extension UserInfoManager {
             
             
             
-            if startDate.day != endDate.day {
+            if startDate.day != endDate.day && bEndEnable == false {
                 guard let strOperation = dicPlace[strEndWeek] as? String else {
                     return false
                 }
@@ -853,6 +853,10 @@ extension UserInfoManager {
                     
 //                    bStartEnable = startDate.isBetween(date: opAvailStartDate, and: opAvailEndDate)
                     bEndEnable = endDate.isBetween(date: opAvailStartDate, and: opAvailEndDate)
+                    
+                    if opAvailStartDate.hour != 0 {
+                        bEndEnable = false
+                    }
                     
                     print("##StartEnable is \(bStartEnable)")
                     print("##EndEnable is \(bEndEnable)\n")
