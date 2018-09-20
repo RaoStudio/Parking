@@ -443,7 +443,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             }
             
             ///////////////////////////////////////////////////////////
-            /*
+            //*
             var strWeek: String = ""
             let today = uinfo.stringToDate(uinfo.startTime!)
             
@@ -458,7 +458,12 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 strWeek = "operationtime_week"
                 strOperationDay = "평일"
             }
-            */
+            
+            if let strOperationTime = dataPlace[strWeek] as? String {
+                self.lbl_OperationTime.text = strOperationTime
+                self.strOperationTime = strOperationTime
+            }
+            //*/
             ///////////////////////////////////////////////////////////
             
             calcOperationTime(strOperation: strOperationTime)
@@ -471,7 +476,15 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             let xPos: CGFloat = (fDistanceOfOneTime * CGFloat(fOpStartHour)) + (fDistanceOfOneMinute * CGFloat(fOpStartMin))
             let wGreen: CGFloat = (fDistanceOfOneTime * CGFloat(fOpEndHour-fOpStartHour)) + (fDistanceOfOneMinute * CGFloat(fOpEndMin))
             
+            
+            for view in self.viewTimeGraph.subviews {
+                if view.tag == 1000 {
+                    view.removeFromSuperview()
+                }
+            }
+            
             let viewOpGreen = UIView(frame: CGRect(x: xPos, y: 0, width: wGreen, height: 10))
+            viewOpGreen.tag = 1000
             viewOpGreen.backgroundColor = hexStringToUIColor(hex: "#22d158")
             self.viewTimeGraph.addSubview(viewOpGreen)
             
@@ -481,6 +494,8 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
 //                view.backgroundColor = self.viewTimeGraph.backgroundColor
                 viewOpGreen.backgroundColor = hexStringToUIColor(hex: "#aaaaaa")
                 self.viewTimeGraph.backgroundColor = hexStringToUIColor(hex: "#22d158")
+            } else {
+                self.viewTimeGraph.backgroundColor = hexStringToUIColor(hex: "#aaaaaa")
             }
             
             if let bAvail = dataPlace["bAvailOpTime"] as? Bool {
