@@ -27,6 +27,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
     
     @IBOutlet var btnSensor: RoundButton!
     @IBOutlet var btnCCTV: RoundButton!
+    @IBOutlet weak var ivCCTV: UIImageView!
     
     
     var distance: CLLocationDistance = 0
@@ -411,13 +412,17 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                
                 if let cctv: NSString = dataPlace["cctv"] as? NSString, cctv.isEqual(to: "0") {
                     self.btnCCTV.isHidden = true
+                    self.ivCCTV.isHidden = true
                 } else {
                     self.btnCCTV.isHidden = false
                     self.view.bringSubview(toFront: self.btnCCTV)
+                    
+                    self.ivCCTV.isHidden = false
                 }
             } else {
                 self.btnSensor.isHidden = true
                 self.btnCCTV.isHidden = true
+                self.ivCCTV.isHidden = true
                 
                 self.viewPay.isHidden = true
             }
@@ -436,6 +441,24 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                 lblAddress.text = String(format: "%@", address)
             }
             
+            ///////////////////////////////////////////////////////////
+            /*
+            var strWeek: String = ""
+            let today = uinfo.stringToDate(uinfo.startTime!)
+            
+            print(today.weekdayName)
+            
+            if today.isInWeekend {
+             
+                strWeek = "operationtime_holiday"
+                strOperationDay = "휴일"
+             
+            } else {
+                strWeek = "operationtime_week"
+                strOperationDay = "평일"
+            }
+            */
+            ///////////////////////////////////////////////////////////
             
             calcOperationTime(strOperation: strOperationTime)
             
