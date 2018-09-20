@@ -32,7 +32,7 @@ class TutorialContentsVC: UIViewController {
             self.bgImageView.image = UIImage(named: self.imageFile)
             self.bgImageView.contentMode = .scaleAspectFit
             
-            if imageFile == "Detail_NoImage" {
+            if imageFile == "Public_Lot_Image" {
                 self.bgImageView.contentMode = .scaleToFill
             }
         }
