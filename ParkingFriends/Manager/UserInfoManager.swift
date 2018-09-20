@@ -579,6 +579,10 @@ extension UserInfoManager {
     
     
     func isBetweenOperationTime(dicPlace: Dictionary<String, Any>) -> Bool {
+        
+        var bStartEnable: Bool = false
+        var bEndEnable: Bool = false
+        
         var strWeek: String = ""
         var strEndWeek: String = ""
         let startDate = stringToDate(startTime!)
@@ -723,12 +727,140 @@ extension UserInfoManager {
             print("##Avail EndDate is \(opAvailEndDate)")
             print("##Avail EndDate is \(dateToString(opAvailEndDate))\n")
             
-            let bStartEnable = startDate.isBetween(date: opAvailStartDate, and: opAvailEndDate)
-            let bEndEnable = endDate.isBetween(date: opAvailStartDate, and: opAvailEndDate)
+            bStartEnable = startDate.isBetween(date: opAvailStartDate, and: opAvailEndDate)
+            bEndEnable = endDate.isBetween(date: opAvailStartDate, and: opAvailEndDate)
             
             print("##StartEnable is \(bStartEnable)")
             print("##EndEnable is \(bEndEnable)\n")
             print("##Result is \(bStartEnable && bEndEnable)\n")
+            
+            
+            
+            if startDate.day != endDate.day {
+                guard let strOperation = dicPlace[strEndWeek] as? String else {
+                    return false
+                }
+                
+                var arrStr = strOperation.split(separator: "~").map { (strTime) -> String in
+                    return String(strTime)
+                }
+                
+                print(arrStr)
+                
+                
+                if arrStr.count < 2 {
+                    arrStr.removeAll()
+                    
+                    arrStr = strOperation.split(separator: "-").map { String($0)}
+                }
+                
+                
+                
+                if let strStart = arrStr.first, let strEnd = arrStr.last {
+                    print(strStart)
+                    print(strEnd)
+                    
+                    
+                    //            let arrFirst
+                    
+                    
+                    
+                    let arrSTime = strStart.split(separator: ":").map { String($0)}
+                    let arrETime = strEnd.split(separator: ":").map { String($0)}
+                    
+                    var fOpStartHour: Int
+                    let fOpStartMin: Int
+                    
+                    var fOpEndHour: Int
+                    let fOpEndMin: Int
+                    
+                    if arrSTime.count < 2 && arrETime.count < 2 {
+                        fOpStartHour = Int(strStart[0..<2])!
+                        fOpStartMin = Int(strStart[2..<strStart.count])!
+                        
+                        fOpEndHour = Int(strEnd[0..<2])!
+                        fOpEndMin = Int(strEnd[2..<strEnd.count])!
+                    } else {
+                        fOpStartHour = Int(arrSTime.first!)!
+                        fOpStartMin = Int(arrSTime.last!)!
+                        
+                        fOpEndHour = Int(arrETime.first!)!
+                        fOpEndMin = Int(arrETime.last!)!
+                        
+                    }
+                    
+                    /*
+                     let fOpStartHour = Int(strStart[0..<2])!
+                     let fOpStartMin = Int(strStart[2..<strStart.count])!
+                     
+                     var fOpEndHour = Int(strEnd[0..<2])!
+                     let fOpEndMin = Int(strEnd[2..<strEnd.count])!
+                     */
+                    
+                    if fOpEndHour == 00 {
+                        fOpEndHour = 24
+                    }
+                    
+                    
+                    
+                    
+                    
+                    let calendar = Calendar.current
+                    let sDate = calendar.date(from: calendar.dateComponents(in: TimeZone.current, from: endDate))
+                    print(sDate)
+                    print("##OriginalSDate is \(dateToString(sDate!))\n")
+                    
+                    
+                    var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: sDate!)
+                    components.hour = fOpStartHour
+                    components.minute = fOpStartMin
+                    
+                    let opStartDate = calendar.date(from: components)
+                    
+                    
+                    let eDate = calendar.date(from: calendar.dateComponents(in: TimeZone.current, from: endDate))
+                    print(eDate)
+                    var eComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: eDate!)
+                    
+                    
+                    eComponents.hour = fOpEndHour
+                    eComponents.minute = fOpEndMin
+                    
+                    if (fOpStartHour > fOpEndHour) {
+                        //                eComponents.day = eComponents.day! + 1
+                    }
+                    
+                    
+                    var opEndDate = calendar.date(from: eComponents)
+                    
+                    
+                    if (fOpStartHour > fOpEndHour) {
+                        //                opEndDate = opEndDate! + 24.hour
+                    }
+                    
+                    print(opStartDate)
+                    print("##trans opStartDate is \(dateToString(opStartDate!))\n")
+                    print(opEndDate)
+                    print("##trans opEndDate is \(dateToString(opEndDate!))\n")
+                    
+                    let opAvailStartDate = opStartDate! - 1.seconds
+                    print("##Avail StartDate is \(opAvailStartDate)")
+                    print("##Avail StartDate is \(dateToString(opAvailStartDate))\n")
+                    
+                    let opAvailEndDate = opEndDate! + 1.seconds
+                    print("##Avail EndDate is \(opAvailEndDate)")
+                    print("##Avail EndDate is \(dateToString(opAvailEndDate))\n")
+                    
+//                    bStartEnable = startDate.isBetween(date: opAvailStartDate, and: opAvailEndDate)
+                    bEndEnable = endDate.isBetween(date: opAvailStartDate, and: opAvailEndDate)
+                    
+                    print("##StartEnable is \(bStartEnable)")
+                    print("##EndEnable is \(bEndEnable)\n")
+                    print("##Result is \(bStartEnable && bEndEnable)\n")
+                }
+                
+            }
+            
             
             return bStartEnable && bEndEnable
             
