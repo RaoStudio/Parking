@@ -715,7 +715,7 @@ extension UserInfoManager {
             
             
             if (fOpStartHour > fOpEndHour) {
-//                opEndDate = opEndDate! + 24.hour
+                opEndDate = opEndDate! + 24.hour
             }
             
             print(opStartDate)
@@ -839,7 +839,7 @@ extension UserInfoManager {
                     
                     
                     if (fOpStartHour > fOpEndHour) {
-                        //                opEndDate = opEndDate! + 24.hour
+                        opEndDate = opEndDate! + 24.hour
                     }
                     
                     print(opStartDate)
