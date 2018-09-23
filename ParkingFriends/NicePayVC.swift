@@ -276,7 +276,21 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
             if let string: String = object as? String {
 //                Devg.createFile("COOKIE", contents: string)
                 print("###End Cookie###")
-                print(object)
+                print(string)
+                
+                let arrObj = string.components(separatedBy: ";")
+                
+                for item in arrObj {
+                    let arrItem = item.components(separatedBy: "=")
+                    if arrItem.first == "isOK" {
+                        if arrItem.last == "1" {
+                            print("Success")
+                        }
+                    }
+                }
+                
+                
+                
                 print("###End Cookie###")
             }
         }
