@@ -193,6 +193,8 @@ class CardVC: UIViewController, UITextFieldDelegate {
             
             niceVC.param = strParam
             
+            niceVC.bCard = true     // Add on 2018.09.23
+            
             self.navigationController?.pushViewController(niceVC, animated: true)
             
             uinfo.creditOne = txtCard_One.text!

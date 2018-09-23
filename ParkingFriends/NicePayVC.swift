@@ -37,6 +37,7 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
     
     var param: String = ""
  
+    var bCard: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
