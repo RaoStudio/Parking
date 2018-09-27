@@ -147,11 +147,11 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
         */
         
         
-        /*
+        //*
         let ud = UserDefaults.standard
         ud.set(true, forKey: UserInfoKey.tutorial)
         ud.synchronize()
-        */
+        //*/
         
         
         

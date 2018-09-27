@@ -87,7 +87,7 @@ class LaunchVC: UIViewController {
                 for vc in arrVC {
                     if let pVC = vc as? MainViewController {
                         print("####### MainViewController #######")
-//                        pVC.launchTutorial()
+                        pVC.launchTutorial()
                     }
                 }
             }
