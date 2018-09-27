@@ -31,7 +31,7 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
     var arrDetail = [Dictionary<String, Any>]()
     var strLatitude: String = ""
     var strLongitude: String = ""
-    var strTel: String = ""
+    var strTel: String = "025226161"
     let uinfo = UserInfoManager()
     
     var strName: String = ""
@@ -415,12 +415,14 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
                     self.btnNavi.isHidden = true
                 }
                 
+                /*
                 if let tel = dicData["tel"] as? String {
                     self.strTel = tel
                     self.btnPhone.isHidden = false
                 } else {
                     self.btnPhone.isHidden = true
                 }
+                 */
             }
         }
     }
