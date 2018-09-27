@@ -46,8 +46,9 @@ class NoticeContainVC: UIViewController {
         
         
         if bFriends == true {
-            vc1.host = "http://dev.parkingfriends.net/~vata/mgr/mgr_page/board/event_content.php?sid=2"
+//            vc1.host = "http://dev.parkingfriends.net/~vata/mgr/mgr_page/board/event_content.php?sid=2"
 //            vc1.host = "http://mgr.parkingfriends.net/mgr_page/board/event_content.php?sid=2"
+            vc1.host = UrlStrings.URL_EVENT_FRIENDS
         }
         
         tabPageVC.tabItems = [(vc1, "이벤트"), (vc2, "공지사항")]

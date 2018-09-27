@@ -10,7 +10,8 @@ import Foundation
 
 
 class UrlStrings {
-    static let URL_SERVER_BASE = "http://api.parkingfriends.net"
+    static let URL_HTTP = "http://"
+    static let URL_SERVER_BASE = URL_HTTP + "api.parkingfriends.net"
 //    static let URL_SERVER_BASE = "http://dev.parkingfriends.net/~vata/api"
     
     // API
@@ -79,10 +80,11 @@ class UrlStrings {
     
     // 2018.08.23
     static let URL_API_EVENT = URL_API_BASE + "/event"
-    static let URL_EVENT =  "http://mgr.parkingfriends.net/mgr_page/board/event.php";
-    static let URL_NOTICE = "http://mgr.parkingfriends.net/mgr_page/board/notice.php";
-    static let URL_FAQ = "http://mgr.parkingfriends.net/mgr_page/board/faq.php";
-    static let URL_PARTNER_CONTRACT = "http://mgr.parkingfriends.net/contact/makeContact.php";
+    static let URL_EVENT =  URL_HTTP + "mgr.parkingfriends.net/mgr_page/board/event.php";
+    static let URL_NOTICE = URL_HTTP + "mgr.parkingfriends.net/mgr_page/board/notice.php";
+    static let URL_FAQ = URL_HTTP + "mgr.parkingfriends.net/mgr_page/board/faq.php";
+    static let URL_PARTNER_CONTRACT = URL_HTTP + "mgr.parkingfriends.net/contact/makeContact.php";
+    static let URL_EVENT_FRIENDS = URL_HTTP + "mgr.parkingfriends.net/mgr_page/board/event_content.php?sid=2"
 //    static let URL_EVENT_REWARD = "http://api.parkingfriends.net/app/event/reward.php";
     static let URL_EVENT_REWARD =  URL_API_EVENT + "/reward.php";
     
