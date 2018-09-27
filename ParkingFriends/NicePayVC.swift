@@ -259,6 +259,7 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
             }
         }
         */
+        
         webView.evaluateJavaScript("document.getElementsByClassName('wrapper')[0].innerHTML;") { (result, error) in
             if error != nil {
                 print("###End###")
@@ -271,27 +272,38 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
             }
         }
         
-        
-        webView.evaluateJavaScript("document.cookie") { (object, error) in
-            if let string: String = object as? String {
-//                Devg.createFile("COOKIE", contents: string)
-                print("###End Cookie###")
-                print(string)
-                
-                let arrObj = string.components(separatedBy: ";")
-                
-                for item in arrObj {
-                    let arrItem = item.components(separatedBy: "=")
-                    if arrItem.first == "isOK" {
-                        if arrItem.last == "1" {
-                            print("Success")
+        if self.bCard == true {
+            webView.evaluateJavaScript("document.cookie") { (object, error) in
+                if let string: String = object as? String {
+                    //                Devg.createFile("COOKIE", contents: string)
+                    print("###End Cookie###")
+                    print(string)
+                    
+                    let arrObj = string.components(separatedBy: ";")
+                    
+                    for item in arrObj {
+                        let arrItem = item.components(separatedBy: "=")
+                        if arrItem.first == "isOK" {
+                            if arrItem.last == "1" {
+                                print("Success")
+                            } else {
+                                let uinfo = UserInfoManager()
+                                
+                                uinfo.creditOne = nil
+                                uinfo.creditTwo = nil
+                                uinfo.creditThree = nil
+                                uinfo.creditFour = nil
+                                
+                                uinfo.creditMonth = nil
+                                uinfo.creditYear = nil
+                            }
                         }
                     }
+                    
+                    
+                    
+                    print("###End Cookie###")
                 }
-                
-                
-                
-                print("###End Cookie###")
             }
         }
     }
