@@ -926,12 +926,27 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             
             
             if let value = response.result.value as? Dictionary<String, Any> {
-                print("requestGetAvailable JSON = \(value)")
+                print("requestReservationCheck JSON = \(value)")
                 
                 if let strStatus = value["status"] as? String {
                     if strStatus == "200" {
                         if let available : NSString = value["value"] as? NSString {
-                            
+                         
+                            if available == "0" {
+                                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ResCheckVC") as? ResCheckVC else {
+                                    return
+                                }
+                                
+                                
+                                self.uinfo.lotSid = self.strSid
+                                self.uinfo.rsvType = "R"
+                                
+                                vc.bTab = false
+                                vc.modalPresentationStyle = .overFullScreen
+                                self.present(vc, animated: false, completion: nil)
+                            } else {
+                                
+                            }
                         }
                     } else {
                         
@@ -1168,6 +1183,16 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             }
             
             
+            let strStart = uinfo.startTime!
+            let strEnd = uinfo.endTime!
+            
+            let dateStart = uinfo.stringToDate(strStart)
+            let dateEnd = uinfo.stringToDate(strEnd)
+            
+//            requestReservationCheck(parkinglot_sid: strSid, start_time: uinfo.startTime!, end_time: uinfo.endTime!)
+            requestReservationCheck(parkinglot_sid: strSid, start_time: uinfo.dateToStringForCheck(dateStart), end_time: uinfo.dateToStringForCheck(dateEnd))
+            
+            /*
             guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ResCheckVC") as? ResCheckVC else {
                 return
             }
@@ -1179,6 +1204,7 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             vc.bTab = false
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: false, completion: nil)
+             */
             
         } else {
             

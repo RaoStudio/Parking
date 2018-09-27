@@ -454,6 +454,15 @@ extension UserInfoManager {
         return df.string(from: value as Date)
     }
     
+    func dateToStringForCheck(_ value: Date) -> String {
+        let df = DateFormatter()
+        //        df.locale = Locale(identifier: "ko_KR")
+        df.locale = Locale.current
+        df.timeZone = TimeZone.current
+        df.dateFormat = "yyyyMMddHHmmss"
+        return df.string(from: value as Date)
+    }
+    
     func dayFromDate(_ value: String) -> String? {
         let calendar = Calendar(identifier: .gregorian)
         let date = stringToDate(value)

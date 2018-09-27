@@ -68,7 +68,7 @@ class UrlStrings {
     static let URL_API_RESERVATION_FETCH_DETAIL =   URL_API_RESERVATION + "/getHistoryDetail.php";
     static let URL_API_RESERVATION_CANCEL =         URL_API_RESERVATION + "/cancel.php";
     static let URL_API_RESERVATION_IMPOSSIBLE =     URL_API_RESERVATION + "/getImpossibleTime.php";
-    static let URL_API_RESERVATION_CHECK =          URL_API_RESERVATION + "reservation_check.php"
+    static let URL_API_RESERVATION_CHECK =          URL_API_RESERVATION + "/reservation_check.php"
     
     // ASK
     static let URL_COOP_ASK_FORM = "http://dev.parkingfriends.net/~vata/html/";
