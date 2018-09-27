@@ -139,11 +139,13 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - TableView
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+//        return 3
+        return 2
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        /*
         switch section {
         case 0:
             return 1
@@ -154,8 +156,19 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         default:
             return 1
         }
+         */
+        
+        switch section {
+        case 0:
+            return 3
+        case 1:
+            return 5
+        default:
+            return 3
+        }
     }
     
+    /*
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell: UITableViewCell
@@ -170,7 +183,8 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 radiusCell.lblRadius.text = uinfo.radius ?? RadiusType.fiveH.rawValue
             }
             
-        } else if nSection == 1 {
+        }
+        else if nSection == 1 {
             
             if nRow == 0 {
                 cell = tableView.dequeueReusableCell(withIdentifier: "SetNoticeCell")!
@@ -234,7 +248,78 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+ */
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var cell: UITableViewCell
+        
+        let nSection = indexPath.section
+        let nRow = indexPath.row
+        
+        if nSection == 0 {
+            
+            if nRow == 0 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "SetNoticeCell")!
+                if let noticeCell = cell as? SetNoticeCell {
+                    let bUse = uinfo.isUserAlarm ?? false
+                    noticeCell.btnCheck.isSelected = bUse
+                }
+            } else {
+                cell = tableView.dequeueReusableCell(withIdentifier: "SetAlarmCell")!
+                if let alarmCell = cell as? SetAlarmCell {
+                    if nRow == 1 {
+                        alarmCell.lblTitle.text = "입차시간 알림"
+                    } else {
+                        alarmCell.lblTitle.text = "출차시간 알림"
+                    }
+                }
+            }
+        } else if nSection == 1 {
+            if nRow == 4 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "SetVersionCell")!
+                if let versionCell = cell as? SetVersionCell {
+                    
+                    //                    let versionCode = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+                    //                    let buildNumber = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"] as! String
+                    versionCell.lblVersion.text = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String
+                }
+                
+                
+            } else {
+                cell = tableView.dequeueReusableCell(withIdentifier: "SetInfoAuthCell")!
+                if let infoAuthCell = cell as? SetInfoAuthCell {
+                    var strTitle: String
+                    
+                    
+                    switch nRow {
+                    case 0:
+                        strTitle = "사업자 정보"
+                    case 1:
+                        strTitle = "이용약관"
+                    case 2:
+                        strTitle = "개인정보 취급방식"
+                    case 3:
+                        strTitle = "위치기반 서비스 이용약관"
+                    default:
+                        strTitle = "사업자정보"
+                    }
+                    
+                    
+                    infoAuthCell.lblTitle.text = strTitle
+                }
+            }
+            
+        }
+        else
+        {
+            cell = tableView.dequeueReusableCell(withIdentifier: "SetRadiusCell")!
+        }
+        
+        return cell
+    }
+    
+    /*
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let nSection = indexPath.section
@@ -259,6 +344,30 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         return 44.0
     }
+ */
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let nSection = indexPath.section
+        let nRow = indexPath.row
+        
+        if nSection == 0 {
+            if nRow == 0 {
+                return 88.0
+            } else {
+                return 53.0
+            }
+            
+        } else if nSection == 1 {
+            if nRow == 4 {
+                return 53.0
+            } else {
+                return 44.0
+            }
+        }
+        
+        return 44.0
+    }
     
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -266,7 +375,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 
     
-    //*
+    /*
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
         header.textLabel?.textColor = UIColor.black
@@ -290,9 +399,31 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
         header.textLabel?.text = strSection
     }
-    //*/
+    */
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.textColor = UIColor.black
+        header.textLabel?.font = UIFont.systemFont(ofSize: 13.0)
+        
+        //        let rect = CGRect(x: 12.0, y: header.frame.origin.y, width: header.frame.size.width - 12.0, height: header.frame.size.height)
+        
+        header.textLabel?.frame = header.frame
+        header.textLabel?.textAlignment = .left
+        
+        var strSection: String
+        switch section {
+        case 0:
+            strSection = "알림"
+        case 1:
+            strSection = "서비스 정보"
+        default:
+            strSection = ""
+        }
+        header.textLabel?.text = strSection
+    }
     
+    /*
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -355,6 +486,78 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
         else if nSection == 2 {
+            if nRow != 4 {
+                if let agreeVC = self.storyboard?.instantiateViewController(withIdentifier: "AgreeInfoVC") as? AgreeInfoVC {
+                    
+                    var nTag = nRow-1
+                    
+                    if nTag < 0 {
+                        nTag = 3
+                    }
+                    
+                    agreeVC.nTag = nTag
+                    self.navigationController?.pushViewController(agreeVC, animated: true)
+                }
+            }
+        }
+        
+    }
+ */
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let nSection = indexPath.section
+        let nRow = indexPath.row
+        
+        if nSection == 0 {
+            
+            if nRow == 0 {
+                let cell = tableView.cellForRow(at: indexPath)
+                if let noticeCell = cell as? SetNoticeCell {
+                    
+                    noticeCell.onBtnCheck(noticeCell.btnCheck)
+                    uinfo.isUserAlarm = noticeCell.btnCheck.isSelected
+                    
+                    
+                    if uinfo.isUserAlarm == false {
+                        let nextIndex = IndexPath(row: 1, section: 1)
+                        
+                        let nextCell = tableView.cellForRow(at: nextIndex)
+                        if let alarmCell = nextCell as? SetAlarmCell {
+                            alarmCell.lblTime.text = UserAlarmType.none.rawValue
+                        }
+                        
+                        let nextIndex2 = IndexPath(row: 2, section: 1)
+                        
+                        let nextCell2 = tableView.cellForRow(at: nextIndex2)
+                        if let alarmCell2 = nextCell2 as? SetAlarmCell {
+                            alarmCell2.lblTime.text = UserAlarmType.none.rawValue
+                        }
+                        
+                        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                    }
+                    
+                }
+                
+            } else if nRow == 1 && uinfo.isUserAlarm == true {
+                let cell = tableView.cellForRow(at: indexPath)
+                if let alarmCell = cell as? SetAlarmCell {
+                    self.lblEntry = alarmCell.lblTime
+                    self.setupAlarmDropDown(label: self.lblEntry!, bEntry: true)
+                    self.alarmDropDown.show()
+                }
+                
+            } else if nRow == 2 && uinfo.isUserAlarm == true{
+                let cell = tableView.cellForRow(at: indexPath)
+                if let alarmCell = cell as? SetAlarmCell {
+                    self.lblEntry = alarmCell.lblTime
+                    self.setupAlarmDropDown(label: self.lblEntry!, bEntry: false)
+                    self.alarmDropDown.show()
+                }
+            }
+        }
+        else if nSection == 1 {
             if nRow != 4 {
                 if let agreeVC = self.storyboard?.instantiateViewController(withIdentifier: "AgreeInfoVC") as? AgreeInfoVC {
                     

@@ -2453,8 +2453,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1f-BD-tyu" customClass="RaoGradientView" customModule="ParkingFriends" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="fcR-XS-ecs"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="29" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RwP-ne-oZe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="2" width="375" height="601"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
@@ -2675,9 +2682,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0s5-1m-QHy" firstAttribute="trailing" secondItem="RwP-ne-oZe" secondAttribute="trailing" id="Do9-wG-YwK"/>
+                            <constraint firstItem="a1f-BD-tyu" firstAttribute="top" secondItem="0s5-1m-QHy" secondAttribute="top" id="Fof-5Z-6ap"/>
+                            <constraint firstItem="a1f-BD-tyu" firstAttribute="leading" secondItem="0s5-1m-QHy" secondAttribute="leading" id="GLQ-Y8-sBl"/>
+                            <constraint firstItem="a1f-BD-tyu" firstAttribute="trailing" secondItem="0s5-1m-QHy" secondAttribute="trailing" id="KEk-xW-czZ"/>
                             <constraint firstItem="RwP-ne-oZe" firstAttribute="leading" secondItem="0s5-1m-QHy" secondAttribute="leading" id="POm-Az-2Cf"/>
+                            <constraint firstAttribute="bottom" secondItem="RwP-ne-oZe" secondAttribute="bottom" id="WOY-59-vmg"/>
                             <constraint firstItem="0s5-1m-QHy" firstAttribute="bottom" secondItem="RwP-ne-oZe" secondAttribute="bottom" id="fEA-b2-Q5l"/>
-                            <constraint firstItem="RwP-ne-oZe" firstAttribute="top" secondItem="0s5-1m-QHy" secondAttribute="top" id="nsd-NI-EQD"/>
+                            <constraint firstItem="RwP-ne-oZe" firstAttribute="top" secondItem="a1f-BD-tyu" secondAttribute="bottom" id="hpK-d1-aQ9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0s5-1m-QHy"/>
                     </view>
