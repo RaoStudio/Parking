@@ -13,6 +13,7 @@ import GoogleMaps
 class ParkingLotVC: UIViewController {
 
     var arrPlace = [GMSMarker]()
+    @IBOutlet weak var viewGradient: RaoGradientView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,7 @@ class ParkingLotVC: UIViewController {
         tabPageVC.option.tabWidth = view.frame.width / CGFloat(tabPageVC.tabItems.count)
 
         tabPageVC.option.currentColor = hexStringToUIColor(hex: "#000000")
+        tabPageVC.option.tabHeight = 40
         
         
         
@@ -71,6 +73,9 @@ class ParkingLotVC: UIViewController {
         self.view.addSubview(tabPageVC.view)
         tabPageVC.didMove(toParentViewController: self)
         //*/
+        
+        
+//        self.view.bringSubview(toFront: self.viewGradient)
     }
 
     override func didReceiveMemoryWarning() {

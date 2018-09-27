@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +16,21 @@
                     <view key="view" contentMode="scaleToFill" id="NB3-oS-ijK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EoC-Tr-zB9" customClass="RaoGradientView" customModule="ParkingFriends" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="2"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="5Zn-HH-lSR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EoC-Tr-zB9" firstAttribute="top" secondItem="TpT-kQ-vzQ" secondAttribute="top" id="Cyb-xC-YvD"/>
+                            <constraint firstItem="EoC-Tr-zB9" firstAttribute="leading" secondItem="TpT-kQ-vzQ" secondAttribute="leading" id="RsM-Ps-XE2"/>
+                            <constraint firstItem="EoC-Tr-zB9" firstAttribute="trailing" secondItem="TpT-kQ-vzQ" secondAttribute="trailing" id="ofW-pa-I51"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TpT-kQ-vzQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ael-L8-DKI">
@@ -28,6 +41,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="viewGradient" destination="EoC-Tr-zB9" id="GQY-4f-OIL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="462-sB-DNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
