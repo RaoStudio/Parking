@@ -945,11 +945,11 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                                 vc.modalPresentationStyle = .overFullScreen
                                 self.present(vc, animated: false, completion: nil)
                             } else {
-                                
+                                self.alert("중복된 예약이 있습니다. 확인해 주세요.")
                             }
                         }
                     } else {
-                        
+                        self.alert("예약하는 중 오류가 발생했습니다. 확인하시고 잠시후 예약해주세요.")
                     }
                 }
             }
