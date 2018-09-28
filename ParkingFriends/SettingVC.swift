@@ -33,6 +33,9 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let radiusDropDown = DropDown()
     let alarmDropDown = DropDown()
     
+    let startAlarmDropDown = DropDown()
+    let endAlarmDropDown = DropDown()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,6 +130,38 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             
             if self?.uinfo.isUserAlarm == true {
                 self?.setUserAlarmNotification(bEntry: bEntry)
+            }
+        }
+    }
+    
+    func setupStartAlarmDropDown(label: UILabel) {
+        startAlarmDropDown.anchorView = label
+        
+        radiusDropDown.topOffset = CGPoint(x: 0, y: label.bounds.height)
+        
+        startAlarmDropDown.dataSource = [
+            UserAlarmType.none.rawValue,
+            UserAlarmType.appoint.rawValue,
+            UserAlarmType.one.rawValue,
+            UserAlarmType.three.rawValue,
+            UserAlarmType.five.rawValue,
+            UserAlarmType.ten.rawValue,
+            UserAlarmType.fifteen.rawValue,
+            UserAlarmType.twenty.rawValue,
+            UserAlarmType.thirty.rawValue,
+            UserAlarmType.hour.rawValue
+        ]
+        
+        startAlarmDropDown.selectRow(uinfo.UserAlarmStart ?? 0)
+        
+        startAlarmDropDown.direction = .bottom
+        startAlarmDropDown.selectionAction = { [weak self] (index, item) in
+            label.text = item
+            
+            self?.uinfo.UserAlarmStart = index
+            
+            if self?.uinfo.isUserAlarm == true {
+                self?.setUserAlarmNotification(bEntry: true)
             }
         }
         
