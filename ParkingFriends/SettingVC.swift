@@ -66,6 +66,10 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     
+    func displayToast() {
+        self.navigationController?.view.makeToast("헌재 Push Alarm 과 함께 테스트중입니다. 파킹프렌즈 다음 버젼에서 만나뵐께요~", duration: 1.5, position: .bottom)
+    }
+    
     // MARK: - DropDown
     func setupRadiusDropDown() {
         radiusDropDown.anchorView = self.lblRadius
@@ -122,7 +126,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             label.text = item
             
             if self?.uinfo.isUserAlarm == true {
-                self?.setUserAlarmNotification()
+                self?.setUserAlarmNotification(bEntry: bEntry)
             }
         }
         
@@ -264,6 +268,10 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 if let noticeCell = cell as? SetNoticeCell {
                     let bUse = uinfo.isUserAlarm ?? false
                     noticeCell.btnCheck.isSelected = bUse
+                    
+                    if bUse {
+                        self.displayToast()
+                    }
                 }
             } else {
                 cell = tableView.dequeueReusableCell(withIdentifier: "SetAlarmCell")!
@@ -536,6 +544,8 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                         }
                         
                         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                    } else {
+                        self.displayToast()
                     }
                     
                 }
@@ -576,7 +586,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     // MARK: - UNUserNotificationCenter
-    func setUserAlarmNotification() {
+    func setUserAlarmNotification(bEntry: Bool = false) {
         let content = UNMutableNotificationContent()
         content.title = "Title Test"
         content.subtitle = "Subtitle Test"

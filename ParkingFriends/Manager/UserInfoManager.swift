@@ -16,6 +16,9 @@ struct UserInfoKey {
     static let startTime = "STARTTIME"
     static let endTime = "ENDTIME"
     static let isUserAlarm = "ISUSERALARM"
+    static let UserAlarmStart = "USERALARMSTART"
+    static let UserAlarmEnd = "USERALARMEnd"
+    
     
     static let endHours = "ENDHOURS"
     static let nIndexEnd = "NINDEXEND"
@@ -153,6 +156,31 @@ class UserInfoManager {
             ud.setValue(v, forKey: UserInfoKey.isUserAlarm)
             ud.synchronize()
         }                
+    }
+    
+    
+    var UserAlarmStart: Int? {
+        get {
+            return UserDefaults.standard.integer(forKey: UserInfoKey.UserAlarmStart)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.UserAlarmStart)
+            ud.synchronize()
+        }
+    }
+    
+    var UserAlarmEnd: Int? {
+        get {
+            return UserDefaults.standard.integer(forKey: UserInfoKey.UserAlarmEnd)
+        }
+        
+        set(v) {
+            let ud = UserDefaults.standard
+            ud.setValue(v, forKey: UserInfoKey.UserAlarmEnd)
+            ud.synchronize()
+        }
     }
     
     var rLatitude: Double? {
@@ -420,6 +448,9 @@ extension UserInfoManager {
         endTime = strDateAfterNow
         endHours = 1
         nIndexEnd = 0
+     
+        UserAlarmStart = 0
+        UserAlarmEnd = 0
     }
  */
     
@@ -442,6 +473,10 @@ extension UserInfoManager {
         endTime = strDateAfterNow
         endHours = 2
         nIndexEnd = 0
+        
+        
+        UserAlarmStart = 0
+        UserAlarmEnd = 0
     }
     
     
@@ -457,6 +492,9 @@ extension UserInfoManager {
         nFirstTime = 0
         nLastTime = 0
         nIndexEnd = 0
+        
+        UserAlarmStart = 0
+        UserAlarmEnd = 0
     }
     
     func stringToDate(_ value: String) -> Date {
