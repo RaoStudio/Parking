@@ -61,6 +61,8 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         UNUserNotificationCenter.current().delegate = self
         
      
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -591,6 +593,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     self.lblEntry = alarmCell.lblTime
                     self.setupAlarmDropDown(label: self.lblEntry!, bEntry: true)
                     self.alarmDropDown.show()
+                    
                 }
                 
             } else if nRow == 2 && uinfo.isUserAlarm == true{
@@ -622,6 +625,13 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - UNUserNotificationCenter
     func setUserAlarmNotification(bEntry: Bool = false) {
+        let bUse = uinfo.isUserAlarm ?? false
+        if bUse == false {
+            return
+        } else {
+            return      // Test Now ~
+        }
+        
         let content = UNMutableNotificationContent()
         content.title = "Title Test"
         content.subtitle = "Subtitle Test"

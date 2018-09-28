@@ -9,6 +9,8 @@
 import UIKit
 import WebKit
 
+import UserNotifications
+
 class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         print("##userContentController")
@@ -35,6 +37,7 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
     
 //    var param = "PayMethod=CELLPHONE&BuyerName=미래엔씨티&BuyerTel=01036638266&BuyerEmail=misconct6161@gmail.com&member_sid=8&parkinglot_sid=7874&reserve_type=R&begin=2018-08-03 17:20&end=2018-08-03 19:20&price_ori=5000&point=0&type=nice_etc&code=3RYF9V32S7UULZTNMV1GITB9"
     
+    
     var param: String = ""
  
     var bCard: Bool = false
@@ -48,6 +51,13 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
         initWebView()
         
         self.navigationItem.title = "결제"
+        
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (didAllow, Error) in
+            
+        }
+        
+        UNUserNotificationCenter.current().delegate = self
         
     }
     
@@ -272,7 +282,7 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
             }
         }
         
-        if self.bCard == true {
+//        if self.bCard == true {
             webView.evaluateJavaScript("document.cookie") { (object, error) in
                 if let string: String = object as? String {
                     //                Devg.createFile("COOKIE", contents: string)
@@ -286,26 +296,31 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
                         if arrItem.first == "isOK" {
                             if arrItem.last == "1" {
                                 print("Success")
+                                
+                                if let setVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingVC") as? SettingVC {
+                                    setVC.setUserAlarmNotification()
+                                }
+                                
                             } else {
-                                let uinfo = UserInfoManager()
                                 
-                                uinfo.creditOne = nil
-                                uinfo.creditTwo = nil
-                                uinfo.creditThree = nil
-                                uinfo.creditFour = nil
-                                
-                                uinfo.creditMonth = nil
-                                uinfo.creditYear = nil
+                                if self.bCard == true {
+                                    let uinfo = UserInfoManager()
+                                    
+                                    uinfo.creditOne = nil
+                                    uinfo.creditTwo = nil
+                                    uinfo.creditThree = nil
+                                    uinfo.creditFour = nil
+                                    
+                                    uinfo.creditMonth = nil
+                                    uinfo.creditYear = nil
+                                }
                             }
                         }
                     }
-                    
-                    
-                    
                     print("###End Cookie###")
                 }
             }
-        }
+//        }
     }
     
     
@@ -378,4 +393,11 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
     }
     */
 
+}
+
+
+extension NicePayVC: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, .badge])
+    }
 }
