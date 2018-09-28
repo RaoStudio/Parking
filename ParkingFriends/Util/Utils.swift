@@ -46,6 +46,7 @@ enum RadiusValue: Int {
 
 
 // EndTimeSelect
+/*
 enum EndTimeType: String {
     case one = "1시간"
     case two = "2시간"
@@ -59,6 +60,8 @@ enum EndTimeType: String {
     
     static let allValues = [one, two, three, four, five, six, eight, ten, twelve]
 }
+ 
+
 
 enum EndTimeValue: Int {
     case one = 1
@@ -72,6 +75,33 @@ enum EndTimeValue: Int {
     case twelve = 12
     
     static let allValues = [one, two, three, four, five, six, eight, ten, twelve]
+}
+ */
+
+enum EndTimeType: String {
+    case two = "2시간"
+    case three = "3시간"
+    case four  = "4시간"
+    case five = "5시간"
+    case six = "6시간"
+    case eight = "8시간"
+    case ten = "10시간"
+    case twelve = "12시간"
+    
+    static let allValues = [two, three, four, five, six, eight, ten, twelve]
+}
+
+enum EndTimeValue: Int {
+    case two = 2
+    case three = 3
+    case four  = 4
+    case five = 5
+    case six = 6
+    case eight = 8
+    case ten = 10
+    case twelve = 12
+    
+    static let allValues = [two, three, four, five, six, eight, ten, twelve]
 }
 
 

@@ -401,6 +401,7 @@ class UserInfoManager {
 
 extension UserInfoManager {
 
+/*
     func initTime() {
         
         // Time Set
@@ -418,6 +419,28 @@ extension UserInfoManager {
         startTime = strNowDate
         endTime = strDateAfterNow
         endHours = 1
+        nIndexEnd = 0
+    }
+ */
+    
+    
+    func initTime() {
+        
+        // Time Set
+        let nowDate = Date()
+        var nowDatePlus10 = nowDate + 10.minute
+        
+        let min10 = (nowDatePlus10.minute / 10) * 10
+        
+        nowDatePlus10 = nowDatePlus10 - nowDatePlus10.minute.minute + min10.minute
+        
+        let dateAfterNow = Date(timeInterval: 2*60*60, since: nowDatePlus10)
+        let strNowDate = dateToString(nowDatePlus10)
+        let strDateAfterNow = dateToString(dateAfterNow)
+        
+        startTime = strNowDate
+        endTime = strDateAfterNow
+        endHours = 2
         nIndexEnd = 0
     }
     
