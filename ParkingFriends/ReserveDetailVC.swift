@@ -339,6 +339,7 @@ class ReserveDetailVC: UIViewController, UIPageViewControllerDataSource, UIColle
     }
     
     @IBAction func onBtnCCTV(_ sender: UIButton) {
+        self.navigationController?.view.makeToast("헌재 서비스 개발 및 준비중입니다. 파킹프렌즈 다음 버젼에서 만나뵐께요~", duration: 1.5, position: .bottom)
     }
     
     
