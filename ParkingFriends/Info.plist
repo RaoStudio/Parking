@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>파킹프렌즈</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -61,8 +63,8 @@
 		<string>fb-messenger-share-api</string>
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
-        <string>kakaotalk</string>
-        <string>kakaopay</string>
+		<string>kakaotalk</string>
+		<string>kakaopay</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
