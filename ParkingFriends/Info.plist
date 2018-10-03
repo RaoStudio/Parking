@@ -46,7 +46,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>FacebookAppID</key>
 	<string>1939017672778579</string>
 	<key>FacebookDisplayName</key>
@@ -74,7 +74,7 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location</string>
+	<string>현재 위치로 이동하기위해 권한을 요청합니다.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
