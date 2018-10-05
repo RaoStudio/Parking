@@ -10,7 +10,7 @@ import Foundation
 
 
 class UrlStrings {
-    static let URL_HTTP = "http://"
+    static let URL_HTTP = "https://"
     static let URL_SERVER_BASE = URL_HTTP + "api.parkingfriends.net"
 //    static let URL_SERVER_BASE = "http://dev.parkingfriends.net/~vata/api"
     
