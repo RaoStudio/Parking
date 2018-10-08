@@ -75,6 +75,10 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>네비게이션 연동, 사용자 위치 기준 주변 검색을 위해 필요합니다.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

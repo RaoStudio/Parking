@@ -18,6 +18,7 @@ target 'ParkingFriends' do
     pod 'SwiftDate', '4.5.1'
     pod 'Firebase/Core', '5.7.0'
     pod 'Firebase/Auth', '5.7.0'
+    pod 'Firebase/Messaging', '5.7.0'
     pod 'GoogleSignIn', '4.2.0'
     pod 'FBSDKLoginKit', '4.35.0'
     pod 'Toast-Swift', '3.0.1'
