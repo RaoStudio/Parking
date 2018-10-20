@@ -408,15 +408,15 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
             if nPartner == 1 {
             
 //            if let partner : NSString = dataPlace["partner"] as? NSString, partner.isEqual(to: "1") {
-                self.btnSensor.isHidden = false
-                self.view.bringSubview(toFront: self.btnSensor)
+//                self.btnSensor.isHidden = false
+//                self.view.bringSubview(toFront: self.btnSensor)
                
                 if let cctv: NSString = dataPlace["cctv"] as? NSString, cctv.isEqual(to: "0") {
                     self.btnCCTV.isHidden = true
                     self.ivCCTV.isHidden = true
                 } else {
-                    self.btnCCTV.isHidden = false
-                    self.view.bringSubview(toFront: self.btnCCTV)
+//                    self.btnCCTV.isHidden = false
+//                    self.view.bringSubview(toFront: self.btnCCTV)
                     
                     self.ivCCTV.isHidden = false
                 }
@@ -948,7 +948,18 @@ class DetailVC: UIViewController, UIPageViewControllerDataSource {
                                 self.alert("중복된 예약이 있습니다. 확인해 주세요.")
                             }
                         }
-                    } else {
+                    } else if strStatus == "400" {
+                        self.alert("예약하는 과정에 통신오류가 발생하여 재로그인이 필요합니다. 다시 로그인해 주세요.", completion: {
+                            let uSession = UserSession()
+                            uSession.initUserSession()
+                            
+                            if let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
+                                self.navigationController?.pushViewController(loginVC, animated: true)
+                            }
+                        })
+                    }
+                    else
+                    {
                         self.alert("예약하는 중 오류가 발생했습니다. 확인하시고 잠시후 예약해주세요.")
                     }
                 }

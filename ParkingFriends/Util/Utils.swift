@@ -13,7 +13,7 @@ import Alamofire
 
 // Coupon
 enum CouponType: String {
-    case month = "이달의 쿠폰 - 10% 할인"
+    case month = "이달의 쿠폰 - 10% 할인 ( 준비중~ )"
     case launch = "출시 기념! 2000원 할인"
     case dev = "개발팀에게만! 90% 할인"
 }

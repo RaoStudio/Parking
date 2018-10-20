@@ -380,8 +380,8 @@
 				29742FFA20EC9D3E008C4647 /* SetInfoAuthCell.swift */,
 				293545F020ECBB3800077B75 /* SetVersionCell.swift */,
 				29F4EB2B20F3301F009C2AE2 /* ParkingLotCell.swift */,
-				29012A892105B227005D99FC /* ProfileTextCell.swift */,
 				29012A8B2105B2C5005D99FC /* ProfileBtnCell.swift */,
+				29012A892105B227005D99FC /* ProfileTextCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
