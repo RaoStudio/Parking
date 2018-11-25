@@ -130,6 +130,8 @@ enum UserAlarmType: String {
     case twenty = "20분 전"
     case thirty = "30분 전"
     case hour = "1시간 전"
+    
+    static let allValue = [none, appoint, one, three, five, ten, fifteen, twenty, thirty, hour]
 }
 
 enum UserAlarmValue: Int {

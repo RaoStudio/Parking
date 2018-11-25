@@ -30,9 +30,9 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let uinfo = UserInfoManager()
     
     
-    let radiusDropDown = DropDown()
-    let alarmDropDown = DropDown()
+    let radiusDropDown = DropDown()     // Not Use Now
     
+    let alarmDropDown = DropDown()
     let startAlarmDropDown = DropDown()
     let endAlarmDropDown = DropDown()
     
@@ -170,6 +170,39 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    func setupEndAlarmDropDown(label: UILabel) {
+        endAlarmDropDown.anchorView = label
+        
+        radiusDropDown.topOffset = CGPoint(x: 0, y: label.bounds.height)
+        
+        endAlarmDropDown.dataSource = [
+            UserAlarmType.none.rawValue,
+            UserAlarmType.appoint.rawValue,
+            UserAlarmType.one.rawValue,
+            UserAlarmType.three.rawValue,
+            UserAlarmType.five.rawValue,
+            UserAlarmType.ten.rawValue,
+            UserAlarmType.fifteen.rawValue,
+            UserAlarmType.twenty.rawValue,
+            UserAlarmType.thirty.rawValue,
+            UserAlarmType.hour.rawValue
+        ]
+        
+        endAlarmDropDown.selectRow(uinfo.UserAlarmEnd ?? 0)
+        
+        endAlarmDropDown.direction = .bottom
+        endAlarmDropDown.selectionAction = { [weak self] (index, item) in
+            label.text = item
+            
+            self?.uinfo.UserAlarmEnd = index
+            
+            if self?.uinfo.isUserAlarm == true {
+                self?.setUserAlarmNotification(bEntry: true)
+            }
+        }
+        
+        
+    }
 
     
     // MARK: - Button Action
@@ -315,8 +348,10 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 if let alarmCell = cell as? SetAlarmCell {
                     if nRow == 1 {
                         alarmCell.lblTitle.text = "입차시간 알림"
+                        alarmCell.lblTime.text = UserAlarmType.allValue[uinfo.UserAlarmStart ?? 0].rawValue
                     } else {
                         alarmCell.lblTitle.text = "출차시간 알림"
+                        alarmCell.lblTime.text = UserAlarmType.allValue[uinfo.UserAlarmEnd ?? 0].rawValue
                     }
                 }
             }
@@ -566,18 +601,20 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     
                     
                     if uinfo.isUserAlarm == false {
-                        let nextIndex = IndexPath(row: 1, section: 1)
+                        let nextIndex = IndexPath(row: 1, section: 0)
                         
                         let nextCell = tableView.cellForRow(at: nextIndex)
                         if let alarmCell = nextCell as? SetAlarmCell {
                             alarmCell.lblTime.text = UserAlarmType.none.rawValue
+                            uinfo.UserAlarmStart = 0
                         }
                         
-                        let nextIndex2 = IndexPath(row: 2, section: 1)
+                        let nextIndex2 = IndexPath(row: 2, section: 0)
                         
                         let nextCell2 = tableView.cellForRow(at: nextIndex2)
                         if let alarmCell2 = nextCell2 as? SetAlarmCell {
                             alarmCell2.lblTime.text = UserAlarmType.none.rawValue
+                            uinfo.UserAlarmEnd = 0
                         }
                         
                         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
@@ -591,17 +628,23 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 let cell = tableView.cellForRow(at: indexPath)
                 if let alarmCell = cell as? SetAlarmCell {
                     self.lblEntry = alarmCell.lblTime
-                    self.setupAlarmDropDown(label: self.lblEntry!, bEntry: true)
-                    self.alarmDropDown.show()
+//                    self.setupAlarmDropDown(label: self.lblEntry!, bEntry: true)
+//                    self.alarmDropDown.show()
+                    self.setupStartAlarmDropDown(label: self.lblEntry!)
+                    self.startAlarmDropDown.show()
+//                    self.startAlarmDropDown.selectRow(uinfo.UserAlarmStart ?? 0)
                     
                 }
                 
             } else if nRow == 2 && uinfo.isUserAlarm == true{
                 let cell = tableView.cellForRow(at: indexPath)
                 if let alarmCell = cell as? SetAlarmCell {
-                    self.lblEntry = alarmCell.lblTime
-                    self.setupAlarmDropDown(label: self.lblEntry!, bEntry: false)
-                    self.alarmDropDown.show()
+                    self.lblExit = alarmCell.lblTime
+//                    self.setupAlarmDropDown(label: self.lblEntry!, bEntry: false)
+//                    self.alarmDropDown.show()
+                    self.setupEndAlarmDropDown(label: self.lblExit!)
+                    self.endAlarmDropDown.show()
+//                    self.endAlarmDropDown.selectRow(uinfo.UserAlarmEnd ?? 0)
                 }
             }
         }

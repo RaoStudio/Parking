@@ -475,8 +475,8 @@ extension UserInfoManager {
         nIndexEnd = 0
         
         
-        UserAlarmStart = 0
-        UserAlarmEnd = 0
+//        UserAlarmStart = 0
+//        UserAlarmEnd = 0
     }
     
     
@@ -493,8 +493,8 @@ extension UserInfoManager {
         nLastTime = 0
         nIndexEnd = 0
         
-        UserAlarmStart = 0
-        UserAlarmEnd = 0
+//        UserAlarmStart = 0
+//        UserAlarmEnd = 0
     }
     
     func stringToDate(_ value: String) -> Date {
