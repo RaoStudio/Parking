@@ -297,9 +297,13 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
                             if arrItem.last == "1" {
                                 print("Success")
                                 
+                                /*
                                 if let setVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingVC") as? SettingVC {
                                     setVC.setUserAlarmNotification()
                                 }
+                                */
+                                
+                                self.setStartUserAlarmNotification()
                                 
                             } else {
                                 
@@ -322,6 +326,9 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
             }
 //        }
     }
+    
+    
+    
     
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
@@ -392,6 +399,63 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - UNUserNotificationCenter
+    func setStartUserAlarmNotification() {
+        let uinfo = UserInfoManager()
+        let bUse = uinfo.isUserAlarm ?? false
+        if bUse == false {
+            return
+        } else {
+            //            return      // Test Now ~
+        }
+        
+        let content = UNMutableNotificationContent()
+        //        content.title = "Title Test"
+        //        content.subtitle = "Subtitle Test"
+        content.body = "입차시간 알림 ~~"
+        content.sound = UNNotificationSound.default()
+        
+        // UNCalendarNotificationTrigger
+        let date = uinfo.stringToDate(uinfo.startTime!)
+        let dateCompenents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        let Calendartrigger = UNCalendarNotificationTrigger(dateMatching: dateCompenents, repeats: false)
+        
+        // Use TimeIntervalNotificationTrigger
+        let TimeIntervalTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "timerdone", content: content, trigger: Calendartrigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    func setEndUserAlarmNotification() {
+        let uinfo = UserInfoManager()
+        let bUse = uinfo.isUserAlarm ?? false
+        if bUse == false {
+            return
+        } else {
+            //            return      // Test Now ~
+        }
+        
+        let content = UNMutableNotificationContent()
+        //        content.title = "Title Test"
+        //        content.subtitle = "Subtitle Test"
+        content.body = "출시간 알림 ~~"
+        content.sound = UNNotificationSound.default()
+        
+        // UNCalendarNotificationTrigger
+        let date = Date(timeIntervalSinceNow: 5)
+        let dateCompenents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        let Calendartrigger = UNCalendarNotificationTrigger(dateMatching: dateCompenents, repeats: false)
+        
+        // Use TimeIntervalNotificationTrigger
+        let TimeIntervalTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "timerdone", content: content, trigger: Calendartrigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
 
 }
 

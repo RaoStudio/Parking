@@ -676,8 +676,8 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
         
         let content = UNMutableNotificationContent()
-        content.title = "Title Test"
-        content.subtitle = "Subtitle Test"
+//        content.title = "Title Test"
+//        content.subtitle = "Subtitle Test"
         content.body = "Alarm ~~"
         content.sound = UNNotificationSound.default()
         
