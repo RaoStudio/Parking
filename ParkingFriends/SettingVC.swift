@@ -72,7 +72,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     func displayToast() {
-        self.navigationController?.view.makeToast("헌재 Push Alarm 과 함께 테스트중입니다. 파킹프렌즈 다음 버젼에서 만나뵐께요~", duration: 1.5, position: .bottom)
+//        self.navigationController?.view.makeToast("헌재 Push Alarm 과 함께 테스트중입니다. 파킹프렌즈 다음 버젼에서 만나뵐께요~", duration: 1.5, position: .bottom)
     }
     
     // MARK: - DropDown
@@ -158,6 +158,11 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         startAlarmDropDown.direction = .bottom
         startAlarmDropDown.selectionAction = { [weak self] (index, item) in
+            
+            if self?.uinfo.UserAlarmStart == index {
+                return
+            }
+            
             label.text = item
             
             self?.uinfo.UserAlarmStart = index
@@ -165,6 +170,9 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             if self?.uinfo.isUserAlarm == true {
                 self?.setUserAlarmNotification(bEntry: true)
             }
+            
+            
+            self?.alert("입차시간 알림은 새로운 주차예약때 적용됩니다.")
         }
         
         
@@ -192,6 +200,11 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         endAlarmDropDown.direction = .bottom
         endAlarmDropDown.selectionAction = { [weak self] (index, item) in
+            
+            if self?.uinfo.UserAlarmEnd == index {
+                return
+            }
+            
             label.text = item
             
             self?.uinfo.UserAlarmEnd = index
@@ -199,6 +212,8 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             if self?.uinfo.isUserAlarm == true {
                 self?.setUserAlarmNotification(bEntry: true)
             }
+            
+            self?.alert("출차시간 알림은 새로운 주차예약때 적용됩니다.")
         }
         
         
@@ -601,8 +616,34 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     
                     
                     if uinfo.isUserAlarm == false {
-                        let nextIndex = IndexPath(row: 1, section: 0)
                         
+                        self.showAlert(toastTitle: "알림", toastMsg: "최근 예약한 곳의 입출차알림이 삭제될수있습니다. 진행하시겠습니까?", positiveBtn: true, negativeBtn: true, done_action: {
+                            let nextIndex = IndexPath(row: 1, section: 0)
+                            
+                            let nextCell = tableView.cellForRow(at: nextIndex)
+                            if let alarmCell = nextCell as? SetAlarmCell {
+                                alarmCell.lblTime.text = UserAlarmType.none.rawValue
+                                self.uinfo.UserAlarmStart = 0
+                            }
+                            
+                            let nextIndex2 = IndexPath(row: 2, section: 0)
+                            
+                            let nextCell2 = tableView.cellForRow(at: nextIndex2)
+                            if let alarmCell2 = nextCell2 as? SetAlarmCell {
+                                alarmCell2.lblTime.text = UserAlarmType.none.rawValue
+                                self.uinfo.UserAlarmEnd = 0
+                            }
+                            
+                            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                            
+                        }) {
+                            noticeCell.onBtnCheck(noticeCell.btnCheck)
+                            self.uinfo.isUserAlarm = noticeCell.btnCheck.isSelected
+                        }
+                        
+                        /*
+                        let nextIndex = IndexPath(row: 1, section: 0)
+                    
                         let nextCell = tableView.cellForRow(at: nextIndex)
                         if let alarmCell = nextCell as? SetAlarmCell {
                             alarmCell.lblTime.text = UserAlarmType.none.rawValue
@@ -618,6 +659,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                         }
                         
                         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                        */
                     } else {
                         self.displayToast()
                     }
@@ -676,7 +718,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
         
         let content = UNMutableNotificationContent()
-//        content.title = "Title Test"
+        content.title = uinfo.rCompany ?? ""
 //        content.subtitle = "Subtitle Test"
         content.body = "Alarm ~~"
         content.sound = UNNotificationSound.default()

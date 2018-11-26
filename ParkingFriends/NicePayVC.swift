@@ -411,7 +411,7 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
         }
         
         let content = UNMutableNotificationContent()
-        //        content.title = "Title Test"
+        content.title = uinfo.rCompany ?? ""
         //        content.subtitle = "Subtitle Test"
         content.body = "입차시간 알림 ~~"
         content.sound = UNNotificationSound.default()
@@ -427,6 +427,8 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
         let request = UNNotificationRequest(identifier: "timerdone", content: content, trigger: Calendartrigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        self.setEndUserAlarmNotification()
     }
     
     func setEndUserAlarmNotification() {
@@ -439,13 +441,13 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
         }
         
         let content = UNMutableNotificationContent()
-        //        content.title = "Title Test"
+        content.title = uinfo.rCompany ?? ""
         //        content.subtitle = "Subtitle Test"
-        content.body = "출시간 알림 ~~"
+        content.body = "출차시간 알림 ~~"
         content.sound = UNNotificationSound.default()
         
         // UNCalendarNotificationTrigger
-        let date = Date(timeIntervalSinceNow: 5)
+        let date = uinfo.stringToDate(uinfo.endTime!)
         let dateCompenents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         let Calendartrigger = UNCalendarNotificationTrigger(dateMatching: dateCompenents, repeats: false)
         
