@@ -412,7 +412,7 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
             let nStart = uinfo.UserAlarmStart ?? 0
             if nStart == 0 {
                 self.setEndUserAlarmNotification()
-                self.view.makeToast("입차알림을 안하는 것으로 선택하셨습니다..", duration: 1.0, position: .bottom)
+//                self.view.makeToast("입차알림을 안하는 것으로 선택하셨습니다..", duration: 1.0, position: .bottom)
 //                self.navigationController?.view.makeToast("입차알림을 안하는 것으로 선택하셨습니다..", duration: 1.0, position: .bottom)
                 return
             }
@@ -426,6 +426,14 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
         
         // UNCalendarNotificationTrigger
         var date = uinfo.stringToDate(uinfo.startTime!)
+        
+        if let strType = uinfo.rsvType {
+            if strType == "R" {
+                
+            } else if strType == "E" {
+                date = uinfo.stringToDate(uinfo.extendStartTime!)
+            }
+        }
         
         let nMinus = UserAlarmValue.allValue[uinfo.UserAlarmStart ?? 1].rawValue
         
@@ -484,6 +492,14 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
         
         // UNCalendarNotificationTrigger
         var date = uinfo.stringToDate(uinfo.endTime!)
+        
+        if let strType = uinfo.rsvType {
+            if strType == "R" {
+                
+            } else if strType == "E" {
+                date = uinfo.stringToDate(uinfo.extendEndTime!)
+            }
+        }
         
         let nMinus = UserAlarmValue.allValue[uinfo.UserAlarmEnd ?? 1].rawValue
         
