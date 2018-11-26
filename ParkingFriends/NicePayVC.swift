@@ -412,6 +412,8 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
             let nStart = uinfo.UserAlarmStart ?? 0
             if nStart == 0 {
                 self.setEndUserAlarmNotification()
+                self.view.makeToast("입차알림을 안하는 것으로 선택하셨습니다..", duration: 1.0, position: .bottom)
+//                self.navigationController?.view.makeToast("입차알림을 안하는 것으로 선택하셨습니다..", duration: 1.0, position: .bottom)
                 return
             }
         }
@@ -437,11 +439,28 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
         // Use TimeIntervalNotificationTrigger
         let TimeIntervalTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
-        let request = UNNotificationRequest(identifier: "timerdone", content: content, trigger: Calendartrigger)
+        let request = UNNotificationRequest(identifier: "starttimerdone", content: content, trigger: Calendartrigger)
         
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+//        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
-        self.setEndUserAlarmNotification()
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                self.alert("입차시간 알림등록 오류: \(error.localizedDescription)", completion: {
+                    self.setEndUserAlarmNotification()
+                })
+            } else {
+                /*
+                DispatchQueue.main.async {
+                    self.setEndUserAlarmNotification()
+                }
+                */
+                self.setEndUserAlarmNotification()
+//                self.navigationController?.view.makeToast("입차알림 등록성공하였습니다.", duration: 1.0, position: .bottom)
+//                self.view.makeToast("입차알림 등록성공하였습니다.", duration: 1.0, position: .bottom)
+            }
+        }
+        
+//        self.setEndUserAlarmNotification()
     }
     
     func setEndUserAlarmNotification() {
@@ -464,7 +483,7 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
         content.sound = UNNotificationSound.default()
         
         // UNCalendarNotificationTrigger
-        var date = uinfo.stringToDate(uinfo.startTime!)
+        var date = uinfo.stringToDate(uinfo.endTime!)
         
         let nMinus = UserAlarmValue.allValue[uinfo.UserAlarmEnd ?? 1].rawValue
         
@@ -478,9 +497,19 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
         // Use TimeIntervalNotificationTrigger
         let TimeIntervalTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
-        let request = UNNotificationRequest(identifier: "timerdone", content: content, trigger: Calendartrigger)
+        let request = UNNotificationRequest(identifier: "endtimerdone", content: content, trigger: Calendartrigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                self.alert("출차시간 알림등록 오류: \(error.localizedDescription)")
+            } else {
+//                self.navigationController?.view.makeToast("출차알림 등록성공하였습니다.", duration: 1.0, position: .bottom)
+//                self.view.makeToast("출차알림 등록성공하였습니다.", duration: 1.0, position: .bottom)
+                self.alert("출차시간알림 등록하였습니다.")
+            }
+        }
     }
 
 }
