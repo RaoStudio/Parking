@@ -145,6 +145,8 @@ enum UserAlarmValue: Int {
     case twenty = 1200
     case thirty = 1800
     case hour = 3600
+    
+    static let allValue = [none, appoint, one, three, five, ten, fifteen, twenty, thirty, hour]
 }
 
 

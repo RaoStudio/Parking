@@ -10,6 +10,7 @@ import UIKit
 import WebKit
 
 import UserNotifications
+import SwiftDate
 
 class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -408,16 +409,28 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
             return
         } else {
             //            return      // Test Now ~
+            let nStart = uinfo.UserAlarmStart ?? 0
+            if nStart == 0 {
+                self.setEndUserAlarmNotification()
+                return
+            }
         }
         
         let content = UNMutableNotificationContent()
         content.title = uinfo.rCompany ?? ""
-        //        content.subtitle = "Subtitle Test"
+        content.subtitle = UserAlarmType.allValue[uinfo.UserAlarmStart ?? 1].rawValue
         content.body = "입차시간 알림 ~~"
         content.sound = UNNotificationSound.default()
         
         // UNCalendarNotificationTrigger
-        let date = uinfo.stringToDate(uinfo.startTime!)
+        var date = uinfo.stringToDate(uinfo.startTime!)
+        
+        let nMinus = UserAlarmValue.allValue[uinfo.UserAlarmStart ?? 1].rawValue
+        
+        if nMinus > 0 {
+            date = date - nMinus.second
+        }
+        
         let dateCompenents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         let Calendartrigger = UNCalendarNotificationTrigger(dateMatching: dateCompenents, repeats: false)
         
@@ -438,16 +451,27 @@ class NicePayVC: UIViewController, WKNavigationDelegate, WKUIDelegate, WKScriptM
             return
         } else {
             //            return      // Test Now ~
+            let nEnd = uinfo.UserAlarmEnd ?? 0
+            if nEnd == 0 {
+                return
+            }
         }
         
         let content = UNMutableNotificationContent()
         content.title = uinfo.rCompany ?? ""
-        //        content.subtitle = "Subtitle Test"
+        content.subtitle = UserAlarmType.allValue[uinfo.UserAlarmEnd ?? 1].rawValue
         content.body = "출차시간 알림 ~~"
         content.sound = UNNotificationSound.default()
         
         // UNCalendarNotificationTrigger
-        let date = uinfo.stringToDate(uinfo.endTime!)
+        var date = uinfo.stringToDate(uinfo.startTime!)
+        
+        let nMinus = UserAlarmValue.allValue[uinfo.UserAlarmEnd ?? 1].rawValue
+        
+        if nMinus > 0 {
+            date = date - nMinus.second
+        }
+        
         let dateCompenents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         let Calendartrigger = UNCalendarNotificationTrigger(dateMatching: dateCompenents, repeats: false)
         

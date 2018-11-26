@@ -617,7 +617,7 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     
                     if uinfo.isUserAlarm == false {
                         
-                        self.showAlert(toastTitle: "알림", toastMsg: "최근 예약한 곳의 입출차알림이 삭제될수있습니다. 진행하시겠습니까?", positiveBtn: true, negativeBtn: true, done_action: {
+                        self.showAlert(toastTitle: "알림", toastMsg: "입출차 알림을 초기화합니다.\n최근 예약한 곳의 입출차알림이 삭제될수있습니다.\n진행하시겠습니까?", positiveBtn: true, negativeBtn: true, done_action: {
                             let nextIndex = IndexPath(row: 1, section: 0)
                             
                             let nextCell = tableView.cellForRow(at: nextIndex)
@@ -725,6 +725,8 @@ class SettingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         // UNCalendarNotificationTrigger
         let date = Date(timeIntervalSinceNow: 5)
+//        let nPlus = UserAlarmValue.allValue[uinfo.UserAlarmStart ?? 0].rawValue
+        
         var dateCompenents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         let Calendartrigger = UNCalendarNotificationTrigger(dateMatching: dateCompenents, repeats: false)
         
