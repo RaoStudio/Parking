@@ -12,6 +12,7 @@ import CoreData
 import Firebase
 import GoogleSignIn
 import FBSDKLoginKit
+import FirebaseAuth
 
 import Alamofire
 import SwiftyJSON
@@ -390,6 +391,7 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
         //*
         let loginButton = FBSDKLoginButton()
         loginButton.delegate = self
+//        loginButton.readPermissions = ["email"]
         
         loginButton.loginBehavior = FBSDKLoginBehavior.web
 //        .facebookLoginManager().loginBehavior = FBSDKLoginBehavior.web
@@ -568,9 +570,36 @@ class LoginVC: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, FBSDKLo
                     
                     
                     self.requestUserLogin(email: email, provider: "facebook", authid: id)
+                } else {
                     
+                    self.endLoading()
+                    self.navigationController?.view.makeToast("FB: Login Success! But E-Mail Address is nil" , duration: 2.0, position: .bottom)
+                    
+                    /*
+                    if let user = Auth.auth().currentUser {
+                        print(user.email)
+                        print(user.displayName)
+                        print(user.photoURL)
+                        print(user.uid)
+                    } else {
+                        self.endLoading()
+                        self.navigationController?.view.makeToast("FB: E-Mail Adress is nil" , duration: 2.0, position: .bottom)
+                    }
+                    */
+                    
+                    
+                    /*
+                    let firebaseAuth = Auth.auth()
+                    do {
+                        try firebaseAuth.signOut()
+                    } catch let signOutError as NSError {
+                        let strError = String(format: "Error signing out: %@", signOutError)
+                        self.navigationController?.view.makeToast(strError , duration: 2.0, position: .bottom)
+                    }
+                     */
                 }
             } else {
+                
                 self.endLoading()
                 self.navigationController?.view.makeToast("FB: Result is nil" , duration: 2.0, position: .bottom)
             }
